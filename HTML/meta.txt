@@ -1,0 +1,61 @@
+//homepage
+<meta charset="UTF-8">
+<meta name="description" content="Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming">
+<meta name="keyword" content="videogioco,evento,patch,aggiornamento,biblioteca">
+
+//categorie
+meta description categorie questa pagina è dedicata a tutte le informazioni relative ai videogiochi divisi per categoria 
+meta keyword single-player,multi-player,online,fps,tps,moba,sport,easport
+
+//eventi
+meta description eventi questa pagina raccoglie tutti gli eventi importanti passati e futuri del gaming competitivio
+meta keyword easport,team,vincitori,novità,risultati,calendario,evento
+
+//visualizza articolo
+meta description visualizza articolo questa pagina consente all'utente di leggere un articolo nella bibiliotca
+meta keyword articolo,patch,aggiornamento,videogioco,evento
+
+
+//assistenza/contatti
+meta description assistenza/contatti questa pagina raccoglie i contatti e un faq di assistenza
+meta keyword contatti,email,numero,support,faq
+
+//about us
+meta description about us questa pagina racconta perchè abbiamo desci di fare questo sito
+meta keyword storia,motivazioni,
+
+//login/registra
+meta description login/registra questa pagina serve a far accedere un utente o a farne registrare uno nuovo
+meta keyword account,password,username,login,registrazione,email,acesso
+
+//visualizza gioco
+meta description visualizza gioco questa pagina visualizza le caratteristiche di un articolo selezionato
+meta keyword articolo,ps,xbox,nintendo,pc,recensione,pegi,prezzo,gratis
+
+//aggiungi recensione
+meta description recensione questa pagina mostra le recensioni degli altri utenti relative ad un articolo e consente di inserirne una
+meta keyword recensione,valutaizone,opinione,community,parere
+
+//account 
+meta description account questa pagina mostra all'utente i propri dati le proprie recensioni e permette di fare il log out
+meta keyword account,dati,recensioni,logout,informazione
+
+//modfiica account
+meta description modifca account questa pagina consente all'utente di modifcare i dati che lo collegano al suo account come mail e password
+meta keyword modifica,aggiorna,vecchia,nuova,email,passowrd,username
+
+//recupera dati
+meta description recupera dati questa pagina consente all'utente di recuperare i propri dati di accesso se li ha dimenticati
+meta keyword recupera,dati,password,username,email,dimenticati
+
+//aggiungi gioco(da admin)
+meta description aggiungi gioco questa pagina consente all'admin di inserire un nuovo videogioco nella bibiliotca
+meta description aggiungi,videogioco,categoria,informazioni
+
+//aggiungi evento (da admin)
+meta description aggiungi evento questa pagina consente all'admin di inserire un nuovo evento nella bibiliotca
+met keyword aggiungi,evento,data,videogioco,team
+
+//aggiungi patch o articolo (da admin)
+meta description aggiungi patch questa pagina consente all'admin di inserire un nuovo aggiornamento o articolo nella bibiliotca
+meta keyword aggiungi,articolo,patch,aggiornamento,videogioco,evento
