@@ -51,38 +51,6 @@
             <button class="conferma-button">Conferma</button>
         </div>
     
-        <script>
-            // Script per gestire la selezione delle stelle
-            const stelle = document.querySelectorAll('.stella');
-    
-            stelle.forEach(stella => {
-                stella.addEventListener('click', () => {
-                    const valore = parseInt(stella.getAttribute('data-valore'));
-    
-                    // Rimuovi la classe "selezionata" da tutte le stelle
-                    stelle.forEach(s => s.classList.remove('selezionata'));
-    
-                    // Aggiungi la classe "selezionata" alle stelle fino a quella cliccata
-                    for (let i = 0; i < valore; i++) {
-                        stelle[i].classList.add('selezionata');
-                    }
-    
-                    // Puoi anche inviare il valore della valutazione a un server o memorizzarlo
-                    console.log(`Valutazione: ${valore} stelle`);
-                });
-            });
-    
-            // Script per gestire il placeholder dinamico nella textarea
-            const testoBox = document.querySelector('.testo-box');
-    
-            testoBox.addEventListener('input', () => {
-                if (testoBox.value.length > 0) {
-                    testoBox.removeAttribute('placeholder');
-                } else {
-                    testoBox.setAttribute('placeholder', 'Inserisci qui la tua recensione');
-                }
-            });
-        </script>
     </body>
 
 </html>

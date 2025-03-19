@@ -42,33 +42,7 @@
                 <textarea id="testo-input" placeholder="Scrivi qui il tuo testo..."></textarea>
             </div>
         </div>
-    
-        <script>
-            // Script per gestire l'anteprima della foto
-            const fotoInput = document.getElementById('foto-input');
-            const anteprimaFoto = document.getElementById('anteprima-foto');
-    
-            fotoInput.addEventListener('change', (event) => {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        anteprimaFoto.src = e.target.result;
-                        anteprimaFoto.style.display = 'block';
-                    };
-                    reader.readAsDataURL(file);
-                } else {
-                    anteprimaFoto.style.display = 'none';
-                }
-            });
-    
-            // Script per gestire il testo inserito
-            const testoInput = document.getElementById('testo-input');
-    
-            testoInput.addEventListener('input', () => {
-                console.log("Testo inserito:", testoInput.value);
-            });
-        </script>
+
     </body>
 
 </html>
