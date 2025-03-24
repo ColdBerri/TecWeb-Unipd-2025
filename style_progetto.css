@@ -1,0 +1,141 @@
+/* GENERALE */
+
+* {
+	padding: 0em;
+	margin: 0em;
+}
+
+
+:root{
+    --bgcolor: #dddddd;
+    --textcolor: #000000;
+    --linkcolor: #07026b;
+    --linkvisited: #e87e04;   
+    --bandiera: #ff0000;
+    --bgfooter: #aaaaaa;
+    --linkvisitedFooter: #0606fb;   
+}
+
+
+
+
+
+
+/*nav*/
+
+
+html, body{
+    font-size: 100%;
+ /*   font-family: var(--font-body-family);*/
+    line-height: 1.5em;
+    margin: auto;
+    background-color: var(--bgcolor);
+}
+
+html{
+    background-image: ;
+}
+
+
+/*per centrare un elelmento --> margin: auto;
+per cnetrare il testo --> text-align: center; */
+
+
+
+
+/*
+=============
+SEZIONE HEADER
+=============
+*/
+
+header{
+    background-color: var(--bgcolor);
+    color: var(--textcolor);
+    padding: ;
+    text-align: ;
+    
+}   
+/*se ho solo h1 non occorre andare  specificare h1*/
+
+
+
+/*
+=============
+SEZIONE MENU
+=============
+*/
+
+#menu{
+    float: left;
+    width: 18%;
+}
+
+#menu a:link{
+    color:var(--linkcolor)
+}
+
+#menu a:visited{
+    color:var(--linkvisited)
+}
+
+/*questo di seeguito può servirmi per centrare la lista "ul" */
+#menu ul{
+    margin:auto;
+}
+
+#currentlink {
+    background-image: url('.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-left: 2em;
+}
+
+
+
+
+/*
+=============
+SEZIONE BREADCRUMB
+=============
+*/
+
+#breadcrumb{
+    background-color: var(--breadcolor);
+}
+
+
+
+
+/*
+=============
+SEZIONE MAIN
+=============
+*/
+
+main{
+    background-color: var(--bgcolor);
+    color: var(--textcolor);
+}
+
+
+
+/*
+=============
+SEZIONE FOOTER
+=============
+*/
+
+
+footer{
+    background-color: var(--bgfooter);
+    color: var(--textcolor);
+    text-align: center;
+    padding: 1.0em;
+    }
+
+footer p{
+    display: inline;
+    font-size: 0.8em;
+    font-style: italic;
+}
