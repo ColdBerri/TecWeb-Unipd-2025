@@ -1,0 +1,30 @@
+:root{
+    --bgcolor: #dddddd;
+    --textcolor: #000000;
+    --linkcolor: #07026b;
+    --linkvisited: #e87e04;   
+    --bandiera: #ff0000;
+    --bgfooter: #aaaaaa;
+    --linkvisitedFooter: #0606fb;   
+}
+
+body {
+    background-color: var(--bgcolor);
+    color: var(--textcolor);
+}
+
+a {
+    color: var(--linkcolor);
+}
+
+a:visited {
+    color: var(--linkvisited);
+}
+
+footer {
+    background-color: var(--bgfooter);
+}
+
+footer a:visited {
+    color: var(--linkvisitedFooter);
+}
