@@ -8,12 +8,6 @@
     --linkvisitedFooter: #0606fb;   
 }
 
-body {
-    background-color: var(--bgcolor);
-    color: var(--textcolor);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 a {
     color: var(--linkcolor);
 }
@@ -22,16 +16,15 @@ a:visited {
     color: var(--linkvisited);
 }
 
-footer {
-    background-color: var(--bgfooter);
-}
-
 footer a:visited {
     color: var(--linkvisitedFooter);
 }
 
 /* Rimuove i margini e padding di default del body e di altri elementi */
 body, html {
+    background-color: var(--bgcolor);
+    color: var(--textcolor);
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0; /* Rimuove il margine di default */
     padding: 0; /* Rimuove il padding di default */
     height: 100%; /* Assicura che la pagina occupi tutta la schermata */
@@ -118,17 +111,55 @@ header {
 }
 
 .search-icon:hover {
-    content: url('../assets/search_.png'); /* Sostituisce l'immagine con search_red.png al passaggio del mouse */
+    content: url('../assets/search_red.png'); /* Sostituisce l'immagine con search_red.png al passaggio del mouse */
 }
 
-/* Sezione footer */
+/* Footer */
 footer {
     background-color: var(--bgfooter);
-    color: white;
+    color: var(--textcolor);
     padding: 20px 0;
     text-align: center;
+    margin-top: 0; /* Rimuove lo spazio sopra il footer */
+    width: 100%; /* Assicura che il footer occupi tutta la larghezza della pagina */
+    position: relative; /* Mantiene il footer al di sotto del contenuto */
 }
 
-footer a:visited {
-    color: #8c8c8c;
+/* Tabella del footer */
+.footer-table {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 20px;
+    border-collapse: collapse;
+    text-transform: uppercase;
 }
+
+.footer-table td {
+    padding: 10px 20px;
+}
+
+.footer-table a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--textcolor);
+    font-size: 20px;
+}
+
+.footer-table a:hover {
+    color: var(--bandiera); /* Colore al passaggio del mouse */
+}
+
+/* Assicura che il footer non spinga sotto la pagina */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Imposta l'altezza della pagina */
+}
+
+main {
+    flex: 1; /* Occupando lo spazio restante, assicura che il footer stia in fondo */
+}
+
+
