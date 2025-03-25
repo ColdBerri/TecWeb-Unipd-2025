@@ -9,36 +9,41 @@
     </head>
     <body>
         <header>
-            <img src="../assets/img_transparent.png" alt="Logo VAPOR" class="logo">
-            <nav class="navbar">
-                <ul>
-                    <li><a href="categorie.html">Categorie</a></li>
-                    <li><a href="prossimeuscite.html">Prossime uscite</a></li>
-                    <li><a href="libreria.html">Libreria</a></li>
-                    <li><a href="profilo.html">Profilo</a></li>
-                </ul>
-            </nav>
+            <!-- Tabella di navigazione principale -->
+            <table class="header-table">
+                <tr>
+                    <td class="logo-cell"><img src="../assets/img_transparent.png" alt="Logo VAPOR" class="logo"></td>
+                    <td><a href="categorie.html">Categorie</a></td>
+                    <td><a href="eventi.html">Prossime uscite</a></td>
+                    <td><a href="libreria.html">Libreria</a></td>
+                    <td><a href="profilo.html">Profilo</a></td>
+                </tr>
+            </table>
+
+            <!-- Barra di ricerca -->
+            <div class="search-container">
+                <input type="text" placeholder="Cerca..." class="search-box">
+                <button class="search-button">
+                    <img src="../assets/search_white.png" alt="Cerca" class="search-icon">
+                </button>
+            </div>
+
+            <!-- Sezione per la pagina corrente -->
+            <div class="current-page">
+                <span>Ti trovi in: <strong>Home</strong></span>
+            </div>
         </header>
-        
-        <section class="search-bar">
-            <input type="text" placeholder="Cerca un titolo...">
-            <button type="submit">Cerca</button>
-        </section>
-        
-        <nav class="breadcrumb">
-            <p>Ti trovi in: <a href="index.html">Home</a></p>
-        </nav>
         
         <main>
             <h1><strong>Videogiochi</strong> del momento</h1>
             <h2>Prossimi <strong>eventi</strong></h2>
             <h3>Ultime <strong>notizie</strong></h3>
         </main>
-        
+
         <footer>
             <nav>
                 <ul>
-                    <li><a href="Assistenza/contatti.html">Assistenza</a></li>
+                    <li><a href="Assistenza e contatti.html">Assistenza</a></li>
                     <li><a href="as.html">La nostra storia</a></li>
                 </ul>
             </nav>

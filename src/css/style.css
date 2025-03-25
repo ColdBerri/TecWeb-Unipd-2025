@@ -1,4 +1,4 @@
-:root{
+:root {
     --bgcolor: #dddddd;
     --textcolor: #000000;
     --linkcolor: #07026b;
@@ -11,6 +11,7 @@
 body {
     background-color: var(--bgcolor);
     color: var(--textcolor);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -27,4 +28,107 @@ footer {
 
 footer a:visited {
     color: var(--linkvisitedFooter);
+}
+
+/* Rimuove i margini e padding di default del body e di altri elementi */
+body, html {
+    margin: 0; /* Rimuove il margine di default */
+    padding: 0; /* Rimuove il padding di default */
+    height: 100%; /* Assicura che la pagina occupi tutta la schermata */
+}
+
+/* Contenitore dell'header */
+header {
+    background-color: #1b2838; /* Colore di sfondo come Steam */
+    font-size: 24px;
+    margin: 0; /* Rimuove qualsiasi margine predefinito */
+    padding: 0; /* Rimuove il padding sopra e ai lati */
+    width: 100%;
+}
+
+/* Tabella per l'header */
+.header-table {
+    width: 100%;
+    display: flex; /* Utilizzo di Flexbox per una distribuzione uniforme */
+    justify-content: space-evenly; /* Equidistanza tra le voci */
+    align-items: center; /* Centra verticalmente */
+    padding: 0 20px; /* Distanza dai bordi laterali */
+    border-collapse: collapse; /* Rimuove gli spazi tra le celle */
+    text-transform: uppercase; /* Trasforma il testo in maiuscolo */
+}
+
+/* Cella della tabella (con padding tra le celle) */
+.header-table td {
+    padding: 10px 20px; /* Spaziatura tra le celle */
+}
+
+/* Logo */
+.logo {
+    width: 120px; /* Dimensione del logo */
+    height: auto;
+}
+
+/* Stile per i link della navbar */
+.header-table a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
+
+.header-table a:hover {
+    color: var(--bandiera); /* Colore al passaggio del mouse (come il logo di Steam) */
+}
+
+/* Sezione per il navigatore della pagina corrente */
+.current-page {
+    background-color: #2d3b47; /* Colore di sfondo simile all'header */
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Barra di ricerca */
+.search-container {
+    display: flex;
+    justify-content: center; /* Centra la barra di ricerca orizzontalmente */
+    align-items: center; /* Centra la barra di ricerca verticalmente */
+    margin: 10px 0;
+}
+
+.search-box {
+    padding: 8px;
+    width: 300px;
+    border: 2px solid #ccc;
+    border-radius: 25px; /* Bordi stondati */
+    font-size: 16px;
+    margin-right: 10px; /* Distanza tra la barra di ricerca e il bottone */
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.search-icon {
+    width: 25px; /* Dimensione dell'icona */
+    height: 25px;
+}
+
+.search-icon:hover {
+    content: url('../assets/search_.png'); /* Sostituisce l'immagine con search_red.png al passaggio del mouse */
+}
+
+/* Sezione footer */
+footer {
+    background-color: var(--bgfooter);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a:visited {
+    color: #8c8c8c;
 }
