@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>VAPOR - Videogames' Useless Opinions</title>
+        <meta name="description" content="Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming">
+        <meta name="keywords" content="videogioco, evento, patch, aggiornamento, biblioteca">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <header>
+            <!-- Tabella di navigazione principale -->
+            <table class="header-table">
+                <tr>
+                    <td class="logo-cell"><a href="index.html"><img src="../assets/img_transparent.png" alt="Logo VAPOR" class="logo"></a></td>
+                    <td><a href="categorie.html">Categorie</a></td>
+                    <td><a href="eventi.html">Prossimi eventi</a></td>
+                    <td><a href="libreria.html">Libreria</a></td>
+                    <td><a href="profilo.html">Profilo</a></td>
+                </tr>
+            </table>
+
+            <!-- Barra di ricerca -->
+            <div class="search-container">
+                <input type="text" placeholder="Cerca..." class="search-box">
+                <button class="search-button">
+                    <img src="../assets/search_white.png" alt="Cerca" class="search-icon">
+                </button>
+            </div>
+
+            <!-- Sezione per la pagina corrente -->
+            <div class="current-page">
+                <span>Ti trovi in: <a href="index.html">Home</a> > <a href="profilo.html">Profilo</a> > <strong>Gestione Profilo</strong></span>
+            </div>
+        </header>
+
+        <main>
+            <h2 class="welcome-message">Modifica Profilo</h2>
+            <form action="/modify" method="POST" class="profile-form">
+                <fieldset>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="Username" value="usernameutente">
+                    
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" value="NomeUtente" readonly>
+                    
+                    <label for="cognome">Cognome:</label>
+                    <input type="text" id="cognome" name="cognome" value="CognomeUtente" readonly>
+                    
+                    <label for="data_nascita">Data di Nascita:</label>
+                    <input type="date" id="data_nascita" name="data_nascita" value="1990-01-01" readonly>
+                    
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" value="vecchia@email.com">
+                    
+                    <label for="vecchia_password">Vecchia Password:</label>
+                    <input type="password" id="vecchia_password" name="vecchia_password">
+                    
+                    <label for="nuova_password">Nuova Password:</label>
+                    <input type="password" id="nuova_password" name="nuova_password">
+                    
+                    <label for="conferma_password">Conferma Nuova Password:</label>
+                    <input type="password" id="conferma_password" name="conferma_password">
+                    
+                    <!-- Container for the buttons -->
+                    <div class="button-container">
+                        <button type="submit" class="save-button">Salva Modifiche</button>
+                        <button type="button" class="back-button" onclick="window.location.href='profilo.html'">Annulla</button>
+                    </div>
+                </fieldset>
+            </form>
+        </main>
+        
+        
+
+        <footer>
+            <!-- Tabella del footer -->
+            <table class="footer-table">
+                <tr>
+                    <td><a href="Assistenza_e_contatti.html">Assistenza</a></td>
+                    <td><a href="as.html">La nostra storia</a></td>
+                </tr>
+            </table>
+            <!-- Copyright -->
+            <p>© 2025 VAPOR - Videogames' Useless Opinions</p>
+        </footer>
+        
+    </body>
+</html>

@@ -2,37 +2,41 @@
 <html lang="it">
     <head>
         <meta charset="UTF-8">
-        <title>VAPOR - Videogames's usless opinions </title>
+        <title>VAPOR - Videogames' Useless Opinions</title>
         <meta name="description" content="Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming">
-        <meta name="keyword" content="videogioco,evento,patch,aggiornamento,biblioteca">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+        <meta name="keywords" content="videogioco, evento, patch, aggiornamento, biblioteca">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
-
     <body>
-
         <header>
-            <h1>Prossimi eventi</h1>
+            <!-- Tabella di navigazione principale -->
+            <table class="header-table">
+                <tr>
+                    <td class="logo-cell"><a href="index.html"><img src="../assets/img_transparent.png" alt="Logo VAPOR" class="logo"></a></td>
+                    <td><a href="categorie.html">Categorie</a></td>
+                    <td><a href="eventi.html">Prossimi eventi</a></td>
+                    <td><a href="libreria.html">Libreria</a></td>
+                    <td><a href="profilo.html">Profilo</a></td>
+                </tr>
+            </table>
+
+            <!-- Barra di ricerca -->
+            <div class="search-container">
+                <input type="text" placeholder="Cerca..." class="search-box">
+                <button class="search-button">
+                    <img src="../assets/search_white.png" alt="Cerca" class="search-icon">
+                </button>
+            </div>
+
+            <!-- Sezione per la pagina corrente -->
+            <div class="current-page">
+                <span>Ti trovi in: <a href="index.html">Home</a> > <strong>Prossimi eventi</strong></span>
+            </div>
         </header>
-
-        <nav id="breadcrumb">
-            <p>Ti trovi in: <a href="index.html" lang="en">Home</a> &gt; Prossimi eventi</p>
-        </nav>
-
-        <nav id="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="categorie.html">Categorie</a></li>
-                <li>Prossime uscite</li>
-                <li><a href="Assistenza/contatti.html">Assistenza/contatti</a></li>
-                <li><a href="as.html">La nostra storia</a></li>
-                <li><a href="profilo.html">Profilo</a></li>
-            </ul>
-        </nav>
-
+        
         <main>
 
+            <h2>Calendario prossimi eventi</h2>
             <p id="desc_table">Calendario gregoriano che elenca gli eventi nel mondo videoludico nel mese corrente</p>
 
             <table aria-describedby="desc_table">
@@ -99,14 +103,23 @@
                     </tr>
                 </tbody>
 
-            <table>
+            </table>
 
+        <h2>Videogiochi in uscita:</h2>
+        <h2>Eventi futuri in evidenza:</h2>
         </main>
 
         <footer>
-
+            <!-- Tabella del footer -->
+            <table class="footer-table">
+                <tr>
+                    <td><a href="Assistenza_e_contatti.html">Assistenza</a></td>
+                    <td><a href="as.html">La nostra storia</a></td>
+                </tr>
+            </table>
+            <!-- Copyright -->
+            <p>© 2025 VAPOR - Videogames' Useless Opinions</p>
         </footer>
-
+        
     </body>
-
 </html>
