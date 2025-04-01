@@ -372,7 +372,143 @@ header {
     background-color: #ab1d2b;
 }
 
+.faq {
+    max-width: 600px;
+    padding-left: 20px;
+}
 
+.faq-item {
+    background: #fff; /* Sfondo bianco */
+    border-radius: 10px; /* Angoli arrotondati */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra per effetto "staccato" */
+    padding: 15px;
+    margin-bottom: 10px; /* Spazio tra le domande */
+}
+
+.faq-question {
+    font-weight: bold;
+    color: var(--linkcolor);
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 5px;
+    padding: 10px;
+    border-top: 1px solid #ddd; /* Separatore sottile */
+}
+
+.faq-input {
+    display: none; /* Nasconde il checkbox */
+}
+
+.faq-input:checked + .faq-answer {
+    display: block; /* Mostra la risposta quando il checkbox è selezionato */
+}
+
+.faq-container {
+    display: flex;
+    justify-content: space-between; /* Spaziatura tra sidebar e contenuto */
+    align-items: flex-start; /* Allinea gli elementi in alto */
+    gap: 20px; /* Spazio tra sidebar e contenuto */
+}
+
+.faq-sidebar {
+    margin-top: 80px;
+    margin-right: 70px;
+    width: 25%; /* Larghezza della sidebar */
+    background-color: #f8f9fa; /* Colore di sfondo */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra per effetto "staccato" */
+}
+
+.faq-content {
+    width: 70%; /* Larghezza del contenuto principale */
+}
+
+aside {
+    width: 30%;
+    float: right;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin-right: 80px;
+    margin-top: 85px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.videogame_info{
+    width: 50%;
+    float: left;
+}
+.review_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%; /* Occupa tutto lo spazio del box aside */
+}
+
+.review_form label {
+    font-weight: bold;
+}
+
+.review_form input, .review_form textarea, .review_form select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.review_form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.review_form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review_form button:hover {
+    background-color: #45a049;
+}
+
+.stars {
+    display: flex;
+    gap: 10px;
+}
+
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars label {
+    font-size: 2em;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.stars input[type="radio"]:checked ~ label {
+    color: var(--linkcolor); /* colore per la stella selezionata */
+}
+
+.stars input[type="radio"]:hover ~ label {
+    color: var(--linkcolor); /* colore per la stella al passaggio del mouse */
+}
+
+.stars input[type="radio"]:checked + label {
+    color: var(--linkcolor); /* Colore per la stella selezionata */
+}
+
+.stars label:hover {
+    color: var(--linkcolor); /* Colore per la stella quando si passa sopra */
+}
 
 /* Footer */
 footer {
@@ -420,8 +556,64 @@ body {
 
 main {
     flex: 1; /* Occupando lo spazio restante, assicura che il footer stia in fondo */
+    margin-left: 20px; /* Aggiunge un margine a sinistra */
+    padding: 10px; /* Opzionale: aggiunge un po' di spazio interno */
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+/*CSS PER MOBILE*/
+@media screen and (max-width: 768px){
+    
+    header {
+        font-size: 20px; /* Riduce la dimensione del font nell'header */
+    }
+    
+    .logo {
+        width: 100px; /* Riduce la dimensione del logo */
+    }
+
+    .header-table {
+        flex-direction: column;
+        align-items: flex-start; /* Centra i link in verticale */
+        padding: 10px;
+    }
+
+    .header-table a {
+        font-size: 18px; /* Riduce la dimensione del font dei link */
+        padding: 5px 0;
+    }
+
+    .search-container {
+        flex-direction: column;
+        width: 100%; /* La barra di ricerca occupa tutta la larghezza */
+    }
+
+    .search-box {
+        width: 90%; /* La barra di ricerca occupa il 90% della larghezza */
+        margin-bottom: 10px; /* Spazio sotto la barra di ricerca */
+    }
+
+    .search-button {
+        width: 90%; /* Il bottone occupa il 90% della larghezza */
+    }
+
+    .footer-table {
+        flex-direction: column;
+        align-items: flex-start; /* Centra i link in verticale */
+        padding: 10px;
+    }
+
+    .footer-table td {
+        padding: 5px 10px; /* Riduce il padding delle celle nel footer */
+    }
+
+    body {
+        font-size: 14px; /* Riduce la dimensione del font generale */
+    }
+
+}
+>>>>>>> 3e46bf7bcce8d310b8934525278e014c8fe7cdd9

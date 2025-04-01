@@ -2,44 +2,81 @@
 <html lang="it">
     <head>
         <meta charset="UTF-8">
-        <title>VAPOR - Videogames's usless opinions </title>
+        <title>VAPOR - Videogames' Useless Opinions</title>
         <meta name="description" content="Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming">
-        <meta name="keyword" content="videogioco,evento,patch,aggiornamento,biblioteca">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-        
+        <meta name="keywords" content="videogioco, evento, patch, aggiornamento, biblioteca">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
-    <header>
-        <h1>Categorie videoludiche</h1>
-    </header>
-    <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="index.html" lang="en">Home</a> &gt; Aggiungi Evento</p>
-    </nav>
-
-    <nav id="menu">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><span lang="en">Categorie</span></li>
-            <li><a href="prossimeuscite.html">Prossime uscite</a></li>
-            <li><a href="Assistenza/contatti.html">Assistenza/contatti</a></li>
-            <li><a href="as.html">La nostra storia</a></li>
-            <li><a href="profilo.html">Profilo</a></li>
-        </ul>
-    </nav>
     <body>
-        <div class="container">
-            <!-- Box centrale con testo -->
-            <div class="testo">
-                testo per assistenza e contatti.
+        <header>
+            <!-- Tabella di navigazione principale -->
+            <table class="header-table">
+                <tr>
+                    <td class="logo-cell"><img src="../assets/img_transparent.png" alt="Logo VAPOR" class="logo"></td>
+                    <td><a href="categorie.html">Categorie</a></td>
+                    <td><a href="eventi.html">Prossimi eventi</a></td>
+                    <td><a href="libreria.html">Libreria</a></td>
+                    <td><a href="profilo.html">Profilo</a></td>
+                </tr>
+            </table>
+
+            <!-- Barra di ricerca -->
+            <div class="search-container">
+                <input type="text" placeholder="Cerca..." class="search-box">
+                <button class="search-button">
+                    <img src="../assets/search_white.png" alt="Cerca" class="search-icon">
+                </button>
             </div>
-    
-            <!-- Spazi per i link in basso -->
-            <div class="link-container">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+
+            <!-- Sezione per la pagina corrente -->
+            <div class="current-page">
+                <span>Ti trovi in: <a href="index.html">Home</a> > <strong>Assistenza</strong></span>
             </div>
-        </div>
+        </header>
+        
+        <main class="faq-container">
+            <div class="faq-content">
+                <h1>Assistenza VAPOR</h1>
+                <div class="faq">
+                    <div class="faq-item">
+                        <label class="faq-question" for="faq1">Come posso contattare l'assistenza?</label>
+                        <input type="checkbox" id="faq1" class="faq-input">
+                        <div class="faq-answer">Puoi contattarci tramite email all'indirizzo supporto@example.com.</div>
+                    </div>
+                    <div class="faq-item">
+                        <label class="faq-question" for="faq2">Quali sono gli orari di supporto?</label>
+                        <input type="checkbox" id="faq2" class="faq-input">
+                        <div class="faq-answer">Il nostro supporto è disponibile dal lunedì al venerdì, dalle 9:00 alle 18:00.</div>
+                    </div>
+                    <div class="faq-item">
+                        <label class="faq-question" for="faq3">Quanto tempo ci vuole per ricevere una risposta?</label>
+                        <input type="checkbox" id="faq3" class="faq-input">
+                        <div class="faq-answer">Di solito rispondiamo entro 24 ore nei giorni lavorativi.</div>
+                    </div>
+                </div>
+            </div>
+            <aside class="faq-sidebar">
+                <h2>Contatti</h2>
+                <ul>
+                    <li>📞 Numero assistenza</li>
+                    <li>📧 Mail assistenza</li>
+                    <li>⏰ Orari assistenza</li>
+                </ul>
+            </aside>
+        </main>
+        
+
+        <footer>
+            <!-- Tabella del footer -->
+            <table class="footer-table">
+                <tr>
+                    <td><a href="Assistenza_e_contatti.html">Assistenza</a></td>
+                    <td><a href="aboutus.html">La nostra storia</a></td>
+                </tr>
+            </table>
+            <!-- Copyright -->
+            <p>© 2025 VAPOR - Videogames' Useless Opinions</p>
+        </footer>
+        
     </body>
 </html>
