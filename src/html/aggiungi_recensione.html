@@ -2,55 +2,89 @@
 <html lang="it">
     <head>
         <meta charset="UTF-8">
-        <title>VAPOR - Videogames's usless opinions </title>
+        <title>VAPOR - Videogames' Useless Opinions</title>
         <meta name="description" content="Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming">
-        <meta name="keyword" content="videogioco,evento,patch,aggiornamento,biblioteca">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-        
+        <meta name="keywords" content="videogioco, evento, patch, aggiornamento, biblioteca">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
-    <header>
-        <h1>Categorie videoludiche</h1>
-    </header>
-
-    <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="index.html" lang="en">Categorie</a> &gt; Aggiungi recensione</p>
-    </nav>
-
-    <nav id="menu">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><span lang="en">Categorie</span></li>
-            <li><a href="prossimeuscite.html">Prossime uscite</a></li>
-            <li><a href="Assistenza/contatti.html">Assistenza/contatti</a></li>
-            <li><a href="as.html">La nostra storia</a></li>
-            <li><a href="profilo.html">Profilo</a></li>
-        </ul>
-    </nav>
-
     <body>
-        <!-- Spazio per il nome in alto centrale -->
-        <div class="nome-centrale">Nome Videogioco</div>
-    
-        <!-- Box per inserire una recensione -->
-        <textarea class="testo-box" placeholder="Inserisci qui la tua recensione"></textarea>
-    
-        <!-- Container per stelle e pulsante di conferma -->
-        <div class="container">
-            <!-- Stelle per la valutazione (a sinistra) -->
-            <div class="valutazione">
-                <span class="stella" data-valore="1">&#9733;</span>
-                <span class="stella" data-valore="2">&#9733;</span>
-                <span class="stella" data-valore="3">&#9733;</span>
-                <span class="stella" data-valore="4">&#9733;</span>
-                <span class="stella" data-valore="5">&#9733;</span>
-            </div>
-    
-            <!-- Pulsante di conferma (a destra) -->
-            <button class="conferma-button">Conferma</button>
-        </div>
-    
-    </body>
+        <header>
+            <!-- Tabella di navigazione principale -->
+            <table class="header-table">
+                <tr>
+                    <td class="logo-cell"><img src="../assets/img_transparent.png" alt="Logo VAPOR" class="logo"></td>
+                    <td><a href="categorie.html">Categorie</a></td>
+                    <td><a href="eventi.html">Prossimi eventi</a></td>
+                    <td><a href="libreria.html">Libreria</a></td>
+                    <td><a href="profilo.html">Profilo</a></td>
+                </tr>
+            </table>
 
+            <!-- Barra di ricerca -->
+            <div class="search-container">
+                <input type="text" placeholder="Cerca..." class="search-box">
+                <button class="search-button">
+                    <img src="../assets/search_white.png" alt="Cerca" class="search-icon">
+                </button>
+            </div>
+
+            <!-- Sezione per la pagina corrente -->
+            <div class="current-page">
+                <span>Ti trovi in: <a href="index.html">Home</a> > <strong>Videogioco specifico</strong> > <strong>Aggiungi recensione</strong> </span>  
+            </div>
+        </header>
+        <main>
+                <div class="videogame_info">
+                    <h1>Aggiungi recensione</h1>
+                    <h2>Nome videogioco</h2>
+                    <p>Foto della copertina del videogioco</p>
+                </div>
+                <aside>
+                    <form class="review_form">
+                        <label for="stars">Valutazione:</label>
+                            <div class="stars">
+                                <input type="radio" id="star1" name="stars" value="1">
+                                <label for="star1" class="star">&#9733;</label>
+
+                                <input type="radio" id="star2" name="stars" value="2">
+                                <label for="star2" class="star">&#9733;</label>
+
+                                <input type="radio" id="star3" name="stars" value="3">
+                                <label for="star3" class="star">&#9733;</label>
+
+                                <input type="radio" id="star4" name="stars" value="4">
+                                <label for="star4" class="star">&#9733;</label>
+
+                                <input type="radio" id="star5" name="stars" value="5">
+                                <label for="star5" class="star">&#9733;</label>
+                            </div>
+
+            
+                        <label for="reviewTitle">Titolo della recensione:</label>
+                        <input type="text" id="reviewTitle" name="reviewTitle" placeholder="Inserisci il titolo della recensione" required>
+            
+                        <label for="reviewBody">Recensione:</label>
+                        <textarea id="reviewBody" name="reviewBody" placeholder="Scrivi la tua recensione..." required style="resize: none;"></textarea>
+            
+                        <button type="submit">Invia Recensione</button>
+                    </form>
+                </aside>
+        </main>
+        
+        
+        
+
+        <footer>
+            <!-- Tabella del footer -->
+            <table class="footer-table">
+                <tr>
+                    <td><a href="Assistenza_e_contatti.html">Assistenza</a></td>
+                    <td><a href="aboutus.html">La nostra storia</a></td>
+                </tr>
+            </table>
+            <!-- Copyright -->
+            <p>© 2025 VAPOR - Videogames' Useless Opinions</p>
+        </footer>
+        
+    </body>
 </html>
