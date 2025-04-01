@@ -1,0 +1,13 @@
+.header-table td:not(.logo) {
+        display: none; /* Nasconde gli altri elementi della tabella */
+    }
+
+    /* Centriamo il logo nel contesto mobile */
+.header-table {
+        justify-content: center; /* Centra orizzontalmente la tabella */
+    }
+
+    /* Modifichiamo la dimensione del logo per i dispositivi mobili */
+.logo {
+        width: 100px; /* Riduce la dimensione del logo per schermi piccoli */
+    }
