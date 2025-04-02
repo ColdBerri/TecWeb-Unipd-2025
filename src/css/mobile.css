@@ -1,13 +1,25 @@
-.header-table td:not(.logo) {
-        display: none; /* Nasconde gli altri elementi della tabella */
-    }
+.header-table { /*rendere il blocco flessibile per disporre gli elementi*/
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center
+}
 
-    /* Centriamo il logo nel contesto mobile */
-.header-table {
-        justify-content: center; /* Centra orizzontalmente la tabella */
-    }
+/* allineamento centrale del logo */
+.logo-cell{
+    flex: 80%;
+    min-height: 1em;
+    margin: 0em 1em
+}    
+/*gli altri td (class o id) dovrebbero essere display: none */
 
-    /* Modifichiamo la dimensione del logo per i dispositivi mobili */
-.logo {
-        width: 100px; /* Riduce la dimensione del logo per schermi piccoli */
-    }
+
+/* manca breadcrumb nell'html */
+#breadcrumb[data-hambOn="false"] {
+    border-radius: 10px;
+    margin-right: .3em;
+    margin-left: .3em
+}
+
+
+
