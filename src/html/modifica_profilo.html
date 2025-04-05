@@ -10,15 +10,15 @@
     <body>
         <header>
             <!-- Tabella di navigazione principale -->
-            <table class="header-table">
-                <tr>
-                    <td class="logo-cell"><a href="index.html"><img src="../assets/img_transparent.png" alt="Logo VAPOR" class="logo"></a></td>
-                    <td><a href="categorie.html">Categorie</a></td>
-                    <td><a href="eventi.html">Prossimi eventi</a></td>
-                    <td><a href="libreria.html">Libreria</a></td>
-                    <td><a href="profilo.html">Profilo</a></td>
-                </tr>
-            </table>
+            <div class="header-table">
+                <a href="index.html"><h1 class="logo" >Vapor</h1></a>
+                <nav>
+                    <div><a href="categorie.html">Categorie</a></div>
+                    <div><a href="eventi.html">Prossimi eventi</a></div>
+                    <div><a href="libreria.html">Libreria</a></div>
+                    <div><a href="profilo.html">Profilo</a></div>
+                </nav>
+            </div>
 
             <!-- Barra di ricerca -->
             <div class="search-container">
@@ -35,7 +35,7 @@
         </header>
 
         <main>
-            <h2 class="welcome-message">Modifica Profilo</h2>
+            <h1 class="welcome-message">Modifica Profilo</h1>
             <form action="/modify" method="POST" class="profile-form">
                 <fieldset>
                     <label for="username">Username:</label>
@@ -74,14 +74,10 @@
         
 
         <footer>
-            <!-- Tabella del footer -->
-            <table class="footer-table">
-                <tr>
-                    <td><a href="Assistenza_e_contatti.html">Assistenza</a></td>
-                    <td><a href="aboutus.html">La nostra storia</a></td>
-                </tr>
-            </table>
-            <!-- Copyright -->
+            <p>
+                <a href="Assistenza_e_contatti.html">Assistenza</a>
+                <a href="aboutus.html">La nostra storia</a>
+            </p>
             <p>© 2025 VAPOR - Videogames' Useless Opinions</p>
         </footer>
         

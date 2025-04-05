@@ -3,7 +3,8 @@
     --headerbgcolor: #1b2838;
     --textcolor: #000000;
     --linkcolor: #07026b;
-    --linkvisited: #e87e04;
+    /*--linkvisited: #e87e04;*/
+    --linkvisited: Red;
     --bandiera: #ff0000;
     --bgfooter: #aaaaaa;
     --linkvisitedFooter: #0606fb;
@@ -24,6 +25,44 @@ a:visited {
 footer a:visited {
     color: var(--linkvisitedFooter);
 }
+
+/* css modificato */
+
+.header-table {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    overflow: hidden;
+    padding:1em;
+}
+
+nav div {
+    float: left;
+    margin-right: 3em;
+}
+
+.logo{    
+    text-indent: -999em;
+    background-image: url('../assets/img_transparent.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+footer {
+    width: 100%;
+    overflow: hidden;
+}
+
+footer{
+    float: left;
+    text-align: center;
+}
+
+/*==========================*/
 
 /* Rimuove i margini e padding di default del body e di altri elementi */
 body, html {

@@ -10,38 +10,39 @@
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
         
     </head>
-    <header>
-        <h1>Categorie videoludiche</h1>
-    </header>
-    <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="index.html" lang="en">Home</a> &gt; Aggiungi Evento</p>
-    </nav>
-
-    <nav id="menu">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><span lang="en">Categorie</span></li>
-            <li><a href="prossimeuscite.html">Prossime uscite</a></li>
-            <li><a href="Assistenza/contatti.html">Assistenza/contatti</a></li>
-            <li><a href="as.html">La nostra storia</a></li>
-            <li><a href="profilo.html">Profilo</a></li>
-        </ul>
-    </nav>
-
     <body>
-        <div>
-            <!-- Box per inserire una foto -->
+        <header>
+            <h1>Categorie videoludiche</h1>
+        </header>
+        <nav id="breadcrumb">
+            <p>Ti trovi in: <a href="index.html" lang="en">Home</a> &gt; Aggiungi Evento</p>
+        </nav>
+
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><span lang="en">Categorie</span></li>
+                <li><a href="prossimeuscite.html">Prossime uscite</a></li>
+                <li><a href="Assistenza/contatti.html">Assistenza/contatti</a></li>
+                <li><a href="as.html">La nostra storia</a></li>
+                <li><a href="profilo.html">Profilo</a></li>
+            </ul>
+        </nav>
+
+        
             <div>
-                <input type="file" id="foto-input" accept="image/*">
-                <label for="foto-input">Carica una foto</label>
-                <img id="anteprima-foto" src="#" alt="Anteprima foto" style="display: none;">
+                <!-- Box per inserire una foto -->
+                <div>
+                    <input type="file" id="foto-input" accept="image/*">
+                    <label for="foto-input">Carica una foto</label>
+                    <img id="anteprima-foto" src="#" alt="Anteprima foto" style="display: none;">
+                </div>
+        
+                <!-- Box per inserire un testo -->
+                <div>
+                    <textarea id="testo-input" placeholder="Scrivi qui il tuo testo..."></textarea>
+                </div>
             </div>
-    
-            <!-- Box per inserire un testo -->
-            <div>
-                <textarea id="testo-input" placeholder="Scrivi qui il tuo testo..."></textarea>
-            </div>
-        </div>
 
     </body>
 
