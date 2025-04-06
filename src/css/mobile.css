@@ -1,25 +1,61 @@
-.header-table { /*rendere il blocco flessibile per disporre gli elementi*/
+.header-table {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center
 }
 
-/* allineamento centrale del logo */
-.logo-cell{
-    flex: 80%;
-    min-height: 1em;
-    margin: 0em 1em
-}    
-/*gli altri td (class o id) dovrebbero essere display: none */
-
-
-/* manca breadcrumb nell'html */
-#breadcrumb[data-hambOn="false"] {
-    border-radius: 10px;
-    margin-right: .3em;
-    margin-left: .3em
+.logo {
+    flex: 100%;
 }
 
+nav {
+        display: none;
+    }
 
+nav ul {
+        display: none;
+    }
+    
 
+.menu-icon {
+        display: flex;
+    }
+
+.collapsed {
+    display: none;
+}
+
+#nav-menu {
+    display: block;
+}
+
+.menu-icon {
+    cursor: pointer;
+    transition-duration: 0.1s;
+    border: none;
+    border-radius: 50%;
+    display: inline-flex;
+    height: 2.8rem;
+    width: 2.8rem;
+    margin-right: .8rem;
+    background-image: url(../images/hamburger/hamb.png);
+    text-indent: -99999em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center
+}
+
+.search-container {
+        padding: 10px 15px; /* Aggiusta il padding sui dispositivi mobili */
+    }
+
+.search-box {
+        width: 70%; /* Riduci la larghezza della casella di ricerca */
+        padding: 8px; /* Riduci il padding della casella */
+    }
+
+.search-button img {
+        width: 18px; /* Riduci la dimensione dell'icona di ricerca */
+        height: 18px; /* Riduci la dimensione dell'icona di ricerca */
+    }

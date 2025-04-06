@@ -14,6 +14,7 @@
     --login-button-bg: #28a745; /* Colore di sfondo del pulsante di login */
 }
 
+
 a {
     color: var(--linkcolor);
 }
@@ -27,13 +28,6 @@ footer a:visited {
 }
 
 /* css modificato */
-
-.header-table {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 nav {
     overflow: hidden;
     padding:1em;
@@ -87,16 +81,10 @@ header {
 .header-table {
     width: 100%;
     display: flex; /* Utilizzo di Flexbox per una distribuzione uniforme */
-    justify-content: space-evenly; /* Equidistanza tra le voci */
+    justify-content: space-between; 
     align-items: center; /* Centra verticalmente */
-    padding: 0 20px; /* Distanza dai bordi laterali */
-    border-collapse: collapse; /* Rimuove gli spazi tra le celle */
+    padding: 10px 20px; /* Distanza dai bordi laterali */
     text-transform: uppercase; /* Trasforma il testo in maiuscolo */
-}
-
-/* Cella della tabella (con padding tra le celle) */
-.header-table td {
-    padding: 10px 20px; /* Spaziatura tra le celle */
 }
 
 /* Logo */
@@ -116,6 +104,48 @@ header {
 .header-table a:hover {
     color: var(--bandiera); /* Colore al passaggio del mouse (come il logo di Steam) */
 }
+
+#nav-menu {
+    display: flex; /* Usa Flexbox per disporre i link del menu in orizzontale */
+    gap: 30px; /* Spazio tra i vari link */
+    margin-left: 20px; /* Distanza tra il logo e il menu */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Rimuovi l'elenco puntato */
+#nav-menu ul {
+    list-style-type: none; /* Rimuove i pallini dall'elenco */
+    margin: 0; /* Rimuove il margine predefinito */
+    padding: 0; /* Rimuove il padding predefinito */
+    display: flex; /* Dispone le voci orizzontalmente */
+}
+
+/* Stili per ogni voce di menu */
+#nav-menu li {
+    display: inline-block; /* Assicura che le voci siano orizzontali */
+}
+
+/* Stili per i link del menu */
+#nav-menu a {
+    text-decoration: none; /* Rimuove la sottolineatura dai link */
+    color: #000; /* Colore del testo del link */
+    font-size: 22px; /* Dimensione del font */
+    font-weight: 500; /* Peso del font */
+    padding: 5px 10px; /* Padding intorno al testo */
+    transition: color 0.3s ease; /* Transizione per l'effetto hover */
+  /*  font-weight: bold;*/
+    color: white;
+
+}
+
+#nav-menu a:hover {
+    color: red; /* Cambia il colore al passaggio del mouse */
+}
+
+
+
 
 /* Sezione per il navigatore della pagina corrente */
 .current-page {
