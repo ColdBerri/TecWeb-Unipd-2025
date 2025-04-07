@@ -5,24 +5,35 @@
         <title>VAPOR - Videogames' Useless Opinions</title>
         <meta name="description" content="Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming">
         <meta name="keywords" content="videogioco, evento, patch, aggiornamento, biblioteca">
-        <link rel="stylesheet" type="text/css" href="../css/style.css">
-        <link rel="stylesheet" type="text/css" media ="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mobile.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../css/tablet.css" media="screen and (max-width:1024px)">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css" media="screen and (max-width:600px)">
+        <script src="../js/mburger.js"></script>
     </head>
     <body>
         <header>
-            <!-- Tabella di navigazione principale -->
-            <div class="header-table">
-                <a href="index.html"><h1 class="logo" >Vapor</h1></a> 
-                
-                <nav id="nav-menu" class="collapsed">
-                <ul>
-                    <li><a href="categorie.html">Categorie</a></li>
-                    <li><a href="eventi.html">Prossimi eventi</a></li>
-                    <li><a href="libreria.html">Libreria</a></li>
-                    <li><a href="profilo.html">Profilo</a></li>
-                        </ul>
+
+            <a href="index.html"><h1 class="logo" >Vapor</h1></a> 
+            <a class="burger" onclick="apriMenu()"><img src="../assets/mburger.png" alt="Apri menu"></a>
+                <nav class="nav-menu">
+                    <ul class="barraCentrale">
+                        <li><a href="categorie.html">Categorie</a></li>
+                        <li><a href="eventi.html">Prossimi eventi</a></li>
+                        <li><a href="libreria.html">Libreria</a></li>
+                        <li><a href="profilo.html">Profilo</a></li>
+                    </ul>
                 </nav>
-            </div>
+
+                <nav class="nascondi">
+                    <ul>
+                        <li ><a onclick="chiudiMenu()"><img src="../assets/chiudi.png" alt="chiudi menu"></a></li>
+                        <li><a href="categorie.html">Categorie</a></li>
+                        <li><a href="eventi.html">Prossimi eventi</a></li>
+                        <li><a href="libreria.html">Libreria</a></li>
+                        <li><a href="profilo.html">Profilo</a></li>
+                    </ul>
+                </nav>
+
             <!-- Barra di ricerca -->
             <div class="search-container">
                 <input type="text" placeholder="Cerca..." class="search-box">
@@ -32,7 +43,7 @@
             </div>
 
             <!-- Sezione per la pagina corrente -->
-            <div class="current-page">
+            <div class="breadcrump">
                 <span>Ti trovi in: <strong>Home</strong></span>
             </div>
         </header>

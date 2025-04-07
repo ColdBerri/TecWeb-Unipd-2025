@@ -1,9 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
 :root {
     --bgcolor: #dddddd;
     --headerbgcolor: #1b2838;
     --textcolor: #000000;
     --linkcolor: #07026b;
-    /*--linkvisited: #e87e04;*/
+    --linkvisited: #e87e04;
     --linkvisited: Red;
     --bandiera: #ff0000;
     --bgfooter: #aaaaaa;
@@ -13,6 +18,15 @@
     --login-border: #ccc; /* Colore del bordo della scatola di login */
     --login-button-bg: #28a745; /* Colore di sfondo del pulsante di login */
 }
+
+.nascondi{
+    display: none;
+}
+
+.menuHamberger, .burger{
+    display: none;
+}
+
 
 
 a {
@@ -28,6 +42,15 @@ footer a:visited {
 }
 
 /* css modificato */
+
+#hamburger{
+    display: none;
+}
+
+#chiudo-menu{
+    display: none;
+}
+
 nav {
     overflow: hidden;
     padding:1em;
@@ -105,7 +128,7 @@ header {
     color: var(--bandiera); /* Colore al passaggio del mouse (come il logo di Steam) */
 }
 
-#nav-menu {
+.nav-menu {
     display: flex; /* Usa Flexbox per disporre i link del menu in orizzontale */
     gap: 30px; /* Spazio tra i vari link */
     margin-left: 20px; /* Distanza tra il logo e il menu */
@@ -115,7 +138,7 @@ header {
 }
 
 /* Rimuovi l'elenco puntato */
-#nav-menu ul {
+.nav-menu ul {
     list-style-type: none; /* Rimuove i pallini dall'elenco */
     margin: 0; /* Rimuove il margine predefinito */
     padding: 0; /* Rimuove il padding predefinito */
@@ -123,12 +146,12 @@ header {
 }
 
 /* Stili per ogni voce di menu */
-#nav-menu li {
+.nav-menu li {
     display: inline-block; /* Assicura che le voci siano orizzontali */
 }
 
 /* Stili per i link del menu */
-#nav-menu a {
+.nav-menu a {
     text-decoration: none; /* Rimuove la sottolineatura dai link */
     color: #000; /* Colore del testo del link */
     font-size: 22px; /* Dimensione del font */
@@ -140,7 +163,7 @@ header {
 
 }
 
-#nav-menu a:hover {
+.nav-menu a:hover {
     color: red; /* Cambia il colore al passaggio del mouse */
 }
 
@@ -148,7 +171,7 @@ header {
 
 
 /* Sezione per il navigatore della pagina corrente */
-.current-page {
+.breadcrump {
     background-color: #2d3b47; /* Colore di sfondo simile all'header */
     padding: 10px 20px;
     color: white;
@@ -629,60 +652,6 @@ main {
     padding: 10px; /* Opzionale: aggiunge un po' di spazio interno */
 }
 
-<<<<<<< HEAD
+/*
 
 
-
-=======
-/*CSS PER MOBILE*/
-@media screen and (max-width: 768px){
-    
-    header {
-        font-size: 20px; /* Riduce la dimensione del font nell'header */
-    }
-    
-    .logo {
-        width: 100px; /* Riduce la dimensione del logo */
-    }
-
-    .header-table {
-        flex-direction: column;
-        align-items: flex-start; /* Centra i link in verticale */
-        padding: 10px;
-    }
-
-    .header-table a {
-        font-size: 18px; /* Riduce la dimensione del font dei link */
-        padding: 5px 0;
-    }
-
-    .search-container {
-        flex-direction: column;
-        width: 100%; /* La barra di ricerca occupa tutta la larghezza */
-    }
-
-    .search-box {
-        width: 90%; /* La barra di ricerca occupa il 90% della larghezza */
-        margin-bottom: 10px; /* Spazio sotto la barra di ricerca */
-    }
-
-    .search-button {
-        width: 90%; /* Il bottone occupa il 90% della larghezza */
-    }
-
-    .footer-table {
-        flex-direction: column;
-        align-items: flex-start; /* Centra i link in verticale */
-        padding: 10px;
-    }
-
-    .footer-table td {
-        padding: 5px 10px; /* Riduce il padding delle celle nel footer */
-    }
-
-    body {
-        font-size: 14px; /* Riduce la dimensione del font generale */
-    }
-
-}
->>>>>>> 3e46bf7bcce8d310b8934525278e014c8fe7cdd9
