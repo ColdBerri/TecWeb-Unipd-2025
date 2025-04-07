@@ -1,3 +1,93 @@
 nav.menuHamberger{
     width: 70%;
 }
+
+ font-size: 2em;
+}
+
+.burger {
+    text-decoration: none;  /* Rimuove la sottolineatura */
+}
+
+.menu-box {
+    padding: 10px 20px;  /* Padding per fare il riquadro abbastanza grande */
+    color: var(--bgcolor);    /* Colore del testo bianco */
+    font-size: 1.2em;  /* Dimensione del font */
+    font-weight: bold;  /* Rendere il testo più spesso */
+    text-align: center;  /* Allinea il testo al centro */
+    cursor: pointer;  /* Cambia il cursore quando si passa sopra il riquadro */
+}
+
+
+
+/* Assicurati che il link a non abbia sottolineatura */
+.burger:focus,
+.burger:hover {
+    text-decoration: none;  /* Rimuove la sottolineatura anche al passaggio del mouse o al focus */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Spazia il logo e gli altri elementi */
+    align-items: center;
+    position: relative;
+}
+
+/* Centrare il logo */
+.logo {
+    flex-grow: 1; /* Permette al logo di occupare lo spazio disponibile */
+    text-align: center; /* Centra il testo */
+    font-size: 2em;
+}
+
+
+.nascondi {
+    position: relative;  /* Permette di posizionare la X in modo assoluto dentro la nav */
+}
+
+/* Stile per la X */
+.exit {
+    position: absolute;
+    top: 10px;  /* Distanza dalla parte superiore del nav */
+    text-decoration: none;  /* Rimuove la sottolineatura dal link */
+}
+
+.menu-box2 {
+    padding: 10px 20px;  /* Padding per fare il riquadro abbastanza grande */
+    color: white;  /* Colore del testo bianco */
+    font-size: 2em;  /* Dimensione del font */
+    text-align: center;  /* Allinea il testo al centro */
+    cursor: pointer;  /* Cambia il cursore quando si passa sopra il riquadro */
+
+}
+
+
+/* Stile per la barra del menu */
+.nav-menu, .nascondi {
+    background-color: #333;  /* Colore di sfondo per il menu */
+}
+
+/* Aggiungi Flexbox per centrare le voci del menu */
+.barraCentrale {
+    display: flex;
+    flex-direction: column;  /* Dispone gli elementi in colonna */
+    align-items: center;  /* Centra gli elementi orizzontalmente */
+    justify-content: center;  /* Centra gli elementi verticalmente */
+    padding: 0;
+    margin: 0;
+    width: 100sx%;  /* Assicura che la larghezza del menu occupi tutta la larghezza disponibile */
+}
+
+/* Stile per le voci di menu */
+.barraCentrale a, .barraCentrale2 a {
+    color: white;  /* Colore del testo bianco */
+    font-size: 1.2em;  /* Puoi modificare la dimensione del testo */
+    padding: 5px 10px;  /* Aggiungi padding per un po' di spazio attorno al testo */
+}
+
+/* Stile per i list items nel menu */
+.barraCentrale li, .barraCentrale2 li {
+    list-style: none;  /* Rimuove i puntini del list */
+    margin: 10px 0;  /* Spazio tra gli elementi del menu */
+
+}
