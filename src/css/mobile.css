@@ -9,6 +9,21 @@ nav.menuHamberger{
     text-decoration: none;  /* Rimuove la sottolineatura */
 }
 
+.burger img {
+  width: 2.3em; /* Imposta la larghezza dell'immagine a 32px (o qualsiasi valore desiderato) */
+  height: auto; /* Mantiene le proporzioni dell'immagine */
+  margin-top: -0.3em; /* Sposta il bottone di ricerca verso l'alto */
+  cursor: pointer; 
+
+}
+
+.exit img {
+      width: 2.3em; /* Imposta la larghezza dell'immagine a 32px (o qualsiasi valore desiderato) */
+  height: auto;
+    margin-left: -2em;
+      cursor: pointer; 
+}
+
 .menu-box {
     padding: 10px 20px;  /* Padding per fare il riquadro abbastanza grande */
     color: var(--bgcolor);    /* Colore del testo bianco */
@@ -31,13 +46,6 @@ nav.menuHamberger{
     justify-content: space-between; /* Spazia il logo e gli altri elementi */
     align-items: center;
     position: relative;
-}
-
-/* Centrare il logo */
-.logo {
-    flex-grow: 1; /* Permette al logo di occupare lo spazio disponibile */
-    text-align: center; /* Centra il testo */
-    font-size: 2em;
 }
 
 

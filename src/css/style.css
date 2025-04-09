@@ -61,12 +61,19 @@ nav div {
     margin-right: 3em;
 }
 
-.logo{    
+header h1{    
     text-indent: -999em;
     background-image: url('../assets/img_transparent.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    transition: transform 0.3s ease; /* Aggiunge una transizione per l'effetto di ingrandimento */
+      transform: scale(2.0); /* Ingrandisce l'immagine del */
+      margin-top: 1em; /* Aggiunge 20px di spazio sopra l'immagine */
+  margin-bottom: 0.9em; /* Aggiunge 20px di spazio sotto l'immagine */
+
+
+
 }
 
 footer {
@@ -108,12 +115,6 @@ header {
     align-items: center; /* Centra verticalmente */
     padding: 10px 20px; /* Distanza dai bordi laterali */
     text-transform: uppercase; /* Trasforma il testo in maiuscolo */
-}
-
-/* Logo */
-.logo {
-    width: 120px; /* Dimensione del logo */
-    height: auto;
 }
 
 /* Stile per i link della navbar */
