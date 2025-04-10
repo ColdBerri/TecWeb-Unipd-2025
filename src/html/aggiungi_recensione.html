@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>VAPOR - Videogames' Useless Opinions</title>
+        <meta name="description" content="Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming">
+        <meta name="keywords" content="videogioco, evento, patch, aggiornamento, biblioteca">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <header>
+            <!-- Tabella di navigazione principale -->
+            <table class="header-table">
+                <tr>
+                    <td class="logo-cell"><img src="../assets/img_transparent.png" alt="Logo VAPOR" class="logo"></td>
+                    <td><a href="categorie.html">Categorie</a></td>
+                    <td><a href="eventi.html">Prossimi eventi</a></td>
+                    <td><a href="libreria.html">Libreria</a></td>
+                    <td><a href="profilo.html">Profilo</a></td>
+                </tr>
+            </table>
+
+            <!-- Barra di ricerca -->
+            <div class="search-container">
+                <input type="text" placeholder="Cerca..." class="search-box">
+                <button class="search-button">
+                    <img src="../assets/search_white.png" alt="Cerca" class="search-icon">
+                </button>
+            </div>
+
+            <!-- Sezione per la pagina corrente -->
+            <div class="current-page">
+                <span>Ti trovi in: <a href="index.html">Home</a> > <strong>Videogioco specifico</strong> > <strong>Aggiungi recensione</strong> </span>  
+            </div>
+        </header>
+        <main>
+                <div class="videogame_info">
+                    <h1>Aggiungi recensione</h1>
+                    <h2>Nome videogioco</h2>
+                    <p>Foto della copertina del videogioco</p>
+                </div>
+                <aside>
+                    <form class="review_form">
+                        <label>Valutazione:</label>
+                        <div class="stars">
+                            <!-- input + label per ogni stella roba da fare  -->
+                        </div>
+
+            
+                        <label for="reviewTitle">Titolo della recensione:</label>
+                        <input type="text" id="reviewTitle" name="reviewTitle" placeholder="Inserisci il titolo della recensione" required>
+            
+                        <label for="reviewBody">Recensione:</label>
+                        <textarea id="reviewBody" name="reviewBody" placeholder="Scrivi la tua recensione..." required style="resize: none;"></textarea>
+            
+                        <button type="submit">Invia Recensione</button>
+                    </form>
+                </aside>
+        </main>
+        
+        
+        
+
+        <footer>
+            <!-- Tabella del footer -->
+            <table class="footer-table">
+                <tr>
+                    <td><a href="Assistenza_e_contatti.html">Assistenza</a></td>
+                    <td><a href="aboutus.html">La nostra storia</a></td>
+                </tr>
+            </table>
+            <!-- Copyright -->
+            <p>© 2025 VAPOR - Videogames' Useless Opinions</p>
+        </footer>
+        
+    </body>
+</html>

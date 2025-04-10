@@ -1,0 +1,557 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --bgcolor: #dddddd;
+    --headerbgcolor: #1b2838;
+    --textcolor: #000000;
+    --linkcolor: #07026b;
+    --linkvisited: #e87e04;
+    --linkvisited: Red;
+    --bandiera: #ff0000;
+    --bgfooter: #aaaaaa;
+    --linkvisitedFooter: #0606fb;
+    --login-bgcolor: #1b2838; /* Sfondo della pagina di login uguale all'header */
+    --login-box-bgcolor: #080c11; /* Colore di sfondo della scatola di login */
+    --login-border: #ccc; /* Colore del bordo della scatola di login */
+    --login-button-bg: #28a745; /* Colore di sfondo del pulsante di login */
+}
+
+body{
+    background-color: var(--headerbgcolor);
+    color: var(--textcolor);
+    font-size: 100%;
+    font-family: "Lexend", "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+main, html {
+    background-color: var(--bgcolor);
+    color: var(--textcolor);
+}
+
+/*===== LINK =====*/
+
+a {
+    color: var(--linkcolor);
+}
+
+a:visited {
+    color: var(--linkvisited);
+}
+
+footer a:visited {
+    color: var(--linkvisitedFooter);
+}
+
+header a{
+    color: white;
+}
+
+header a{
+    color: var(--bgcolor);
+}
+
+/*===== HEADER =====*/
+
+header{
+    text-align: center;
+    width: 100%;
+}
+
+.nascondi{
+    display: none;
+}
+
+.menuHamberger, .burger{
+    display: none;
+}
+
+.menu {
+    text-align: center;
+    background-color: var(--headerbgcolor);
+    padding: 1em 2em;
+    white-space: nowrap;
+}
+
+.logo {
+    display: inline-block;
+    padding: 0em 1em 1em 1em; 
+    margin: 0.4em 1em 0em;
+    vertical-align: middle;
+    text-indent: -999em;
+    background-image: url(../assets/rsz_img_transparent.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 3em;
+    width: 1vw;
+}
+
+.menu ul {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    margin-top: 1em;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-right: 2vw;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.breadcrump {
+    background-color: #2d3b47; 
+    padding: 1em 2em;
+    color: white;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.search-container {
+    width: fit-content;
+    margin: 1em auto; 
+    background-color: var(--headerbgcolor);
+    text-align: center;
+}
+
+.search-box {
+    padding: 0.3125em; 
+    width: 18.75em; 
+    border: 1px solid #ccc;
+    border-radius: 1.5625em;
+    font-size: 1em; 
+    margin-right: 0.625em;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.search-icon {
+    width: 2em; /* Dimensione dell'icona */
+    height: 2em;
+}
+
+.search-icon:hover {
+    content: url('../assets/search_red.png'); /* Sostituisce l'immagine con search_red.png al passaggio del mouse */
+}
+
+/*=====MAIN=====*/
+
+.library-search-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 10px 20px;
+}
+
+.library-search-box {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px;
+}
+
+.library-search-button {
+    background-color: var(--headerbgcolor);
+    border: none;
+    padding: 8px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.library-search-button img {
+    width: 16px;
+    height: 16px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    margin: 15px auto;
+    max-width: 600px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 30px;
+    border: 3px solid #444;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info p {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.welcome-message {
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 1px;
+    max-width: 600px;  /* Larghezza uguale alla .profile-container */
+    margin-left: auto;
+    margin-right: auto; /* Centra il testo sopra il box */
+}
+
+.profile-settings {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-settings a {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--linkcolor);
+    text-decoration: none;
+}
+
+.profile-settings a:hover {
+    text-decoration: underline;
+}
+
+.profile-settings :visited
+{
+    color: var(--linkvisited)
+}
+
+.profile-form {
+    width: 30%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-form fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-form label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.profile-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.profile-form input[readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+.profile-form button {
+    width: 48%; /* Set width to 48% for both buttons */
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--headerbgcolor);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.profile-form .button-container {
+    display: flex;
+    justify-content: space-between; /* Distribute buttons evenly */
+}
+
+.save-button {
+    background-color: #28a745; /* Green for save */
+}
+
+.back-button {
+    background-color: #dc3545; /* Red for cancel */
+}
+
+.back-button:hover {
+    background-color: var(--bandiera);
+}
+
+.save-button:hover {
+    background-color:#1c7731;
+}
+
+/* Styling della pagina di login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--login-bgcolor); /* Imposta lo sfondo della pagina di login */
+    overflow-y: auto; /* Consente lo scorrimento verticale se il contenuto è troppo lungo */
+}
+
+/* Box di login */
+.login-box {
+    background-color: var(--login-box-bgcolor);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Imposta una larghezza massima per la scatola di login */
+    text-align: center;
+    max-height: 90vh; /* Impedisce al box di essere più alto di 90% della finestra */
+    overflow-y: auto; /* Permette lo scorrimento verticale se necessario */
+}
+
+/* Logo nella schermata di login */
+.login-logo {
+    width: 160px;
+    margin-bottom: 20px;
+}
+
+/* Messaggio di benvenuto */
+.login-welcome-message {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Stile per i campi di input */
+.login-box input {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0;
+    border: 0px solid var(--login-border);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Contenitore per i pulsanti */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Distribuisce i pulsanti */
+    margin-top: 40px;
+    width: 100%; /* Assicura che la larghezza totale sia occupata dai due pulsanti */
+    gap: 4%; /* Aggiunge uno spazio tra i due pulsanti */
+}
+
+/* Pulsante di login */
+.login-button, .cancel-button {
+    width: 48%; /* Aggiunge la stessa larghezza ai pulsanti */
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Pulsante di login */
+.login-button {
+    background-color: var(--login-button-bg);
+    color: white;
+}
+
+.login-button:hover {
+    background-color: #1c7731;
+}
+
+/* Pulsante di annullamento */
+.cancel-button {
+    background-color: #dc3545; /* Colore rosso */
+    color: white;
+}
+
+.cancel-button:hover {
+    background-color: #ab1d2b;
+}
+
+.faq {
+    max-width: 600px;
+    padding-left: 20px;
+}
+
+.faq-item {
+    background: #fff; /* Sfondo bianco */
+    border-radius: 10px; /* Angoli arrotondati */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra per effetto "staccato" */
+    padding: 15px;
+    margin-bottom: 10px; /* Spazio tra le domande */
+}
+
+.faq-question {
+    font-weight: bold;
+    color: var(--linkcolor);
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 5px;
+    padding: 10px;
+    border-top: 1px solid #ddd; /* Separatore sottile */
+}
+
+.faq-input {
+    display: none; /* Nasconde il checkbox */
+}
+
+.faq-input:checked + .faq-answer {
+    display: block; /* Mostra la risposta quando il checkbox è selezionato */
+}
+
+.faq-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    gap: 2em;
+}
+
+.faq-sidebar {
+    margin-top: 80px;
+    margin-right: 70px;
+    width: 25%; 
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-content {
+    width: 70%; 
+}
+
+aside {
+    width: 30%;
+    float: right;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin-right: 80px;
+    margin-top: 85px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.videogame_info{
+    width: 50%;
+    float: left;
+}
+.review_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.review_form label {
+    font-weight: bold;
+}
+
+.review_form input, .review_form textarea, .review_form select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.review_form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.review_form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review_form button:hover {
+    background-color: #45a049;
+}
+
+.stars {
+    display: flex;
+    gap: 10px;
+}
+
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars label {
+    font-size: 2em;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.stars input[type="radio"]:checked ~ label {
+    color: var(--linkcolor);
+}
+
+.stars input[type="radio"]:hover ~ label {
+    color: var(--linkcolor);
+}
+
+.stars input[type="radio"]:checked + label {
+    color: var(--linkcolor);
+}
+
+.stars label:hover {
+    color: var(--linkcolor); 
+}
+
+/*=====FOOTER=====*/
+
+footer {
+    width: 100%;
+    overflow: hidden;
+    float: left;
+    text-align: center;
+    background-color: var(--bgfooter);
+    color: var(--textcolor);
+    padding: 2em 0;
+    text-align: center;
+    margin-top: 0; /* Rimuove lo spazio sopra il footer */
+    position: relative; /* Mantiene il footer al di sotto del contenuto */
+}
+

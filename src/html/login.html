@@ -2,55 +2,35 @@
 <html lang="it">
     <head>
         <meta charset="UTF-8">
-        <title>VAPOR - Videogames's usless opinions </title>
-        <meta name="description" content="Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming">
-        <meta name="keyword" content="videogioco,evento,patch,aggiornamento,biblioteca">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+        <title>Login - VAPOR</title>
+        <meta name="description" content="Pagina di login per VAPOR - Videogames' Useless Opinions">
+        <meta name="keywords" content="videogioco, login, evento, gaming">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
-
     <body>
-
-        <header>
-            <h1>Login o registrati</h1>
-        </header>
-
-        <nav id="breadcrumb">
-            <p>Ti trovi in: <a href="index.html" lang="en">Home</a> &gt; Login o registrati</p>
-        </nav>
-
-        <nav id="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="categorie.html">Categorie</a></li>
-                <li><a href="prossimeuscite.html">Prossime uscite</a></li>
-                <li><a href="Assistenza/contatti.html">Assistenza/contatti</a></li>
-                <li><a href="as.html">La nostra storia</a></li>
-                <li><a href="profilo.html">Profilo</a></li>
-            </ul>
-        </nav>
-
-        <main>
-            <form action="/login" method="POST">
-                <fieldset>
-                  <legend>Accesso</legend>
-              
-                  <label for="username">Nome utente</label>
-                  <input type="text" id="username" name="username" required aria-describedby="username-desc">
-              
-                  <label for="password">Password</label>
-                  <input type="password" id="password" name="password" required aria-describedby="password-desc">
-              
-                  <button type="submit">Accedi</button>
-                </fieldset>
-              </form>
-        </main>
-
-        <footer>
-
-        </footer>
-
+        <div class="login-container">
+            <div class="login-box">
+                <a href="../html/index.html">
+                    <img src="../assets/img_transparent.png" alt="Logo VAPOR" class="login-logo">
+                </a>
+                <h1 class="login-welcome-message">Bentornato/a</h1>
+    
+                <form action="/login" method="POST">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
+    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+                     
+                    <!-- Contenitore per i due pulsanti -->
+                    <div class="button-container">
+                        <button type="submit" class="login-button">Accedi</button>
+                        <button type="button" class="cancel-button" onclick="window.location.href='../html/index.html';">Annulla</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </body>
-
+    
+    
 </html>

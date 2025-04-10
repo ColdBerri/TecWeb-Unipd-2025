@@ -2,71 +2,66 @@
 <html lang="it">
     <head>
         <meta charset="UTF-8">
-        <title>VAPOR - Videogames's usless opinions </title>
+        <title>VAPOR - Videogames' Useless Opinions</title>
         <meta name="description" content="Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming">
-        <meta name="keyword" content="videogioco,evento,patch,aggiornamento,biblioteca">
+        <meta name="keywords" content="videogioco, evento, patch, aggiornamento, biblioteca">
+        <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../css/tablet.css" media="screen and (max-width:800px)">
+        <link rel="stylesheet" type="text/css" href="../css/mobile.css" media="screen and (max-width:600px)">
+        <script src="../js/mburger.js"></script>
     </head>
-
     <body>
+
         <header>
-            <h1>VAPOR</h1>
-            <h2>Rimani aggionato dai migliori </h2>
+
+            <nav class="menu">
+
+                <a href="index.php"><h1 class="logo">Vapor</h1></a>              
+                <a class="burger" onclick="apriMenu()"><img src="../assets/apri-menu.png" alt="apri menu laterale"></a>
+                <ul>
+                    <li><a href="categorie.php">Categorie</a></li>
+                    <li><a href="eventi.html">Prossimi eventi</a></li>
+                    <li><a href="libreria.html">Libreria</a></li>
+                    <li><a href="profilo.html">Profilo</a></li>
+                </ul>
+            </nav>
+
+            <nav class="nascondi">
+                <ul>
+                    <li ><a onclick="chiudiMenu()"><img src="../assets/chiudi.png" alt="chiudi menu"></a></li>
+                    <li><a href="categorie.html">Categorie</a></li>
+                    <li><a href="eventi.html">Prossimi eventi</a></li>
+                    <li><a href="libreria.html">Libreria</a></li>
+                    <li><a href="profilo.html">Profilo</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" placeholder="Cerca..." class="search-box">
+                <button class="search-button">
+                    <img src="../assets/search_white.png" alt="Cerca" class="search-icon">
+                </button>
+            </div>
+
+            <div class="breadcrump">
+                <span>Ti trovi in: <strong>Home</strong></span>
+            </div>
+
         </header>
-
-        <nav id="breadcrumb">
-            <p>Ti trovi in: <a href="index.html" lang="en">Home</a></p>
-        </nav>
-
-        <nav id="menu">
-            <ul>
-                <li><span lang="en">Home</span></li>
-                <li><a href="categorie.html">Categorie</a></li>
-                <li><a href="prossimeuscite.html">Prossime uscite</a></li>
-                <li><a href="Assistenza/contatti.html">Assistenza/contatti</a></li>
-                <li><a href="as.html">La nostra storia</a></li>
-                <li><a href="profilo.html">Profilo</a></li>
-            </ul>
-        </nav>
-
+     
         <main>
-
-            <h1><strong>videogioci</strong> del momento</h1>
-            <div>
-                <li>
-                    <img src="../assets/img.png" alt="">
-                    <img src="../assets/img1.jpg" alt="">
-                    <img src="../assets/img2.jpg" alt="">
-                    <img src="../assets/img3.jpg" alt="">
-                    <img src="../assets/img4.jpg" alt="">
-                </li>
-            </div>
-
+            <h1><strong>Videogiochi</strong> del momento</h1>
+                [giochi]
             <h2>Prossimi <strong>eventi</strong></h2>
-            <div>
-                <li>
-                    <img src="../assets/img.png" alt="">
-                    <img src="../assets/img1.jpg" alt="">
-                    <img src="../assets/img2.jpg" alt="">
-                    <img src="../assets/img3.jpg" alt="">
-                    <img src="../assets/img4.jpg" alt="">
-                </li>
-            </div>
-
             <h3>Ultime <strong>notizie</strong></h3>
-            <div>
-                <li>
-                    <img src="../assets/img.png" alt="">
-                    <img src="../assets/img1.jpg" alt="">
-                    <img src="../assets/img2.jpg" alt="">
-                    <img src="../assets/img3.jpg" alt="">
-                    <img src="../assets/img4.jpg" alt="">
-                </li>
-            </div>
-
         </main>
 
         <footer>
-            <p>© 2021 VAPOR - Videogames's usless opinions</p>
+            <p>
+                <a href="Assistenza_e_contatti.html">Assistenza</a>
+                <a href="aboutus.html">La nostra storia</a>
+            </p>
+            <p>© 2025 VAPOR - Videogames' Useless Opinions</p>
         </footer>
 
     </body>

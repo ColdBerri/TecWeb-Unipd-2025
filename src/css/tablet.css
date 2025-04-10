@@ -1,0 +1,48 @@
+nav.menu > ul{
+    display: none;
+}
+
+html{
+    color: red;
+}
+
+nav.menuHamberger{
+    display: flex;
+    background-color: #2d3b47;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    padding-top: 4em;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    list-style: none;
+}
+
+
+.burger{
+    display: block;
+    float: right;
+}
+
+
+.nascondiul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    gap: 1em;
+}
+
+nav.menuHamberger > ul {
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    color: var(--textcolor);
+}
+
+nav.menuHamberger > ul > :first-child{
+    text-align: right;
+    padding-bottom: 3em;
+}

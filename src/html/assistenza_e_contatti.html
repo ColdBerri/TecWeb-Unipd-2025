@@ -30,27 +30,39 @@
 
             <!-- Sezione per la pagina corrente -->
             <div class="current-page">
-                <span>Ti trovi in: <a href="index.html">Home</a> > <strong>Profilo</strong></span>
+                <span>Ti trovi in: <a href="index.html">Home</a> > <strong>Assistenza</strong></span>
             </div>
         </header>
         
-        <main>
-            <h1 class="welcome-message">Bentornato/a!</h1>
-            <div class="profile-container">
-                <div class="profile-picture">
-                    <img src="../assets/profile_picture.png" alt="Foto profilo">
-                </div>
-                <div class="profile-info">
-                    <p><strong>Username:</strong> username_esempio</p>
-                    <p><strong>Nome:</strong> Nome</p>
-                    <p><strong>Cognome:</strong> Cognome</p>
-                    <p><strong>E-mail:</strong> email@example.com</p>
-                    <p><strong>Data di nascita:</strong> 01/01/2000</p>
+        <main class="faq-container">
+            <div class="faq-content">
+                <h1>Assistenza VAPOR</h1>
+                <div class="faq">
+                    <div class="faq-item">
+                        <label class="faq-question" for="faq1">Come posso contattare l'assistenza?</label>
+                        <input type="checkbox" id="faq1" class="faq-input">
+                        <div class="faq-answer">Puoi contattarci tramite email all'indirizzo supporto@example.com.</div>
+                    </div>
+                    <div class="faq-item">
+                        <label class="faq-question" for="faq2">Quali sono gli orari di supporto?</label>
+                        <input type="checkbox" id="faq2" class="faq-input">
+                        <div class="faq-answer">Il nostro supporto è disponibile dal lunedì al venerdì, dalle 9:00 alle 18:00.</div>
+                    </div>
+                    <div class="faq-item">
+                        <label class="faq-question" for="faq3">Quanto tempo ci vuole per ricevere una risposta?</label>
+                        <input type="checkbox" id="faq3" class="faq-input">
+                        <div class="faq-answer">Di solito rispondiamo entro 24 ore nei giorni lavorativi.</div>
+                    </div>
                 </div>
             </div>
-            <div class="profile-settings">
-                <a href="modifica_profilo.html">Gestione profilo</a>
-            </div>
+            <aside class="faq-sidebar">
+                <h2>Contatti</h2>
+                <ul>
+                    <li>📞 Numero assistenza</li>
+                    <li>📧 Mail assistenza</li>
+                    <li>⏰ Orari assistenza</li>
+                </ul>
+            </aside>
         </main>
         
 
