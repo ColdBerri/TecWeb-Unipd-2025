@@ -1,9 +1,14 @@
 <?php
 require_once "dbconnections.php";
+require_once "template.php";
 use DB\DBAccess;
-$paginaHTML = file_get_contents( 'html/categorie.html');
+
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
+
+$paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","videogioco, evento, patch, aggiornamento, biblioteca","html/categorie.html");
+
+
 
 $img = "";
 $lista = "";
@@ -18,7 +23,9 @@ if(!$connessioneOK){
         $lista .= "<dd>".$giuco['nome_gioco']."</dd>";
     }
     $lista .= "</dl>";
-    echo str_replace("[tuttigiuchi]", $lista, $paginaHTML);
+
+    $paginaHTML->aggiungiContenuto("[tuttigiuchi]",$lista);
+    $paginaHTML->getPagina();
 
 }
 ?>

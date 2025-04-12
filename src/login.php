@@ -1,6 +1,9 @@
 <?php
-
+require_once "template.php";
 require_once "dbconnections.php";
+
+$paginaHTML = new Template("banana","banana","html/login.html");
+
 use DB\DBAccess;
 
 if (isset($_POST['submit'])) {
@@ -33,7 +36,7 @@ if (isset($_POST['submit'])) {
                     if($user_data['password_'] === $pass){
                         header("Location: categorie.php");
                         exit();
-                    }
+                    } 
 
                 } else {
                     $error = "Si è verificato un errore, ripetere la procedura di login";
@@ -44,7 +47,6 @@ if (isset($_POST['submit'])) {
     }
 }
 
-$paginaHTML = file_get_contents('html/login.html');
-echo $paginaHTML;
+$paginaHTML->getPagina();
 
 ?>

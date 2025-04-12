@@ -22,7 +22,7 @@
 body{
     background-color: var(--headerbgcolor);
     color: var(--textcolor);
-    font-size: 100%;
+/*    font-size: 100%;*/
     font-family: "Lexend", "Roboto", sans-serif;
     display: flex;
     flex-direction: column;
@@ -75,14 +75,13 @@ header{
 .menu {
     text-align: center;
     background-color: var(--headerbgcolor);
-    padding: 1em 2em;
+    padding:0;
     white-space: nowrap;
 }
 
 .logo {
     display: inline-block;
-    padding: 0em 1em 1em 1em; 
-    margin: 0.4em 1em 0em;
+    padding: 1em 2em 0em 1em; 
     vertical-align: middle;
     text-indent: -999em;
     background-image: url(../assets/rsz_img_transparent.png);
@@ -106,6 +105,10 @@ header{
     margin-right: 2vw;
     font-size: 1.2em;
     text-transform: uppercase;
+}
+
+ul .current-page{
+    color: white;
 }
 
 .breadcrump {
@@ -148,6 +151,11 @@ header{
 }
 
 /*=====MAIN=====*/
+
+#desc_table{
+    position:absolute;
+    text-indent: -999em;
+}
 
 .library-search-container {
     display: flex;
