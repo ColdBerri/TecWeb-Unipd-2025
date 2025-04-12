@@ -14,6 +14,8 @@ CREATE TABLE IF NOT EXISTS Utente(
     password_ VARCHAR(64) NOT NULL
 );
 
+INSERT INTO Utente (ID_utente,nome_utente,cognome_utente,nickname,e_mail,password_) VALUES
+('1','user','user','user','user','user');
 
 CREATE TABLE IF NOT EXISTS Videogiochi(
     nome_gioco VARCHAR(64) PRIMARY KEY,

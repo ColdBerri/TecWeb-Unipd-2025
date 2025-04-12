@@ -70,4 +70,11 @@ class DBAccess {
 		}
 	}
 
+	public function parser($value){
+		$value = trim($value);
+		$value = strip_tags($value);
+		$value = htmlentities($value);
+		return $value;
+	}
+	
 }

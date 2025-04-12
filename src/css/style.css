@@ -316,25 +316,29 @@ header{
 
 /* Styling della pagina di login */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     height: 100vh;
-    background-color: var(--login-bgcolor); /* Imposta lo sfondo della pagina di login */
-    overflow-y: auto; /* Consente lo scorrimento verticale se il contenuto è troppo lungo */
+    background-color: var(--login-bgcolor);
+    overflow-y: auto;
 }
 
-/* Box di login */
+/* Centra il box */
 .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
     background-color: var(--login-box-bgcolor);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
     width: 100%;
-    max-width: 400px; /* Imposta una larghezza massima per la scatola di login */
+    max-width: 400px;
     text-align: center;
-    max-height: 90vh; /* Impedisce al box di essere più alto di 90% della finestra */
-    overflow-y: auto; /* Permette lo scorrimento verticale se necessario */
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 /* Logo nella schermata di login */
@@ -361,44 +365,45 @@ header{
     font-size: 16px;
 }
 
-/* Contenitore per i pulsanti */
-.button-container {
-    display: flex;
-    justify-content: space-between; /* Distribuisce i pulsanti */
-    margin-top: 40px;
-    width: 100%; /* Assicura che la larghezza totale sia occupata dai due pulsanti */
-    gap: 4%; /* Aggiunge uno spazio tra i due pulsanti */
+fieldset{
+    border:0;
 }
 
-/* Pulsante di login */
-.login-button, .cancel-button {
-    width: 48%; /* Aggiunge la stessa larghezza ai pulsanti */
-    padding: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+fieldset > label{
+    color: white;
 }
 
-/* Pulsante di login */
-.login-button {
+/* Pulsanti */
+.button-container > .accedi {
+    width: 97.5%;
+    margin-top: 1em;
+    /*
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    */
+}
+
+.button-container > p{
+    color: white;
+    margin-top: 1em;
+}
+
+.accedi{
     background-color: var(--login-button-bg);
     color: white;
 }
 
-.login-button:hover {
+.accedi:hover {
     background-color: #1c7731;
 }
 
 /* Pulsante di annullamento */
-.cancel-button {
+.annulla {
     background-color: #dc3545; /* Colore rosso */
     color: white;
 }
 
-.cancel-button:hover {
+.annulla:hover {
     background-color: #ab1d2b;
 }
 

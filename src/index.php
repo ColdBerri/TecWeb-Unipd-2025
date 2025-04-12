@@ -1,9 +1,10 @@
 <?php
 
 require_once "dbconnections.php";
+require_once "template.php";
 use DB\DBAccess;
 
-$paginaHTML = file_get_contents( 'html/index.html');
+$paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","videogioco, evento, patch, aggiornamento, biblioteca");
 
 $connessione = new DBAccess();
 
@@ -23,7 +24,8 @@ if (!$connessioneOK) {
 	}
 		
 	$lista .= "</dl>";
-	echo str_replace("[giochi]", $lista, $paginaHTML);
+	$paginaHTML->aggiungiContenuto("[giochi]",$lista);
+	$paginaHTML->getPagina();
 }
 
 ?>

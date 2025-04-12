@@ -2,6 +2,10 @@ nav.menu > ul{
     display: none;
 }
 
+.search-container{
+    display: none;
+}
+
 html{
     color: red;
 }

@@ -10,23 +10,23 @@
     <body>
         <div class="login-container">
             <div class="login-box">
-                <a href="../html/index.html">
+                <a href="index.php">
                     <img src="../assets/img_transparent.png" alt="Logo VAPOR" class="login-logo">
                 </a>
                 <h1 class="login-welcome-message">Bentornato/a</h1>
-    
-                <form action="/login" method="POST">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
-    
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
-                     
+                <form action="../login.php" method="POST">
+                    <fieldset>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
+        
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+                    </fieldset>
                     <!-- Contenitore per i due pulsanti -->
-                    <div class="button-container">
-                        <button type="submit" class="login-button">Accedi</button>
-                        <button type="button" class="cancel-button" onclick="window.location.href='../html/index.html';">Annulla</button>
-                    </div>
+                    <fieldset class="button-container">
+                        <input type="submit" name="submit" class="accedi" value="Accedi" >
+                        <p>Non hai un account?: <a href="../registaUtente.php">Registati!</a></p>
+                    </fieldset>
                 </form>
             </div>
         </div>
