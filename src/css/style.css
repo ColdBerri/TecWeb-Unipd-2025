@@ -333,44 +333,36 @@ ul .current-page{
 /* Centra il box */
 .login-box {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
     background-color: var(--login-box-bgcolor);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
+    padding: 2.5em; 
+    border-radius: 0.625em;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
     width: 100%;
-    max-width: 400px;
+    max-width: 25em; 
     text-align: center;
     max-height: 90vh;
     overflow-y: auto;
 }
 
-/* Logo nella schermata di login */
-.login-logo {
-    width: 160px;
-    margin-bottom: 20px;
-}
 
-/* Messaggio di benvenuto */
 .login-welcome-message {
-    font-size: 28px;
+    font-size: 1.75em;
     font-weight: bold;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em; 
 }
 
 /* Stile per i campi di input */
 .login-box input {
     width: 90%;
-    padding: 15px;
-    margin: 5px 0;
-    border: 0px solid var(--login-border);
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 0.9375em; 
+    margin: 0.3125em 0; 
+    border: 0 solid var(--login-border);
+    border-radius: 0.3125em; 
+    font-size: 1em; 
 }
 
 fieldset{

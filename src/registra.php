@@ -2,7 +2,7 @@
 require_once "template.php";
 require_once "dbconnections.php";
 
-$paginaHTML = new Template("banana","banana","html/login.html");
+$paginaHTML = new Template("banana","banana","html/registra.html");
 
 use DB\DBAccess;
 
@@ -10,6 +10,7 @@ if (isset($_POST['submit'])) {
 
     $user = ($_POST['username']);
     $pass = ($_POST['password']);
+    $email = ($_POST['email']);
 
     if(!empty($user) && !empty($pass) && !is_numeric($user)){
 
