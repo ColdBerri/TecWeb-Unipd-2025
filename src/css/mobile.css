@@ -1,3 +1,10 @@
+.menu {
+    display: flex;
+    justify-content: center; /* Centra l'icona orizzontalmente */
+    align-items: center; /* Centra l'icona verticalmente */
+}
+
+
 .burger {
     text-decoration: none;  /* Rimuove la sottolineatura */
 }
@@ -9,7 +16,7 @@
 .burger img {
   width: 2.3em; /* Imposta la larghezza dell'immagine a 32px (o qualsiasi valore desiderato) */
   height: auto; /* Mantiene le proporzioni dell'immagine */
-  margin-top: -0.3em; /* Sposta il bottone di ricerca verso l'alto */
+  margin-top: 0em; /* Sposta il bottone di ricerca verso l'alto */
   cursor: pointer; 
 }
 
@@ -18,6 +25,12 @@
     height: auto;
     margin-left: -2em;
     cursor: pointer; 
+}
+
+.exit {
+    position: absolute;
+    top: 10px;  /* Distanza dalla parte superiore del nav */
+    text-decoration: none;  /* Rimuove la sottolineatura dal link */
 }
 
 .menu-box {
@@ -39,25 +52,6 @@
     text-decoration: none;  /* Rimuove la sottolineatura anche al passaggio del mouse o al focus */
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between; /* Spazia il logo e gli altri elementi */
-    align-items: center;
-    position: relative;
-    margin-right: 2.5em;
-}
-
-
-.nascondi {
-    position: relative;  /* Permette di posizionare la X in modo assoluto dentro la nav */
-}
-
-/* Stile per la X */
-.exit {
-    position: absolute;
-    top: 10px;  /* Distanza dalla parte superiore del nav */
-    text-decoration: none;  /* Rimuove la sottolineatura dal link */
-}
 
 .menu-box2 {
     padding: 10px 20px;  /* Padding per fare il riquadro abbastanza grande */
