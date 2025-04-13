@@ -13,7 +13,6 @@ html{
 nav.menuHamberger{
     display: flex;
     background-color: #2d3b47;
-    position: fixed;
     top: 0;
     right: 0;
     height: 100%;
@@ -21,6 +20,8 @@ nav.menuHamberger{
     padding-top: 4em;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     list-style: none;
+    position: absolute;
+    z-index: 9999;
 }
 
 

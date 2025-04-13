@@ -87,7 +87,7 @@ header{
     background-image: url(../assets/rsz_img_transparent.png);
     background-size: contain;
     background-repeat: no-repeat;
-    font-size: 3em;
+    font-size: 2.5em;
     width: 1vw;
 }
 
@@ -322,17 +322,17 @@ ul .current-page{
     background-color:#1c7731;
 }
 
-/* Styling della pagina di login */
+
 .login-container {
     position: relative;
     height: 100vh;
     background-color: var(--login-bgcolor);
-    overflow-y: auto;
+
 }
 
 /* Centra il box */
 .login-box {
-    position: absolute;
+    position: relative;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -344,7 +344,6 @@ ul .current-page{
     max-width: 25em; 
     text-align: center;
     max-height: 90vh;
-    overflow-y: auto;
 }
 
 
@@ -371,6 +370,13 @@ fieldset{
 
 fieldset > label{
     color: white;
+    display: block;
+    text-align: justify;
+    margin-left: 0.3em;
+}
+
+fieldset > .pw{
+    padding-top: 1em;
 }
 
 /* Pulsanti */
@@ -557,6 +563,5 @@ footer {
     padding: 2em 0;
     text-align: center;
     margin-top: 0; /* Rimuove lo spazio sopra il footer */
-    position: relative; /* Mantiene il footer al di sotto del contenuto */
 }
 

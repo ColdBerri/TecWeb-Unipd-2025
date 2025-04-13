@@ -1,6 +1,7 @@
 <?php
 class Template {
     private $footer;
+    private $search;
     private $pagina;
 
     public function __construct($description, $keywords, $pagina) {
@@ -28,7 +29,21 @@ class Template {
             session_start();
         }
 
+        $this->search = '
+        <div class="search-container">
+            <input type="text" placeholder="Cerca..." class="search-box">
+            <button class="search-button">
+                <img src="../assets/search_white.png" alt="Cerca" class="search-icon">
+            </button>
+        </div>';
+
         $header = file_get_contents('html/header.html');
+
+        if(!($pagina === "html/login.html" || $pagina === "html/registra.html")){
+            $header = str_replace("[searchbar]", $this->search, $header);
+        } else {
+            $header = str_replace("[searchbar]", "", $header);
+        }
 
         if($pagina === "html/index.html"){
 
@@ -41,6 +56,7 @@ class Template {
             $header = str_replace("[login]",'<li><a href="login.php">Profilo</a></li>',$header);
 
             $header = str_replace("[breadcrump]",'<p>Ti trovi in: <span lang="en">Home</span></p>',$header);
+
         }
 
         if($pagina === "html/categorie.html"){
