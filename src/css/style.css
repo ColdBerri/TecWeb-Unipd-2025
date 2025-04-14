@@ -62,6 +62,9 @@ header a{
 header{
     text-align: center;
     width: 100%;
+     height: 50px;  /* Imposta un'altezza fissa per l'header */
+     height: 40px; /* Imposta una altezza fissa ridotta per l'header */
+    box-sizing: border-box;  /* Assicura che il padding non aumenti l'altezza dell'elemento */
 }
 
 .nascondi{
@@ -81,7 +84,7 @@ header{
 
 .logo {
     display: inline-block;
-    padding: 1em 2em 0em 1em; 
+    padding: 0.5em 1em; ; 
     vertical-align: middle;
     text-indent: -999em;
     background-image: url(../assets/rsz_img_transparent.png);
@@ -97,7 +100,7 @@ header{
     padding: 0;
     margin: 0;
     vertical-align: middle;
-    margin-top: 1em;
+    margin-top: 0.5em;
 }
 
 .menu ul li {
