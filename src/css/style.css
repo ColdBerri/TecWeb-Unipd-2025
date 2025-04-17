@@ -71,7 +71,7 @@ header a{
 /*===== HEADER =====*/
 
 header{
-    text-align: center;
+/*    text-align: center;*/
     width: 100%;
 }
 
@@ -86,19 +86,22 @@ header{
 .menu {
     text-align: center;
     background-color: var(--headerbgcolor);
-    padding:0;
+    padding-top:1em;
     white-space: nowrap;
+    margin: auto;
+    vertical-align: middle;
 }
 
 .logo {
-    display: inline-block;
-    padding: 0.5em 1em ; 
+    float: left;
+    padding: 1em 1em;
+    margin-left: 1em; 
     vertical-align: middle;
     text-indent: -999em;
     background-image: url(../assets/rsz_img_transparent.png);
     background-size: contain;
     background-repeat: no-repeat;
-    font-size: 2em;
+    font-size: 2.4em;
     width: 1vw;
 }
 
@@ -106,15 +109,21 @@ header{
     list-style: none;
     display: inline-block;
     padding: 0;
-    margin: 0;
+    margin-top: 1.5em;
     vertical-align: middle;
 }
 
 .menu ul li {
     display: inline-block;
-    margin-right: 2vw;
+    margin-right: 8vw;
     font-size: 1.2em;
     text-transform: uppercase;
+}
+
+.menu ul li:last-child{
+    padding-left: 7vw;
+    padding-right: 0em;
+    margin: 0;
 }
 
 ul .current-page{
@@ -129,11 +138,14 @@ ul .current-page{
     text-align: center;
 }
 
+div.search-container{
+    background-color: var(--headerbgcolor);
+}
+
 .search-container {
-    width: fit-content;
-    margin: 1em auto; 
     background-color: var(--headerbgcolor);
     text-align: center;
+    padding: 1.25em;
 }
 
 .search-box {
@@ -336,12 +348,14 @@ ul .current-page{
 div.login-box {
     text-align: center;
     display: block;
-  /*  transform: translate(-50%, -50%);*/
     background-color: var(--login-bgcolor); 
     border-radius: 10px;
     box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
     width: 60%;
     padding: 0.5em;
+    margin: auto;
+    height: auto;
+    max-width: 600px;
 }
 
 div.login-box > h1{
