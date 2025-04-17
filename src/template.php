@@ -55,7 +55,7 @@ class Template {
             $header = str_replace("[libreria]",' <li><a href="libreria.php">Libreria</a></li>',$header);
             $header = str_replace("[login]",'<li><a href="login.php">Profilo</a></li>',$header);
 
-            $header = str_replace("[breadcrump]",'<p>Ti trovi in: <span lang="en">Home</span></p>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <span lang="en">Home</span></p></div>',$header);
 
         }
 
@@ -69,7 +69,7 @@ class Template {
             $header = str_replace("[libreria]",' <li><a href="libreria.php">Libreria</a></li>',$header);
             $header = str_replace("[login]",'<li><a href="login.php">Profilo</a></li>',$header);
 
-            $header = str_replace("[breadcrump]",'<p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; Categorie</p>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; Categorie</p></div>',$header);
         }
 
         if($pagina === "html/eventi.html"){
@@ -82,7 +82,7 @@ class Template {
             $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
             $header = str_replace("[login]",'<li><a href="login.php">Profilo</a></li>',$header);
 
-            $header = str_replace("[breadcrump]",'<p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; Eventi</p>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; Eventi</p></div>',$header);
         }
 
         if($pagina === "html/libreria.html"){
@@ -95,7 +95,7 @@ class Template {
             $header = str_replace("[libreria]",'<li class="current-page">Libreria</li>',$header);
             $header = str_replace("[login]",'<li><a href="login.php">Profilo</a></li>',$header);
 
-            $header = str_replace("[breadcrump]",'<p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; Libreria</p>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; Libreria</p></div>',$header);
         }
 
         if($pagina === "html/login.html"){
@@ -108,7 +108,7 @@ class Template {
             $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
             $header = str_replace("[login]",'<li class="current-page">Profilo</li>',$header);
 
-            $header = str_replace("[breadcrump]",'<p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; <span lang="en">Login</span></p>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; <span lang="en">Login</span></p></div>',$header);
             
         }
 
@@ -122,7 +122,7 @@ class Template {
             $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
             $header = str_replace("[login]",'<li><a href="login.php">Profilo</a></li>',$header);
 
-            $header = str_replace("[breadcrump]",'<p>Ti trovi in: Registrati</p>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: Registrati</p></div>',$header);
             
         }
 

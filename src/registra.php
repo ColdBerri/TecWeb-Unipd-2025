@@ -6,6 +6,8 @@ $paginaHTML = new Template("banana","banana","html/registra.html");
 
 use DB\DBAccess;
 
+/*
+
 if (isset($_POST['submit'])) {
 
     $user = ($_POST['username']);
@@ -47,6 +49,7 @@ if (isset($_POST['submit'])) {
         }
     }
 }
+    */
 
 $paginaHTML->getPagina();
 

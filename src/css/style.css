@@ -19,21 +19,32 @@
     --login-button-bg: #28a745; /* Colore di sfondo del pulsante di login */
 }
 
-body{
-    background-color: var(--headerbgcolor);
+html {
+    background-color: var(--bgcolor);
     color: var(--textcolor);
-/*    font-size: 100%;*/
+}
+
+body{
+    color: var(--textcolor);
+    font-size: 100%;
     font-family: "Lexend", "Roboto", sans-serif;
+    line-height: 1.5;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     line-height: 1.5;
 }
 
-main, html {
+main{
     background-color: var(--bgcolor);
-    color: var(--textcolor);
+    margin:auto;
+    width: 100%;
+    min-height:max-content;
+    align-items: center;
+    justify-content: center;
 }
+
+
 
 /*===== LINK =====*/
 
@@ -62,9 +73,6 @@ header a{
 header{
     text-align: center;
     width: 100%;
-     height: 50px;  /* Imposta un'altezza fissa per l'header */
-     height: 40px; /* Imposta una altezza fissa ridotta per l'header */
-    box-sizing: border-box;  /* Assicura che il padding non aumenti l'altezza dell'elemento */
 }
 
 .nascondi{
@@ -84,13 +92,13 @@ header{
 
 .logo {
     display: inline-block;
-    padding: 0.5em 1em; ; 
+    padding: 0.5em 1em ; 
     vertical-align: middle;
     text-indent: -999em;
     background-image: url(../assets/rsz_img_transparent.png);
     background-size: contain;
     background-repeat: no-repeat;
-    font-size: 2.5em;
+    font-size: 2em;
     width: 1vw;
 }
 
@@ -100,7 +108,6 @@ header{
     padding: 0;
     margin: 0;
     vertical-align: middle;
-    margin-top: 0.5em;
 }
 
 .menu ul li {
@@ -325,35 +332,34 @@ ul .current-page{
     background-color:#1c7731;
 }
 
-
-.login-container {
-    position: relative;
-    height: 100vh;
-    background-color: var(--login-bgcolor);
-
-}
-
 /* Centra il box */
-.login-box {
-    position: relative;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--login-box-bgcolor);
-    padding: 2.5em; 
-    border-radius: 0.625em;
-    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
-    width: 100%;
-    max-width: 25em; 
+div.login-box {
     text-align: center;
-    max-height: 90vh;
+    display: block;
+  /*  transform: translate(-50%, -50%);*/
+    background-color: var(--login-bgcolor); 
+    border-radius: 10px;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
+    width: 60%;
+    padding: 0.5em;
 }
 
+div.login-box > h1{
+    color: white;
+}
+
+form > fieldset > label{
+    color: white;
+}
+
+fieldset.button-container > p{
+    color: white;
+}
 
 .login-welcome-message {
     font-size: 1.75em;
     font-weight: bold;
-    color: white;
+    color: black;
     margin-bottom: 1.25em; 
 }
 
@@ -372,7 +378,7 @@ fieldset{
 }
 
 fieldset > label{
-    color: white;
+    color: black;
     display: block;
     text-align: justify;
     margin-left: 0.3em;
@@ -393,7 +399,7 @@ fieldset > .pw{
 }
 
 .button-container > p{
-    color: white;
+    color: black;
     margin-top: 1em;
 }
 
