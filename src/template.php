@@ -6,7 +6,7 @@ class Template {
 
     public function __construct($description, $keywords, $pagina) {
         $this->footer = '<p><a href="Assistenza_e_contatti.html">Assistenza</a> 
-                         <a href="aboutus.html">La nostra storia</a></p>
+                         <a href="aboutus.php">La nostra storia</a></p>
                          <p>© 2025 VAPOR - Videogames\' Useless Opinions</p>';
 
         $this->pagina = file_get_contents('html/template_html.html');
@@ -125,7 +125,18 @@ class Template {
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: Registrati</p></div>',$header);
             
         }
+        
+        if($pagina === "html/aboutus.html"){
+            $header = str_replace("[logo]",'<a href="index.php"><h1 class="logo">Vapor</h1></a>', $header);
 
+            $header = str_replace("[home]",'<li><span lang="en"><a href="index.php">Home</span></a></li>',$header);
+            $header = str_replace("[categorie]",'<li><a href="categorie.php">Categorie</a></li>',$header);
+            $header = str_replace("[eventi]",'<li><a href="eventi.php">Prossimi eventi</a></li>',$header);
+            $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
+            $header = str_replace("[login]",'<li><a href="login.php">Profilo</a></li>',$header);
+
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <span lang="en"> AboutUS </span></p> </div>',$header);
+        }
         session_destroy();
 
         $this->aggiungiContenuto("[header]",$header);
