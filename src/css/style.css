@@ -273,6 +273,8 @@ div.search-container{
     color: var(--linkvisited)
 }
 
+/*
+
 .profile-form {
     width: 30%;
     margin: 20px auto;
@@ -310,7 +312,7 @@ div.search-container{
 }
 
 .profile-form button {
-    width: 48%; /* Set width to 48% for both buttons */
+    width: 48%; 
     padding: 10px;
     font-size: 18px;
     font-weight: bold;
@@ -325,16 +327,15 @@ div.search-container{
 
 .profile-form .button-container {
     display: flex;
-    justify-content: space-between; /* Distribute buttons evenly */
+    justify-content: space-between; 
 }
 
 .save-button {
-    background-color: #28a745; /* Green for save */
+    background-color: #28a745; 
 }
 
 .back-button {
-    background-color: #dc3545; /* Red for cancel */
-}
+    background-color: #dc3545; 
 
 .back-button:hover {
     background-color: var(--bandiera);
@@ -343,8 +344,8 @@ div.search-container{
 .save-button:hover {
     background-color:#1c7731;
 }
+    */
 
-/* Centra il box */
 div.login-box {
     text-align: center;
     display: block;

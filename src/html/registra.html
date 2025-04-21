@@ -4,32 +4,33 @@
                 
                 <h1 class="login-welcome-message">Benvenuto</h1>
     
-                <form action="register" method="POST">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required>
+                <form action="register" method="POST">    
+                    <fieldset>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
+                    </fieldset>
     
-                    <label for="cognome">Cognome:</label>
-                    <input type="text" id="cognome" name="cognome" placeholder="Inserisci il tuo cognome" required>
-    
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
-    
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Inserisci la tua email" required>
-    
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+                    <fieldset>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+                    </fieldset>
                     
-                    <label for="confirm-password">Conferma Password:</label>
-                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Conferma la tua password" required>
-    
-                    <label for="data-nascita">Data di nascita:</label>
-                    <input type="date" id="data-nascita" name="data-nascita" required>
+                    <fieldset>
+                        <label for="confirm-password">Conferma Password:</label>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Conferma la tua password" required>
+                    </fieldset>
+                        
+                    <fieldset>
+                        <label for="data-nascita">Data di nascita:</label>
+                        <input type="date" id="data-nascita" name="data-nascita" required>
+                    </fieldset>
     
                     <!-- Contenitore per i due pulsanti -->
                     <div class="button-container">
-                        <button type="submit" class="login-button">Registrati</button>
-                        <button type="button" class="cancel-button" onclick="window.location.href='index.php';">Annulla</button>
+                        <fieldset>
+                            <button type="submit" class="login-button">Registrati</button>
+                            <button type="button" class="cancel-button" onclick="window.location.href='index.php';">Annulla</button>
+                        </fieldset>
                     </div>
                 </form>
             </div>

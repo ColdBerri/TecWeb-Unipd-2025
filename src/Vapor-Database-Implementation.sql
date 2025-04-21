@@ -6,16 +6,14 @@ DROP TABLE IF EXISTS Videogiochi;
 DROP TABLE IF EXISTS Utente;
 
 CREATE TABLE IF NOT EXISTS Utente(
-    ID_utente VARCHAR(64) PRIMARY KEY,
-    nome_utente VARCHAR(64) NOT NULL,
-    cognome_utente VARCHAR(64) NOT NULL,
-    nickname VARCHAR(64) NOT NULL,
-    e_mail VARCHAR(64) NOT NULL,
-    password_ VARCHAR(64) NOT NULL
+    nickname VARCHAR(64) PRIMARY KEY,
+    password_ VARCHAR(64) NOT NULL,
+    datan DATE NOT NULL
 );
 
-INSERT INTO Utente (ID_utente,nome_utente,cognome_utente,nickname,e_mail,password_) VALUES
-('1','user','user','user','user','user');
+INSERT INTO Utente(nickname,password_,datan) VALUES
+('user','user','2001/09/17');
+
 
 CREATE TABLE IF NOT EXISTS Videogiochi(
     nome_gioco VARCHAR(64) PRIMARY KEY,
@@ -33,11 +31,11 @@ INSERT INTO Videogiochi (nome_gioco, casa_produttrice, console_compatibili, desc
 
 CREATE TABLE IF NOT EXISTS Recensioni(
     ID_recensione VARCHAR(64) PRIMARY KEY,
-    ID_utente VARCHAR(64) NOT NULL,
+    nickname VARCHAR(64) NOT NULL,
     contenuto_recensione TEXT NOT NULL,
     numero_stelle DECIMAL(5,1),
     nome_videogioco VARCHAR(64) NOT NULL,
-    FOREIGN KEY (ID_utente) REFERENCES Utente(ID_utente),
+    FOREIGN KEY (nickname) REFERENCES Utente(nickname),
     FOREIGN KEY (nome_videogioco) REFERENCES Videogiochi(nome_gioco)
 );
 
@@ -62,10 +60,10 @@ CREATE TABLE IF NOT EXISTS Articoli_e_patch(
 );
 
 CREATE TABLE IF NOT EXISTS Utente_Videogiochi(
-    ID_utente VARCHAR(64) NOT NULL,
+    nickname VARCHAR(64) NOT NULL,
     nome_gioco VARCHAR(64) NOT NULL,
     preferito BOOLEAN NOT NULL,
-    PRIMARY KEY (ID_utente, nome_gioco),
+    PRIMARY KEY (nickname, nome_gioco),
     FOREIGN KEY (nome_gioco) REFERENCES Videogiochi(nome_gioco),
-    FOREIGN KEY (ID_utente) REFERENCES Utente(ID_utente)
+    FOREIGN KEY (nickname) REFERENCES Utente(nickname)
 );
