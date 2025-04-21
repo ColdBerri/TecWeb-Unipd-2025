@@ -2,6 +2,13 @@
 require_once "template.php";
 require_once "dbconnections.php";
 
+
+if (isset($_GET['logout']) && $_GET['logout'] == 1) {
+    session_unset();
+    session_destroy();
+    header("Location: index.php"); // oppure index.php
+    exit();
+}
 $paginaHTML = new Template("banana","banana","html/login.html");
 
 use DB\DBAccess;
@@ -34,9 +41,11 @@ if (isset($_POST['submit'])) {
                     $user_data = mysqli_fetch_assoc($result);
 
                     if($user_data['password_'] === $pass){
+                        $_SESSION['nickname'] = $user_data['nickname']; 
                         header("Location: profilo.php");
                         exit();
-                    } 
+                    }
+                    
 
                 } else {
                     $error = "Si è verificato un errore, ripetere la procedura di login";

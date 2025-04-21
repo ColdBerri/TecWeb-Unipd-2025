@@ -8,8 +8,6 @@ $connessioneOK = $connessione->openDBConnection();
 
 $paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","videogioco, evento, patch, aggiornamento, biblioteca","html/categorie.html");
 
-
-
 $img = "";
 $lista = "";
 
