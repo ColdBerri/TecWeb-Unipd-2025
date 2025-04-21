@@ -20,6 +20,13 @@ if(!$connessioneOK){
         $stmt->bind_result($nickname, $email);
         $stmt->fetch();
         $stmt->close();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
+            session_unset();
+            session_destroy();
+            header("Location: index.php");
+            exit();
+        }
     } else {
         // Nessun utente in sessione -> redirect o messaggio di errore
         echo "<p>Devi essere loggato per vedere il tuo profilo.</p>";

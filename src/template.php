@@ -37,31 +37,23 @@ class Template {
             </button>
         </div>';
 
-        //ROBA PER IL LOG
-        if (isset($_GET['logout']) && $_GET['logout'] === '1') {
-            session_unset();
-            session_destroy();
-            header("Location: index.php");
-            exit();
-        }
-        
+
+        $header = file_get_contents('html/header.html');
+        $loginLink = '';
+
         if (isset($_SESSION['nickname'])) {
-            // Utente loggato
             if ($pagina === "profilo.php") {
-                $loginLink = '<li class="current-page"><a href="profilo.php">Profilo</a></li><li><a href="?logout=1">Logout</a></li>';
+                $loginLink = '<li class="current-page"><a href="profilo.php">Profilo</a></li>';
             } else {
-                $loginLink = '<li><a href="profilo.php">Profilo</a></li><li><a href="?logout=1">Logout</a></li>';
+                $loginLink = '<li><a href="profilo.php">Profilo</a></li><li>';
             }
         } else {
-            // Utente NON loggato
             if ($pagina === "login.php") {
                 $loginLink = '<li class="current-page"><a href="login.php">Login/Registrati</a></li>';
             } else {
                 $loginLink = '<li><a href="login.php">Login/Registrati</a></li>';
             }
         }
-
-        $header = file_get_contents('html/header.html');
 
         if(!($pagina === "html/login.html" || $pagina === "html/registra.html")){
             $header = str_replace("[searchbar]", $this->search, $header);
