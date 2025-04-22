@@ -10,6 +10,13 @@ $pagina = new Template("Il tuo profilo", "videogiochi, dati, personali", "html/p
 $nickname = "";
 $email = "";
 
+if (isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: index.php");
+    exit();
+}
+
 if(!$connessioneOK){
     if (isset($_SESSION['nickname'])) {
         $utenteNickname = $_SESSION['nickname'];

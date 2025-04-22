@@ -3,12 +3,6 @@ require_once "template.php";
 require_once "dbconnections.php";
 
 
-if (isset($_GET['logout']) && $_GET['logout'] == 1) {
-    session_unset();
-    session_destroy();
-    header("Location: index.php"); // oppure index.php
-    exit();
-}
 $paginaHTML = new Template("banana","banana","html/login.html");
 
 use DB\DBAccess;
