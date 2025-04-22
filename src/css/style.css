@@ -214,23 +214,23 @@ div.search-container{
     text-align: center;
     background-color: white;
     margin: 1em auto;
-  }
+}
   
-  .miniCalendarioH {
+.miniCalendarioH {
     background-color: #e74c3c;
     color: white;
     padding: 0.6em 0.3em;
     font-size: 0.9em;
     font-weight: bold;
-  }
+}
   
-  .miniCalendarioB {
+.miniCalendarioB {
     background-color: #fefefe;
     color: #333;
     padding: 1.2em 0.5em;
     font-size: 1em;
     font-weight: bold;
-  }
+}
 
 #desc_table{
     position:absolute;

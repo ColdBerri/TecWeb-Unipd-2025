@@ -16,6 +16,9 @@ $listaGiuchi = "";
 $listaEventi ="";
 $not="";
 
+$listaPath ="";
+$path="";
+
 if (!$connessioneOK) {
 	$img = $connessione->getFistImg();
 	$not = $connessione->five_little_ivents();

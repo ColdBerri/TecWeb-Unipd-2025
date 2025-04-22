@@ -64,6 +64,13 @@ CREATE TABLE IF NOT EXISTS Articoli_e_patch(
     nome_videogioco VARCHAR(64) NOT NULL,
     FOREIGN KEY (nome_videogioco) REFERENCES Videogiochi(nome_gioco)
 );
+INSERT INTO Articoli_e_patch (titolo_articolo, autore, data_pubblicazione, testo_articolo, nome_videogioco) VALUES
+('Patch 1.2: Nuove funzionalità e bugfix', 'LucaR', '2025-04-15', 'La patch 1.2 introduce nuove armi e corregge oltre 30 bug minori.', 'The Legend of Zelda: Breath of the Wild'),
+('Guida alla sopravvivenza – Parte 1', 'ValeGamer', '2025-04-10', 'Scopri come sopravvivere i primi giorni in un mondo ostile.', 'Minecraft'),
+('Patch 3.5 – Modalità Co-op!', 'Marta88', '2025-04-01', 'Finalmente arriva la tanto attesa modalità cooperativa per giocare con gli amici.', 'Minecraft'),
+('Analisi approfondita del nuovo bilanciamento', 'GiulioTech', '2025-04-18', 'Il nuovo update modifica pesantemente il bilanciamento delle classi.', 'Cyberpunk 2077'),
+('Patch note 2.0 – Cambiamenti radicali', 'AleDev', '2025-04-20', 'Grafica migliorata, IA potenziata e un nuovo sistema di combattimento.', 'Cyberpunk 2077');
+
 
 CREATE TABLE IF NOT EXISTS Utente_Videogiochi(
     nickname VARCHAR(64) NOT NULL,
