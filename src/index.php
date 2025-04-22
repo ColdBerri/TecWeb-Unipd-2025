@@ -37,9 +37,10 @@ if (!$connessioneOK) {
 	$listaEventi = "<ul class='top-eventi'>";
 
 	foreach($not as $eventi){
-		$listaEventi .= "<li><a href='categorie.php'><div class='listaeventi'>";
-		$listaEventi .= "<img src='assets/img/".$eventi['nome_videogioco']."' alt='".$eventi['nome_videogioco']."'>";
-		$listaEventi .= "<p>".$eventi['nome_evento']."</p>";
+		$dataCompleta = date('d F Y', strtotime($eventi['data_inizio_evento'])); // es: 17 June 2025
+		$listaEventi .= "<li><a href='categorie.php'><div class='miniCalendario'>";
+		$listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
+		$listaEventi .= "<div class='miniCalendarioB'>" . $eventi['nome_evento'] . "</div>";
 		$listaEventi .= "</div></a></li>";
 	}
 
