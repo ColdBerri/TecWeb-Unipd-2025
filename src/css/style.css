@@ -453,7 +453,7 @@ div.login-box {
     background-color: var(--login-bgcolor); 
     border-radius: 10px;
     box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
-    width: 60%;
+    width: 50%;
     padding: 0.5em;
     margin: auto;
     height: auto;

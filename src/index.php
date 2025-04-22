@@ -4,108 +4,81 @@ require_once "dbconnections.php";
 require_once "template.php";
 use DB\DBAccess;
 
-$paginaHTML = new Template(
-    "Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming",
-    "videogioco, evento, patch, aggiornamento, biblioteca",
-    "html/index.html"
-);
+$paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","videogioco, evento, patch, aggiornamento, biblioteca","html/index.html");
 
 $connessione = new DBAccess();
+
 $connessioneOK = $connessione->openDBConnection();
 
 $img = "";
 $listaGiuchi = "";
-$listaEventi = "";
-$not = "";
 
-if ($connessioneOK) {
-    $img = $connessione->getFistImg(); // immagino tu voglia getFirstImg?
-    $not = $connessione->five_little_ivents(); // five_little_events?
-    $connessione->closeConnection();
-    
-    // Lista giochi
-    $listaGiuchi = "<ul class='top-list'>";
-    foreach ($img as $giuco) {
-        $listaGiuchi .= "<li><a href='categorie.php'><div class='listaindex'>";
-        $listaGiuchi .= "<img src='assets/img/" . $giuco['immagine'] . "' alt='" . $giuco['nome_gioco'] . "'>";
-        $listaGiuchi .= "<p>" . $giuco['nome_gioco'] . "</p>";
-        $listaGiuchi .= "</div></a></li>";
-    }
-    $listaGiuchi .= "</ul>";
-    $paginaHTML->aggiungiContenuto("[giochi]", $listaGiuchi);
+$listaEventi ="";
+$not="";
 
-<<<<<<< HEAD
-    // Lista eventi
-    $listaEventi = "<ul class='top-eventi'>";
-    foreach ($not as $eventi) {
-        $dataCompleta = date('d F Y', strtotime($eventi['data_inizio_evento']));
-        $listaEventi .= "<li><a href='categorie.php'><div class='miniCalendario'>";
-        $listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
-        $listaEventi .= "<div class='miniCalendarioB'>" . $eventi['nome_evento'] . "</div>";
-        $listaEventi .= "</div></a></li>";
-    }
-    $listaEventi .= "</ul>";
-    $paginaHTML->aggiungiContenuto("[eventi]", $listaEventi);
-
-    $paginaHTML->getPagina();
-} else {
-    // Connessione fallita → pagina vuota o errore
-    $paginaHTML->aggiungiContenuto("[giochi]", "<p>Errore di connessione al database.</p>");
-    $paginaHTML->aggiungiContenuto("[eventi]", "");
-    $paginaHTML->getPagina();
-=======
 $listaPath ="";
 $path="";
 
-if (!$connessioneOK) {
-	
-	$img = $connessione->getFistImg();
-	$not = $connessione->five_little_ivents();
-	$path = $connessione->five_top_path();
+if ($connessioneOK) {
 
-	$connessione->closeConnection();
-		
-	$listaGiuchi = "<ul class='top-list'>";
+    $img = $connessione->getFirstImg(); // corretto nome del metodo
+    $not = $connessione->five_little_events(); // corretto nome del metodo
+    $path = $connessione->five_top_path();
 
-	foreach($img as $giuco){
-		$listaGiuchi .= "<li><a href='categorie.php'><div class='listaindex'>";
-		$listaGiuchi .= "<img src='assets/img/".$giuco['immagine']."' alt='".$giuco['nome_gioco']."'>";
-		$listaGiuchi .= "<p>".$giuco['nome_gioco']."</p>";
-		$listaGiuchi .= "</div></a></li>";
-	}
-	
-	$listaGiuchi .= "</ul>";
-	
-	$paginaHTML->aggiungiContenuto("[giochi]",$listaGiuchi);
+    $connessione->closeConnection();
 
-	$listaEventi = "<ul class='top-eventi'>";
+    $listaGiuchi = "<ul class='top-list'>";
 
-	foreach($not as $eventi){
-		$dataCompleta = date('d F Y', strtotime($eventi['data_inizio_evento'])); 
-		$listaEventi .= "<li><a href='categorie.php'><div class='miniCalendario'>";
-		$listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
-		$listaEventi .= "<div class='miniCalendarioB'>" . $eventi['nome_evento'] . "</div>";
-		$listaEventi .= "</div></a></li>";
-	}
+    if (is_array($img)) {
+        foreach($img as $giuco){
+            $listaGiuchi .= "<li><a href='categorie.php'><div class='listaindex'>";
+            $listaGiuchi .= "<img src='assets/img/".$giuco['immagine']."' alt='".$giuco['nome_gioco']."'>";
+            $listaGiuchi .= "<p>".$giuco['nome_gioco']."</p>";
+            $listaGiuchi .= "</div></a></li>";
+        }
+    }
 
-	$listaEventi .= "</ul>";
+    $listaGiuchi .= "</ul>";
+    $paginaHTML->aggiungiContenuto("[giochi]", $listaGiuchi);
 
-	$paginaHTML->aggiungiContenuto("[eventi]",$listaEventi);
+    $listaEventi = "<ul class='top-eventi'>";
 
-	$listaPath = "<ul class='top-path'>";
+    if (is_array($not)) {
+        foreach($not as $eventi){
+            $dataCompleta = date('d F Y', strtotime($eventi['data_inizio_evento'])); 
+            $listaEventi .= "<li><a href='categorie.php'><div class='miniCalendario'>";
+            $listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
+            $listaEventi .= "<div class='miniCalendarioB'>" . $eventi['nome_evento'] . "</div>";
+            $listaEventi .= "</div></a></li>";
+        }
+    }
 
-	foreach($path as $paths){
-		$listaPath .= "<li><a href='categorie.php'><div class='miniGiornale'>";
-		$listaPath .= "<div class='titoloNotiziaIndex'>".$paths['nome_videogioco']."</div>";
-		$listaPath .= "<div class='contenutoNotiziaIndex'>".$paths['titolo_articolo']."</div>";
-		$listaPath .= "</div></a></li>";
-	}
+    $listaEventi .= "</ul>";
+    $paginaHTML->aggiungiContenuto("[eventi]", $listaEventi);
 
-	$listaPath .= "</ul>";
+    $listaPath = "<ul class='top-path'>";
 
-	$paginaHTML->aggiungiContenuto("[notisie]",$listaPath);
+    if (is_array($path)) {
+        foreach($path as $paths){
+            $listaPath .= "<li><a href='categorie.php'><div class='miniGiornale'>";
+            $listaPath .= "<div class='titoloNotiziaIndex'>".$paths['nome_videogioco']."</div>";
+            $listaPath .= "<div class='contenutoNotiziaIndex'>".$paths['titolo_articolo']."</div>";
+            $listaPath .= "</div></a></li>";
+        }
+    }
 
-	$paginaHTML->getPagina();
->>>>>>> 98a2c6956ee58ef3f15c839b603d05df4c733f7f
+    $listaPath .= "</ul>";
+    $paginaHTML->aggiungiContenuto("[notisie]", $listaPath);
+
+    $paginaHTML->getPagina();
+
+} else {
+    // Connessione fallita
+    $paginaHTML->aggiungiContenuto("[giochi]", "<p>Errore di connessione al database.</p>");
+    $paginaHTML->aggiungiContenuto("[eventi]", "");
+    $paginaHTML->aggiungiContenuto("[notisie]", "");
+    $paginaHTML->getPagina();
 }
+
+
 ?>
