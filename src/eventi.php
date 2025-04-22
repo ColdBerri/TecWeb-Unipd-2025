@@ -1,24 +1,39 @@
 <?php
 require_once "dbconnections.php";
-require_once "template.php";
-use DB\DBAccess;
 
-$paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","videogioco, evento, patch, aggiornamento, biblioteca","html/eventi.html");
+$month = date('n');
+$year = date('Y');
 
-$connessione = new DBAccess();
+$db = new DBAccess();
+$eventDays = [];
 
-$connessioneOK = $connessione->openDBConnection();
-
-$lista = "";
-
-
-if (!$connessioneOK) {
-
-
-	
-//	$paginaHTML->aggiungiContenuto("[giochi]",$lista);
-
-	$paginaHTML->getPagina();
+if ($db->openDBConnection()) {
+    $eventDays = $db->getEventiDelMese($month, $year);
+    $db->closeConnection();
 }
 
+// Calcoli calendario
+$firstDay = mktime(0, 0, 0, $month, 1, $year);
+$startDayOfWeek = (date('w', $firstDay) + 6) % 7; // inizio da lunedì
+$daysInMonth = date('t', $firstDay);
+
+$day = 1;
+$totalCells = $startDayOfWeek + $daysInMonth;
+$totalWeeks = ceil($totalCells / 7);
+
+for ($week = 0; $week < $totalWeeks; $week++) {
+    echo "<tr>";
+    for ($i = 0; $i < 7; $i++) {
+        $cellIndex = $week * 7 + $i;
+
+        if ($cellIndex < $startDayOfWeek || $day > $daysInMonth) {
+            echo "<td></td>";
+        } else {
+            $class = in_array($day, $eventDays) ? 'class="event-day"' : '';
+            echo "<td $class>$day</td>";
+            $day++;
+        }
+    }
+    echo "</tr>";
+}
 ?>
