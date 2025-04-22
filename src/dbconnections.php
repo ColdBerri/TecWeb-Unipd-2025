@@ -87,6 +87,23 @@ class DBAccess {
 		}
 	}
 
+	public function five_top_path(){
+		$query = "SELECT titolo_articolo, nome_videogioco FROM Articoli_e_patch LIMIT 5 ";
+		$queryResult = mysqli_query($this->connection, $query) or die("Errore in allVideogame: " . mysqli_error($this->connection));
+
+		if(mysqli_num_rows($queryResult) == 0) {
+			return null;
+		}
+		else {
+			$result = array();
+			while($row = mysqli_fetch_assoc($queryResult)){
+				array_push($result, $row);
+			}
+			mysqli_free_result($queryResult);
+			return $result;
+		}
+	}
+
 	public function parser($value){
 		$value = trim($value);
 		$value = strip_tags($value);
