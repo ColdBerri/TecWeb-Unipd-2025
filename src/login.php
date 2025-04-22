@@ -19,13 +19,13 @@ if (isset($_POST['submit'])) {
 
         if(!$connessioneOK){
             
-            $stmt = $connessione->getConnection()->prepare("SELECT * FROM Utente WHERE nome_utente = ? ");
+            $stmt = $connessione->getConnection()->prepare("SELECT * FROM Utente WHERE nickname = ? ");
             $stmt->bind_param("s", $user);
             $stmt->execute();
             $result = $stmt->get_result();
             $stmt->close();
 
-            $query = "SELECT * FROM Utente WHERE nome_utente = '$user'";
+            $query = "SELECT * FROM Utente WHERE nickname = '$user'";
             $result = mysqli_query($connessione->getConnection(), $query);
             $connessione->closeConnection();
 

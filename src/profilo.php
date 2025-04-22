@@ -21,10 +21,10 @@ if(!$connessioneOK){
     if (isset($_SESSION['nickname'])) {
         $utenteNickname = $_SESSION['nickname'];
     
-        $stmt = $connessione->getConnection()->prepare("SELECT nickname, e_mail FROM Utente WHERE nickname = ?");
+        $stmt = $connessione->getConnection()->prepare("SELECT nickname FROM Utente WHERE nickname = ?");
         $stmt->bind_param("s", $utenteNickname);
         $stmt->execute();
-        $stmt->bind_result($nickname, $email);
+        $stmt->bind_result($nickname);
         $stmt->fetch();
         $stmt->close();
 

@@ -176,7 +176,6 @@ class Template {
         }
 
 
-        #session_destroy();
         $this->aggiungiContenuto("[header]",$header);
 
     }

@@ -6,7 +6,6 @@ $paginaHTML = new Template("banana","banana","html/registra.html");
 
 use DB\DBAccess;
 
-/*
 
 if (isset($_POST['submit'])) {
 
@@ -20,7 +19,7 @@ if (isset($_POST['submit'])) {
         $connessioneOK = $connessione->openDBConnection();
 
         if(!$connessioneOK){
-            
+  
             $stmt = $connessione->getConnection()->prepare("SELECT * FROM Utente WHERE nome_utente = ? ");
             $stmt->bind_param("s", $user);
             $stmt->execute();
@@ -49,7 +48,6 @@ if (isset($_POST['submit'])) {
         }
     }
 }
-    */
 
 $paginaHTML->getPagina();
 
