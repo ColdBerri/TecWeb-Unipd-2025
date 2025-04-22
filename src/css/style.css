@@ -44,8 +44,6 @@ main{
     justify-content: center;
 }
 
-
-
 /*===== LINK =====*/
 
 a {
@@ -173,6 +171,25 @@ div.search-container{
 }
 
 /*=====MAIN=====*/
+
+.top-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    margin-bottom: 1em;  
+    list-style: none;
+    text-align: center;
+    margin: 0.25em;
+    transition: all 1s ease;
+/*    background-color: #aaaaaa;*/
+}
+.listaindex>img{
+    width: 20em;
+    height: 12em;
+    border-radius: 1em;
+    margin-top: 0.5em;
+}
 
 #desc_table{
     position:absolute;
@@ -380,9 +397,11 @@ fieldset.button-container > p{
 
 /* Stile per i campi di input */
 .login-box input {
-    width: 90%;
+    width: 60%;
+    float: left;
     padding: 0.9375em; 
     margin: 0.3125em 0; 
+    margin-left: 1.3em;
     border: 0 solid var(--login-border);
     border-radius: 0.3125em; 
     font-size: 1em; 
@@ -405,6 +424,7 @@ fieldset > .pw{
 
 /* Pulsanti */
 .button-container > .accedi {
+    margin: 0;
     width: 97.5%;
     margin-top: 1em;
     /*
@@ -427,14 +447,31 @@ fieldset > .pw{
     background-color: #1c7731;
 }
 
-/* Pulsante di annullamento */
-.annulla {
-    background-color: #dc3545; /* Colore rosso */
-    color: white;
+div.regista-container>fieldset{
+    padding-top: 1em;
 }
 
-.annulla:hover {
-    background-color: #ab1d2b;
+div.regista-container>fieldset>.registra{
+    float: right;
+    margin: 0;
+    margin-right: 1.1em;
+    width: 46%;
+    background-color: #28a745
+}
+
+div.regista-container>fieldset>.registra:hover {
+    background-color: #1c7731;
+}
+
+div.regista-container>fieldset>.cancella{
+    float: left;
+    margin-left: 1.1em;
+    width: 46%;
+    background-color:#dc3545;
+}
+
+div.regista-container>fieldset>.cancella:hover{
+    background-color: var(--bandiera); 
 }
 
 .faq {

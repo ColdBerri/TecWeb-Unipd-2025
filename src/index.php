@@ -11,21 +11,42 @@ $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
 $img = "";
-$lista = "";
+$listaGiuchi = "";
+
+$listaEventi ="";
+$not="";
 
 if (!$connessioneOK) {
 	$img = $connessione->getFistImg();
+	$not = $connessione->five_little_ivents();
 	$connessione->closeConnection();
-	$lista = "<dl class='top-list'>";
 		
+	$listaGiuchi = "<ul class='top-list'>";
+
 	foreach($img as $giuco){
-		$lista .= "<dt><img src=\"assets/img/".$giuco['immagine']."\" alt='".$giuco['nome_gioco']."'></dt>";
-		$lista .= "<dd>".$giuco['nome_gioco']."</dd>";
+		$listaGiuchi .= "<li><a href='categorie.php'><div class='listaindex'>";
+		$listaGiuchi .= "<img src='assets/img/".$giuco['immagine']."' alt='".$giuco['nome_gioco']."'>";
+		$listaGiuchi .= "<p>".$giuco['nome_gioco']."</p>";
+		$listaGiuchi .= "</div></a></li>";
 	}
-		
-	$lista .= "</dl>";
 	
-	$paginaHTML->aggiungiContenuto("[giochi]",$lista);
+	$listaGiuchi .= "</ul>";
+	
+	$paginaHTML->aggiungiContenuto("[giochi]",$listaGiuchi);
+
+	$listaEventi = "<ul class='top-eventi'>";
+
+	foreach($not as $eventi){
+		$listaEventi .= "<li><a href='categorie.php'><div class='listaeventi'>";
+		$listaEventi .= "<img src='assets/img/".$eventi['nome_videogioco']."' alt='".$eventi['nome_videogioco']."'>";
+		$listaEventi .= "<p>".$eventi['nome_evento']."</p>";
+		$listaEventi .= "</div></a></li>";
+	}
+
+	$listaEventi .= "</ul>";
+
+	$paginaHTML->aggiungiContenuto("[eventi]",$listaEventi);
+
 
 	$paginaHTML->getPagina();
 }
