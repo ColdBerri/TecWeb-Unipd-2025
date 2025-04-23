@@ -453,11 +453,13 @@ div.login-box {
     background-color: var(--login-bgcolor); 
     border-radius: 10px;
     box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
-    width: 50%;
-    padding: 0.5em;
-    margin: auto;
+    width: 40%;
+    padding: 2.5em;
+    margin-top: 4 em; 
+    margin-left: auto;
+    margin-right: auto;
     height: auto;
-    max-width: 600px;
+    max-width: 400px;
 }
 
 div.login-box > h1{
@@ -481,11 +483,11 @@ fieldset.button-container > p{
 
 /* Stile per i campi di input */
 .login-box input {
-    width: 60%;
+    width: 90%;
     float: left;
     padding: 0.9375em; 
     margin: 0.3125em 0; 
-    margin-left: 1.3em;
+    margin-left: auto;
     border: 0 solid var(--login-border);
     border-radius: 0.3125em; 
     font-size: 1em; 
@@ -505,6 +507,14 @@ fieldset > label{
 fieldset > .pw{
     padding-top: 1em;
 }
+
+.login-box .register-link {
+    margin-top: 1.5em;
+    font-size: 1.1em;
+    text-align: center;
+    color: white;
+}
+
 
 /* Pulsanti */
 .button-container > .accedi {
@@ -530,32 +540,45 @@ fieldset > .pw{
 .accedi:hover {
     background-color: #1c7731;
 }
+div.regista-container > fieldset {
+    display: flex;
+    justify-content: space-between;  /* Distribuisce i bottoni ai lati opposti */
+        justify-content: flex-start;
 
-div.regista-container>fieldset{
-    padding-top: 1em;
+    gap: 1.5em; /* Distanza tra i bottoni */
+    padding: 0em;  /* Spazio interno */
+    margin: 0;    /* Reset margini di default */
+    margin-top: 1.5em;
 }
 
-div.regista-container>fieldset>.registra{
-    float: right;
-    margin: 0;
-    margin-right: 1.1em;
-    width: 46%;
-    background-color: #28a745
+/* Stile per il pulsante "Registra" */
+div.regista-container > fieldset > .registra {
+    width: 50%;  /* Imposta la larghezza per i bottoni */
+    background-color: #28a745;
+    padding: 0.85em;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-div.regista-container>fieldset>.registra:hover {
+/* Hover per il pulsante "Registra" */
+div.regista-container > fieldset > .registra:hover {
     background-color: #1c7731;
 }
 
-div.regista-container>fieldset>.cancella{
-    float: left;
-    margin-left: 1.1em;
-    width: 46%;
-    background-color:#dc3545;
+/* Stile per il pulsante "Cancella" */
+div.regista-container > fieldset > .cancella {
+    width: 50%;  /* Imposta la larghezza per i bottoni */
+    background-color: #dc3545;
+    padding: 0.85em;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-div.regista-container>fieldset>.cancella:hover{
-    background-color: var(--bandiera); 
+/* Hover per il pulsante "Cancella" */
+div.regista-container > fieldset > .cancella:hover {
+    background-color: #a71d2a;
 }
 
 .faq {
