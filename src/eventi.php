@@ -1,5 +1,6 @@
 <?php
 require_once "dbconnections.php";
+use DB\DBAccess;
 
 $month = date('n');
 $year = date('Y');

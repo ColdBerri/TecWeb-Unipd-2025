@@ -36,7 +36,7 @@ class DBAccess {
         return $this->connection;
     }
 
-    public function getFistImg() {
+    public function getFirstImg() {
         $query = "SELECT nome_gioco, immagine FROM Videogiochi LIMIT 3";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in openDBConnection: " . mysqli_error($this->connection));
 
@@ -53,7 +53,7 @@ class DBAccess {
 		}
 	}
 
-	public function five_little_ivents() {
+	public function five_little_events() {
 		$query = "SELECT nome_evento, nome_videogioco, data_inizio_evento FROM Eventi ORDER BY data_inizio_evento LIMIT 5";
 		$queryResult = mysqli_query($this->connection, $query) or die("Errore in allVideogame: " . mysqli_error($this->connection));
 

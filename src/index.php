@@ -19,7 +19,7 @@ $not="";
 $listaPath ="";
 $path="";
 
-if ($connessioneOK) {
+if (!$connessioneOK) {
 
     $img = $connessione->getFirstImg(); // corretto nome del metodo
     $not = $connessione->five_little_events(); // corretto nome del metodo

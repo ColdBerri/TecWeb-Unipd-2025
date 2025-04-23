@@ -1,37 +1,38 @@
-        <div class="login-container">
+<div class="login-container">
 
-            <div class="login-box">
+    <div class="login-box">
+        
+        <h1 class="login-welcome-message">Benvenuto</h1>
+
+        <form id="registration-form" action="registra.php" method="POST">    
+            <fieldset>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
+            </fieldset>
+
+            <fieldset>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+            </fieldset>
+            
+            <fieldset>
+                <label for="confirm-password">Conferma Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Conferma la tua password" required>
+            </fieldset>
                 
-                <h1 class="login-welcome-message">Benvenuto</h1>
-    
-                <form action="register" method="POST">    
-                    <fieldset>
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
-                    </fieldset>
-    
-                    <fieldset>
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
-                    </fieldset>
-                    
-                    <fieldset>
-                        <label for="confirm-password">Conferma Password:</label>
-                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Conferma la tua password" required>
-                    </fieldset>
-                        
-                    <fieldset>
-                        <label for="data-nascita">Data di nascita:</label>
-                        <input type="date" id="data-nascita" name="data-nascita" required>
-                    </fieldset>
-    
-                    <!-- Contenitore per i due pulsanti -->
-                    <div class="regista-container">
-                        <fieldset>
-                            <input type="submit" class="registra" value="registra">
-                            <input type="button" class="cancella" onclick="window.location.href='index.php';" value="annulla">
-                        </fieldset>
-                    </div>
-                </form>
+            <fieldset>
+                <label for="data-nascita">Data di nascita:</label>
+                <input type="date" id="data-nascita" name="data-nascita" required>
+            </fieldset>
+
+            <!-- Contenitore per i due pulsanti -->
+            <div class="regista-container">
+                <fieldset>
+                    <input type="submit" class="registra" value="registra">
+                    <input type="button" class="cancella" onclick="window.location.href='index.php';" value="annulla">
+                </fieldset>
             </div>
-        </div>
+        </form>
+    </div>
+</div>
+<script src="../js/validaPassword.js"></script>

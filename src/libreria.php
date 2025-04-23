@@ -14,7 +14,7 @@ $img = "";
 $lista = "";
 
 if (!$connessioneOK) {
-	$img = $connessione->getFistImg();
+	$img = $connessione->getFirstImg();
 	$connessione->closeConnection();
 	$lista = "<dl class='top-list'>";
 		/*

@@ -5,50 +5,29 @@ require_once "dbconnections.php";
 $paginaHTML = new Template("banana","banana","html/registra.html");
 
 use DB\DBAccess;
+$connessione = new DBAccess();
+$connessioneOK = $connessione->openDBConnection();
 
-
-if (isset($_POST['submit'])) {
-
-    $user = ($_POST['username']);
-    $pass = ($_POST['password']);
-    $email = ($_POST['email']);
-
-    if(!empty($user) && !empty($pass) && !is_numeric($user)){
-
-        $connessione = new DBAccess();
-        $connessioneOK = $connessione->openDBConnection();
-
-        if(!$connessioneOK){
-  
-            $stmt = $connessione->getConnection()->prepare("SELECT * FROM Utente WHERE nome_utente = ? ");
-            $stmt->bind_param("s", $user);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            $stmt->close();
-
-            $query = "SELECT * FROM Utente WHERE nome_utente = '$user'";
-            $result = mysqli_query($connessione->getConnection(), $query);
-            $connessione->closeConnection();
-
-            if($result){
-                if(mysqli_num_rows($result) > 0){
-
-                    $user_data = mysqli_fetch_assoc($result);
-
-                    if($user_data['password_'] === $pass){
-                        header("Location: profilo.php");
-                        exit();
-                    } 
-
-                } else {
-                    $error = "Si è verificato un errore, ripetere la procedura di login";
-                }
-            }
-
+if(!$connessioneOK){
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        $nickname = $_POST['username'];
+        $password_ = $_POST['password'];
+        $datanascita = $_POST['data-nascita'];
+        if ($_POST['password'] !== $_POST['confirm-password']) {
+            header("Location: registra.html");
+            exit;
+        } 
+        $conn = $connessione->getConnection();
+        $stmt = $conn->prepare("INSERT INTO Utente (nickname, password_, datan) VALUES (?,?,?)");
+        $stmt->bind_param("sss", $nickname, $password_, $datanascita);
+        if($stmt->execute()){
+            $_SESSION['nickname'] = $nickname; 
+            header("Location: profilo.php");
+            exit;
         }
-    }
+        $stmt->close();
+    }   
 }
-
+$connessione->closeConnection();
 $paginaHTML->getPagina();
-
 ?>
