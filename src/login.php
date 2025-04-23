@@ -38,11 +38,15 @@ if (isset($_POST['submit'])) {
                         $_SESSION['nickname'] = $user_data['nickname']; 
                         header("Location: profilo.php");
                         exit();
+                    }else {
+                        $error = urlencode("Nome utente o pasword sbagliati. Ripetere il login");
+                        header("Location: login.php?error=$error");
+                        exit;
                     }
-                    
-
                 } else {
-                    $error = "Si è verificato un errore, ripetere la procedura di login";
+                    $error = urlencode("Nome utente o pasword sbagliati. Ripetere il login");
+                    header("Location: login.php?error=$error");
+                    exit;
                 }
             }
 
