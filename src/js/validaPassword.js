@@ -2,35 +2,48 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("registration-form");
   const password = document.getElementById("password");
   const confirmPassword = document.getElementById("confirm-password");
+  const submitBtn = form.querySelector('input[type="submit"]');
 
-  // Crea e inserisce il messaggio di errore nel DOM
   const errorMessage = document.createElement("div");
   errorMessage.textContent = "Le password non coincidono!";
   errorMessage.style.display = "none";
-  errorMessage.style.color = "red"; // Solo per visibilità, toglilo se proprio niente CSS
+  errorMessage.style.color = "red";
   confirmPassword.parentNode.insertBefore(errorMessage, confirmPassword.nextSibling);
 
-  function checkPasswords() {
-    if (password.value && confirmPassword.value) {
-      if (password.value !== confirmPassword.value) {
+  let touched = false;
+
+  function validaPasswords() {
+    const match = password.value === confirmPassword.value;
+    const filled = password.value && confirmPassword.value;
+
+    if (!filled || !match) {
+      if (touched && filled) {
         errorMessage.style.display = "block";
-      } else {
-        errorMessage.style.display = "none";
       }
+      submitBtn.disabled = true;
     } else {
       errorMessage.style.display = "none";
+      submitBtn.disabled = false;
     }
   }
 
-  password.addEventListener("input", checkPasswords);
-  confirmPassword.addEventListener("input", checkPasswords);
+  confirmPassword.addEventListener("blur", function () {
+    touched = true;
+    validaPasswords();
+  });
+
+  password.addEventListener("input", validaPasswords);
+  confirmPassword.addEventListener("input", validaPasswords);
 
   form.addEventListener("submit", function (e) {
     if (password.value !== confirmPassword.value) {
       e.preventDefault();
       errorMessage.style.display = "block";
-      password.value = "";
       confirmPassword.value = "";
+      confirmPassword.focus();
+      submitBtn.disabled = true;
     }
   });
+
+  validaPasswords();
 });

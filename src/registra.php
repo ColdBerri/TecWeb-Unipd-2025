@@ -7,17 +7,20 @@ $paginaHTML = new Template("banana","banana","html/registra.html");
 use DB\DBAccess;
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
-
 if(!$connessioneOK){
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $nickname = $_POST['username'];
         $password_ = $_POST['password'];
         $datanascita = $_POST['data-nascita'];
-        if ($_POST['password'] !== $_POST['confirm-password']) {
+        $pass_conf = $_POST['confirm-password'];
+        if ($password_ !== $pass_conf) {
             header("Location: registra.html");
             exit;
         } 
         $conn = $connessione->getConnection();
+        $nickname = $connessione->parser($nickname);
+        $password_ = $connessione->parser($password_);
+        $pass_conf = $connessione->parser($pass_conf);
         $stmt = $conn->prepare("INSERT INTO Utente (nickname, password_, datan) VALUES (?,?,?)");
         $stmt->bind_param("sss", $nickname, $password_, $datanascita);
         if($stmt->execute()){

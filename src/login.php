@@ -20,6 +20,8 @@ if (isset($_POST['submit'])) {
         if(!$connessioneOK){
             
             $stmt = $connessione->getConnection()->prepare("SELECT * FROM Utente WHERE nickname = ? ");
+            $user = $connessione->parser($user);
+            $pass = $connessione->parser($pass);
             $stmt->bind_param("s", $user);
             $stmt->execute();
             $result = $stmt->get_result();
