@@ -3,7 +3,7 @@ require_once "template.php";
 require_once "dbconnections.php";
 
 
-$paginaHTML = new Template("banana","banana","html/login.html");
+$paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","videogioco, evento, patch, aggiornamento, biblioteca","html/login.html");
 
 use DB\DBAccess;
 
