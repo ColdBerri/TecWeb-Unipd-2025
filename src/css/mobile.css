@@ -1,19 +1,18 @@
 .exit img {
-    width: 1.3em; 
-    height: auto;
-    cursor: pointer; 
-    position: absolute;
-     left: -3em;  /* o px, dipende da quanto margine vuoi */
-      top: 0.5em;
-
+  position: absolute;
+  right: 10px;
+  top: 10px;            /* Usa px invece di % per stabilità */
+  width: 28px;          /* Dimensione più visibile */
+  height: auto;         /* Mantiene le proporzioni originali */
+  cursor: pointer;
 }
 
-.exit {
-    position: absolute;
-    top: 10px;  /* Distanza dalla parte superiore del nav */
+
+.exit ul {
+    
     text-decoration: none;  /* Rimuove la sottolineatura dal link */
+    font-size: 12px;
 }
-
 
 
 /* Assicurati che il link a non abbia sottolineatura */
@@ -68,7 +67,7 @@
   right: 30px;
   cursor: pointer;
       top: 7%;
-      width: 24px;  /* Regolato per renderlo più compatto */
+      width: 28px;  /* Regolato per renderlo più compatto */
     width: 8vw;
 
 }
@@ -147,3 +146,10 @@ img {
     height: 1.25em;
   }
 
+div.login-box {
+        width: 80%;
+        max-width: none; /* rimuove il limite di 400px */
+        padding: 1.5em; /* facoltativo: un po' meno padding su mobile */
+    margin-top: 2em; /* meno spazio sopra */
+    margin-bottom: 5em; /* più spazio sotto */
+    }
