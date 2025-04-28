@@ -89,7 +89,7 @@ header{
     margin: auto;
     vertical-align: middle;
 }
-
+/*
 .logo {
     float: left;
     padding: 1em 1em;
@@ -101,27 +101,44 @@ header{
     background-repeat: no-repeat;
     font-size: 2.4em;
     width: 1vw;
+}*/
+
+.logo>img{
+    width: 3em;
 }
 
-.menu ul {
-    list-style: none;
-    display: inline-block;
-    padding: 0;
-    margin-top: 1.5em;
-    vertical-align: middle;
+.logo{
+    color: #fff;
 }
 
-.menu ul li {
-    display: inline-block;
-    margin-right: 8vw;
-    font-size: 1.2em;
+.logo h1{
+    font-size: 1.1em;   
+}
+
+.logo h1{
+    font-size: 1.1em;   
+}
+
+.logoLink{
+    text-decoration: none;
+}
+
+.menu {
+    width: 100%;
+    padding: 1em 1em;
+    box-sizing: border-box;
+    font-size: 1.3em;
     text-transform: uppercase;
 }
 
-.menu ul li:last-child{
-    padding-left: 7vw;
-    padding-right: 0em;
+.menu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin: 0;
+    padding: 0;
+    list-style: none; 
+
 }
 
 ul .current-page{
@@ -171,6 +188,17 @@ div.search-container{
 }
 
 /*=====MAIN=====*/
+
+.suggForm{
+    color: white;
+    font-size: 1em;
+}
+
+.erroreForm{
+    color: red;
+    font-size: 1em;
+}
+
 
 .top-list{
     display: flex;
@@ -222,6 +250,7 @@ div.search-container{
     padding: 0.6em 0.3em;
     font-size: 0.9em;
     font-weight: bold;
+    text-decoration-color: white;
 }
   
 .miniCalendarioB {
@@ -260,8 +289,6 @@ div.search-container{
     color: white;
     border: 1px #000000 solid;
 }
-
-
 
 .titoloNotiziaIndex {
     text-transform: uppercase;

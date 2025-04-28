@@ -34,3 +34,62 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+var form = {
+  "username" : ['es:SuperMario45',/^[a-zA-Z0-9]{2,15}$/, 'L utente deve essere lungo tra 2 e 15 caratteri e può contenere solo lettere e numeri'],
+  "password" : ['es:Password1',/^[a-zA-Z0-9]{4,}/, 'La password deve contenere almeno 4 caratteri alfanumerici'],
+  "data-nascita" : ['es:01/01/2000',/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[012])\/(19|20)\d\d$/, 'La data di nascita deve essere nel formato gg/mm/aaaa'],
+};
+
+function riempimentoVar(){
+  for(var key in form){
+    var input = document.getElementById(key);
+    errore(input, 0);
+    input.onblur = function() {checkInput(this);};
+   }
+}
+
+function checkInput(x){
+  var regex = form[x.id][1]; 
+  var tes = x.value;
+  
+  var r = x.parentNode;
+  r.removeChild(r.children[2]); 
+
+  if(!regex.test(tes)){  
+    errore(x,1); 
+    x.focus();
+    x.select();
+    return false;
+  }
+
+  return true;
+}
+
+function errore(x, y){
+  var n;
+  var r = x.parentNode;
+
+  if(y == 1){
+    n = document.createElement("span");
+    n.className = "erroreForm";
+    n.appendChild(document.createTextNode(form[x.id][2])); 
+  } else {
+    n = document.createElement("span");
+    n.className = "suggForm"; 
+    n.appendChild(document.createTextNode(form[x.id][0])); 
+  }
+  r.appendChild(n);
+}
+
+function checkForm(){
+  var check = true;
+  for(var key in form){
+    var input = document.getElementById(key);
+    if(!checkInput(input)){
+      check = false;
+    }
+  }
+  return check;
+}

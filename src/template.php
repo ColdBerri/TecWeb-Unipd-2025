@@ -19,6 +19,15 @@ class Template {
 
         $main = file_get_contents($pagina);
 
+        $budi = '<body>';
+        $budijs = '<body onload="riempimentoVar();">';
+
+        if(!($pagina === "html/registra.html")){
+           $this->pagina = str_replace("[body]", $budi, $this->pagina);
+        } else {
+            $this->pagina = str_replace("[body]", $budijs, $this->pagina);
+        }
+
         $this->pagina = str_replace("[main]",$main, $this->pagina);
 
     }
@@ -47,9 +56,19 @@ class Template {
             $header = str_replace("[searchbar]", "", $header);
         }
 
+        $budi = '<body>';
+        $budijs = '<body onload="riempimentoVar();">';
+
+        if(!($pagina === "html/registra.html")){
+           $header = str_replace("[body]", $budi, $header);
+        } else {
+            $header = str_replace("[body]", $budijs, $header);
+        }
+
+
         if($pagina === "html/index.html"){
 
-            $header = str_replace("[logo]",'<h1 class="logo">Vapor</h1>', $header);
+            $header = str_replace("[logo]",'<li><div class="logo"><img src="assets/icone.png" alt=" "><h1>Vapor</h1></div></li>', $header);
 
             $header = str_replace("[home]",'<li class="current-page"><span lang="en">Home</span></li>',$header);
             $header = str_replace("[categorie]",'<li><a href="categorie.php">Categorie</a></li>',$header);
@@ -66,7 +85,7 @@ class Template {
 
         if($pagina === "html/categorie.html"){
 
-            $header = str_replace("[logo]",'<a href="index.php"><h1 class="logo">Vapor</h1></a>', $header);
+            $header = str_replace("[logo]",'<li><a href="index.php" class="logoLink"><div class="logo"><img src="assets/icone.png" alt=" "><h1>Vapor</h1></div></a></li>', subject: $header);
 
             $header = str_replace("[home]",'<li><span lang="en"><a href="index.php">Home</span></a></li>',$header);
             $header = str_replace("[categorie]",'<li class="current-page">Categorie</li>',$header);
@@ -83,7 +102,7 @@ class Template {
 
         if($pagina === "html/eventi.html"){
 
-            $header = str_replace("[logo]",'<a href="index.php"><h1 class="logo">Vapor</h1></a>', $header);
+            $header = str_replace("[logo]",'<li><a href="index.php" class="logoLink" ><div class="logo"><img src="assets/icone.png" alt=" "><h1>Vapor</h1></div></a></li>', subject: $header);
 
             $header = str_replace("[home]",'<li><span lang="en"><a href="index.php">Home</span></a></li>',$header);
             $header = str_replace("[categorie]",'<li><a href="categorie.php">Categorie</a></li>',$header);
@@ -100,7 +119,7 @@ class Template {
 
         if($pagina === "html/libreria.html"){
 
-            $header = str_replace("[logo]",'<a href="index.php"><h1 class="logo">Vapor</h1></a>', $header);
+            $header = str_replace("[logo]",'<li><a href="index.php" class="logoLink"><div class="logo"><img src="assets/icone.png" alt=" "><h1>Vapor</h1></div></a></li>',subject: $header);
 
             $header = str_replace("[home]",'<li><span lang="en"><a href="index.php">Home</span></a></li>',$header);
             $header = str_replace("[categorie]",'<li><a href="categorie.php">Categorie</a></li>',$header);
@@ -117,7 +136,7 @@ class Template {
 
         if($pagina === "html/login.html"){
 
-            $header = str_replace("[logo]",'<a href="index.php"><h1 class="logo">Vapor</h1></a>', $header);
+            $header = str_replace("[logo]",'<li><a href="index.php" class="logoLink"><div class="logo"><img src="assets/icone.png" alt=" "><h1>Vapor</h1></div></a></li>', subject: $header);
 
             $header = str_replace("[home]",'<li><span lang="en"><a href="index.php">Home</span></a></li>',$header);
             $header = str_replace("[categorie]",'<li><a href="categorie.php">Categorie</a></li>',$header);
@@ -131,7 +150,7 @@ class Template {
 
         if($pagina === "html/registra.html"){
 
-            $header = str_replace("[logo]",'<a href="index.php"><h1 class="logo">Vapor</h1></a>', $header);
+            $header = str_replace("[logo]",'<li><a href="index.php" class="logoLink"><div class="logo"><img src="assets/icone.png" alt=" "><h1>Vapor</h1></div></a></li>', subject: $header);
 
             $header = str_replace("[home]",'<li><span lang="en"><a href="index.php">Home</span></a></li>',$header);
             $header = str_replace("[categorie]",'<li><a href="categorie.php">Categorie</a></li>',$header);
@@ -142,7 +161,7 @@ class Template {
         }
         
         if($pagina === "html/aboutus.html"){
-            $header = str_replace("[logo]",'<a href="index.php"><h1 class="logo">Vapor</h1></a>', $header);
+            $header = str_replace("[logo]",'<li><a href="index.php" class="logoLink"><div class="logo"><img src="assets/icone.png" alt=" "><h1>Vapor</h1></div></a></li>', subject: $header);
 
             $header = str_replace("[home]",'<li><span lang="en"><a href="index.php">Home</span></a></li>',$header);
             $header = str_replace("[categorie]",'<li><a href="categorie.php">Categorie</a></li>',$header);
@@ -157,7 +176,7 @@ class Template {
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; <span lang="en"> AboutUS </span></p> </div>',$header);
         }
         if($pagina === "html/profilo.html"){
-            $header = str_replace("[logo]",'<a href="index.php"><h1 class="logo">Vapor</h1></a>', $header);
+            $header = str_replace("[logo]",'<li><a href="index.php class="logoLink" ><div class="logo"><img src="assets/icone.png" alt=" "><h1>Vapor</h1></div></a></li>', subject: $header);
 
             $header = str_replace("[home]",'<li><span lang="en"><a href="index.php">Home</span></a></li>',$header);
             $header = str_replace("[categorie]",'<li><a href="categorie.php">Categorie</a></li>',$header);
@@ -169,7 +188,7 @@ class Template {
         }
 
         if($pagina === "html/assistenza.html"){
-            $header = str_replace("[logo]",'<a href="index.php"><h1 class="logo">Vapor</h1></a>', $header);
+            $header = str_replace("[logo]",'<li><a href="index.php" class="logoLink" ><div class="logo"><img src="assets/icone.png" alt=" "><h1>Vapor</h1></div></a></li>', subject: $header);
 
             $header = str_replace("[home]",'<li><span lang="en"><a href="index.php">Home</span></a></li>',$header);
             $header = str_replace("[categorie]",'<li><a href="categorie.php">Categorie</a></li>',$header);

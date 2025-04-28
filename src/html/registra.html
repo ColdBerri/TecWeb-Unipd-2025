@@ -2,9 +2,9 @@
 
     <div class="login-box">
         
-        <h1 class="login-welcome-message">Benvenuto</h1>
+        <h1 class="login-welcome-message">Ti diamo il benvenuto</h1>
 
-        <form id="registration-form" action="registra.php" method="POST">    
+        <form id="registration-form" method="POST" action="/registra.php"  onsubmit="return checkForm();">    
             <fieldset>
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
@@ -35,5 +35,3 @@
         </form>
     </div>
 </div>
-<script src="../js/validaPassword.js"></script>
-<script src="../js/controlloInjection.js"></script>
