@@ -1,4 +1,4 @@
-/*document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("registration-form");
   const password = document.getElementById("password");
   const confirmPassword = document.getElementById("confirm-password");
@@ -34,17 +34,12 @@
     }
   });
 });
-*/
+
 
 var form = {
   "username" : ['es:SuperMario45',/^[a-zA-Z0-9]{2,15}$/, 'L utente deve essere lungo tra 2 e 15 caratteri e può contenere solo lettere e numeri'],
   "password" : ['es:Password1',/^[a-zA-Z0-9]{4,}/, 'La password deve contenere almeno 4 caratteri alfanumerici'],
-<<<<<<< Updated upstream
-  "data-nascita" : ['es:01/01/2000',/\d{4}\-\d{2}\-\d{2}$/, 'La data di nascita deve essere nel formato gg/mm/aaaa'],
-};
-=======
   "data-nascita": ['es:01-01-2000',/^(19|20)\d\d\-(0[1-9]|1[0-2])\-(0[1-9]|[12][0-9]|3[01])$/,'La data di nascita deve essere nel formato gg-mm-aaaa']};
->>>>>>> Stashed changes
 
 function riempimentoVar(){
   for(var key in form){
