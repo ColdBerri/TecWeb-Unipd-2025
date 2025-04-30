@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const inputs = form.querySelectorAll("input[type='text'], input[type='password']");
   
     const forbiddenChars = /[<>{}\[\]\\\/;'"`$]/;
-  
+
     const password = form.querySelector("#password");
     const confirmPassword = form.querySelector("#confirm-password"); // Presente solo in registrazione
   
