@@ -147,9 +147,8 @@ img {
   }
 
 div.login-box {
-        width: 80%;
-        max-width: none; /* rimuove il limite di 400px */
-        padding: 1.5em; /* facoltativo: un po' meno padding su mobile */
+        width: 90%;
+        padding: 1.5em;
     margin-top: 2em; /* meno spazio sopra */
     margin-bottom: 5em; /* più spazio sotto */
     }

@@ -4,25 +4,33 @@
         
         <h1 class="login-welcome-message">Ti diamo il benvenuto</h1>
 
-        <form id="registration-form" method="POST" action="/registra.php"  onsubmit="return checkForm();">    
+        <form id="registration-form" method="POST" action="registra.php"  onsubmit="return checkForm();">    
             <fieldset>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
+                <div>
+                    <label for="username"><span lang="en">Username:</span></label>
+                    <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
+                </div>
             </fieldset>
 
             <fieldset>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+                <div>
+                    <label for="password"><span lang="en">Password:</span></label>
+                    <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+                </div>
             </fieldset>
             
             <fieldset>
-                <label for="confirm-password">Conferma Password:</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Conferma la tua password" required>
+                <div>
+                    <label for="confirm-password">Conferma <span lang="en">Password:</span></label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Conferma la tua password" required>
+                </div>
             </fieldset>
                 
             <fieldset>
-                <label for="data-nascita">Data di nascita:</label>
-                <input type="date" id="data-nascita" name="data-nascita" required>
+                <div>
+                    <label for="data-nascita">Data di nascita:</label>
+                    <input type="date" id="data-nascita" name="data-nascita" required>
+                </div>
             </fieldset>
 
             <!-- Contenitore per i due pulsanti -->

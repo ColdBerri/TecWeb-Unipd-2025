@@ -1,21 +1,24 @@
 <div class="login-box">
                 <h1 class="login-welcome-message">Accedi</h1>
-                <form action="../login.php" method="POST">
+                <form action="login.php" method="POST">
                     <fieldset>
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
+                        <div>
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
+                        </div>
                     </fieldset>
                     <fieldset>
-                        <label class="pw" for="password">Password:</label>
-                        <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+                        <div>
+                            <label class="pw" for="password">Password:</label>
+                            <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+                        </div>
                     </fieldset>
-                    <!-- Contenitore per i due pulsanti -->
                     <fieldset class="button-container">
-                        <input type="submit" name="submit" class="accedi" value="Accedi">
+                        <div><input type="submit" name="submit" class="accedi" value="Accedi"></div>
                     </fieldset>
-                    <p class="register-link">Non hai un account?: <a href="../registra.php">Registati!</a></p>
+                    <p class="register-link">Non hai un account?: <a href="registra.php">Registati!</a></p>
 
                 </form>
             </div>
-            <script src="../js/loginError.js"></script>
-            <script src="../js/controlloInjection.js"></script>
+            <script src="js/loginError.js"></script>
+            <script src="js/controlloInjection.js"></script>

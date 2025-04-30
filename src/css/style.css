@@ -475,26 +475,41 @@ div.search-container{
     */
 
 div.login-box {
-    text-align: center;
     display: block;
     background-color: var(--login-bgcolor); 
     border-radius: 10px;
     box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
     width: 40%;
     padding: 2.5em;
-    margin-top: 4em; 
+    margin-top: 2em; 
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2em;
     height: auto;
     max-width: 400px;
 }
 
 div.login-box > h1{
+    text-align: center;
     color: white;
 }
 
-form > fieldset > label{
+#registration-form{
     color: white;
+    display: inline-block;
+}
+#registration-form div{
+    width: 100%;
+    overflow: hidden;
+}
+
+registration-form div > label{
+    float: left;
+}
+
+.suggForm{
+    float: right;
+    padding-right: 0.5em;
 }
 
 fieldset.button-container > p{
@@ -511,7 +526,7 @@ fieldset.button-container > p{
 /* Stile per i campi di input */
 .login-box input {
     width: 90%;
-    float: left;
+/*    float: left;*/
     padding: 0.9375em; 
     margin: 0.3125em 0; 
     margin-left: auto;
