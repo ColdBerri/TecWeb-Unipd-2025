@@ -8,7 +8,7 @@ $connessioneOK = $connessione->openDBConnection();
 
 $pagina = new Template("Il tuo profilo", "videogiochi, dati, personali", "html/profilo.html");
 $nickname = "";
-$email = "";
+$password_ = "";
 
 if (isset($_GET['logout'])) {
     session_unset();
@@ -20,13 +20,14 @@ if (isset($_GET['logout'])) {
 if(!$connessioneOK){
     if (isset($_SESSION['nickname'])) {
         $utenteNickname = $_SESSION['nickname'];
-    
-        $stmt = $connessione->getConnection()->prepare("SELECT nickname FROM Utente WHERE nickname = ?");
+
+        $stmt = $connessione->getConnection()->prepare("SELECT nickname, password_ FROM Utente WHERE nickname = ?");
         $stmt->bind_param("s", $utenteNickname);
         $stmt->execute();
-        $stmt->bind_result($nickname);
+        $stmt->bind_result($nickname, $password_);
         $stmt->fetch();
         $stmt->close();
+
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
             session_unset();
@@ -40,7 +41,7 @@ if(!$connessioneOK){
     }
 }
 $pagina->aggiungiContenuto("{{nickname}}", htmlspecialchars($nickname));
-$pagina->aggiungiContenuto("{{email}}", htmlspecialchars($email));
+$pagina->aggiungiContenuto("{{password_}}", htmlspecialchars($password_));
 
 $pagina->getPagina();
 ?>
