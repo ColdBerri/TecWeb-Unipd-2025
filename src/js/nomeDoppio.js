@@ -1,19 +1,31 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const erroreDiv = document.getElementById("errore-server");
+document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
   
-    if (erroreDiv) {
-      const messaggio = erroreDiv.dataset.messaggio;
+    if (params.get("errore") === "utente_esiste") {
+      const msg = document.createElement("div");
+      msg.textContent = "Questo nome utente è già in uso.";
+      msg.style.color = "red";
+      msg.style.margin = "0.5em 0";
   
-      if (messaggio) {
-        const div = document.createElement("div");
-        div.textContent = decodeURIComponent(messaggio);
-        div.style.color = "red";
-        div.setAttribute("role", "alert");
-        div.setAttribute("aria-live", "polite");
-  
-        const form = document.querySelector("form");
-        form.parentNode.insertBefore(div, form);
+      const usernameField = document.getElementById("username");
+      if (usernameField) {
+        usernameField.parentNode.insertBefore(msg, usernameField);
+      } else {
+        const form = document.getElementById("regForm");
+        if (form) {
+          form.insertBefore(msg, form.firstChild);
+        } else {
+          document.body.insertBefore(msg, document.body.firstChild);
+        }
       }
+  
+      params.delete("errore");
+      const newUrl = window.location.pathname +
+                     (params.toString() ? "?" + params.toString() : "");
+      window.history.replaceState({}, "", newUrl);
+  
+      const form = document.getElementById("regForm");
+      if (form) form.reset();
     }
   });
   

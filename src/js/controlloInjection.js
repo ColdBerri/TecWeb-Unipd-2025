@@ -46,5 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
       error.textContent = message;
       input.parentNode.insertBefore(error, input.nextSibling);
     }
+
   });
   

@@ -21,6 +21,14 @@ if(!$connessioneOK){
         $nickname = $connessione->parser($nickname);
         $password_ = $connessione->parser($password_);
         $pass_conf = $connessione->parser($pass_conf);
+        $username = $conn->real_escape_string($_POST['username']);
+
+        $result = $conn->query("SELECT * FROM Utente WHERE nickname = '$username'");
+
+        if ($result->num_rows > 0) {
+            header("Location: registra.php?errore=utente_esiste");
+            exit();
+        }
         $stmt = $conn->prepare("INSERT INTO Utente (nickname, password_, datan) VALUES (?,?,?)");
         $stmt->bind_param("sss", $nickname, $password_, $datanascita);
         if($stmt->execute()){
