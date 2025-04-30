@@ -40,7 +40,7 @@ var form = {
   "username" : ['es:SuperMario45',/^[a-zA-Z0-9]{2,15}$/, 'L utente deve essere lungo tra 2 e 15 caratteri e può contenere solo lettere e numeri'],
   "password" : ['es:Password1',/^[a-zA-Z0-9]{4,}/, 'La password deve contenere almeno 4 caratteri alfanumerici'],
   "data-nascita" : ['es:01/01/2000',/\d{4}\-\d{2}\-\d{2}$/, 'La data di nascita deve essere nel formato gg/mm/aaaa'],
-};
+};  
 function riempimentoVar(){
   for(var key in form){
     var input = document.getElementById(key);
@@ -59,8 +59,11 @@ function checkInput(x){
   var tes = x.value;
   
   var r = x.parentNode;
-  r.removeChild(r.children[1]); 
-
+  const oldMsg = r.querySelector(".erroreForm, .suggForm");
+  if (oldMsg) {
+    r.removeChild(oldMsg);
+  }
+  
   if(!regex.test(tes)){  
     errore(x,1); 
     x.focus();
