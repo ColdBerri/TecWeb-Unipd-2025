@@ -769,6 +769,74 @@ aside {
     color: var(--linkcolor); 
 }
 
+section {
+    padding: 10px 30px;  /* Aggiunge spazio sopra e sotto, riducendo lo spazio laterale */
+    margin-top: 40px;  /* Distanza dalla sezione precedente */
+}
+
+section p {
+    text-align: center;  /* Centra il testo */
+    max-width: 1100px;  /* Ridotto la larghezza massima per una minore distanza laterale */
+    margin: 0 auto;  /* Centra il paragrafo orizzontalmente */
+    font-size: 16px;  /* Imposta una dimensione del testo uniforme */
+    line-height: 1.6;  /* Spazio tra le righe per leggibilità */
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 30px; /* spazio tra il titolo e i riquadri */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.colonna1,
+.colonna2,
+.colonna3,
+.colonna4 {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 90px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.colonna1 ul,
+.colonna2 ul,
+.colonna3 ul,
+.colonna4 ul {
+    list-style-type: none;  /* Rimuove i punti dall'elenco */
+    padding-left: 0;  /* Rimuove l'indentazione */
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px; /* Distanza tra l'immagine e il testo */
+}
+
+.colonna1 li,
+.colonna2 li,
+.colonna3 li,
+.colonna4 li {
+    margin-bottom: 10px; /* Spazio tra le voci */
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+
+ul {
+    list-style-type: none; /* Rimuove i punti dall'elenco */
+    padding-left: 0; /* Rimuove l'indentazione */
+}
+
+
+
+
 /*=====FOOTER=====*/
 
 footer {
