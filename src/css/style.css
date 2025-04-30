@@ -302,10 +302,18 @@ div.search-container{
     line-height: 1.3em;
 }
 
-#desc_table{
+/*EVENTI*/
+
+td.giornoFuori{ 
+    color: gray;
+}
+
+#sum{
     position:absolute;
     text-indent: -999em;
 }
+
+
 
 .library-search-container {
     display: flex;

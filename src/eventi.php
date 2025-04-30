@@ -1,6 +1,9 @@
 <?php
 require_once "dbconnections.php";
+require_once "template.php";
 use DB\DBAccess;
+
+$paginaHTML = new Template("","","html/eventi.html");
 
 $month = date('n');
 $year = date('Y');
@@ -8,33 +11,59 @@ $year = date('Y');
 $db = new DBAccess();
 $eventDays = [];
 
-if ($db->openDBConnection()) {
-    $eventDays = $db->getEventiDelMese($month, $year);
-    $db->closeConnection();
+$mese = 4;
+$anno = 2025;
+
+$calendarioHTML = "";
+
+$giorniSettimana = ['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom'];
+
+$primoGiorno = mktime(0, 0, 0, $mese, 1, $anno);
+$indicePrimoGiorno = date('N', $primoGiorno); // 1 (Lun) - 7 (Dom)
+$numeroGiorni = date('t', $primoGiorno);
+
+$giorniInizialiVuoti = $indicePrimoGiorno - 1;
+$giorniDelMesePrecedente = date('t', mktime(0, 0, 0, $mese - 1, 1, $anno));
+
+$ultimoGiorno = mktime(0, 0, 0, $mese, $numeroGiorni, $anno);
+$indiceUltimoGiorno = date('N', $ultimoGiorno);
+$giorniFinaliVuoti = 7 - $indiceUltimoGiorno;
+
+$calendarioHTML .= "<thead>";
+$calendarioHTML .= "<tr><th colspan='7'>" . date('F Y', $primoGiorno) . "</th></tr>";
+$calendarioHTML .= "<tr>";
+
+foreach ($giorniSettimana as $giorno) {
+    $calendarioHTML .="<th scope='col'>$giorno</th>";
+}
+$calendarioHTML .= "</tr></thead><tbody><tr>";
+
+for ($i = $giorniInizialiVuoti; $i > 0; $i--) {
+    $giorno = $giorniDelMesePrecedente - $i + 1;
+    $calendarioHTML .= "<td class='giornoFuori'>$giorno</td>";
 }
 
-// Calcoli calendario
-$firstDay = mktime(0, 0, 0, $month, 1, $year);
-$startDayOfWeek = (date('w', $firstDay) + 6) % 7; // inizio da lunedì
-$daysInMonth = date('t', $firstDay);
+$giornoCorrente = 1;
 
-$day = 1;
-$totalCells = $startDayOfWeek + $daysInMonth;
-$totalWeeks = ceil($totalCells / 7);
-
-for ($week = 0; $week < $totalWeeks; $week++) {
-    echo "<tr>";
-    for ($i = 0; $i < 7; $i++) {
-        $cellIndex = $week * 7 + $i;
-
-        if ($cellIndex < $startDayOfWeek || $day > $daysInMonth) {
-            echo "<td></td>";
-        } else {
-            $class = in_array($day, $eventDays) ? 'class="event-day"' : '';
-            echo "<td $class>$day</td>";
-            $day++;
-        }
+while ($giornoCorrente <= $numeroGiorni) {
+    $calendarioHTML .= "<td>$giornoCorrente</td>";
+    if (($giorniInizialiVuoti + $giornoCorrente - 1) % 7 == 6) {
+        $calendarioHTML .= "</tr><tr>";
     }
-    echo "</tr>";
+    $giornoCorrente++;
 }
+
+$giornoSuccessivo = 1;
+for ($i = 0; $i < $giorniFinaliVuoti; $i++) {
+    $calendarioHTML .= "<td class='giornoFuori'>$giornoSuccessivo</td>";
+    $giornoSuccessivo++;
+}
+
+$calendarioHTML .= "</tr>";
+$calendarioHTML .= "</tbody>";
+
+$paginaHTML->aggiungiContenuto("[calendario]",$calendarioHTML);
+$paginaHTML->getPagina();
+
 ?>
+
