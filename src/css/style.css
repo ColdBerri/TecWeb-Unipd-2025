@@ -688,4 +688,61 @@ main {
     margin: 0;
   }
   
-
+  .calendario-tabella {
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    table-layout: fixed;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .calendario-tabella thead {
+    background-color: var(--headerbgcolor);
+    color: white;
+  }
+  
+  .calendario-tabella th {
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid white;
+  }
+  
+  .calendario-tabella td {
+    height: 80px;
+    padding: 8px;
+    text-align: right;
+    vertical-align: top;
+    font-size: 14px;
+    border: 1px solid #eee;
+    position: relative;
+    background-color: white;
+    transition: background-color 0.2s;
+  }
+  
+  .calendario-tabella td:hover {
+    background-color: var(--bgcolor);
+  }
+  
+  /* Evidenzia i giorni con eventi */
+  .calendario-tabella td.event-day::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: var(--bandiera);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+  }
+  
+  /* Tooltip migliorato per i giorni con eventi */
+  .calendario-tabella td.event-day {
+    cursor: help;
+  }
