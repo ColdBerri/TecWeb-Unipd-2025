@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS Eventi(
 );
 
 INSERT INTO Eventi (nome_evento, nome_videogioco, data_inizio_evento, data_fine_evento, squadre_coinvolte, vincitore_evento) VALUES
-('Minecraft hermitcraft 10','Minecraft','2025-12-17',NULL,'BdoubleO, cubfan135, Docm77, Etho, False, GeminiTay, Grian, Hypno, impulseSV, Jevin, joehills, Keralis, MumboJumbo, PearlescentMoon, rendog, Scar(il GOAT), Skizzleman, Smallishbeans, Tango Tek, Vintage Beef, Welsknight, xBCrafted, Xisuma, ZedaphPlays, ZombieCleo','l\'amore'),
+('Minecraft hermitcraft 10','Minecraft','2025-04-17',NULL,'BdoubleO, cubfan135, Docm77, Etho, False, GeminiTay, Grian, Hypno, impulseSV, Jevin, joehills, Keralis, MumboJumbo, PearlescentMoon, rendog, Scar(il GOAT), Skizzleman, Smallishbeans, Tango Tek, Vintage Beef, Welsknight, xBCrafted, Xisuma, ZedaphPlays, ZombieCleo','l\'amore'),
 ('Minecraft ALL-IN competition','Minecraft','2025-11-17','2025-11-18','MumboJumbo,Grian',NULL),
 ('Cyberpunk SPEED RUN Competition','Cyberpunk 2077','2025-10-07','2025-10-09','Fnatic,Falcon,Cluod,M80',NULL),
 ('DRESS TO IMPRESS cyber-edition','Cyberpunk 2077','2026-01-15','2026-02-01','Bang Bang,Women of the eRena, ESL',NULL),
