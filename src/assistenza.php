@@ -1,4 +1,4 @@
-<?php
+    <?php
 require_once "template.php";
 $paginaHTML = new Template("Assistenza", "videgiochi, assistenza, contatti, problemi", "html/assistenza.html");
 
