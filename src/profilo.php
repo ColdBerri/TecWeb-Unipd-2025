@@ -35,6 +35,10 @@ if(!$connessioneOK){
             header("Location: index.php");
             exit();
         }
+        if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['modifca_password'])){
+            header("Location: modifca_profilo.php");
+            exit();
+        }
     } else {
         // Nessun utente in sessione -> redirect o messaggio di errore
         echo "<p>Devi essere loggato per vedere il tuo profilo.</p>";
