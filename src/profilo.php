@@ -28,7 +28,6 @@ if(!$connessioneOK){
         $stmt->fetch();
         $stmt->close();
 
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
             session_unset();
             session_destroy();

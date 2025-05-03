@@ -21,13 +21,14 @@ CREATE TABLE IF NOT EXISTS Videogiochi(
     console_compatibili VARCHAR(255) NOT NULL,
     descrizione TEXT NOT NULL,
     anno_di_pubblicazione INT NOT NULL,
-    immagine VARCHAR(255) NOT NULL
-);
+    immagine VARCHAR(255) NOT NULL,
+    categoria VARCHAR(125) NOT NULL
+); 
 
-INSERT INTO Videogiochi (nome_gioco, casa_produttrice, console_compatibili, descrizione, anno_di_pubblicazione, immagine) VALUES
-('The Legend of Zelda: Breath of the Wild', 'Nintendo', 'Nintendo Switch', 'An open-world action-adventure game set in the kingdom of Hyrule.', 2017, 'z.jpg'),
-('Cyberpunk 2077', 'CD Projekt Red', 'PC, PlayStation, Xbox', 'A futuristic open-world RPG set in Night City.', 2020, 'c.jpg'),
-('Minecraft', 'Mojang Studios', 'PC, PlayStation, Xbox, Nintendo Switch', 'A sandbox game where players can build and explore infinite worlds.', 2011, 'm.jpg');
+INSERT INTO Videogiochi (nome_gioco, casa_produttrice, console_compatibili, descrizione, anno_di_pubblicazione, immagine, categoria) VALUES
+('The Legend of Zelda: Breath of the Wild', 'Nintendo', 'Nintendo Switch', 'An open-world action-adventure game set in the kingdom of Hyrule.', 2017, 'z.jpg', "RPG"),
+('Cyberpunk 2077', 'CD Projekt Red', 'PC, PlayStation, Xbox', 'A futuristic open-world RPG set in Night City.', 2020, 'c.jpg', "GDR"),
+('Minecraft', 'Mojang Studios', 'PC, PlayStation, Xbox, Nintendo Switch', 'A sandbox game where players can build and explore infinite worlds.', 2011, 'm.jpg', "sandbox");
 
 CREATE TABLE IF NOT EXISTS Recensioni(
     ID_recensione VARCHAR(64) PRIMARY KEY,
