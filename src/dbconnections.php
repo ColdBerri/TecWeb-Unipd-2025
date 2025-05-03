@@ -137,6 +137,7 @@ class DBAccess {
 	
 	public function getVideogioco($nome) {
 		$query = "SELECT nome_gioco, descrizione, immagine FROM Videogiochi WHERE nome_gioco = ?";
+
 		$stmt = mysqli_prepare($this->connection, $query);
 		if (!$stmt) {
 			die("Errore nella preparazione della query: " . mysqli_error($this->connection));
@@ -151,5 +152,51 @@ class DBAccess {
 	
 		return mysqli_fetch_assoc($result);
 	}
-	
+
+	public function getEventiGioco($nome){
+		$query = "SELECT nome_evento, nome_videogioco, data_inizio_evento, data_fine_evento, squadre_coinvolte FROM Eventi WHERE nome_videogioco = ?";
+		
+		$stmt = mysqli_prepare($this->connection, $query);
+		if(!$stmt){
+			die("NO BONI!!"  .mysqli_error($this->connection));
+		}
+		mysqli_stmt_bind_param($stmt, "s", $nome);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
+
+		if(mysqli_num_rows($result) == 0){
+			return null;
+		}else {
+			$eventi = array();
+			while($row = mysqli_fetch_assoc($result)){
+				$eventi[] = $row;
+			}
+			mysqli_free_result($result);
+			return $eventi;
+		}
+	}
+
+	public function getArticoliGioco($nome){
+		$query = "SELECT titolo_articolo, autore, data_pubblicazione, testo_articolo, nome_videogioco FROM Articoli_e_patch WHERE nome_videogioco = ?";
+		
+		$stmt = mysqli_prepare($this->connection, $query);
+		if(!$stmt){
+			die("NO BONIII!"  .mysqli_error($this->connection));
+		}
+		mysqli_stmt_bind_param($stmt, "s", $nome);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
+
+		if(mysqli_num_rows($result) == 0){
+			return null;
+		}else {
+			$articoli = array();
+			while($row = mysqli_fetch_assoc($result)){
+				$articoli[] = $row;
+			}
+			mysqli_free_result($result);
+			return $articoli;
+		}
+
+	}
 }
