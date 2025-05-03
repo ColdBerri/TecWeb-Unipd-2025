@@ -71,7 +71,7 @@ class DBAccess {
 	}
 
 	public function allVideogame() {
-		$query = "SELECT nome_gioco, immagine FROM Videogiochi";
+		$query = "SELECT nome_gioco, immagine, categoria FROM Videogiochi";
 		$queryResult = mysqli_query($this->connection, $query) or die("Errore in allVideogame: " . mysqli_error($this->connection));
 
 		if(mysqli_num_rows($queryResult) == 0) {
@@ -109,6 +109,47 @@ class DBAccess {
 		$value = strip_tags($value);
 		$value = htmlentities($value);
 		return $value;
+	}
+
+	public function videogiochi_categoria($categoria) {
+		$query = "SELECT nome_gioco, immagine, categoria FROM Videogiochi WHERE categoria = ?";
+		$stmt = mysqli_prepare($this->connection, $query);
+	
+		if (!$stmt) {
+			die("Errore nella preparazione della query: " . mysqli_error($this->connection));
+		}
+	
+		mysqli_stmt_bind_param($stmt, "s", $categoria); // "s" per stringa
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
+	
+		if (mysqli_num_rows($result) == 0) {
+			return null;
+		} else {
+			$giochi = array();
+			while ($row = mysqli_fetch_assoc($result)) {
+				$giochi[] = $row;
+			}
+			mysqli_free_result($result);
+			return $giochi;
+		}
+	}
+	
+	public function getVideogioco($nome) {
+		$query = "SELECT nome_gioco, descrizione, immagine FROM Videogiochi WHERE nome_gioco = ?";
+		$stmt = mysqli_prepare($this->connection, $query);
+		if (!$stmt) {
+			die("Errore nella preparazione della query: " . mysqli_error($this->connection));
+		}
+		mysqli_stmt_bind_param($stmt, "s", $nome);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
+	
+		if (mysqli_num_rows($result) == 0) {
+			return null;
+		}
+	
+		return mysqli_fetch_assoc($result);
 	}
 	
 }

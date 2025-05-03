@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS Videogiochi(
     casa_produttrice VARCHAR(64) NOT NULL,
     console_compatibili VARCHAR(255) NOT NULL,
     descrizione TEXT NOT NULL,
-    anno_di_pubblicazione INT NOT NULL,
+    anno_di_pubblicazione INT NOT NULL, 
     immagine VARCHAR(255) NOT NULL,
     categoria VARCHAR(125) NOT NULL
 ); 

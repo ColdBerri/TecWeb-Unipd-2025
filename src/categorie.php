@@ -17,8 +17,11 @@ if(!$connessioneOK){
 
     $lista = "<dl class='top-list'>";
     foreach($img as $giuco){
-        $lista .= "<dt><img src=\"assets/img/".$giuco['immagine']."\" alt='".$giuco['nome_gioco']."'></dt>";
-        $lista .= "<dd>".$giuco['nome_gioco']."</dd>";
+        $nome = urlencode($giuco['categoria']);
+        $lista .= "<li><a href='categoria_singola.php?categoria={$nome}'>";
+        $lista .= "<img src='assets/img/{$giuco['immagine']}' alt='{$giuco['categoria']}'>";
+        $lista .= "<span>{$giuco['categoria']}</span>";
+        $lista .= "</a></li>";
     }
     $lista .= "</dl>";
 

@@ -95,7 +95,7 @@ class Template {
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
 
-            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; Categorie</p></div>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; Categorie</p></div>',$header);
         }
 
         if($pagina === "html/eventi.html"){
@@ -111,7 +111,7 @@ class Template {
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
             
-            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; Eventi</p></div>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; Eventi</p></div>',$header);
         }
 
         if($pagina === "html/libreria.html"){
@@ -127,7 +127,7 @@ class Template {
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
 
-            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; Libreria</p></div>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; Libreria</p></div>',$header);
         }
 
         if($pagina === "html/login.html"){
@@ -139,7 +139,7 @@ class Template {
             $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
             $header = str_replace("[login]", '<li class="current-page">Login/Registrati</li>', $header);
 
-            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; <span lang="en">Login</span></p></div>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <span lang="en">Login</span></p></div>',$header);
             
         }
 
@@ -152,7 +152,7 @@ class Template {
             $header = str_replace("[eventi]",'<li><a href="eventi.php">Prossimi eventi</a></li>',$header);
             $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
             $header = str_replace("[login]", '<li><a href="login.php"><span lang="en">Login</span></a></li>', $header);
-            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in:  <a href="index.php" lang="en">Home</a> &gt;Registrati</p></div>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in:  <a href="index.php" lang="en">Home</a> &gt&gt;Registrati</p></div>',$header);
         }
         
         if($pagina === "html/aboutus.html"){
@@ -169,7 +169,7 @@ class Template {
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
 
-            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; <span lang="en"> AboutUS </span></p> </div>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <span lang="en"> AboutUS </span></p> </div>',$header);
         }
         if($pagina === "html/profilo.html"){
             $header = str_replace("[logo]",'<li><a href="index.php class="logoLink" ><div class="logo"><img src="assets/icone.png" alt=" "><h1>Vapor</h1></div></a></li>', subject: $header);
@@ -179,7 +179,7 @@ class Template {
             $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
             $header = str_replace("[login]", '<li class="current-page">Profilo</li>', $header);
 
-            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; Profilo</p> </div>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; Profilo</p> </div>',$header);
         }
 
         if($pagina === "html/assistenza.html"){
@@ -195,7 +195,7 @@ class Template {
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
 
-            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; Assistenza</p> </div>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; Assistenza</p> </div>',$header);
         }
         if($pagina === "html/modifica_profilo.html"){
             $header = str_replace("[logo]",'<li><a href="index.php" class="logoLink" ><div class="logo"><img src="assets/icone.png" alt=" "><h1>Vapor</h1></div></a></li>', subject: $header);
@@ -210,7 +210,36 @@ class Template {
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
 
-            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt; Modifica Password</p> </div>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a>&gt&gt;<a href="profilo.php">Profilo</a> &gt&gt; Modifica Password</p> </div>',$header);
+        }
+
+        if($pagina === "html/categoria_singola.html"){
+            $header = str_replace("[logo]",'<li><a href="index.php" class="logoLink" ><div class="logo"><img src="assets/icone.png" alt=" "><h1>Vapor</h1></div></a></li>', subject: $header);
+
+            $header = str_replace("[home]",'<li><a href="index.php"><span lang="en">Home</span></a></li>',$header);
+            $header = str_replace("[categorie]",'<li><a href="categorie.php">Categorie</a></li>',$header);
+            $header = str_replace("[eventi]",'<li><a href="eventi.php">Prossimi eventi</a></li>',$header);
+            $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
+            if(isset($_SESSION['nickname'])){
+                $header = str_replace("[login]", '<li><a href="profilo.php">Profilo</a></li>', $header);
+            }else{
+                $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
+            }   
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <a href="categorie.php">Categorie</a> &gt&gt; Categoria Singola</p> </div>',$header);
+        }
+        if($pagina === "html/gioco_singolo.html"){
+            $header = str_replace("[logo]",'<li><a href="index.php" class="logoLink" ><div class="logo"><img src="assets/icone.png" alt=" "><h1>Vapor</h1></div></a></li>', subject: $header);
+
+            $header = str_replace("[home]",'<li><a href="index.php"><span lang="en">Home</span></a></li>',$header);
+            $header = str_replace("[categorie]",'<li><a href="categorie.php">Categorie</a></li>',$header);
+            $header = str_replace("[eventi]",'<li><a href="eventi.php">Prossimi eventi</a></li>',$header);
+            $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
+            if(isset($_SESSION['nickname'])){
+                $header = str_replace("[login]", '<li><a href="profilo.php">Profilo</a></li>', $header);
+            }else{
+                $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
+            }   
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <a href="categorie.php">Categorie</a> &gt&gt;<a href="categoria_singola.php">Categoria Singola</a> &gt&gt; gioco singolo</p> </div>',$header);
         }
         $this->aggiungiContenuto("[header]",$header);
     }
