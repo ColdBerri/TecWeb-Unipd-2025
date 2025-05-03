@@ -239,8 +239,9 @@ class Template {
             }else{
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
-            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <a href="categorie.php">Categorie</a> &gt&gt;<a href="categoria_singola.php">Categoria Singola</a> &gt&gt; gioco singolo</p> </div>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <a href="categorie.php">Categorie</a> &gt&gt; <a href="categoria_singola.php">Categoria Singola</a> &gt&gt; gioco singolo</p> </div>',$header);
         }
+        
         $this->aggiungiContenuto("[header]",$header);
     }
 

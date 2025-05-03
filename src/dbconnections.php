@@ -199,4 +199,27 @@ class DBAccess {
 		}
 
 	}
+
+	public function getRecensioni($gioco) {
+		$query = "SELECT nickname, contenuto_recensione, numero_stelle FROM Recensioni WHERE nome_videogioco = ?";
+		$stmt = mysqli_prepare($this->connection, $query);
+		mysqli_stmt_bind_param($stmt, "s", $gioco);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
+		$recensioni = [];
+		while ($row = mysqli_fetch_assoc($result)) {
+			$recensioni[] = $row;
+		}
+		return $recensioni;
+	}
+	
+	public function inserisciRecensione($gioco, $nickname, $contenuto, $stelle) {
+		$query = "INSERT INTO Recensioni (ID_recensione, nickname, contenuto_recensione, numero_stelle, nome_videogioco)
+				  VALUES (?, ?, ?, ?, ?)";
+		$id = uniqid("rec_");
+		$stmt = mysqli_prepare($this->connection, $query);
+		mysqli_stmt_bind_param($stmt, "sssds", $id, $nickname, $contenuto, $stelle, $gioco);
+		mysqli_stmt_execute($stmt);
+	}
+	
 }
