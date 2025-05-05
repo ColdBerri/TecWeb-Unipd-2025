@@ -4,7 +4,7 @@ require_once "template.php";
 use DB\DBAccess;
 
 if(!isset($_GET['categoria'])) {
-    header('Location: categoria_singola.php');
+    header('Location: categorie.php');
     exit;
 }
 $catName = urldecode($_GET['categoria']);

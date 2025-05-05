@@ -19,18 +19,31 @@ $paginaHTML = new Template(
 );
 
 if(!$connessioneOK) {
+    
     $dati = $connessione->getVideogioco($nomeGioco);
     $evento = $connessione->getEventiGioco($nomeGioco);
     $articolo = $connessione->getArticoliGioco($nomeGioco);
     $recensioniHTML = "";
     $recensioni = $connessione->getRecensioni($nomeGioco);
-    $connessione->closeConnection();
-
 
     $contenuto = "<div class='gioco'><h1>{$dati['nome_gioco']}</h1>";
     $contenuto .= "<img src='assets/img/{$dati['immagine']}' alt='{$dati['nome_gioco']}'>";
     $contenuto .= "<p>{$dati['descrizione']}</p></div>";
-
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION['nickname'])) {
+        if (!empty($_POST['testo']) && isset($_POST['gioco']) && isset($_POST['stelle'])) {
+            $contenuto = trim($_POST['testo']);
+            $gioco = trim($_POST['gioco']);
+            $stelle = floatval($_POST['stelle']);
+            $utente = $_SESSION['nickname'];
+    
+            $connessione->inserisciRecensione($gioco, $utente, $contenuto, $stelle);
+    
+            // Redireziona per evitare reinvio del form
+            header("Location: gioco_singolo.php?gioco=" . urlencode($gioco) . "&ok=1");
+            exit;
+        }
+    }
+    
     //recensioni :(
     if ($recensioni) {
         $recensioniHTML .= "<h2>Recensioni</h2><ul class='recensioni'>";
@@ -44,11 +57,12 @@ if(!$connessioneOK) {
     } else {
         $recensioniHTML .= "<p>Ancora nessuna recensione.</p>";
     }
-        
+    $connessione->closeConnection();
+
     if (isset($_SESSION['nickname'])) {
         $recensioniHTML .= "
             <h3>Scrivi una recensione</h3>
-            <form action='inserisci_recensione.php' method='post'>
+            <form method='post'>
                 <textarea name='testo' required></textarea><br>
                 <label for='stelle'>Valutazione (0–5):</label>
                 <input type='number' name='stelle' min='0' max='5' step='0.5' required><br>
@@ -57,7 +71,7 @@ if(!$connessioneOK) {
             </form>
         ";
     } else {
-        $recensioniHTML .= "<p><em>Devi essere <a href='login.php'>loggato</a> per scrivere una recensione.</em></p>";
+        $recensioniHTML .= "<p><em>Devi aver fatto il <a href='login.php'>Log In</a> per scrivere una recensione.</em></p>";
     }
         
     $contenuto .= $recensioniHTML;

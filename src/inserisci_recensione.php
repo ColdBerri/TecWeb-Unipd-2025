@@ -2,7 +2,7 @@
 require_once "dbconnections.php";
 require_once "template.php";
 
-$paginaHTML = new Template("Recensione", "recensione, valutazione, videogioco", "recensione.html");
+$paginaHTML = new Template("Recensione", "recensione, valutazione, videogioco", "gioco_singolo.html");
 
 if (!isset($_SESSION['nickname'])) {
     echo "Devi essere loggato per inserire una recensione.";
@@ -25,7 +25,7 @@ if ($conn->openDBConnection()) {
     $conn->closeConnection();
 }
 
-header("Location: gioco_singolo.php?gioco=" . urlencode($gioco));
+//header("Location: gioco_singolo.php" . urlencode($gioco));
 $paginaHTML->getPagina();
 exit();
 ?>

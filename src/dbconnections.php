@@ -222,12 +222,32 @@ class DBAccess {
 	}
 	
 	public function inserisciRecensione($gioco, $nickname, $contenuto, $stelle) {
+		// 1. Trova l'ID massimo attuale
+		$queryMaxId = "SELECT MAX(CAST(SUBSTRING(ID_recensione, 2) AS UNSIGNED)) AS max_id FROM Recensioni";
+		$result = mysqli_query($this->connection, $queryMaxId);
+	
+		$newIdNumber = 1; // valore di default
+		if ($result && $row = mysqli_fetch_assoc($result)) {
+			if ($row['max_id'] !== null) {
+				$newIdNumber = intval($row['max_id']) + 1;
+			}
+		}
+		mysqli_free_result($result);
+	
+		$newId = "R" . $newIdNumber;
+	
+		// 2. Inserisci la recensione
 		$query = "INSERT INTO Recensioni (ID_recensione, nickname, contenuto_recensione, numero_stelle, nome_videogioco)
 				  VALUES (?, ?, ?, ?, ?)";
-		$id = uniqid("rec_");
 		$stmt = mysqli_prepare($this->connection, $query);
-		mysqli_stmt_bind_param($stmt, "sssds", $id, $nickname, $contenuto, $stelle, $gioco);
+		if ($stmt === false) {
+			die("Errore nella preparazione della query: " . mysqli_error($this->connection));
+		}
+	
+		mysqli_stmt_bind_param($stmt, "sssds", $newId, $nickname, $contenuto, $stelle, $gioco);
 		mysqli_stmt_execute($stmt);
+		mysqli_stmt_close($stmt);
 	}
+	
 	
 }
