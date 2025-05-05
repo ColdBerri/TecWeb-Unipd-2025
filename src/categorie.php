@@ -27,6 +27,5 @@ if(!$connessioneOK){
 
     $paginaHTML->aggiungiContenuto("[tuttigiuchi]",$lista);
     $paginaHTML->getPagina();
-
 }
 ?>

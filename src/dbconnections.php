@@ -70,22 +70,30 @@ class DBAccess {
 		}
 	}
 
-	public function allVideogame() {
-		$query = "SELECT nome_gioco, immagine, categoria FROM Videogiochi";
-		$queryResult = mysqli_query($this->connection, $query) or die("Errore in allVideogame: " . mysqli_error($this->connection));
+    public function allVideogame() {
+        $query = 
+            "SELECT V1.nome_gioco, V1.immagine, V1.categoria
+             FROM Videogiochi V1
+             INNER JOIN (
+               SELECT categoria, MIN(nome_gioco) AS primo_gioco
+               FROM Videogiochi
+               GROUP BY categoria
+             ) V2 ON V1.categoria = V2.categoria AND V1.nome_gioco = V2.primo_gioco
+             ORDER BY V1.categoria ASC";
+        $queryResult = mysqli_query($this->connection, $query) 
+            or die("Errore in allVideogameByCategory: " . mysqli_error($this->connection));
 
-		if(mysqli_num_rows($queryResult) == 0) {
-			return null;
-		}
-		else {
-			$result = array();
-			while($row = mysqli_fetch_assoc($queryResult)){
-				array_push($result, $row);
-			}
-			mysqli_free_result($queryResult);
-			return $result;
-		}
-	}
+        if(mysqli_num_rows($queryResult) == 0) {
+            return null;
+        }
+
+        $result = [];
+        while($row = mysqli_fetch_assoc($queryResult)){
+            $result[] = $row;
+        }
+        mysqli_free_result($queryResult);
+        return $result;
+    }
 
 	public function five_top_path(){
 		$query = "SELECT titolo_articolo, nome_videogioco FROM Articoli_e_patch LIMIT 5 ";
