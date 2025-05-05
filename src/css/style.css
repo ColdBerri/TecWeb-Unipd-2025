@@ -313,7 +313,10 @@ td.giornoFuori{
     text-indent: -999em;
 }
 
+td.eventoPresente {
+    background-color: red;
 
+}
 
 .library-search-container {
     display: flex;
