@@ -3,7 +3,7 @@ require_once "dbconnections.php";
 require_once "template.php";
 use DB\DBAccess;
 
-$paginaHTML = new Template("","","/html/eventi.html");
+$paginaHTML = new Template("","","html/eventi.html");
 
 $month = date('n');
 $year = date('Y');
