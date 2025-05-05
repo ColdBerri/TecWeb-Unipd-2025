@@ -3,7 +3,7 @@ require_once "dbconnections.php";
 require_once "template.php";
 use DB\DBAccess;
 
-$paginaHTML = new Template("","","html/eventi.html");
+$paginaHTML = new Template("","","/html/eventi.html");
 
 $month = date('n');
 $year = date('Y');
@@ -13,13 +13,34 @@ $eventDays = [];
 
 $mese = 4;
 $anno = 2025;
-
 $calendarioHTML = "";
 
+if(isset($_POST['submit'])){
+    $mese = ($_POST['mese']);
+    $anno = ($_POST['anno']);;
+}
+
+$connessione = new DBAccess();
+$connessioneOK = $connessione->openDBConnection();
+
+$eventi = "";
+$anni = "";
+
+if(!$connessioneOK){
+    $eventi = $connessione->getEventiMese($mese,$anno);
+    $connessione->closeConnection();    
+}
+
+$giorniEvento = [];
+if(!empty($eventi)){
+    foreach($eventi as $ev){
+        $giorniEvento[] = intval(date('j', strtotime($ev['data_inizio_evento'])));
+    }
+}
 $giorniSettimana = ['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom'];
 
 $primoGiorno = mktime(0, 0, 0, $mese, 1, $anno);
-$indicePrimoGiorno = date('N', $primoGiorno); // 1 (Lun) - 7 (Dom)
+$indicePrimoGiorno = date('N', $primoGiorno);
 $numeroGiorni = date('t', $primoGiorno);
 
 $giorniInizialiVuoti = $indicePrimoGiorno - 1;
@@ -46,10 +67,16 @@ for ($i = $giorniInizialiVuoti; $i > 0; $i--) {
 $giornoCorrente = 1;
 
 while ($giornoCorrente <= $numeroGiorni) {
-    $calendarioHTML .= "<td>$giornoCorrente</td>";
+    if (in_array($giornoCorrente, $giorniEvento)) {
+        $calendarioHTML .= "<td class='eventoPresente'>$giornoCorrente</td>";
+    } else {
+        $calendarioHTML .= "<td>$giornoCorrente</td>";
+    }
+
     if (($giorniInizialiVuoti + $giornoCorrente - 1) % 7 == 6) {
         $calendarioHTML .= "</tr><tr>";
     }
+
     $giornoCorrente++;
 }
 
@@ -61,6 +88,14 @@ for ($i = 0; $i < $giorniFinaliVuoti; $i++) {
 
 $calendarioHTML .= "</tr>";
 $calendarioHTML .= "</tbody>";
+
+for ($i = 1; $i <= 12; $i++) {
+    $paginaHTML->aggiungiContenuto("[selected_mese_$i]", ($i == $mese) ? "selected" : "");
+}
+
+for ($i = 2023; $i <= 2030; $i++) {
+    $paginaHTML->aggiungiContenuto("[selected_anno_$i]", ($i == $anno) ? "selected" : "");
+}
 
 $paginaHTML->aggiungiContenuto("[calendario]",$calendarioHTML);
 $paginaHTML->getPagina();

@@ -229,5 +229,40 @@ class DBAccess {
 		mysqli_stmt_bind_param($stmt, "sssds", $id, $nickname, $contenuto, $stelle, $gioco);
 		mysqli_stmt_execute($stmt);
 	}
+
+	public function getEventiMese($mese, $anno) {
+		$query = "SELECT nome_evento,data_inizio_evento FROM Eventi 
+				  WHERE MONTH(data_inizio_evento) = ? 
+				  AND YEAR(data_inizio_evento) = ?";
+	
+		$stmt = mysqli_prepare($this->connection, $query);
+	
+		if (!$stmt) {
+			die("Errore nella preparazione della query: " . mysqli_error($this->connection));
+		}
+	
+		mysqli_stmt_bind_param($stmt, "ii", $mese, $anno);
+	
+		if (!mysqli_stmt_execute($stmt)) {
+			die("Errore nell'esecuzione della query: " . mysqli_stmt_error($stmt));
+		}
+	
+		$result = mysqli_stmt_get_result($stmt);
+	
+		if (!$result || mysqli_num_rows($result) === 0) {
+			mysqli_stmt_close($stmt);
+			return null;
+		}
+	
+		$eventi = array();
+		while ($row = mysqli_fetch_assoc($result)) {
+			$eventi[] = $row;
+		}
+	
+		mysqli_free_result($result);
+		mysqli_stmt_close($stmt);
+	
+		return $eventi;
+	}
 	
 }
