@@ -304,20 +304,86 @@ div.search-container{
 
 /*EVENTI*/
 
-.formCalendario {
-    white-space: nowrap; /* Impedisce interruzioni di riga */
+.titolo_calendario
+{
+    font-size: 1.3em;
 }
 
+.selettore
+{
+    background-color: rgb(203, 203, 203);
+    font-weight: bold;
+    padding: 1em;
+    margin: 0.3em;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
 
+#mese, #anno {
+    padding: 0.8em 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 1.4em;
+    background-color: #f9f9f9;
+    font-size: 0.8em;
+    color: #333;
+    appearance: none; /* Rimuove lo stile di default su alcuni browser */
+    -webkit-appearance: none; /* Safari */
+    -moz-appearance: none; /* Firefox */
+    background-image: url("../assets/freccia_espandi.png");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1em;
+    width: 100%; 
+    max-width: 9em; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra leggera */
+    transition: all 0.3s ease; /* Transizione per hover e focus */
+}
 
+#mese:hover, #anno:hover {
+    background-color: #e6e6e6; /* Colore di sfondo più scuro al passaggio del mouse */
+    border-color: #999; /* Cambia il colore del bordo */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Ombra più pronunciata */
+    transition: all 0.3s ease;
+}
 
+input[type="submit"][value="CERCA"] {
+    padding: 0.8em 1.1em;
+    border: 1px solid #ccc;
+    border-radius: 1.4em;
+    background-color: var(--headerbgcolor); /* Colore di sfondo */
+    color: #fff; /* Colore del testo */
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+input[type="submit"][value="CERCA"]:hover {
+    background-color: #080c11; /* Colore di sfondo al passaggio del mouse */
+}
+
+.formCalendario > label
+{
+    font-size: 1.5em;
+}
+  
+.formCalendario
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
 
 .formCalendario label,
 .formCalendario select,
 .formCalendario fieldset {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 10px; /* Spaziatura tra gli elementi */
+    margin-right: 10px; /* Spaziatura tra gli elementi */   
+    
 }
 
 .formCalendario fieldset {
@@ -326,17 +392,17 @@ div.search-container{
     border: none; /* Rimuove il bordo del fieldset */
 }
 
+
 .calendario-tabella {
-    width: 50%;
+    width: 75%;
+    margin: 0 auto;
     border-collapse: collapse;
     margin-top: 0.8em;
     margin-bottom: 1em;
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     table-layout: fixed;
-
 }
 
 .calendario-tabella thead {
@@ -353,7 +419,7 @@ div.search-container{
 }
 
 .calendario-tabella td {
-    height: 5em;
+    height: 7em;
     padding: 0.5em;
     text-align: right;
     vertical-align: top;
@@ -402,6 +468,7 @@ td.eventoPresente > p {
     padding: 0.2em;
     color: white;
     border-radius: 3px; /* Rounded corners for the background */
+    text-align: left;
 }
 
 .markerGiorno {
