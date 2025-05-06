@@ -68,7 +68,8 @@ $giornoCorrente = 1;
 
 while ($giornoCorrente <= $numeroGiorni) {
     if (in_array($giornoCorrente, $giorniEvento)) {
-        $calendarioHTML .= "<td class='eventoPresente'>$giornoCorrente</td>";
+        $stringa ="";
+        $calendarioHTML .= "<td class='eventoPresente'><span class='markerGiorno'>$giornoCorrente</span><p>EVENTO PRESENTE</p></td>";
     } else {
         $calendarioHTML .= "<td>$giornoCorrente</td>";
     }

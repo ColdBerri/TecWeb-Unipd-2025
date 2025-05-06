@@ -1,4 +1,4 @@
-*{
+w*{
     padding: 0;
     margin: 0;
 }
@@ -304,8 +304,91 @@ div.search-container{
 
 /*EVENTI*/
 
+.formCalendario {
+    white-space: nowrap; /* Impedisce interruzioni di riga */
+}
+
+
+
+
+
+.formCalendario label,
+.formCalendario select,
+.formCalendario fieldset {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px; /* Spaziatura tra gli elementi */
+}
+
+.formCalendario fieldset {
+    margin: 0;
+    padding: 0;
+    border: none; /* Rimuove il bordo del fieldset */
+}
+
+.calendario-tabella {
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 0.8em;
+    margin-bottom: 1em;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    table-layout: fixed;
+
+}
+
+.calendario-tabella thead {
+    background-color: var(--headerbgcolor);
+    color: white;
+}
+
+.calendario-tabella th {
+    padding: 1em;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1em;
+    border: 1px solid white;
+}
+
+.calendario-tabella td {
+    height: 5em;
+    padding: 0.5em;
+    text-align: right;
+    vertical-align: top;
+    font-size: 0.9em;
+    border: 1px solid #eee;
+    position: relative;
+    background-color: white;
+    transition: background-color 0.2s;
+    border-bottom: none;
+}
+
+.calendario-tabella td:hover {
+    background-color: #f0f0f0;
+}
+
+.calendario-tabella thead tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+    background: transparent;
+    border: none;
+}
+
+.calendario-tabella thead tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+    background: transparent;
+}
+
+
 td.giornoFuori{ 
-    color: gray;
+    color: grey;
+    background-color: rgba(128, 128, 128, 0.327);
+}
+
+td.giornoFuori > p { 
+    color: grey;
+    background-color: rgba(128, 128, 128, 0.327);
 }
 
 #sum{
@@ -313,9 +396,25 @@ td.giornoFuori{
     text-indent: -999em;
 }
 
-td.eventoPresente {
-    background-color: red;
 
+td.eventoPresente > p {
+    background-color: green;
+    padding: 0.2em;
+    color: white;
+    border-radius: 3px; /* Rounded corners for the background */
+}
+
+.markerGiorno {
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8em;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9em;
 }
 
 .library-search-container {
