@@ -1,4 +1,4 @@
-w*{
+*{
     padding: 0;
     margin: 0;
 }
@@ -88,6 +88,7 @@ header{
     white-space: nowrap;
     margin: auto;
     vertical-align: middle;
+    padding: 0;
 }
 /*
 .logo {
@@ -104,20 +105,25 @@ header{
 }*/
 
 .logo>img{
-    width: 3em;
+    width: 5em;
 }
 
-.logo{
+.logo {
     color: #fff;
+    margin: 1em;
+    margin-left: 1em;
+    margin-top: 0.55em;
+    margin-bottom: 0;
+    position: relative;
+    top: 0.05em; 
 }
 
 .logo h1{
-    font-size: 1.1em;   
+    font-size: 1.4em; 
+    margin: 0; 
+    margin-left: 0.7em; 
 }
 
-.logo h1{
-    font-size: 1.1em;   
-}
 
 .logoLink{
     text-decoration: none;
@@ -125,7 +131,6 @@ header{
 
 .menu {
     width: 100%;
-    padding: 1em 1em;
     box-sizing: border-box;
     font-size: 1.3em;
     text-transform: uppercase;
@@ -136,9 +141,12 @@ header{
     justify-content: space-between;
     align-items: center;
     margin: 0;
-    padding: 0;
     list-style: none; 
 
+}
+
+.menu ul:last-child {
+   padding-right: 2em;
 }
 
 ul .current-page{
@@ -147,20 +155,16 @@ ul .current-page{
 
 .breadcrump {
     background-color: #2d3b47; 
-    padding: 1em 2em;
+    padding: 0.5em 1em;
     color: white;
-    font-size: 0.8em;
+    font-size: 1.3em;
     text-align: center;
-}
-
-div.search-container{
-    background-color: var(--headerbgcolor);
 }
 
 .search-container {
     background-color: var(--headerbgcolor);
     text-align: center;
-    padding: 1.25em;
+    padding-bottom: 1em;
 }
 
 .search-box {
@@ -170,6 +174,8 @@ div.search-container{
     border-radius: 1.5625em;
     font-size: 1em; 
     margin-right: 0.625em;
+    position: relative;
+    top: -0.5em; 
 }
 
 .search-button {
