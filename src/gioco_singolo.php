@@ -93,7 +93,8 @@ if(!$connessioneOK) {
 
     $listaArticoli = "<ul class='articoli_gioco'>";
     foreach($articolo as $a){
-        $listaArticoli .= "<li><a href='articolo_singolo.php'><div class='miniGiornale'>";
+        $nomeArti = urlencode($a['titolo_articolo']);
+        $listaArticoli .= "<li><a href='articolo_singolo.php?titolo_articolo={$nomeArti}'><div class='miniGiornale'>";
         $listaArticoli .= "<div class='titoloNotiziaIndex'>".$a['nome_videogioco']."</div>";
         $listaArticoli .= "<div class='contenutoNotiziaIndex'>".$a['titolo_articolo']."</div>";
         $listaArticoli .= "</div></a></li>";

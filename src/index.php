@@ -61,7 +61,8 @@ if (!$connessioneOK) {
 
     if (is_array($path)) {
         foreach($path as $paths){
-            $listaPath .= "<li><a href='evento_singolo.php'><div class='miniGiornale'>";
+            $nomeArti = urlencode($paths['titolo_articolo']);
+            $listaPath .= "<li><a href='articolo_singolo.php?titolo_articolo={$nomeArti}'><div class='miniGiornale'>";
             $listaPath .= "<div class='titoloNotiziaIndex'>".$paths['nome_videogioco']."</div>";
             $listaPath .= "<div class='contenutoNotiziaIndex'>".$paths['titolo_articolo']."</div>";
             $listaPath .= "</div></a></li>";

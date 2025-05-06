@@ -310,7 +310,26 @@ class DBAccess {
 	}
 	
 
-	public function getArticolo($nome){
-
+	public function getArticolo($nome) {
+		$query = "SELECT titolo_articolo, autore, data_pubblicazione, testo_articolo, nome_videogioco
+				  FROM Articoli_e_patch WHERE titolo_articolo = ?";
+	
+		$stmt = mysqli_prepare($this->connection, $query);
+	
+		if (!$stmt) {
+			throw new Exception("Errore nel caricamento dell'articolo: " . mysqli_error($this->connection));
+		}
+	
+		mysqli_stmt_bind_param($stmt, "s", $nome);
+		mysqli_stmt_execute($stmt);
+	
+		$result = mysqli_stmt_get_result($stmt);
+	
+		if (!$result || mysqli_num_rows($result) == 0) {
+			return null;
+		}
+	
+		return mysqli_fetch_assoc($result);
 	}
+	
 }
