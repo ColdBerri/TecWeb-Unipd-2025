@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS Utente(
 );
 
 INSERT INTO Utente(nickname,password_,datan) VALUES
+('admin', 'admin', '2000/01/01'),
 ('user','user','2001/09/17');
 
 

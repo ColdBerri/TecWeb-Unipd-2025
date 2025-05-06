@@ -331,5 +331,9 @@ class DBAccess {
 	
 		return mysqli_fetch_assoc($result);
 	}
+
+	public function isAdmin($nome){
+		
+	}
 	
 }

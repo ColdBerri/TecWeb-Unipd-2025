@@ -31,7 +31,8 @@ if (!$connessioneOK) {
 
     if (is_array($img)) {
         foreach($img as $giuco){
-            $listaGiuchi .= "<li><a href='categorie.php'><div class='listaindex'>";
+            $nomeG = urlencode($giuco['nome_gioco']);
+            $listaGiuchi .= "<li><a href='gioco_singolo.php?gioco={$nomeG}'><div class='listaindex'>";
             $listaGiuchi .= "<img src='assets/img/".$giuco['immagine']."' alt='".$giuco['nome_gioco']."'>";
             $listaGiuchi .= "<p>".$giuco['nome_gioco']."</p>";
             $listaGiuchi .= "</div></a></li>";

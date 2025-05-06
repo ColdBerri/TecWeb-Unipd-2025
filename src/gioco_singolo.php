@@ -46,7 +46,7 @@ if(!$connessioneOK) {
     
     //recensioni :(
     if ($recensioni) {
-        $recensioniHTML .= "<h2>Recensioni</h2><ul class='recensioni'>";
+        $recensioniHTML .= "<h1>Recensioni</h1><ul class='recensioni'>";
         foreach ($recensioni as $rec) {
             $utente = htmlspecialchars($rec['nickname']);
             $testo = htmlspecialchars($rec['contenuto_recensione']);
