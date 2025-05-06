@@ -81,7 +81,8 @@ if(!$connessioneOK) {
     $listaEventi = "<ul class='eventi_gioco'>";
     foreach($evento as $e){
         $dataCompleta = date('d F Y', strtotime($e['data_inizio_evento'])); 
-        $listaEventi .= "<li><a href='categorie.php'><div class='miniCalendario'>";
+        $nomeEvent = urlencode($e['nome_evento']);
+        $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='miniCalendario'>";        
         $listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
         $listaEventi .= "<div class='miniCalendarioB'>" . $e['nome_evento'] . "</div>";
         $listaEventi .= "</div></a></li>";
@@ -92,7 +93,7 @@ if(!$connessioneOK) {
 
     $listaArticoli = "<ul class='articoli_gioco'>";
     foreach($articolo as $a){
-        $listaArticoli .= "<li><a href='categorie.php'><div class='miniGiornale'>";
+        $listaArticoli .= "<li><a href='articolo_singolo.php'><div class='miniGiornale'>";
         $listaArticoli .= "<div class='titoloNotiziaIndex'>".$a['nome_videogioco']."</div>";
         $listaArticoli .= "<div class='contenutoNotiziaIndex'>".$a['titolo_articolo']."</div>";
         $listaArticoli .= "</div></a></li>";

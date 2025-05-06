@@ -81,7 +81,7 @@ class DBAccess {
              ) V2 ON V1.categoria = V2.categoria AND V1.nome_gioco = V2.primo_gioco
              ORDER BY V1.categoria ASC";
         $queryResult = mysqli_query($this->connection, $query) 
-            or die("Errore in allVideogameByCategory: " . mysqli_error($this->connection));
+            or die("Errore in allVideogame: " . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0) {
             return null;
@@ -127,7 +127,7 @@ class DBAccess {
 			die("Errore nella preparazione della query: " . mysqli_error($this->connection));
 		}
 	
-		mysqli_stmt_bind_param($stmt, "s", $categoria); // "s" per stringa
+		mysqli_stmt_bind_param($stmt, "s", $categoria);
 		mysqli_stmt_execute($stmt);
 		$result = mysqli_stmt_get_result($stmt);
 	
@@ -222,11 +222,10 @@ class DBAccess {
 	}
 	
 	public function inserisciRecensione($gioco, $nickname, $contenuto, $stelle) {
-		// 1. Trova l'ID massimo attuale
 		$queryMaxId = "SELECT MAX(CAST(SUBSTRING(ID_recensione, 2) AS UNSIGNED)) AS max_id FROM Recensioni";
 		$result = mysqli_query($this->connection, $queryMaxId);
 	
-		$newIdNumber = 1; // valore di default
+		$newIdNumber = 1; 
 		if ($result && $row = mysqli_fetch_assoc($result)) {
 			if ($row['max_id'] !== null) {
 				$newIdNumber = intval($row['max_id']) + 1;
@@ -236,7 +235,6 @@ class DBAccess {
 	
 		$newId = "R" . $newIdNumber;
 	
-		// 2. Inserisci la recensione
 		$query = "INSERT INTO Recensioni (ID_recensione, nickname, contenuto_recensione, numero_stelle, nome_videogioco)
 				  VALUES (?, ?, ?, ?, ?)";
 		$stmt = mysqli_prepare($this->connection, $query);
@@ -283,6 +281,36 @@ class DBAccess {
 	
 		return $eventi;
 	}
+
+	public function getEvento($nome) {
+		$query = "SELECT nome_evento, nome_videogioco, data_inizio_evento, data_fine_evento, squadre_coinvolte, vincitore_evento 
+				  FROM Eventi WHERE nome_evento = ?";
+		$stmt = mysqli_prepare($this->connection, $query);
 	
+		if (!$stmt) {
+			throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->connection));
+		}
 	
+		mysqli_stmt_bind_param($stmt, "s", $nome);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_bind_result($stmt, $nome_evento, $nome_videogioco, $data_inizio, $data_fine, $squadre, $vincitore);
+	
+		if (mysqli_stmt_fetch($stmt)) {
+			return [
+				'nome_evento' => $nome_evento,
+				'nome_videogioco' => $nome_videogioco,
+				'data_inizio_evento' => $data_inizio,
+				'data_fine_evento' => $data_fine ?? null,
+				'squadre_coinvolte' => $squadre ?? null,
+				'vincitore_evento' => $vincitore ?? null
+			];
+		} else {
+			return null; 
+		}
+	}
+	
+
+	public function getArticolo($nome){
+
+	}
 }
