@@ -1,34 +1,33 @@
-<h1>Modifica la Password</h1>
-<form id="modfica-form" method="POST" action="modifica_profilo.php" onsubmit="return checkForm()">
-    <filedset>
-        <div>
-            <label for="vecchia_password">
-                <span lang="it">Vecchia</span> <span lang="en">Password :</span>
+<div class="login-container">
+    <div class="login-box">
+        <h1 class="login-welcome-message">Modifica la tua password</h1>
+        <form id="modifica-form" method="POST" action="modifica_profilo.php" onsubmit="return checkForm();">
+            
+            <fieldset>
+                <label for="vecchia_password">
+                    <span lang="it">Vecchia</span> <span lang="en">Password:</span>
+                </label>
                 <input type="password" id="vecchia_password" name="vecchia_password" placeholder="Inserisci la vecchia password" required>
-            </label>
-        </div>
-    </filedset>
-    <filedset>
-        <div>
-            <label for="nuova_password">
-                <span lang="it">Nuova</span> <span lang="en">Password :</span>
-                <input type="password" id="nuova_password" name="nuova_password" placeholder="Inserisci la nuova password" required>
+            </fieldset>
 
-            </label>
-        </div>
-    </filedset>
-    <filedset>
-        <div>
-            <label for="conferma_password">
-                <span lang="it">Ripeti la nuova</span> <span lang="en">Password :</span>
+            <fieldset>
+                <label for="nuova_password">
+                    <span lang="it">Nuova</span> <span lang="en">Password:</span>
+                </label>
+                <input type="password" id="nuova_password" name="nuova_password" placeholder="Inserisci la nuova password" required>
+            </fieldset>
+
+            <fieldset>
+                <label for="conferma_password">
+                    <span lang="it">Ripeti la nuova</span> <span lang="en">Password:</span>
+                </label>
                 <input type="password" id="conferma_password" name="conferma_password" placeholder="Conferma la tua password" required>
-            </label>
-        </div>
-    </filedset>
-    <div class="registra-password">
-        <fieldset>
-            <input type="submit" class="modifica_pass" value="Salva">
-            <input type="button" class="cancella" onclick="window.location.href='profilo.php';" value="Annulla">
-        </fieldset>
+            </fieldset>
+
+            <div class="regista-container">
+                <input type="submit" class="submit_button" value="Salva">
+                <input type="button" class="cancella" onclick="window.location.href='profilo.php';" value="Annulla">
+            </div>
+        </form>
     </div>
-</form>
+</div>

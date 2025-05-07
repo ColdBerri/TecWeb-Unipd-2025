@@ -51,7 +51,7 @@ $indiceUltimoGiorno = date('N', $ultimoGiorno);
 $giorniFinaliVuoti = 7 - $indiceUltimoGiorno;
 
 $calendarioHTML .= "<thead>";
-$calendarioHTML .= "<tr><th colspan='7'>" . date('F Y', $primoGiorno) . "</th></tr>";
+$calendarioHTML .= "<tr class='mese_selezionato'><th colspan='7'>" . date('F Y', $primoGiorno) . "</th></tr>";
 $calendarioHTML .= "<tr>";
 
 foreach ($giorniSettimana as $giorno) {

@@ -318,6 +318,7 @@ ul .current-page{
 
 .titolo_calendario{
     font-size: 1.3em;
+    margin-bottom: 0.3em;
 }
 
 .selettore
@@ -360,7 +361,7 @@ ul .current-page{
     transition: all 0.3s ease;
 }
 
-input[type="submit"][value="CERCA"] {
+input[type="submit"][value="CERCA EVENTI"] {
     padding: 0.8em 1.1em;
     border: 1px solid #ccc;
     border-radius: 1.4em;
@@ -371,7 +372,7 @@ input[type="submit"][value="CERCA"] {
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-input[type="submit"][value="CERCA"]:hover {
+input[type="submit"][value="CERCA EVENTI"]:hover {
     background-color: #080c11; /* Colore di sfondo al passaggio del mouse */
 }
 
@@ -414,6 +415,9 @@ input[type="submit"][value="CERCA"]:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     table-layout: fixed;
+    min-width: 40em; 
+    max-width: 70em;
+    border-radius: 1em;
 }
 
 .calendario-tabella thead {
@@ -440,7 +444,7 @@ input[type="submit"][value="CERCA"]:hover {
     background-color: white;
     transition: background-color 0.2s;
     border-bottom: none;
-}
+} 
 
 .calendario-tabella td:hover {
     background-color: #f0f0f0;
@@ -495,6 +499,12 @@ td.eventoPresente > a >p {
     font-weight: bold;
     font-size: 0.9em;
 }
+
+.mese_selezionato th {
+    font-size: 1.5em;   
+    font-weight: bold; 
+    padding: 10px 0; 
+  }  
 
 .library-search-container {
     display: flex;
@@ -661,72 +671,71 @@ td.eventoPresente > a >p {
 .save-button:hover {
     background-color:#1c7731;
 }
-    */
 
-/*LOGIN*/
+*/
 
+
+
+/*LOGIN, REGISTRA E MODIFICA PASS*/
+
+/* Contenitore esterno */
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2em 0;
+}
+
+/* Box principale */
 .login-box {
-    display: block;
     background-color: var(--login-bgcolor); 
     border-radius: 10px;
     box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
     width: 40%;
-    padding: 2.5em;
-    margin-top: 2em; 
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2em;
-    height: auto;
     max-width: 400px;
+    padding: 2.5em;
+    margin: 2em auto;
+    font-size: 1em;
 }
 
-div.login-box > h1{
-    text-align: center;
-    color: white;
-}
-
-div.login-box label{
-    color: white;
-    text-align: left;
-}
-
-fieldset.button-container > p{
-    color: white;
-}
-
+/* Titolo */
 .login-welcome-message {
-    font-size: 1.75em;
+    font-size: 2em;
     font-weight: bold;
-    color: black;
-    margin-bottom: 1.25em; 
+    color: white;
+    margin-bottom: 1.25em;
+    margin-top: 0; 
+    text-align: center;
 }
 
-.login-box input {
-    width: 90%;
-    /*float: left;*/
-    padding: 0.9375em; 
-    margin: 0.3125em 0; 
-    margin-left: auto;
-    border: 0 solid var(--login-border);
-    border-radius: 0.3125em; 
-    font-size: 1em; 
-}
-
-fieldset{
-    border:0;
-}
-
-fieldset > label{
-    color: black;
+/* Form labels */
+.login-box label {
+    color: white;
     display: block;
-    text-align: justify;
-    margin-left: 0.3em;
+    text-align: left;
+    margin-bottom: 0.5em;
 }
 
-fieldset > .pw{
-    padding-top: 1em;
+/* Campi input */
+.login-box input[type="text"],
+.login-box input[type="password"],
+.login-box input[type="date"] {
+    width: 100%;
+    padding: 0.85em;
+    margin: 0.3em 0 0.8em;
+    border: none;
+    border-radius: 0.3em;
+    font-size: 1em;
+    box-sizing: border-box;
 }
 
+/* Fieldset */
+fieldset {
+    border: 0;
+    margin-bottom: 1em;
+}
+
+/* Link registrazione */
 .login-box .register-link {
     margin-top: 1.5em;
     font-size: 1.1em;
@@ -734,83 +743,58 @@ fieldset > .pw{
     color: white;
 }
 
-
-/* Pulsanti */
-.button-container > .accedi {
-    margin: 0;
-    width: 97.5%;
-    margin-top: 1em;
-    /*
-    margin-left: 0.3em;
-    margin-right: 0.3em;
-    */
-}
-
-.button-container > p{
-    color: black;
-    margin-top: 1em;
-}
-
-.accedi{
-    background-color: var(--login-button-bg);
-    color: white;
-}
-
-.accedi:hover {
-    background-color: #1c7731;
-}
-
-/*REGISTRA*/
-
-#data-nascita{
-    width: 91%;
-}
-
-
-div.regista-container > fieldset > .registra {
+/* Bottoni submit generici */
+.submit_button {
     width: 48%;  
     background-color: #28a745;
     padding: 0.85em;
     color: white;
     border: none;
+    border-radius: 0.3em;
     cursor: pointer;
-
+    font-size: 1em;
 }
 
-div.regista-container > fieldset > .cancella {
+.submit_button:hover {
+    background-color: #1c7731;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Bottone Annulla */
+.cancella {
     width: 48%;  
     background-color: #dc3545;
     padding: 0.85em;
     color: white;
     border: none;
+    border-radius: 0.3em;
     cursor: pointer;
+    font-size: 1em;
 }
 
-div.regista-container > fieldset > .registra:hover {
-    background-color: #1c7731;
-}
-
-div.regista-container > fieldset > .cancella:hover {
+.cancella:hover {
     background-color: #a71d2a;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-div.regista-container{
+/* Contenitore bottoni finali */
+.regista-container {
     padding-top: 1em;
+    display: flex;
+    justify-content: space-between;
 }
 
-#registration-form{
+/* Form di registrazione */
+#registration-form,
+#modifica-form {
     color: white;
-    display: inline-block;
 }
-#registration-form div{
+
+#registration-form div,
+#modifica-form div {
     overflow: hidden;
 }
 
-
-.suggForm{
-    float: right;
-    padding-right: 0.5em;
-}
 
 /*FAQ*/
 

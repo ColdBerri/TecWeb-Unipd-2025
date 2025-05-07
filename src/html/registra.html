@@ -1,44 +1,31 @@
 <div class="login-container">
-
     <div class="login-box">
-        
         <h1 class="login-welcome-message">Ti diamo il benvenuto</h1>
-
-        <form id="registration-form" method="POST" action="registra.php"  onsubmit="return checkForm();">    
-            <fieldset>
-                <div>
-                    <label for="username"><span lang="en">Username:</span></label>
-                    <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <div>
-                    <label for="password"><span lang="en">Password:</span></label>
-                    <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
-                </div>
-            </fieldset>
+        <form id="registration-form" method="POST" action="registra.php" onsubmit="return checkForm();">
             
             <fieldset>
-                <div>
-                    <label for="confirm-password">Conferma <span lang="en">Password:</span></label>
-                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Conferma la tua password" required>
-                </div>
-            </fieldset>
-                
-            <fieldset>
-                <div>
-                    <label for="data-nascita">Data di nascita:</label>
-                    <input type="date" id="data-nascita" name="data-nascita" required>
-                </div>
+                <label for="username"><span lang="en">Username:</span></label>
+                <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
             </fieldset>
 
-            <!-- Contenitore per i due pulsanti -->
+            <fieldset>
+                <label for="password"><span lang="en">Password:</span></label>
+                <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+            </fieldset>
+
+            <fieldset>
+                <label for="confirm-password">Conferma <span lang="en">Password:</span></label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Conferma la tua password" required>
+            </fieldset>
+
+            <fieldset>
+                <label for="data-nascita">Data di nascita:</label>
+                <input type="date" id="data-nascita" name="data-nascita" required>
+            </fieldset>
+
             <div class="regista-container">
-                <fieldset>
-                    <input type="button" class="cancella" onclick="window.location.href='index.php';" value="Annulla">
-                    <input type="submit" class="registra" value="Registra">
-                </fieldset>
+                <input type="button" class="cancella" onclick="window.location.href='index.php';" value="Annulla">
+                <input type="submit" class="submit_button" value="Registra">
             </div>
         </form>
     </div>
