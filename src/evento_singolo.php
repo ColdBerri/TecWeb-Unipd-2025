@@ -18,8 +18,8 @@ if(!$connessioneOK){
     $connessione->closeConnection();
 
     if ($evento) {
-        $cont .= "<h1>Evento: " . htmlspecialchars($evento['nome_evento']) . "</h1>";
-        $cont  = "<ul class='evento'>";
+        $cont = "<h1>" . htmlspecialchars($evento['nome_evento']) . "</h1>";
+        $cont .= "<ul class='evento'>";
         $cont .= "<li><strong>Videogioco:</strong> " . htmlspecialchars($evento['nome_videogioco']) . "</li>";
         $cont .= "<li><strong>Data inizio:</strong> " . htmlspecialchars($evento['data_inizio_evento']) . "</li>";
         $cont .= "<li><strong>Data fine:</strong> " . ($evento['data_fine_evento'] ? htmlspecialchars($evento['data_fine_evento']) : "Non disponibile") . "</li>";

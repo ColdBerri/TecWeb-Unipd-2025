@@ -316,8 +316,6 @@ ul .current-page{
 
 /*EVENTI*/
 
-
-
 .titolo_calendario{
     font-size: 1.3em;
 }
@@ -665,7 +663,9 @@ td.eventoPresente > a >p {
 }
     */
 
-div>login-box {
+/*LOGIN*/
+
+.login-box {
     display: block;
     background-color: var(--login-bgcolor); 
     border-radius: 10px;
@@ -680,27 +680,14 @@ div>login-box {
     max-width: 400px;
 }
 
-div.login-box > h1,  div.login-box label{
+div.login-box > h1{
     text-align: center;
     color: white;
 }
 
-#registration-form{
+div.login-box label{
     color: white;
-    display: inline-block;
-}
-#registration-form div{
-    width: 100%;
-    overflow: hidden;
-}
-
-registration-form div > label{
-    float: left;
-}
-
-.suggForm{
-    float: right;
-    padding-right: 0.5em;
+    text-align: left;
 }
 
 fieldset.button-container > p{
@@ -714,10 +701,9 @@ fieldset.button-container > p{
     margin-bottom: 1.25em; 
 }
 
-/* Stile per i campi di input */
 .login-box input {
     width: 90%;
-/*    float: left;*/
+    /*float: left;*/
     padding: 0.9375em; 
     margin: 0.3125em 0; 
     margin-left: auto;
@@ -773,35 +759,26 @@ fieldset > .pw{
 .accedi:hover {
     background-color: #1c7731;
 }
-div.regista-container > fieldset {
-    display: flex;
-    justify-content: space-between;  /* Distribuisce i bottoni ai lati opposti */
-        justify-content: flex-start;
 
-    gap: 1.5em; /* Distanza tra i bottoni */
-    padding: 0em;  /* Spazio interno */
-    margin: 0;    /* Reset margini di default */
-    margin-top: 1.5em;
+/*REGISTRA*/
+
+#data-nascita{
+    width: 91%;
 }
 
-/* Stile per il pulsante "Registra" */
+
 div.regista-container > fieldset > .registra {
-    width: 50%;  /* Imposta la larghezza per i bottoni */
+    width: 48%;  
     background-color: #28a745;
     padding: 0.85em;
     color: white;
     border: none;
     cursor: pointer;
+
 }
 
-/* Hover per il pulsante "Registra" */
-div.regista-container > fieldset > .registra:hover {
-    background-color: #1c7731;
-}
-
-/* Stile per il pulsante "Cancella" */
 div.regista-container > fieldset > .cancella {
-    width: 50%;  /* Imposta la larghezza per i bottoni */
+    width: 48%;  
     background-color: #dc3545;
     padding: 0.85em;
     color: white;
@@ -809,10 +786,33 @@ div.regista-container > fieldset > .cancella {
     cursor: pointer;
 }
 
-/* Hover per il pulsante "Cancella" */
+div.regista-container > fieldset > .registra:hover {
+    background-color: #1c7731;
+}
+
 div.regista-container > fieldset > .cancella:hover {
     background-color: #a71d2a;
 }
+
+div.regista-container{
+    padding-top: 1em;
+}
+
+#registration-form{
+    color: white;
+    display: inline-block;
+}
+#registration-form div{
+    overflow: hidden;
+}
+
+
+.suggForm{
+    float: right;
+    padding-right: 0.5em;
+}
+
+/*FAQ*/
 
 .faq {
     max-width: 600px;
@@ -1064,9 +1064,6 @@ details summary {
      margin-bottom: 10px;   /* Spazio tra la domanda e la risposta */
     margin-top: 10px;
 }
-
-
-
 
 /*=====FOOTER=====*/
 

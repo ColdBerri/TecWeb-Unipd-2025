@@ -1,24 +1,23 @@
 <div class="login-box">
-                <h1 class="login-welcome-message">Accedi</h1>
-                <form action="login.php" method="POST">
-                    <fieldset>
-                        <div>
-                            <label for="username">Username:</label>
-                            <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
-                        </div>
-                    </fieldset>
-                    <fieldset>
-                        <div>
-                            <label class="pw" for="password">Password:</label>
-                            <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
-                        </div>
-                    </fieldset>
-                    <fieldset class="button-container">
-                        <div><input type="submit" name="submit" class="accedi" value="Accedi"></div>
-                    </fieldset>
-                    <p class="register-link">Non hai un account?: <a href="registra.php">Registati!</a></p>
+    <h1 class="login-welcome-message">Accedi</h1>
+    <form action="login.php" method="POST">
+        <fieldset>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
+        </fieldset>
 
-                </form>
-            </div>
-            <script src="js/loginError.js"></script>
-            <script src="js/controlloInjection.js"></script>
+        <fieldset>
+            <label class="pw" for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
+        </fieldset>
+
+        <fieldset class="button-container">
+            <input type="submit" name="submit" class="accedi" value="Accedi">
+        </fieldset>
+
+            <p class="register-link">Non hai un account?: <a href="registra.php">Registati!</a></p>
+
+    </form>
+</div>
+<script src="js/loginError.js"></script>
+<script src="js/controlloInjection.js"></script>
