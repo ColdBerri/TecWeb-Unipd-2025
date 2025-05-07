@@ -15,7 +15,7 @@ if(!$connessioneOK){
     $img = $connessione->allVideogame();
     $connessione->closeConnection();
 
-    $lista = "<dl class='top-list'>";
+    $lista = "<ul class='top-list'>";
     foreach($img as $giuco){
         $nome = urlencode($giuco['categoria']);
         $lista .= "<li><a href='categoria_singola.php?categoria={$nome}'>";
@@ -23,7 +23,7 @@ if(!$connessioneOK){
         $lista .= "<span>{$giuco['categoria']}</span>";
         $lista .= "</a></li>";
     }
-    $lista .= "</dl>";
+    $lista .= "</ul>";
 
     $paginaHTML->aggiungiContenuto("[tuttigiuchi]",$lista);
     $paginaHTML->getPagina();

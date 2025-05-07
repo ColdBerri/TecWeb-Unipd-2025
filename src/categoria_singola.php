@@ -21,8 +21,8 @@ $paginaHTML = new Template(
 if(!$connessioneOK) {
     $giochi = $connessione->videogiochi_categoria($catName);
     $connessione->closeConnection();
-
-    $lista = "<ul class='giochi-list'><h1>Categoria : {$catName}</h1>";
+    $lista = "<h1>Categoria : {$catName}</h1>";
+    $lista .= "<ul class='giochi-list'>";
     foreach($giochi as $g) {
         $game = urlencode($g['nome_gioco']);
         $lista .= "<li><a href='gioco_singolo.php?gioco={$game}'>";

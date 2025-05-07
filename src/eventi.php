@@ -78,7 +78,8 @@ while ($giornoCorrente <= $numeroGiorni) {
             
             if ($giornoEvento === $giornoCorrente && !$eventoStampato) {
                 $nomeEvento = htmlspecialchars($ev['nome_evento']);
-                $calendarioHTML .= "<td class='eventoPresente'><span class='markerGiorno'>$giornoCorrente</span><a href='evento_singolo.php?nome_evento={$nomeEvento}'><p>$nomeEvento</p></a></td>";
+                $eventoLink = urldecode($ev['nome_evento']);
+                $calendarioHTML .= "<td class='eventoPresente'><span class='markerGiorno'>$giornoCorrente</span><a href='evento_singolo.php?nome_evento={$eventoLink}'><p>$nomeEvento</p></a></td>";
                 $eventoStampato = true;
             }
         }
