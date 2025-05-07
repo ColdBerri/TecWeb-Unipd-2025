@@ -66,11 +66,16 @@ header a{
     color: var(--bgcolor);
 }
 
+td.eventoPresente > a{
+    color: white;
+}
+
 /*===== HEADER =====*/
 
 header{
 /*    text-align: center;*/
     width: 100%;
+    background-color: var(--headerbgcolor);
 }
 
 .nascondi{
@@ -83,7 +88,6 @@ header{
 
 .menu {
     text-align: center;
-    background-color: var(--headerbgcolor);
     padding-top:1em;
     white-space: nowrap;
     margin: auto;
@@ -105,7 +109,7 @@ header{
 }*/
 
 .logo>img{
-    width: 5em;
+    width: 3.5em;
 }
 
 .logo {
@@ -119,7 +123,7 @@ header{
 }
 
 .logo h1{
-    font-size: 1.4em; 
+    font-size: 1.1em; 
     margin: 0; 
     margin-left: 0.7em; 
 }
@@ -157,14 +161,16 @@ ul .current-page{
     background-color: #2d3b47; 
     padding: 0.5em 1em;
     color: white;
-    font-size: 1.3em;
+    font-size: 1.1em;
     text-align: center;
 }
 
 .search-container {
     background-color: var(--headerbgcolor);
     text-align: center;
-    padding-bottom: 1em;
+    padding-bottom: 0.4em;
+    position: relative;
+    top:-0.5em;
 }
 
 .search-box {
@@ -310,8 +316,9 @@ ul .current-page{
 
 /*EVENTI*/
 
-.titolo_calendario
-{
+
+
+.titolo_calendario{
     font-size: 1.3em;
 }
 
@@ -469,12 +476,13 @@ td.giornoFuori > p {
 }
 
 
-td.eventoPresente > p {
+td.eventoPresente > a >p {
     background-color: green;
     padding: 0.2em;
     color: white;
-    border-radius: 3px; /* Rounded corners for the background */
+    border-radius: 3px; 
     text-align: left;
+    text-transform: uppercase;
 }
 
 .markerGiorno {
@@ -657,7 +665,7 @@ td.eventoPresente > p {
 }
     */
 
-div.login-box {
+div>login-box {
     display: block;
     background-color: var(--login-bgcolor); 
     border-radius: 10px;
@@ -672,7 +680,7 @@ div.login-box {
     max-width: 400px;
 }
 
-div.login-box > h1{
+div.login-box > h1,  div.login-box label{
     text-align: center;
     color: white;
 }

@@ -65,12 +65,23 @@ for ($i = $giorniInizialiVuoti; $i > 0; $i--) {
 }
 
 $giornoCorrente = 1;
+$eventoStampato = false;
 
 while ($giornoCorrente <= $numeroGiorni) {
-    if (in_array($giornoCorrente, $giorniEvento)) {
-        $stringa ="";
-        $calendarioHTML .= "<td class='eventoPresente'><span class='markerGiorno'>$giornoCorrente</span><p>EVENTO PRESENTE</p></td>";
-    } else {
+
+    $eventoStampato = false;
+
+    foreach ($eventi as $ev) {
+        $giornoEvento = intval(date('j', strtotime($ev['data_inizio_evento'])));
+        
+        if ($giornoEvento === $giornoCorrente && !$eventoStampato) {
+            $nomeEvento = htmlspecialchars($ev['nome_evento']);
+            $calendarioHTML .= "<td class='eventoPresente'><span class='markerGiorno'>$giornoCorrente</span><a href='evento_singolo.php?nome_evento={$nomeEvento}'><p>$nomeEvento</p></a></td>";
+            $eventoStampato = true;
+        }
+    }
+    
+    if (!$eventoStampato) {
         $calendarioHTML .= "<td>$giornoCorrente</td>";
     }
 

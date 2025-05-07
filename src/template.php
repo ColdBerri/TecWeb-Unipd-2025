@@ -76,7 +76,7 @@ class Template {
                 $header = str_replace("[libreria]",' <li><a href="libreria.php">Libreria</a></li>',$header);
                 $header = str_replace("[login]", '<li><a href="profilo.php">Profilo</a></li>', $header);
             }else{
-                $header = str_replace("[libreria]", "<li></li>", $header);
+                $header = str_replace("[libreria]", "", $header);
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
 
@@ -93,7 +93,7 @@ class Template {
                 $header = str_replace("[libreria]",' <li><a href="libreria.php">Libreria</a></li>',$header);
                 $header = str_replace("[login]", '<li><a href="profilo.php">Profilo</a></li>', $header);
             }else{
-                $header = str_replace("[libreria]", "<li></li>", $header);
+                $header = str_replace("[libreria]", "", $header);
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
 
@@ -110,7 +110,7 @@ class Template {
                 $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
                 $header = str_replace("[login]", '<li><a href="profilo.php">Profilo</a></li>', $header);
             }else{
-                $header = str_replace("[libreria]", "<li></li>", $header);
+                $header = str_replace("[libreria]", "", $header);
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
             
@@ -138,7 +138,7 @@ class Template {
             $header = str_replace("[categorie]",'<li><a href="categorie.php">Categorie</a></li>',$header);
             $header = str_replace("[eventi]",'<li><a href="eventi.php">Prossimi eventi</a></li>',$header);
             $header = str_replace("[login]", '<li class="current-page">Login/Registrati</li>', $header);
-            $header = str_replace("[libreria]", "<li></li>", $header);
+            $header = str_replace("[libreria]", "", $header);
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <span lang="en">Login</span></p></div>',$header);
             
         }
@@ -151,7 +151,7 @@ class Template {
             $header = str_replace("[categorie]",'<li><a href="categorie.php">Categorie</a></li>',$header);
             $header = str_replace("[eventi]",'<li><a href="eventi.php">Prossimi eventi</a></li>',$header);
             $header = str_replace("[login]", '<li><a href="login.php"><span lang="en">Login</span></a></li>', $header);
-            $header = str_replace("[libreria]", "<li></li>", $header);
+            $header = str_replace("[libreria]", "", $header);
 
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in:  <a href="index.php" lang="en">Home</a> &gt&gt;Registrati</p></div>',$header);
         }
@@ -167,7 +167,7 @@ class Template {
                 $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
                 $header = str_replace("[login]", '<li><a href="profilo.php">Profilo</a></li>', $header);
             }else{
-                $header = str_replace("[libreria]", "<li></li>", $header);
+                $header = str_replace("[libreria]", "", $header);
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
 
@@ -194,7 +194,7 @@ class Template {
                 $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
                 $header = str_replace("[login]", '<li><a href="profilo.php">Profilo</a></li>', $header);
             }else{
-                $header = str_replace("[libreria]", "<li></li>", $header);
+                $header = str_replace("[libreria]", "", $header);
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
 
@@ -226,7 +226,7 @@ class Template {
                 $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
                 $header = str_replace("[login]", '<li><a href="profilo.php">Profilo</a></li>', $header);
             }else{
-                $header = str_replace("[libreria]", "<li></li>", $header);
+                $header = str_replace("[libreria]", "", $header);
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
 
@@ -242,7 +242,7 @@ class Template {
                 $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
                 $header = str_replace("[login]", '<li><a href="profilo.php">Profilo</a></li>', $header);
             }else{
-                $header = str_replace("[libreria]", "<li></li>", $header);
+                $header = str_replace("[libreria]", "", $header);
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <a href="categorie.php">Categorie</a> &gt&gt; <a href="categoria_singola.php">Categoria Singola</a> &gt&gt; gioco singolo</p> </div>',$header);
@@ -258,7 +258,7 @@ class Template {
                 $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
                 $header = str_replace("[login]", '<li><a href="profilo.php">Profilo</a></li>', $header);
             }else{
-                $header = str_replace("[libreria]", "<li></li>", $header);
+                $header = str_replace("[libreria]", "", $header);
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <a href="eventi.php">Eventi</a> &gt&gt; Evento Singolo</p> </div>',$header);
@@ -274,7 +274,7 @@ class Template {
                 $header = str_replace("[libreria]",'<li><a href="libreria.php">Libreria</a></li>',$header);
                 $header = str_replace("[login]", '<li><a href="profilo.php">Profilo</a></li>', $header);
             }else{
-                $header = str_replace("[libreria]", "<li></li>", $header);
+                $header = str_replace("[libreria]", "", $header);
                 $header = str_replace("[login]", '<li><a href="login.php">Login/Registrati</a></li>', $header);
             }   
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <a href="categorie.php">Categorie</a> &gt&gt; <a href="categoria_singola.php">Categoria Singola</a> &gt&gt; <a href= "gioco_singolo.php">Gioco Singolo</a> &gt&gt; Articolo</p> </div>',$header);

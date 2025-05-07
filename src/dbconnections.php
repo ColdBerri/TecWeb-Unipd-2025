@@ -281,6 +281,7 @@ class DBAccess {
 	
 		return $eventi;
 	}
+	
 
 	public function getEvento($nome) {
 		$query = "SELECT nome_evento, nome_videogioco, data_inizio_evento, data_fine_evento, squadre_coinvolte, vincitore_evento 
