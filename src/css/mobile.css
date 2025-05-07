@@ -54,19 +54,28 @@
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3vw; /* o la dimensione che vuoi tu */
-      height: auto; /* mantiene le proporzioni */
-
+  width: 50vw;
+  max-width: 200px;
 }
+
+
+.logo img {
+  max-width: 40px; /* o quello che serve */
+  height: auto;
+}
+
+.logo h1 {
+  font-size: 1.2em;
+  color: white;
+  margin: 0.2em 0 0;
+}
+
 
 .burger img {
   position: absolute;
   right: 30px;
   cursor: pointer;
-      top: 7%;
+      top: 10px;
       width: 28px;  /* Regolato per renderlo più compatto */
     width: 8vw;
 
@@ -152,3 +161,29 @@ div.login-box {
     margin-top: 2em; /* meno spazio sopra */
     margin-bottom: 5em; /* più spazio sotto */
     }
+
+/*ABOUT US*/
+.container {
+    display: block; /* Disattiva flex per impilare i figli */
+         flex-direction: column;
+    align-items: center;
+  }
+
+  .container > div {
+    width: 100%;
+    margin-bottom: 20px;
+      max-width: 400px; /* larghezza fissa per evitare allungamenti */
+  }
+
+/*ASSISTENZA*/
+details {
+    width: 90%; /* Prende il 98% della larghezza disponibile su dispositivi mobili */
+    max-width: 100%; /* Garantisce che occupi tutta la larghezza disponibile su mobile */
+    padding: 12px; /* Aumenta il padding per un po' più di spazio interno */
+    box-sizing: border-box; /* Assicura che il padding sia incluso nel calcolo della larghezza */
+     margin: 20px;
+  }
+
+  details summary {
+    font-size: 1.3em; /* Aumenta la dimensione del testo del summary */
+  }
