@@ -36,13 +36,81 @@ if(!$connessioneOK) {
             $stelle = floatval($_POST['stelle']);
             $utente = $_SESSION['nickname'];
     
-            $connessione->inserisciRecensione($gioco, $utente, $contenuto, $stelle);
-    
-            // Redireziona per evitare reinvio del form
+            $connessione->inserisciRecensione($gioco, $utente, $contenuto, $stelle);    
             header("Location: gioco_singolo.php?gioco=" . urlencode($gioco) . "&ok=1");
             exit;
         }
     }
+
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION['nickname'])) {
+        $utente = $_SESSION['nickname'];
+    
+        if (isset($_POST['azione']) && $_POST['azione'] === 'aggiungi') {
+            $connessione->addLibreria($_POST['gioco'], $utente);
+            header("Location: gioco_singolo.php?gioco=" . urlencode($_POST['gioco']));
+            exit;
+        }
+    
+        if (isset($_POST['azione']) && $_POST['azione'] === 'rimuovi') {
+            $connessione->removeLibreria($_POST['gioco'], $utente);
+            header("Location: gioco_singolo.php?gioco=" . urlencode($_POST['gioco']));
+            exit;
+        }
+    
+        if (isset($_POST['preferito'])) {
+            $connessione->setPreferito($_POST['gioco'], $utente, intval($_POST['preferito']));
+            header("Location: gioco_singolo.php?gioco=" . urlencode($_POST['gioco']));
+            exit;
+        }
+    
+    }    
+
+    //opzioni di modifica per librerira
+    $inLib = "";
+    if(isset($_SESSION['nickname'])) {
+        $utente = $_SESSION['nickname'];
+        $isPreferito = $connessione->isPrefe($nomeGioco, $utente);
+    
+        // Se è in libreria (cioè isPrefe restituisce true o false in base al campo)
+        
+        if ($isPreferito !== null ) {
+            $testoPrefe = $isPreferito ? "❤️ Preferito" : "🤍 Segna come preferito";
+            $valorePrefe = $isPreferito ? 0 : 1;
+        
+            $inLib .= "<div class='libreria-box'>";
+            
+            // RIMUOVI
+            $inLib .= "<form method='post'>";
+            $inLib .= "<input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>";
+            $inLib .= "<input type='hidden' name='azione' value='rimuovi'>";
+            $inLib .= "<input type='submit' value='❌ Rimuovi dalla libreria'>";
+            $inLib .= "</form>";
+        
+            // TOGGLE PREFERITO
+            $inLib .= "<form method='post'>";
+            $inLib .= "<input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>";
+            $inLib .= "<input type='hidden' name='preferito' value='$valorePrefe'>";
+            $inLib .= "<input type='submit' value='$testoPrefe'>";
+            $inLib .= "</form>";
+        
+            $inLib .= "</div>";
+        } else {
+            // AGGIUNGI
+            $inLib .= "<div class='libreria-box'>";
+            $inLib .= "<form method='post'>";
+            $inLib .= "<input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>";
+            $inLib .= "<input type='hidden' name='azione' value='aggiungi'>";
+            $inLib .= "<input type='submit' value='➕ Aggiungi alla libreria'>";
+            $inLib .= "</form>";
+            $inLib .= "</div>";
+        }
+    
+    } else {
+        $inLib .= "<p><em>Devi aver fatto il <a href='login.php'>Login</a> per gestire la tua libreria.</em></p>";
+    }
+    
+    $paginaHTML->aggiungiContenuto("[libri]", $inLib);
+    
     
     //recensioni :(
     if ($recensioni) {
@@ -59,19 +127,20 @@ if(!$connessioneOK) {
     }
     $connessione->closeConnection();
 
+
     if (isset($_SESSION['nickname'])) {
         $recensioniHTML .= "
             <h3>Scrivi una recensione</h3>
             <form method='post'>
                 <textarea name='testo' required></textarea><br>
                 <label for='stelle'>Valutazione (0–5):</label>
-                <input type='number' name='stelle' min='0' max='5' step='0.5' required><br>
+                </br><input type='number' name='stelle' min='0' max='5' step='0.5' required><br>
                 <input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>
-                <button type='submit'>Invia</button>
+                <input type='submit' name='invio' value='invia'></br>
             </form>
         ";
     } else {
-        $recensioniHTML .= "<p><em>Devi aver fatto il <a href='login.php'>Log In</a> per scrivere una recensione.</em></p>";
+        $recensioniHTML .= "<p><em>Devi aver fatto il <a href='login.php'>Login</a> per scrivere una recensione.</em></p>";
     }
         
     $contenuto .= $recensioniHTML;

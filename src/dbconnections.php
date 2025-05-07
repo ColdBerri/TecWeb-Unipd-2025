@@ -333,8 +333,86 @@ class DBAccess {
 		return mysqli_fetch_assoc($result);
 	}
 
+	public function addLibreria($gioco, $utente){
+		$query = "INSERT INTO Utente_Videogiochi (nickname, nome_gioco, preferito) VALUES (?, ?, ?)";
+		$stmt = mysqli_prepare($this->connection, $query);
+	
+		if (!$stmt) {
+			throw new Exception("Errore prepare: " . mysqli_error($this->connection));
+		}
+	
+		$preferito = FALSE; // valore fisso iniziale
+		mysqli_stmt_bind_param($stmt, "ssi", $utente, $gioco, $preferito);
+		mysqli_stmt_execute($stmt);
+	}
+	
+
+	public function removeLibreria($gioco, $utente){
+		$query = "DELETE FROM Utente_Videogiochi WHERE nickname = ? AND nome_gioco = ?";
+		$stmt = $this->connection->prepare($query);
+		
+		if ($stmt->execute([$utente, $gioco])) {
+			return true; 
+		} else {
+			return false;
+		}
+	}
+	public function getLibreria($user) {
+		$query = "
+			SELECT U.nome_gioco, V.immagine 
+			FROM Utente_Videogiochi AS U 
+			JOIN Videogiochi AS V ON U.nome_gioco = V.nome_gioco 
+			WHERE U.nickname = ?
+		";
+	
+		$stmt = mysqli_prepare($this->connection, $query);
+		if (!$stmt) {
+			throw new Exception("Errore: libreria utente non trovata! " . mysqli_error($this->connection));
+		}
+	
+		mysqli_stmt_bind_param($stmt, "s", $user);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
+	
+		$preferiti = [];
+		while ($row = mysqli_fetch_assoc($result)) {
+			$preferiti[] = $row;
+		}
+	
+		return $preferiti;
+	}
+	
+	public function isPrefe($gioco, $utente) {
+		$query = "SELECT preferito FROM Utente_Videogiochi 
+				  WHERE nome_gioco = ? AND nickname = ?";
+		$stmt = mysqli_prepare($this->connection, $query);
+	
+		if (!$stmt) {
+			throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->connection));
+		}
+	
+		mysqli_stmt_bind_param($stmt, "ss", $gioco, $utente);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
+	
+		if ($row = mysqli_fetch_assoc($result)) {
+			return $row['preferito'] == 1 ? true : false; // restituisce true o false
+		}
+	
+		return null;
+	}
+	
+	
+	public function updatePreferito($gioco, $utente, $valore) {
+		$query = "UPDATE Utente_videogiochi SET preferito = ? WHERE nickname = ? AND nome_gioco = ?";
+		$stmt = mysqli_prepare($this->connection, $query);
+		mysqli_stmt_bind_param($stmt, "iss", $valore, $utente, $gioco);
+		mysqli_stmt_execute($stmt);
+	}
+	
+
 	public function isAdmin($nome){
 		
 	}
-	
+
 }

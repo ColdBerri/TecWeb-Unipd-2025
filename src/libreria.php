@@ -12,16 +12,25 @@ $connessioneOK = $connessione->openDBConnection();
 
 $img = "";
 $lista = "";
+if(!isset($_SESSION['nickname'])){
+	echo("malemale");
+}
 
+$user = $_SESSION['nickname'];
 if (!$connessioneOK) {
-	$img = $connessione->getFirstImg();
+	$giochi = $connessione->getLibreria($user);
 	$connessione->closeConnection();
 	$lista = "<dl class='top-list'>";
-		/*
-	foreach($img as $giuco){
-		$lista .= "<dt><img src=\"assets/img/".$giuco['immagine']."\" alt='".$giuco['nome_gioco']."'></dt>";
-		$lista .= "<dd>".$giuco['nome_gioco']."</dd>";
-	}*/
+	$lista .="<h1>La tua Libreria : </h1>";
+	$lista .="<h1>La tua Libreria : </h1>";
+
+	foreach($giochi as $gi){
+		$game = urlencode($gi['nome_gioco']);
+        $lista .= "<li><a href='gioco_singolo.php?gioco={$game}'>";
+        $lista .= "<img src='assets/img/{$gi['immagine']}' alt='{$gi['nome_gioco']}'>";
+        $lista .= "<span>{$gi['nome_gioco']}</span>";
+        $lista .= "</a></li>";
+	}
 		
 	$lista .= "</dl>";
 	
