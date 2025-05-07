@@ -71,16 +71,20 @@ while ($giornoCorrente <= $numeroGiorni) {
 
     $eventoStampato = false;
 
-    foreach ($eventi as $ev) {
-        $giornoEvento = intval(date('j', strtotime($ev['data_inizio_evento'])));
-        
-        if ($giornoEvento === $giornoCorrente && !$eventoStampato) {
-            $nomeEvento = htmlspecialchars($ev['nome_evento']);
-            $calendarioHTML .= "<td class='eventoPresente'><span class='markerGiorno'>$giornoCorrente</span><a href='evento_singolo.php?nome_evento={$nomeEvento}'><p>$nomeEvento</p></a></td>";
-            $eventoStampato = true;
+    if(!(empty($eventi))){
+
+        foreach ($eventi as $ev) {
+            $giornoEvento = intval(date('j', strtotime($ev['data_inizio_evento'])));
+            
+            if ($giornoEvento === $giornoCorrente && !$eventoStampato) {
+                $nomeEvento = htmlspecialchars($ev['nome_evento']);
+                $calendarioHTML .= "<td class='eventoPresente'><span class='markerGiorno'>$giornoCorrente</span><a href='evento_singolo.php?nome_evento={$nomeEvento}'><p>$nomeEvento</p></a></td>";
+                $eventoStampato = true;
+            }
         }
-    }
     
+    }
+
     if (!$eventoStampato) {
         $calendarioHTML .= "<td>$giornoCorrente</td>";
     }
