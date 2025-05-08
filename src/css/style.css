@@ -1047,12 +1047,12 @@ details {
   transition: all 0.3s ease;
   padding-left: 30px;
   padding-right: 20px;
-     margin-left: 90px;
-  margin-right: 90px;
+     margin-left: 100px;
+  margin-right: 100px;
 }
 
 h1 {
-  margin-top: 30px; /* Spazio sopra il titolo */
+  margin-top: 50px; /* Spazio sopra il titolo */
      margin-bottom: 25px; 
 }
 
@@ -1064,6 +1064,48 @@ details summary {
      margin-bottom: 10px;   /* Spazio tra la domanda e la risposta */
     margin-top: 10px;
 }
+
+.contatti {
+    display: flex;
+    justify-content: space-between; /* Spinge i riquadri agli estremi */
+    margin: 40px auto;
+    max-width: 1000px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.blocco-contatto {
+    width: 300px; /* Fisso per evitare che si allarghino */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.paragrafo {
+    text-align: center;
+}
+.paragrafo1 {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;           /* Usa Flexbox per allineare orizzontalmente */
+    align-items: center;     /* Allinea verticalmente l'immagine e il testo */
+     justify-content: center;
+    gap: 15px;               /* Aggiungi spazio tra l'icona e il numero */
+    font-size: 1.3em;          /* Imposta la dimensione del testo */
+}
+
+.paragrafo1 img {
+    width: 3em;
+    height: 3em;
+}
+
+.paragrafo1 span {
+    text-decoration: underline; /* Sottolinea il numero di telefono */
+    cursor: pointer; 
+}
+
 
 /*=====FOOTER=====*/
 

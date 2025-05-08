@@ -187,3 +187,22 @@ details {
   details summary {
     font-size: 1.3em; /* Aumenta la dimensione del testo del summary */
   }
+
+ .contatti {
+        flex-direction: column; /* Imposta i contenitori uno sotto l'altro */
+        align-items: center;    /* Centra i contenitori orizzontalmente */
+    }
+
+
+
+
+
+    .blocco-contatto {
+        width: 90%; /* Rende i contenitori più piccoli e centrati */
+        max-width: 400px; /* Imposta una larghezza massima per ogni contenitore */
+        margin: 10px 0;   /* Aggiunge spazio tra i contenitori */
+    }
+
+    .paragrafo1 {
+        font-size: 1.1em; /* Riduce la dimensione del testo su schermi piccoli */
+    }
