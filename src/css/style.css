@@ -211,7 +211,6 @@ ul .current-page{
     font-size: 1em;
 }
 
-
 .top-list{
     display: flex;
     flex-wrap: wrap;
@@ -315,6 +314,11 @@ ul .current-page{
 }
 
 /*EVENTI*/
+
+.titolo_pagina_eventi
+{
+    margin-bottom: 0;
+}
 
 .titolo_calendario{
     font-size: 1.3em;
