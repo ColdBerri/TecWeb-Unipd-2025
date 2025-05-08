@@ -321,17 +321,15 @@ ul .current-page{
     margin-bottom: 0.3em;
 }
 
-.selettore
-{
+.selettore {
     background-color: rgb(203, 203, 203);
     font-weight: bold;
-    padding: 1em;
+    padding: 1.3em 0;          
     margin: 0.3em;
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     font-size: 1.5em;
+    width: 13em;     
 }
 
 #mese, #anno {
@@ -351,7 +349,9 @@ ul .current-page{
     width: 100%; 
     max-width: 9em; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra leggera */
-    transition: all 0.3s ease; /* Transizione per hover e focus */
+    min-width: max-content;
+    margin-top: 0.4em;
+
 }
 
 #mese:hover, #anno:hover {
@@ -370,6 +370,7 @@ input[type="submit"][value="CERCA EVENTI"] {
     font-size: 1.5em;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: -0.5em;
 }
 
 input[type="submit"][value="CERCA EVENTI"]:hover {
@@ -384,25 +385,22 @@ input[type="submit"][value="CERCA EVENTI"]:hover {
 .formCalendario
 {
     display: flex;
+    flex-wrap: wrap;            /* permetto il wrapping dei flex-item */
     justify-content: center;
     align-items: center;
-    margin-bottom: 2em;
+    gap: 0.5em;                 /* spazio orizzontale/verticale tra i riquadri */
 }
 
-.formCalendario label,
-.formCalendario select,
-.formCalendario fieldset {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px; /* Spaziatura tra gli elementi */   
-    
-}
 
 .formCalendario fieldset {
-    margin: 0;
+    /* occupa tutta la larghezza del form, quindi va in riga nuova */
+    flex-basis: 100%;
+    display: flex;            /* per poter centrare il button al suo interno */
+    justify-content: center;
+    margin-top: 1em;          /* spazio sopra il tasto */
+    border: none;             /* già c’era, ma lo ribadiamo */
     padding: 0;
-    border: none; /* Rimuove il bordo del fieldset */
-}
+  }
 
 
 .calendario-tabella {
@@ -448,6 +446,7 @@ input[type="submit"][value="CERCA EVENTI"]:hover {
 
 .calendario-tabella td:hover {
     background-color: #f0f0f0;
+    transition: background-color 0.2s ease;
 }
 
 .calendario-tabella thead tr:first-child th:first-child {
@@ -465,6 +464,7 @@ input[type="submit"][value="CERCA EVENTI"]:hover {
 td.giornoFuori{ 
     color: grey;
     background-color: rgba(128, 128, 128, 0.327);
+    pointer-events: none;
 }
 
 td.giornoFuori > p { 
@@ -478,13 +478,19 @@ td.giornoFuori > p {
 }
 
 
-td.eventoPresente > a >p {
+td.eventoPresente > a > p {
     background-color: green;
     padding: 0.2em;
+    font-size: 1em;
     color: white;
     border-radius: 3px; 
     text-align: left;
     text-transform: uppercase;
+    text-overflow: ellipsis; /* Aggiunge i puntini di sospensione per il testo in eccesso */
+    white-space: normal;        /* permette il testo su più righe */
+    word-break: break-word;  
+    word-wrap: break-word; /* Permette di andare a capo */
+    hyphens: auto; /* Aggiunge il trattino "-" quando il testo va a capo */
 }
 
 .markerGiorno {
@@ -498,6 +504,7 @@ td.eventoPresente > a >p {
     text-align: center;
     font-weight: bold;
     font-size: 0.9em;
+    margin-bottom: 0.1em;
 }
 
 .mese_selezionato th {
