@@ -1,90 +1,64 @@
-.exit img {
-  position: absolute;
-  right: 10px;
-  top: 10px;            /* Usa px invece di % per stabilità */
-  width: 28px;          /* Dimensione più visibile */
-  height: auto;         /* Mantiene le proporzioni originali */
-  cursor: pointer;
+html, body {
+  overflow-x: hidden;
+  width: 100%;
 }
 
-
-.exit ul {
-    
-    text-decoration: none;  /* Rimuove la sottolineatura dal link */
-    font-size: 12px;
+body {
+  padding-top: 0;  /* Assicurati che il body non abbia padding che crei spazi vuoti */
 }
 
+/* --- HEADER MOBILE MENU CSS --- */
 
-/* Assicurati che il link a non abbia sottolineatura */
-.burger:focus,
-.burger:hover {
-    text-decoration: none;  /* Rimuove la sottolineatura anche al passaggio del mouse o al focus */
+header {
+  position: relative;
+  padding: 0.5em 1em;
+  color: white;
+  height: 80px;  /* Regola l'altezza dell'header */
+  margin-bottom: 0;  /* Rimuovi margine sotto l'header */
 }
 
-
-
-/* Stile per la barra del menu */
-.nav-menu, .nascondi {
-    background-color: #333;  /* Colore di sfondo per il menu */
-}
-
-
-
-/* Stile per le voci di menu */
-.barraCentrale a, .barraCentrale2 a {
-    color: white;  /* Colore del testo bianco */
-    font-size: 1.2em;  /* Puoi modificare la dimensione del testo */
-    padding: 5px 10px;  /* Aggiungi padding per un po' di spazio attorno al testo */
-    text-decoration: none;
-}
-
-/* Stile per i list items nel menu */
-.barraCentrale li, .barraCentrale2 li {
-    list-style: none;  /* Rimuove i puntini del list */
-    margin: 1.5em 0;  /* Aggiungi margine sopra e sotto (20px) per separare le voci */
-
-
-}
 .menu {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  padding: 3.5em 0em 1em;
+  height: 60px;
+  position: relative;
 }
 
-.logo {
-  width: 50vw;
-  max-width: 200px;
+/* Centratura logo */
+.menu ul {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-
-.logo img {
-  max-width: 40px; /* o quello che serve */
-  height: auto;
+/* Rendi visibile solo il logo */
+.menu ul li:not(:first-child) {
+  display: none;
 }
 
-.logo h1 {
-  font-size: 1.2em;
-  color: white;
-  margin: 0.2em 0 0;
+/* Burger a destra */
+.burger {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
 }
-
 
 .burger img {
-  position: absolute;
-  right: 30px;
+  height: 28px;
+  width: auto;
   cursor: pointer;
-      top: 10px;
-      width: 28px;  /* Regolato per renderlo più compatto */
-    width: 8vw;
-
 }
 
-.nav-links {
-  display: none; /* menu desktop nascosto su mobile */
-}
-
+/* Menu laterale nascosto */
 .nascondi {
   position: fixed;
   top: 0;
@@ -93,67 +67,107 @@
   height: 100%;
   background-color: #111;
   transition: right 0.3s ease;
-  z-index: 1000;
+  z-index: 999;
   padding: 20px;
 }
 
+/* Quando visibile */
+.nascondi.show {
+  right: 0;
+}
+
+/* Voci del menu */
 .nascondi ul {
   list-style: none;
   padding: 0;
+  margin-top: 60px;
 }
 
 .nascondi ul li {
   margin: 20px 0;
 }
 
-
-
-.nascondi.show {
-  right: 0;
+.nascondi ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
 }
 
-
-
+/* Bottone chiudi */
+.exit img {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 28px;
+  cursor: pointer;
+}
 img {
   max-width: 98%;   /* L'immagine non supererà mai la larghezza del contenitore */
   height: auto;      /* L'altezza si adatterà proporzionalmente */
     border-radius: 5px;  
 }
-.library-search-container {
-    display: flex;
-    flex-direction: row;      /* Posiziona input e bottone affiancati */
-    justify-content: center;  /* Centra tutto */
-    align-items: center;
-    width: 90%;
-    margin: 2em auto;
-    gap: 0.3em;                /* Spazio tra input e bottone */
-    flex-wrap: wrap;          /* Permette di andare a capo se serve */
-    align-items: stretch;  
-    margin-top: -13em; 
+
+ width: 5em; /* prova 4.5em, 5em, o più */
+    height: auto;
+    vertical-align: middle;
+
+/* Nasconde il campo input della ricerca */
+.library-search-box {
+  display: none;
 }
 
-  .library-search-box {
-    flex: 1;
-    min-width: 0;             /* Per evitare overflow */
-    padding: 0.75em;
-    font-size: 1em;
-    border: 0.0625em solid #ccc;
-    border-radius: 0.85em;
-  }
+.search-container {
+  position: absolute;
+  top: 10px;
+  right: 60px; /* o meno, in base a layout */
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
 
-  .library-search-button {
-    padding: 0.75em;
-    font-size: 1em;
-    border-radius: 0.85em;
-    border: 0.0625em solid #ccc;
-    background-color: var(--headerbgcolor);
-    cursor: pointer;
-  }
+.search-box {
+  display: none;
+}
 
-  .library-search-button img {
-    width: 1.25em;
-    height: 1.25em;
-  }
+.search-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+}
+
+
+.breadcrump {
+  background-color: #2d3b47;  /* Colore di sfondo */
+  color: white;                /* Colore del testo */
+  padding: 0.3em 1em;          /* Ridurre il padding (meno spazio) */
+  font-size: 0.9em;            /* Rimpicciolire leggermente la dimensione del testo */
+  margin: 0;                   /* Rimuovere margini aggiuntivi */
+  text-align: center;          /* Centrare il testo */
+  width: 100%;                 /* Assicurarsi che occupi tutta la larghezza disponibile */
+  box-sizing: border-box;      /* Per includere il padding nelle dimensioni totali */
+  margin-top: 0;               /* Elimina qualsiasi margine superiore, attaccandolo all'header */
+}
+
+
+.breadcrump a {
+  color: white;                /* Colore dei link */
+  text-decoration: none;       /* Rimuovere sottolineatura dai link */
+}
+
+.breadcrump a:hover {
+  color: #f0f0f0;              /* Colore più chiaro al passaggio del mouse */
+}
+
+
+
 
 div.login-box {
         width: 90%;
@@ -161,6 +175,8 @@ div.login-box {
     margin-top: 2em; /* meno spazio sopra */
     margin-bottom: 5em; /* più spazio sotto */
     }
+
+
 
 /*ABOUT US*/
 .container {
@@ -193,11 +209,7 @@ details {
         align-items: center;    /* Centra i contenitori orizzontalmente */
     }
 
-
-
-
-
-    .blocco-contatto {
+.blocco-contatto {
         width: 90%; /* Rende i contenitori più piccoli e centrati */
         max-width: 400px; /* Imposta una larghezza massima per ogni contenitore */
         margin: 10px 0;   /* Aggiunge spazio tra i contenitori */
@@ -206,3 +218,7 @@ details {
     .paragrafo1 {
         font-size: 1.1em; /* Riduce la dimensione del testo su schermi piccoli */
     }
+
+.burger {
+  border: 2px solid red; /* Solo per testare la visibilità */
+}

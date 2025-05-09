@@ -1,4 +1,4 @@
-    function apriMenu() {
+ function apriMenu() {
       const menuHamberger = document.querySelector('.nascondi')
       menuHamberger.classList.remove("nascondi")
       menuHamberger.classList.add("menuHamberger")
@@ -9,4 +9,3 @@
       menuHamberger.classList.remove("menuHamberger")
       menuHamberger.classList.add("nascondi")
     }
-
