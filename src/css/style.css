@@ -201,9 +201,11 @@ ul .current-page{
 
 /*=====MAIN=====*/
 
-.suggForm{
+.suggForm {
     color: white;
     font-size: 1em;
+    float: right;
+    text-align: right;
 }
 
 .erroreForm{
@@ -699,7 +701,7 @@ td.eventoPresente > a > p {
 /* Box principale */
 .login-box {
     background-color: var(--login-bgcolor); 
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
     max-width: 28em;
     min-width: 20em;
