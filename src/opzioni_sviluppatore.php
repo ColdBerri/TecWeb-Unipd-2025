@@ -10,8 +10,8 @@ $paginaHTML = new Template("pagina delle opzioni da amministratore/sviluppatore"
 if(!$connessioneOK){
     $cont = "";
     $cont .= "<li><ul class='aggiunta_gioco'><a href= 'aggiungi_videogioco.php'>Aggiungi Videogioco</a></ul>";
-    $cont .= "<ul class='aggiunta_art'><a href ='aggiungi_articolo.php'>Aggiungi Articolo</a></ul>";
-    $cont .= "<ul class='aggiunta_evento'><a href=aggiungi_evento.php>Aggiungi Evento</a></ul></li>";
+    $cont .= "<ul class='aggiunta_art'><a href='aggiungi_articolo.php'>Aggiungi Articolo</a></ul>";
+    $cont .= "<ul class='aggiunta_evento'><a href='aggiungi_evento.php'>Aggiungi Evento</a></ul></li>";
 }
 
 $paginaHTML->aggiungiContenuto("[admin]", $cont);

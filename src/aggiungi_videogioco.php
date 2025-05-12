@@ -20,12 +20,9 @@ if(!$connessioneOK){
         $categoria = trim($_POST["categoria"]);
         try {
             $connessione->addGioco($nome, $casa, $console, $descrizione, $anno, $immagine, $categoria);
-            header("Location : categiorie.php");
             $messaggio = "<p style='color: green;'>Gioco aggiunto correttamente!</p>";
-            exit;
         } catch (Exception $e) {
             $messaggio = "<p style='color: red;'>Errore: " . htmlspecialchars($e->getMessage()) . "</p>";
-            exit;
         }
         $connessione->closeConnection();
     }

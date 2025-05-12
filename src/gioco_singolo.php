@@ -158,9 +158,17 @@ if(!$connessioneOK) {
             $listaEventi .= "<div class='miniCalendarioB'>" . htmlspecialchars($e['nome_evento']) . "</div>";
             $listaEventi .= "</div></a></li>";
         }
+        if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
+            $listaEventi .= "<p><em>Vuoi aggiungere un evento relativo a questo videogioco? Schiaccia <a href = 'aggiungi_evento.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
+        }
         $listaEventi .= "</ul>";
     } else {
-        $listaEventi = "<p><em>Nessun evento disponibile per questo gioco.</em></p>";
+        if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
+            $listaEventi .= "<p><em>Nessun articolo disponibile per questo gioco.</em>";
+            $listaEventi .= "<em>Vuoi aggiungere un evento relativo a questo videogioco? Schiaccia <a href = 'aggiungi_evento.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
+        }else{
+            $listaEventi = "<p><em>Nessun articolo disponibile per questo gioco.</em></p>";
+        }    
     }
     $paginaHTML->aggiungiContenuto("[eventi]", $listaEventi);
 
@@ -175,9 +183,17 @@ if(!$connessioneOK) {
             $listaArticoli .= "<div class='contenutoNotiziaIndex'>" . htmlspecialchars($a['titolo_articolo']) . "</div>";
             $listaArticoli .= "</div></a></li>";
         }
+        if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
+            $listaArticoli .= "<p><em>Vuoi aggiungere un articolo relativo a questo videogioco? Schiaccia <a href = 'aggiungi_articolo.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
+        }
         $listaArticoli .= "</ul>";
     } else {
-        $listaArticoli = "<p><em>Nessun articolo disponibile per questo gioco.</em></p>";
+        if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
+            $listaArticoli .= "<p><em>Nessun articolo disponibile per questo gioco.</em>";
+            $listaArticoli .= "<em>Vuoi aggiungere un articolo relativo a questo videogioco? Schiaccia <a href = 'aggiungi_articolo.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
+        }else{
+            $listaArticoli = "<p>Nessun articolo disponibile per questo gioco.</p>";
+        }
     }
     $paginaHTML->aggiungiContenuto("[articoli]", $listaArticoli);
     $paginaHTML->getPagina();

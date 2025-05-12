@@ -434,26 +434,37 @@ class DBAccess {
 		if($stmt === false){
 			die("Erroere nella preparazione della query : " .myslqi_error($this->connection));
 		}
-
 		mysqli_stmt_bind_param($stmt, "ssssiss", $nome_gioco, $casa_produttrice, $console_compatibili, $descrizione, $anno_di_pubblicazione, $immagine, $categoria);
 		mysqli_stmt_execute($stmt);
 		mysqli_stmt_close($stmt);
 	}
 
 
-	public function addEvento($nome_evento, $nome_videogioco, $data_inizio_evento, $data_fine_evento, $squadre_coinvolte, $vincitore_evento){
-		$query = "INSERT INTO Eventi (nome_evento, nome_videogioco, data_inizio_evento, data_fine_evento, squadre_coinvolte, vincitore_evento)
-		VALUES (?, ?, ?, ?, ?, ?)";
+public function addEvento($nome_evento, $nome_videogioco, $data_inizio_evento, $data_fine_evento, $squadre_coinvolte, $vincitore_evento){
+    $query = "INSERT INTO Eventi (nome_evento, nome_videogioco, data_inizio_evento, data_fine_evento, squadre_coinvolte, vincitore_evento)
+              VALUES (?, ?, ?, ?, ?, ?)";
 
-		$stmt =mysqli_prepare($this->connection, $query);
-		if($stmt === false){
-			die("Erroere nella preparazione della query : " .myslqi_error($this->connection));
-		}
+    $stmt = mysqli_prepare($this->connection, $query);
+    if($stmt === false){
+        die("Errore nella preparazione della query: " . mysqli_error($this->connection));
+    }
 
-		mysqli_stmt_bind_param($stmt, "ssssss", $nome_evento, $nome_videogioco, $data_inizio_evento, $data_fine_evento, $squadre_coinvolte, $vincitore_evento);
-		mysqli_stmt_execute($stmt);
-		mysqli_stmt_close($stmt);
-	}
+    $data_fine_evento = ($data_fine_evento === "") ? null : $data_fine_evento;
+    $vincitore_evento = ($vincitore_evento === "") ? null : $vincitore_evento;
+
+    mysqli_stmt_bind_param($stmt, "ssssss",
+        $nome_evento,
+        $nome_videogioco,
+        $data_inizio_evento,
+        $data_fine_evento,
+        $squadre_coinvolte,
+        $vincitore_evento
+    );
+
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+}
+
 
 	public function addArticolo($titolo_articolo, $autore, $data_pubblicazione, $testo_articolo, $nome_videogioco){
 		$query = "INSERT INTO Articoli_e_patch (titolo_articolo, autore, data_pubblicazione, testo_articolo, nome_videogioco)
