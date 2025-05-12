@@ -3,12 +3,12 @@
         <h1 class="login-welcome-message">Accedi</h1>
         <form action="login.php" method="POST">
             <fieldset>
-                <label for="username">Username:</label>
+                <label for="username"><span lang="en">Username</span>:</label>
                 <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required>
             </fieldset>
 
             <fieldset>
-                <label for="password">Password:</label>
+                <label for="password"><span lang="en">Password</>:</label>
                 <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required>
             </fieldset>
 
@@ -17,9 +17,11 @@
                 <input type="button" class="cancella" onclick="window.location.href='index.php';" value="Annulla">
             </div>
 
-            <p class="register-link">Non hai un account? <a href="registra.php">Registrati!</a></p>
+            <p class="register-link">Non hai un <span lang="en">account</span>? <a href="registra.php">Registrati!</a></p>
         </form>
     </div>
 </div>
 <script src="js/loginError.js"></script>
 <script src="js/controlloInjection.js"></script>
+<script src="js/validaPassword.js"></script>
+<script src="js/nomeDoppio.js"></script>
