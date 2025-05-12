@@ -341,7 +341,7 @@ class DBAccess {
 			throw new Exception("Errore prepare: " . mysqli_error($this->connection));
 		}
 	
-		$preferito = FALSE; // valore fisso iniziale
+		$preferito = FALSE;
 		mysqli_stmt_bind_param($stmt, "ssi", $utente, $gioco, $preferito);
 		mysqli_stmt_execute($stmt);
 	}
@@ -357,6 +357,8 @@ class DBAccess {
 			return false;
 		}
 	}
+
+
 	public function getLibreria($user) {
 		$query = "
 			SELECT U.nome_gioco, V.immagine 
@@ -404,15 +406,67 @@ class DBAccess {
 	
 	
 	public function updatePreferito($gioco, $utente, $valore) {
-		$query = "UPDATE Utente_videogiochi SET preferito = ? WHERE nickname = ? AND nome_gioco = ?";
+		$query = "UPDATE Utente_Videogiochi SET preferito = ? WHERE nickname = ? AND nome_gioco = ?";
 		$stmt = mysqli_prepare($this->connection, $query);
 		mysqli_stmt_bind_param($stmt, "iss", $valore, $utente, $gioco);
 		mysqli_stmt_execute($stmt);
 	}
 	
 
-	public function isAdmin($nome){
-		
+	/*public function isAdmin($nome){
+		$query = "SELECT nickname FROM Utente WHERE nicknamen =?";
+		$stmt = mysqli_prepare($this->connection, $query);
+		mysqli_stmt_bind_pararam($stmt, "s", $nome);
+		mysqli_stmt_execute($stmt);
+		$result = myslqi_stmt_get_result($stmt);
+		if($result = "admin"){
+			return true;
+		} else{
+			return false;
+		}
+	}*/
+
+	public function addGioco($nome_gioco, $casa_produttrice, $console_compatibili, $descrizione, $anno_di_pubblicazione, $immagine, $categoria){
+		$query = "INSERT INTO Videogiochi (nome_gioco, casa_produttrice, console_compatibili, descrizione, anno_di_pubblicazione, immagine, categoria)
+		VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+		$stmt =mysqli_prepare($this->connection, $query);
+		if($stmt === false){
+			die("Erroere nella preparazione della query : " .myslqi_error($this->connection));
+		}
+
+		mysqli_stmt_bind_param($stmt, "ssssiss", $nome_gioco, $casa_produttrice, $console_compatibili, $descrizione, $anno_di_pubblicazione, $immagine, $categoria);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_close($stmt);
+	}
+
+
+	public function addEvento($nome_evento, $nome_videogioco, $data_inizio_evento, $data_fine_evento, $squadre_coinvolte, $vincitore_evento){
+		$query = "INSERT INTO Eventi (nome_evento, nome_videogioco, data_inizio_evento, data_fine_evento, squadre_coinvolte, vincitore_evento)
+		VALUES (?, ?, ?, ?, ?, ?)";
+
+		$stmt =mysqli_prepare($this->connection, $query);
+		if($stmt === false){
+			die("Erroere nella preparazione della query : " .myslqi_error($this->connection));
+		}
+
+		mysqli_stmt_bind_param($stmt, "ssssss", $nome_evento, $nome_videogioco, $data_inizio_evento, $data_fine_evento, $squadre_coinvolte, $vincitore_evento);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_close($stmt);
+	}
+
+	public function addArticolo($titolo_articolo, $autore, $data_pubblicazione, $testo_articolo, $nome_videogioco){
+		$query = "INSERT INTO Articoli_e_patch (titolo_articolo, autore, data_pubblicazione, testo_articolo, nome_videogioco)
+		VALUES (?,?,?,?,?)";
+
+		$stmt = mysqli_prepare($this->connection, $query);
+		if($stmt === false){
+			die("errore!!" .myslqi_error($this->connection));
+		}
+
+		myslqi_stmt_bind_params($stmt, "sssss", $titolo_articolo, $autore, $data_pubblicazione, $testo_articolo, $nome_videogioco);
+		mysqli_stmt_execute($stmt);
+		myslqi_stmt_close($stmt);
 	}
 
 }

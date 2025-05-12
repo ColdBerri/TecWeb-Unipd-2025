@@ -58,7 +58,7 @@ if(!$connessioneOK) {
         }
     
         if (isset($_POST['preferito'])) {
-            $connessione->setPreferito($_POST['gioco'], $utente, intval($_POST['preferito']));
+            $connessione->updatePreferito($_POST['gioco'], $utente, intval($_POST['preferito']));
             header("Location: gioco_singolo.php?gioco=" . urlencode($_POST['gioco']));
             exit;
         }
@@ -146,31 +146,40 @@ if(!$connessioneOK) {
     $contenuto .= $recensioniHTML;
     $paginaHTML->aggiungiContenuto("[contenuto_gioco]", $contenuto);
 
-
-    $listaEventi = "<ul class='eventi_gioco'>";
-    foreach($evento as $e){
-        $dataCompleta = date('d F Y', strtotime($e['data_inizio_evento'])); 
-        $nomeEvent = urlencode($e['nome_evento']);
-        $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='miniCalendario'>";        
-        $listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
-        $listaEventi .= "<div class='miniCalendarioB'>" . $e['nome_evento'] . "</div>";
-        $listaEventi .= "</div></a></li>";
+// EVENTI
+    $listaEventi = "";
+    if (!empty($evento) && is_array($evento)) {
+        $listaEventi .= "<ul class='eventi_gioco'>";
+        foreach ($evento as $e) {
+            $dataCompleta = date('d F Y', strtotime($e['data_inizio_evento'])); 
+            $nomeEvent = urlencode($e['nome_evento']);
+            $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='miniCalendario'>";        
+            $listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
+            $listaEventi .= "<div class='miniCalendarioB'>" . htmlspecialchars($e['nome_evento']) . "</div>";
+            $listaEventi .= "</div></a></li>";
+        }
+        $listaEventi .= "</ul>";
+    } else {
+        $listaEventi = "<p><em>Nessun evento disponibile per questo gioco.</em></p>";
     }
-    $listaEventi .= "</ul>";
     $paginaHTML->aggiungiContenuto("[eventi]", $listaEventi);
 
-
-    $listaArticoli = "<ul class='articoli_gioco'>";
-    foreach($articolo as $a){
-        $nomeArti = urlencode($a['titolo_articolo']);
-        $listaArticoli .= "<li><a href='articolo_singolo.php?titolo_articolo={$nomeArti}'><div class='miniGiornale'>";
-        $listaArticoli .= "<div class='titoloNotiziaIndex'>".$a['nome_videogioco']."</div>";
-        $listaArticoli .= "<div class='contenutoNotiziaIndex'>".$a['titolo_articolo']."</div>";
-        $listaArticoli .= "</div></a></li>";
+// ARTICOLI
+    $listaArticoli = "";
+    if (!empty($articolo) && is_array($articolo)) {
+        $listaArticoli .= "<ul class='articoli_gioco'>";
+        foreach ($articolo as $a) {
+            $nomeArti = urlencode($a['titolo_articolo']);
+            $listaArticoli .= "<li><a href='articolo_singolo.php?titolo_articolo={$nomeArti}'><div class='miniGiornale'>";
+            $listaArticoli .= "<div class='titoloNotiziaIndex'>" . htmlspecialchars($a['nome_videogioco']) . "</div>";
+            $listaArticoli .= "<div class='contenutoNotiziaIndex'>" . htmlspecialchars($a['titolo_articolo']) . "</div>";
+            $listaArticoli .= "</div></a></li>";
+        }
+        $listaArticoli .= "</ul>";
+    } else {
+        $listaArticoli = "<p><em>Nessun articolo disponibile per questo gioco.</em></p>";
     }
-    $listaArticoli .= "</ul>";
     $paginaHTML->aggiungiContenuto("[articoli]", $listaArticoli);
-
     $paginaHTML->getPagina();
 }
 ?>

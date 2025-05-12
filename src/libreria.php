@@ -22,7 +22,6 @@ if (!$connessioneOK) {
 	$connessione->closeConnection();
 	$lista = "<dl class='top-list'>";
 	$lista .="<h1>La tua Libreria : </h1>";
-	$lista .="<h1>La tua Libreria : </h1>";
 
 	foreach($giochi as $gi){
 		$game = urlencode($gi['nome_gioco']);
