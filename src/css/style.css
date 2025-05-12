@@ -86,6 +86,18 @@ header{
     display: none;
 }
 
+.navbar_link
+{
+    padding: 0.6em;
+    border-radius: 0.5em;
+    background-color: #273a4f;
+}
+.navbar_link:hover
+{
+    background-color: #395575;
+    transition: background-color 0.2s ease;
+}
+
 .menu {
     text-align: center;
     padding-top:1em;
@@ -168,21 +180,28 @@ ul .current-page{
 .search-container {
     background-color: var(--headerbgcolor);
     text-align: center;
+    margin-top: 0.5em;
     padding-bottom: 0.4em;
     position: relative;
     top:-0.5em;
 }
 
 .search-box {
-    padding: 0.3125em; 
-    width: 18.75em; 
-    border: 1px solid #ccc;
-    border-radius: 1.5625em;
-    font-size: 1em; 
-    margin-right: 0.625em;
+    padding: 0.75em 1em;
+    width: 100%;
+    max-width: 20em;
+    border: 2px solid #ccc;
+    border-radius: 2em;
+    font-size: 1em;
+    margin-right: 1em;
     position: relative;
-    top: -0.5em; 
+    top: -0.25em;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0);
+    color: #333;
 }
+
+
 
 .search-button {
     background-color: transparent;

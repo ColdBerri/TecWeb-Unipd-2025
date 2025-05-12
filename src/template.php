@@ -71,7 +71,7 @@ class Template {
             $header = str_replace("[logo]",'<li><div class="logo"><img src="assets/icone.png" alt="logo sito"><h1><span lang="en">Vapor</span></h1></div></li>', subject: $header);
             $header = str_replace("[home]",'<li class="current-page"><span lang="en">Home</span></li>',$header);
             $header = str_replace("[categorie]",'<li><a href="categorie.php">Categorie</a></li>',$header);
-            $header = str_replace("[eventi]",'<li><a href="eventi.php">Prossimi eventi</a></li>',$header);
+            $header = str_replace("[eventi]",'<div class="navbar_link"><li><a href="eventi.php">Prossimi eventi</a></li></div>',$header);
             if(isset($_SESSION['nickname'])){
                 if($_SESSION['nickname'] === 'admin'){
                     $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php">Opzioni sviluppatore</a></li>',$header);
