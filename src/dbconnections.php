@@ -475,9 +475,9 @@ public function addEvento($nome_evento, $nome_videogioco, $data_inizio_evento, $
 			die("errore!!" .myslqi_error($this->connection));
 		}
 
-		myslqi_stmt_bind_params($stmt, "sssss", $titolo_articolo, $autore, $data_pubblicazione, $testo_articolo, $nome_videogioco);
+		mysqLi_stmt_bind_param($stmt, "sssss", $titolo_articolo, $autore, $data_pubblicazione, $testo_articolo, $nome_videogioco);
 		mysqli_stmt_execute($stmt);
-		myslqi_stmt_close($stmt);
+		mysqli_stmt_close($stmt);
 	}
 
 }

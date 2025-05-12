@@ -22,18 +22,20 @@ if(!$connessioneOK){
         }catch(Exception $e){
             $messaggio = "<p>evento aggiunto correttamente!</p>";
         }
+        $connessione->closeConnection();
     }   
-    $cont = "<form method='POST' action='aggungi_articolo.php'> <ul class ='aggiungi_articdolo'>";
+    $cont = "<form method='POST' action='aggiungi_articolo.php'> <ul class ='aggiungi_articdolo'>";
     if(isset($_GET['gioco'])){
         $gioco = urlencode($_GET['gioco']);
         $cont .= "<fieldset><label>Nome Gioco :<input type ='text' name='nome_videogioco' value={$gioco}></label></fieldset>";
     }else{
         $cont .= "<fieldset><label>Nome Gioco :<input type='text' name='nome_videogioco' required></label></fieldset>";
     }
-    $cont .= "<fieldset><label>Titolo : <input type='text' name='titolo_articolo' required></label></filedset><br>";
-    $cont .= "<filedset><label>Autore : <input type='text' name='autore' required></label></filedset><br>";
+    $cont .= "<fieldset><label>Titolo : <input type='text' name='titolo_articolo' required></label></fieldset><br>";
+    $cont .= "<fieldset><label>Autore : <input type='text' name='autore' required></label></fieldset><br>";
     $cont .= "<fieldset><label>Data Pubblicazione : <input type ='date' name='data_pubblicazione' required></label></fieldset><br>";
     $cont .= "<fieldset><label>Testo : <textarea name='testo_articolo' rows='5' cols='50' required></textarea></label></fieldset><br>";
+    $cont .= "<input type ='submit' value='Aggiungi Articolo'>";
     $cont .= "</ul></form>";
 }
 

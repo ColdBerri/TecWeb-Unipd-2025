@@ -46,8 +46,7 @@ if(!$connessioneOK){
     $cont.="<li><label>Data Fine Evento : <input type='date' name='data_fine_evento'><input</label></li>";
     $cont.="<li><label>Squadre Coinvolte (separate da virgola) : <input type='text' name='squadre_coinvolte' required></label></li>";
     $cont.="<li><labe>Vincitore : <input type='text' name='vincitore_evento'></label></li>";
-    $cont.='<input type="submit" value="Aggiungi Articolo">';
-
+    $cont.='<input type="submit" value="Aggiungi Evento">';
     $cont.="</ul></form>";
 }   
 
