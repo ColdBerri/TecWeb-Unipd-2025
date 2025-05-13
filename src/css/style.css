@@ -822,6 +822,11 @@ fieldset {
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
+.registra_linkB
+{
+    color: #34b9db;
+}
+
 /* Form di registrazione */
 #registration-form,
 #modifica-form {
@@ -832,6 +837,7 @@ fieldset {
 #modifica-form div {
     overflow: hidden;
 }
+
 
 
 /*FAQ*/
