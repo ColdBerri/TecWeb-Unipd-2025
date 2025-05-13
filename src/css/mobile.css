@@ -1,81 +1,3 @@
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-body {
-  padding-top: 0;  /* Assicurati che il body non abbia padding che crei spazi vuoti */
-}
-
-/* --- HEADER MOBILE MENU CSS --- */
-
-header {
-  position: relative;
-  padding: 0.5em 1em;
-  color: white;
-  height: 80px;  /* Regola l'altezza dell'header */
-  margin-bottom: 0;  /* Rimuovi margine sotto l'header */
-}
-
-.menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  position: relative;
-}
-
-/* Centratura logo */
-.menu ul {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-/* Rendi visibile solo il logo */
-.menu ul li:not(:first-child) {
-  display: none;
-}
-
-/* Burger a destra */
-.burger {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1000;
-}
-
-.burger img {
-  height: 28px;
-  width: auto;
-  cursor: pointer;
-}
-
-/* Menu laterale nascosto */
-.nascondi {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 70%;
-  height: 100%;
-  background-color: #111;
-  transition: right 0.3s ease;
-  z-index: 999;
-  padding: 20px;
-}
-
-/* Quando visibile */
-.nascondi.show {
-  right: 0;
-}
-
 /* Voci del menu */
 .nascondi ul {
   list-style: none;
@@ -84,7 +6,7 @@ header {
 }
 
 .nascondi ul li {
-  margin: 20px 0;
+  margin: 1.4em 0;
 }
 
 .nascondi ul li a {
@@ -92,24 +14,6 @@ header {
   text-decoration: none;
   font-size: 1.2em;
 }
-
-/* Bottone chiudi */
-.exit img {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  width: 28px;
-  cursor: pointer;
-}
-img {
-  max-width: 98%;   /* L'immagine non supererà mai la larghezza del contenitore */
-  height: auto;      /* L'altezza si adatterà proporzionalmente */
-    border-radius: 5px;  
-}
-
- width: 5em; /* prova 4.5em, 5em, o più */
-    height: auto;
-    vertical-align: middle;
 
 /* Nasconde il campo input della ricerca */
 .library-search-box {
@@ -143,40 +47,12 @@ img {
   height: 24px;
 }
 
-
-.breadcrump {
-  background-color: #2d3b47;  /* Colore di sfondo */
-  color: white;                /* Colore del testo */
-  padding: 0.3em 1em;          /* Ridurre il padding (meno spazio) */
-  font-size: 0.9em;            /* Rimpicciolire leggermente la dimensione del testo */
-  margin: 0;                   /* Rimuovere margini aggiuntivi */
-  text-align: center;          /* Centrare il testo */
-  width: 100%;                 /* Assicurarsi che occupi tutta la larghezza disponibile */
-  box-sizing: border-box;      /* Per includere il padding nelle dimensioni totali */
-  margin-top: 0;               /* Elimina qualsiasi margine superiore, attaccandolo all'header */
-}
-
-
-.breadcrump a {
-  color: white;                /* Colore dei link */
-  text-decoration: none;       /* Rimuovere sottolineatura dai link */
-}
-
-.breadcrump a:hover {
-  color: #f0f0f0;              /* Colore più chiaro al passaggio del mouse */
-}
-
-
-
-
 div.login-box {
         width: 90%;
         padding: 1.5em;
     margin-top: 2em; /* meno spazio sopra */
     margin-bottom: 5em; /* più spazio sotto */
     }
-
-
 
 /*ABOUT US*/
 .container {
@@ -218,7 +94,3 @@ details {
     .paragrafo1 {
         font-size: 1.1em; /* Riduce la dimensione del testo su schermi piccoli */
     }
-
-.burger {
-  border: 2px solid red; /* Solo per testare la visibilità */
-}

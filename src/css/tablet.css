@@ -1,13 +1,28 @@
-/*nav.menu > ul{
-    display: none;
-}
-
 .search-container{
     display: none;
 }
 
-html{
-    color: red;
+.menu ul li:not(:first-child) {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  justify-content: center; 
+  position: relative;
+}
+
+
+.burger{
+  display: block;
+  margin-left: auto; 
+  position: absolute;
+  padding: 1em;
+  right: 0;
+}
+
+.burger>img{
+  width: 2em;
 }
 
 nav.menuHamberger{
@@ -24,10 +39,26 @@ nav.menuHamberger{
     z-index: 9999;
 }
 
-
-/*.burger{
+.exit img {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 28px;
+  cursor: pointer;
 }
 
+
+.nascondi {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100%;
+  background-color: #111;
+  transition: right 0.3s ease;
+  z-index: 999;
+  padding: 20px;
+}
 
 .nascondiul {
     display: flex;
@@ -58,11 +89,6 @@ nav.menuHamberger > ul > :first-child{
   }
 
   /* Menu */
-  .burger img {
-    right: 25px;
-    top: 15px;
-    width: 10vw; /* Più grande rispetto alla versione mobile, ma non troppo grande */
-  }
 
   .nav-menu, .nascondi {
     background-color: #333;
@@ -85,11 +111,7 @@ nav.menuHamberger > ul > :first-child{
   
   /* Header */
   .menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px; /* Più alta per miglior visibilità su tablet */
-    padding: 2em 1em;
+    text-align: center;
   }
 
   /* Logo */
@@ -181,7 +203,7 @@ nav.menuHamberger > ul > :first-child{
     margin-top: 3em;
     margin-bottom: 4em;
   }
-}
+
 
 
   /* ABOUT US */
