@@ -8,8 +8,7 @@
     --headerbgcolor: #1b2838;
     --textcolor: #000000;
     --linkcolor: #07026b;
-    --linkvisited: #e87e04;
-    --linkvisited: Red;
+    --linkvisited: #F39602;
     --bandiera: #ff0000;
     --bgfooter: #aaaaaa;
     --linkvisitedFooter: #0606fb;
@@ -17,6 +16,8 @@
     --login-box-bgcolor: #080c11; /* Colore di sfondo della scatola di login */
     --login-border: #ccc; /* Colore del bordo della scatola di login */
     --login-button-bg: #28a745; /* Colore di sfondo del pulsante di login */
+    --div_navbar_link: #273a4f;
+    --div_navbar_link_hover: #2d425a;;
 }
 
 html {
@@ -90,11 +91,11 @@ header{
 {
     padding: 0.6em;
     border-radius: 0.5em;
-    background-color: #273a4f;
+    background-color: var(--div_navbar_link);
 }
 .navbar_link:hover
 {
-    background-color: #395575;
+    background-color: var(--div_navbar_link_hover);
     transition: background-color 0.2s ease;
 }
 
