@@ -1,5 +1,13 @@
-<h1>Il tuo profilo</h1>
-<h2>Nome Utente: {{nickname}}</h2>
-<h3>Data di Nascita: {{data_nascita}}</h3>
-<a href="profilo.php?logout=true" class ="logout-link"><span lang="en">Logout</span></a>
-<a href="modifica_profilo.php" class="cambiadati-link">Modifica <span lang="en">Password</span></a>
+<div class="profilo-box" role="region" aria-labelledby="profilo-heading">
+    <h1 id="profilo-heading">Il tuo profilo Vapor</h1>
+    <img src="../assets/profilepicture.jpeg" alt="Immagine del profilo" class="profile-picture">
+    <div class="profile_info">
+      <p>Nome Utente: <span class="valore">{{nickname}}</span></p>
+      <p>Data di Nascita: <span class="valore">{{data_nascita}}</span></p>
+    </div>
+    <div class="profilo-links">
+      <a href="modifica_profilo.php" class="profile_button">Modifica <span lang="en">Password</span></a>
+      <a href="profilo.php?logout=true" class="profile_button">Logout</a>
+    </div>
+  </div>
+  
