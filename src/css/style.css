@@ -107,6 +107,10 @@ header{
     vertical-align: middle;
     padding: 0;
 }
+
+.overlayNascondi{
+    display: none;
+}
 /*
 .logo {
     float: left;

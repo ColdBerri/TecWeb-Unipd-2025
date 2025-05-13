@@ -41,6 +41,17 @@ nav.menuHamberger{
     min-height: 100vh;
 }
 
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 9998; 
+}
+
+
 .exit img {
   position: absolute;
   right: 1.9em;
