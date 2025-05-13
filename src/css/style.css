@@ -1170,6 +1170,12 @@ details summary {
     cursor: pointer; 
 }
 
+section:first-of-type > p {
+    text-align: justify;
+    line-height: 2em; /* Aumenta l'interlinea */
+    margin-bottom: 1.2em; /* Aggiunge più spazio tra frasi */
+}
+
 
 /*=====FOOTER=====*/
 

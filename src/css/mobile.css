@@ -98,3 +98,72 @@ details {
     .paragrafo1 {
         font-size: 1.1em; /* Riduce la dimensione del testo su schermi piccoli */
     }
+
+
+/* CALENDARIO EVENTI */
+.calendario-tabella {
+        width: 90%;
+        min-width: unset;
+        max-width: 100%;
+        font-size: 0.85em;
+        table-layout: fixed;
+        border-radius: 0.5em;
+    margin: 0 auto;
+    }
+
+.calendario-tabella th,
+.calendario-tabella td {
+    width: 3em;             /* Fissa la larghezza della cella */
+    height: 3em;            /* Fissa l'altezza della cella */
+    padding: 0;
+    font-size: 0.8em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.markerGiorno {
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 0.75em;
+    line-height: 1.5em;
+}
+
+    .formCalendario {
+        flex-direction: column;
+        align-items: center;
+    }
+
+ .selettore {
+    background-color: rgb(203, 203, 203);
+    font-weight: bold;
+    padding: 1em 0;             /* Aumentato leggermente */
+    margin: 0.3em;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2em;           /* Da 1.1em a 1.2em */
+    width: 12em;                /* Da 10em a 12em */
+}
+
+#mese, #anno {
+    padding: 0.6em;              /* Ridotto da 0.8em */
+    font-size: 0.75em;           /* Appena più piccolo */
+    max-width: 8em;              /* Ridotto da 9em */
+}
+
+
+
+    input[type="submit"][value="CERCA EVENTI"] {
+        font-size: 1.2em;
+        padding: 0.8em;
+    }
+
+    .titolo_pagina_eventi,
+    .titolo_calendario {
+        text-align: center;
+        font-size: 1.3em;
+    }
+
+    h2, h3 {
+        text-align: center;
+        font-size: 1.2em;
+    }
