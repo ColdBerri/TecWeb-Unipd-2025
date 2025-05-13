@@ -12,7 +12,6 @@
   position: relative;
 }
 
-
 .burger{
   display: block;
   margin-left: auto; 
@@ -22,31 +21,33 @@
 }
 
 .burger>img{
-  width: 2em;
+  width: 2.2em;
+  cursor: pointer;
 }
 
 nav.menuHamberger{
     display: flex;
-    background-color: #2d3b47;
+    background-color: var(--headerbgcolor);
     top: 0;
     right: 0;
-    height: 100%;
     width: 50%;
     padding-top: 4em;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 1);
     list-style: none;
-    position: absolute;
+    position:fixed;
+    padding:0;
+    margin:0;
     z-index: 9999;
+    min-height: 100vh;
 }
 
 .exit img {
   position: absolute;
-  right: 15px;
-  top: 15px;
-  width: 28px;
+  right: 1.9em;
+  top: 1.9em;
+  width: 2em;
   cursor: pointer;
 }
-
 
 .nascondi {
   position: fixed;
@@ -76,19 +77,25 @@ nav.menuHamberger > ul {
     color: var(--textcolor);
 }
 
+nav.menuHamberger > ul > li {
+  padding: 3em;
+}
+
 nav.menuHamberger > ul > :first-child{
     text-align: right;
     padding-bottom: 3em;
 }
 
-*/
-  .exit img {
-    right: 15px;
-    top: 15px;
-    width: 32px; /* Aumentato per visibilità su schermi di medie dimensioni */
-  }
+li.current-page {
+  list-style: url("../assets/mb.png");
+   list-style-position: inside;
+}
 
-  /* Menu */
+.navbar_link{
+  background-color: var(--div_navbar_link);
+}
+
+/* Menu */
 
   .nav-menu, .nascondi {
     background-color: #333;
@@ -229,5 +236,3 @@ nav.menuHamberger > ul > :first-child{
   details summary {
     font-size: 1.5em;  /* Aumentato per tablet */
   }
-
-

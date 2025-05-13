@@ -2,7 +2,11 @@
 .nascondi ul {
   list-style: none;
   padding: 0;
-  margin-top: 60px;
+  margin-top: 3.75em;
+}
+
+nav.menuHamberger{
+  width: 70%;
 }
 
 .nascondi ul li {
