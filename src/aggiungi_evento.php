@@ -34,20 +34,14 @@ if(!$connessioneOK){
     }
 
     $cont ="";
-    $cont.="<form method='POST' action='aggiungi_evento.php'><ul class='aggiunta_evento'>
-            <li><label> Nome Evento : <input type='text' name='nome_evento' required></label></li>";
+
     if(isset($_GET['gioco'])){
         $nome = urlencode($_GET['gioco']);
-        $cont .="<li><label> Nome gioco : <input type='text' name='nome_gioco' value={$nome} required> </label></li>";
+        $cont .="<label> Nome gioco : </label><fieldset><input type='text' name='nome_gioco' value={$nome} required> </fieldset>";
     }else{
-        $cont .="<li><label> Nome Gioco : <input type='text' name='nome_gioco' required></label></li>";
+        $cont .="<label> Nome Gioco : </label><fieldset><input type='text' name='nome_gioco' required></fieldset>";
     }
-    $cont.= "<li><label>Data Inizio Evento : <input type='date' name='data_inizio_evento' required></label></li>";
-    $cont.="<li><label>Data Fine Evento : <input type='date' name='data_fine_evento'><input</label></li>";
-    $cont.="<li><label>Squadre Coinvolte (separate da virgola) : <input type='text' name='squadre_coinvolte' required></label></li>";
-    $cont.="<li><labe>Vincitore : <input type='text' name='vincitore_evento'></label></li>";
-    $cont.='<input type="submit" value="Aggiungi Evento">';
-    $cont.="</ul></form>";
+
 }   
 
 $paginaHTML->aggiungiContenuto("[addEvento]", $cont);

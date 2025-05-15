@@ -111,19 +111,6 @@ header{
 .overlayNascondi{
     display: none;
 }
-/*
-.logo {
-    float: left;
-    padding: 1em 1em;
-    margin-left: 1em; 
-    vertical-align: middle;
-    text-indent: -999em;
-    background-image: url(../assets/rsz_img_transparent.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    font-size: 2.4em;
-    width: 1vw;
-}*/
 
 .logo>img{
     width: 3.5em;

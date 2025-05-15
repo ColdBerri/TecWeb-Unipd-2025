@@ -1,2 +1,23 @@
 <h1>Aggiungi Evento</h1>
-[addEvento]
+
+<form method='POST' action='aggiungi_evento.php'>
+
+    <label> Nome Evento :</label>
+    <fieldset><input type='text' name='nome_evento' required></fieldset>
+
+    [addEvento]
+
+    <label>Data Inizio Evento :</label> 
+    <fieldset><input type='date' name='data_inizio_evento' required></fieldset>
+
+    <label>Data Fine Evento :</label>
+    <fieldset><input type='date' name='data_fine_evento'></fieldset>
+    
+    <label>Squadre Coinvolte (separate da virgola) :</label>
+    <fieldset><input type='text' name='squadre_coinvolte' required></label></fieldset>
+
+    <labe>Vincitore :</labe>
+    <fieldset><input type='text' name='vincitore_evento'></fieldset>
+
+    <fieldset><input type="submit" value="Aggiungi Evento"></fieldset>
+</form>

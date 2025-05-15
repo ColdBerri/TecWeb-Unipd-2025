@@ -24,19 +24,14 @@ if(!$connessioneOK){
         }
         $connessione->closeConnection();
     }   
-    $cont = "<form method='POST' action='aggiungi_articolo.php'> <ul class ='aggiungi_articdolo'>";
+    $cont = "";
     if(isset($_GET['gioco'])){
         $gioco = urlencode($_GET['gioco']);
-        $cont .= "<fieldset><label>Nome Gioco :<input type ='text' name='nome_videogioco' value={$gioco}></label></fieldset>";
+        $cont .= "<label>Nome Gioco :</label><fieldset><input type ='text' name='nome_videogioco' value={$gioco}></fieldset>";
     }else{
-        $cont .= "<fieldset><label>Nome Gioco :<input type='text' name='nome_videogioco' required></label></fieldset>";
+        $cont .= "<label>Nome Gioco :</label><fieldset><input type='text' name='nome_videogioco' required></fieldset>";
     }
-    $cont .= "<fieldset><label>Titolo : <input type='text' name='titolo_articolo' required></label></fieldset><br>";
-    $cont .= "<fieldset><label>Autore : <input type='text' name='autore' required></label></fieldset><br>";
-    $cont .= "<fieldset><label>Data Pubblicazione : <input type ='date' name='data_pubblicazione' required></label></fieldset><br>";
-    $cont .= "<fieldset><label>Testo : <textarea name='testo_articolo' rows='5' cols='50' required></textarea></label></fieldset><br>";
-    $cont .= "<input type ='submit' value='Aggiungi Articolo'>";
-    $cont .= "</ul></form>";
+
 }
 
 $paginaHTML->aggiungiContenuto("[addArticolo]", $cont);

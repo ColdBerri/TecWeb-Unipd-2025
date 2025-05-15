@@ -1,2 +1,19 @@
 <h1>Aggiungi Articolo</h1>
-[addArticolo]
+
+<form method='POST' action='aggiungi_articolo.php'> 
+
+        [addArticolo]
+
+        <label>Titolo :</label>
+        <fieldset><input type='text' name='titolo_articolo' required></fieldset>
+
+        <label>Autore :</label>
+        <fieldset><input type='text' name='autore' required></fieldset>
+
+        <label>Data Pubblicazione :</label>
+        <fieldset><input type ='date' name='data_pubblicazione' required></fieldset>
+
+        <label>Testo : <textarea name='testo_articolo' rows='5' cols='50' required></textarea></label>
+        <fieldset><input type ='submit' value='Aggiungi Articolo'></fieldset>
+
+</form>

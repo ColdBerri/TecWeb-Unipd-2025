@@ -1,2 +1,28 @@
 <h1>Aggiungi Video gioco</h1>
-[addGame]
+
+<form method="post" action="aggiungi_videogioco.php">
+
+    <label>Nome gioco:</label> 
+    <fieldset><input type="text" name="nome_gioco" required></fieldset>
+
+    <label>Casa produttrice:</label>
+    <fieldset><input type="text" name="casa_produttrice" required></fieldset>
+
+    <label>Console compatibili (separate da virgola):</label>
+    <fieldset><input type="text" name="console_compatibili" required></fieldset>
+
+    <label>Descrizione:</label>
+    <fieldset><textarea name="descrizione" rows="5" cols="50" required></textarea></fieldset>
+
+    <label>Anno di pubblicazione:</label>
+    <fieldset><input type="number" name="anno_di_pubblicazione" min="1970" max="2099" required></fieldset>
+
+    <label>Selezionare immagine (es: img.jpg):</label>
+    <fieldset><input type="file" name="immagine" required></fieldset>
+
+    <label>Categoria:</label>
+    <fieldset><input type="text" name="categoria" required></fieldset>
+
+    <fieldset><input type="submit" value="Aggiungi Gioco"></fieldset>
+
+</form>';

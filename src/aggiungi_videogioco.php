@@ -26,20 +26,7 @@ if(!$connessioneOK){
         }
         $connessione->closeConnection();
     }
-
-    $cont = "";
-    $cont .= '
-        <form method="post" action="aggiungi_videogioco.php">
-            <label>Nome gioco: <input type="text" name="nome_gioco" required></label><br>
-            <label>Casa produttrice: <input type="text" name="casa_produttrice" required></label><br>
-            <label>Console compatibili (separate da virgola): <input type="text" name="console_compatibili" required></label><br>
-            <label>Descrizione:<br><textarea name="descrizione" rows="5" cols="50" required></textarea></label><br>
-            <label>Anno di pubblicazione: <input type="number" name="anno_di_pubblicazione" min="1970" max="2099" required></label><br>
-            <label>Nome file immagine (es: img.jpg): <input type="file" name="immagine" required></label><br>
-            <label>Categoria: <input type="text" name="categoria" required></label><br><br>
-            <input type="submit" value="Aggiungi Gioco">
-        </form>';
 }
-$paginaHTML->aggiungiContenuto("[addGame]", $cont);
+
 $paginaHTML->getPagina();
 ?>
