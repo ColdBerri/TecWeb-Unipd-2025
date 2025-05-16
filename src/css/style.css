@@ -1003,9 +1003,12 @@ aside {
     color: var(--linkcolor); 
 }
 
+
+/*=====ABOUT US=====*/
+
 section {
-    padding: 10px 30px;  /* Aggiunge spazio sopra e sotto, riducendo lo spazio laterale */
-    margin-top: 40px;  /* Distanza dalla sezione precedente */
+    padding: 2px 30px;  /* Aggiunge spazio sopra e sotto, riducendo lo spazio laterale */
+    margin-top: 30px;  /* Distanza dalla sezione precedente */
 }
 
 section p {
@@ -1088,18 +1091,21 @@ ul {
 }
 
 
+/*=====ASSISTENZA=====*/
+
+
 details {
   background-color: #f9f9f9;  /* colore chiaro di sfondo */
   border: 1px solid #ddd;     /* bordo sottile grigio chiaro */
   border-radius: 10px;         /* angoli arrotondati */
   padding: 20px;
-  margin-bottom: 15px;        /* spazio tra una FAQ e l’altra */
+  margin-bottom: 18px;        /* spazio tra una FAQ e l’altra */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* leggerissima ombra */
   transition: all 0.3s ease;
   padding-left: 30px;
   padding-right: 20px;
-     margin-left: 100px;
-  margin-right: 100px;
+     margin-left: 250px;
+  margin-right: 250px;
 }
 
 h1 {
@@ -1161,6 +1167,26 @@ section:first-of-type > p {
     text-align: justify;
     line-height: 2em; /* Aumenta l'interlinea */
     margin-bottom: 1.2em; /* Aggiunge più spazio tra frasi */
+}
+
+
+/*=====REGISTRATI=====*/
+
+fieldset {
+  position: relative;
+  margin-bottom: 2em;
+}
+
+fieldset label {
+  display: block;
+  padding-right: 6em; /* lascia spazio a destra per il suggerimento */
+}
+
+fieldset .suggForm {
+  position: absolute;
+  right: 0;
+  font-size: 0.85em;
+    top: 0.1em;
 }
 
 
