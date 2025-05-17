@@ -3,11 +3,12 @@ require_once "dbconnections.php";
 require_once "template.php";
 use DB\DBAccess;
 
-if(!isset($_GET['gioco'])) {
-    header('Location: categorie.php');
+if($_SERVER['REQUEST_METHOD']==='POST' && isset($_POST['gioco'])){
+    $nomeGioco = $_POST['gioco'];
+}else{
+    header("Location: categorie.php");
     exit;
 }
-$nomeGioco = urldecode($_GET['gioco']);
 
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
@@ -70,9 +71,7 @@ if(!$connessioneOK) {
     if(isset($_SESSION['nickname'])) {
         $utente = $_SESSION['nickname'];
         $isPreferito = $connessione->isPrefe($nomeGioco, $utente);
-    
-        // Se è in libreria (cioè isPrefe restituisce true o false in base al campo)
-        
+            
         if ($isPreferito !== null ) {
             $testoPrefe = $isPreferito ? "❤️ Preferito" : "🤍 Segna come preferito";
             $valorePrefe = $isPreferito ? 0 : 1;
@@ -84,24 +83,24 @@ if(!$connessioneOK) {
             $inLib .= "<input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>";
             $inLib .= "<input type='hidden' name='azione' value='rimuovi'>";
             $inLib .= "<input type='submit' value='❌ Rimuovi dalla libreria'>";
-            $inLib .= "</form>";
+            $inLib .= "</fieldset></form>";
         
             // TOGGLE PREFERITO
-            $inLib .= "<form method='post'>";
+            $inLib .= "<form method='post'><fieldset>";
             $inLib .= "<input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>";
             $inLib .= "<input type='hidden' name='preferito' value='$valorePrefe'>";
             $inLib .= "<input type='submit' value='$testoPrefe'>";
-            $inLib .= "</form>";
+            $inLib .= "</fieldset></form>";
         
             $inLib .= "</div>";
         } else {
             // AGGIUNGI
             $inLib .= "<div class='libreria-box'>";
-            $inLib .= "<form method='post'>";
+            $inLib .= "<form method='post'><fieldset>";
             $inLib .= "<input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>";
             $inLib .= "<input type='hidden' name='azione' value='aggiungi'>";
             $inLib .= "<input type='submit' value='➕ Aggiungi alla libreria'>";
-            $inLib .= "</form>";
+            $inLib .= "</fieldset></form>";
             $inLib .= "</div>";
         }
     
@@ -152,12 +151,22 @@ if(!$connessioneOK) {
         $listaEventi .= "<ul class='eventi_gioco'>";
         foreach ($evento as $e) {
             $dataCompleta = date('d F Y', strtotime($e['data_inizio_evento'])); 
-            $nomeEvent = urlencode($e['nome_evento']);
-            $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='miniCalendario'>";        
-            $listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
-            $listaEventi .= "<div class='miniCalendarioB'>" . htmlspecialchars($e['nome_evento']) . "</div>";
-            $listaEventi .= "</div></a></li>";
+            $nomeEvento = htmlspecialchars($e['nome_evento']);
+
+            $listaEventi .= "<li>
+                <form action='evento_singolo.php' method='POST' class='form-evento'>
+                    <fieldset>
+                        <input type='hidden' name='nome_evento' value='$nomeEvento'>
+                        <input type='submit' class='miniCalendario-submit' value=''>
+                        <div class='miniCalendario'>
+                            <div class='miniCalendarioH'>$dataCompleta</div>
+                            <div class='miniCalendarioB'>$nomeEvento</div>
+                        </div>
+                    </fieldset>
+                </form>
+            </li>";
         }
+        $listaEventi.="</ul>";
         if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
             $listaEventi .= "<p><em>Vuoi aggiungere un evento relativo a questo videogioco? Schiaccia <a href = 'aggiungi_evento.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
         }
@@ -177,12 +186,23 @@ if(!$connessioneOK) {
     if (!empty($articolo) && is_array($articolo)) {
         $listaArticoli .= "<ul class='articoli_gioco'>";
         foreach ($articolo as $a) {
-            $nomeArti = urlencode($a['titolo_articolo']);
-            $listaArticoli .= "<li><a href='articolo_singolo.php?titolo_articolo={$nomeArti}'><div class='miniGiornale'>";
-            $listaArticoli .= "<div class='titoloNotiziaIndex'>" . htmlspecialchars($a['nome_videogioco']) . "</div>";
-            $listaArticoli .= "<div class='contenutoNotiziaIndex'>" . htmlspecialchars($a['titolo_articolo']) . "</div>";
-            $listaArticoli .= "</div></a></li>";
+            $titoloArticolo = htmlspecialchars($a['titolo_articolo']);
+            $nomeGioco = htmlspecialchars($a['nome_videogioco']);
+
+            $listaArticoli .= "<li>
+                <form action='articolo_singolo.php' method='POST' class='form-articolo'>
+                    <fieldset>
+                        <input type='hidden' name='titolo_articolo' value='$titoloArticolo'>
+                        <input type='submit' class='miniGiornale-submit' value=''>
+                        <div class='miniGiornale'>
+                            <div class='titoloNotiziaIndex'>$nomeGioco</div>
+                            <div class='contenutoNotiziaIndex'>$titoloArticolo</div>
+                        </div>
+                    </fieldset>
+                </form>
+            </li>";
         }
+        $listaArticoli.="</ul>";
         if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
             $listaArticoli .= "<p><em>Vuoi aggiungere un articolo relativo a questo videogioco? Schiaccia <a href = 'aggiungi_articolo.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
         }

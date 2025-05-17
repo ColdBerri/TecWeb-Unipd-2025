@@ -9,17 +9,11 @@ $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 $nome_gioco = "";
 
-
-
 if(!$connessioneOK){
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $messaggio = "";
         $nome_evento = trim($_POST['nome_evento']);
-        //if(isset($_GET['gioco'])){
-          //  $nome_gioco = urlencode($_GET['gioco']);
-        //}else{
-            $nome_gioco = trim($_POST['nome_gioco']);
-        //}
+        $nome_gioco = trim($_POST['nome_gioco']);
         $data_inizio = trim($_POST['data_inizio_evento']);
         $data_fine = trim ($_POST['data_fine_evento']);
         $squadre = trim($_POST['squadre_coinvolte']);
@@ -34,9 +28,8 @@ if(!$connessioneOK){
     }
 
     $cont ="";
-
-    if(isset($_GET['gioco'])){
-        $nome = urlencode($_GET['gioco']);
+    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['gioco'])){
+        $nome = $_POST['gioco'];
         $cont .="<label> Nome gioco : </label><fieldset><input type='text' name='nome_gioco' value={$nome} required> </fieldset>";
     }else{
         $cont .="<label> Nome Gioco : </label><fieldset><input type='text' name='nome_gioco' required></fieldset>";

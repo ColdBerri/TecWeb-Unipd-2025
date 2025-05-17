@@ -3,11 +3,12 @@ require_once "template.php";
 require_once "dbconnections.php";
 
 use DB\DBAccess;
-if(!isset($_GET['nome_evento'])) {
-    header('Location: eventi.php');
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nome_evento'])){
+    $evName = $_POST['nome_evento'];
+}else{
+    header("Location: index.php");
     exit;
 }
-$evName = urldecode($_GET['nome_evento']);
 
 $paginaHTML = new Template("Evento : {$evName}", "evento {$evName}, videogioco, visualizza, competizione", "html/evento_singolo.html");
 $connessione = new DBAccess();
@@ -33,6 +34,4 @@ if(!$connessioneOK){
     $paginaHTML->aggiungiContenuto("[evento]", $cont);
     $paginaHTML->getPagina();
 }
-
-
 ?>

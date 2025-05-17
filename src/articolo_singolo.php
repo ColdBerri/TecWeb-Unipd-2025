@@ -5,12 +5,12 @@ require_once "dbconnections.php";
 
 use DB\DBAccess;
 
-if(!isset($_GET['titolo_articolo'])){
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['titolo_articolo'])){
+    $artName = $_POST['titolo_articolo'];
+}else{
     header('Location : index.php');
     exit;
 }
-$artName = $_GET['titolo_articolo'];
-
 
 $paginaHTML = new Template ("Aticolo {$artName}", "articolo {$artName}, videogioco, patch, aggiornamento", "html/articolo_singolo.html");
 $connessione = new DBAccess();
@@ -21,17 +21,12 @@ if(!$connessioneOK){
     $connessione->closeConnection();
 
     if($articolo){
-        $cont = "<ul class= 'intestazione_articolo'>";
-        $cont .= "<li><strong>Titolo : </strong>" .htmlspecialchars($articolo['titolo_articolo']) ."</li>";
-        $cont .= "<li>" .htmlspecialchars($articolo['data_pubblicazione']) ."</li>";
-        $cont .= "<li><strong>Autore : </strong>" .htmlspecialchars($articolo['autore']). "</li>"; 
-        $cont .= "<li><strong> Videogioco : </strong>" .htmlspecialchars($articolo['nome_videogioco']). "</li>";
-        $cont .= "</ul>";
-        $cont .= "<p class='contenuto_articolo'>" .htmlspecialchars($articolo['testo_articolo']). "</p>";
-    }else{
-        $cont = "<p>Articolo non trovato!!</p>";
+        $paginaHTML->aggiungiContenuto("{{titolo_articolo}}", htmlspecialchars($articolo['titolo_articolo']));
+        $paginaHTML->aggiungiContenuto("{{data_pubblicazione}}", htmlspecialchars($articolo['data_pubblicazione']));
+        $paginaHTML->aggiungiContenuto("{{autore}}", htmlspecialchars($articolo['autore']));
+        $paginaHTML->aggiungiContenuto("{{nome_videogioco}}", htmlspecialchars($articolo['nome_videogioco']));
+        $paginaHTML->aggiungiContenuto("{{testo_articolo}}", htmlspecialchars($articolo['testo_articolo']));
     }
-    $paginaHTML->aggiungiContenuto("[articolo]", $cont);
     $paginaHTML->getPagina();
 }
 ?>
