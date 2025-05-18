@@ -143,23 +143,30 @@ class DBAccess {
 		}
 	}
 	
-	public function getVideogioco($nome) {
-		$query = "SELECT nome_gioco, descrizione, immagine FROM Videogiochi WHERE nome_gioco = ?";
+public function getVideogioco($nome) {
+    $query = "SELECT nome_gioco, descrizione, immagine FROM Videogiochi WHERE nome_gioco = ?";
 
-		$stmt = mysqli_prepare($this->connection, $query);
-		if (!$stmt) {
-			die("Errore nella preparazione della query: " . mysqli_error($this->connection));
-		}
-		mysqli_stmt_bind_param($stmt, "s", $nome);
-		mysqli_stmt_execute($stmt);
-		$result = mysqli_stmt_get_result($stmt);
-	
-		if (mysqli_num_rows($result) == 0) {
-			return null;
-		}
-	
-		return mysqli_fetch_assoc($result);
-	}
+    $stmt = mysqli_prepare($this->connection, $query);
+    if (!$stmt) {
+        throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->connection));
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $nome);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $nome_gioco, $descrizione, $immagine);
+
+    if (mysqli_stmt_fetch($stmt)) {
+        mysqli_stmt_close($stmt);
+        return [
+            'nome_gioco' => $nome_gioco,
+            'descrizione' => $descrizione,
+            'immagine' => $immagine
+        ];
+    }
+
+    mysqli_stmt_close($stmt);
+    return null;
+}
 
 	public function getEventiGioco($nome){
 		$query = "SELECT nome_evento, nome_videogioco, data_inizio_evento, data_fine_evento, squadre_coinvolte FROM Eventi WHERE nome_videogioco = ?";
@@ -311,27 +318,31 @@ class DBAccess {
 	}
 	
 
-	public function getArticolo($nome) {
-		$query = "SELECT titolo_articolo, autore, data_pubblicazione, testo_articolo, nome_videogioco
-				  FROM Articoli_e_patch WHERE titolo_articolo = ?";
-	
-		$stmt = mysqli_prepare($this->connection, $query);
-	
-		if (!$stmt) {
-			throw new Exception("Errore nel caricamento dell'articolo: " . mysqli_error($this->connection));
-		}
-	
-		mysqli_stmt_bind_param($stmt, "s", $nome);
-		mysqli_stmt_execute($stmt);
-	
-		$result = mysqli_stmt_get_result($stmt);
-	
-		if (!$result || mysqli_num_rows($result) == 0) {
-			return null;
-		}
-	
-		return mysqli_fetch_assoc($result);
-	}
+public function getArticolo($nome) {
+    $query = "SELECT titolo_articolo, autore, data_pubblicazione, testo_articolo, nome_videogioco
+              FROM Articoli_e_patch WHERE titolo_articolo = ?";
+    
+    $stmt = mysqli_prepare($this->connection, $query);
+    if (!$stmt) {
+        throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->connection));
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $nome);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $titolo, $autore, $data, $testo, $videogioco);
+
+    if (mysqli_stmt_fetch($stmt)) {
+        return [
+            'titolo_articolo' => $titolo,
+            'autore' => $autore,
+            'data_pubblicazione' => $data,
+            'testo_articolo' => $testo,
+            'nome_videogioco' => $videogioco
+        ];
+    }
+
+    return null;
+}
 
 	public function addLibreria($gioco, $utente){
 		$query = "INSERT INTO Utente_Videogiochi (nickname, nome_gioco, preferito) VALUES (?, ?, ?)";
