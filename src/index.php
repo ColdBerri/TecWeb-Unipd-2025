@@ -43,52 +43,35 @@ if (!$connessioneOK) {
     $paginaHTML->aggiungiContenuto("[giochi]", $listaGiuchi);
 
     $listaEventi = "<ul class='top-eventi'>";
+
     if (is_array($not)) {
         foreach($not as $eventi){
             $dataCompleta = date('d F Y', strtotime($eventi['data_inizio_evento'])); 
-            $nomeEvento = htmlspecialchars($eventi['nome_evento']);
-
-            $listaEventi .= "<li>
-                <form action='evento_singolo.php' method='POST' class='form-evento'>
-                    <fieldset>
-                        <input type='hidden' name='nome_evento' value='$nomeEvento'>
-                        <input type='submit' class='miniCalendario-submit' value=''>
-                        <div class='miniCalendario'>
-                            <div class='miniCalendarioH'>$dataCompleta</div>
-                            <div class='miniCalendarioB'>$nomeEvento</div>
-                        </div>
-                    </fieldset>
-                </form>
-            </li>";
+            $nomeEvent = urlencode($eventi['nome_evento']);
+            $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='miniCalendario'>";
+            $listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
+            $listaEventi .= "<div class='miniCalendarioB'>" . $eventi['nome_evento'] . "</div>";
+            $listaEventi .= "</div></a></li>";
         }
     }
 
     $listaEventi .= "</ul>";
     $paginaHTML->aggiungiContenuto("[eventi]", $listaEventi);
 
-    $listaArticoli = "<ul class='top-path'>";
+    $listaPath = "<ul class='top-path'>";
 
     if (is_array($path)) {
         foreach($path as $paths){
-            $titoloArticolo = htmlspecialchars($paths['titolo_articolo']);
-            $nomeGioco = htmlspecialchars($paths['nome_videogioco']);
-
-            $listaArticoli .= "<li>
-                <form action='articolo_singolo.php' method='POST' class='form-articolo'>
-                    <fieldset>
-                        <input type='hidden' name='titolo_articolo' value='$titoloArticolo'>
-                        <input type='submit' class='miniGiornale-submit' value=''>
-                        <div class='miniGiornale'>
-                            <div class='titoloNotiziaIndex'>$nomeGioco</div>
-                            <div class='contenutoNotiziaIndex'>$titoloArticolo</div>
-                        </div>
-                    </fieldset>
-                </form>
-            </li>";
+            $nomeArti = urlencode($paths['titolo_articolo']);
+            $listaPath .= "<li><a href='articolo_singolo.php?titolo_articolo={$nomeArti}'><div class='miniGiornale'>";
+            $listaPath .= "<div class='titoloNotiziaIndex'>".$paths['nome_videogioco']."</div>";
+            $listaPath .= "<div class='contenutoNotiziaIndex'>".$paths['titolo_articolo']."</div>";
+            $listaPath .= "</div></a></li>";
         }
     }
-    $listaArticoli .= "</ul>";
-    $paginaHTML->aggiungiContenuto("[notisie]", $listaArticoli);
+
+    $listaPath .= "</ul>";
+    $paginaHTML->aggiungiContenuto("[notisie]", $listaPath);
 
     $paginaHTML->getPagina();
 

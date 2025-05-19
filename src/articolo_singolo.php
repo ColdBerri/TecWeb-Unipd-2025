@@ -9,18 +9,18 @@ if(!isset($_GET['titolo_articolo'])){
     header('Location : index.php');
     exit;
 }
-$artName = urldecode($_GET['titolo_articolo']);
+$artName = $_GET['titolo_articolo'];
 
 
-$paginaHTML = new Template ("Articolo {$artName}", "articolo {$artName}, videogioco, patch, aggiornamento", "html/articolo_singolo.html");
+$paginaHTML = new Template ("Aticolo {$artName}", "articolo {$artName}, videogioco, patch, aggiornamento", "html/articolo_singolo.html");
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
-if($connessioneOK){
+if(!$connessioneOK){
     $articolo = $connessione->getArticolo($artName);
     $connessione->closeConnection();
 
-    if ($articolo) {
+    if($articolo){
         $cont = "<ul class= 'intestazione_articolo'>";
         $cont .= "<li><strong>Titolo : </strong>" .htmlspecialchars($articolo['titolo_articolo']) ."</li>";
         $cont .= "<li>" .htmlspecialchars($articolo['data_pubblicazione']) ."</li>";

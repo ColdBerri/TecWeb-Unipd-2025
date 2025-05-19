@@ -2,7 +2,7 @@
 require_once "template.php";
 require_once "dbconnections.php";
 
-use DB\DBAccess; 
+use DB\DBAccess;
 
 $paginaHTML = new Template("Pagina da amministratore per aggiunta di un gioco", "videogioco, aggiunta, admin, amministratore", "html/aggiungi_articolo.html");
 $connessione = new DBAccess();
@@ -25,8 +25,8 @@ if(!$connessioneOK){
         $connessione->closeConnection();
     }   
     $cont = "";
-    if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['gioco'])){
-        $gioco = $_POST['gioco'];
+    if(isset($_GET['gioco'])){
+        $gioco = urlencode($_GET['gioco']);
         $cont .= "<label>Nome Gioco :</label><fieldset><input type ='text' name='nome_videogioco' value={$gioco}></fieldset>";
     }else{
         $cont .= "<label>Nome Gioco :</label><fieldset><input type='text' name='nome_videogioco' required></fieldset>";

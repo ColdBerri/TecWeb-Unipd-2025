@@ -24,13 +24,14 @@ if(!$connessioneOK) {
     $evento = $connessione->getEventiGioco($nomeGioco);
     $articolo = $connessione->getArticoliGioco($nomeGioco);
     $recensioniHTML = "";
+
     $recensioni = $connessione->getRecensioni($nomeGioco);
 
     if($dati){
-
         $contenuto = "<div class='gioco'><h1>{$dati['nome_gioco']}</h1>";
         $contenuto .= "<img src='assets/img/{$dati['immagine']}' alt='{$dati['nome_gioco']}'>";
         $contenuto .= "<p>{$dati['descrizione']}</p></div>";
+
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION['nickname'])) {
             if (!empty($_POST['testo']) && isset($_POST['gioco']) && isset($_POST['stelle'])) {
                 $contenuto = trim($_POST['testo']);
@@ -110,101 +111,101 @@ if(!$connessioneOK) {
         } else {
             $inLib .= "<p><em>Devi aver fatto il <a href='login.php'>Login</a> per gestire la tua libreria.</em></p>";
         }
-        
-        $paginaHTML->aggiungiContenuto("[libri]", $inLib);
-        
-        
-        //recensioni :(
-        if ($recensioni) {
-            $recensioniHTML .= "<h1>Recensioni</h1><ul class='recensioni'>";
-            foreach ($recensioni as $rec) {
-                $utente = htmlspecialchars($rec['nickname']);
-                $testo = htmlspecialchars($rec['contenuto_recensione']);
-                $stelle = htmlspecialchars($rec['numero_stelle']);
-                $recensioniHTML .= "<li><strong>$utente</strong> ($stelle ★):<br>$testo</li>";
-            }
-            $recensioniHTML .= "</ul>";
-        } else {
-            $recensioniHTML .= "<p>Ancora nessuna recensione.</p>";
+    
+    $paginaHTML->aggiungiContenuto("[libri]", $inLib);
+    
+    
+    //recensioni :(
+    if ($recensioni) {
+        $recensioniHTML .= "<h1>Recensioni</h1><ul class='recensioni'>";
+        foreach ($recensioni as $rec) {
+            $utente = htmlspecialchars($rec['nickname']);
+            $testo = htmlspecialchars($rec['contenuto_recensione']);
+            $stelle = htmlspecialchars($rec['numero_stelle']);
+            $recensioniHTML .= "<li><strong>$utente</strong> ($stelle ★):<br>$testo</li>";
         }
+        $recensioniHTML .= "</ul>";
+    } else {
+        $recensioniHTML .= "<p>Ancora nessuna recensione.</p>";
+    }
+    $connessione->closeConnection();
+
+
+    if (isset($_SESSION['nickname'])) {
+        $recensioniHTML .= "
+            <h3>Scrivi una recensione</h3>
+            <form method='post'>
+                <textarea name='testo' required></textarea><br>
+                <label for='stelle'>Valutazione (0–5):</label>
+                </br><input type='number' name='stelle' min='0' max='5' step='0.5' required><br>
+                <input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>
+                <input type='submit' name='invio' value='invia'></br>
+            </form>
+        ";
+    } else {
+        $recensioniHTML .= "<p><em>Devi aver fatto il <a href='login.php'>Login</a> per scrivere una recensione.</em></p>";
+    }
+        
+    $contenuto .= $recensioniHTML;
+    $paginaHTML->aggiungiContenuto("[contenuto_gioco]", $contenuto);
+
+// EVENTI
+    $listaEventi = "";
+    if (!empty($evento) && is_array($evento)) {
+        $listaEventi .= "<ul class='eventi_gioco'>";
+        foreach ($evento as $e) {
+            $dataCompleta = date('d F Y', strtotime($e['data_inizio_evento'])); 
+            $nomeEvent = urlencode($e['nome_evento']);
+            $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='miniCalendario'>";        
+            $listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
+            $listaEventi .= "<div class='miniCalendarioB'>" . htmlspecialchars($e['nome_evento']) . "</div>";
+            $listaEventi .= "</div></a></li>";
+        }
+        if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
+            $listaEventi .= "<p><em>Vuoi aggiungere un evento relativo a questo videogioco? Schiaccia <a href = 'aggiungi_evento.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
+        }
+        $listaEventi .= "</ul>";
+    } else {
+        if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
+            $listaEventi .= "<p><em>Nessun articolo disponibile per questo gioco.</em>";
+            $listaEventi .= "<em>Vuoi aggiungere un evento relativo a questo videogioco? Schiaccia <a href = 'aggiungi_evento.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
+        }else{
+            $listaEventi = "<p><em>Nessun articolo disponibile per questo gioco.</em></p>";
+        }    
+    }
+    $paginaHTML->aggiungiContenuto("[eventi]", $listaEventi);
+
+// ARTICOLI
+    $listaArticoli = "";
+    if (!empty($articolo) && is_array($articolo)) {
+        $listaArticoli .= "<ul class='articoli_gioco'>";
+        foreach ($articolo as $a) {
+            $nomeArti = urlencode($a['titolo_articolo']);
+            $listaArticoli .= "<li><a href='articolo_singolo.php?titolo_articolo={$nomeArti}'><div class='miniGiornale'>";
+            $listaArticoli .= "<div class='titoloNotiziaIndex'>" . htmlspecialchars($a['nome_videogioco']) . "</div>";
+            $listaArticoli .= "<div class='contenutoNotiziaIndex'>" . htmlspecialchars($a['titolo_articolo']) . "</div>";
+            $listaArticoli .= "</div></a></li>";
+        }
+        if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
+            $listaArticoli .= "<p><em>Vuoi aggiungere un articolo relativo a questo videogioco? Schiaccia <a href = 'aggiungi_articolo.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
+        }
+        $listaArticoli .= "</ul>";
+    } else {
+        if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
+            $listaArticoli .= "<p><em>Nessun articolo disponibile per questo gioco.</em>";
+            $listaArticoli .= "<em>Vuoi aggiungere un articolo relativo a questo videogioco? Schiaccia <a href = 'aggiungi_articolo.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
+        }else{
+            $listaArticoli = "<p>Nessun articolo disponibile per questo gioco.</p>";
+        }
+    }
+    } else {
         $connessione->closeConnection();
-
-
-        if (isset($_SESSION['nickname'])) {
-            $recensioniHTML .= "
-                <h3>Scrivi una recensione</h3>
-                <form method='post'>
-                    <textarea name='testo' required></textarea><br>
-                    <label for='stelle'>Valutazione (0–5):</label>
-                    </br><input type='number' name='stelle' min='0' max='5' step='0.5' required><br>
-                    <input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>
-                    <input type='submit' name='invio' value='invia'></br>
-                </form>
-            ";
-        } else {
-            $recensioniHTML .= "<p><em>Devi aver fatto il <a href='login.php'>Login</a> per scrivere una recensione.</em></p>";
-        }
-            
-        $contenuto .= $recensioniHTML;
-        $paginaHTML->aggiungiContenuto("[contenuto_gioco]", $contenuto);
-
-    // EVENTI
-        $listaEventi = "";
-        if (!empty($evento) && is_array($evento)) {
-            $listaEventi .= "<ul class='eventi_gioco'>";
-            foreach ($evento as $e) {
-                $dataCompleta = date('d F Y', strtotime($e['data_inizio_evento'])); 
-                $nomeEvent = urlencode($e['nome_evento']);
-                $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='miniCalendario'>";        
-                $listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
-                $listaEventi .= "<div class='miniCalendarioB'>" . htmlspecialchars($e['nome_evento']) . "</div>";
-                $listaEventi .= "</div></a></li>";
-            }
-            if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
-                $listaEventi .= "<p><em>Vuoi aggiungere un evento relativo a questo videogioco? Schiaccia <a href = 'aggiungi_evento.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
-            }
-            $listaEventi .= "</ul>";
-        } else {
-            if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
-                $listaEventi .= "<p><em>Nessun articolo disponibile per questo gioco.</em>";
-                $listaEventi .= "<em>Vuoi aggiungere un evento relativo a questo videogioco? Schiaccia <a href = 'aggiungi_evento.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
-            }else{
-                $listaEventi = "<p><em>Nessun articolo disponibile per questo gioco.</em></p>";
-            }    
-        }
-        $paginaHTML->aggiungiContenuto("[eventi]", $listaEventi);
-
-    // ARTICOLI
-        $listaArticoli = "";
-        if (!empty($articolo) && is_array($articolo)) {
-            $listaArticoli .= "<ul class='articoli_gioco'>";
-            foreach ($articolo as $a) {
-                $nomeArti = urlencode($a['titolo_articolo']);
-                $listaArticoli .= "<li><a href='articolo_singolo.php?titolo_articolo={$nomeArti}'><div class='miniGiornale'>";
-                $listaArticoli .= "<div class='titoloNotiziaIndex'>" . htmlspecialchars($a['nome_videogioco']) . "</div>";
-                $listaArticoli .= "<div class='contenutoNotiziaIndex'>" . htmlspecialchars($a['titolo_articolo']) . "</div>";
-                $listaArticoli .= "</div></a></li>";
-            }
-            if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
-                $listaArticoli .= "<p><em>Vuoi aggiungere un articolo relativo a questo videogioco? Schiaccia <a href = 'aggiungi_articolo.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
-            }
-            $listaArticoli .= "</ul>";
-        } else {
-            if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
-                $listaArticoli .= "<p><em>Nessun articolo disponibile per questo gioco.</em>";
-                $listaArticoli .= "<em>Vuoi aggiungere un articolo relativo a questo videogioco? Schiaccia <a href = 'aggiungi_articolo.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
-            }else{
-                $listaArticoli = "<p>Nessun articolo disponibile per questo gioco.</p>";
-            }
-        }
-
-    }else{
         $listaArticoli = "Niente :'(";
     }
     $paginaHTML->aggiungiContenuto("[contenuto_gioco]", "");
     $paginaHTML->aggiungiContenuto("[libri]", "");
     $paginaHTML->aggiungiContenuto("[eventi]", "");
     $paginaHTML->aggiungiContenuto("[articoli]", $listaArticoli);
-    $paginaHTML->getPagina();
+    $paginaHTML->getPagina();;
 }
 ?>
