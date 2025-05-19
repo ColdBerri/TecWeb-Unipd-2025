@@ -90,7 +90,7 @@ nav.menuHamberger > ul {
 
 nav.menuHamberger > ul > li {
   padding: 3em;
-}
+ }
 
 nav.menuHamberger > ul > :first-child{
     text-align: right;
@@ -98,8 +98,8 @@ nav.menuHamberger > ul > :first-child{
 }
 
 li.current-page {
-  list-style: url("../assets/mb.png");
-   list-style-position: inside;
+  list-style: url("../assets/fast-forward.png");
+     list-style-position: inside;
 }
 
 .navbar_link{
@@ -251,21 +251,21 @@ li.current-page {
 
 /* CALENDARIO EVENTI */
 .calendario-tabella {
-        width: 90%;
+            width: 90%;
         min-width: unset;
         max-width: 100%;
         font-size: 0.85em;
         table-layout: fixed;
         border-radius: 0.5em;
     margin: 0 auto;
-    }
+}
 
 .calendario-tabella th,
 .calendario-tabella td {
-    width: 3em;
-    height: 3em;
+    width: 5em; /* Le celle mantengono una larghezza fissa */
+    height: 5em; /* Le celle mantengono un'altezza fissa */
     padding: 0;
-    font-size: 0.8em;
+    font-size: 0.8em; /* Il font rimane invariato per le celle */
     text-align: center;
     vertical-align: middle;
 }
@@ -277,77 +277,78 @@ li.current-page {
     line-height: 1.5em;
 }
 
-    .formCalendario {
-        display: flex;
+/* Form Calendario */
+.formCalendario {
+    display: flex;
     flex-direction: column;
     align-items: center;
     transform-origin: top center;
-    scale: 1;
-    }
+    scale: 1; /* La scala inizia con valore 1 */
+}
 
- .selettore {
+/* Selettore */
+.selettore {
     background-color: rgb(203, 203, 203);
     font-weight: bold;
-    padding: 1em 0;             /* Aumentato leggermente */
+    padding: 1em 0;
     margin: 0.3em;
     border-radius: 10px;
     text-align: center;
-    font-size: 1.2em;           /* Da 1.1em a 1.2em */
-    width: 12em;                /* Da 10em a 12em */
+    font-size: 1.2em;
+    width: 12em;
 }
 
 #mese, #anno {
-    padding: 0.6em;              /* Ridotto da 0.8em */
-    font-size: 0.75em;           /* Appena più piccolo */
-    max-width: 8em;              /* Ridotto da 9em */
+    padding: 0.6em;
+    font-size: 0.75em;
+    max-width: 8em;
 }
 
+input[type="submit"][value="CERCA EVENTI"] {
+    font-size: 1.2em;
+    padding: 0.8em;
+}
 
+.titolo_pagina_eventi,
+.titolo_calendario {
+    text-align: center;
+    font-size: 1.3em;
+}
 
-    input[type="submit"][value="CERCA EVENTI"] {
-        font-size: 1.2em;
-        padding: 0.8em;
-    }
-
-    .titolo_pagina_eventi,
-    .titolo_calendario {
-        text-align: center;
-        font-size: 1.3em;
-    }
-
-    h2, h3 {
-        text-align: center;
-        font-size: 1.2em;
-    }
-
+h2, h3 {
+    text-align: center;
+    font-size: 1.2em;
+}
 
 /* ASSISTENZA */
 details {
-    width: 90%; /* Prende il 98% della larghezza disponibile su dispositivi mobili */
-    max-width: 100%; /* Garantisce che occupi tutta la larghezza disponibile su mobile */
-    padding: 12px; /* Aumenta il padding per un po' più di spazio interno */
-    box-sizing: border-box; /* Assicura che il padding sia incluso nel calcolo della larghezza */
-     margin: 20px;
-  }
+  width: 90%; /* Imposta una larghezza per il contenitore */
+  max-width: 100%; /* Limita la larghezza massima per evitare che si allunghi troppo su schermi grandi */
+  padding: 16px; /* Aggiungi padding interno per un po' di spazio */
+  margin: 20px auto; /* Centra il contenitore orizzontalmente (auto sui lati) */
+  box-sizing: border-box; /* Include il padding nel calcolo della larghezza */
+}
 
-  details summary {
-    font-size: 1.3em; /* Aumenta la dimensione del testo del summary */
-  }
-
- .contatti {
-        flex-direction: column; /* Imposta i contenitori uno sotto l'altro */
-        align-items: center;    /* Centra i contenitori orizzontalmente */
-    }
+details summary {
+  font-size: 1.3em; /* Aumenta la dimensione del testo */
+  font-weight: bold; /* Aggiungi un po' di enfasi al testo */
+  text-align: center; /* Allinea il testo al centro */
+}
 
 .blocco-contatto {
-        width: 90%; /* Rende i contenitori più piccoli e centrati */
-        max-width: 400px; /* Imposta una larghezza massima per ogni contenitore */
-        margin: 10px 0;   /* Aggiunge spazio tra i contenitori */
-    }
+  width: 60%; /* Adatta i riquadri alla larghezza del contenitore */
+  max-width: 600px; /* Imposta una larghezza massima */
+  margin: 20px auto; /* Centra i riquadri */
+}
 
-    .paragrafo1 {
-        font-size: 1.1em; /* Riduce la dimensione del testo su schermi piccoli */
-    }
+.contatti {
+  display: flex; /* Usa flexbox per il layout dei contenitori */
+  flex-direction: column;
+  align-items: center; /* Centra i contenitori orizzontalmente */
+  justify-content: center;
+  gap: 20px; /* Distanza tra i contenitori */
+}
+
 
 /*ABOUT US*/
 .container {

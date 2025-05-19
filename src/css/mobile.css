@@ -60,16 +60,24 @@ div.login-box {
 
 /*ABOUT US*/
 .container {
-    display: block; /* Disattiva flex per impilare i figli */
-         flex-direction: column;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* 👈 importante: fa allungare i figli */
+  box-sizing: border-box;
+  padding: 0; /* rimuoviamo il padding */
+  width: 100%;
+}
 
-  .container > div {
-    width: 100%;
-    margin-bottom: 20px;
-      max-width: 400px; /* larghezza fissa per evitare allungamenti */
-  }
+.container > div {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0 16px; /* padding interno se vuoi spazio nel contenuto */
+  box-sizing: border-box;
+     padding: 48px 16px; /* 24px sopra e sotto, 16px a sinistra e destra */
+}
+
+
+
 
 /*ASSISTENZA*/
 details {
@@ -90,7 +98,7 @@ details {
     }
 
 .blocco-contatto {
-        width: 90%; /* Rende i contenitori più piccoli e centrati */
+        width: 60%; /* Rende i contenitori più piccoli e centrati */
         max-width: 400px; /* Imposta una larghezza massima per ogni contenitore */
         margin: 10px 0;   /* Aggiunge spazio tra i contenitori */
     }
@@ -100,7 +108,7 @@ details {
     }
 
 
-/* CALENDARIO EVENTI */
+/* CALENDARIO EVENTI. Se questa parte resta uguale al tablet la si può togliere da qua */
 .calendario-tabella {
         width: 90%;
         min-width: unset;
@@ -167,3 +175,4 @@ details {
         text-align: center;
         font-size: 1.2em;
     }
+
