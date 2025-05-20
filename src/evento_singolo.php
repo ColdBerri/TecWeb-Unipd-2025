@@ -18,17 +18,20 @@ if(!$connessioneOK){
     $connessione->closeConnection();
 
     if ($evento) {
-        $cont = "<h1>" . htmlspecialchars($evento['nome_evento']) . "</h1>";
-        $cont .= "<ul class='evento'>";
-        $cont .= "<li><strong>Videogioco:</strong> " . htmlspecialchars($evento['nome_videogioco']) . "</li>";
-        $cont .= "<li><strong>Data inizio:</strong> " . htmlspecialchars($evento['data_inizio_evento']) . "</li>";
-        $cont .= "<li><strong>Data fine:</strong> " . ($evento['data_fine_evento'] ? htmlspecialchars($evento['data_fine_evento']) : "Non disponibile") . "</li>";
-        $cont .= "<li><strong>Squadre coinvolte:</strong> " . ($evento['squadre_coinvolte'] ? htmlspecialchars($evento['squadre_coinvolte']) : "Non disponibili") . "</li>";
-        $cont .= "<li><strong>Vincitore:</strong> " . ($evento['vincitore_evento'] ? htmlspecialchars($evento['vincitore_evento']) : "Non disponibile") . "</li>";
+        $cont = "<section id='evento-singolo'>";
+        $cont .= "<h1 class='titolo-evento'>" . htmlspecialchars($evento['nome_evento']) . "</h1>";
+        $cont .= "<ul class='dettagli-evento'>";
+        $cont .= "<li class='dettaglio'><span class='etichetta'>Videogioco:</span> <span class='valore'>" . htmlspecialchars($evento['nome_videogioco']) . "</span></li>";
+        $cont .= "<li class='dettaglio'><span class='etichetta'>Data inizio:</span> <span class='valore'>" . htmlspecialchars($evento['data_inizio_evento']) . "</span></li>";
+        $cont .= "<li class='dettaglio'><span class='etichetta'>Data fine:</span> <span class='valore'>" . ($evento['data_fine_evento'] ? htmlspecialchars($evento['data_fine_evento']) : "Non disponibile") . "</span></li>";
+        $cont .= "<li class='dettaglio'><span class='etichetta'>Squadre coinvolte:</span> <span class='valore'>" . ($evento['squadre_coinvolte'] ? htmlspecialchars($evento['squadre_coinvolte']) : "Non disponibili") . "</span></li>";
+        $cont .= "<li class='dettaglio'><span class='etichetta'>Vincitore:</span> <span class='valore'>" . ($evento['vincitore_evento'] ? htmlspecialchars($evento['vincitore_evento']) : "Non disponibile") . "</span></li>";
         $cont .= "</ul>";
+        $cont .= "</section>";
     } else {
-        $cont = "<p>Evento non trovato.</p>";
+        $cont = "<p class='errore-evento'>Evento non trovato.</p>";
     }
+    
 
     $paginaHTML->aggiungiContenuto("[evento]", $cont);
     $paginaHTML->getPagina();
