@@ -161,7 +161,7 @@ class DBAccess {
 	}
 	
 public function getVideogioco($nome) {
-    $query = "SELECT nome_gioco, descrizione, immagine FROM Videogiochi WHERE nome_gioco = ?";
+    $query = "SELECT nome_gioco, descrizione, immagine, console_compatibili, casa_produttrice, anno_di_pubblicazione FROM Videogiochi WHERE nome_gioco = ?";
 
     $stmt = mysqli_prepare($this->connection, $query);
     if (!$stmt) {
@@ -170,14 +170,17 @@ public function getVideogioco($nome) {
 
     mysqli_stmt_bind_param($stmt, "s", $nome);
     mysqli_stmt_execute($stmt);
-    mysqli_stmt_bind_result($stmt, $nome_gioco, $descrizione, $immagine);
+    mysqli_stmt_bind_result($stmt, $nome_gioco, $descrizione, $immagine ,$console_compatibili, $casa_produttrice, $anno_di_pubblicazione);
 
     if (mysqli_stmt_fetch($stmt)) {
         mysqli_stmt_close($stmt);
         return [
             'nome_gioco' => $nome_gioco,
             'descrizione' => $descrizione,
-            'immagine' => $immagine
+            'immagine' => $immagine,
+			'console_compatibili'=>$console_compatibili,
+			'casa_produttrice'=>$casa_produttrice,
+			'anno_di_pubblicazione'=>$anno_di_pubblicazione
         ];
     }
 

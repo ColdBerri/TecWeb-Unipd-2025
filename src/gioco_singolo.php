@@ -30,7 +30,10 @@ if(!$connessioneOK) {
     if($dati){
         $contenuto = "<div class='gioco'><h1>{$dati['nome_gioco']}</h1>";
         $contenuto .= "<img src='assets/img/{$dati['immagine']}' alt='{$dati['nome_gioco']}'>";
-        $contenuto .= "<p>{$dati['descrizione']}</p></div>";
+        $contenuto .= "<p><strong>Casa Produttrice</strong> : {$dati['casa_produttrice']}</p>";
+        $contenuto .= "<p><strong>Conosle Compatibili</strong> : {$dati['console_compatibili']}</p>";
+        $contenuto .= "<p><strong>Anno di pubblicazione</strong> : {$dati['anno_di_pubblicazione']}</p>";
+        $contenuto .= "<p><strong>Descrizione</strong> : {$dati['descrizione']}</p></div>";
 
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION['nickname'])) {
             if (!empty($_POST['testo']) && isset($_POST['gioco']) && isset($_POST['stelle'])) {
