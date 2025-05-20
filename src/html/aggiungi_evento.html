@@ -1,23 +1,42 @@
-<h1>Aggiungi Evento</h1>
+<div class="form-container">
+    <div class="form-box dev_tool-box" id="registration-form">
+        <h1 class="form-welcome-message">Aggiungi Evento</h1>
 
-<form method='POST' action='aggiungi_evento.php'>
+        <form method="post" action="aggiungi_evento.php">
 
-    <label> Nome Evento :</label>
-    <fieldset><input type='text' name='nome_evento' required></fieldset>
+            <!-- Eventuale codice PHP per [addEvento] -->
+            [addEvento]
 
-    [addEvento]
+            <label for="nome_evento">Nome Evento:</label>
+            <fieldset>
+                <input type="text" id="nome_evento" name="nome_evento" required>
+            </fieldset>
 
-    <label>Data Inizio Evento :</label> 
-    <fieldset><input type='date' name='data_inizio_evento' required></fieldset>
+            <label for="data_inizio_evento">Data Inizio Evento:</label>
+            <fieldset>
+                <input type="date" id="data_inizio_evento" name="data_inizio_evento" required>
+            </fieldset>
 
-    <label>Data Fine Evento :</label>
-    <fieldset><input type='date' name='data_fine_evento'></fieldset>
-    
-    <label>Squadre Coinvolte (separate da virgola) :</label>
-    <fieldset><input type='text' name='squadre_coinvolte' required></label></fieldset>
+            <label for="data_fine_evento">Data Fine Evento:</label>
+            <fieldset>
+                <input type="date" id="data_fine_evento" name="data_fine_evento">
+            </fieldset>
 
-    <labe>Vincitore :</labe>
-    <fieldset><input type='text' name='vincitore_evento'></fieldset>
+            <label for="squadre_coinvolte">Squadre Coinvolte (separate da virgola):</label>
+            <fieldset>
+                <input type="text" id="squadre_coinvolte" name="squadre_coinvolte" required>
+            </fieldset>
 
-    <fieldset><input type="submit" value="Aggiungi Evento"></fieldset>
-</form>
+            <label for="vincitore_evento">Vincitore:</label>
+            <fieldset>
+                <input type="text" id="vincitore_evento" name="vincitore_evento">
+            </fieldset>
+
+            <div class="button-container">
+                <input type="submit" class="submit_button" value="Aggiungi Evento">
+                <button type="button" class="cancella" onclick="window.history.back();">Annulla</button>
+            </div>
+
+        </form>
+    </div>
+</div>
