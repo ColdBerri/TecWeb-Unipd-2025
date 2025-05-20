@@ -326,8 +326,28 @@ ul .current-page{
 
 /*CATEGORIE*/
 
+ul.ulCategorie{
+    text-align: center;
+}
+
+ul.ulCategorie>li{
+    display: inline-block;
+}
+
+.categoria{
+    padding: 1em;
+}
+
+.formCategorie>div{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.8em;
+}
+
 div.categoria>h2{
     text-align: left;
+    font-size: 1.5em;
+    text-transform: uppercase;
 }
 
 div.categoria>ul{
@@ -340,20 +360,29 @@ div.categoria>ul{
     text-align: center;
     margin: 0.25em;
     transition: all 1s ease;
-    border-radius: 1em;
 }
 
 div.categoria>ul>li{
     background-color: var(--headerbgcolor);
+    border-radius: 0.5em;
+    transition: transform 0.3s ease;
 }
 
 div.categoria>ul>li>a{
     color: white;
+    text-decoration: none;
 }
 
 .ImgGiocoCat{
     width: 10em;
     height: 10em;
+    border-top-left-radius:0.5em ;
+    border-top-right-radius:0.5em ;
+}
+
+div.categoria>ul>li:hover{
+  transform: scale(1.05);
+  opacity: 0.5;
 }
 
 /*EVENTI*/
