@@ -39,7 +39,7 @@ body{
 main{
     background-color: var(--bgcolor);
     margin:auto;
-    margin-top: 10em;
+    margin-top: 12em;
     width: 100%;
     min-height:max-content;
     align-items: center;
@@ -393,7 +393,7 @@ div.categoria>ul>li:hover{
 
 .titolo_pagina_eventi
 {
-    margin-bottom: 0;
+    margin-bottom: 0.5em;
 }
 
 .titolo_calendario{
@@ -897,6 +897,7 @@ fieldset {
     max-width: 25em; /* 500px */
     min-width: 18em;
     margin: 2em auto;
+    margin-top: 6em;
     padding: 2em;
     background-color: #f9f9fb;
     border: 0.125em solid #ccc;
@@ -1136,6 +1137,7 @@ section p {
 h1, h2 {
     text-align: center;
     margin-bottom: 30px; /* spazio tra il titolo e i riquadri */
+    font-size: 2.5em;
 }
 
 .container {
@@ -1362,6 +1364,8 @@ fieldset .suggForm {
     max-width: 50em; 
     min-width: 20em;
     margin: 2em auto;
+    margin-top: 6em;
+    margin-bottom: 4em;
     padding: 2em;
     background-color: #f9f9f9;
     border-radius: 0.75em;
