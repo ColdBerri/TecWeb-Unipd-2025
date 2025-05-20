@@ -8,22 +8,35 @@ $connessioneOK = $connessione->openDBConnection();
 
 $paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","videogioco, evento, patch, aggiornamento, biblioteca","html/categorie.html");
 
-$img = "";
 $lista = "";
 
 if(!$connessioneOK){
-    $img = $connessione->allVideogame();
+    $giochi  = $connessione->categorie();
     $connessione->closeConnection();
 
-    $lista = "<ul class='top-list'>";
-    foreach($img as $giuco){
-        $nome = urlencode($giuco['categoria']);
-        $lista .= "<li><a href='categoria_singola.php?categoria={$nome}'>";
-        $lista .= "<img src='assets/img/{$giuco['immagine']}' alt='{$giuco['categoria']}'>";
-        $lista .= "<span>{$giuco['categoria']}</span>";
-        $lista .= "</a></li>";
+    $giochi_per_categoria = [];
+
+    foreach ($giochi as $gioco) {
+        $categoria = $gioco['categoria'];
+        if (!isset($giochi_per_categoria[$categoria])) {
+            $giochi_per_categoria[$categoria] = [];
+        }
+        $giochi_per_categoria[$categoria][] = $gioco;
     }
-    $lista .= "</ul>";
+
+    foreach ($giochi_per_categoria as $categoria => $giochi) {
+        $lista .= "<div class='categoria'>";
+        $lista .= "<h2><a href='categoria_singola.php?categoria={$categoria}'>" . htmlspecialchars($categoria) . "</a></h2>";
+        $lista .= "<ul>";
+        foreach ($giochi as $gioco) {
+            $nome = htmlspecialchars($gioco['nome_gioco']);
+            $immagine = htmlspecialchars($gioco['immagine']);
+            $lista .= "<li><a href='gioco_singolo.php?gioco={$nome}' >";
+            $lista .= "<img src=assets/img/$immagine class='ImgGiocoCat'><p>$nome</p></a></li>";
+        }
+        $lista .= "</ul>";
+        $lista .= "</div>";
+    }
 
     $paginaHTML->aggiungiContenuto("[tuttigiuchi]",$lista);
     $paginaHTML->getPagina();

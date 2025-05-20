@@ -234,11 +234,9 @@ ul .current-page{
     text-align: center;
     margin: 0.25em;
     transition: all 1s ease;
-    background-image: url('../assets/fire.jpg');
-    background-size: contain;
 }
 
-.listaindex>img{
+.listaindex img{
     width: 16em;
     height: 20em;
     border-radius: 1em;
@@ -324,6 +322,38 @@ ul .current-page{
 .contenutoNotiziaIndex {
     font-size: 0.85em;
     line-height: 1.3em;
+}
+
+/*CATEGORIE*/
+
+div.categoria>h2{
+    text-align: left;
+}
+
+div.categoria>ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    margin-bottom: 1em;  
+    list-style: none;
+    text-align: center;
+    margin: 0.25em;
+    transition: all 1s ease;
+    border-radius: 1em;
+}
+
+div.categoria>ul>li{
+    background-color: var(--headerbgcolor);
+}
+
+div.categoria>ul>li>a{
+    color: white;
+}
+
+.ImgGiocoCat{
+    width: 10em;
+    height: 10em;
 }
 
 /*EVENTI*/

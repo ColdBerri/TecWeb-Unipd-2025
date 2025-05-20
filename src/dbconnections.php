@@ -53,6 +53,23 @@ class DBAccess {
 		}
 	}
 
+	public function categorie(){
+		$query = "SELECT categoria, nome_gioco, immagine FROM Videogiochi ORDER BY categoria;";
+        $queryResult = mysqli_query($this->connection, $query) or die("Errore in openDBConnection: " . mysqli_error($this->connection));
+
+        if(mysqli_num_rows($queryResult) == 0) {
+			return null;
+		}
+		else {
+            $result = array();
+			while($row = mysqli_fetch_assoc($queryResult)){
+				array_push($result, $row);
+			}
+			mysqli_free_result($queryResult);
+			return $result;
+		}
+	}
+
 	public function five_little_events() {
 		$query = "SELECT nome_evento, nome_videogioco, data_inizio_evento FROM Eventi ORDER BY data_inizio_evento LIMIT 5";
 		$queryResult = mysqli_query($this->connection, $query) or die("Errore in allVideogame: " . mysqli_error($this->connection));
