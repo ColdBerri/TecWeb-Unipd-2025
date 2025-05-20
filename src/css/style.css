@@ -39,10 +39,12 @@ body{
 main{
     background-color: var(--bgcolor);
     margin:auto;
+    margin-top: 10em;
     width: 100%;
     min-height:max-content;
     align-items: center;
     justify-content: center;
+
 }
 
 /*===== LINK =====*/
@@ -77,6 +79,8 @@ header{
 /*    text-align: center;*/
     width: 100%;
     background-color: var(--headerbgcolor);
+    position: fixed;
+    z-index: 9999;
 }
 
 .nascondi{
