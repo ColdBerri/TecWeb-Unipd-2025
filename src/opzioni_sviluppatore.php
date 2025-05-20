@@ -9,9 +9,11 @@ $paginaHTML = new Template("pagina delle opzioni da amministratore/sviluppatore"
 
 if(!$connessioneOK){
     $cont = "";
-    $cont .= "<ul><li class='aggiunta_gioco'><a href= 'aggiungi_videogioco.php'>Aggiungi Videogioco</a></li>";
-    $cont .= "<li class='aggiunta_art'><a href='aggiungi_articolo.php'>Aggiungi Articolo</a></li>";
-    $cont .= "<li class='aggiunta_evento'><a href='aggiungi_evento.php'>Aggiungi Evento</a></li></ul>";
+    $cont .= "<ul class='admin-options-list'>";
+    $cont .= "<li class='aggiunta_gioco'><a href='aggiungi_videogioco.php'><span>Aggiungi Videogioco</span></a></li>";
+    $cont .= "<li class='aggiunta_art'><a href='aggiungi_articolo.php'><span>Aggiungi Articolo</span></a></li>";
+    $cont .= "<li class='aggiunta_evento'><a href='aggiungi_evento.php'><span>Aggiungi Evento</span></a></li>";
+    $cont .= "</ul>";
 }
 
 $paginaHTML->aggiungiContenuto("[admin]", $cont);

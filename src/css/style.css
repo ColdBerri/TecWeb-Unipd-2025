@@ -704,7 +704,7 @@ td.eventoPresente > a > p {
 
 
 
-/* LOGIN, REGISTRA E MODIFICA PASS */
+/* FORM LOGIN, REGISTRA E MODIFICA PASS, OPZIONI SVILUPPATORE */
 
 /* Contenitore esterno */
 .form-container {
@@ -725,6 +725,19 @@ td.eventoPresente > a > p {
     font-size: 1em;
     box-sizing: border-box;
 }
+
+.dev_tool-box {
+    background-color: var(--login-bgcolor); 
+    border-radius: 15px;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
+    max-width: 40em;
+    min-width: 10em;
+    padding: 2.5em;
+    margin: 2em auto;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
 
 /* Titolo */
 .form-welcome-message {
@@ -747,21 +760,38 @@ td.eventoPresente > a > p {
 /* Campi input */
 .form-box input[type="text"],
 .form-box input[type="password"],
-.form-box input[type="date"] {
+.form-box input[type="date"],
+.form-box input[type="number"] {
     width: 100%;
     padding: 0.85em;
     margin: 0.3em 0 0.8em;
     border: none;
     border-radius: 0.3em;
     font-size: 1em;
+    font-family: inherit;
     box-sizing: border-box;
 }
+
 
 /* Fieldset */
 fieldset {
     border: 0;
     margin-bottom: 1em;
 }
+
+.form-box textarea {
+    width: 100%;
+    padding: 0.85em;
+    margin: 0.3em 0 0.8em;
+    border: none;
+    border-radius: 0.3em;
+    font-size: 1em;
+    font-family: inherit; /* Assicura coerenza con il resto del sito */
+    resize: none; /* Impedisce il ridimensionamento manuale */
+    box-sizing: border-box;
+    height: 8em; /* Altezza fissa maggiore rispetto a un input normale */
+}
+
 
 /* Link registrazione */
 .form-box .register-link {
@@ -770,6 +800,7 @@ fieldset {
     text-align: center;
     color: white;
 }
+
 
 /* Contenitore bottoni finali */
 .button-container {
@@ -820,6 +851,24 @@ fieldset {
 .registra_linkB
 {
     color: #34b9db;
+}
+
+.custom-file-upload {
+    width: 5em;
+    background-color: var(--bgcolor);
+    color: var(--headerbgcolor) !important;
+    padding: 0.85em 1.2em;
+    border-radius: 1em;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.custom-file-upload:hover {
+    background-color: white;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 /* Form di registrazione */
@@ -886,6 +935,8 @@ fieldset {
     font-weight: bold;
     color: #2a2a2a;
   }
+  
+
   
   /* contenitore dei bottoni: larghezza ridotta e centrata */
 .profilo-links {
@@ -1249,6 +1300,61 @@ fieldset .suggForm {
 }
 
 
+/*=====OPZIONI SVILUPPATORE=====*/
+.admin-options-list {
+    max-width: 37.5em;
+    margin: 2.5em auto;
+    padding: 0 0.93em; 
+    list-style: none; /* Rimuove i pallini */
+}
+
+/* Singole voci */
+.admin-options-list li {
+    margin: 0.9375em 0;    
+    padding: 0; /* rimosso padding per spostarlo sul link */
+    background-color: #ffffff;
+    border-left: 0.3125em solid var(--headerbgcolor); 
+    border-radius: 0.5em;     /* 8px */
+    box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    overflow: hidden;
+}
+
+/* Link a blocco che occupa tutto il box */
+.admin-options-list li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 1em 1.25em;
+    text-decoration: underline; /* Aggiunge la sottolineatura */
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--headerbgcolor);
+    border-radius: 0.5em; /* per mantenere l'effetto tondo anche al link */
+    transition: color 0.2s;
+}
+
+/* Hover sul box */
+.admin-options-list li:hover {
+    background-color: #f0f8ff;
+    transform: scale(1.01);
+}
+
+/* Hover sul link */
+.admin-options-list li a:hover {
+    color: var(--headerbgcolor);
+    text-decoration: underline;
+}
+
+/* Link già visitati */
+.admin-options-list li a:visited {
+    color: var(--linkvisited);
+    text-decoration: underline; /* Mantiene la sottolineatura */
+}
+
+
+
+
 /*=====FOOTER=====*/
 
 footer {
@@ -1262,3 +1368,5 @@ footer {
     text-align: center;
     margin-top: 0; /* Rimuove lo spazio sopra il footer */
 }
+
+
