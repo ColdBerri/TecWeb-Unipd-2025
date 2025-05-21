@@ -81,7 +81,8 @@ class Template {
                 $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
                 $header = str_replace("[libreria]", "", $header);
-                $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link">Login/Registrati</div></a></li>', $header);
+                $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link"><span lang="en">Login</span>/Registrati
+</div></a></li>', $header);
             }   
 
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <span lang="en">Home</span></p></div>',$header);
@@ -102,7 +103,8 @@ class Template {
             $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
             $header = str_replace("[libreria]", "", $header);
-            $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link">Login/Registrati</div></a></li>', $header);
+            $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link"><span lang="en">Login</span>/Registrati
+</div></a></li>', $header);
             }   
 
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; Categorie</p></div>',$header);
@@ -123,7 +125,8 @@ class Template {
             $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
             $header = str_replace("[libreria]", "", $header);
-            $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link">Login/Registrati</div></a></li>', $header);
+            $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link"><span lang="en">Login</span>/Registrati
+</div></a></li>', $header);
             }   
 
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; Eventi</p></div>',$header);
@@ -151,7 +154,8 @@ class Template {
             $header = str_replace("[home]",'<li><a href="index.php"><div class="navbar_link"><span lang="en">Home</span></div></a></li>',$header);
             $header = str_replace("[categorie]",'<li><a href="categorie.php"><div class="navbar_link">Categorie</div></a></li>',$header);
             $header = str_replace("[eventi]",'<li><a href="eventi.php"><div class="navbar_link">Prossimi eventi</div></a></li>',$header);
-            $header = str_replace("[login]", '<li class="current-page">Login/Registrati</li>', $header);
+            $header = str_replace("[login]", '<li class="current-page"><span lang="en">Login</span>/Registrati
+</li>', $header);
             $header = str_replace("[libreria]", "", $header);
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <span lang="en">Login</span></p></div>',$header);
             
@@ -186,7 +190,8 @@ class Template {
                 $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
                 $header = str_replace("[libreria]", "", $header);
-                $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link">Login/Registrati</div></a></li>', $header);  
+                $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link"><span lang="en">Login</span>/Registrati
+</div></a></li>', $header);  
             }   
 
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <span lang="en"> AboutUS </span></p> </div>',$header);
@@ -220,7 +225,8 @@ class Template {
                 $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
                 $header = str_replace("[libreria]", "", $header);
-                $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link">Login/Registrati</div></a></li>', $header);
+                $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link"><span lang="en">Login</span>/Registrati
+</div></a></li>', $header);
             }   
 
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; Assistenza</p> </div>',$header);
@@ -257,7 +263,8 @@ class Template {
             $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
             $header = str_replace("[libreria]", "", $header);
-            $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link">Login/Registrati</div></a></li>', $header);
+            $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link"><span lang="en">Login</span>/Registrati
+</div></a></li>', $header);
             }   
 
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <a href="categorie.php">Categorie</a> &gt&gt; Categoria Singola</p> </div>',$header);
@@ -277,7 +284,8 @@ class Template {
                 $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
                 $header = str_replace("[libreria]", "", $header);
-                $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link">Login/Registrati</div></a></li>', $header);
+                $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link"><span lang="en">Login</span>/Registrati
+</div></a></li>', $header);
             }   
 
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <a href="categorie.php">Categorie</a> &gt&gt; <a href="categoria_singola.php">Categoria Singola</a> &gt&gt;Gioco Singolo</p> </div>',$header);
@@ -298,7 +306,8 @@ class Template {
                 $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
                 $header = str_replace("[libreria]", "", $header);
-                $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link">Login/Registrati</div></a></li>', $header);
+                $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link"><span lang="en">Login</span>/Registrati
+</div></a></li>', $header);
             }   
 
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <a href="eventi.php">Eventi</a> &gt&gt; Evento Singolo</p> </div>',$header);
@@ -319,7 +328,8 @@ class Template {
                 $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
                 $header = str_replace("[libreria]", "", $header);
-                $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link">Login/Registrati</div></a></li>', $header);
+                $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link"><span lang="en">Login</span>/Registrati
+</div></a></li>', $header);
             }   
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <a href="categorie.php">Categorie</a> &gt&gt; <a href="categoria_singola.php">Categoria Singola</a> &gt&gt; <a href= "gioco_singolo.php">Gioco Singolo</a> &gt&gt; Articolo</p> </div>',$header);
         }
