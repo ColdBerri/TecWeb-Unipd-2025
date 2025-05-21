@@ -396,6 +396,19 @@ div.categoria>ul>li:hover{
     margin-bottom: 0.5em;
 }
 
+.details_selezione_mese {
+    background-color: #f9f9f9;  
+    border: 1px solid #ddd;     
+    border-radius: 0.8em;        
+    padding: 0.5em 1.2em 0.5em 2em; /* top-right-bottom-left */
+    margin: 0 auto 1.5em auto; /* centrato + margine sotto */
+    box-shadow: 0 0.15em 0.3em rgba(0, 0, 0, 0.05); 
+    transition: all 0.3s ease;
+    max-width: 50em; /* larghezza massima */
+    width: 90%;      /* responsivo su dispositivi piccoli */
+}
+
+
 .titolo_calendario{
     font-size: 1.3em;
     margin-bottom: 0.3em;
@@ -1210,18 +1223,18 @@ ul {
 /*=====ASSISTENZA=====*/
 
 
-details {
-  background-color: #f9f9f9;  /* colore chiaro di sfondo */
-  border: 1px solid #ddd;     /* bordo sottile grigio chiaro */
-  border-radius: 10px;         /* angoli arrotondati */
-  padding: 20px;
-  margin-bottom: 18px;        /* spazio tra una FAQ e l’altra */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* leggerissima ombra */
-  transition: all 0.3s ease;
-  padding-left: 30px;
-  padding-right: 20px;
-     margin-left: 250px;
-  margin-right: 250px;
+.support_details {
+    background-color: #f9f9f9;  /* colore chiaro di sfondo */
+    border: 1px solid #ddd;     /* bordo sottile grigio chiaro */
+    border-radius: 10px;         /* angoli arrotondati */
+    padding: 20px;
+    margin-bottom: 18px;        /* spazio tra una FAQ e l’altra */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* leggerissima ombra */
+    transition: all 0.3s ease;
+    padding-left: 30px;
+    padding-right: 20px;
+    margin-left: 250px;
+    margin-right: 250px;
 }
 
 h1 {
