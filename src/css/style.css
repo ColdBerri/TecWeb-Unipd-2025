@@ -1,0 +1,1454 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --bgcolor: #dddddd;
+    --headerbgcolor: #1b2838;
+    --textcolor: #000000;
+    --linkcolor: #07026b;
+    --linkvisited: #F39602;
+    --bandiera: #ff0000;
+    --bgfooter: #aaaaaa;
+    --linkvisitedFooter: #0606fb;
+    --login-bgcolor: #1b2838; /* Sfondo della pagina di login uguale all'header */
+    --login-box-bgcolor: #080c11; /* Colore di sfondo della scatola di login */
+    --login-border: #ccc; /* Colore del bordo della scatola di login */
+    --login-button-bg: #28a745; /* Colore di sfondo del pulsante di login */
+    --div_navbar_link: #273a4f;
+    --div_navbar_link_hover: #2d425a;;
+}
+
+html {
+    background-color: var(--bgcolor);
+    color: var(--textcolor);
+}
+
+body{
+    color: var(--textcolor);
+    font-size: 100%;
+    font-family: "Lexend", "Roboto", sans-serif;
+    line-height: 1.5;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+main{
+    background-color: var(--bgcolor);
+    margin:auto;
+    margin-top: 12em;
+    width: 100%;
+    min-height:max-content;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/*===== LINK =====*/
+
+a {
+    color: var(--linkcolor);
+}
+
+a:visited {
+    color: var(--linkvisited);
+}
+
+footer a:visited {
+    color: var(--linkvisitedFooter);
+}
+
+header a{
+    color: white;
+}
+
+header a{
+    color: var(--bgcolor);
+}
+
+td.eventoPresente > a{
+    color: white;
+}
+
+/*===== HEADER =====*/
+
+header{
+/*    text-align: center;*/
+    width: 100%;
+    background-color: var(--headerbgcolor);
+    position: fixed;
+    z-index: 9999;
+}
+
+.nascondi{
+    display: none;
+}
+
+.menuHamberger, .burger{
+    display: none;
+}
+
+.navbar_link
+{
+    padding: 0.6em;
+    border-radius: 0.5em;
+    background-color: var(--div_navbar_link);
+}
+.navbar_link:hover
+{
+    background-color: var(--div_navbar_link_hover);
+    transition: background-color 0.2s ease;
+}
+
+.menu {
+    text-align: center;
+    padding-top:1em;
+    white-space: nowrap;
+    margin: auto;
+    vertical-align: middle;
+    padding: 0;
+}
+
+.overlayNascondi{
+    display: none;
+}
+
+.logo>img{
+    width: 3.5em;
+}
+
+.logo {
+    color: #fff;
+    margin: 1em;
+    margin-left: 1em;
+    margin-top: 0.55em;
+    margin-bottom: 0;
+    position: relative;
+    top: 0.05em; 
+}
+
+.logo h1{
+    font-size: 1.1em; 
+    margin: 0; 
+    margin-left: 0.7em; 
+}
+
+
+.logoLink{
+    text-decoration: none;
+}
+
+.menu {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.3em;
+    text-transform: uppercase;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    list-style: none; 
+
+}
+
+.menu ul:last-child {
+   padding-right: 2em;
+}
+
+ul .current-page{
+    color: white;
+}
+
+.breadcrump {
+    background-color: #2d3b47; 
+    padding: 0.5em 1em;
+    color: white;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.search-container {
+    background-color: var(--headerbgcolor);
+    text-align: center;
+    margin-top: 0.5em;
+    padding-bottom: 0.4em;
+    position: relative;
+    top:-0.5em;
+}
+
+.search-box {
+    padding: 0.75em 1em;
+    width: 100%;
+    max-width: 20em;
+    border: 2px solid #ccc;
+    border-radius: 2em;
+    font-size: 1em;
+    margin-right: 1em;
+    position: relative;
+    top: -0.25em;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0);
+    color: #333;
+}
+
+
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.search-icon {
+    width: 2em; /* Dimensione dell'icona */
+    height: 2em;
+}
+
+.search-icon:hover {
+    content: url('../assets/search_red.png'); /* Sostituisce l'immagine con search_red.png al passaggio del mouse */
+}
+
+/*=====MAIN=====*/
+
+.suggForm {
+    color: white;
+    font-size: 1em;
+    float: right;
+    text-align: right;
+}
+
+.erroreForm{
+    color: red;
+    font-size: 1em;
+}
+
+.top-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    margin-bottom: 1em;  
+    list-style: none;
+    text-align: center;
+    margin: 0.25em;
+    transition: all 1s ease;
+}
+
+.listaindex img{
+    width: 16em;
+    height: 20em;
+    border-radius: 1em;
+    margin-top: 0.5em;
+}
+
+.top-eventi{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /*align-content: space-evenly;*/
+    margin-bottom: 1em;  
+    list-style: none;
+    text-align: center;
+    margin: 0.25em;
+    transition: all 1s ease;
+}
+
+.miniCalendario {
+    width: 9em;
+    border-radius: 0.6em;
+    box-shadow: 0 0.2em 0.4em rgba(0, 0, 0, 0.2);
+    font-family: sans-serif;
+    overflow: hidden;
+    text-align: center;
+    background-color: white;
+    margin: 1em auto;
+}
+  
+.miniCalendarioH {
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.6em 0.3em;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-decoration-color: white;
+}
+  
+.miniCalendarioB {
+    background-color: #fefefe;
+    color: #333;
+    padding: 1.2em 0.5em;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.top-path{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    margin-bottom: 1em;  
+    list-style: none;
+    text-align: center;
+    margin: 0.2em;
+    transition: all 1s ease;
+}
+
+.miniGiornale {
+    width: 9em;
+    padding: 1em;
+    font-family: sans-serif;
+    overflow: hidden;
+    text-align: center;
+    margin: 1em auto;
+    position: relative;
+    box-shadow: 
+        inset -0.2em 0 0.4em rgba(0,0,0,0.05),  
+        0.2em 0.2em 0.6em rgba(0, 0, 0, 0.2);   
+    border-radius: 0.3em;
+    background-color: #DC143C;
+    color: white;
+    border: 1px #000000 solid;
+}
+
+.titoloNotiziaIndex {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 0.3em;
+}
+
+.contenutoNotiziaIndex {
+    font-size: 0.85em;
+    line-height: 1.3em;
+}
+
+/*CATEGORIE*/
+
+ul.ulCategorie{
+    text-align: center;
+}
+
+ul.ulCategorie>li{
+    display: inline-block;
+}
+
+.categoria{
+    padding: 1em;
+}
+
+.formCategorie>div{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.8em;
+}
+
+div.categoria>h2{
+    text-align: left;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+div.categoria>ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    margin-bottom: 1em;  
+    list-style: none;
+    text-align: center;
+    margin: 0.25em;
+    transition: all 1s ease;
+}
+
+div.categoria>ul>li{
+    background-color: var(--headerbgcolor);
+    border-radius: 0.5em;
+    transition: transform 0.3s ease;
+}
+
+div.categoria>ul>li>a{
+    color: white;
+    text-decoration: none;
+}
+
+.ImgGiocoCat{
+    width: 10em;
+    height: 10em;
+    border-top-left-radius:0.5em ;
+    border-top-right-radius:0.5em ;
+}
+
+div.categoria>ul>li:hover{
+  transform: scale(1.05);
+  opacity: 0.5;
+}
+
+/*EVENTI*/
+
+.titolo_pagina_eventi
+{
+    margin-bottom: 0.5em;
+}
+
+.details_selezione_mese {
+    background-color: #f9f9f9;  
+    border: 1px solid #ddd;     
+    border-radius: 0.8em;        
+    padding: 0.5em 1.2em 0.5em 2em; /* top-right-bottom-left */
+    margin: 0 auto 1.5em auto; /* centrato + margine sotto */
+    box-shadow: 0 0.15em 0.3em rgba(0, 0, 0, 0.05); 
+    transition: all 0.3s ease;
+    max-width: 50em; /* larghezza massima */
+    width: 90%;      /* responsivo su dispositivi piccoli */
+}
+
+
+.titolo_calendario{
+    font-size: 1.3em;
+    margin-bottom: 0.3em;
+}
+
+.selettore {
+    background-color: rgb(203, 203, 203);
+    font-weight: bold;
+    padding: 1.3em 0;          
+    margin: 0.3em;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    width: 13em;     
+}
+
+#mese, #anno {
+    padding: 0.8em 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 1.4em;
+    background-color: #f9f9f9;
+    font-size: 0.8em;
+    color: #333;
+    appearance: none; /* Rimuove lo stile di default su alcuni browser */
+    -webkit-appearance: none; /* Safari */
+    -moz-appearance: none; /* Firefox */
+    background-image: url("../assets/freccia_espandi.png");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1em;
+    width: 100%; 
+    max-width: 9em; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra leggera */
+    min-width: max-content;
+    margin-top: 0.4em;
+
+}
+
+#mese:hover, #anno:hover {
+    background-color: #e6e6e6; /* Colore di sfondo più scuro al passaggio del mouse */
+    border-color: #999; /* Cambia il colore del bordo */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Ombra più pronunciata */
+    transition: all 0.3s ease;
+}
+
+input[type="submit"][value="CERCA EVENTI"] {
+    padding: 0.8em 1.1em;
+    border: 1px solid #ccc;
+    border-radius: 1.4em;
+    background-color: var(--headerbgcolor); /* Colore di sfondo */
+    color: #fff; /* Colore del testo */
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: -0.5em;
+}
+
+input[type="submit"][value="CERCA EVENTI"]:hover {
+    background-color: #080c11; /* Colore di sfondo al passaggio del mouse */
+}
+
+.formCalendario > label
+{
+    font-size: 1.5em;
+}
+  
+.formCalendario
+{
+    display: flex;
+    flex-wrap: wrap;            /* permetto il wrapping dei flex-item */
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;                 /* spazio orizzontale/verticale tra i riquadri */
+}
+
+
+.formCalendario fieldset {
+    /* occupa tutta la larghezza del form, quindi va in riga nuova */
+    flex-basis: 100%;
+    display: flex;            /* per poter centrare il button al suo interno */
+    justify-content: center;
+    margin-top: 1em;          /* spazio sopra il tasto */
+    border: none;             /* già c’era, ma lo ribadiamo */
+    padding: 0;
+  }
+
+
+.calendario-tabella {
+    width: 75%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-top: 0.8em;
+    margin-bottom: 1em;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    table-layout: fixed;
+    min-width: 40em; 
+    max-width: 70em;
+    border-radius: 1em;
+}
+
+.calendario-tabella thead {
+    background-color: var(--headerbgcolor);
+    color: white;
+}
+
+.calendario-tabella th {
+    padding: 1em;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1em;
+    border: 1px solid white;
+}
+
+.calendario-tabella td {
+    height: 7em;
+    padding: 0.5em;
+    text-align: right;
+    vertical-align: top;
+    font-size: 0.9em;
+    border: 1px solid #eee;
+    position: relative;
+    background-color: white;
+    transition: background-color 0.2s;
+    border-bottom: none;
+} 
+
+.calendario-tabella td:hover {
+    background-color: #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.calendario-tabella thead tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+    background: transparent;
+    border: none;
+}
+
+.calendario-tabella thead tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+    background: transparent;
+}
+
+
+td.giornoFuori{ 
+    color: grey;
+    background-color: rgba(128, 128, 128, 0.327);
+    pointer-events: none;
+}
+
+td.giornoFuori > p { 
+    color: grey;
+    background-color: rgba(128, 128, 128, 0.327);
+}
+
+#sum{
+    position:absolute;
+    text-indent: -999em;
+}
+
+
+td.eventoPresente > a > p {
+    background-color: green;
+    padding: 0.2em;
+    font-size: 1em;
+    color: white;
+    border-radius: 3px; 
+    text-align: left;
+    text-transform: uppercase;
+    text-overflow: ellipsis; /* Aggiunge i puntini di sospensione per il testo in eccesso */
+    white-space: normal;        /* permette il testo su più righe */
+    word-break: break-word;  
+    word-wrap: break-word; /* Permette di andare a capo */
+    hyphens: auto; /* Aggiunge il trattino "-" quando il testo va a capo */
+}
+
+.markerGiorno {
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8em;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 0.1em;
+}
+
+.mese_selezionato th {
+    font-size: 1.5em;   
+    font-weight: bold; 
+    padding: 10px 0; 
+  }  
+
+.library-search-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 10px 20px;
+}
+
+.library-search-box {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px;
+}
+
+.library-search-button {
+    background-color: var(--headerbgcolor);
+    border: none;
+    padding: 8px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.library-search-button img {
+    width: 16px;
+    height: 16px;
+}
+
+.welcome-message {
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 1px;
+    max-width: 600px;  /* Larghezza uguale alla .profile-container */
+    margin-left: auto;
+    margin-right: auto; /* Centra il testo sopra il box */
+}
+
+/*
+
+.profile-form {
+    width: 30%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-form fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-form label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.profile-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.profile-form input[readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+.profile-form button {
+    width: 48%; 
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--headerbgcolor);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.profile-form .button-container {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.save-button {
+    background-color: #28a745; 
+}
+
+.back-button {
+    background-color: #dc3545; 
+
+.back-button:hover {
+    background-color: var(--bandiera);
+}
+
+.save-button:hover {
+    background-color:#1c7731;
+}
+
+*/
+
+
+
+/* FORM LOGIN, REGISTRA E MODIFICA PASS, OPZIONI SVILUPPATORE */
+
+/* Contenitore esterno */
+.form-container {
+    width: 100%;
+    float: left;
+    padding: 2em 0;
+}
+
+/* Box principale */
+.form-box {
+    background-color: var(--login-bgcolor); 
+    border-radius: 15px;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
+    max-width: 28em;
+    min-width: 20em;
+    padding: 2.5em;
+    margin: 2em auto;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.dev_tool-box {
+    background-color: var(--login-bgcolor); 
+    border-radius: 15px;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
+    max-width: 40em;
+    min-width: 10em;
+    padding: 2.5em;
+    margin: 2em auto;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+
+/* Titolo */
+.form-welcome-message {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.25em;
+    margin-top: 0; 
+    text-align: center;
+}
+
+/* Form labels */
+.form-box label {
+    color: white;
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5em;
+}
+
+/* Campi input */
+.form-box input[type="text"],
+.form-box input[type="password"],
+.form-box input[type="date"],
+.form-box input[type="number"] {
+    width: 100%;
+    padding: 0.85em;
+    margin: 0.3em 0 0.8em;
+    border: none;
+    border-radius: 0.3em;
+    font-size: 1em;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+
+/* Fieldset */
+fieldset {
+    border: 0;
+    margin-bottom: 1em;
+}
+
+.form-box textarea {
+    width: 100%;
+    padding: 0.85em;
+    margin: 0.3em 0 0.8em;
+    border: none;
+    border-radius: 0.3em;
+    font-size: 1em;
+    font-family: inherit; /* Assicura coerenza con il resto del sito */
+    resize: none; /* Impedisce il ridimensionamento manuale */
+    box-sizing: border-box;
+    height: 8em; /* Altezza fissa maggiore rispetto a un input normale */
+}
+
+
+/* Link registrazione */
+.form-box .register-link {
+    margin-top: 1.5em;
+    font-size: 1.1em;
+    text-align: center;
+    color: white;
+}
+
+
+/* Contenitore bottoni finali */
+.button-container {
+    padding-top: 1em;
+    width: 100%;
+    overflow: hidden; /* contiene i float */
+    box-sizing: border-box;
+}
+
+/* Bottoni submit generici */
+.submit_button {
+    float: right;
+    width: 49%;
+    background-color: #28a745;
+    padding: 0.85em;
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.submit_button:hover {
+    background-color: #1c7731;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Bottone Annulla */
+.cancella {
+    float: left;
+    width: 49%;
+    background-color: #dc3545;
+    padding: 0.85em;
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.cancella:hover {
+    background-color: #a71d2a;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.registra_linkB
+{
+    color: #34b9db;
+}
+
+.custom-file-upload {
+    width: 5em;
+    background-color: var(--bgcolor);
+    color: var(--headerbgcolor) !important;
+    padding: 0.85em 1.2em;
+    border-radius: 1em;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.custom-file-upload:hover {
+    background-color: white;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Form di registrazione */
+#registration-form,
+#modifica-form {
+    color: white;
+}
+
+#registration-form div,
+#modifica-form div {
+    overflow: hidden;
+}
+
+/*PROFILO*/
+#profilo-heading
+{
+    margin-top: 0;
+    font-size: 2em;
+}
+
+.profilo-box {
+    max-width: 25em; /* 500px */
+    min-width: 18em;
+    margin: 2em auto;
+    margin-top: 6em;
+    padding: 2em;
+    background-color: #f9f9fb;
+    border: 0.125em solid #ccc;
+    border-radius: 0.75em;
+    box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.1);
+    font-family: system-ui, sans-serif;
+    color: #333;
+    font-size: 1em;
+    overflow: hidden;
+  }
+
+  .profile-picture {
+    display: block;
+    width: 10em;               /* regola la dimensione a piacere */
+    height: 10em;              /* uguale alla width per un cerchio */
+    margin: 0 auto 1.8em;     /* centro orizzontalmente e do un po’ di spazio sotto */
+    border-radius: 50%;       /* rende l’immagine circolare */
+    object-fit: cover;        /* ritaglia l’immagine senza deformarla */
+    border: 0.125em solid var(--headerbgcolor); /* (opzionale) piccolo bordo per contrasto */
+  }
+  
+  
+  .profilo-box h1 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    color: #1a1a1a;
+  }
+  
+  .profilo-box p{
+    font-size: 1.1em;
+    margin: 0.5em 0;
+  }
+  
+.profile_info
+{
+    margin-left: 1.3em;
+}
+
+  .valore {
+    font-weight: bold;
+    color: #2a2a2a;
+  }
+  
+
+  
+  /* contenitore dei bottoni: larghezza ridotta e centrata */
+.profilo-links {
+    margin-top: 1.5em;
+    width: 90%;           /* occupa il 60% di .profilo-box */
+    margin-left: auto;    /* centro orizzontalmente */
+    margin-right: auto;
+    overflow: hidden;     /* contiene i float */
+  }
+  
+  /* stile comune (già fornito) */
+  .profile_button {
+    float: left;
+    width: 48%;           /* due bottoni da 48% = 96% + gap */
+    background-color: var(--headerbgcolor);
+    padding: 0.85em;
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    font-size: 1em;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  /* piccolo spazio tra i due */
+  .profile_button:first-of-type {
+    margin-right: 4%;
+  }
+  
+  .profile_button:hover {
+    background-color: var(--div_navbar_link);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+
+/*FAQ*/
+
+.faq {
+    max-width: 600px;
+    padding-left: 20px;
+}
+
+.faq-item {
+    background: #fff; /* Sfondo bianco */
+    border-radius: 10px; /* Angoli arrotondati */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra per effetto "staccato" */
+    padding: 15px;
+    margin-bottom: 10px; /* Spazio tra le domande */
+}
+
+.faq-question {
+    font-weight: bold;
+    color: var(--linkcolor);
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 5px;
+    padding: 10px;
+    border-top: 1px solid #ddd; /* Separatore sottile */
+}
+
+.faq-input {
+    display: none; /* Nasconde il checkbox */
+}
+
+.faq-input:checked + .faq-answer {
+    display: block; /* Mostra la risposta quando il checkbox è selezionato */
+}
+
+.faq-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    gap: 2em;
+}
+
+.faq-sidebar {
+    margin-top: 80px;
+    margin-right: 70px;
+    width: 25%; 
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-content {
+    width: 70%; 
+}
+
+aside {
+    width: 30%;
+    float: right;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin-right: 80px;
+    margin-top: 85px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.videogame_info{
+    width: 50%;
+    float: left;
+}
+.review_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.review_form label {
+    font-weight: bold;
+}
+
+.review_form input, .review_form textarea, .review_form select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.review_form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.review_form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review_form button:hover {
+    background-color: #45a049;
+}
+
+.stars {
+    display: flex;
+    gap: 10px;
+}
+
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars label {
+    font-size: 2em;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.stars input[type="radio"]:checked ~ label {
+    color: var(--linkcolor);
+}
+
+.stars input[type="radio"]:hover ~ label {
+    color: var(--linkcolor);
+}
+
+.stars input[type="radio"]:checked + label {
+    color: var(--linkcolor);
+}
+
+.stars label:hover {
+    color: var(--linkcolor); 
+}
+
+
+/*=====ABOUT US=====*/
+
+section {
+    padding: 2px 30px;  /* Aggiunge spazio sopra e sotto, riducendo lo spazio laterale */
+    margin-top: 30px;  /* Distanza dalla sezione precedente */
+}
+
+section p {
+    text-align: center;  /* Centra il testo */
+    max-width: 1100px;  /* Ridotto la larghezza massima per una minore distanza laterale */
+    margin: 0 auto;  /* Centra il paragrafo orizzontalmente */
+    font-size: 18px;  /* Imposta una dimensione del testo uniforme */
+    line-height: 1.6;  /* Spazio tra le righe per leggibilità */
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 30px; /* spazio tra il titolo e i riquadri */
+    font-size: 2.5em;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.colonna1,
+.colonna2,
+.colonna3,
+.colonna4 {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 40px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.colonna1 ul,
+.colonna2 ul,
+.colonna3 ul,
+.colonna4 ul {
+    list-style-type: none;  /* Rimuove i punti dall'elenco */
+    padding-left: 0;  /* Rimuove l'indentazione */
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px; /* Distanza tra l'immagine e il testo */
+}
+
+.colonna1 li,
+.colonna2 li,
+.colonna3 li,
+.colonna4 li {
+    margin-bottom: 20px; /* Spazio tra le voci */
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+.colonna1 ul li:last-child,
+.colonna2 ul li:last-child,
+.colonna3 ul li:last-child,
+.colonna4 ul li:last-child {
+    margin-bottom: 0;
+}
+
+
+ul {
+    list-style-type: none; /* Rimuove i punti dall'elenco */
+    padding-left: 0; /* Rimuove l'indentazione */
+}
+
+.galleria {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center;     /* Centra verticalmente */
+    margin-bottom: 20px;     /* Spazio tra immagine e lista */
+}
+.galleria img {
+    max-width: 200px;         /* Adatta l'immagine alla dimensione del contenitore */
+    height: auto;
+    object-fit: contain; 
+}
+
+
+/*=====ASSISTENZA=====*/
+
+
+.support_details {
+    background-color: #f9f9f9;  /* colore chiaro di sfondo */
+    border: 1px solid #ddd;     /* bordo sottile grigio chiaro */
+    border-radius: 10px;         /* angoli arrotondati */
+    padding: 20px;
+    margin-bottom: 18px;        /* spazio tra una FAQ e l’altra */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* leggerissima ombra */
+    transition: all 0.3s ease;
+    padding-left: 30px;
+    padding-right: 20px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+h1 {
+  margin-top: 50px; /* Spazio sopra il titolo */
+     margin-bottom: 25px; 
+}
+
+
+details summary {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.2em;
+     margin-bottom: 10px;   /* Spazio tra la domanda e la risposta */
+    margin-top: 10px;
+}
+
+.contatti {
+    display: flex;
+    justify-content: space-between; /* Spinge i riquadri agli estremi */
+    margin: 40px auto;
+    max-width: 1000px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.blocco-contatto {
+    width: 300px; /* Fisso per evitare che si allarghino */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.paragrafo {
+    text-align: center;
+}
+.paragrafo1 {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;           /* Usa Flexbox per allineare orizzontalmente */
+    align-items: center;     /* Allinea verticalmente l'immagine e il testo */
+     justify-content: center;
+    gap: 15px;               /* Aggiungi spazio tra l'icona e il numero */
+    font-size: 1.3em;          /* Imposta la dimensione del testo */
+}
+
+.paragrafo1 img {
+    width: 3em;
+    height: 3em;
+}
+
+.paragrafo1 span {
+    text-decoration: underline; /* Sottolinea il numero di telefono */
+    cursor: pointer; 
+}
+
+section:first-of-type > p {
+    text-align: justify;
+    line-height: 2em; /* Aumenta l'interlinea */
+    margin-bottom: 1.2em; /* Aggiunge più spazio tra frasi */
+}
+
+
+/*=====REGISTRATI=====*/
+
+fieldset {
+  position: relative;
+  margin-bottom: 2em;
+}
+
+fieldset label {
+  display: block;
+  padding-right: 6em; /* lascia spazio a destra per il suggerimento */
+}
+
+fieldset .suggForm {
+  position: absolute;
+  right: 0;
+  font-size: 0.85em;
+    top: 0.1em;
+}
+
+
+/*=====OPZIONI SVILUPPATORE=====*/
+.admin-options-list {
+    max-width: 37.5em;
+    margin: 2.5em auto;
+    padding: 0 0.93em; 
+    list-style: none; /* Rimuove i pallini */
+}
+
+/* Singole voci */
+.admin-options-list li {
+    margin: 0.9375em 0;    
+    padding: 0; /* rimosso padding per spostarlo sul link */
+    background-color: #ffffff;
+    border-left: 0.3125em solid var(--headerbgcolor); 
+    border-radius: 0.5em;     /* 8px */
+    box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    overflow: hidden;
+}
+
+/* Link a blocco che occupa tutto il box */
+.admin-options-list li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 1em 1.25em;
+    text-decoration: underline; /* Aggiunge la sottolineatura */
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--headerbgcolor);
+    border-radius: 0.5em; /* per mantenere l'effetto tondo anche al link */
+    transition: color 0.2s;
+}
+
+/* Hover sul box */
+.admin-options-list li:hover {
+    background-color: #f0f8ff;
+    transform: scale(1.01);
+}
+
+/* Hover sul link */
+.admin-options-list li a:hover {
+    color: var(--headerbgcolor);
+    text-decoration: underline;
+}
+
+/* Link già visitati */
+.admin-options-list li a:visited {
+    color: var(--linkvisited);
+    text-decoration: underline; /* Mantiene la sottolineatura */
+}
+
+
+/*=====EVENTO SINGOLO=====*/
+#evento-singolo {
+    max-width: 50em; 
+    min-width: 20em;
+    margin: 2em auto;
+    margin-top: 6em;
+    margin-bottom: 4em;
+    padding: 2em;
+    background-color: #f9f9f9;
+    border-radius: 0.75em;
+    box-shadow: 0 0 0.625em rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+    font-size: 1em; 
+}
+
+.titolo-evento {
+    font-size: 2em;
+    margin-bottom: 1.5em;
+    margin-top: 0.5em;
+    color: var(--headerbgcolor);
+    text-align: center;
+}
+
+.dettagli-evento {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dettaglio {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-left: 0.25em solid var(--linkvisited);
+    background-color: #fff;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.etichetta {
+    font-weight: bold;
+    width: 9.375em;
+    min-width: 9.375em;
+    color: var(--headerbgcolor);
+}
+
+.valore {
+    flex: 1;
+    color: black;
+}
+
+.errore-evento {
+    color: red;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 1em;
+    background-color: #ffe6e6;
+    border: 0.0625em solid #ff9999;
+    border-radius: 0.5em;
+    max-width: 37.5em;
+    margin: 2em auto;
+}
+
+
+/*=====FOOTER=====*/
+
+footer {
+    width: 100%;
+    overflow: hidden;
+    float: left;
+    text-align: center;
+    background-color: var(--bgfooter);
+    color: var(--textcolor);
+    padding: 2em 0;
+    text-align: center;
+    margin-top: 0; 
+}
+
+

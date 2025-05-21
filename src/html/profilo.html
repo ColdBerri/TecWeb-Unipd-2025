@@ -1,65 +1,13 @@
-<!DOCTYPE html>
-<html lang="it">
-    <head>
-        <meta charset="UTF-8">
-        <title>VAPOR - Videogames's usless opinions </title>
-        <meta name="description" content="Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming">
-        <meta name="keyword" content="videogioco,evento,patch,aggiornamento,biblioteca">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    </head>
-
-    <body>
-
-        <header>
-            <h1>il tuo profilo</h1>
-        </header>
-
-        <nav id = "breadcrumb">
-            <p>Ti trovi in: <a href="index.html" lang="en">Home</a> &gt; Profilo</p>
-        </nav>
-
-        <nav id="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="categorie.html">Categorie</a></li>
-                <li><a href="prossimeuscite.html">Prossime uscite</a></li>
-                <li><a href="Assistenza/contatti.html">Assistenza/contatti</a></li>
-                <li><a href="as.html">La nostra storia</a></li>
-                <li>Profilo</li>
-            </ul>
-        </nav>
-
-        <main>
-
-            <div>
-                <p>Benvenuto/a, nome utente</p>
-                <p>Nome: nome</p>
-                <p>Cognome: cognome</p>
-                <p><span lang="en">Email</span>: email</p>
-                <p>Indirizzo: indirizzo</p>
-                <img src="../assets/img.png" alt="...">
-            </div>
-
-            <a href="modifica.html">Modifica i tuoi dati</a>
-            <a href="logout.html">Logout</a>
-
-            <div>
-                <p>Lista delle tue recenzioni/p>
-                <ul>
-                    <li>recenzione 1</li>
-                    <li>recenzione 2</li>
-                    <li>recenzione 3</li>
-                </ul>
-            </div>
-
-        </main>
-
-        <footer>
-
-        </footer>
-
-    </body>
-
-</html>
+<div class="profilo-box" role="region" aria-labelledby="profilo-heading">
+    <h1 id="profilo-heading">Il tuo profilo Vapor</h1>
+    <img src="../assets/profilepicture.jpeg" alt="Immagine del profilo" class="profile-picture">
+    <div class="profile_info">
+      <p>Nome Utente: <span class="valore">{{nickname}}</span></p>
+      <p>Data di Nascita: <span class="valore">{{data_nascita}}</span></p>
+    </div>
+    <div class="profilo-links">
+      <a href="modifica_profilo.php" class="profile_button">Modifica <span lang="en">Password</span></a>
+      <a href="profilo.php?logout=true" class="profile_button">Logout</a>
+    </div>
+  </div>
+  

@@ -1,0 +1,33 @@
+<div class="form-container">
+    <div class="form-box">
+        <h1 class="form-welcome-message">Modifica la tua password</h1>
+        <form id="modifica-form" method="POST" action="modifica_profilo.php" onsubmit="return checkForm();">
+            
+            <fieldset>
+                <label for="vecchia_password">
+                    <span lang="it">Vecchia</span> <span lang="en">Password:</span>
+                </label>
+                <input type="password" id="vecchia_password" name="vecchia_password" required>
+            </fieldset>
+
+            <fieldset>
+                <label for="nuova_password">
+                    <span lang="it">Nuova</span> <span lang="en">Password:</span>
+                </label>
+                <input type="password" id="nuova_password" name="nuova_password" required>
+            </fieldset>
+
+            <fieldset>
+                <label for="conferma_password">
+                    <span lang="it">Ripeti la nuova</span> <span lang="en">Password:</span>
+                </label>
+                <input type="password" id="conferma_password" name="conferma_password" required>
+            </fieldset>
+
+            <div class="button-container">
+                <input type="submit" class="submit_button" value="Salva">
+                <input type="button" class="cancella" onclick="window.location.href='profilo.php';" value="Annulla">
+            </div>
+        </form>
+    </div>
+</div>

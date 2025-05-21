@@ -1,0 +1,178 @@
+/* Voci del menu */
+.nascondi ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 3.75em;
+}
+
+nav.menuHamberger{
+  width: 70%;
+}
+
+.nascondi ul li {
+  margin: 1.4em 0;
+}
+
+.nascondi ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+/* Nasconde il campo input della ricerca */
+.library-search-box {
+  display: none;
+}
+
+.search-container {
+  position: absolute;
+  top: 10px;
+  right: 60px; /* o meno, in base a layout */
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+
+.search-box {
+  display: none;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+}
+
+div.login-box {
+        width: 90%;
+        padding: 1.5em;
+    margin-top: 2em; /* meno spazio sopra */
+    margin-bottom: 5em; /* più spazio sotto */
+    }
+
+/*ABOUT US*/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* 👈 importante: fa allungare i figli */
+  box-sizing: border-box;
+  padding: 0; /* rimuoviamo il padding */
+  width: 100%;
+}
+
+.container > div {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0 16px; /* padding interno se vuoi spazio nel contenuto */
+  box-sizing: border-box;
+     padding: 48px 16px; /* 24px sopra e sotto, 16px a sinistra e destra */
+}
+
+
+
+
+/*ASSISTENZA*/
+details {
+    width: 90%; /* Prende il 98% della larghezza disponibile su dispositivi mobili */
+    max-width: 100%; /* Garantisce che occupi tutta la larghezza disponibile su mobile */
+    padding: 12px; /* Aumenta il padding per un po' più di spazio interno */
+    box-sizing: border-box; /* Assicura che il padding sia incluso nel calcolo della larghezza */
+     margin: 20px;
+  }
+
+  details summary {
+    font-size: 1.3em; /* Aumenta la dimensione del testo del summary */
+  }
+
+ .contatti {
+        flex-direction: column; /* Imposta i contenitori uno sotto l'altro */
+        align-items: center;    /* Centra i contenitori orizzontalmente */
+    }
+
+.blocco-contatto {
+        width: 60%; /* Rende i contenitori più piccoli e centrati */
+        max-width: 400px; /* Imposta una larghezza massima per ogni contenitore */
+        margin: 10px 0;   /* Aggiunge spazio tra i contenitori */
+    }
+
+    .paragrafo1 {
+        font-size: 1.1em; /* Riduce la dimensione del testo su schermi piccoli */
+    }
+
+
+/* CALENDARIO EVENTI. Se questa parte resta uguale al tablet la si può togliere da qua */
+.calendario-tabella {
+        width: 90%;
+        min-width: unset;
+        max-width: 100%;
+        font-size: 0.85em;
+        table-layout: fixed;
+        border-radius: 0.5em;
+    margin: 0 auto;
+    }
+
+.calendario-tabella th,
+.calendario-tabella td {
+    width: 3em;             /* Fissa la larghezza della cella */
+    height: 3em;            /* Fissa l'altezza della cella */
+    padding: 0;
+    font-size: 0.8em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.markerGiorno {
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 0.75em;
+    line-height: 1.5em;
+}
+
+    .formCalendario {
+        flex-direction: column;
+        align-items: center;
+    }
+
+ .selettore {
+    background-color: rgb(203, 203, 203);
+    font-weight: bold;
+    padding: 1em 0;             /* Aumentato leggermente */
+    margin: 0.3em;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2em;           /* Da 1.1em a 1.2em */
+    width: 12em;                /* Da 10em a 12em */
+}
+
+#mese, #anno {
+    padding: 0.6em;              /* Ridotto da 0.8em */
+    font-size: 0.75em;           /* Appena più piccolo */
+    max-width: 8em;              /* Ridotto da 9em */
+}
+
+
+
+    input[type="submit"][value="CERCA EVENTI"] {
+        font-size: 1.2em;
+        padding: 0.8em;
+    }
+
+    .titolo_pagina_eventi,
+    .titolo_calendario {
+        text-align: center;
+        font-size: 1.3em;
+    }
+
+    h2, h3 {
+        text-align: center;
+        font-size: 1.2em;
+    }
+

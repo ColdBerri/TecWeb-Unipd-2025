@@ -1,70 +1,35 @@
-<!DOCTYPE html>
-<html lang="it">
-    <head>
-        <meta charset="UTF-8">
-        <title>VAPOR - Videogames's usless opinions </title>
-        <meta name="description" content="Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming">
-        <meta name="keyword" content="videogioco,evento,patch,aggiornamento,biblioteca">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    </head>
+<div class="form-container">
+    <div class="form-box">
+        <h1 class="form-welcome-message">Ti diamo il benvenuto</h1>
+        <form id="registration-form" method="POST" action="registra.php" onsubmit="return checkForm();">
+            
+            <fieldset>
+                <label for="username"><span lang="en">Username:</span></label>
+                <input type="text" id="username" name="username" required>
+            </fieldset>
 
-    <body>
+            <fieldset>
+                <label for="password"><span lang="en">Password:</span></label>
+                <input type="password" id="password" name="password" required>
+            </fieldset>
 
-        <header>
-            <h1>Registrazione</h1>
-            <h2>Crea un nuovo account per accedere a tutti i servizi</h2>
-        </header>
+            <fieldset>
+                <label for="confirm-password">Conferma <span lang="en">Password:</span></label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </fieldset>
 
-        <nav id="breadcrumb">
-            <p>Ti trovi in: <a href="index.html" lang="en">Home</a> &gt; Registrazione</p>
-        </nav>
+            <fieldset>
+                <label for="data-nascita">Data di nascita:</label>
+                <input type="date" id="data-nascita" name="data-nascita" required>
+            </fieldset>
 
-        <nav id = "menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="categorie.html">Categorie</a></li>
-                <li><a href="eventi.html">Prossime uscite</a></li>
-                <li><a href="Assistenza/contatti.html">Assistenza/contatti</a></li>
-                <li><a href="as.html">La nostra storia</a></li>
-                <li><a href="profilo.html">Profilo</a></li>
-            </ul>
-
-        </nav>
-
-        <main>
-
-            <form action="/register" method="POST">
-                <fieldset>
-                  <legend>Registrazione</legend>
-              
-
-                  <label for="username">Nome utente</label>
-                  <input type="text" id="username" name="username" required aria-describedby="username-desc">
-              
-
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" required aria-describedby="email-desc">
-              
-
-                  <label for="password">Password</label>
-                  <input type="password" id="password" name="password" required aria-describedby="password-desc">
-              
-
-                  <label for="age">Età</label>
-                  <input type="number" id="age" name="age" min="13" required aria-describedby="age-desc">
-                  
-                  <button type="submit">Registrati</button>
-                </fieldset>
-              </form>
-
-        </main>
-
-        <footer>
-
-        </footer>
-
-    </body>
-
-</html>
+            <div class="button-container">
+                <input type="button" class="cancella" onclick="window.location.href='index.php';" value="Annulla">
+                <input type="submit" class="submit_button" value="Registra">
+            </div>
+        </form>
+    </div>
+</div>
+<script src="js/validaPassword.js"></script>
+<script src="js/controlloInjection.js"></script>
+<script src="js/nomeDoppio.js"></script>

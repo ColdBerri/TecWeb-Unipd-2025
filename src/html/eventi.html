@@ -1,112 +1,53 @@
-<!DOCTYPE html>
-<html lang="it">
-    <head>
-        <meta charset="UTF-8">
-        <title>VAPOR - Videogames's usless opinions </title>
-        <meta name="description" content="Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming">
-        <meta name="keyword" content="videogioco,evento,patch,aggiornamento,biblioteca">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    </head>
+<h1 class="titolo_pagina_eventi">Prossimi eventi</h1>
 
-    <body>
+<p id="sum">Calendario gregoriano che elenca gli eventi nel mondo videoludico nel mese corrente</p>
 
-        <header>
-            <h1>Prossimi eventi</h1>
-        </header>
+<details class="details_selezione_mese" [details_open]>
+  <summary>Filtra per mese e anno</summary>
+  <form class="formCalendario" method="POST" action="eventi.php">
+      <div class="selettore">
+          <label for="mese">Seleziona un mese</label>
+          <select name="mese" id="mese">
+              <option value="1" [selected_mese_1]>gennaio</option>
+              <option value="2" [selected_mese_2]>febbraio</option>
+              <option value="3" [selected_mese_3]>marzo</option>
+              <option value="4" [selected_mese_4]>aprile</option>
+              <option value="5" [selected_mese_5]>maggio</option>
+              <option value="6" [selected_mese_6]>giugno</option>
+              <option value="7" [selected_mese_7]>luglio</option>
+              <option value="8" [selected_mese_8]>agosto</option>
+              <option value="9" [selected_mese_9]>settembre</option>
+              <option value="10" [selected_mese_10]>ottobre</option>
+              <option value="11" [selected_mese_11]>novembre</option>
+              <option value="12" [selected_mese_12]>dicembre</option>
+          </select>
+      </div>
+      
+      <div class="selettore">
+          <label for="anno">Seleziona un anno</label>
+          <select name="anno" id="anno">
+              <option value="2023" [selected_anno_2023]>2023</option>
+              <option value="2024" [selected_anno_2024]>2024</option>
+              <option value="2025" [selected_anno_2025]>2025</option>
+              <option value="2026" [selected_anno_2026]>2026</option>
+              <option value="2027" [selected_anno_2027]>2027</option>
+              <option value="2028" [selected_anno_2028]>2028</option>
+              <option value="2029" [selected_anno_2029]>2029</option>
+              <option value="2030" [selected_anno_2030]>2030</option>
+          </select>
+      </div>
+      <fieldset>
+          <input type="submit" name="submit" value="CERCA EVENTI">
+      </fieldset>
+  </form>
+</details>
 
-        <nav id="breadcrumb">
-            <p>Ti trovi in: <a href="index.html" lang="en">Home</a> &gt; Prossimi eventi</p>
-        </nav>
+<table aria-describedby="sum" class="calendario-tabella">
+    <caption class="titolo_calendario">Calendario prossimi eventi</caption>
+    [calendario]
+</table>
 
-        <nav id="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="categorie.html">Categorie</a></li>
-                <li>Prossime uscite</li>
-                <li><a href="Assistenza/contatti.html">Assistenza/contatti</a></li>
-                <li><a href="as.html">La nostra storia</a></li>
-                <li><a href="profilo.html">Profilo</a></li>
-            </ul>
-        </nav>
+<h2>Vide ogiochi in uscita:</h2>
+<h3>Eventi futuri in evidenza:</h3>
 
-        <main>
-
-            <p id="desc_table">Calendario gregoriano che elenca gli eventi nel mondo videoludico nel mese corrente</p>
-
-            <table aria-describedby="desc_table">
-
-                <!--calendario poi da sistemare-->
-
-                <thead>
-                    <tr>
-                        <th scope="col">Lun</th>
-                        <th scope="col">Mar</th>
-                        <th scope="col">Mer</th>
-                        <th scope="col">Gio</th>
-                        <th scope="col">Ven</th>
-                        <th scope="col">Sab</th>
-                        <th scope="col">Dom</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>10</td>
-                        <td>11</td>
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                    </tr>
-                    <tr>
-                        <td>15</td>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                        <td>19</td>
-                        <td>20</td>
-                        <td>21</td>
-                    </tr>
-                    <tr>
-                        <td>22</td>
-                        <td>23</td>
-                        <td>24</td>
-                        <td>25</td>
-                        <td>26</td>
-                        <td>27</td>
-                        <td>28</td>
-                    </tr>
-                    <tr>
-                        <td>29</td>
-                        <td>30</td>
-                        <td>31</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-
-            <table>
-
-        </main>
-
-        <footer>
-
-        </footer>
-
-    </body>
-
-</html>
+<script src="js/eventiScroll.js"></script>

@@ -1,0 +1,360 @@
+.search-container{
+    display: none;
+}
+
+.menu ul li:not(:first-child) {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  justify-content: center; 
+  position: relative;
+}
+
+.burger{
+  display: block;
+  margin-left: auto; 
+  position: absolute;
+  padding: 1em;
+  right: 0;
+}
+
+.burger>img{
+  width: 2.2em;
+  cursor: pointer;
+}
+
+nav.menuHamberger{
+    display: flex;
+    background-color: var(--headerbgcolor);
+    top: 0;
+    right: 0;
+    width: 50%;
+    padding-top: 4em;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 1);
+    list-style: none;
+    position:fixed;
+    padding:0;
+    margin:0;
+    z-index: 9999;
+    min-height: 100vh;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 9998; 
+}
+
+
+.exit img {
+  position: absolute;
+  right: 1.9em;
+  top: 1.9em;
+  width: 2em;
+  cursor: pointer;
+}
+
+.nascondi {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100%;
+  background-color: #111;
+  transition: right 0.3s ease;
+  z-index: 999;
+  padding: 20px;
+}
+
+.nascondiul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    gap: 1em;
+}
+
+nav.menuHamberger > ul {
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    color: var(--textcolor);
+}
+
+nav.menuHamberger > ul > li {
+  padding: 3em;
+ }
+
+nav.menuHamberger > ul > :first-child{
+    text-align: right;
+    padding-bottom: 3em;
+}
+
+li.current-page {
+  list-style: url("../assets/fast-forward.png");
+     list-style-position: inside;
+}
+
+.navbar_link{
+  background-color: var(--div_navbar_link);
+}
+
+/* Menu */
+
+  .nav-menu, .nascondi {
+    background-color: #333;
+  }
+
+  /* Voci di menu */
+  .barraCentrale a, .barraCentrale2 a {
+    color: white;
+    font-size: 1.5em;  /* Aumento della dimensione del testo per tablet */
+    padding: 10px 15px; /* Più spazio per i touch */
+  }
+
+  /* Rimuove i punti dalle liste */
+  .barraCentrale li, .barraCentrale2 li {
+    list-style: none;
+    margin: 1.5em 0;
+  }
+
+/* Aggiustamenti per header e breadcrumb su tablet */
+  
+  /* Header */
+  .menu {
+    text-align: center;
+  }
+
+  /* Logo */
+  .logo {
+    width: 35vw;
+    max-width: 150px;
+  }
+
+  .logo img {
+    max-width: 45px;
+  }
+
+  .logo h1 {
+    font-size: 1.5em;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    margin-top: 10px; /* Aggiunge spazio sopra al breadcrumb per non farlo schiacciare */
+    padding: 10px;
+    font-size: 1.2em; /* Aumenta leggermente la dimensione per visibilità su tablet */
+    background-color: #f5f5f5; /* Sfondo chiaro per distinguere */
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .breadcrumb a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumb .separator {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  /* Contenitore principale */
+  .container {
+    padding-top: 70px; /* Aggiunge spazio sopra il contenuto per evitare che venga sovrapposto dall'header */
+  }
+
+  /* Altri aggiustamenti */
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .library-search-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 2em auto;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+
+  .library-search-box {
+    flex: 1;
+    min-width: 0;
+    padding: 1em;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+  }
+
+  .library-search-button {
+    padding: 1em;
+    font-size: 1.2em;
+    border-radius: 1em;
+    border: 1px solid #ccc;
+    background-color: var(--headerbgcolor);
+    cursor: pointer;
+  }
+
+  .library-search-button img {
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  div.login-box {
+    width: 80%;
+    padding: 1.5em;
+    margin-top: 3em;
+    margin-bottom: 4em;
+  }
+
+
+
+  /* ABOUT US */
+  .container {
+    display: block;
+    align-items: center;
+  }
+
+  .container > div {
+    width: 100%;
+    max-width: 450px; /* Larghezza più ampia rispetto alla versione mobile */
+    margin-bottom: 20px;
+  }
+
+  /* Sezione assistenza */
+  details {
+    width: 85%; /* Usa la maggior parte della larghezza disponibile */
+    max-width: 100%;
+    padding: 15px;
+    margin: 20px;
+  }
+
+  details summary {
+    font-size: 1.5em;  /* Aumentato per tablet */
+  }
+
+
+/* CALENDARIO EVENTI */
+.calendario-tabella {
+            width: 90%;
+        min-width: unset;
+        max-width: 100%;
+        font-size: 0.85em;
+        table-layout: fixed;
+        border-radius: 0.5em;
+    margin: 0 auto;
+}
+
+.calendario-tabella th,
+.calendario-tabella td {
+    width: 5em; /* Le celle mantengono una larghezza fissa */
+    height: 5em; /* Le celle mantengono un'altezza fissa */
+    padding: 0;
+    font-size: 0.8em; /* Il font rimane invariato per le celle */
+    text-align: center;
+    vertical-align: middle;
+}
+
+.markerGiorno {
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 0.75em;
+    line-height: 1.5em;
+}
+
+/* Form Calendario */
+.formCalendario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-origin: top center;
+    scale: 1; /* La scala inizia con valore 1 */
+}
+
+/* Selettore */
+.selettore {
+    background-color: rgb(203, 203, 203);
+    font-weight: bold;
+    padding: 1em 0;
+    margin: 0.3em;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    width: 12em;
+}
+
+#mese, #anno {
+    padding: 0.6em;
+    font-size: 0.75em;
+    max-width: 8em;
+}
+
+input[type="submit"][value="CERCA EVENTI"] {
+    font-size: 1.2em;
+    padding: 0.8em;
+}
+
+.titolo_pagina_eventi,
+.titolo_calendario {
+    text-align: center;
+    font-size: 1.3em;
+}
+
+h2, h3 {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/* ASSISTENZA */
+details {
+  width: 90%; /* Imposta una larghezza per il contenitore */
+  max-width: 100%; /* Limita la larghezza massima per evitare che si allunghi troppo su schermi grandi */
+  padding: 16px; /* Aggiungi padding interno per un po' di spazio */
+  margin: 20px auto; /* Centra il contenitore orizzontalmente (auto sui lati) */
+  box-sizing: border-box; /* Include il padding nel calcolo della larghezza */
+}
+
+details summary {
+  font-size: 1.3em; /* Aumenta la dimensione del testo */
+  font-weight: bold; /* Aggiungi un po' di enfasi al testo */
+  text-align: center; /* Allinea il testo al centro */
+}
+
+.blocco-contatto {
+  width: 60%; /* Adatta i riquadri alla larghezza del contenitore */
+  max-width: 600px; /* Imposta una larghezza massima */
+  margin: 20px auto; /* Centra i riquadri */
+}
+
+.contatti {
+  display: flex; /* Usa flexbox per il layout dei contenitori */
+  flex-direction: column;
+  align-items: center; /* Centra i contenitori orizzontalmente */
+  justify-content: center;
+  gap: 20px; /* Distanza tra i contenitori */
+}
+
+
+/*ABOUT US*/
+.container {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    flex-wrap: wrap;         /* Fa andare i riquadri a capo se serve */
+    gap: 1.5em;              /* Spazio tra i riquadri */
+    padding: 1em;
+}
