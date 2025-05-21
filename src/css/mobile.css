@@ -1,3 +1,62 @@
+/* Aggiungi margini laterali a tutta la pagina (al contenitore principale) */
+body {
+    margin: 0; /* Rimuove margini predefiniti */
+    padding: 0; /* Rimuove padding predefiniti */
+    width: 95%; /* Garantisce che il body occupi tutta la larghezza */
+    box-sizing: border-box; /* Evita problemi di larghezza dovuti ai padding */
+}
+
+/* Aggiungi margini laterali alle sezioni */
+section {
+    width: 95%;  /* Imposta il contenuto al 90% della larghezza */
+    max-width: 1200px; /* Imposta la larghezza massima */
+    margin: 40px auto;  /* Aggiunge margini superiori/inferiori e centrare la sezione */
+    padding: 0 20px; /* Aggiungi un po' di padding interno per evitare che il contenuto tocchi i bordi */
+    box-sizing: border-box; /* Garantisce che il padding non influenzi la larghezza */
+        overflow-x: hidden;   /* Nasconde eventuali scorrimenti orizzontali */
+
+}
+
+/* Aggiungi margine alle immagini (se necessario) */
+section img {
+    max-width: 95%; /* Evita che le immagini escono dal contenitore */
+    height: auto; /* Mantiene le proporzioni delle immagini */
+    display: block; /* Rimuove lo spazio extra sotto le immagini */
+    margin: 0 auto; /* Centra le immagini */
+}
+
+
+main, section {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+    margin-left: 10px;   /* Imposta il margine a sinistra */
+    margin-right: 10px;  /* Imposta il margine a destra */
+        overflow-x: hidden;   /* Impedisce lo scroll orizzontale */
+
+
+}
+
+
+header.site-header {
+  height: auto; /* o una misura fissa se vuoi */
+  padding: 1em 0; /* uniforme sopra e sotto */
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo h1{
+    font-size: 1em; 
+}
+
+.breadcrump {
+    font-size: 0.9em;
+}
+
 /* Voci del menu */
 .nascondi ul {
   list-style: none;
@@ -51,12 +110,13 @@ nav.menuHamberger{
   height: 24px;
 }
 
-div.login-box {
-        width: 90%;
-        padding: 1.5em;
-    margin-top: 2em; /* meno spazio sopra */
-    margin-bottom: 5em; /* più spazio sotto */
-    }
+.login-box {
+  width: 90%;
+  max-width: 400px; /* opzionale, per mantenerla compatta */
+  padding: 1em;
+  margin: 1.5em auto; /* centrato, con spazio uniforme sopra e sotto */
+  text-align: center;
+}
 
 /*ABOUT US*/
 .container {
@@ -80,32 +140,50 @@ div.login-box {
 
 
 /*ASSISTENZA*/
-details {
-    width: 90%; /* Prende il 98% della larghezza disponibile su dispositivi mobili */
-    max-width: 100%; /* Garantisce che occupi tutta la larghezza disponibile su mobile */
-    padding: 12px; /* Aumenta il padding per un po' più di spazio interno */
-    box-sizing: border-box; /* Assicura che il padding sia incluso nel calcolo della larghezza */
-     margin: 20px;
-  }
+.faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 🔥 centra tutti i <details> figli */
+  width: 90%;
+  margin-bottom: 2em;
+}
 
-  details summary {
-    font-size: 1.3em; /* Aumenta la dimensione del testo del summary */
-  }
+.support_details {
+  width: 95%;
+  max-width: 600px;
+  padding: 12px;
+  margin: 14px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+    box-sizing: border-box;
+}
 
- .contatti {
-        flex-direction: column; /* Imposta i contenitori uno sotto l'altro */
-        align-items: center;    /* Centra i contenitori orizzontalmente */
-    }
+.support_details summary {
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 .blocco-contatto {
-        width: 60%; /* Rende i contenitori più piccoli e centrati */
-        max-width: 400px; /* Imposta una larghezza massima per ogni contenitore */
-        margin: 10px 0;   /* Aggiunge spazio tra i contenitori */
-    }
+    width: 60%; /* Rende i contenitori più piccoli e centrati */
+    max-width: 400px; /* Imposta una larghezza massima per ogni contenitore */
+    margin: 10px 0;   /* Aggiunge spazio tra i contenitori */
+    padding: 16px 20px; /* Ridotto per diminuire l'altezza interna */
+}
 
-    .paragrafo1 {
-        font-size: 1.1em; /* Riduce la dimensione del testo su schermi piccoli */
-    }
+.blocco-contatto h2 {
+    font-size: 1.5em; /* Aumenta la dimensione del testo */
+    font-weight: bold; /* Rende il titolo in grassetto */
+    margin-top: 0; /* Rimuove lo spazio sopra il titolo */
+    margin-bottom: 0.5em; /* Riduce lo spazio sotto il titolo */
+    text-align: center; /* Centra il titolo nel riquadro */
+}
+
+.paragrafo1 {
+    font-size: 1.2em; /* Riduce la dimensione del testo su schermi piccoli */
+    margin-top: 0; /* Rimuove spazio sopra il paragrafo */
+}
+
 
 
 /* CALENDARIO EVENTI. Se questa parte resta uguale al tablet la si può togliere da qua */
@@ -139,6 +217,8 @@ details {
     .formCalendario {
         flex-direction: column;
         align-items: center;
+            padding-top: 20px; /* Aggiunge spazio sopra al form */
+
     }
 
  .selettore {
@@ -175,4 +255,30 @@ details {
         text-align: center;
         font-size: 1.2em;
     }
+
+
+h1, h2 {
+  margin-top: 4em; /* evita che si stacchino troppo dal header */
+}
+
+h2 {
+    margin-top: 2em;  /* Adatta a seconda del margine che hai sugli altri h2 */
+    margin-bottom: 1em; /* Spazio sotto l'h2 */
+    text-align: center; /* Se desideri che il testo sia centrato */
+}
+
+header {
+  border: 2px dashed red;
+}
+
+
+ .form-container {
+  padding: 16px;
+  margin-top: 8em; 
+  margin-bottom: 2em;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
 
