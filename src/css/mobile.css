@@ -80,16 +80,19 @@ div.login-box {
 
 
 /*ASSISTENZA*/
-details {
+.support_details {
     width: 90%; /* Prende il 98% della larghezza disponibile su dispositivi mobili */
     max-width: 100%; /* Garantisce che occupi tutta la larghezza disponibile su mobile */
     padding: 12px; /* Aumenta il padding per un po' più di spazio interno */
     box-sizing: border-box; /* Assicura che il padding sia incluso nel calcolo della larghezza */
-     margin: 20px;
-  }
+     margin: 20px auto;
+}
 
-  details summary {
+ .support_details summary {
     font-size: 1.3em; /* Aumenta la dimensione del testo del summary */
+       align-items: left;             /* allineamento verticale centrato */
+
+
   }
 
  .contatti {
@@ -173,6 +176,20 @@ details {
 
     h2, h3 {
         text-align: center;
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 
+
+/* LOGIN/REGISTRA */
+
+.form-box {
+  max-width: 400px;       /* ✅ larghezza massima */
+  width: 90%;             /* ✅ occuperà solo il 90% dello schermo */
+  margin: 2em auto;       /* ✅ centrato orizzontalmente */
+  padding: 1.5em;
+  box-sizing: border-box; /* ✅ importante per evitare overflow */
+}
+
+
+
+ 

@@ -47,6 +47,12 @@ main{
 
 }
 
+
+main, section, .container {
+  margin-top: 10em;          /* spesso qui c'è spazio inutile */
+}
+
+
 /*===== LINK =====*/
 
 a {
@@ -1142,10 +1148,7 @@ aside {
 
 /*=====ABOUT US=====*/
 
-section {
-    padding: 2px 30px;  /* Aggiunge spazio sopra e sotto, riducendo lo spazio laterale */
-    margin-top: 30px;  /* Distanza dalla sezione precedente */
-}
+
 
 section p {
     text-align: center;  /* Centra il testo */
@@ -1167,7 +1170,7 @@ h1, h2 {
     gap: 70px;
     max-width: 900px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 1s0px;
 }
 
 .colonna1,
