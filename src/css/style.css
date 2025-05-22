@@ -97,6 +97,7 @@ header{
     border-radius: 0.5em;
     background-color: var(--div_navbar_link);
 }
+
 .navbar_link:hover
 {
     background-color: var(--div_navbar_link_hover);
@@ -117,7 +118,7 @@ header{
 }
 
 .logo>img{
-    width: 3.5em;
+    width: 3em;
 }
 
 .logo {
@@ -131,7 +132,7 @@ header{
 }
 
 .logo h1{
-    font-size: 1.1em; 
+    font-size: 1em; 
     margin: 0; 
     margin-left: 0.7em; 
 }
@@ -167,41 +168,39 @@ ul .current-page{
 
 .breadcrump {
     background-color: #2d3b47; 
-    padding: 0.5em 1em;
+    padding: 0.4em;
     color: white;
     font-size: 1.1em;
     text-align: center;
+    margin-top: 0.5em;
+}
+
+.search-box {
+    width: 20em; 
 }
 
 .search-container {
-    background-color: var(--headerbgcolor);
-    text-align: center;
-    margin-top: 0.5em;
-    padding-bottom: 0.4em;
-    position: relative;
-    top:-0.5em;
+    display: flex;
+    justify-content: center;
 }
 
 .search-box {
     padding: 0.75em 1em;
-    width: 100%;
-    max-width: 20em;
+    height: 0.8em;
     border: 2px solid #ccc;
-    border-radius: 2em;
+    border-radius: 2em 0em 0em 2em;
     font-size: 1em;
-    margin-right: 1em;
-    position: relative;
-    top: -0.25em;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0);
     color: #333;
+    border-right: none;
 }
 
-
-
 .search-button {
-    background-color: transparent;
-    border: none;
+    border: 2px solid #ccc;
+    background-color: white;
+    border-radius: 0em 2.5em 2.5em 0em;
+    width: 4.7em;
     cursor: pointer;
 }
 
@@ -357,11 +356,10 @@ div.categoria>h2{
 div.categoria>ul{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    align-items: flex-start;
     align-content: space-evenly;
     margin-bottom: 1em;  
     list-style: none;
-    text-align: center;
     margin: 0.25em;
     transition: all 1s ease;
 }
@@ -370,6 +368,7 @@ div.categoria>ul>li{
     background-color: var(--headerbgcolor);
     border-radius: 0.5em;
     transition: transform 0.3s ease;
+    margin-left: 1em;
 }
 
 div.categoria>ul>li>a{
@@ -471,7 +470,6 @@ input[type="submit"][value="CERCA EVENTI"]:hover {
     gap: 0.5em;                 /* spazio orizzontale/verticale tra i riquadri */
 }
 
-
 .formCalendario fieldset {
     /* occupa tutta la larghezza del form, quindi va in riga nuova */
     flex-basis: 100%;
@@ -480,7 +478,7 @@ input[type="submit"][value="CERCA EVENTI"]:hover {
     margin-top: 1em;          /* spazio sopra il tasto */
     border: none;             /* già c’era, ma lo ribadiamo */
     padding: 0;
-  }
+}
 
 
 .calendario-tabella {
@@ -558,7 +556,7 @@ td.giornoFuori > p {
 }
 
 
-td.eventoPresente > a > p {
+.marked {
     background-color: green;
     padding: 0.2em;
     font-size: 1em;
@@ -571,20 +569,6 @@ td.eventoPresente > a > p {
     word-break: break-word;  
     word-wrap: break-word; /* Permette di andare a capo */
     hyphens: auto; /* Aggiunge il trattino "-" quando il testo va a capo */
-}
-
-.markerGiorno {
-    display: inline-block;
-    width: 1.8em;
-    height: 1.8em;
-    line-height: 1.8em;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    font-weight: bold;
-    font-size: 0.9em;
-    margin-bottom: 0.1em;
 }
 
 .mese_selezionato th {
@@ -618,8 +602,8 @@ td.eventoPresente > a > p {
 }
 
 .library-search-button img {
-    width: 16px;
-    height: 16px;
+    width: 1em;
+    height: 1em;
 }
 
 .welcome-message {
@@ -630,6 +614,20 @@ td.eventoPresente > a > p {
     max-width: 600px;  /* Larghezza uguale alla .profile-container */
     margin-left: auto;
     margin-right: auto; /* Centra il testo sopra il box */
+}
+
+.eventoPresenteOggi, .eventoOggi {
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8em;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 0.1em;
 }
 
 /*

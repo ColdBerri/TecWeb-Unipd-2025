@@ -40,11 +40,14 @@ class Template {
 
         $this->search = '
         <div class="search-container">
-        <input type="text" placeholder="Cerca..." class="search-box" aria-label="Cerca">
+            <div class="search">
+                <input type="text" placeholder="Cerca..." class="search-box" aria-label="Cerca">
+            </div>
             <button class="search-button" aria-label="Esegui ricerca">
-              <img src="assets/search_white.png" alt="Cerca" class="search-icon">       
-             </button>
-    </div>';
+                <img src="assets/search_blue.png" alt="Cerca" class="search-icon">       
+            </button>
+        </div>
+    ';
 
 
         $header = file_get_contents('html/header.html');

@@ -11,7 +11,6 @@ $year = date('Y');
 $db = new DBAccess();
 $eventDays = [];
 
-$mese = 4;
 $anno = 2025;
 $calendarioHTML = "";
 
@@ -19,6 +18,13 @@ if(isset($_POST['submit'])){
     $mese = ($_POST['mese']);
     $anno = ($_POST['anno']);;
 }
+
+$timestamp = $_SERVER[ 'REQUEST_TIME' ];
+
+$oggiG = date('d',$timestamp);
+$oggiM = date('m',$timestamp);
+
+$mese = $oggiM;
 
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
@@ -32,11 +38,13 @@ if(!$connessioneOK){
 }
 
 $giorniEvento = [];
+
 if(!empty($eventi)){
     foreach($eventi as $ev){
         $giorniEvento[] = intval(date('j', strtotime($ev['data_inizio_evento'])));
     }
 }
+
 $giorniSettimana = ['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom'];
 
 $primoGiorno = mktime(0, 0, 0, $mese, 1, $anno);
@@ -51,7 +59,14 @@ $indiceUltimoGiorno = date('N', $ultimoGiorno);
 $giorniFinaliVuoti = 7 - $indiceUltimoGiorno;
 
 $calendarioHTML .= "<thead>";
-$calendarioHTML .= "<tr class='mese_selezionato'><th colspan='7'>" . date('F Y', $primoGiorno) . "</th></tr>";
+$calendarioHTML .= "<tr class='mese_selezionato'><th colspan='7' lang='en'>" . date('F Y', $primoGiorno) . "</th></tr>";
+$tmp = false;
+
+if(date('m', $primoGiorno) === $oggiM){
+    $tmp = true;
+}
+
+
 $calendarioHTML .= "<tr>";
 
 foreach ($giorniSettimana as $giorno) {
@@ -79,15 +94,25 @@ while ($giornoCorrente <= $numeroGiorni) {
             if ($giornoEvento === $giornoCorrente && !$eventoStampato) {
                 $nomeEvento = htmlspecialchars($ev['nome_evento']);
                 $eventoLink = urldecode($ev['nome_evento']);
-                $calendarioHTML .= "<td class='eventoPresente'><span class='markerGiorno'>$giornoCorrente</span><a href='evento_singolo.php?nome_evento={$eventoLink}'><p>$nomeEvento</p></a></td>";
+
+                if(!($tmp && $giornoCorrente == $oggiG)){
+                    $calendarioHTML .= "<td><span class='eventoPresente'>$giornoCorrente</span><a href='evento_singolo.php?nome_evento={$eventoLink}'><p class='marked'>$nomeEvento</p></a></td>";
+                } else {
+                    $calendarioHTML .= "<td><span class='eventoPresenteOggi'>$giornoCorrente</span><a href='evento_singolo.php?nome_evento={$eventoLink}'><p class='marked'>$nomeEvento</p></a></td>";
+                }
                 $eventoStampato = true;
+
             }
         }
     
     }
 
     if (!$eventoStampato) {
-        $calendarioHTML .= "<td>$giornoCorrente</td>";
+        if(!($tmp && $giornoCorrente == $oggiG)){
+            $calendarioHTML .= "<td>$giornoCorrente</td>";
+        } else {
+            $calendarioHTML .= "<td><span class='eventoOggi'>$giornoCorrente</span></td>";
+        }
     }
 
     if (($giorniInizialiVuoti + $giornoCorrente - 1) % 7 == 6) {
