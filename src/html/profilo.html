@@ -8,12 +8,24 @@
     <div class="profilo-links">
       <a href="modifica_profilo.php" class="profile_button">Modifica <span lang="en">Password</span></a>
       <a href="profilo.php?logout=true" class="profile_button">Logout</a>
+<<<<<<< Updated upstream
       <form method="post" class="immagine_profilo">
         <fieldset>
           <input type="hidden" name="modifica_immagine_profilo" value="modifica_immagine_profilo">
           <input type="submit" name="immagine" value="Cambia Immagine Profilo" class="profile_picture_button">
         </fieldset>
       </form>
+=======
+      <form method="post" name="modifica_immagine_profilo">
+      <details>
+      <summary style="cursor: pointer;">Cambia Immagine Profilo</summary>
+      <ul>
+        [selettore]
+        <li><fieldset><input type="submit" name="salva_immagine_profilo" value="Salva"></fieldset></li>
+        <li><fieldset><input type="reset" value="Annulla"></fieldset></li>
+        </ul>
+      </details>
+    </form>
+>>>>>>> Stashed changes
     </div>
-    [selettore]
-  </div>
+</div>

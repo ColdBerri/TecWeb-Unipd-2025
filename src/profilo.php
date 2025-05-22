@@ -39,30 +39,29 @@ if(!$connessioneOK){
             exit();
         }
         
-        if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['modifica_immagine_profilo'])){
-            $selettoreImmagini .= "<h2>Scegli immagine</h2><form method='post'><div style='display:flex;flex-wrap:wrap;gap:10px;'>";
-            for ($i = 1; $i <= 8; $i++) {
-                if($i<=4){
-                    $path = "../assets/profile_pics/female$i.png";
-                    $selettoreImmagini .= "
-                        <label>
-                            <input type='radio' name='immagine_scelta' value='$path' required>
-                            <img src='$path' alt='Femmina$i' width='100'>
-                        </label>
-                    ";
-                }else{
-                    $j=$i-4;
-                    $path = "../assets/profile_pics/male$j.png";
-                    $selettoreImmagini .= "
-                        <label>
-                            <input type='radio' name='immagine_scelta' value='$path' required>
-                            <img src='$path' alt='Maschio$j' width='100'>
-                        </label>
-                    ";
-                }
-
+        for ($i = 1; $i <= 8; $i++) {
+            //$selettoreImmagini .= "<li>";
+            if ($i <= 4) {
+                $path = "../assets/profile_pics/female$i.png";
+                $selettoreImmagini .= "
+                    <fieldset><li><input type='radio' name='immagine_scelta' id='img$i' value='$path' required>
+                    <label for='img$i'>
+                    <img src='$path' alt='Femmina$i' width='100'>
+                    </label></li></fieldset>";
+            } else {
+                $j = $i - 4;
+                $path = "../assets/profile_pics/male$j.png";
+                $selettoreImmagini .= "
+                    <fieldset><li><input type='radio' name='immagine_scelta' id='img$i' value='$path' required>
+                    <label for='img$i'>
+                    <img src='$path' alt='Maschio$j' width='100'>
+                    </label></li></fieldset>";
             }
+<<<<<<< Updated upstream
             $selettoreImmagini .= "</div><input type='submit' name='salva_immagine_profilo' value='Salva' class='profile_button'></form>";
+=======
+            //$selettoreImmagini .= "</li>";
+>>>>>>> Stashed changes
         }
 
         if($_SERVER['REQUEST_METHOD'] === 'POST' &&isset($_POST['salva_immagine_profilo']) && isset($_POST['immagine_scelta'])) {
@@ -72,7 +71,7 @@ if(!$connessioneOK){
             header("Location: profilo.php");
             exit;
         }
-        
+
 
     } else {
         // Nessun utente in sessione -> redirect o messaggio di errore

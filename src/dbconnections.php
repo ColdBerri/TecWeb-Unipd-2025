@@ -160,33 +160,33 @@ class DBAccess {
 		}
 	}
 	
-public function getVideogioco($nome) {
-    $query = "SELECT nome_gioco, descrizione, immagine, console_compatibili, casa_produttrice, anno_di_pubblicazione FROM Videogiochi WHERE nome_gioco = ?";
+	public function getVideogioco($nome) {
+    	$query = "SELECT nome_gioco, descrizione, immagine, console_compatibili, casa_produttrice, anno_di_pubblicazione FROM Videogiochi WHERE nome_gioco = ?";
 
-    $stmt = mysqli_prepare($this->connection, $query);
-    if (!$stmt) {
-        throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->connection));
-    }
+    	$stmt = mysqli_prepare($this->connection, $query);
+    	if (!$stmt) {
+        	throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->connection));
+    	}
 
-    mysqli_stmt_bind_param($stmt, "s", $nome);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_bind_result($stmt, $nome_gioco, $descrizione, $immagine ,$console_compatibili, $casa_produttrice, $anno_di_pubblicazione);
+    	mysqli_stmt_bind_param($stmt, "s", $nome);
+    	mysqli_stmt_execute($stmt);
+    	mysqli_stmt_bind_result($stmt, $nome_gioco, $descrizione, $immagine ,$console_compatibili, $casa_produttrice, $anno_di_pubblicazione);
 
-    if (mysqli_stmt_fetch($stmt)) {
-        mysqli_stmt_close($stmt);
-        return [
-            'nome_gioco' => $nome_gioco,
-            'descrizione' => $descrizione,
-            'immagine' => $immagine,
-			'console_compatibili'=>$console_compatibili,
-			'casa_produttrice'=>$casa_produttrice,
-			'anno_di_pubblicazione'=>$anno_di_pubblicazione
-        ];
-    }
+    	if (mysqli_stmt_fetch($stmt)) {
+        	mysqli_stmt_close($stmt);
+        	return [
+            	'nome_gioco' => $nome_gioco,
+            	'descrizione' => $descrizione,
+            	'immagine' => $immagine,
+				'console_compatibili'=>$console_compatibili,
+				'casa_produttrice'=>$casa_produttrice,
+				'anno_di_pubblicazione'=>$anno_di_pubblicazione
+        	];
+    	}
 
-    mysqli_stmt_close($stmt);
-    return null;
-}
+    	mysqli_stmt_close($stmt);
+    	return null;
+	}	
 
 	public function getEventiGioco($nome){
 		$query = "SELECT nome_evento, nome_videogioco, data_inizio_evento, data_fine_evento, squadre_coinvolte FROM Eventi WHERE nome_videogioco = ?";
@@ -338,31 +338,31 @@ public function getVideogioco($nome) {
 	}
 	
 
-public function getArticolo($nome) {
-    $query = "SELECT titolo_articolo, autore, data_pubblicazione, testo_articolo, nome_videogioco
-              FROM Articoli_e_patch WHERE titolo_articolo = ?";
+	public function getArticolo($nome) {
+    	$query = "SELECT titolo_articolo, autore, data_pubblicazione, testo_articolo, nome_videogioco
+              	FROM Articoli_e_patch WHERE titolo_articolo = ?";
     
-    $stmt = mysqli_prepare($this->connection, $query);
-    if (!$stmt) {
-        throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->connection));
-    }
+    	$stmt = mysqli_prepare($this->connection, $query);
+    	if (!$stmt) {
+        	throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->connection));
+    	}
 
-    mysqli_stmt_bind_param($stmt, "s", $nome);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_bind_result($stmt, $titolo, $autore, $data, $testo, $videogioco);
+    	mysqli_stmt_bind_param($stmt, "s", $nome);
+    	mysqli_stmt_execute($stmt);
+    	mysqli_stmt_bind_result($stmt, $titolo, $autore, $data, $testo, $videogioco);
 
-    if (mysqli_stmt_fetch($stmt)) {
-        return [
-            'titolo_articolo' => $titolo,
-            'autore' => $autore,
-            'data_pubblicazione' => $data,
-            'testo_articolo' => $testo,
-            'nome_videogioco' => $videogioco
-        ];
-    }
+    	if (mysqli_stmt_fetch($stmt)) {
+        	return [
+            	'titolo_articolo' => $titolo,
+            	'autore' => $autore,
+            	'data_pubblicazione' => $data,
+            	'testo_articolo' => $testo,
+            	'nome_videogioco' => $videogioco
+        	];
+    	}
 
-    return null;
-}
+    	return null;
+	}
 
 	public function addLibreria($gioco, $utente){
 		$query = "INSERT INTO Utente_Videogiochi (nickname, nome_gioco, preferito) VALUES (?, ?, ?)";
@@ -444,19 +444,6 @@ public function getArticolo($nome) {
 	}
 	
 
-	/*public function isAdmin($nome){
-		$query = "SELECT nickname FROM Utente WHERE nicknamen =?";
-		$stmt = mysqli_prepare($this->connection, $query);
-		mysqli_stmt_bind_pararam($stmt, "s", $nome);
-		mysqli_stmt_execute($stmt);
-		$result = myslqi_stmt_get_result($stmt);
-		if($result = "admin"){
-			return true;
-		} else{
-			return false;
-		}
-	}*/
-
 	public function addGioco($nome_gioco, $casa_produttrice, $console_compatibili, $descrizione, $anno_di_pubblicazione, $immagine, $categoria){
 		$query = "INSERT INTO Videogiochi (nome_gioco, casa_produttrice, console_compatibili, descrizione, anno_di_pubblicazione, immagine, categoria)
 		VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -471,30 +458,30 @@ public function getArticolo($nome) {
 	}
 
 
-public function addEvento($nome_evento, $nome_videogioco, $data_inizio_evento, $data_fine_evento, $squadre_coinvolte, $vincitore_evento){
-    $query = "INSERT INTO Eventi (nome_evento, nome_videogioco, data_inizio_evento, data_fine_evento, squadre_coinvolte, vincitore_evento)
-              VALUES (?, ?, ?, ?, ?, ?)";
+	public function addEvento($nome_evento, $nome_videogioco, $data_inizio_evento, $data_fine_evento, $squadre_coinvolte, $vincitore_evento){
+    	$query = "INSERT INTO Eventi (nome_evento, nome_videogioco, data_inizio_evento, data_fine_evento, squadre_coinvolte, vincitore_evento)
+              	VALUES (?, ?, ?, ?, ?, ?)";
 
-    $stmt = mysqli_prepare($this->connection, $query);
-    if($stmt === false){
-        die("Errore nella preparazione della query: " . mysqli_error($this->connection));
-    }
+    	$stmt = mysqli_prepare($this->connection, $query);
+    	if($stmt === false){
+        	die("Errore nella preparazione della query: " . mysqli_error($this->connection));
+    	}
 
-    $data_fine_evento = ($data_fine_evento === "") ? null : $data_fine_evento;
-    $vincitore_evento = ($vincitore_evento === "") ? null : $vincitore_evento;
+    	$data_fine_evento = ($data_fine_evento === "") ? null : $data_fine_evento;
+    	$vincitore_evento = ($vincitore_evento === "") ? null : $vincitore_evento;
 
-    mysqli_stmt_bind_param($stmt, "ssssss",
-        $nome_evento,
-        $nome_videogioco,
-        $data_inizio_evento,
-        $data_fine_evento,
-        $squadre_coinvolte,
-        $vincitore_evento
-    );
+    	mysqli_stmt_bind_param($stmt, "ssssss",
+        	$nome_evento,
+        	$nome_videogioco,
+        	$data_inizio_evento,
+        	$data_fine_evento,
+        	$squadre_coinvolte,
+        	$vincitore_evento
+    	);
 
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
-}
+    	mysqli_stmt_execute($stmt);
+    	mysqli_stmt_close($stmt);
+	}
 
 
 	public function addArticolo($titolo_articolo, $autore, $data_pubblicazione, $testo_articolo, $nome_videogioco){
@@ -545,19 +532,18 @@ public function addEvento($nome_evento, $nome_videogioco, $data_inizio_evento, $
     	}
 	}
 
-public function getPic($nickname) {
-    $query = "SELECT immagine_profilo FROM Utente WHERE nickname = ?";
-    $stmt = mysqli_prepare($this->connection, $query);
-    mysqli_stmt_bind_param($stmt, "s", $nickname);
-    mysqli_stmt_execute($stmt);
+	public function getPic($nickname) {
+    	$query = "SELECT immagine_profilo FROM Utente WHERE nickname = ?";
+    	$stmt = mysqli_prepare($this->connection, $query);
+    	mysqli_stmt_bind_param($stmt, "s", $nickname);
+    	mysqli_stmt_execute($stmt);
 
-    $result = mysqli_stmt_get_result($stmt);
-    if ($result && $row = mysqli_fetch_assoc($result)) {
-        return $row['immagine_profilo'];
-    }
+    	$result = mysqli_stmt_get_result($stmt);
+    	if ($result && $row = mysqli_fetch_assoc($result)) {
+        	return $row['immagine_profilo'];
+    	}
 
-    return null; 
+    	return null; 
+	}
 }
-
-
-}
+?>
