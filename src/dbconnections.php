@@ -511,4 +511,53 @@ public function addEvento($nome_evento, $nome_videogioco, $data_inizio_evento, $
 		mysqli_stmt_close($stmt);
 	}
 
+	public function getAllRecensioni(){
+		$query = "SELECT nickname, ID_recensione, contenuto_recensione, numero_stelle, nome_videogioco FROM Recensioni";
+		$stmt = mysqli_prepare($this->connection, $query);
+		mysqli_stmt_execute($stmt);
+		$result = mysqli_stmt_get_result($stmt);
+		$recensioni = [];
+		while ($row = mysqli_fetch_assoc($result)) {
+			$recensioni[] = $row;
+		}
+		return $recensioni;
+	}
+
+	public function deleteRecensione($id){
+		$query = "DELETE FROM Recensioni WHERE ID_recensione = ?";
+		$stmt = mysqli_prepare($this->connection, $query);
+		mysqli_stmt_bind_param($stmt, "s", $id);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_close($stmt);
+	}
+
+	public function updateImmagineProfilo($nick, $nuovaImmagine) {
+    	$conn = $this->connection;
+    	$query = "UPDATE Utente SET immagine_profilo = ? WHERE nickname = ?";
+    	$stmt = mysqli_prepare($this->connection, $query);
+    
+    	if ($stmt) {
+        	mysqli_stmt_bind_param($stmt, "ss", $nuovaImmagine, $nick);
+        	mysqli_stmt_execute($stmt);
+        	mysqli_stmt_close($stmt);
+    	} else {
+        	error_log("Errore update immagine profilo: " . mysqli_error($conn));
+    	}
+	}
+
+public function getPic($nickname) {
+    $query = "SELECT immagine_profilo FROM Utente WHERE nickname = ?";
+    $stmt = mysqli_prepare($this->connection, $query);
+    mysqli_stmt_bind_param($stmt, "s", $nickname);
+    mysqli_stmt_execute($stmt);
+
+    $result = mysqli_stmt_get_result($stmt);
+    if ($result && $row = mysqli_fetch_assoc($result)) {
+        return $row['immagine_profilo'];
+    }
+
+    return null; 
+}
+
+
 }

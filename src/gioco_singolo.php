@@ -204,7 +204,7 @@ if(!$connessioneOK) {
     } else {
         $connessione->closeConnection();
         $listaArticoli = "Niente :'(";
-    }
+    }   
     $paginaHTML->aggiungiContenuto("[contenuto_gioco]", "");
     $paginaHTML->aggiungiContenuto("[libri]", "");
     $paginaHTML->aggiungiContenuto("[eventi]", "");

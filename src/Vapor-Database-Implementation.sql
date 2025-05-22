@@ -8,12 +8,13 @@ DROP TABLE IF EXISTS Utente;
 CREATE TABLE IF NOT EXISTS Utente(
     nickname VARCHAR(64) PRIMARY KEY,
     password_ VARCHAR(64) NOT NULL,
-    datan DATE NOT NULL
+    datan DATE NOT NULL,
+    immagine_profilo VARCHAR(64)
 );
 
-INSERT INTO Utente(nickname,password_,datan) VALUES
-('admin', 'admin', '2000/01/01'),
-('user','user','2001/09/17');
+INSERT INTO Utente(nickname,password_,datan, immagine_profilo) VALUES
+('admin', 'admin', '2000/01/01', NULL),
+('user','user','2001/09/17', NULL);
 
 
 CREATE TABLE IF NOT EXISTS Videogiochi(
