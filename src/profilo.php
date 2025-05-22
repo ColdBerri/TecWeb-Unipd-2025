@@ -40,7 +40,6 @@ if(!$connessioneOK){
         }
         
         for ($i = 1; $i <= 8; $i++) {
-            //$selettoreImmagini .= "<li>";
             if ($i <= 4) {
                 $path = "../assets/profile_pics/female$i.png";
                 $selettoreImmagini .= "
@@ -57,11 +56,6 @@ if(!$connessioneOK){
                     <img src='$path' alt='Maschio$j' width='100'>
                     </label></li></fieldset>";
             }
-<<<<<<< Updated upstream
-            $selettoreImmagini .= "</div><input type='submit' name='salva_immagine_profilo' value='Salva' class='profile_button'></form>";
-=======
-            //$selettoreImmagini .= "</li>";
->>>>>>> Stashed changes
         }
 
         if($_SERVER['REQUEST_METHOD'] === 'POST' &&isset($_POST['salva_immagine_profilo']) && isset($_POST['immagine_scelta'])) {
@@ -71,7 +65,6 @@ if(!$connessioneOK){
             header("Location: profilo.php");
             exit;
         }
-
 
     } else {
         // Nessun utente in sessione -> redirect o messaggio di errore
