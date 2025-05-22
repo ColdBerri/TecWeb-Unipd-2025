@@ -1437,6 +1437,12 @@ fieldset .suggForm {
 }
 
 
+/*=====ARTICOLO SINGOLO=====*/
+.intestazione_articolo
+{
+    margin-top: 4em;
+}
+
 /*=====FOOTER=====*/
 
 footer {
