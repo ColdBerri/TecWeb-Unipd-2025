@@ -396,19 +396,6 @@ div.categoria>ul>li:hover{
     margin-bottom: 0.5em;
 }
 
-.details_selezione_mese {
-    background-color: #f9f9f9;  
-    border: 1px solid #ddd;     
-    border-radius: 0.8em;        
-    padding: 0.5em 1.2em 0.5em 2em; /* top-right-bottom-left */
-    margin: 0 auto 1.5em auto; /* centrato + margine sotto */
-    box-shadow: 0 0.15em 0.3em rgba(0, 0, 0, 0.05); 
-    transition: all 0.3s ease;
-    max-width: 50em; /* larghezza massima */
-    width: 90%;      /* responsivo su dispositivi piccoli */
-}
-
-
 .titolo_calendario{
     font-size: 1.3em;
     margin-bottom: 0.3em;

@@ -15,14 +15,10 @@ $mese = 4;
 $anno = 2025;
 $calendarioHTML = "";
 
-if (isset($_POST['submit'])) {
-    $mese = $_POST['mese'];
-    $anno = $_POST['anno'];
-    $paginaHTML->aggiungiContenuto("[details_open]", "open");
-} else {
-    $paginaHTML->aggiungiContenuto("[details_open]", "");
+if(isset($_POST['submit'])){
+    $mese = ($_POST['mese']);
+    $anno = ($_POST['anno']);;
 }
-
 
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
