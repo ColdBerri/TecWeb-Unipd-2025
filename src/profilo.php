@@ -62,7 +62,7 @@ if(!$connessioneOK){
                 }
 
             }
-            $selettoreImmagini .= "</div><input type='submit' name='salva_immagine_profilo' value='Salva'></form>";
+            $selettoreImmagini .= "</div><input type='submit' name='salva_immagine_profilo' value='Salva' class='profile_button'></form>";
         }
 
         if($_SERVER['REQUEST_METHOD'] === 'POST' &&isset($_POST['salva_immagine_profilo']) && isset($_POST['immagine_scelta'])) {

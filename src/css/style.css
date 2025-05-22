@@ -980,6 +980,10 @@ fieldset {
     text-align: center;
   }
   
+.profile_button[value="Salva"] {
+    margin-top: 1em;
+}
+
   /* piccolo spazio tra i due */
   .profile_button:first-of-type {
     margin-right: 4%;
@@ -990,6 +994,25 @@ fieldset {
     transition: background-color 0.2s ease, transform 0.2s ease;
   }
   
+  .profile_picture_button
+  {
+    width: 100%;   
+    margin-top: 0.7em;        /* due bottoni da 48% = 96% + gap */
+    background-color: var(--headerbgcolor);
+    padding: 0.85em;
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    font-size: 1em;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .profile_picture_button:hover
+  {
+    background-color: var(--div_navbar_link);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
 
 /*FAQ*/
 
