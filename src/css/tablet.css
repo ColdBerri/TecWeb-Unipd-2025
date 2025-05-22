@@ -138,44 +138,11 @@ li.current-page {
   }
 
   /* Logo */
-  .logo {
-    width: 35vw;
-    max-width: 150px;
-  }
-
-  .logo img {
-    max-width: 45px;
-  }
-
+ 
   .logo h1 {
-    font-size: 1.5em;
+    font-size: 1em;
   }
 
-  /* Breadcrumb */
-  .breadcrumb {
-    margin-top: 10px; /* Aggiunge spazio sopra al breadcrumb per non farlo schiacciare */
-    padding: 10px;
-    font-size: 1.2em; /* Aumenta leggermente la dimensione per visibilità su tablet */
-    background-color: #f5f5f5; /* Sfondo chiaro per distinguere */
-    border-radius: 5px;
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .breadcrumb a {
-    color: #333;
-    text-decoration: none;
-    margin-right: 10px;
-  }
-
-  .breadcrumb a:hover {
-    text-decoration: underline;
-  }
-
-  .breadcrumb .separator {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
 
   /* Contenitore principale */
   .container {
@@ -282,7 +249,6 @@ li.current-page {
     line-height: 1.5em;
 }
 
-/* Form Calendario */
 .formCalendario {
     display: flex;
     flex-direction: column;
@@ -293,20 +259,11 @@ li.current-page {
 
 /* Selettore */
 .selettore {
-    background-color: rgb(203, 203, 203);
-    font-weight: bold;
-    padding: 1em 0;
-    margin: 0.3em;
-    border-radius: 10px;
-    text-align: center;
     font-size: 1.2em;
-    width: 12em;
 }
 
 #mese, #anno {
-    padding: 0.6em;
     font-size: 0.75em;
-    max-width: 8em;
 }
 
 input[type="submit"][value="CERCA EVENTI"] {
@@ -318,11 +275,6 @@ input[type="submit"][value="CERCA EVENTI"] {
 .titolo_calendario {
     text-align: center;
     font-size: 1.3em;
-}
-
-h2, h3 {
-    text-align: center;
-    font-size: 1.2em;
 }
 
 /* ASSISTENZA */
