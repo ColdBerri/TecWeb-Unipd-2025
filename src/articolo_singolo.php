@@ -22,7 +22,7 @@ if(!$connessioneOK){
 
     if($articolo){
         $cont = "<ul class= 'intestazione_articolo'>";
-        $cont .= "<li><strong>Titolo : </strong>" .htmlspecialchars($articolo['titolo_articolo']) ."</li>";
+        $cont .= "<li><h1><strong>Titolo : </strong>" .htmlspecialchars($articolo['titolo_articolo']) ."<h1></li>";
         $cont .= "<li>" .htmlspecialchars($articolo['data_pubblicazione']) ."</li>";
         $cont .= "<li><strong>Autore : </strong>" .htmlspecialchars($articolo['autore']). "</li>"; 
         $cont .= "<li><strong> Videogioco : </strong>" .htmlspecialchars($articolo['nome_videogioco']). "</li>";

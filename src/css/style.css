@@ -1463,6 +1463,126 @@ fieldset .suggForm {
     margin: 2em auto;
 }
 
+/*=====GIOCO  SINGOLO=====*/
+.contenuto_gioco {
+    margin-top: 3.7em;
+    display: flex;
+    justify-content: start;   /* allinea a sinistra */
+    gap: 2em;                 /* spazio tra i box */
+    max-width: 80em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2em;
+}
+.scheda-gioco {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* <<< AGGIUNGI QUESTA RIGA */
+    max-width: 60em;
+    margin: 1em auto;
+    background-color: var(--headerbgcolor);
+    color: #ffffff;
+    border-radius: 0.75em;
+    overflow: hidden;
+    box-shadow: 0 0.5em 1.25em rgba(0, 0, 0, 0.3);
+    font-size: 1em;
+  }
+  
+  
+  .img-wrapper {
+    flex: 0 0 auto;
+    width: 16em;  /* larghezza fissa */
+    height: 24em; /* mantiene rapporto 2:3 */
+    overflow: hidden;
+    background-color: var(--headerbgcolor);
+    margin: 1em;
+    border-radius: 0.5em;
+  }
+  
+  .img-gioco {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0.5em;
+  }
+  
+  .dati-gioco {
+    flex: 1 1 auto;
+    padding: 2em 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .titolo-gioco {
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: var(--linkvisited);
+    text-shadow: 0.05em 0.05em 0.1em #000;
+  }
+  
+.game_detail
+{
+    margin: 0.25em;
+    background-color: red;
+    border-radius: 0.25em;
+    padding: 1em;
+    background-color: var(--div_navbar_link);
+}
+
+  .etichetta {
+    font-weight: bold;
+    color: var(--linkvisited);
+  }
+  
+  .valore {
+    color: white;
+  }
+  
+  .login_required {
+    background-color: white;
+    color: var(--div_navbar_link);
+    border-left: 0.4em solid orange;
+    padding: 1em 1.5em;
+    width: 30%;
+    min-width: 10em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    font-style: italic;
+    text-align: center;
+    margin: 0; /* <-- qui */
+    align-self: center; /* centra verticalmente rispetto alla scheda gioco */
+}
+  
+  .login_required a {
+    color: orange;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  
+  .login_required a:hover {
+    color: #ffb84d;
+    text-decoration: none;
+  }
+  
+
+  .box_recensioni {
+    margin: 2em auto;
+    max-width: 60em;
+    padding: 1.5em;
+    background-color: white;
+    border-left: 0.4em solid gray;
+    border-radius: 0.5em;
+    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+
 
 /*=====ARTICOLO SINGOLO=====*/
 .intestazione_articolo

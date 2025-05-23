@@ -28,12 +28,17 @@ if(!$connessioneOK) {
     $recensioni = $connessione->getRecensioni($nomeGioco);
 
     if($dati){
-        $contenuto = "<div class='gioco'><h1>{$dati['nome_gioco']}</h1>";
-        $contenuto .= "<img src='assets/img/{$dati['immagine']}' alt='{$dati['nome_gioco']}'>";
-        $contenuto .= "<p><strong>Casa Produttrice</strong> : {$dati['casa_produttrice']}</p>";
-        $contenuto .= "<p><strong>Conosle Compatibili</strong> : {$dati['console_compatibili']}</p>";
-        $contenuto .= "<p><strong>Anno di pubblicazione</strong> : {$dati['anno_di_pubblicazione']}</p>";
-        $contenuto .= "<p><strong>Descrizione</strong> : {$dati['descrizione']}</p></div>";
+        $contenuto = "<section class='scheda-gioco' aria-labelledby='titolo-gioco'>";
+        $contenuto .= "<div class='img-wrapper'>";
+        $contenuto .= "<img src='assets/img/{$dati['immagine']}' alt='Copertina di {$dati['nome_gioco']}' class='img-gioco'>";
+        $contenuto .= "</div>";
+        $contenuto .= "<div class='dati-gioco'>";
+        $contenuto .= "<h1 id='titolo-gioco' class='titolo-gioco'>{$dati['nome_gioco']}</h1>";
+        $contenuto .= "<div class='game_detail'><span class='etichetta'>Casa Produttrice:</span> <span class='valore'>{$dati['casa_produttrice']}</span></div>";
+        $contenuto .= "<div class='game_detail'><span class='etichetta'>Console Compatibili:</span> <span class='valore'>{$dati['console_compatibili']}</span></div>";
+        $contenuto .= "<div class='game_detail'><span class='etichetta'>Anno di Pubblicazione:</span> <span class='valore'>{$dati['anno_di_pubblicazione']}</span></div>";
+        $contenuto .= "<div class='game_detail'><span class='etichetta'>Descrizione:</span><br><span class='valore descrizione'>{$dati['descrizione']}</span></div>";
+        $contenuto .= "</div></section>";
 
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION['nickname'])) {
             if (!empty($_POST['testo']) && isset($_POST['gioco']) && isset($_POST['stelle'])) {
@@ -112,7 +117,7 @@ if(!$connessioneOK) {
             }
         
         } else {
-            $inLib .= "<p><em>Devi aver fatto il <a href='login.php'>Login</a> per gestire la tua libreria.</em></p>";
+            $inLib .= "<div class = 'login_required'><em>Devi aver fatto il <a href='login.php'><span lang='en'>Login</span></a> per gestire la tua libreria.</em></div>";
         }
     
     $paginaHTML->aggiungiContenuto("[libri]", $inLib);
@@ -129,7 +134,7 @@ if(!$connessioneOK) {
         }
         $recensioniHTML .= "</ul>";
     } else {
-        $recensioniHTML .= "<p>Ancora nessuna recensione.</p>";
+        $recensioniHTML .= "<div class='box_recensioni'><p>Ancora nessuna recensione.</div>";
     }
     $connessione->closeConnection();
 
@@ -146,7 +151,7 @@ if(!$connessioneOK) {
             </form>
         ";
     } else {
-        $recensioniHTML .= "<p><em>Devi aver fatto il <a href='login.php'>Login</a> per scrivere una recensione.</em></p>";
+        $recensioniHTML .= "<div class='login_required'><em>Devi aver fatto il <a href='login.php'><span lang='en'>Login</span></a> per scrivere una recensione.</em></div>";
     }
         
     $contenuto .= $recensioniHTML;
