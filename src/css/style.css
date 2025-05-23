@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
@@ -12,12 +12,17 @@
     --bandiera: #ff0000;
     --bgfooter: #aaaaaa;
     --linkvisitedFooter: #0606fb;
-    --login-bgcolor: #1b2838; /* Sfondo della pagina di login uguale all'header */
-    --login-box-bgcolor: #080c11; /* Colore di sfondo della scatola di login */
-    --login-border: #ccc; /* Colore del bordo della scatola di login */
-    --login-button-bg: #28a745; /* Colore di sfondo del pulsante di login */
+    --login-bgcolor: #1b2838;
+    /* Sfondo della pagina di login uguale all'header */
+    --login-box-bgcolor: #080c11;
+    /* Colore di sfondo della scatola di login */
+    --login-border: #ccc;
+    /* Colore del bordo della scatola di login */
+    --login-button-bg: #28a745;
+    /* Colore di sfondo del pulsante di login */
     --div_navbar_link: #273a4f;
-    --div_navbar_link_hover: #2d425a;;
+    --div_navbar_link_hover: #2d425a;
+    ;
 }
 
 html {
@@ -25,7 +30,7 @@ html {
     color: var(--textcolor);
 }
 
-body{
+body {
     color: var(--textcolor);
     font-size: 100%;
     font-family: "Lexend", "Roboto", sans-serif;
@@ -36,25 +41,29 @@ body{
     line-height: 1.5;
 }
 
-main{
+main {
     background-color: var(--bgcolor);
-    margin:auto;
+    margin: auto;
     margin-top: 12em;
     width: 100%;
-    min-height:max-content;
+    min-height: max-content;
     align-items: center;
     justify-content: center;
 
 }
 
 
-main, section, .container {
-  margin-top: 10em;          /* spesso qui c'è spazio inutile */
+main,
+section,
+.container {
+    margin-top: 10em;
+    /* spesso qui c'è spazio inutile */
 }
 
 h1 {
-    margin-top: 50px; /* Spazio sopra il titolo */
-     margin-bottom: 25px; 
+    margin-top: 50px;
+    /* Spazio sopra il titolo */
+    margin-bottom: 25px;
 }
 
 /*===== LINK =====*/
@@ -71,63 +80,62 @@ footer a:visited {
     color: var(--linkvisitedFooter);
 }
 
-header a{
+header a {
     color: white;
 }
 
-header a{
+header a {
     color: var(--bgcolor);
 }
 
-td.eventoPresente > a{
+td.eventoPresente>a {
     color: white;
 }
 
 /*===== HEADER =====*/
 
-header{
-/*    text-align: center;*/
+header {
+    /*    text-align: center;*/
     width: 100%;
     background-color: var(--headerbgcolor);
     position: fixed;
     z-index: 9999;
 }
 
-.nascondi{
+.nascondi {
     display: none;
 }
 
-.menuHamberger, .burger{
+.menuHamberger,
+.burger {
     display: none;
 }
 
-.navbar_link
-{
+.navbar_link {
     padding: 0.6em;
     border-radius: 0.5em;
     background-color: var(--div_navbar_link);
 }
 
-.navbar_link:hover
-{
+.navbar_link:hover {
     background-color: var(--div_navbar_link_hover);
     transition: background-color 0.2s ease;
 }
 
 .menu {
     text-align: center;
-    padding-top:1em;
+    padding-top: 1em;
     white-space: nowrap;
     margin: auto;
     vertical-align: middle;
     padding: 0;
 }
 
-.overlayNascondi{
+.overlayNascondi {
     display: none;
 }
 
-.logo>img{
+.logo>img {
     width: 3em;
 }
 
@@ -138,17 +146,17 @@ header{
     margin-top: 0.55em;
     margin-bottom: 0;
     position: relative;
-    top: 0.05em; 
+    top: 0.05em;
 }
 
-.logo h1{
-    font-size: 1em; 
-    margin: 0; 
-    margin-left: 0.7em; 
+.logo h1 {
+    font-size: 1em;
+    margin: 0;
+    margin-left: 0.7em;
 }
 
 
-.logoLink{
+.logoLink {
     text-decoration: none;
 }
 
@@ -164,20 +172,20 @@ header{
     justify-content: space-between;
     align-items: center;
     margin: 0;
-    list-style: none; 
+    list-style: none;
 
 }
 
 .menu ul:last-child {
-   padding-right: 2em;
+    padding-right: 2em;
 }
 
-ul .current-page{
+ul .current-page {
     color: white;
 }
 
 .breadcrump {
-    background-color: #2d3b47; 
+    background-color: #2d3b47;
     padding: 0.4em;
     color: white;
     font-size: 1.1em;
@@ -186,7 +194,7 @@ ul .current-page{
 }
 
 .search-box {
-    width: 20em; 
+    width: 20em;
 }
 
 .search-container {
@@ -215,12 +223,14 @@ ul .current-page{
 }
 
 .search-icon {
-    width: 2em; /* Dimensione dell'icona */
+    width: 2em;
+    /* Dimensione dell'icona */
     height: 2em;
 }
 
 .search-icon:hover {
-    content: url('../assets/search_red.png'); /* Sostituisce l'immagine con search_red.png al passaggio del mouse */
+    content: url('../assets/search_red.png');
+    /* Sostituisce l'immagine con search_red.png al passaggio del mouse */
 }
 
 /*=====MAIN=====*/
@@ -232,36 +242,36 @@ ul .current-page{
     text-align: right;
 }
 
-.erroreForm{
+.erroreForm {
     color: red;
     font-size: 1em;
 }
 
-.top-list{
+.top-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: space-evenly;
-    margin-bottom: 1em;  
+    margin-bottom: 1em;
     list-style: none;
     text-align: center;
     margin: 0.25em;
     transition: all 1s ease;
 }
 
-.listaindex img{
+.listaindex img {
     width: 16em;
     height: 20em;
     border-radius: 1em;
     margin-top: 0.5em;
 }
 
-.top-eventi{
+.top-eventi {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     /*align-content: space-evenly;*/
-    margin-bottom: 1em;  
+    margin-bottom: 1em;
     list-style: none;
     text-align: center;
     margin: 0.25em;
@@ -278,7 +288,7 @@ ul .current-page{
     background-color: white;
     margin: 1em auto;
 }
-  
+
 .miniCalendarioH {
     background-color: #e74c3c;
     color: white;
@@ -287,7 +297,7 @@ ul .current-page{
     font-weight: bold;
     text-decoration-color: white;
 }
-  
+
 .miniCalendarioB {
     background-color: #fefefe;
     color: #333;
@@ -296,12 +306,12 @@ ul .current-page{
     font-weight: bold;
 }
 
-.top-path{
+.top-path {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: space-evenly;
-    margin-bottom: 1em;  
+    margin-bottom: 1em;
     list-style: none;
     text-align: center;
     margin: 0.2em;
@@ -316,9 +326,9 @@ ul .current-page{
     text-align: center;
     margin: 1em auto;
     position: relative;
-    box-shadow: 
-        inset -0.2em 0 0.4em rgba(0,0,0,0.05),  
-        0.2em 0.2em 0.6em rgba(0, 0, 0, 0.2);   
+    box-shadow:
+        inset -0.2em 0 0.4em rgba(0, 0, 0, 0.05),
+        0.2em 0.2em 0.6em rgba(0, 0, 0, 0.2);
     border-radius: 0.3em;
     background-color: #DC143C;
     color: white;
@@ -339,63 +349,63 @@ ul .current-page{
 
 /*CATEGORIE*/
 
-ul.ulCategorie{
+ul.ulCategorie {
     text-align: center;
 }
 
-ul.ulCategorie>li{
+ul.ulCategorie>li {
     display: inline-block;
 }
 
-.categoria{
+.categoria {
     padding: 1em;
 }
 
-.formCategorie>div{
+.formCategorie>div {
     display: inline-block;
     vertical-align: middle;
     margin-right: 0.8em;
 }
 
-div.categoria>h2{
+div.categoria>h2 {
     text-align: left;
     font-size: 1.5em;
     text-transform: uppercase;
 }
 
-div.categoria>ul{
+div.categoria>ul {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     align-content: space-evenly;
-    margin-bottom: 1em;  
+    margin-bottom: 1em;
     list-style: none;
     margin: 0.25em;
     transition: all 1s ease;
 }
 
-div.categoria>ul>li{
+div.categoria>ul>li {
     background-color: var(--headerbgcolor);
     border-radius: 0.5em;
     transition: transform 0.3s ease;
     margin-left: 1em;
 }
 
-div.categoria>ul>li>a{
+div.categoria>ul>li>a {
     color: white;
     text-decoration: none;
 }
 
-.ImgGiocoCat{
+.ImgGiocoCat {
     width: 10em;
     height: 10em;
-    border-top-left-radius:0.5em ;
-    border-top-right-radius:0.5em ;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
 }
 
-div.categoria>ul>li:hover{
-  transform: scale(1.05);
-  opacity: 0.5;
+div.categoria>ul>li:hover {
+    transform: scale(1.05);
+    opacity: 0.5;
 }
 
 /*EVENTI*/
@@ -411,12 +421,11 @@ div.categoria>ul>li:hover{
 }
 
 
-.titolo_pagina_eventi
-{
+.titolo_pagina_eventi {
     margin-bottom: 0.5em;
 }
 
-.titolo_calendario{
+.titolo_calendario {
     font-size: 1.3em;
     margin-bottom: 0.3em;
 }
@@ -424,40 +433,49 @@ div.categoria>ul>li:hover{
 .selettore {
     background-color: rgb(203, 203, 203);
     font-weight: bold;
-    padding: 1.3em 0;          
+    padding: 1.3em 0;
     margin: 0.3em;
     border-radius: 10px;
     text-align: center;
     font-size: 1.5em;
-    width: 13em;     
+    width: 13em;
 }
 
-#mese, #anno {
+#mese,
+#anno {
     padding: 0.8em 0.8em;
     border: 1px solid #ccc;
     border-radius: 1.4em;
     background-color: #f9f9f9;
     font-size: 0.8em;
     color: #333;
-    appearance: none; /* Rimuove lo stile di default su alcuni browser */
-    -webkit-appearance: none; /* Safari */
-    -moz-appearance: none; /* Firefox */
+    appearance: none;
+    /* Rimuove lo stile di default su alcuni browser */
+    -webkit-appearance: none;
+    /* Safari */
+    -moz-appearance: none;
+    /* Firefox */
     background-image: url("../assets/freccia_espandi.png");
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 1em;
-    width: 100%; 
-    max-width: 9em; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra leggera */
+    width: 100%;
+    max-width: 9em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Aggiunge un'ombra leggera */
     min-width: max-content;
     margin-top: 0.4em;
 
 }
 
-#mese:hover, #anno:hover {
-    background-color: #e6e6e6; /* Colore di sfondo più scuro al passaggio del mouse */
-    border-color: #999; /* Cambia il colore del bordo */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Ombra più pronunciata */
+#mese:hover,
+#anno:hover {
+    background-color: #e6e6e6;
+    /* Colore di sfondo più scuro al passaggio del mouse */
+    border-color: #999;
+    /* Cambia il colore del bordo */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    /* Ombra più pronunciata */
     transition: all 0.3s ease;
 }
 
@@ -465,8 +483,10 @@ input[type="submit"][value="CERCA EVENTI"] {
     padding: 0.8em 1.1em;
     border: 1px solid #ccc;
     border-radius: 1.4em;
-    background-color: var(--headerbgcolor); /* Colore di sfondo */
-    color: #fff; /* Colore del testo */
+    background-color: var(--headerbgcolor);
+    /* Colore di sfondo */
+    color: #fff;
+    /* Colore del testo */
     font-size: 1.5em;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.2s ease;
@@ -474,30 +494,34 @@ input[type="submit"][value="CERCA EVENTI"] {
 }
 
 input[type="submit"][value="CERCA EVENTI"]:hover {
-    background-color: #080c11; /* Colore di sfondo al passaggio del mouse */
+    background-color: #080c11;
+    /* Colore di sfondo al passaggio del mouse */
 }
 
-.formCalendario > label
-{
+.formCalendario>label {
     font-size: 1.5em;
 }
-  
-.formCalendario
-{
+
+.formCalendario {
     display: flex;
-    flex-wrap: wrap;            /* permetto il wrapping dei flex-item */
+    flex-wrap: wrap;
+    /* permetto il wrapping dei flex-item */
     justify-content: center;
     align-items: center;
-    gap: 0.5em;                 /* spazio orizzontale/verticale tra i riquadri */
+    gap: 0.5em;
+    /* spazio orizzontale/verticale tra i riquadri */
 }
 
 .formCalendario fieldset {
     /* occupa tutta la larghezza del form, quindi va in riga nuova */
     flex-basis: 100%;
-    display: flex;            /* per poter centrare il button al suo interno */
+    display: flex;
+    /* per poter centrare il button al suo interno */
     justify-content: center;
-    margin-top: 1em;          /* spazio sopra il tasto */
-    border: none;             /* già c’era, ma lo ribadiamo */
+    margin-top: 1em;
+    /* spazio sopra il tasto */
+    border: none;
+    /* già c’era, ma lo ribadiamo */
     padding: 0;
 }
 
@@ -512,7 +536,7 @@ input[type="submit"][value="CERCA EVENTI"]:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     table-layout: fixed;
-    min-width: 40em; 
+    min-width: 40em;
     max-width: 70em;
     border-radius: 1em;
 }
@@ -541,7 +565,7 @@ input[type="submit"][value="CERCA EVENTI"]:hover {
     background-color: white;
     transition: background-color 0.2s;
     border-bottom: none;
-} 
+}
 
 .calendario-tabella td:hover {
     background-color: #f0f0f0;
@@ -560,19 +584,19 @@ input[type="submit"][value="CERCA EVENTI"]:hover {
 }
 
 
-td.giornoFuori{ 
+td.giornoFuori {
     color: grey;
     background-color: rgba(128, 128, 128, 0.327);
     pointer-events: none;
 }
 
-td.giornoFuori > p { 
+td.giornoFuori>p {
     color: grey;
     background-color: rgba(128, 128, 128, 0.327);
 }
 
-#sum{
-    position:absolute;
+#sum {
+    position: absolute;
     text-indent: -999em;
 }
 
@@ -582,21 +606,25 @@ td.giornoFuori > p {
     padding: 0.2em;
     font-size: 1em;
     color: white;
-    border-radius: 3px; 
+    border-radius: 3px;
     text-align: left;
     text-transform: uppercase;
-    text-overflow: ellipsis; /* Aggiunge i puntini di sospensione per il testo in eccesso */
-    white-space: normal;        /* permette il testo su più righe */
-    word-break: break-word;  
-    word-wrap: break-word; /* Permette di andare a capo */
-    hyphens: auto; /* Aggiunge il trattino "-" quando il testo va a capo */
+    text-overflow: ellipsis;
+    /* Aggiunge i puntini di sospensione per il testo in eccesso */
+    white-space: normal;
+    /* permette il testo su più righe */
+    word-break: break-word;
+    word-wrap: break-word;
+    /* Permette di andare a capo */
+    hyphens: auto;
+    /* Aggiunge il trattino "-" quando il testo va a capo */
 }
 
 .mese_selezionato th {
-    font-size: 1.5em;   
-    font-weight: bold; 
-    padding: 10px 0; 
-  }  
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 0;
+}
 
 .library-search-container {
     display: flex;
@@ -632,12 +660,15 @@ td.giornoFuori > p {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 1px;
-    max-width: 600px;  /* Larghezza uguale alla .profile-container */
+    max-width: 600px;
+    /* Larghezza uguale alla .profile-container */
     margin-left: auto;
-    margin-right: auto; /* Centra il testo sopra il box */
+    margin-right: auto;
+    /* Centra il testo sopra il box */
 }
 
-.eventoPresenteOggi, .eventoOggi {
+.eventoPresenteOggi,
+.eventoOggi {
     display: inline-block;
     width: 1.8em;
     height: 1.8em;
@@ -738,9 +769,9 @@ td.giornoFuori > p {
 
 /* Box principale */
 .form-box {
-    background-color: var(--login-bgcolor); 
+    background-color: var(--login-bgcolor);
     border-radius: 15px;
-    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
     max-width: 28em;
     min-width: 20em;
     padding: 2.5em;
@@ -750,9 +781,9 @@ td.giornoFuori > p {
 }
 
 .dev_tool-box {
-    background-color: var(--login-bgcolor); 
+    background-color: var(--login-bgcolor);
     border-radius: 15px;
-    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
     max-width: 40em;
     min-width: 10em;
     padding: 2.5em;
@@ -768,7 +799,7 @@ td.giornoFuori > p {
     font-weight: bold;
     color: white;
     margin-bottom: 1.25em;
-    margin-top: 0; 
+    margin-top: 0;
     text-align: center;
 }
 
@@ -809,10 +840,13 @@ fieldset {
     border: none;
     border-radius: 0.3em;
     font-size: 1em;
-    font-family: inherit; /* Assicura coerenza con il resto del sito */
-    resize: none; /* Impedisce il ridimensionamento manuale */
+    font-family: inherit;
+    /* Assicura coerenza con il resto del sito */
+    resize: none;
+    /* Impedisce il ridimensionamento manuale */
     box-sizing: border-box;
-    height: 8em; /* Altezza fissa maggiore rispetto a un input normale */
+    height: 8em;
+    /* Altezza fissa maggiore rispetto a un input normale */
 }
 
 
@@ -829,7 +863,8 @@ fieldset {
 .button-container {
     padding-top: 1em;
     width: 100%;
-    overflow: hidden; /* contiene i float */
+    overflow: hidden;
+    /* contiene i float */
     box-sizing: border-box;
 }
 
@@ -871,8 +906,7 @@ fieldset {
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.registra_linkB
-{
+.registra_linkB {
     color: #34b9db;
 }
 
@@ -906,14 +940,14 @@ fieldset {
 }
 
 /*PROFILO*/
-#profilo-heading
-{
+#profilo-heading {
     margin-top: 0;
     font-size: 2em;
 }
 
 .profilo-box {
-    max-width: 25em; /* 500px */
+    max-width: 25em;
+    /* 500px */
     min-width: 18em;
     margin: 2em auto;
     margin-top: 6em;
@@ -926,55 +960,64 @@ fieldset {
     color: #333;
     font-size: 1em;
     overflow: hidden;
-  }
+}
 
-  .profile-picture {
+.profile-picture {
     display: block;
-    width: 10em;               /* regola la dimensione a piacere */
-    height: 10em;              /* uguale alla width per un cerchio */
-    margin: 0 auto 1.8em;     /* centro orizzontalmente e do un po’ di spazio sotto */
-    border-radius: 50%;       /* rende l’immagine circolare */
-    object-fit: cover;        /* ritaglia l’immagine senza deformarla */
-    border: 0.125em solid var(--headerbgcolor); /* (opzionale) piccolo bordo per contrasto */
-  }
-  
-  
-  .profilo-box h1 {
+    width: 10em;
+    /* regola la dimensione a piacere */
+    height: 10em;
+    /* uguale alla width per un cerchio */
+    margin: 0 auto 1.8em;
+    /* centro orizzontalmente e do un po’ di spazio sotto */
+    border-radius: 50%;
+    /* rende l’immagine circolare */
+    object-fit: cover;
+    /* ritaglia l’immagine senza deformarla */
+    border: 0.125em solid var(--headerbgcolor);
+    /* (opzionale) piccolo bordo per contrasto */
+}
+
+
+.profilo-box h1 {
     font-size: 1.5em;
     margin-bottom: 1em;
     color: #1a1a1a;
-  }
-  
-  .profilo-box p{
+}
+
+.profilo-box p {
     font-size: 1.1em;
     margin: 0.5em 0;
-  }
-  
-.profile_info
-{
+}
+
+.profile_info {
     margin-left: 1.3em;
 }
 
-  .valore {
+.valore {
     font-weight: bold;
     color: #2a2a2a;
-  }
-  
+}
 
-  
-  /* contenitore dei bottoni: larghezza ridotta e centrata */
+
+
+/* contenitore dei bottoni: larghezza ridotta e centrata */
 .profilo-links {
     margin-top: 1.5em;
-    width: 90%;           /* occupa il 60% di .profilo-box */
-    margin-left: auto;    /* centro orizzontalmente */
+    width: 90%;
+    /* occupa il 60% di .profilo-box */
+    margin-left: auto;
+    /* centro orizzontalmente */
     margin-right: auto;
-    overflow: hidden;     /* contiene i float */
-  }
-  
-  /* stile comune (già fornito) */
-  .profile_button {
+    overflow: hidden;
+    /* contiene i float */
+}
+
+/* stile comune (già fornito) */
+.profile_button {
     float: left;
-    width: 48%;           /* due bottoni da 48% = 96% + gap */
+    width: 48%;
+    /* due bottoni da 48% = 96% + gap */
     background-color: var(--headerbgcolor);
     padding: 0.85em;
     color: white;
@@ -984,26 +1027,26 @@ fieldset {
     font-size: 1em;
     box-sizing: border-box;
     text-align: center;
-  }
-  
+}
+
 .profile_button[value="Salva"] {
     margin-top: 1em;
 }
 
-  /* piccolo spazio tra i due */
-  .profile_button:first-of-type {
+/* piccolo spazio tra i due */
+.profile_button:first-of-type {
     margin-right: 4%;
-  }
-  
-  .profile_button:hover {
+}
+
+.profile_button:hover {
     background-color: var(--div_navbar_link);
     transition: background-color 0.2s ease, transform 0.2s ease;
-  }
-  
-  .profile_picture_button
-  {
-    width: 100%;   
-    margin-top: 0.7em;        /* due bottoni da 48% = 96% + gap */
+}
+
+.profile_picture_button {
+    width: 100%;
+    margin-top: 0.7em;
+    /* due bottoni da 48% = 96% + gap */
     background-color: var(--headerbgcolor);
     padding: 0.85em;
     color: white;
@@ -1013,19 +1056,18 @@ fieldset {
     font-size: 1em;
     box-sizing: border-box;
     text-align: center;
-  }
-  .profile_picture_button:hover
-  {
+}
+
+.profile_picture_button:hover {
     background-color: var(--div_navbar_link);
     transition: background-color 0.2s ease, transform 0.2s ease;
-  }
+}
 
-  .profile_summary
-  {
+.profile_summary {
     cursor: pointer;
     margin-top: 4em;
-  }
-  
+}
+
 
 /*FAQ*/
 
@@ -1035,11 +1077,15 @@ fieldset {
 }
 
 .faq-item {
-    background: #fff; /* Sfondo bianco */
-    border-radius: 10px; /* Angoli arrotondati */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra per effetto "staccato" */
+    background: #fff;
+    /* Sfondo bianco */
+    border-radius: 10px;
+    /* Angoli arrotondati */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Ombra per effetto "staccato" */
     padding: 15px;
-    margin-bottom: 10px; /* Spazio tra le domande */
+    margin-bottom: 10px;
+    /* Spazio tra le domande */
 }
 
 .faq-question {
@@ -1054,28 +1100,31 @@ fieldset {
     display: none;
     margin-top: 5px;
     padding: 10px;
-    border-top: 1px solid #ddd; /* Separatore sottile */
+    border-top: 1px solid #ddd;
+    /* Separatore sottile */
 }
 
 .faq-input {
-    display: none; /* Nasconde il checkbox */
+    display: none;
+    /* Nasconde il checkbox */
 }
 
-.faq-input:checked + .faq-answer {
-    display: block; /* Mostra la risposta quando il checkbox è selezionato */
+.faq-input:checked+.faq-answer {
+    display: block;
+    /* Mostra la risposta quando il checkbox è selezionato */
 }
 
 .faq-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; 
+    align-items: flex-start;
     gap: 2em;
 }
 
 .faq-sidebar {
     margin-top: 80px;
     margin-right: 70px;
-    width: 25%; 
+    width: 25%;
     background-color: #f8f9fa;
     padding: 15px;
     border-radius: 10px;
@@ -1083,7 +1132,7 @@ fieldset {
 }
 
 .faq-content {
-    width: 70%; 
+    width: 70%;
 }
 
 aside {
@@ -1096,10 +1145,12 @@ aside {
     margin-top: 85px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-.videogame_info{
+
+.videogame_info {
     width: 50%;
     float: left;
 }
+
 .review_form {
     display: flex;
     flex-direction: column;
@@ -1111,7 +1162,9 @@ aside {
     font-weight: bold;
 }
 
-.review_form input, .review_form textarea, .review_form select {
+.review_form input,
+.review_form textarea,
+.review_form select {
     padding: 10px;
     font-size: 1em;
     border: 1px solid #ddd;
@@ -1151,20 +1204,20 @@ aside {
     cursor: pointer;
 }
 
-.stars input[type="radio"]:checked ~ label {
+.stars input[type="radio"]:checked~label {
     color: var(--linkcolor);
 }
 
-.stars input[type="radio"]:hover ~ label {
+.stars input[type="radio"]:hover~label {
     color: var(--linkcolor);
 }
 
-.stars input[type="radio"]:checked + label {
+.stars input[type="radio"]:checked+label {
     color: var(--linkcolor);
 }
 
 .stars label:hover {
-    color: var(--linkcolor); 
+    color: var(--linkcolor);
 }
 
 
@@ -1173,16 +1226,23 @@ aside {
 
 
 section p {
-    text-align: center;  /* Centra il testo */
-    max-width: 1100px;  /* Ridotto la larghezza massima per una minore distanza laterale */
-    margin: 0 auto;  /* Centra il paragrafo orizzontalmente */
-    font-size: 18px;  /* Imposta una dimensione del testo uniforme */
-    line-height: 1.6;  /* Spazio tra le righe per leggibilità */
+    text-align: center;
+    /* Centra il testo */
+    max-width: 1100px;
+    /* Ridotto la larghezza massima per una minore distanza laterale */
+    margin: 0 auto;
+    /* Centra il paragrafo orizzontalmente */
+    font-size: 18px;
+    /* Imposta una dimensione del testo uniforme */
+    line-height: 1.6;
+    /* Spazio tra le righe per leggibilità */
 }
 
-h1, h2 {
+h1,
+h2 {
     text-align: center;
-    margin-bottom: 30px; /* spazio tra il titolo e i riquadri */
+    margin-bottom: 30px;
+    /* spazio tra il titolo e i riquadri */
     font-size: 2.5em;
 }
 
@@ -1210,18 +1270,22 @@ h1, h2 {
 .colonna2 ul,
 .colonna3 ul,
 .colonna4 ul {
-    list-style-type: none;  /* Rimuove i punti dall'elenco */
-    padding-left: 0;  /* Rimuove l'indentazione */
+    list-style-type: none;
+    /* Rimuove i punti dall'elenco */
+    padding-left: 0;
+    /* Rimuove l'indentazione */
     display: flex;
     flex-direction: column;
-    margin-left: 30px; /* Distanza tra l'immagine e il testo */
+    margin-left: 30px;
+    /* Distanza tra l'immagine e il testo */
 }
 
 .colonna1 li,
 .colonna2 li,
 .colonna3 li,
 .colonna4 li {
-    margin-bottom: 20px; /* Spazio tra le voci */
+    margin-bottom: 20px;
+    /* Spazio tra le voci */
     font-size: 18px;
     line-height: 1.5;
 }
@@ -1236,20 +1300,27 @@ h1, h2 {
 
 
 ul {
-    list-style-type: none; /* Rimuove i punti dall'elenco */
-    padding-left: 0; /* Rimuove l'indentazione */
+    list-style-type: none;
+    /* Rimuove i punti dall'elenco */
+    padding-left: 0;
+    /* Rimuove l'indentazione */
 }
 
 .galleria {
     display: flex;
-    justify-content: center; /* Centra orizzontalmente */
-    align-items: center;     /* Centra verticalmente */
-    margin-bottom: 20px;     /* Spazio tra immagine e lista */
+    justify-content: center;
+    /* Centra orizzontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    margin-bottom: 20px;
+    /* Spazio tra immagine e lista */
 }
+
 .galleria img {
-    max-width: 200px;         /* Adatta l'immagine alla dimensione del contenitore */
+    max-width: 200px;
+    /* Adatta l'immagine alla dimensione del contenitore */
     height: auto;
-    object-fit: contain; 
+    object-fit: contain;
 }
 
 
@@ -1257,12 +1328,17 @@ ul {
 
 
 .support_details {
-    background-color: #f9f9f9;  /* colore chiaro di sfondo */
-    border: 1px solid #ddd;     /* bordo sottile grigio chiaro */
-    border-radius: 10px;         /* angoli arrotondati */
+    background-color: #f9f9f9;
+    /* colore chiaro di sfondo */
+    border: 1px solid #ddd;
+    /* bordo sottile grigio chiaro */
+    border-radius: 10px;
+    /* angoli arrotondati */
     padding: 20px;
-    margin-bottom: 18px;        /* spazio tra una FAQ e l’altra */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* leggerissima ombra */
+    margin-bottom: 18px;
+    /* spazio tra una FAQ e l’altra */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* leggerissima ombra */
     transition: all 0.3s ease;
     padding-left: 30px;
     padding-right: 20px;
@@ -1271,16 +1347,18 @@ ul {
 }
 
 .support_summary {
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1.2em;
-    margin-bottom: 10px;   /* Spazio tra la domanda e la risposta */
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    /* Spazio tra la domanda e la risposta */
     margin-top: 10px;
 }
 
 .contatti {
     display: flex;
-    justify-content: space-between; /* Spinge i riquadri agli estremi */
+    justify-content: space-between;
+    /* Spinge i riquadri agli estremi */
     margin: 40px auto;
     max-width: 1000px;
     padding: 0 20px;
@@ -1288,7 +1366,8 @@ ul {
 }
 
 .blocco-contatto {
-    width: 300px; /* Fisso per evitare che si allarghino */
+    width: 300px;
+    /* Fisso per evitare che si allarghino */
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 20px;
@@ -1299,14 +1378,19 @@ ul {
 .paragrafo {
     text-align: center;
 }
+
 .paragrafo1 {
     text-align: center;
     margin: 0 auto;
-    display: flex;           /* Usa Flexbox per allineare orizzontalmente */
-    align-items: center;     /* Allinea verticalmente l'immagine e il testo */
-     justify-content: center;
-    gap: 15px;               /* Aggiungi spazio tra l'icona e il numero */
-    font-size: 1.3em;          /* Imposta la dimensione del testo */
+    display: flex;
+    /* Usa Flexbox per allineare orizzontalmente */
+    align-items: center;
+    /* Allinea verticalmente l'immagine e il testo */
+    justify-content: center;
+    gap: 15px;
+    /* Aggiungi spazio tra l'icona e il numero */
+    font-size: 1.3em;
+    /* Imposta la dimensione del testo */
 }
 
 .paragrafo1 img {
@@ -1315,33 +1399,37 @@ ul {
 }
 
 .paragrafo1 span {
-    text-decoration: underline; /* Sottolinea il numero di telefono */
-    cursor: pointer; 
+    text-decoration: underline;
+    /* Sottolinea il numero di telefono */
+    cursor: pointer;
 }
 
-section:first-of-type > p {
+section:first-of-type>p {
     text-align: justify;
-    line-height: 2em; /* Aumenta l'interlinea */
-    margin-bottom: 1.2em; /* Aggiunge più spazio tra frasi */
+    line-height: 2em;
+    /* Aumenta l'interlinea */
+    margin-bottom: 1.2em;
+    /* Aggiunge più spazio tra frasi */
 }
 
 
 /*=====REGISTRATI=====*/
 
 fieldset {
-  position: relative;
-  margin-bottom: 2em;
+    position: relative;
+    margin-bottom: 2em;
 }
 
 fieldset label {
-  display: block;
-  padding-right: 6em; /* lascia spazio a destra per il suggerimento */
+    display: block;
+    padding-right: 6em;
+    /* lascia spazio a destra per il suggerimento */
 }
 
 fieldset .suggForm {
-  position: absolute;
-  right: 0;
-  font-size: 0.85em;
+    position: absolute;
+    right: 0;
+    font-size: 0.85em;
     top: 0.1em;
 }
 
@@ -1350,17 +1438,20 @@ fieldset .suggForm {
 .admin-options-list {
     max-width: 37.5em;
     margin: 2.5em auto;
-    padding: 0 0.93em; 
-    list-style: none; /* Rimuove i pallini */
+    padding: 0 0.93em;
+    list-style: none;
+    /* Rimuove i pallini */
 }
 
 /* Singole voci */
 .admin-options-list li {
-    margin: 0.9375em 0;    
-    padding: 0; /* rimosso padding per spostarlo sul link */
+    margin: 0.9375em 0;
+    padding: 0;
+    /* rimosso padding per spostarlo sul link */
     background-color: #ffffff;
-    border-left: 0.3125em solid var(--headerbgcolor); 
-    border-radius: 0.5em;     /* 8px */
+    border-left: 0.3125em solid var(--headerbgcolor);
+    border-radius: 0.5em;
+    /* 8px */
     box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, transform 0.2s;
     overflow: hidden;
@@ -1372,11 +1463,13 @@ fieldset .suggForm {
     width: 100%;
     height: 100%;
     padding: 1em 1.25em;
-    text-decoration: underline; /* Aggiunge la sottolineatura */
+    text-decoration: underline;
+    /* Aggiunge la sottolineatura */
     font-size: 1.1em;
     font-weight: 600;
     color: var(--headerbgcolor);
-    border-radius: 0.5em; /* per mantenere l'effetto tondo anche al link */
+    border-radius: 0.5em;
+    /* per mantenere l'effetto tondo anche al link */
     transition: color 0.2s;
 }
 
@@ -1395,13 +1488,14 @@ fieldset .suggForm {
 /* Link già visitati */
 .admin-options-list li a:visited {
     color: var(--linkvisited);
-    text-decoration: underline; /* Mantiene la sottolineatura */
+    text-decoration: underline;
+    /* Mantiene la sottolineatura */
 }
 
 
 /*=====EVENTO SINGOLO=====*/
 #evento-singolo {
-    max-width: 50em; 
+    max-width: 50em;
     min-width: 20em;
     margin: 2em auto;
     margin-top: 6em;
@@ -1409,9 +1503,9 @@ fieldset .suggForm {
     padding: 2em;
     background-color: #f9f9f9;
     border-radius: 0.75em;
-    box-shadow: 0 0 0.625em rgba(0,0,0,0.1);
+    box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
-    font-size: 1em; 
+    font-size: 1em;
 }
 
 .titolo-evento {
@@ -1467,17 +1561,21 @@ fieldset .suggForm {
 .contenuto_gioco {
     margin-top: 3.7em;
     display: flex;
-    justify-content: start;   /* allinea a sinistra */
-    gap: 2em;                 /* spazio tra i box */
+    justify-content: start;
+    /* allinea a sinistra */
+    gap: 2em;
+    /* spazio tra i box */
     max-width: 80em;
     margin-left: auto;
     margin-right: auto;
     padding: 0 2em;
 }
+
 .scheda-gioco {
     display: flex;
     flex-direction: row;
-    align-items: center; /* <<< AGGIUNGI QUESTA RIGA */
+    align-items: center;
+    /* <<< AGGIUNGI QUESTA RIGA */
     max-width: 60em;
     margin: 1em auto;
     background-color: var(--headerbgcolor);
@@ -1486,45 +1584,46 @@ fieldset .suggForm {
     overflow: hidden;
     box-shadow: 0 0.5em 1.25em rgba(0, 0, 0, 0.3);
     font-size: 1em;
-  }
-  
-  
-  .img-wrapper {
+}
+
+
+.img-wrapper {
     flex: 0 0 auto;
-    width: 16em;  /* larghezza fissa */
-    height: 24em; /* mantiene rapporto 2:3 */
+    width: 16em;
+    /* larghezza fissa */
+    height: 24em;
+    /* mantiene rapporto 2:3 */
     overflow: hidden;
     background-color: var(--headerbgcolor);
     margin: 1em;
     border-radius: 0.5em;
-  }
-  
-  .img-gioco {
+}
+
+.img-gioco {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
     border-radius: 0.5em;
-  }
-  
-  .dati-gioco {
+}
+
+.dati-gioco {
     flex: 1 1 auto;
     padding: 2em 1.5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-  
-  .titolo-gioco {
+}
+
+.titolo-gioco {
     font-size: 2.5em;
     margin-top: 0;
     margin-bottom: 0.5em;
     color: var(--linkvisited);
     text-shadow: 0.05em 0.05em 0.1em #000;
-  }
-  
-.game_detail
-{
+}
+
+.game_detail {
     margin: 0.25em;
     background-color: red;
     border-radius: 0.25em;
@@ -1532,16 +1631,16 @@ fieldset .suggForm {
     background-color: var(--div_navbar_link);
 }
 
-  .etichetta {
+.etichetta {
     font-weight: bold;
     color: var(--linkvisited);
-  }
-  
-  .valore {
+}
+
+.valore {
     color: white;
-  }
-  
-  .login_required {
+}
+
+.login_required {
     background-color: white;
     color: var(--div_navbar_link);
     border-left: 0.4em solid orange;
@@ -1553,23 +1652,25 @@ fieldset .suggForm {
     font-size: 1.1em;
     font-style: italic;
     text-align: center;
-    margin: 0; /* <-- qui */
-    align-self: center; /* centra verticalmente rispetto alla scheda gioco */
+    margin: 0;
+    /* <-- qui */
+    align-self: center;
+    /* centra verticalmente rispetto alla scheda gioco */
 }
-  
-  .login_required a {
+
+.login_required a {
     color: orange;
     text-decoration: underline;
     font-weight: bold;
-  }
-  
-  .login_required a:hover {
+}
+
+.login_required a:hover {
     color: #ffb84d;
     text-decoration: none;
-  }
-  
+}
 
-  .box_recensioni {
+
+.box_recensioni {
     margin: 2em auto;
     max-width: 60em;
     padding: 1.5em;
@@ -1585,8 +1686,7 @@ fieldset .suggForm {
 
 
 /*=====ARTICOLO SINGOLO=====*/
-.intestazione_articolo
-{
+.intestazione_articolo {
     margin-top: 4em;
 }
 
@@ -1601,7 +1701,5 @@ footer {
     color: var(--textcolor);
     padding: 2em 0;
     text-align: center;
-    margin-top: 0; 
+    margin-top: 0;
 }
-
-
