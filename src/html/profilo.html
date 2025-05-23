@@ -8,15 +8,16 @@
     <div class="profilo-links">
       <a href="modifica_profilo.php" class="profile_button">Modifica <span lang="en">Password</span></a>
       <a href="profilo.php?logout=true" class="profile_button">Logout</a>
-
       <form method="post" name="modifica_immagine_profilo">
       <details>
-      <summary style="cursor: pointer;">Cambia Immagine Profilo</summary>
-      <ul>
-        [selettore]
-        <li><fieldset><input type="submit" name="salva_immagine_profilo" value="Salva"></fieldset></li>
-        <li><fieldset><input type="reset" value="Annulla"></fieldset></li>
-        </ul>
+      <summary class="profile_summary">Cambia Immagine Profilo</summary>
+        <div class="button-container">
+          [selettore]
+          <fieldset>
+            <input type="submit" class="submit_button" name="salva_immagine_profilo" value="Salva">
+            <input type="reset" class="cancella" value="Annulla">
+          </fieldset>
+        </div>
       </details>
     </form>
     </div>
