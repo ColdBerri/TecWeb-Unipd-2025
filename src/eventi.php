@@ -11,20 +11,21 @@ $year = date('Y');
 $db = new DBAccess();
 $eventDays = [];
 
-$anno = 2025;
+$timestamp = $_SERVER[ 'REQUEST_TIME' ];
+
+$anno = "2025";
+
+$oggiG = date('d',$timestamp);
+$oggiM = date('m',$timestamp);
+
 $calendarioHTML = "";
 
 if(isset($_POST['submit'])){
     $mese = ($_POST['mese']);
     $anno = ($_POST['anno']);;
+} else {
+    $mese = $oggiM;
 }
-
-$timestamp = $_SERVER[ 'REQUEST_TIME' ];
-
-$oggiG = date('d',$timestamp);
-$oggiM = date('m',$timestamp);
-
-$mese = $oggiM;
 
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
