@@ -16,22 +16,23 @@ $paginaHTML = new Template ("Aticolo {$artName}", "articolo {$artName}, videogio
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
-if(!$connessioneOK){
+if(!$connessioneOK){ 
     $articolo = $connessione->getArticolo($artName);
+    $dataP = $articolo['data_pubblicazione'];
+    $autore = $articolo['autore'];
+    $testo = $articolo['testo_articolo'];
+    $gioco = $articolo['nome_videogioco'];
     $connessione->closeConnection();
 
     if($articolo){
-        $cont = "<ul class= 'intestazione_articolo'>";
-        $cont .= "<li><h1><strong>Titolo : </strong>" .htmlspecialchars($articolo['titolo_articolo']) ."<h1></li>";
-        $cont .= "<li>" .htmlspecialchars($articolo['data_pubblicazione']) ."</li>";
-        $cont .= "<li><strong>Autore : </strong>" .htmlspecialchars($articolo['autore']). "</li>"; 
-        $cont .= "<li><strong> Videogioco : </strong>" .htmlspecialchars($articolo['nome_videogioco']). "</li>";
-        $cont .= "</ul>";
-        $cont .= "<p class='contenuto_articolo'>" .htmlspecialchars($articolo['testo_articolo']). "</p>";
+        $paginaHTML->aggiungiContenuto("{{nomeArt}}", $artName);
+        $paginaHTML->aggiungiContenuto("{{autore}}", $autore);
+        $paginaHTML->aggiungiContenuto("{{data}}", $dataP);
+        $paginaHTML->aggiungiContenuto("{{gioco}}", $gioco);
+        $paginaHTML->aggiungiContenuto("{{testo}}", $testo);
     }else{
         $cont = "<p>Articolo non trovato!!</p>";
     }
-    $paginaHTML->aggiungiContenuto("[articolo]", $cont);
     $paginaHTML->getPagina();
 }
 ?>

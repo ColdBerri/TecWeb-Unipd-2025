@@ -1,7 +1,21 @@
 <div class="contenuto_gioco">
-    [contenuto_gioco] 
-</div>
+    <section class='scheda-gioco' aria-labelledby='titolo-gioco'>
+        <div class='img-wrapper'>
+            <img src="assets/img/{{img}}" alt="Copertina di {{nome}}" class='img-gioco'>
+        </div>
+        <div class='dati-gioco'>
+            <h1 id='titolo-gioco' class='titolo-gioco'>{{nome}}</h1>
+            <div class='game_detail'><span class='etichetta'>Casa Produttrice:</span> <span class='valore'>{{casa}}</span></div>
+            <div class='game_detail'><span class='etichetta'>Console Compatibili:</span> <span class='valore'>{{console}}</span></div>
+            <div class='game_detail'><span class='etichetta'>Anno di Pubblicazione:</span> <span class='valore'>{{anno}}</span></div>
+            <div class='game_detail'><span class='etichetta'>Descrizione:</span><br><span class='valore descrizione'>{{desc}}</span></div>
+        </div>
+    </section>
+</div> 
 
+<div class="recensioni">
+    [contenuto_gioco]
+</div>
 
 <div class="eventi_relativi">
     <h2>Eventi Correlati</h2>

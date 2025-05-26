@@ -19,26 +19,25 @@ $paginaHTML = new Template(
 );
 
 if(!$connessioneOK) {
-    
     $dati = $connessione->getVideogioco($nomeGioco);
     $evento = $connessione->getEventiGioco($nomeGioco);
     $articolo = $connessione->getArticoliGioco($nomeGioco);
+    $img = $dati['immagine'];
+    $casa = $dati['casa_produttrice'];
+    $console = $dati['console_compatibili'];
+    $anno = $dati['anno_di_pubblicazione'];
+    $desc = $dati['descrizione'];
     $recensioniHTML = "";
 
     $recensioni = $connessione->getRecensioni($nomeGioco);
 
     if($dati){
-        $contenuto = "<section class='scheda-gioco' aria-labelledby='titolo-gioco'>";
-        $contenuto .= "<div class='img-wrapper'>";
-        $contenuto .= "<img src='assets/img/{$dati['immagine']}' alt='Copertina di {$dati['nome_gioco']}' class='img-gioco'>";
-        $contenuto .= "</div>";
-        $contenuto .= "<div class='dati-gioco'>";
-        $contenuto .= "<h1 id='titolo-gioco' class='titolo-gioco'>{$dati['nome_gioco']}</h1>";
-        $contenuto .= "<div class='game_detail'><span class='etichetta'>Casa Produttrice:</span> <span class='valore'>{$dati['casa_produttrice']}</span></div>";
-        $contenuto .= "<div class='game_detail'><span class='etichetta'>Console Compatibili:</span> <span class='valore'>{$dati['console_compatibili']}</span></div>";
-        $contenuto .= "<div class='game_detail'><span class='etichetta'>Anno di Pubblicazione:</span> <span class='valore'>{$dati['anno_di_pubblicazione']}</span></div>";
-        $contenuto .= "<div class='game_detail'><span class='etichetta'>Descrizione:</span><br><span class='valore descrizione'>{$dati['descrizione']}</span></div>";
-        $contenuto .= "</div></section>";
+        $paginaHTML->aggiungiContenuto("{{nome}}", $nomeGioco);
+        $paginaHTML->aggiungiContenuto("{{img}}", $img);
+        $paginaHTML->aggiungiContenuto("{{casa}}", $casa);
+        $paginaHTML->aggiungiContenuto("{{console}}", $console);
+        $paginaHTML->aggiungiContenuto("{{anno}}", $anno);
+        $paginaHTML->aggiungiContenuto("{{desc}}", $desc);
 
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION['nickname'])) {
             if (!empty($_POST['testo']) && isset($_POST['gioco']) && isset($_POST['stelle'])) {
@@ -123,7 +122,7 @@ if(!$connessioneOK) {
     $paginaHTML->aggiungiContenuto("[libri]", $inLib);
     
     
-    //recensioni :(
+    //RECENSIONI
     if ($recensioni) {
         $recensioniHTML .= "<h1>Recensioni</h1><ul class='recensioni'>";
         foreach ($recensioni as $rec) {
@@ -153,8 +152,8 @@ if(!$connessioneOK) {
     } else {
         $recensioniHTML .= "<div class='login_required'><em>Devi aver fatto il <a href='login.php'><span lang='en'>Login</span></a> per scrivere una recensione.</em></div>";
     }
-        
-    $contenuto .= $recensioniHTML;
+
+    $contenuto = $recensioniHTML;
     $paginaHTML->aggiungiContenuto("[contenuto_gioco]", $contenuto);
 
 // EVENTI
@@ -210,7 +209,6 @@ if(!$connessioneOK) {
         $connessione->closeConnection();
         $listaArticoli = "Niente :'(";
     }   
-    $paginaHTML->aggiungiContenuto("[contenuto_gioco]", "");
     $paginaHTML->aggiungiContenuto("[libri]", "");
     $paginaHTML->aggiungiContenuto("[eventi]", "");
     $paginaHTML->aggiungiContenuto("[articoli]", $listaArticoli);

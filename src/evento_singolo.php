@@ -10,30 +10,43 @@ if(!isset($_GET['nome_evento'])) {
 $evName = urldecode($_GET['nome_evento']);
 
 $paginaHTML = new Template("Evento : {$evName}", "evento {$evName}, videogioco, visualizza, competizione", "html/evento_singolo.html");
-$connessione = new DBAccess();
+$connessione = new DBAccess(); 
 $connessioneOK = $connessione->openDBConnection();
 
 if(!$connessioneOK){
     $evento = $connessione->getEvento($evName);
+    $nome = $evento['nome_evento'];
+    $gioco = $evento['nome_videogioco'];
+    $data_inizio = $evento['data_inizio_evento'];
+    $data_fine = $evento['data_fine_evento'];
+    $squadre = $evento['squadre_coinvolte'];
+    $vincitore = $evento['vincitore_evento'];
     $connessione->closeConnection();
 
     if ($evento) {
-        $cont = "<section id='evento-singolo'>";
-        $cont .= "<h1 class='titolo-evento'>" . htmlspecialchars($evento['nome_evento']) . "</h1>";
-        $cont .= "<ul class='dettagli-evento'>";
-        $cont .= "<li class='dettaglio'><span class='etichetta'>Videogioco:</span> <span class='valore'>" . htmlspecialchars($evento['nome_videogioco']) . "</span></li>";
-        $cont .= "<li class='dettaglio'><span class='etichetta'>Data inizio:</span> <span class='valore'>" . htmlspecialchars($evento['data_inizio_evento']) . "</span></li>";
-        $cont .= "<li class='dettaglio'><span class='etichetta'>Data fine:</span> <span class='valore'>" . ($evento['data_fine_evento'] ? htmlspecialchars($evento['data_fine_evento']) : "Non disponibile") . "</span></li>";
-        $cont .= "<li class='dettaglio'><span class='etichetta'>Squadre coinvolte:</span> <span class='valore'>" . ($evento['squadre_coinvolte'] ? htmlspecialchars($evento['squadre_coinvolte']) : "Non disponibili") . "</span></li>";
-        $cont .= "<li class='dettaglio'><span class='etichetta'>Vincitore:</span> <span class='valore'>" . ($evento['vincitore_evento'] ? htmlspecialchars($evento['vincitore_evento']) : "Non disponibile") . "</span></li>";
-        $cont .= "</ul>";
-        $cont .= "</section>";
-    } else {
-        $cont = "<p class='errore-evento'>Evento non trovato.</p>";
+        $paginaHTML->aggiungiContenuto("{{nome}}", $nome);
+        $paginaHTML->aggiungiContenuto("{{gioco}}", $gioco);
+        $paginaHTML->aggiungiContenuto("{{dataI}}", $data_inizio); 
+        if($data_fine !== null){
+            $paginaHTML->aggiungiContenuto("{{dataF}}", $data_fine); 
+        }else{
+            $data_fine = "Data fine evento non disponibile";
+            $paginaHTML->aggiungiContenuto("{{dataF}}", $data_fine); 
+        }
+        if($squadre !== null){
+            $paginaHTML->aggiungiContenuto("{{teams}}", $squadre); 
+        }else{
+            $squadre = "Sqaudre partecipanti all'evento non disponibili";
+            $paginaHTML->aggiungiContenuto("{{teams}}", $squadre); 
+        }
+        if($vincitore !== null){
+            $paginaHTML->aggiungiContenuto("{{vincitore}}", $vincitore); 
+        }else{
+            $vincitore = "Evento non finito, vinicitore non disponibile";
+            $paginaHTML->aggiungiContenuto("{{vincitore}}", $vincitore); 
+        }
     }
-    
 
-    $paginaHTML->aggiungiContenuto("[evento]", $cont);
     $paginaHTML->getPagina();
 }
 
