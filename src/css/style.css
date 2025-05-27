@@ -993,13 +993,6 @@ fieldset {
     margin-left: 1.3em;
 }
 
-.valore {
-    font-weight: bold;
-    color: #2a2a2a;
-}
-
-
-
 /* contenitore dei bottoni: larghezza ridotta e centrata */
 .profilo-links {
     margin-top: 1.5em;
@@ -1516,14 +1509,18 @@ fieldset .suggForm {
 }
 
 .dettagli-evento {
+    width: 55%;
+    min-width: 28em;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
 }
+
 
 .dettaglio {
     display: flex;
     flex-wrap: wrap;
+    color: black;
     margin-bottom: 1em;
     padding: 1em;
     border-left: 0.25em solid var(--linkvisited);
@@ -1542,6 +1539,7 @@ fieldset .suggForm {
 .valore {
     flex: 1;
     color: black;
+    font-weight: bold;
 }
 
 .errore-evento {
@@ -1564,7 +1562,6 @@ fieldset .suggForm {
     /* allinea a sinistra */
     gap: 2em;
     /* spazio tra i box */
-    max-width: 80em;
     margin-left: auto;
     margin-right: auto;
     padding: 0 2em;
@@ -1574,8 +1571,6 @@ fieldset .suggForm {
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* <<< AGGIUNGI QUESTA RIGA */
-    max-width: 60em;
     margin: 1em auto;
     background-color: var(--headerbgcolor);
     color: #ffffff;
@@ -1635,28 +1630,42 @@ fieldset .suggForm {
     color: var(--linkvisited);
 }
 
-.valore {
+.valore_gioco, .valore_descrizione
+{
     color: white;
 }
 
-.login_required {
-    background-color: white;
-    color: var(--div_navbar_link);
-    border-left: 0.4em solid orange;
-    padding: 1em 1.5em;
-    width: 30%;
-    min-width: 10em;
-    border-radius: 0.5em;
-    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.2);
-    font-size: 1.1em;
-    font-style: italic;
-    text-align: center;
-    margin: 0;
-    /* <-- qui */
-    align-self: center;
-    /* centra verticalmente rispetto alla scheda gioco */
+.recensioni {
+    text-align: center; /* opzionale: centra i blocchi inline */
+    white-space: normal;
 }
 
+.box_recensioni,
+.login_required {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%; /* o 48%, per lasciare un po’ di margine */
+    margin: 1em 1%; /* margini orizzontali per distanziarli */
+    padding: 1.5em;
+    background-color: white;
+    border-left: 0.4em solid;
+    border-radius: 0.5em;
+    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+/* Personalizza i colori dei bordi */
+.box_recensioni {
+    border-left-color: var(--headerbgcolor);
+}
+
+.login_required {
+    border-left-color: var(--linkvisited);
+}
+
+/* Link styles (come già li avevi) */
 .login_required a {
     color: orange;
     text-decoration: underline;
@@ -1667,22 +1676,6 @@ fieldset .suggForm {
     color: #ffb84d;
     text-decoration: none;
 }
-
-
-.box_recensioni {
-    margin: 2em auto;
-    max-width: 60em;
-    padding: 1.5em;
-    background-color: white;
-    border-left: 0.4em solid gray;
-    border-radius: 0.5em;
-    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
-    color: #333;
-    font-size: 1.1em;
-    text-align: center;
-}
-
-
 
 /*=====ARTICOLO SINGOLO=====*/
 .intestazione_articolo {

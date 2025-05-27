@@ -123,20 +123,6 @@ if(!$connessioneOK) {
     
     
     //RECENSIONI
-    if ($recensioni) {
-        $recensioniHTML .= "<h1>Recensioni</h1><ul class='recensioni'>";
-        foreach ($recensioni as $rec) {
-            $utente = htmlspecialchars($rec['nickname']);
-            $testo = htmlspecialchars($rec['contenuto_recensione']);
-            $stelle = htmlspecialchars($rec['numero_stelle']);
-            $recensioniHTML .= "<li><strong>$utente</strong> ($stelle ★):<br>$testo</li>";
-        }
-        $recensioniHTML .= "</ul>";
-    } else {
-        $recensioniHTML .= "<div class='box_recensioni'><p>Ancora nessuna recensione.</div>";
-    }
-    $connessione->closeConnection();
-
 
     if (isset($_SESSION['nickname'])) {
         $recensioniHTML .= "
@@ -152,6 +138,20 @@ if(!$connessioneOK) {
     } else {
         $recensioniHTML .= "<div class='login_required'><em>Devi aver fatto il <a href='login.php'><span lang='en'>Login</span></a> per scrivere una recensione.</em></div>";
     }
+
+    if ($recensioni) {
+        $recensioniHTML .= "<h1>Recensioni</h1><ul class='recensioni'>";
+        foreach ($recensioni as $rec) {
+            $utente = htmlspecialchars($rec['nickname']);
+            $testo = htmlspecialchars($rec['contenuto_recensione']);
+            $stelle = htmlspecialchars($rec['numero_stelle']);
+            $recensioniHTML .= "<li><strong>$utente</strong> ($stelle ★):<br>$testo</li>";
+        }
+        $recensioniHTML .= "</ul>";
+    } else {
+        $recensioniHTML .= "<div class='box_recensioni'><p>Ancora nessuna recensione.</div>";
+    }
+    $connessione->closeConnection();
 
     $contenuto = $recensioniHTML;
     $paginaHTML->aggiungiContenuto("[contenuto_gioco]", $contenuto);
