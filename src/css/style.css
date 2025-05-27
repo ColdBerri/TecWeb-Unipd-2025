@@ -1554,39 +1554,38 @@ fieldset .suggForm {
     margin: 2em auto;
 }
 
-/*=====GIOCO  SINGOLO=====*/
 .contenuto_gioco {
     margin-top: 3.7em;
-    display: flex;
-    justify-content: start;
-    /* allinea a sinistra */
-    gap: 2em;
-    /* spazio tra i box */
+    padding: 0 2em;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 2em;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 2em;
 }
 
+
+
+/* Scheda gioco a sinistra */
 .scheda-gioco {
+    flex: 1 1 60%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 1em auto;
     background-color: var(--headerbgcolor);
     color: #ffffff;
     border-radius: 0.75em;
     overflow: hidden;
     box-shadow: 0 0.5em 1.25em rgba(0, 0, 0, 0.3);
     font-size: 1em;
+    margin-left: 3em;
 }
-
 
 .img-wrapper {
     flex: 0 0 auto;
     width: 16em;
-    /* larghezza fissa */
     height: 24em;
-    /* mantiene rapporto 2:3 */
     overflow: hidden;
     background-color: var(--headerbgcolor);
     margin: 1em;
@@ -1619,10 +1618,9 @@ fieldset .suggForm {
 
 .game_detail {
     margin: 0.25em;
-    background-color: red;
+    background-color: var(--div_navbar_link);
     border-radius: 0.25em;
     padding: 1em;
-    background-color: var(--div_navbar_link);
 }
 
 .etichetta {
@@ -1630,22 +1628,31 @@ fieldset .suggForm {
     color: var(--linkvisited);
 }
 
-.valore_gioco, .valore_descrizione
-{
+.valore_gioco,
+.valore_descrizione {
     color: white;
 }
 
-.recensioni {
-    text-align: center; /* opzionale: centra i blocchi inline */
-    white-space: normal;
+/* Recensioni a destra */
+.recensioni-wrapper {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 0;
+    margin-right: 3em;
 }
 
+.recensioni {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* Box recensione */
 .box_recensioni,
-.login_required {
-    display: inline-block;
-    vertical-align: top;
-    width: 45%; /* o 48%, per lasciare un po’ di margine */
-    margin: 1em 1%; /* margini orizzontali per distanziarli */
+.login_required,
+.recensione-form {
     padding: 1.5em;
     background-color: white;
     border-left: 0.4em solid;
@@ -1656,7 +1663,6 @@ fieldset .suggForm {
     text-align: center;
 }
 
-/* Personalizza i colori dei bordi */
 .box_recensioni {
     border-left-color: var(--headerbgcolor);
 }
@@ -1665,7 +1671,6 @@ fieldset .suggForm {
     border-left-color: var(--linkvisited);
 }
 
-/* Link styles (come già li avevi) */
 .login_required a {
     color: orange;
     text-decoration: underline;
@@ -1675,6 +1680,88 @@ fieldset .suggForm {
 .login_required a:hover {
     color: #ffb84d;
     text-decoration: none;
+}
+
+.recensione-form {
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+.intestazione_recensione {
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+}
+
+.recensione-label {
+    font-weight: 600;
+    color: #333;
+    display: block;
+    font-size: 1em;
+    margin-bottom: 0.375em;
+}
+
+.recensione-textarea,
+.recensione-number {
+    width: 100%;
+    padding: 0.625em;
+    margin-bottom: 1em;
+    border: 0.0625em solid #ccc;
+    border-radius: 0.5em;
+    font-size: 0.9375em;
+    box-sizing: border-box;
+}
+
+.recensione-textarea {
+    resize: none;
+    min-height: 9em;
+    font-family: inherit;
+    font-size: 1.1em;
+}
+
+.recensione-submit {
+    background-color: var(--headerbgcolor);
+    color: var(--linkvisited);
+    font-weight: bold;
+    border: none;
+    padding: 0.75em;
+    width: 100%;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.recensione-submit:hover {
+    background-color: var(--div_navbar_link);
+}
+
+.recensione-rating {
+    display: flex;
+    gap: 0.625em;
+    justify-content: center;
+    margin-bottom: 1.6em;
+    direction: rtl;
+}
+
+.recensione-rating input[type="radio"] {
+    display: none;
+}
+
+.recensione-rating label {
+    width: 1.25em;
+    height: 1.25em;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.recensione-rating input[type="radio"]:checked~label,
+.recensione-rating input[type="radio"]:checked+label {
+    background-color: #4CAF50;
+}
+
+.recensione-rating label:hover {
+    background-color: #81c784;
 }
 
 /*=====ARTICOLO SINGOLO=====*/
