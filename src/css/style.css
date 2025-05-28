@@ -1668,7 +1668,6 @@ fieldset .suggForm {
     padding: 0 3em;
 }
 
-
 .login_required,
 .recensione-form {
     flex: 1; /* oppure flex: 0.8 per rapporti specifici */
@@ -1687,9 +1686,7 @@ fieldset .suggForm {
     padding: 1.5em;
 }
 
-
-.box_recensioni
-{
+.box_recensioni {
     padding: 1.5em;
     background-color: white;
     border-left: 0.4em solid;
@@ -1703,16 +1700,12 @@ fieldset .suggForm {
     margin-bottom: 1em;
 }
 
-.box_recensioni {
-    border-left-color: var(--headerbgcolor);
-}
-
 .login_required {
     border-left-color: var(--linkvisited);
     display: flex;
     flex-direction: column;
     justify-content: center; /* centra verticalmente */
-    height: 200px; /* o un'altezza adatta al tuo layout */
+    height: 12.5em; /* o un'altezza adatta al tuo layout */
     position: relative;
 }
 
@@ -1721,7 +1714,6 @@ fieldset .suggForm {
     text-decoration: underline;
     font-weight: bold;
 }
-
 
 .recensione-form {
     margin-top: 0;
@@ -1806,6 +1798,60 @@ fieldset .suggForm {
     background-color: var(--headerbgcolor);
 }
 
+.h1_recensioni {
+    margin: 0;
+}
+
+/* Contenitore delle recensioni con layout a griglia flessibile */
+ul.tutte_recensioni {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* ✅ Permette l'andare a capo */
+    gap: 1.25em;
+    padding: 1.25em;
+    padding-top: 0;
+    margin: 0 auto;
+    list-style: none;
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+    scrollbar-width: thin; /* puoi anche rimuoverlo se non serve più */
+}
+
+/* Singola recensione */
+li.single_review {
+    flex: 0 1 calc(33.33% - 1.25em); /* 3 per riga con gap */
+    background-color: white;
+    border: 0.0625em solid #ddd;
+    padding: 0.9375em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.05);
+    border-left: 0.3em solid;
+    border-left-color: var(--headerbgcolor);
+    box-sizing: border-box;
+    min-width: 15.625em;
+    max-width: 100%;
+    height: auto;              
+    overflow-wrap: break-word; 
+    word-break: break-word;    
+}
+/* Nome utente e voto */
+li.single_review strong {
+    display: block;
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 0.3125em;
+}
+
+/* Testo recensione */
+p.testo_recensione {
+    margin: 0;
+    font-size: 1em;
+    color: black;
+}
+
+
+
+  
 
 /*=====ARTICOLO SINGOLO=====*/
 .intestazione_articolo {

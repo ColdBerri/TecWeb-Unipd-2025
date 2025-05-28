@@ -160,12 +160,12 @@ if (isset($_SESSION['nickname'])) {
 
 // RECENSIONI PASSATE
 if ($recensioni) {
-    $recensioniHTML .= "<h1>Recensioni</h1><ul class='recensioni'>";
+    $recensioniHTML .= "<h1 class='h1_recensioni'>Recensioni</h1><ul class='tutte_recensioni'>";
     foreach ($recensioni as $rec) {
         $utente = htmlspecialchars($rec['nickname']);
         $testo = htmlspecialchars($rec['contenuto_recensione']);
         $stelle = htmlspecialchars($rec['numero_stelle']);
-        $recensioniHTML .= "<li><strong>$utente</strong> ($stelle ★):<br>$testo</li>";
+        $recensioniHTML .= "<li class='single_review'><strong>$utente</strong> ($stelle ★):<br><p class='testo_recensione'>$testo</p></li>";
     }
     $recensioniHTML .= "</ul>";
 } else {
