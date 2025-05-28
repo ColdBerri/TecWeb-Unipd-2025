@@ -1572,17 +1572,18 @@ fieldset .suggForm {
     display: flex;
     flex-direction: row;
     gap: 2em;
-    align-items: stretch;
+    align-items: stretch; /* fondamentale */
     margin: 0 auto;
-    padding-left: 3em;
+    padding-left: 0;
 }
+
 
 /* Scheda gioco a sinistra */
 .scheda-gioco {
     flex: 1.2;
-    min-width: 60%;
+    min-width: 65%;
     max-width: 40%;
-    height: 100%;
+    height: auto; /* da cambiare */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1593,6 +1594,7 @@ fieldset .suggForm {
     box-shadow: 0 0.5em 1.25em rgba(0, 0, 0, 0.3);
     font-size: 1em;
 }
+
 
 .img-wrapper {
     flex: 0 0 auto;
@@ -1669,21 +1671,22 @@ fieldset .suggForm {
 
 .login_required,
 .recensione-form {
-    padding: 1.5em;
-    background-color: white;
+    flex: 1; /* oppure flex: 0.8 per rapporti specifici */
+    height: auto; /* importante */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;;
+    justify-content: space-between;
+    background-color: white;
     border-left: 0.4em solid;
+    border-left-color: var(--headerbgcolor);
     border-radius: 0.5em;
     box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
     color: #333;
     font-size: 1.1em;
     text-align: center;
-    min-width: 25%;
-    height: 100%;
-
+    padding: 1.5em;
 }
+
 
 .box_recensioni
 {
@@ -1695,7 +1698,7 @@ fieldset .suggForm {
     color: #333;
     font-size: 1.1em;
     text-align: center;
-    min-width: 60%;
+    min-width: 70%;
     margin: 0 auto;
     margin-bottom: 1em;
 }
@@ -1706,6 +1709,11 @@ fieldset .suggForm {
 
 .login_required {
     border-left-color: var(--linkvisited);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra verticalmente */
+    height: 200px; /* o un'altezza adatta al tuo layout */
+    position: relative;
 }
 
 .login_required a {
@@ -1713,6 +1721,7 @@ fieldset .suggForm {
     text-decoration: underline;
     font-weight: bold;
 }
+
 
 .recensione-form {
     margin-top: 0;

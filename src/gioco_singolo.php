@@ -116,7 +116,7 @@ if(!$connessioneOK) {
             }
         
         } else {
-            $inLib .= "<div class = 'login_required'><em>Devi aver fatto il <a href='login.php'><span lang='en'>Login</span></a> per gestire la tua libreria.</em></div>";
+            $inLib .= "<div class = 'login_required'><h2>Scrivi una recensione</h2><em>Devi aver fatto il <a href='login.php'><span lang='en'>Login</span></a> per gestire la tua libreria.</em></div>";
         }
     
     $paginaHTML->aggiungiContenuto("[libri]", $inLib);
@@ -152,7 +152,8 @@ if (isset($_SESSION['nickname'])) {
 } else {
     $formRecensioneHTML .= "
         <div class='login_required'>
-            <em>Devi aver fatto il <a href='login.php'><span lang='en'>Login</span></a> per scrivere una recensione.</em>
+            <h2 class='intestazione_recensione'>Scrivi una recensione</h2>
+            <p class='login_required_message'>Devi aver fatto il <a href='login.php'><span lang='en'>Login</span></a> per scrivere una recensione.</p>
         </div>
     ";
 }
