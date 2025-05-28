@@ -1,38 +1,41 @@
 <div class="contenuto_gioco">
-    <!-- Scheda gioco -->
-    <section class="scheda-gioco" aria-labelledby="titolo-gioco">
-        <div class="img-wrapper">
-            <img src="assets/img/{{img}}" alt="Copertina di {{nome}}" class="img-gioco">
-        </div>
-        <div class="dati-gioco">
-            <h1 id="titolo-gioco" class="titolo-gioco">{{nome}}</h1>
-            <div class="game_detail">
-                <span class="etichetta">Casa Produttrice:</span>
-                <span class="valore_gioco">{{casa}}</span>
+    <!-- Container superiore: scheda + nuova recensione -->
+    <div class="top-container">
+        
+        <!-- Scheda gioco -->
+        <section class="scheda-gioco" aria-labelledby="titolo-gioco">
+            <div class="img-wrapper">
+                <img src="assets/img/{{img}}" alt="Copertina di {{nome}}" class="img-gioco">
             </div>
-            <div class="game_detail">
-                <span class="etichetta">Console Compatibili:</span>
-                <span class="valore_gioco">{{console}}</span>
+            <div class="dati-gioco">
+                <h1 id="titolo-gioco" class="titolo-gioco">{{nome}}</h1>
+                <div class="game_detail">
+                    <span class="etichetta">Casa Produttrice:</span>
+                    <span class="valore_gioco">{{casa}}</span>
+                </div>
+                <div class="game_detail">
+                    <span class="etichetta">Console Compatibili:</span>
+                    <span class="valore_gioco">{{console}}</span>
+                </div>
+                <div class="game_detail">
+                    <span class="etichetta">Anno di Pubblicazione:</span>
+                    <span class="valore_gioco">{{anno}}</span>
+                </div>
+                <div class="game_detail">
+                    <span class="etichetta">Descrizione:</span><br>
+                    <span class="valore_descrizione">{{desc}}</span>
+                </div>
             </div>
-            <div class="game_detail">
-                <span class="etichetta">Anno di Pubblicazione:</span>
-                <span class="valore_gioco">{{anno}}</span>
-            </div>
-            <div class="game_detail">
-                <span class="etichetta">Descrizione:</span><br>
-                <span class="valore_descrizione">{{desc}}</span>
-            </div>
-        </div>
-    </section>
+        </section>
+        [contenuto_gioco]
+    </div>
 
-    <!-- Recensioni -->
-    <aside class="recensioni-wrapper">
-        <div class="recensioni">
-            [contenuto_gioco]
-        </div>
-    </aside>
-
+    <!-- Lista recensioni passate -->
+    <div class="recensioni">
+        [recensioni_passate]
+    </div>
 </div>
+
 
 <div class="eventi_relativi">
     <h2>Eventi Correlati</h2>

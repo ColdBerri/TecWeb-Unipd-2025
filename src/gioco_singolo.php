@@ -121,39 +121,44 @@ if(!$connessioneOK) {
     
     $paginaHTML->aggiungiContenuto("[libri]", $inLib);
     
-    
-    //RECENSIONI
+// RECENSIONI
 
-    if (isset($_SESSION['nickname'])) {
-        $recensioniHTML .= "
-            <form method='post' class='recensione-form'>
-                <h3 class='intestazione_recensione'>Scrivi una recensione</h3>
-                <label class='recensione-label'>Valutazione (1–5):</label>
-                <div class='recensione-rating'>
-        ";
-    
-        // Genera i 5 radio button per valori da 5 a 1
-        for ($i = 5; $i > 0; $i--) {
-            $recensioniHTML .= "
-                <input type='radio' id='val{$i}' name='stelle' value='{$i}' required>
-                <label for='val{$i}' title='{$i}'></label>
-            ";
-        }
-    
-        $recensioniHTML .= "
-                </div>
-                <textarea name='testo' required class='recensione-textarea' placeholder='Scrivi la tua recensione...'></textarea><br>
-                <input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>
-                <input type='submit' name='invio' value='invia' class='recensione-submit'><br>
-            </form>
+$formRecensioneHTML = "";   // Form per nuove recensioni o messaggio di login
+$recensioniHTML = "";       // Recensioni già lasciate
+
+// FORM RECENSIONE O MESSAGGIO DI LOGIN
+if (isset($_SESSION['nickname'])) {
+    $formRecensioneHTML .= "
+        <form method='post' class='recensione-form'>
+            <h3 class='intestazione_recensione'>Scrivi una recensione</h3>
+            <label class='recensione-label'>Valutazione (1–5):</label>
+            <div class='recensione-rating'>
+    ";
+
+    for ($i = 5; $i > 0; $i--) {
+        $formRecensioneHTML .= "
+            <input type='radio' id='val{$i}' name='stelle' value='{$i}' required>
+            <label for='val{$i}' title='{$i}'></label>
         ";
     }
-    
-     else {
-        $recensioniHTML .= "<div class='login_required'><em>Devi aver fatto il <a href='login.php'><span lang='en'>Login</span></a> per scrivere una recensione.</em></div>";
-    }
 
-   if ($recensioni) {
+    $formRecensioneHTML .= "
+            </div>
+            <textarea name='testo' required class='recensione-textarea' placeholder='Scrivi la tua recensione...'></textarea><br>
+            <input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>
+            <input type='submit' name='invio' value='invia' class='recensione-submit'><br>
+        </form>
+    ";
+} else {
+    $formRecensioneHTML .= "
+        <div class='login_required'>
+            <em>Devi aver fatto il <a href='login.php'><span lang='en'>Login</span></a> per scrivere una recensione.</em>
+        </div>
+    ";
+}
+
+// RECENSIONI PASSATE
+if ($recensioni) {
     $recensioniHTML .= "<h1>Recensioni</h1><ul class='recensioni'>";
     foreach ($recensioni as $rec) {
         $utente = htmlspecialchars($rec['nickname']);
@@ -168,9 +173,11 @@ if(!$connessioneOK) {
 
 $connessione->closeConnection();
 
+// Inserimento nei segnaposto del template
+$paginaHTML->aggiungiContenuto("[contenuto_gioco]", $formRecensioneHTML);      
+$paginaHTML->aggiungiContenuto("[recensioni_passate]", $recensioniHTML);   
 
-    $contenuto = $recensioniHTML;
-    $paginaHTML->aggiungiContenuto("[contenuto_gioco]", $contenuto);
+
 
 // EVENTI
     $listaEventi = "";

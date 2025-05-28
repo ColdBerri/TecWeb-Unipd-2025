@@ -1554,22 +1554,35 @@ fieldset .suggForm {
     margin: 2em auto;
 }
 
+
+/* GIOCO SINGOLO */
+
 .contenuto_gioco {
     margin-top: 3.7em;
     padding: 0 2em;
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    flex-wrap: nowrap;
-    align-items: flex-start;
+    flex-direction: column;
     gap: 2em;
 }
 
-
+/* Contenitore orizzontale: scheda a sinistra, nuova recensione a destra */
+.top-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    align-items: stretch;
+    margin: 0 auto;
+    padding-left: 3em;
+}
 
 /* Scheda gioco a sinistra */
 .scheda-gioco {
-    flex: 1 1 60%;
+    flex: 1.2;
+    min-width: 60%;
+    max-width: 40%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1579,7 +1592,6 @@ fieldset .suggForm {
     overflow: hidden;
     box-shadow: 0 0.5em 1.25em rgba(0, 0, 0, 0.3);
     font-size: 1em;
-    margin-left: 3em;
 }
 
 .img-wrapper {
@@ -1633,26 +1645,48 @@ fieldset .suggForm {
     color: white;
 }
 
-/* Recensioni a destra */
-.recensioni-wrapper {
-    flex: 1 1 30%;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    margin-top: 0;
-    margin-right: 3em;
+/* Nuova recensione a destra */
+
+.nuova_recensione {
+    padding: 1.5em;
+    background-color: white;
+    border-left: 0.4em solid var(--headerbgcolor);
+    border-radius: 0.5em;
+    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 1.1em;
+    text-align: center;
 }
 
+/* Lista recensioni passate sotto */
 .recensioni {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    padding: 0 3em;
 }
 
-/* Box recensione */
-.box_recensioni,
+
 .login_required,
 .recensione-form {
+    padding: 1.5em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;;
+    border-left: 0.4em solid;
+    border-radius: 0.5em;
+    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 1.1em;
+    text-align: center;
+    min-width: 25%;
+    height: 100%;
+
+}
+
+.box_recensioni
+{
     padding: 1.5em;
     background-color: white;
     border-left: 0.4em solid;
@@ -1661,6 +1695,9 @@ fieldset .suggForm {
     color: #333;
     font-size: 1.1em;
     text-align: center;
+    min-width: 60%;
+    margin: 0 auto;
+    margin-bottom: 1em;
 }
 
 .box_recensioni {
@@ -1677,13 +1714,9 @@ fieldset .suggForm {
     font-weight: bold;
 }
 
-.login_required a:hover {
-    color: #ffb84d;
-    text-decoration: none;
-}
-
 .recensione-form {
-    margin-top: 1em;
+    margin-top: 0;
+    min-width: 20%;
     padding-top: 1em;
 }
 
@@ -1757,12 +1790,13 @@ fieldset .suggForm {
 
 .recensione-rating input[type="radio"]:checked~label,
 .recensione-rating input[type="radio"]:checked+label {
-    background-color: #4CAF50;
+    background-color: var(--headerbgcolor);
 }
 
 .recensione-rating label:hover {
-    background-color: #81c784;
+    background-color: var(--headerbgcolor);
 }
+
 
 /*=====ARTICOLO SINGOLO=====*/
 .intestazione_articolo {
