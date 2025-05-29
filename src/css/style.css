@@ -258,13 +258,35 @@ ul .current-page {
     transition: all 1s ease;
 }
 
+.listaindex {
+    position: relative;
+    color: white;
+    padding-bottom: 1em; /* Spazio per il titolo sotto l'immagine */
+    border-radius: 0.7em;
+    background-color: var(--headerbgcolor); /* Sfondo blu solo dietro al titolo */
+    display: inline-block;
+}
+
 .listaindex img {
+    display: block;
     width: 14em;
     height: auto;
     aspect-ratio: 2 / 3;
-    border-radius: 1em;
-    margin-top: 0.5em;
+    border-top-left-radius: 0.7em;
+    border-top-right-radius: 0.7em;
     object-fit: cover;
+    margin: 0; /* Rimuove lo spazio sopra l'immagine */
+}
+
+.titolo_gioco
+{
+    margin-top: 0.7em;
+    margin-bottom: -0.3em;
+    text-decoration: underline;
+    color: inherit;
+    a:visited & {
+        color: var(--linkvisited);
+    }
 }
 
 .top-eventi {
@@ -932,7 +954,7 @@ fieldset {
 }
 
 .registra_linkB {
-    color: #34b9db;
+    color: white;
 }
 
 .custom-file-upload {
