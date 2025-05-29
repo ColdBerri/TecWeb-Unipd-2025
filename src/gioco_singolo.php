@@ -183,7 +183,7 @@ $paginaHTML->aggiungiContenuto("[recensioni_passate]", $recensioniHTML);
 // EVENTI
     $listaEventi = "";
     if (!empty($evento) && is_array($evento)) {
-        $listaEventi .= "<ul class='eventi_gioco'>";
+        $listaEventi .= "<div class='contenitore_eventi'><ul class='eventi_gioco'>";
         foreach ($evento as $e) {
             $dataCompleta = date('d F Y', strtotime($e['data_inizio_evento'])); 
             $nomeEvent = urlencode($e['nome_evento']);
@@ -192,14 +192,14 @@ $paginaHTML->aggiungiContenuto("[recensioni_passate]", $recensioniHTML);
             $listaEventi .= "<div class='miniCalendarioB'>" . htmlspecialchars($e['nome_evento']) . "</div>";
             $listaEventi .= "</div></a></li>";
         }
+        $listaEventi .= "</ul></div>";
         if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
-            $listaEventi .= "<p><em>Vuoi aggiungere un evento relativo a questo videogioco? Schiaccia <a href = 'aggiungi_evento.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
+            $listaEventi .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un evento relativo a questo videogioco?</p><a href = 'aggiungi_evento.php?gioco={$nomeGioco}' class='bottone_aggiungi_evento'> Aggiungi evento</a></div>";
         }
-        $listaEventi .= "</ul>";
     } else {
         if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
             $listaEventi .= "<p><em>Nessun articolo disponibile per questo gioco.</em>";
-            $listaEventi .= "<em>Vuoi aggiungere un evento relativo a questo videogioco? Schiaccia <a href = 'aggiungi_evento.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
+            $listaEventi .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un evento relativo a questo videogioco?</p><a href = 'aggiungi_evento.php?gioco={$nomeGioco}' class='bottone_aggiungi_evento'> Aggiungi evento</a></div>";
         }else{
             $listaEventi = "<p><em>Nessun articolo disponibile per questo gioco.</em></p>";
         }    
@@ -209,22 +209,22 @@ $paginaHTML->aggiungiContenuto("[recensioni_passate]", $recensioniHTML);
 // ARTICOLI
     $listaArticoli = "";
     if (!empty($articolo) && is_array($articolo)) {
-        $listaArticoli .= "<ul class='articoli_gioco'>";
+        $listaArticoli .= "<div class='contenitore_articoli'><ul class='articoli_gioco'>";
         foreach ($articolo as $a) {
             $nomeArti = urlencode($a['titolo_articolo']);
-            $listaArticoli .= "<li><a href='articolo_singolo.php?titolo_articolo={$nomeArti}'><div class='miniGiornale'>";
+            $listaArticoli .= "<li><a class='link_articolo' href='articolo_singolo.php?titolo_articolo={$nomeArti}'><div class='miniGiornale'>";
             $listaArticoli .= "<div class='titoloNotiziaIndex'>" . htmlspecialchars($a['nome_videogioco']) . "</div>";
             $listaArticoli .= "<div class='contenutoNotiziaIndex'>" . htmlspecialchars($a['titolo_articolo']) . "</div>";
             $listaArticoli .= "</div></a></li>";
         }
+        $listaArticoli .= "</ul></div>";
         if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
-            $listaArticoli .= "<p><em>Vuoi aggiungere un articolo relativo a questo videogioco? Schiaccia <a href = 'aggiungi_articolo.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
+            $listaArticoli .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un articolo relativo a questo videogioco?</p><a href = 'aggiungi_articolo.php?gioco={$nomeGioco}' class='bottone_aggiungi_evento'> Aggiungi articolo</a></div>";
         }
-        $listaArticoli .= "</ul>";
     } else {
         if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
             $listaArticoli .= "<p><em>Nessun articolo disponibile per questo gioco.</em>";
-            $listaArticoli .= "<em>Vuoi aggiungere un articolo relativo a questo videogioco? Schiaccia <a href = 'aggiungi_articolo.php?gioco={$nomeGioco}'> QUI</a>.</em></p>";
+            $listaArticoli .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un articolo relativo a questo videogioco?</p><a href = 'aggiungi_articolo.php?gioco={$nomeGioco}' class='bottone_aggiungi_evento'> Aggiungi articolo</a></div>";
         }else{
             $listaArticoli = "<p>Nessun articolo disponibile per questo gioco.</p>";
         }

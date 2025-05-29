@@ -294,15 +294,18 @@ ul .current-page {
     padding: 0.6em 0.3em;
     font-size: 0.9em;
     font-weight: bold;
-    text-decoration-color: white;
 }
 
 .miniCalendarioB {
-    background-color: #fefefe;
     color: #333;
     padding: 1.2em 0.5em;
     font-size: 1em;
     font-weight: bold;
+    display: flex;
+    align-items: center;   /* centra verticalmente */
+    justify-content: center; /* centra orizzontalmente */
+    height: 4em; /* imposta un'altezza fissa per il corretto allineamento verticale */
+    text-align: center;
 }
 
 .top-path {
@@ -329,10 +332,29 @@ ul .current-page {
         inset -0.2em 0 0.4em rgba(0, 0, 0, 0.05),
         0.2em 0.2em 0.6em rgba(0, 0, 0, 0.2);
     border-radius: 0.3em;
-    background-color: #DC143C;
-    color: white;
+    background-color: var(--headerbgcolor);
     border: 1px #000000 solid;
+    font-size: 1.2em;
+    text-decoration: underline;
 }
+
+.link_articolo {
+    text-decoration: none;
+    color: white; /* colore del testo non visitato */
+    display: block;
+  }
+  
+  .link_articolo:visited {
+    color: orange; /* colore del testo visitato */
+  }
+  
+  /* Assicurati che i testi interni ereditino il colore */
+  .link_articolo .titoloNotiziaIndex,
+  .link_articolo .contenutoNotiziaIndex {
+    color: inherit;
+  }
+  
+
 
 .titoloNotiziaIndex {
     text-transform: uppercase;
@@ -1847,6 +1869,103 @@ p.testo_recensione {
     margin: 0;
     font-size: 1em;
     color: black;
+}
+
+.h2_eventi
+{
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+.contenitore_eventi {
+    overflow-x: auto;
+    padding: 1em;
+}
+
+.eventi_gioco {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    justify-content: center; /* centra se tutto ci sta */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: max-content; /* forza il contenuto a non andare a capo */
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* per iOS */
+}
+
+.eventi_gioco li {
+    flex: 0 0 auto;
+}
+
+.box_nuovo_evento {
+    background-color: white;
+    font-size: 1.2em;
+    border: 0.125em solid var(--headerbgcolor);
+    border-radius: 0.8em;
+    padding: 1.5em;
+    margin: 2em auto;
+    width: 75%;
+    max-width: 30.5em;
+    min-width: 0;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height: 1.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    box-sizing: border-box;
+}
+
+
+.msg_nuovo_evento {
+    font-size: 1.1em;
+    color: #2c3e50;
+    margin: 0;
+    margin-bottom: 0.3em;
+}
+
+.bottone_aggiungi_evento {
+    display: inline-block;
+    font-size: 1.1em;
+    margin-left: 0.5em;
+    padding: 0.4em 0.9em;
+    background-color: var(--headerbgcolor);
+    color: white;
+    border-radius: 0.5em;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: underline;
+}
+
+.bottone_aggiungi_evento:visited {
+    color: var(--linkvisited);
+}
+
+.bottone_aggiungi_evento:hover {
+   background-color: var(--div_navbar_link_hover);
+}
+
+.contenitore_articoli {
+    overflow-x: auto; /* abilita lo scroll orizzontale */
+    padding: 1em;
+}
+
+.articoli_gioco {
+    display: flex;
+    flex-wrap: nowrap; /* NON vanno a capo */
+    gap: 1em;
+    justify-content: center; /* centra se ci stanno */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: max-content; /* forza la larghezza minima a contenere tutti gli elementi */
+}
+
+.articoli_gioco li {
+    flex: 0 0 auto; /* mantieni larghezza fissa degli articoli */
 }
 
 
