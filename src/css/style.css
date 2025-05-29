@@ -259,10 +259,12 @@ ul .current-page {
 }
 
 .listaindex img {
-    width: 16em;
-    height: 20em;
+    width: 14em;
+    height: auto;
+    aspect-ratio: 2 / 3;
     border-radius: 1em;
     margin-top: 0.5em;
+    object-fit: cover;
 }
 
 .top-eventi {
@@ -418,10 +420,12 @@ div.categoria>ul>li>a {
 }
 
 .ImgGiocoCat {
-    width: 10em;
-    height: 10em;
+    width: 8em;
+    height: auto;
+    aspect-ratio: 2 / 3;
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
+    object-fit: cover;
 }
 
 div.categoria>ul>li:hover {
@@ -1280,6 +1284,11 @@ h2 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.colonna3,
+.colonna4{
+    margin-bottom: 3em;
+}
+
 .colonna1 ul,
 .colonna2 ul,
 .colonna3 ul,
@@ -1454,16 +1463,13 @@ fieldset .suggForm {
     margin: 2.5em auto;
     padding: 0 0.93em;
     list-style: none;
-    /* Rimuove i pallini */
 }
 
-/* Singole voci */
 .admin-options-list li {
     margin: 0.9375em 0;
     padding: 0;
-    /* rimosso padding per spostarlo sul link */
-    background-color: #ffffff;
-    border-left: 0.3125em solid var(--headerbgcolor);
+    background-color: var(--headerbgcolor);
+    border-left: 0.3125em solid var(--linkvisited);
     border-radius: 0.5em;
     /* 8px */
     box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.1);
@@ -1481,7 +1487,7 @@ fieldset .suggForm {
     /* Aggiunge la sottolineatura */
     font-size: 1.1em;
     font-weight: 600;
-    color: var(--headerbgcolor);
+    color: white;
     border-radius: 0.5em;
     /* per mantenere l'effetto tondo anche al link */
     transition: color 0.2s;
@@ -1489,14 +1495,8 @@ fieldset .suggForm {
 
 /* Hover sul box */
 .admin-options-list li:hover {
-    background-color: #f0f8ff;
+    background-color: var(--div_navbar_link);
     transform: scale(1.01);
-}
-
-/* Hover sul link */
-.admin-options-list li a:hover {
-    color: var(--headerbgcolor);
-    text-decoration: underline;
 }
 
 /* Link già visitati */
@@ -1587,7 +1587,10 @@ fieldset .suggForm {
     display: flex;
     flex-direction: column;
     gap: 2em;
+    max-width: 80em; 
+    width: 100%;
 }
+
 
 /* Contenitore orizzontale: scheda a sinistra, nuova recensione a destra */
 .top-container {
@@ -1709,6 +1712,7 @@ fieldset .suggForm {
 }
 
 .box_recensioni {
+    width: 98%;
     padding: 1.5em;
     background-color: white;
     border-left: 0.4em solid;
@@ -1717,10 +1721,11 @@ fieldset .suggForm {
     color: #333;
     font-size: 1.1em;
     text-align: center;
-    min-width: 70%;
-    margin: 0 auto;
     margin-bottom: 1em;
+    margin-left: -1.25em;
+    
 }
+
 
 .login_required {
     border-left-color: var(--linkvisited);
@@ -1855,6 +1860,7 @@ li.single_review {
     height: auto;              
     overflow-wrap: break-word; 
     word-break: break-word;    
+    font-size: 1.1em;
 }
 /* Nome utente e voto */
 li.single_review strong {
@@ -1969,8 +1975,44 @@ p.testo_recensione {
 }
 
 
+/*=====GESTIONE RECENSIONI=====*/
+.btn_elimina {
+    background-color: #EE0003;
+    color: white;
+    border: none;
+    padding: 0.5em 0.875em;
+    border-radius: 0.375em;
+    font-size: 0.875em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
+    margin-top: 0.5em;
+}
 
-  
+.btn_elimina:hover {
+    background-color: #d10104;
+}
+
+.box_err_no_recensioni {
+    background-color: #f9f9f9;
+    border: 0.0625em solid #ddd;
+    color: black;
+    padding: 1em 1.25em;
+    border-radius: 0.5em;
+    font-size: 1.5em;
+    font-style: italic;
+    text-align: center;
+    margin: 3em auto;
+    width: 60%;
+    max-width: 37.5em;
+    box-shadow: 0 0.125em 0.375em rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+
 
 /*=====ARTICOLO SINGOLO=====*/
 .intestazione_articolo {

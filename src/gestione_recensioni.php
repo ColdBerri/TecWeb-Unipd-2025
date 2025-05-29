@@ -16,18 +16,36 @@ if(!$connessioneOK){
     }
 
     $recensioni = $connessione->getAllRecensioni();
-    $cont = "";
-    foreach($recensioni as $r){
-        $cont .= "
-        <li>
-            <form method='post' action='gestione_recensioni.php'>
-                <span>{$r['nickname']} : {$r['nome_videogioco']} : {$r['contenuto_recensione']} ★{$r['numero_stelle']}</span>
-                <input type='hidden' name='ID_recensione' value='{$r['ID_recensione']}'>
-                <input type='submit' name='eliminarecensione' value='elimina'>
-            </form>
-        </li>";
+    
+    if (empty($recensioni)) {
+        // Nessuna recensione trovata
+        $cont = "<div class='box_err_no_recensioni'><p>Non ci sono ancora recensioni.</p></div>";
+    } else {
+        // Costruzione della lista delle recensioni
+        $cont = "<h1 class='h1_recensioni'>Recensioni</h1><ul class='tutte_recensioni'>";
+        
+        foreach($recensioni as $r){
+            $utente = htmlspecialchars($r['nickname']);
+            $gioco = htmlspecialchars($r['nome_videogioco']);
+            $testo = htmlspecialchars($r['contenuto_recensione']);
+            $stelle = htmlspecialchars($r['numero_stelle']);
+            $idRec = htmlspecialchars($r['ID_recensione']);
+
+            $cont .= "
+            <li class='single_review'>
+                <strong>$utente</strong> su <em>$gioco</em> ($stelle ★):<br>
+                <p class='testo_recensione'>$testo</p>
+                <form method='post' action='gestione_recensioni.php'>
+                    <input type='hidden' name='ID_recensione' value='$idRec'>
+                    <input type='submit' name='eliminarecensione' value='Elimina' class='btn_elimina'>
+                </form>
+            </li>";
+        }
+
+        $cont .= "</ul>";
     }
 }
+
 $paginaHTML->aggiungiContenuto("[recensioni]", $cont);
 $paginaHTML->getPagina();
 ?>
