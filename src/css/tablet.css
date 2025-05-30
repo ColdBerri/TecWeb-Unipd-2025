@@ -30,21 +30,24 @@ main, section, .container {
   cursor: pointer;
 }
 
-nav.menuHamberger{
+nav.menuHamberger {
     display: flex;
+    flex-direction: column;         /* Importante per layout verticale */
     background-color: var(--headerbgcolor);
     top: 0;
     right: 0;
     width: 50%;
-    padding-top: 4em;
+    height: 100vh;                  /* Occupa tutta l'altezza visibile */
+    overflow-y: auto;               /* Scroll verticale se necessario */
     box-shadow: -2px 0 5px rgba(0, 0, 0, 1);
     list-style: none;
-    position:fixed;
-    padding:0;
-    margin:0;
+    position: fixed;
+    margin: 0;
+    padding-top: 1em;               /* Aumenta il padding-top se necessario */
+    padding-bottom: 4m;            /* Aggiungi un padding-bottom per non tagliare l'ultima voce */
     z-index: 9999;
-    min-height: 100vh;
 }
+
 
 .overlay{
     position: fixed;
