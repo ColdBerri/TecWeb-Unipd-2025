@@ -52,7 +52,6 @@ main {
 
 }
 
-
 main,
 .container {
     margin-top: 10em;
@@ -246,17 +245,30 @@ ul .current-page {
     font-size: 1em;
 }
 
+/*BALENA CINESE*/
 .top-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: space-evenly;
-    margin-bottom: 1em;
-    list-style: none;
-    text-align: center;
+    display: block;
+    text-align: center; /* Allinea gli elementi inline-block al centro */
     margin: 0.25em;
-    transition: all 1s ease;
+    padding: 0;
+    list-style: none;
+    font-size: 0; /* Rimuove lo spazio bianco tra gli inline-block */
 }
+
+.top-list li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0.5em 4%; /* Spaziatura tra gli elementi (regolabile) */
+    text-align: center; /* Allinea il contenuto al centro */
+    font-size: 1rem; /* Ripristina la dimensione del testo */
+    box-sizing: border-box;
+}
+
+.top-list li {
+    width: calc(20% - 2%); /* Ad esempio, 5 elementi per riga con margini */
+    min-width: 9.3em; /* Larghezza minima per evitare elementi troppo stretti */
+}
+/*FINE BALENA*/
 
 .listaindex {
     position: relative;
@@ -289,17 +301,40 @@ ul .current-page {
     }
 }
 
+
+/*BALENA CINESE*/
 .top-eventi {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    /*align-content: space-evenly;*/
-    margin-bottom: 1em;
-    list-style: none;
-    text-align: center;
+    display: block;
+    text-align: center; /* Allinea gli elementi inline-block */
     margin: 0.25em;
-    transition: all 1s ease;
+    padding: 0;
+    list-style: none;
+    font-size: 0; /* Elimina lo spazio bianco tra gli inline-block */
 }
+
+.top-eventi li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0.5em 0.5%; /* Spaziatura regolabile (simile a space-evenly) */
+    text-align: center; /* Allineamento del contenuto */
+    font-size: 1rem; /* Ripristina dimensione del testo */
+    box-sizing: border-box;
+}
+
+/* Regola la larghezza per una distribuzione uniforme (es. 4 elementi per riga) */
+.top-eventi li {
+    width: calc(18% - 2%); /* Larghezza con margini inclusi */
+    min-width: 8.12em; /* Larghezza minima per responsività */
+}
+
+/* Clearfix opzionale per contenitore */
+.top-eventi::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/*FINE BALENA*/
+
 
 .miniCalendario {
     width: 9em;
@@ -333,15 +368,35 @@ ul .current-page {
 }
 
 .top-path {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: space-evenly;
-    margin-bottom: 1em;
-    list-style: none;
+    display: block;
     text-align: center;
     margin: 0.2em;
+    padding: 0;
+    list-style: none;
+    font-size: 0; /* Elimina spazi tra inline-block */
     transition: all 1s ease;
+}
+
+.top-path li {
+    display: inline-block;
+    width: 18%; /* 18% × 5 = 90% + margini = 100% */
+    margin: 0.5em 1%; /* 1% × 2 (destra+sinistra) × 5 = 10% */
+    vertical-align: top;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Versione con margini fissi (più stabile) */
+.top-path.fixed-margin li {
+    width: 19%;
+    margin: 0.5em 0.5%; /* Margine più stretto */
+}
+
+/* Clearfix opzionale */
+.top-path::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .miniGiornale {
