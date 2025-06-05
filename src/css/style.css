@@ -232,7 +232,7 @@ ul .current-page {
     /* Sostituisce l'immagine con search_red.png al passaggio del mouse */
 }
 
-/*=====MAIN=====*/
+/*=====js=====*/
 
 .suggForm {
     color: white;
@@ -246,153 +246,106 @@ ul .current-page {
     font-size: 1em;
 }
 
-.top-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: space-evenly;
-    margin-bottom: 1em;
-    list-style: none;
+/*=====MAIN=====*/
+
+.top-list{
     text-align: center;
-    margin: 0.25em;
-    transition: all 1s ease;
 }
 
-.listaindex {
-    position: relative;
-    color: white;
-    padding-bottom: 1em; /* Spazio per il titolo sotto l'immagine */
-    border-radius: 0.7em;
-    background-color: var(--headerbgcolor); /* Sfondo blu solo dietro al titolo */
-    display: inline-block;
+.h-index{
+    background-color: white;
+    border-radius: 0.2em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    padding: 0.2em;
+    border: 1px solid var(--headerbgcolor);
 }
 
-.listaindex img {
-    display: block;
-    width: 14em;
-    height: auto;
-    aspect-ratio: 2 / 3;
+h1.h-index{
+    margin-top:0em
+}
+
+.top-list img {
+    width: 15em;
+    aspect-ratio: 4 / 5;
     border-top-left-radius: 0.7em;
     border-top-right-radius: 0.7em;
-    object-fit: cover;
-    margin: 0; /* Rimuove lo spazio sopra l'immagine */
 }
 
-.titolo_gioco
-{
-    margin-top: 0.7em;
-    margin-bottom: -0.3em;
-    text-decoration: underline;
-    color: inherit;
-    a:visited & {
-        color: var(--linkvisited);
-    }
-}
-
-.top-eventi {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    /*align-content: space-evenly;*/
-    margin-bottom: 1em;
-    list-style: none;
-    text-align: center;
-    margin: 0.25em;
-    transition: all 1s ease;
-}
-
-.miniCalendario {
-    width: 9em;
-    border-radius: 0.6em;
-    box-shadow: 0 0.2em 0.4em rgba(0, 0, 0, 0.2);
-    font-family: sans-serif;
-    overflow: hidden;
-    text-align: center;
-    background-color: white;
-    margin: 1em auto;
-}
-
-.miniCalendarioH {
-    background-color: #e74c3c;
-    color: white;
-    padding: 0.6em 0.3em;
-    font-size: 0.9em;
-    font-weight: bold;
-}
-
-.miniCalendarioB {
-    color: #333;
-    padding: 1.2em 0.5em;
-    font-size: 1em;
-    font-weight: bold;
-    display: flex;
-    align-items: center;   /* centra verticalmente */
-    justify-content: center; /* centra orizzontalmente */
-    height: 4em; /* imposta un'altezza fissa per il corretto allineamento verticale */
-    text-align: center;
-}
-
-.top-path {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: space-evenly;
-    margin-bottom: 1em;
-    list-style: none;
-    text-align: center;
-    margin: 0.2em;
-    transition: all 1s ease;
-}
-
-.miniGiornale {
-    width: 9em;
-    padding: 1em;
-    font-family: sans-serif;
-    overflow: hidden;
-    text-align: center;
-    margin: 1em auto;
-    position: relative;
-    box-shadow:
-        inset -0.2em 0 0.4em rgba(0, 0, 0, 0.05),
-        0.2em 0.2em 0.6em rgba(0, 0, 0, 0.2);
-    border-radius: 0.3em;
+.top-list li {
     background-color: var(--headerbgcolor);
-    border: 1px #000000 solid;
-    font-size: 1.2em;
-    text-decoration: underline;
+    display:inline-block;
+    margin: 3em;
+    margin-top: 0em;
+    border-radius: 0.7em;
 }
 
-.link_articolo {
-    text-decoration: none;
-    color: white; /* colore del testo non visitato */
-    display: block;
-  }
-  
-  .link_articolo:visited {
-    color: orange; /* colore del testo visitato */
-  }
-  
-  /* Assicurati che i testi interni ereditino il colore */
-  .link_articolo .titoloNotiziaIndex,
-  .link_articolo .contenutoNotiziaIndex {
-    color: inherit;
-  }
-  
-
-
-.titoloNotiziaIndex {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.9em;
-    margin-bottom: 0.3em;
+.top-list li:hover{
+    transform: scale(0.95);
+    opacity: 0.5;
+    transition: transform 0.5s ease;
+    border: 1px solid black;
 }
 
-.contenutoNotiziaIndex {
-    font-size: 0.85em;
-    line-height: 1.3em;
+.top-list li p {
+    background-color: var(--headerbgcolor);
+    border-radius: 0.7em;
+}
+
+.top-list li a {
+    color: white;
+}
+
+.top-liste{
+    text-align: center;
+    margin: 1em;
+    padding-top:1em;
+    padding-bottom:1em;
+    
+}
+
+.top-liste li {
+    display:inline-block;
+    margin: 0.5em;
+    border-radius: 0.7em;
+}
+
+.eventi-home {
+   border-left: 5px green solid;
+   background-color: white;
+   border-radius: 0.7em;
+   padding: 0.7em;
+   text-align: center;
+}
+
+.eventi-home:hover {
+   border: 1px green solid;
+}
+
+.eventi-home:first-child{
+    text-align: center;
+}
+
+.notizie-home{
+   border-left: 5px red solid;
+   background-color: white;
+   border-radius: 0.7em;
+   padding: 0.7em;
+   text-align: center;
+}
+
+.notizie-home:hover{
+   border: 1px red solid;
 }
 
 /*CATEGORIE*/
+
+.categoria h2>a{
+    background-color: whitesmoke;
+    padding: 0.5em;
+    border-radius: 0.7em;
+    cursor: pointer;
+}
 
 ul.ulCategorie {
     text-align: center;
@@ -404,6 +357,7 @@ ul.ulCategorie>li {
 
 .categoria {
     padding: 1em;
+    margin-bottom: 1em;
 }
 
 .formCategorie>div {
@@ -414,19 +368,13 @@ ul.ulCategorie>li {
 
 div.categoria>h2 {
     text-align: left;
-    font-size: 1.5em;
+    font-size: 1.7em;
     text-transform: uppercase;
+    padding-left: 0.6em;
 }
 
-div.categoria>ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: space-evenly;
-    margin-bottom: 1em;
-    list-style: none;
-    margin: 0.25em;
-    transition: all 1s ease;
+div.categoria>ul>li {
+    display: inline-block;
 }
 
 div.categoria>ul>li {
@@ -439,10 +387,11 @@ div.categoria>ul>li {
 div.categoria>ul>li>a {
     color: white;
     text-decoration: none;
+    text-align: center;
 }
 
 .ImgGiocoCat {
-    width: 8em;
+    width: 10em;
     height: auto;
     aspect-ratio: 2 / 3;
     border-top-left-radius: 0.5em;
@@ -453,20 +402,10 @@ div.categoria>ul>li>a {
 div.categoria>ul>li:hover {
     transform: scale(1.05);
     opacity: 0.5;
+    cursor: pointer;
 }
 
 /*EVENTI*/
-.miniCalendario,
-.miniGiornale {
-    width: 12em;
-    height: 8em;
-    margin: 1em;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
 
 .titolo_pagina_eventi {
     margin-bottom: 0.5em;
