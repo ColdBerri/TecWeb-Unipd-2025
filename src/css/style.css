@@ -93,7 +93,6 @@ td.eventoPresente>a {
 /*===== HEADER =====*/
 
 header {
-    /*    text-align: center;*/
     width: 100%;
     background-color: var(--headerbgcolor);
     position: fixed;
@@ -222,7 +221,6 @@ ul .current-page {
 
 .search-icon {
     width: 2em;
-    /* Dimensione dell'icona */
     height: 2em;
 }
 
@@ -231,7 +229,7 @@ ul .current-page {
     /* Sostituisce l'immagine con search_red.png al passaggio del mouse */
 }
 
-/*=====MAIN=====*/
+/*=====js=====*/
 
 .suggForm {
     color: white;
@@ -245,8 +243,23 @@ ul .current-page {
     font-size: 1em;
 }
 
+/*=====MAIN=====*/
+
 .top-list{
     text-align: center;
+}
+
+.h-index{
+    background-color: white;
+    border-radius: 0.2em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    padding: 0.2em;
+    border: 1px solid var(--headerbgcolor);
+}
+
+h1.h-index{
+    margin-top:0em
 }
 
 .top-list img {
@@ -267,6 +280,7 @@ ul .current-page {
 .top-list li:hover{
     transform: scale(0.95);
     opacity: 0.5;
+    transition: transform 0.5s ease;
     border: 1px solid black;
 }
 
@@ -282,6 +296,9 @@ ul .current-page {
 .top-liste{
     text-align: center;
     margin: 1em;
+    padding-top:1em;
+    padding-bottom:1em;
+    
 }
 
 .top-liste li {
@@ -299,7 +316,7 @@ ul .current-page {
 }
 
 .eventi-home:hover {
-   border: 2px green solid;
+   border: 1px green solid;
 }
 
 .eventi-home:first-child{
@@ -315,11 +332,18 @@ ul .current-page {
 }
 
 .notizie-home:hover{
-   border: 2px red solid;
+   border: 1px red solid;
 }
 
 
 /*CATEGORIE*/
+
+.categoria h2>a{
+    background-color: whitesmoke;
+    padding: 0.5em;
+    border-radius: 0.7em;
+    cursor: pointer;
+}
 
 ul.ulCategorie {
     text-align: center;
@@ -331,6 +355,7 @@ ul.ulCategorie>li {
 
 .categoria {
     padding: 1em;
+    margin-bottom: 1em;
 }
 
 .formCategorie>div {
@@ -341,19 +366,13 @@ ul.ulCategorie>li {
 
 div.categoria>h2 {
     text-align: left;
-    font-size: 1.5em;
+    font-size: 1.7em;
     text-transform: uppercase;
+    padding-left: 0.6em;
 }
 
-div.categoria>ul {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: space-evenly;
-    margin-bottom: 1em;
-    list-style: none;
-    margin: 0.25em;
-    transition: all 1s ease;
+div.categoria>ul>li {
+    display: inline-block;
 }
 
 div.categoria>ul>li {
@@ -366,10 +385,11 @@ div.categoria>ul>li {
 div.categoria>ul>li>a {
     color: white;
     text-decoration: none;
+    text-align: center;
 }
 
 .ImgGiocoCat {
-    width: 8em;
+    width: 10em;
     height: auto;
     aspect-ratio: 2 / 3;
     border-top-left-radius: 0.5em;
@@ -380,20 +400,10 @@ div.categoria>ul>li>a {
 div.categoria>ul>li:hover {
     transform: scale(1.05);
     opacity: 0.5;
+    cursor: pointer;
 }
 
 /*EVENTI*/
-.miniCalendario,
-.miniGiornale {
-    width: 12em;
-    height: 8em;
-    margin: 1em;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
 
 .titolo_pagina_eventi {
     margin-bottom: 0.5em;
