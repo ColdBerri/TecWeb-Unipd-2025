@@ -22,7 +22,7 @@
     /* Colore di sfondo del pulsante di login */
     --div_navbar_link: #273a4f;
     --div_navbar_link_hover: #2d425a;
-    ;
+    --grigiobg: #CBCBCB;
 }
 
 html {
@@ -232,6 +232,15 @@ ul .current-page {
     /* Sostituisce l'immagine con search_red.png al passaggio del mouse */
 }
 
+.h-white{
+    background-color: whitesmoke;
+    border-radius: 0.2em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    padding: 0.2em;
+    border: 1px solid var(--headerbgcolor);
+}
+
 /*=====js=====*/
 
 .suggForm {
@@ -250,15 +259,6 @@ ul .current-page {
 
 .top-list{
     text-align: center;
-}
-
-.h-index{
-    background-color: white;
-    border-radius: 0.2em;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
-    padding: 0.2em;
-    border: 1px solid var(--headerbgcolor);
 }
 
 h1.h-index{
@@ -347,17 +347,76 @@ h1.h-index{
     cursor: pointer;
 }
 
+.filedset-cat{
+    margin: 0;
+}
+
 ul.ulCategorie {
     text-align: center;
+    font-size: 1.5em;
 }
 
 ul.ulCategorie>li {
     display: inline-block;
 }
 
+ul.ulCategorie>li:first-child {
+    border-radius: 0.7em;
+    background-color: var(--grigiobg);
+    width: 20em;
+    padding: 1em 0;
+    margin: 0.3em;
+}
+
+ul.ulCategorie select{
+    padding: 0.5em 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 1.4em;
+    background-color: #f9f9f9;
+    font-size: 0.8em;
+    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../assets/freccia_espandi.png");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1em;
+    max-width: 9em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: max-content;
+    width: 100%;
+    margin-top: 0.4em;
+}
+
+ul.ulCategorie select:hover {
+    background-color: #e6e6e6;
+    border-color: #999;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+ul.ulCategorie>li {
+    font-size: 1em;
+    padding: 0.5em;
+    font-weight: bold;
+}
+
 .categoria {
     padding: 1em;
     margin-bottom: 1em;
+}
+
+ul.ulCategorie>li input{
+    padding:0.8em 1.1em;
+    border: 1px solid #ccc;
+    border-radius: 1.4em;
+    background-color: var(--headerbgcolor);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: -0.5em;
+    font-size: 1em;
 }
 
 .formCategorie>div {
@@ -451,7 +510,6 @@ div.categoria>ul>li:hover {
     /* Aggiunge un'ombra leggera */
     min-width: max-content;
     margin-top: 0.4em;
-
 }
 
 #mese:hover,
