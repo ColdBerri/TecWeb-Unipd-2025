@@ -53,10 +53,10 @@ class Template {
         $header = file_get_contents('html/header.html');
         $loginLink = '';
 
-        if(!($pagina === "html/login.html" || $pagina === "html/registra.html")){
-            $header = str_replace("[searchbar]", $this->search, $header);
-        } else {
+        if(!($pagina === "html/categorie.html")){       
             $header = str_replace("[searchbar]", "", $header);
+        } else {
+            $header = str_replace("[searchbar]", $this->search, $header);
         }
 
         $budi = '<body>';
