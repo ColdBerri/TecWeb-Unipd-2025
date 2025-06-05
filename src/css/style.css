@@ -59,9 +59,9 @@ main,
 }
 
 h1 {
-    margin-top: 50px;
+    margin-top: 1.125em;
     /* Spazio sopra il titolo */
-    margin-bottom: 25px;
+    margin-bottom: 1em;
 }
 
 /*===== LINK =====*/
@@ -245,207 +245,79 @@ ul .current-page {
     font-size: 1em;
 }
 
-/*BALENA CINESE*/
-.top-list {
-    display: block;
-    text-align: center; /* Allinea gli elementi inline-block al centro */
-    margin: 0.25em;
-    padding: 0;
-    list-style: none;
-    font-size: 0; /* Rimuove lo spazio bianco tra gli inline-block */
+.top-list{
+    text-align: center;
 }
 
-.top-list li {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0.5em 4%; /* Spaziatura tra gli elementi (regolabile) */
-    text-align: center; /* Allinea il contenuto al centro */
-    font-size: 1rem; /* Ripristina la dimensione del testo */
-    box-sizing: border-box;
-}
-
-.top-list li {
-    width: calc(20% - 2%); /* Ad esempio, 5 elementi per riga con margini */
-    min-width: 9.3em; /* Larghezza minima per evitare elementi troppo stretti */
-}
-/*FINE BALENA*/
-
-.listaindex {
-    position: relative;
-    color: white;
-    padding-bottom: 1em; /* Spazio per il titolo sotto l'immagine */
-    border-radius: 0.7em;
-    background-color: var(--headerbgcolor); /* Sfondo blu solo dietro al titolo */
-    display: inline-block;
-}
-
-.listaindex img {
-    display: block;
-    width: 14em;
-    height: auto;
-    aspect-ratio: 2 / 3;
+.top-list img {
+    width: 15em;
+    aspect-ratio: 4 / 5;
     border-top-left-radius: 0.7em;
     border-top-right-radius: 0.7em;
-    object-fit: cover;
-    margin: 0; /* Rimuove lo spazio sopra l'immagine */
 }
 
-.titolo_gioco
-{
-    margin-top: 0.7em;
-    margin-bottom: -0.3em;
-    text-decoration: underline;
-    color: inherit;
-    a:visited & {
-        color: var(--linkvisited);
-    }
-}
-
-
-/*BALENA CINESE*/
-.top-eventi {
-    display: block;
-    text-align: center; /* Allinea gli elementi inline-block */
-    margin: 0.25em;
-    padding: 0;
-    list-style: none;
-    font-size: 0; /* Elimina lo spazio bianco tra gli inline-block */
-}
-
-.top-eventi li {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0.5em 0.5%; /* Spaziatura regolabile (simile a space-evenly) */
-    text-align: center; /* Allineamento del contenuto */
-    font-size: 1rem; /* Ripristina dimensione del testo */
-    box-sizing: border-box;
-}
-
-/* Regola la larghezza per una distribuzione uniforme (es. 4 elementi per riga) */
-.top-eventi li {
-    width: calc(18% - 2%); /* Larghezza con margini inclusi */
-    min-width: 8.12em; /* Larghezza minima per responsività */
-}
-
-/* Clearfix opzionale per contenitore */
-.top-eventi::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-/*FINE BALENA*/
-
-
-.miniCalendario {
-    width: 9em;
-    border-radius: 0.6em;
-    box-shadow: 0 0.2em 0.4em rgba(0, 0, 0, 0.2);
-    font-family: sans-serif;
-    overflow: hidden;
-    text-align: center;
-    background-color: white;
-    margin: 1em auto;
-}
-
-.miniCalendarioH {
-    background-color: #e74c3c;
-    color: white;
-    padding: 0.6em 0.3em;
-    font-size: 0.9em;
-    font-weight: bold;
-}
-
-.miniCalendarioB {
-    color: #333;
-    padding: 1.2em 0.5em;
-    font-size: 1em;
-    font-weight: bold;
-    display: flex;
-    align-items: center;   /* centra verticalmente */
-    justify-content: center; /* centra orizzontalmente */
-    height: 4em; /* imposta un'altezza fissa per il corretto allineamento verticale */
-    text-align: center;
-}
-
-.top-path {
-    display: block;
-    text-align: center;
-    margin: 0.2em;
-    padding: 0;
-    list-style: none;
-    font-size: 0; /* Elimina spazi tra inline-block */
-    transition: all 1s ease;
-}
-
-.top-path li {
-    display: inline-block;
-    width: 18%; /* 18% × 5 = 90% + margini = 100% */
-    margin: 0.5em 1%; /* 1% × 2 (destra+sinistra) × 5 = 10% */
-    vertical-align: top;
-    font-size: 1rem;
-    box-sizing: border-box;
-}
-
-/* Versione con margini fissi (più stabile) */
-.top-path.fixed-margin li {
-    width: 19%;
-    margin: 0.5em 0.5%; /* Margine più stretto */
-}
-
-/* Clearfix opzionale */
-.top-path::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.miniGiornale {
-    width: 9em;
-    padding: 1em;
-    font-family: sans-serif;
-    overflow: hidden;
-    text-align: center;
-    margin: 1em auto;
-    position: relative;
-    box-shadow:
-        inset -0.2em 0 0.4em rgba(0, 0, 0, 0.05),
-        0.2em 0.2em 0.6em rgba(0, 0, 0, 0.2);
-    border-radius: 0.3em;
+.top-list li {
     background-color: var(--headerbgcolor);
-    border: 1px #000000 solid;
-    font-size: 1.2em;
-    text-decoration: underline;
+    display:inline-block;
+    margin: 3em;
+    margin-top: 0em;
+    border-radius: 0.7em;
 }
 
-.link_articolo {
-    text-decoration: none;
-    color: white; /* colore del testo non visitato */
-    display: block;
-  }
-  
-  .link_articolo:visited {
-    color: orange; /* colore del testo visitato */
-  }
-  
-  /* Assicurati che i testi interni ereditino il colore */
-  .link_articolo .titoloNotiziaIndex,
-  .link_articolo .contenutoNotiziaIndex {
-    color: inherit;
-  }
-  
-
-
-.titoloNotiziaIndex {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.9em;
-    margin-bottom: 0.3em;
+.top-list li:hover{
+    transform: scale(0.95);
+    opacity: 0.5;
+    border: 1px solid black;
 }
 
-.contenutoNotiziaIndex {
-    font-size: 0.85em;
-    line-height: 1.3em;
+.top-list li p {
+    background-color: var(--headerbgcolor);
+    border-radius: 0.7em;
 }
+
+.top-list li a {
+    color: white;
+}
+
+.top-liste{
+    text-align: center;
+    margin: 1em;
+}
+
+.top-liste li {
+    display:inline-block;
+    margin: 0.5em;
+    border-radius: 0.7em;
+}
+
+.eventi-home {
+   border-left: 5px green solid;
+   background-color: white;
+   border-radius: 0.7em;
+   padding: 0.7em;
+   text-align: center;
+}
+
+.eventi-home:hover {
+   border: 2px green solid;
+}
+
+.eventi-home:first-child{
+    text-align: center;
+}
+
+.notizie-home{
+   border-left: 5px red solid;
+   background-color: white;
+   border-radius: 0.7em;
+   padding: 0.7em;
+   text-align: center;
+}
+
+.notizie-home:hover{
+   border: 2px red solid;
+}
+
 
 /*CATEGORIE*/
 

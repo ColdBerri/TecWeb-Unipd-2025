@@ -32,25 +32,25 @@ if (!$connessioneOK) {
     if (is_array($img)) {
         foreach($img as $giuco){
             $nomeG = urlencode($giuco['nome_gioco']);
-            $listaGiuchi .= "<li><a href='gioco_singolo.php?gioco={$nomeG}'><div class='listaindex'>";
+            $listaGiuchi .= "<li><a href='gioco_singolo.php?gioco={$nomeG}'>";
             $listaGiuchi .= "<img src='assets/img/".$giuco['immagine']."' alt='".$giuco['nome_gioco']."'>";
             $listaGiuchi .= "<p class='titolo_gioco'>".$giuco['nome_gioco']."</p>";
-            $listaGiuchi .= "</div></a></li>";
+            $listaGiuchi .= "</a></li>";
         }
     }
 
     $listaGiuchi .= "</ul>";
     $paginaHTML->aggiungiContenuto("[giochi]", $listaGiuchi);
 
-    $listaEventi = "<ul class='top-eventi'>";
+    $listaEventi = "<ul class='top-liste'>";
 
     if (is_array($not)) {
         foreach($not as $eventi){
             $dataCompleta = date('d F Y', strtotime($eventi['data_inizio_evento'])); 
             $nomeEvent = urlencode($eventi['nome_evento']);
-            $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='miniCalendario'>";
-            $listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
-            $listaEventi .= "<div class='miniCalendarioB'>" . $eventi['nome_evento'] . "</div>";
+            $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='eventi-home'>";
+            $listaEventi .= "<p class='miniCalendarioH'>" . $dataCompleta . "</p>";
+            $listaEventi .= "<p class='miniCalendarioB'>" . $eventi['nome_evento'] . "</p>";
             $listaEventi .= "</div></a></li>";
         }
     }
@@ -58,14 +58,14 @@ if (!$connessioneOK) {
     $listaEventi .= "</ul>";
     $paginaHTML->aggiungiContenuto("[eventi]", $listaEventi);
 
-    $listaPath = "<ul class='top-path'>";
+    $listaPath = "<ul class='top-liste'>";
 
     if (is_array($path)) {
         foreach($path as $paths){
             $nomeArti = urlencode($paths['titolo_articolo']);
-            $listaPath .= "<li><a class='link_articolo' href='articolo_singolo.php?titolo_articolo={$nomeArti}'><div class='miniGiornale'>";
-            $listaPath .= "<div class='titoloNotiziaIndex'>".$paths['nome_videogioco']."</div>";
-            $listaPath .= "<div class='contenutoNotiziaIndex'>".$paths['titolo_articolo']."</div>";
+            $listaPath .= "<li><a class='link_articolo' href='articolo_singolo.php?titolo_articolo={$nomeArti}'><div class='notizie-home'>";
+            $listaPath .= "<p>".$paths['nome_videogioco']."</p>";
+            $listaPath .= "<p>".$paths['titolo_articolo']."</p>";
             $listaPath .= "</div></a></li>";
         }
     }
