@@ -38,26 +38,8 @@ class Template {
             session_start();
         }
 
-        $this->search = '
-        <div class="search-container">
-            <div class="search">
-                <input type="text" placeholder="Cerca..." class="search-box" aria-label="Cerca">
-            </div>
-            <button class="search-button" aria-label="Esegui ricerca">
-                <img src="assets/search_blue.png" alt="Cerca" class="search-icon">       
-            </button>
-        </div>
-    ';
-
-
         $header = file_get_contents('html/header.html');
         $loginLink = '';
-
-        if(!($pagina === "html/categorie.html")){       
-            $header = str_replace("[searchbar]", "", $header);
-        } else {
-            $header = str_replace("[searchbar]", $this->search, $header);
-        }
 
         $budi = '<body>';
         $budijs = '<body onload="riempimentoVar();">';

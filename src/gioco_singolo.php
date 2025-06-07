@@ -22,16 +22,17 @@ if(!$connessioneOK) {
     $dati = $connessione->getVideogioco($nomeGioco);
     $evento = $connessione->getEventiGioco($nomeGioco);
     $articolo = $connessione->getArticoliGioco($nomeGioco);
-    $img = $dati['immagine'];
-    $casa = $dati['casa_produttrice'];
-    $console = $dati['console_compatibili'];
-    $anno = $dati['anno_di_pubblicazione'];
-    $desc = $dati['descrizione'];
-    $recensioniHTML = "";
-
     $recensioni = $connessione->getRecensioni($nomeGioco);
 
     if($dati){
+
+        $img = $dati['immagine'];
+        $casa = $dati['casa_produttrice'];
+        $console = $dati['console_compatibili'];
+        $anno = $dati['anno_di_pubblicazione'];
+        $desc = $dati['descrizione'];
+        $recensioniHTML = "";
+        
         $paginaHTML->aggiungiContenuto("{{nome}}", $nomeGioco);
         $paginaHTML->aggiungiContenuto("{{img}}", $img);
         $paginaHTML->aggiungiContenuto("{{casa}}", $casa);

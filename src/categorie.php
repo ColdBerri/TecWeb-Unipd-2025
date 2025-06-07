@@ -11,11 +11,13 @@ $paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, not
 $lista = "";
 $categoriaComboBox = "";
 $i = 1;
+$tmp1 = "";
+$videoScelto = "<div class='GiocoRicerca'>";
+
 
 if(!$connessioneOK){
     $giochi  = $connessione->categorie();
-    $connessione->closeConnection();
-
+    
     $giochi_per_categoria = [];
 
     foreach ($giochi as $gioco) {
@@ -32,13 +34,13 @@ if(!$connessioneOK){
         if (!isset($_POST['submit']) || $_POST['comboBoxCategoria'] === "tutte") {
             $lista .= "<div class='categoria'>";
             $lista .= "<h2><a href='categoria_singola.php?categoria={$categoria}'>" . htmlspecialchars($categoria) . "</a></h2>";
-            $lista .= "<ul>";
+            $lista .= "<ul class='lista-giochi'>";
 
             foreach ($giochi as $gioco) {
                 $nome = htmlspecialchars($gioco['nome_gioco']);
                 $immagine = htmlspecialchars($gioco['immagine']);
                 $lista .= "<li><a href='gioco_singolo.php?gioco={$nome}' >";
-                $lista .= "<img src='assets/img/$immagine' class='ImgGiocoCat'><p>$nome</p></a></li>";
+                $lista .= "<img src='assets/img/$immagine' class='ImgGiocoCat' alt='vidoe'><p>$nome</p></a></li>";
             }
 
             $lista .= "</ul>";
@@ -47,7 +49,7 @@ if(!$connessioneOK){
         } elseif ($categoria === $_POST['comboBoxCategoria']) {
             $lista .= "<div class='categoria'>";
             $lista .= "<h2><a href='categoria_singola.php?categoria={$categoria}'>" . htmlspecialchars($categoria) . "</a></h2>";
-            $lista .= "<ul>";
+            $lista .= "<ul class='lista-giochi'>";
 
             foreach ($giochi as $gioco) {
                 $nome = htmlspecialchars($gioco['nome_gioco']);
@@ -72,10 +74,55 @@ if(!$connessioneOK){
         $categoriaComboBox .= "<option value='$categoria' $selected>$categoria</option>";
     }
 
-    $paginaHTML->aggiungiContenuto("[categoria]", $categoriaComboBox);
 
-    $paginaHTML->aggiungiContenuto("[tuttigiuchi]",$lista);
-    $paginaHTML->aggiungiContenuto("[categoria]",$categoriaComboBox);
-    $paginaHTML->getPagina();
+    if (isset($_POST['ricercaCategorie'])) {
+        $scelta = $_POST['ricercaCategorie'];
+
+        if (!empty($scelta)){
+            $tmp1 = $connessione->getVideogioco($scelta);
+            $connessione->closeConnection();
+
+            if($tmp1){
+                $immagine = htmlspecialchars($tmp1['immagine']);
+                $nome = htmlspecialchars($tmp1['nome_gioco']);
+                $videoScelto .= "<p>Risultati per &apos;$scelta&apos; </p>";
+                $videoScelto .= "
+                <ul class='lista-giochi'>
+                    <li>
+                        <a href='gioco_singolo.php?gioco={$nome}'>
+                        <img src='assets/img/$immagine' class='ImgGiocoCat'>
+                        <p>$nome</p>
+                        </a>
+                    </li>
+                </ul>
+                ";
+                $paginaHTML->aggiungiContenuto("[gioco]",$videoScelto);
+            } else{
+                $risposta = "<p class='erroreRicerca'>Nessun risultato per la ricerca</p>";
+                $paginaHTML->aggiungiContenuto("[gioco]",$risposta);
+            }
+            $paginaHTML->aggiungiContenuto("[categoria]", "");
+            $paginaHTML->aggiungiContenuto("[tuttigiuchi]","");
+            $paginaHTML->aggiungiContenuto("[categoria]","");
+        } else {
+            $paginaHTML->aggiungiContenuto("[gioco]","");
+            $paginaHTML->aggiungiContenuto("[categoria]", $categoriaComboBox);
+            $paginaHTML->aggiungiContenuto("[tuttigiuchi]",$lista);
+            $paginaHTML->aggiungiContenuto("[categoria]",$categoriaComboBox);
+        }
+        
+    } else {
+
+        $paginaHTML->aggiungiContenuto("[gioco]","");
+        $paginaHTML->aggiungiContenuto("[categoria]", $categoriaComboBox);
+        $paginaHTML->aggiungiContenuto("[tuttigiuchi]",$lista);
+        $paginaHTML->aggiungiContenuto("[categoria]",$categoriaComboBox);
+              
+    }
+
+
+    $paginaHTML->getPagina();  
+
+    unset($_POST['ricercaCategorie']);
 }
 ?>

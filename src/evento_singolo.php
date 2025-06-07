@@ -15,15 +15,17 @@ $connessioneOK = $connessione->openDBConnection();
 
 if(!$connessioneOK){
     $evento = $connessione->getEvento($evName);
-    $nome = $evento['nome_evento'];
-    $gioco = $evento['nome_videogioco'];
-    $data_inizio = $evento['data_inizio_evento'];
-    $data_fine = $evento['data_fine_evento'];
-    $squadre = $evento['squadre_coinvolte'];
-    $vincitore = $evento['vincitore_evento'];
     $connessione->closeConnection();
 
     if ($evento) {
+
+        $nome = $evento['nome_evento'];
+        $nomeVideogioco = $evento['nome_videogioco'];
+        $gioco = "<a href='gioco_singolo.php?gioco={$nomeVideogioco}'>".  $nomeVideogioco . "</a>";
+        $data_inizio = $evento['data_inizio_evento'];
+        $data_fine = $evento['data_fine_evento'];
+        $squadre = $evento['squadre_coinvolte'];
+        $vincitore = $evento['vincitore_evento'];
         $paginaHTML->aggiungiContenuto("{{nome}}", $nome);
         $paginaHTML->aggiungiContenuto("{{gioco}}", $gioco);
         $paginaHTML->aggiungiContenuto("{{dataI}}", $data_inizio); 

@@ -1,5 +1,21 @@
 <script src="js/categorieScroll.js"></script>
-<h1 class="h-white">Categorie</h1>
+<div class="div-h">
+    <h1 class="h-white">Categorie</h1>
+</div>
+
+<form action="categorie.php" method="post" class="post-ricerca">
+    <div class="search-container">
+        <div class="search">
+            <fieldset class="ffild">
+                <input type="text"  name="ricercaCategorie" placeholder="Cerca..." class="search-box" aria-label="Cerca">
+            </fieldset>
+        </div>
+        <button type="submit" class="search-button" aria-label="Esegui ricerca">
+            <img src="assets/search_blue.png" alt="Cerca" class="search-icon">       
+        </button>
+    </div>
+</form>
+
 <form class="formCategorie" method="post" action="categorie.php">
     <ul class="ulCategorie">
         <li><label for="comboBoxCategoria">Filtra per categoria</label>
@@ -16,4 +32,6 @@
     </ul>
 </form>
 
+
+[gioco]
 [tuttigiuchi]

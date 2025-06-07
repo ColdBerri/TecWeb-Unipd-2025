@@ -23,14 +23,13 @@ if(!$connessioneOK) {
     $connessione->closeConnection();
 
     if($giochi){
-        $lista = "<h1>Categoria : {$catName}</h1>";
-        $lista .= "<ul class='giochi-list'>";
-        foreach($giochi as $g) {
-            $game = urlencode($g['nome_gioco']);
-            $lista .= "<li><a href='gioco_singolo.php?gioco={$game}'>";
-            $lista .= "<img src='assets/img/{$g['immagine']}' alt='{$g['nome_gioco']}'>";
-            $lista .= "<span>{$g['nome_gioco']}</span>";
-            $lista .= "</a></li>";
+        $lista = "<div class='div-h'><h1 class='h-white'>Categoria: {$catName}</h1></div>";
+        $lista .= "<ul class='lista-giochi'>";
+        foreach($giochi as $gioco) {
+                $nome = htmlspecialchars($gioco['nome_gioco']);
+                $immagine = htmlspecialchars($gioco['immagine']);
+                $lista .= "<li><a href='gioco_singolo.php?gioco={$nome}' >";
+                $lista .= "<img src='assets/img/$immagine' class='ImgGiocoCat'><p>$nome</p></a></li>";
         }
     $lista .= "</ul>";
     } else {

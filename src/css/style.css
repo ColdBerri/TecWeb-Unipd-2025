@@ -52,17 +52,9 @@ main {
 
 }
 
-
 main,
 .container {
     margin-top: 10em;
-    /* spesso qui c'è spazio inutile */
-}
-
-h1 {
-    margin-top: 50px;
-    /* Spazio sopra il titolo */
-    margin-bottom: 25px;
 }
 
 /*===== LINK =====*/
@@ -76,7 +68,11 @@ a:visited {
 }
 
 footer a:visited {
-    color: var(--linkvisitedFooter);
+    color: var(--linkvisited);
+}
+
+footer a{
+    color: var(--bgcolor);
 }
 
 header a {
@@ -193,22 +189,22 @@ ul .current-page {
 }
 
 .search-box {
-    width: 20em;
+    width: 33em;
+    padding: 1em;
 }
 
 .search-container {
     display: flex;
     justify-content: center;
+    margin-bottom: 1em;
 }
 
 .search-box {
     padding: 0.75em 1em;
-    height: 0.8em;
     border: 2px solid #ccc;
     border-radius: 2em 0em 0em 2em;
     font-size: 1em;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0);
     color: #333;
     border-right: none;
 }
@@ -217,7 +213,7 @@ ul .current-page {
     border: 2px solid #ccc;
     background-color: white;
     border-radius: 0em 2.5em 2.5em 0em;
-    width: 4.7em;
+    width: 7em;
     cursor: pointer;
 }
 
@@ -232,13 +228,15 @@ ul .current-page {
     /* Sostituisce l'immagine con search_red.png al passaggio del mouse */
 }
 
-.h-white{
+.div-h{
+    text-align: center;
+}
+
+.h-white {
+    display: inline-block;
     background-color: whitesmoke;
-    border-radius: 0.2em;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
-    padding: 0.2em;
-    border: 1px solid var(--headerbgcolor);
+    border-radius: 0.7em;
+    padding: 0.2em 2em 0.2em 2em;
 }
 
 /*=====js=====*/
@@ -281,10 +279,9 @@ h1.h-index{
 }
 
 .top-list li:hover{
-    transform: scale(0.95);
+    transform: scale(1.05);
     opacity: 0.5;
     transition: transform 0.5s ease;
-    border: 1px solid black;
 }
 
 .top-list li p {
@@ -309,6 +306,12 @@ h1.h-index{
     margin: 0.5em;
     border-radius: 0.7em;
 }
+.top-liste li:first-child{
+    margin-left: 0;
+}
+.top-liste li:last-child {
+    margin-right: 0;
+}
 
 .eventi-home {
    border-left: 5px green solid;
@@ -320,6 +323,7 @@ h1.h-index{
 
 .eventi-home:hover {
    border: 1px green solid;
+   border-left: 5px green solid;
 }
 
 .eventi-home:first-child{
@@ -336,6 +340,7 @@ h1.h-index{
 
 .notizie-home:hover{
    border: 1px red solid;
+   border-left: 5px red solid;
 }
 
 /*CATEGORIE*/
@@ -432,18 +437,18 @@ div.categoria>h2 {
     padding-left: 0.6em;
 }
 
-div.categoria>ul>li {
+.lista-giochi>li {
     display: inline-block;
 }
 
-div.categoria>ul>li {
+.lista-giochi>li {
     background-color: var(--headerbgcolor);
     border-radius: 0.5em;
     transition: transform 0.3s ease;
     margin-left: 1em;
 }
 
-div.categoria>ul>li>a {
+.lista-giochi>li>a {
     color: white;
     text-decoration: none;
     text-align: center;
@@ -458,10 +463,28 @@ div.categoria>ul>li>a {
     object-fit: cover;
 }
 
-div.categoria>ul>li:hover {
+.lista-giochi>li:hover {
     transform: scale(1.05);
     opacity: 0.5;
     cursor: pointer;
+}
+
+.GiocoRicerca{
+    text-align: center;
+    padding: 0 0 1em 0;
+}
+
+.GiocoRicerca>p{
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 0.5em 0 1em 0;
+}
+
+.erroreRicerca{
+    padding-top: 3em;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 /*EVENTI*/
@@ -644,7 +667,6 @@ td.giornoFuori>p {
     text-indent: -999em;
 }
 
-
 .marked {
     background-color: green;
     padding: 0.2em;
@@ -799,8 +821,6 @@ td.giornoFuori>p {
 }
 
 */
-
-
 
 /* FORM LOGIN, REGISTRA E MODIFICA PASS, OPZIONI SVILUPPATORE */
 
@@ -2026,9 +2046,13 @@ footer {
     overflow: hidden;
     float: left;
     text-align: center;
-    background-color: var(--bgfooter);
-    color: var(--textcolor);
+    background-color: #2d3b47;
+    color: white;
     padding: 2em 0;
     text-align: center;
     margin-top: 0;
+}
+
+.ffild{
+    margin: 0;
 }
