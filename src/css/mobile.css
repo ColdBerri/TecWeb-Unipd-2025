@@ -62,28 +62,17 @@ div.login-box {
 }
 
 /*ABOUT US*/
+.aboutus_team {
+    margin-bottom: -1em;
+}
+
+.team_info{
+    margin-top: 1em;
+}
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  /* 👈 importante: fa allungare i figli */
-  box-sizing: border-box;
-  padding: 0;
-  /* rimuoviamo il padding */
-  width: 100%;
+    max-width: 80%;
+    margin-top: 0;
 }
-
-.container>div {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 0 16px;
-  /* padding interno se vuoi spazio nel contenuto */
-  box-sizing: border-box;
-  padding: 48px 16px;
-  /* 24px sopra e sotto, 16px a sinistra e destra */
-}
-
-
 
 
 /*ASSISTENZA*/

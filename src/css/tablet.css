@@ -200,16 +200,37 @@ li.current-page {
 
 
   /* ABOUT US */
-  .container {
+.aboutus_text {
+    margin: 3em;
+}
+
+.container {
     display: block;
     align-items: center;
   }
+
 
   .container > div {
     width: 100%;
     max-width: 450px; /* Larghezza più ampia rispetto alla versione mobile */
     margin-bottom: 20px;
   }
+
+
+.aboutus_team {
+    margin-bottom: -1em;
+}
+
+.team_info{
+    margin-top: 1em;
+}
+
+.container {
+    max-width: 80%;
+    margin-top: 0;
+}
+
+
 
   /* Sezione assistenza */
   details {
@@ -310,11 +331,3 @@ details summary {
 }
 
 
-/*ABOUT US*/
-.container {
-    display: flex;
-    justify-content: center; /* Centra orizzontalmente */
-    flex-wrap: wrap;         /* Fa andare i riquadri a capo se serve */
-    gap: 1.5em;              /* Spazio tra i riquadri */
-    padding: 1em;
-}
