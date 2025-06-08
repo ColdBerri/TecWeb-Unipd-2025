@@ -2055,3 +2055,37 @@ footer {
 .ffild{
     margin: 0;
 }
+
+/*======404======*/
+
+.errore404{
+   background-image: url("../assets/404.jpeg");
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-color: #000000;
+}
+
+.errore404>main{
+    color: white;
+    font-size: 1.6em;
+    background-color: transparent;
+    text-align: center;
+}
+.errore404>main div{
+    display: inline-block;
+    background-color: #111;
+    padding: 1em;
+    border-radius: 1em;
+}
+.errore404>main a{
+    color: white;
+}
+
+.errore404>main a img{
+    vertical-align: middle;
+    width: 1.4em;
+}
+
+.p{
+  white-space: pre-line;
+}
