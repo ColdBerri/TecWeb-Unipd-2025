@@ -1,38 +1,47 @@
 <div class="form-container">
-        <div class="form-box dev_tool-box" id="registration-form">
-            <h1 class="form-welcome-message">Aggiungi Articolo</h1>
-    
-            <form method="post" action="aggiungi_articolo.php">
-    
-                <!-- Eventuale codice PHP per [addArticolo] -->
-                [addArticolo]
-    
-                <label for="titolo_articolo">Titolo:</label>
-                <fieldset>
+    <div class="form-box dev_tool-box" id="registration-form">
+        <h1 class="form-welcome-message">Aggiungi Articolo</h1>
+
+        <form method="post" action="aggiungi_articolo.php" onsubmit="return validazioneForm();">
+
+            [addArticolo]
+
+            <fieldset>
+                <div>
+                    <label for="titolo_articolo">Titolo:</label>
                     <input type="text" id="titolo_articolo" name="titolo_articolo" required>
-                </fieldset>
-    
-                <label for="autore">Autore:</label>
-                <fieldset>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div>
+                    <label for="autore">Autore:</label>
                     <input type="text" id="autore" name="autore" required>
-                </fieldset>
-    
-                <label for="data_pubblicazione">Data Pubblicazione:</label>
-                <fieldset>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div>
+                    <label for="data_pubblicazione">Data Pubblicazione:</label>
                     <input type="date" id="data_pubblicazione" name="data_pubblicazione" required>
-                </fieldset>
-    
-                <label for="testo_articolo">Testo:</label>
-                <fieldset>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div>
+                    <label for="testo_articolo">Testo:</label>
                     <textarea id="testo_articolo" name="testo_articolo" rows="5" cols="50" required></textarea>
-                </fieldset>
-    
+                </div>
+            </fieldset>
+
+            <fieldset>
                 <div class="button-container">
                     <input type="submit" class="submit_button" value="Aggiungi Articolo">
                     <button type="button" class="cancella" onclick="window.history.back();">Annulla</button>
                 </div>
-    
-            </form>
-        </div>
+            </fieldset>
+
+        </form>
     </div>
-    
+</div>
+<script src="js/validaArticolo.js"></script>

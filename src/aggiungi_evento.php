@@ -37,9 +37,9 @@ if(!$connessioneOK){
 
     if(isset($_GET['gioco'])){
         $nome = urlencode($_GET['gioco']);
-        $cont .="<label> Nome gioco : </label><fieldset><input type='text' name='nome_gioco' value={$nome} required> </fieldset>";
+        $cont .="<fieldset><div><label for='nomeGioco'> Nome gioco : </label><input type='text' name='nome_gioco' value={$nome} id='nomeGioco'required></div></fieldset>";
     }else{
-        $cont .="<label> Nome Gioco : </label><fieldset><input type='text' name='nome_gioco' required></fieldset>";
+        $cont .="<fieldset><div><label for='nomeGioco'> Nome Gioco : </label><input type='text' name='nome_gioco' id='nomeGioco' required></div></fieldset>";
     }
 
 }   

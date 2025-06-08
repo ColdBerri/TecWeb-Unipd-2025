@@ -1,32 +1,46 @@
 <div class="form-container">
     <div class="form-box">
         <h1 class="form-welcome-message">Ti diamo il benvenuto</h1>
-        <form id="registration-form" method="POST" action="registra.php" onsubmit="return checkForm();">
+        <form id="registration-form" method="POST" action="registra.php" onsubmit="return validazioneForm();">
             
             <fieldset>
-                <label for="username"><span lang="en">Username:</span></label>
-                <input type="text" id="username" name="username" required>
+                <div>
+                    <label for="username"><span lang="en">Username:</span></label>
+                    <input type="text" id="username" name="username" required>                    
+                </div>
+
             </fieldset>
 
             <fieldset>
-                <label for="password"><span lang="en">Password:</span></label>
-                <input type="password" id="password" name="password" required>
+                <div>
+                    <label for="password"><span lang="en">Password:</span></label>
+                    <input type="password" id="password" name="password" required>                    
+                </div>
+
             </fieldset>
 
             <fieldset>
-                <label for="confirm-password">Conferma <span lang="en">Password:</span></label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
+                <div>
+                    <label for="confirm-password">Conferma <span lang="en">Password:</span></label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>                    
+                </div>
+
             </fieldset>
 
             <fieldset>
-                <label for="data-nascita">Data di nascita:</label>
-                <input type="date" id="data-nascita" name="data-nascita" required>
+                <div>
+                    <label for="data-nascita">Data di nascita:</label>
+                    <input type="date" id="data-nascita" name="data-nascita" required>                    
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <div class="button-container">
+                    <input type="button" class="cancella" onclick="window.location.href='index.php';" value="Annulla">
+                    <input type="submit" class="submit_button" value="Registra">
+                </div>                
             </fieldset>
 
-            <div class="button-container">
-                <input type="button" class="cancella" onclick="window.location.href='index.php';" value="Annulla">
-                <input type="submit" class="submit_button" value="Registra">
-            </div>
         </form>
     </div>
 </div>

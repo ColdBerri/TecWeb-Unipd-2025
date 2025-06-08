@@ -22,12 +22,15 @@ class Template {
         $budi = '<body>';
         $budijs = '<body onload="riempimentoVar();">';
 
-        if(!($pagina === "html/registra.html")){
+        
+
+        if(!($pagina == "html/registra.html") && !($pagina == "html/aggiungi_articolo.html") && !($pagina == "html/aggiungi_videogioco.html") && !($pagina == "html/aggiungi_evento.html")){
            $this->pagina = str_replace("[body]", $budi, $this->pagina);
         } else {
             $this->pagina = str_replace("[body]", $budijs, $this->pagina);
         }
 
+       // $this->pagina = str_replace("[body]", $budi, $this->pagina);
         $this->pagina = str_replace("[main]",$main, $this->pagina);
 
     }
@@ -44,7 +47,7 @@ class Template {
         $budi = '<body>';
         $budijs = '<body onload="riempimentoVar();">';
 
-        if(!($pagina === "html/registra.html")){
+        if($pagina != "html/aggiungi_articolo.html"){
            $header = str_replace("[body]", $budi, $header);
         } else {
             $header = str_replace("[body]", $budijs, $header);

@@ -2,49 +2,82 @@
     <div class="form-box dev_tool-box" id="registration-form">
         <h1 class="form-welcome-message">Aggiungi Video gioco</h1>
 
-        <form method="post" action="aggiungi_videogioco.php" enctype="multipart/form-data">
+        <form method="post" action="aggiungi_videogioco.php" onsubmit="return validazioneForm();">
 
-            <label for="nome_gioco">Nome gioco:</label>
+            
             <fieldset>
-                <input type="text" id="nome_gioco" name="nome_gioco" required>
+                <div>
+                    <label for="nome_gioco">Nome gioco: </label>
+                    <input type="text" id="nome_gioco" name="nome_gioco" required>                    
+                </div>
+
             </fieldset>
 
-            <label for="casa_produttrice">Casa produttrice:</label>
+            
             <fieldset>
-                <input type="text" id="casa_produttrice" name="casa_produttrice" required>
+                <div>
+                    <label for="casa_produttrice">Casa produttrice: </label>
+                    <input type="text" id="casa_produttrice" name="casa_produttrice" required>                    
+                </div>
+
             </fieldset>
 
-            <label for="console_compatibili">Console compatibili (separate da virgola):</label>
+            
             <fieldset>
-                <input type="text" id="console_compatibili" name="console_compatibili" required>
+                <div>
+                    <label for="console_compatibili">Console compatibili: </label>
+                    <input type="text" id="console_compatibili" name="console_compatibili" required>                    
+                </div>
+
             </fieldset>
 
-            <label for="descrizione">Descrizione:</label>
+            
             <fieldset>
-                <textarea id="descrizione" name="descrizione" rows="5" cols="50" required></textarea>
+                <div>
+                    <label for="descrizione">Descrizione: </label>
+                    <textarea id="descrizione" name="descrizione" rows="5" cols="50" required></textarea>                    
+                </div>
+
             </fieldset>
 
-            <label for="anno_di_pubblicazione">Anno di pubblicazione:</label>
+            
             <fieldset>
-                <input type="number" id="anno_di_pubblicazione" name="anno_di_pubblicazione" min="1970" max="2099" required>
+                <div>
+                    <label for="anno_di_pubblicazione">Anno di pubblicazione: </label>
+                    <input type="number" id="anno_di_pubblicazione" name="anno_di_pubblicazione" required>                    
+                </div>
+
             </fieldset>
 
-            <label for="immagine">Selezionare immagine (es: img.jpg):</label>
+            
             <fieldset>
-                <input type="file" id="immagine" name="immagine" required hidden>
-                <label for="immagine" class="custom-file-upload">Scegli File</label>
+                <div>
+                    <label for="immagine">Selezionare immagine: </label>
+                    <input type="file" id="immagine" name="immagine" required hidden>
+                    <label for="immagine" class="custom-file-upload">Scegli File</label>                    
+                </div>
+
             </fieldset>
 
-            <label for="categoria">Categoria:</label>
+            
             <fieldset>
-                <input type="text" id="categoria" name="categoria" required>
+                <div>
+                    <label for="categoria">Categoria: </label>
+                    <input type="text" id="categoria" name="categoria" required>                    
+                </div>
+
             </fieldset>
 
-            <div class="button-container">
-                <input type="submit" class="submit_button" value="Aggiungi Gioco">
-                <button type="button" class="cancella" onclick="window.history.back();">Annulla</button>
-            </div>
+            <fieldset>
+                <div class="button-container">
+                    <input type="submit" class="submit_button" value="Aggiungi Gioco">
+                    <button type="button" class="cancella" onclick="window.history.back();">Annulla</button>
+                </div>                
+            </fieldset>
+
 
         </form>
     </div>
 </div>
+
+<script src="js/validaVideogioco.js"></script>
