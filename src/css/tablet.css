@@ -2,6 +2,11 @@ main, section, .container {
   margin-top: 7em;          /* spesso qui c'è spazio inutile */
 }
 
+h1{
+  margin: 0.8em;
+  margin-top: 1.5em;
+  max-width: 80%;
+}
 
 .search-container{
     display: none;
@@ -201,7 +206,7 @@ li.current-page {
 
   /* ABOUT US */
 .aboutus_text {
-    margin: 3em;
+    margin: 1.5em;
 }
 
 .container {
@@ -230,19 +235,20 @@ li.current-page {
     margin-top: 0;
 }
 
+  /*ASSISTENZA*/
+.support_details {
+  width: 90%;
+  max-width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  margin: 20px auto;
+}
 
+.support_details summary {
+  font-size: 1.3em;
+  align-items: left;
+}
 
-  /* Sezione assistenza */
-  details {
-    width: 85%; /* Usa la maggior parte della larghezza disponibile */
-    max-width: 100%;
-    padding: 15px;
-    margin: 20px;
-  }
-
-  details summary {
-    font-size: 1.5em;  /* Aumentato per tablet */
-  }
 
 
 /* CALENDARIO EVENTI */

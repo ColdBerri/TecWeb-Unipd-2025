@@ -1,3 +1,9 @@
+h1{
+  margin: 0.8em;
+  margin-top: 1.5em;
+  max-width: 80%;
+}
+
 /* Voci del menu */
 .nascondi ul {
   list-style: none;
@@ -75,27 +81,7 @@ div.login-box {
 }
 
 
-/*ASSISTENZA*/
-.support_details {
-  width: 90%;
-  /* Prende il 98% della larghezza disponibile su dispositivi mobili */
-  max-width: 100%;
-  /* Garantisce che occupi tutta la larghezza disponibile su mobile */
-  padding: 12px;
-  /* Aumenta il padding per un po' più di spazio interno */
-  box-sizing: border-box;
-  /* Assicura che il padding sia incluso nel calcolo della larghezza */
-  margin: 20px auto;
-}
 
-.support_details summary {
-  font-size: 1.3em;
-  /* Aumenta la dimensione del testo del summary */
-  align-items: left;
-  /* allineamento verticale centrato */
-
-
-}
 
 .contatti {
   flex-direction: column;
