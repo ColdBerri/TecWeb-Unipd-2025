@@ -564,6 +564,10 @@ input[type="submit"][value="CERCA EVENTI"]:hover {
     /* Colore di sfondo al passaggio del mouse */
 }
 
+.thead>tr>th{
+    color: white;
+}
+
 .formCalendario>label {
     font-size: 1.5em;
 }
@@ -664,6 +668,14 @@ td.giornoFuori>p {
 #sum {
     position: absolute;
     text-indent: -999em;
+}
+
+.titolo_calendario{
+    font-size: 1.5em;
+    background-color: white;
+    border-radius: 1em;
+    padding: 0.5em;
+    margin-bottom: 1em;
 }
 
 .marked {

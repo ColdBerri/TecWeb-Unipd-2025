@@ -130,18 +130,6 @@ div.login-box {
   margin: 0 auto;
 }
 
-.calendario-tabella th,
-.calendario-tabella td {
-  width: 3em;
-  /* Fissa la larghezza della cella */
-  height: 3em;
-  /* Fissa l'altezza della cella */
-  padding: 0;
-  font-size: 0.8em;
-  text-align: center;
-  vertical-align: middle;
-}
-
 .markerGiorno {
   width: 1.5em;
   height: 1.5em;

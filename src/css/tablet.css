@@ -246,60 +246,54 @@ li.current-page {
 
 
 /* CALENDARIO EVENTI */
-.calendario-tabella {
-            width: 90%;
-        min-width: unset;
-        max-width: 100%;
-        font-size: 0.85em;
-        table-layout: fixed;
-        border-radius: 0.5em;
-    margin: 0 auto;
+
+.listaGiorniCalendario{
+  display: none;
+}
+
+.giornoFuori{
+  display: none;
+}
+
+thead{
+  display: none;
+}
+
+tr, td{
+  display: block;
+  padding: 0;
+}
+
+.calendario-tabella thead>tr{
+  text-align: center;
+}
+
+td, th{
+  border-top: none;
+}
+
+th[data-title]:before, td[data-title]:before{
+  content: attr(data-title) "- ";
+  font-weight: bold;
 }
 
 .calendario-tabella th,
-.calendario-tabella td {
-    width: 5em; /* Le celle mantengono una larghezza fissa */
-    height: 5em; /* Le celle mantengono un'altezza fissa */
-    padding: 0;
-    font-size: 0.8em; /* Il font rimane invariato per le celle */
-    text-align: center;
-    vertical-align: middle;
+.calendario-tabella td{
+  height: 2.5em;
+  min-height: 4em;
+  padding: 1em 1em 0em 1em;
+  font-size: 1em;
+  text-align: center;
 }
 
-.markerGiorno {
-    width: 1.5em;
-    height: 1.5em;
-    font-size: 0.75em;
-    line-height: 1.5em;
+.marked{
+  text-align: center;
 }
 
-.formCalendario {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform-origin: top center;
-    scale: 1; /* La scala inizia con valore 1 */
+.calendario-tabella td:first{
+  border-radius: 0 1em 0 1em;
 }
 
-/* Selettore */
-.selettore {
-    font-size: 1.2em;
-}
-
-#mese, #anno {
-    font-size: 0.75em;
-}
-
-input[type="submit"][value="CERCA EVENTI"] {
-    font-size: 1.2em;
-    padding: 0.8em;
-}
-
-.titolo_pagina_eventi,
-.titolo_calendario {
-    text-align: center;
-    font-size: 1.3em;
-}
 
 /* ASSISTENZA */
 details {
