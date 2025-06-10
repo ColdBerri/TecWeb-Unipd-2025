@@ -1610,71 +1610,82 @@ fieldset .suggForm {
 /* GIOCO SINGOLO */
 
 .contenuto_gioco {
-    margin-top: 3.7em;
+    margin-top: 1em;
     padding: 0 2em;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    max-width: 80em; 
-    width: 100%;
+    width: 80em;
 }
-
 
 /* Contenitore orizzontale: scheda a sinistra, nuova recensione a destra */
 .top-container {
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
-    align-items: stretch; /* fondamentale */
-    margin: 0 auto;
-    padding-left: 0;
+    display: table;
+    width: 100%;
+    border-spacing: 1em; /* Sostituisce margin/padding tra le celle */
+    margin-bottom: 2em; /* Spazio prima delle recensioni */
 }
 
 
+.scheda-gioco,
+.recensione-form {
+    display: table-cell;
+    vertical-align: top; /* Allineamento in alto */
+    width: 65% 35%; /* Proporzioni colonne */
+}
+
 /* Scheda gioco a sinistra */
 .scheda-gioco {
-    flex: 1.2;
-    min-width: 65%;
-    max-width: 40%;
-    height: auto; /* da cambiare */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     background-color: var(--headerbgcolor);
-    color: #ffffff;
     border-radius: 0.75em;
-    overflow: hidden;
     box-shadow: 0 0.5em 1.25em rgba(0, 0, 0, 0.3);
-    font-size: 1em;
+    color: white;
+    padding: 1em;
 }
 
 
 .img-wrapper {
-    flex: 0 0 auto;
     width: 16em;
     height: 24em;
-    overflow: hidden;
-    background-color: var(--headerbgcolor);
+    float: left;
     margin: 1em;
     border-radius: 0.5em;
+    overflow: hidden;
 }
 
 .img-gioco {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
     border-radius: 0.5em;
 }
 
 .dati-gioco {
-    flex: 1 1 auto;
-    padding: 2em 1.5em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 1em;
+    overflow: hidden; /* Clearfix per il float */
+}
+
+
+.recensioni {
+    clear: both; /* Andrà sotto gli elementi float */
+    width: 100%;
+}
+
+/* Stili per i dettagli del gioco */
+.game_detail {
+    margin-bottom: 0.5em;
+}
+
+.etichetta {
+    font-weight: bold;
+}
+
+.valore_gioco {
+    margin-left: 0.5em;
+}
+
+.valore_descrizione {
+    display: inline-block;
+    margin-top: 0.5em;
 }
 
 .titolo-gioco {
@@ -1717,65 +1728,53 @@ fieldset .suggForm {
 
 /* Lista recensioni passate sotto */
 .recensioni {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    padding: 0 3em;
+    clear: both;
+    width: 100%;
+    margin-top: 2em;
 }
 
-.login_required,
-.recensione-form {
-    flex: 1; /* oppure flex: 0.8 per rapporti specifici */
-    height: auto; /* importante */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white;
-    border-left: 0.4em solid;
-    border-left-color: var(--headerbgcolor);
-    border-radius: 0.5em;
-    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
-    color: #333;
-    font-size: 1.1em;
-    text-align: center;
-    padding: 1.5em;
-}
 
 .box_recensioni {
-    width: 98%;
-    padding: 1.5em;
-    background-color: white;
-    border-left: 0.4em solid;
+    background: white;
     border-radius: 0.5em;
     box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
-    color: #333;
-    font-size: 1.1em;
-    text-align: center;
+    padding: 1.5em;
     margin-bottom: 1em;
-    margin-left: -1.25em;
-    
 }
 
 
 .login_required {
-    border-left-color: var(--linkvisited);
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* centra verticalmente */
-    height: 12.5em; /* o un'altezza adatta al tuo layout */
-    position: relative;
+    display: block; /* Rimuove flex */
+    width: auto; /* O una larghezza fissa se necessario (es. 100%) */
+    height: auto;
+    min-height: 8em; /* Altezza minima per coerenza visiva */
+    background-color: white;
+    border-left: 0.4em solid var(--headerbgcolor);
+    border-radius: 0.5em;
+    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 1.1em;
+    text-align: center;
+    padding: 1.5em;
+    margin-bottom: 1em; /* Spazio sotto se necessario */
+    box-sizing: border-box; /* Include padding/border nell'altezza/larghezza */
 }
 
+/* Se hai elementi interni (es. un messaggio o un link) */
 .login_required a {
     color: orange;
     text-decoration: underline;
     font-weight: bold;
+    display: inline-block; /* Per allineare correttamente */
+    margin-top: 1em; /* Spazio sopra il link */
 }
 
 .recensione-form {
-    margin-top: 0;
-    min-width: 20%;
-    padding-top: 1em;
+    background: white;
+    border-radius: 0.5em;
+    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    border-left: 0.4em solid var(--headerbgcolor);
 }
 
 .intestazione_recensione {
@@ -1788,7 +1787,7 @@ fieldset .suggForm {
     color: #333;
     display: block;
     font-size: 1em;
-    margin-bottom: 0.375em;
+    margin-bottom: 2em;
 }
 
 .recensione-textarea,
