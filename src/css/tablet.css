@@ -332,18 +332,37 @@ details summary {
 
 /*GIOCO SINGOLO */
   .contenuto_gioco {
-        padding: 0 1em;  /* Riduzione del padding */
-        width: 100%;  /* Si adatta alla larghezza dello schermo */
+      margin-top: 3em;
+          padding: 0 1em;
+      width: 80%;  /* Si adatta alla larghezza dello schermo */
         max-width: none;  /* Nessun limite di larghezza massima */
     }
 
     /* Scheda gioco (blocco blu) */
-    .scheda-gioco {
-        width: 90%; /* La larghezza si adatta alla schermata, ma non si riduce troppo */
-        min-width: none;  /* Rimuove la larghezza minima */
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .scheda-gioco {
+    width: 100%;  /* Si adatta alla larghezza disponibile */
+    max-width: 800px;  /* Limite massimo per evitare che diventi troppo largo */
+    min-width: 300px;  /* Limite minimo per evitare che diventi troppo stretto */
+    height: 500px;  /* Imposta un'altezza fissa, non cambierà quando ridimensioni */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;  /* Padding per evitare che il contenuto tocchi i bordi */
+    box-sizing: border-box;  /* Include padding e bordi nella larghezza totale */
+}
+
+
+.scheda-gioco > .contenuto {
+    width: 100%;
+    height: 100%;
+    transform-origin: top left;  /* Punti di riferimento per il ridimensionamento */
+    transition: transform 0.2s ease;  /* Aggiunge una transizione morbida */
+}
+
+/* Immagine all'interno della scheda gioco */
+.scheda-gioco img {
+    width: 100%;  /* L'immagine si adatta alla larghezza del contenitore */
+    height: auto;  /* Mantiene le proporzioni dell'immagine */
+}
 
     /* Box recensioni */
     .box_recensioni {
@@ -354,7 +373,7 @@ details summary {
 
     /* Login required */
     .login_required {
-        width: 90%;  /* La larghezza si adatta alla schermata */
+        width: 96%;  /* La larghezza si adatta alla schermata */
         margin-left: auto;
         margin-right: auto;
     }
