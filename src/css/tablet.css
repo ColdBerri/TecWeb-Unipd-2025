@@ -330,4 +330,38 @@ details summary {
   gap: 20px; /* Distanza tra i contenitori */
 }
 
+/*GIOCO SINGOLO */
+  .contenuto_gioco {
+        padding: 0 1em;  /* Riduzione del padding */
+        width: 100%;  /* Si adatta alla larghezza dello schermo */
+        max-width: none;  /* Nessun limite di larghezza massima */
+    }
 
+    /* Scheda gioco (blocco blu) */
+    .scheda-gioco {
+        width: 90%; /* La larghezza si adatta alla schermata, ma non si riduce troppo */
+        min-width: none;  /* Rimuove la larghezza minima */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Box recensioni */
+    .box_recensioni {
+        width: 90%;  /* La larghezza si adatta alla schermata */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Login required */
+    .login_required {
+        width: 90%;  /* La larghezza si adatta alla schermata */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Top container */
+    .top-container {
+        display: block;  /* Impedisce il layout a tabella e lo rende un blocco normale */
+        margin-left: auto;
+        margin-right: auto;
+    }

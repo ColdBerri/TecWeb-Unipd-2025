@@ -1614,7 +1614,9 @@ fieldset .suggForm {
     padding: 0 2em;
     margin-left: auto;
     margin-right: auto;
-    width: 80em;
+     width: 100%;
+    max-width: 80em;
+    box-sizing: border-box;
 }
 
 /* Contenitore orizzontale: scheda a sinistra, nuova recensione a destra */
@@ -1623,6 +1625,8 @@ fieldset .suggForm {
     width: 100%;
     border-spacing: 1em; /* Sostituisce margin/padding tra le celle */
     margin-bottom: 2em; /* Spazio prima delle recensioni */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -1640,6 +1644,12 @@ fieldset .suggForm {
     box-shadow: 0 0.5em 1.25em rgba(0, 0, 0, 0.3);
     color: white;
     padding: 1em;
+    min-width: 35em;  /* Impedisce che il blocco si rimpicciolisca oltre una certa larghezza */
+    display: table-cell;
+    vertical-align: top;
+        overflow: hidden;  /* Impedisce lo scorrimento orizzontale */
+
+    box-sizing: border-box;
 }
 
 
@@ -1673,6 +1683,7 @@ fieldset .suggForm {
 /* Stili per i dettagli del gioco */
 .game_detail {
     margin-bottom: 0.5em;
+    overflow: hidden;
 }
 
 .etichetta {
@@ -1770,11 +1781,14 @@ fieldset .suggForm {
 }
 
 .recensione-form {
+      width: 30%;  /* Recensione form occupa il 30% della larghezza */
     background: white;
     border-radius: 0.5em;
     box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
     padding: 1.5em;
-    border-left: 0.4em solid var(--headerbgcolor);
+    display: table-cell;
+    vertical-align: top;
+    min-width: 15em;
 }
 
 .intestazione_recensione {
