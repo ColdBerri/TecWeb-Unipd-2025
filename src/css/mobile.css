@@ -179,3 +179,78 @@ input[type="submit"][value="CERCA EVENTI"] {
   box-sizing: border-box;
   /* ✅ importante per evitare overflow */
 }
+
+
+.game_detail, 
+.valore_gioco {
+    margin-top: 0; /* elimina margini sopra la scritta */
+    padding-top: 0;
+}
+
+
+.scheda-gioco img {
+   width: 50%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* Crea un contenitore "interno" virtuale */
+.scheda-gioco::before {
+    content: "";
+    position: absolute;
+    transform: scale(0.8); /* rimpicciolisce tutto al suo interno del 20% */
+    transform-origin: top left;
+    display: block;
+    width: 125%;  /* 1 / 0.8 */
+    height: 125%;
+    pointer-events: none; /* evita problemi con click */
+    z-index: 1;
+}
+
+.img-wrapper {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+     margin-bottom: 0;
+        padding-bottom: 0;
+      margin-top: 3em; 
+}
+
+/* Riquadro blu */
+.scheda-gioco {
+    width: 90%;
+    max-width: 1200px;
+    min-width: 300px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Scala tutto proporzionalmente */
+.scheda-gioco > * {
+    transform: scale(0.85);       /* scala tutto, immagine inclusa */
+    transform-origin: top left;
+    width: 117.65%;               /* 1 / 0.85 ≈ 117.65% */
+    height: auto;
+}
+
+.titolo-gioco {
+    margin-top: 0;         /* elimina margine sopra il titolo */
+    margin-bottom: 0.3em;  /* margine basso piccolo per respiro */
+}
+
+ .box_recensioni {
+        width: 85%;  /* La larghezza si adatta alla schermata */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.dati-gioco {
+    margin top: 0;
+}
+

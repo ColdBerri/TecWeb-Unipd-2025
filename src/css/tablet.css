@@ -334,20 +334,23 @@ details summary {
   .contenuto_gioco {
       margin-top: 3em;
           padding: 0 1em;
-      width: 80%;  /* Si adatta alla larghezza dello schermo */
+      width: 100%;  /* Si adatta alla larghezza dello schermo */
         max-width: none;  /* Nessun limite di larghezza massima */
+    max-width: 1200px;
+   
     }
 
     /* Scheda gioco (blocco blu) */
   .scheda-gioco {
-    width: 100%;  /* Si adatta alla larghezza disponibile */
-    max-width: 800px;  /* Limite massimo per evitare che diventi troppo largo */
+    width: 90%;  /* Si adatta alla larghezza disponibile */
+    max-width: 100%;  /* Limite massimo per evitare che diventi troppo largo */
     min-width: 300px;  /* Limite minimo per evitare che diventi troppo stretto */
     height: 500px;  /* Imposta un'altezza fissa, non cambierà quando ridimensioni */
     margin-left: auto;
     margin-right: auto;
     padding: 1em;  /* Padding per evitare che il contenuto tocchi i bordi */
     box-sizing: border-box;  /* Include padding e bordi nella larghezza totale */
+    
 }
 
 
@@ -373,7 +376,7 @@ details summary {
 
     /* Login required */
     .login_required {
-        width: 96%;  /* La larghezza si adatta alla schermata */
+        width: 95%;  /* La larghezza si adatta alla schermata */
         margin-left: auto;
         margin-right: auto;
     }
@@ -384,3 +387,46 @@ details summary {
         margin-left: auto;
         margin-right: auto;
     }
+
+
+ .eventi_gioco {
+    display: block ;        
+    overflow-x: visible ;
+    white-space: normal;
+    text-align: center; /* centra gli elementi inline-block */
+  }
+
+  .eventi_gioco li {
+    display: block;
+    margin: 1em 0;
+    text-align: center;
+  }
+
+  .box_nuovo_evento {
+    display: inline-block; /* blocco centrato */
+    width: 100%;
+    max-width: 28em;                  /* imposta larghezza uguale per tutti */
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+.articoli_gioco {
+    display: block !important;
+    overflow-x: visible !important;
+    white-space: normal !important;
+    text-align: center;
+  }
+
+  .articoli_gioco li {
+    display: block !important;
+    margin: 1em 0;
+    text-align: center;
+  }
+
+  .box_articolo {
+    display: inline-block !important;
+    width: 100%;
+    max-width: 28em;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
