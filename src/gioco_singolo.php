@@ -18,12 +18,14 @@ $paginaHTML = new Template(
     "html/gioco_singolo.html"
 );
 
+
 if(!$connessioneOK) {
     $dati = $connessione->getVideogioco($nomeGioco);
     $evento = $connessione->getEventiGioco($nomeGioco);
     $articolo = $connessione->getArticoliGioco($nomeGioco);
     $recensioni = $connessione->getRecensioni($nomeGioco);
-
+    $categoria = $dati['categoria'];
+    $paginaHTML->aggiungiContenuto("[link_categoria]", "categoria_singola.php?categoria=".htmlspecialchars($categoria));
     if($dati){
 
         $img = $dati['immagine'];
@@ -196,7 +198,7 @@ $paginaHTML->aggiungiContenuto("[recensioni_passate]", $recensioniHTML);
         $listaEventi .= "</ul></div>";
         if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
             $listaEventi .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un evento relativo a questo videogioco?</p><a href = 'aggiungi_evento.php?gioco={$nomeGioco}' class='bottone_aggiungi_evento'> Aggiungi evento</a></div>";
-        }
+        } 
     } else {
         if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
             $listaEventi .= "<p><em>Nessun articolo disponibile per questo gioco.</em>";

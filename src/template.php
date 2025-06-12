@@ -268,7 +268,7 @@ class Template {
                 $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link"><span lang="en">Login</span>/Registrati</div></a></li>', $header);
             }   
 
-            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <a href="categorie.php">Categorie</a> &gt&gt; <a href="categoria_singola.php">Categoria Singola</a> &gt&gt;Gioco Singolo</p> </div>',$header);
+            $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <a href="categorie.php">Categorie</a> &gt&gt; <a href="[link_categoria]">Categoria Singola</a> &gt&gt;Gioco Singolo</p> </div>',$header);
         }
 
         if($pagina === "html/evento_singolo.html"){

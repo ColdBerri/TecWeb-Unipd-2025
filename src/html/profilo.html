@@ -1,6 +1,5 @@
 <div class="profilo-box" role="region" aria-labelledby="profilo-heading">
     <h1 id="profilo-heading">Il tuo profilo Vapor</h1>
-    [immagine]
     <div class="profile_info">
       <p>Nome Utente: <span class="valore">{{nickname}}</span></p>
       <p>Data di Nascita: <span class="valore">{{data_nascita}}</span></p>
@@ -8,17 +7,5 @@
     <div class="profilo-links">
       <a href="modifica_profilo.php" class="profile_button">Modifica <span lang="en">Password</span></a>
       <a href="profilo.php?logout=true" class="profile_button">Logout</a>
-      <form method="post" name="modifica_immagine_profilo">
-      <details>
-      <summary class="profile_summary">Cambia Immagine Profilo</summary>
-        <div class="button-container">
-          [selettore]
-          <fieldset>
-            <input type="submit" class="submit_button" name="salva_immagine_profilo" value="Salva">
-            <input type="reset" class="cancella" value="Annulla">
-          </fieldset>
-        </div>
-      </details>
-    </form>
     </div>
 </div>
