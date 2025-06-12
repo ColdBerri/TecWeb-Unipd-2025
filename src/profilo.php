@@ -1,7 +1,6 @@
 <?php
 require_once "template.php";
 require_once "dbconnections.php";
-
 use DB\DBAccess;
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
@@ -14,6 +13,10 @@ if (isset($_GET['logout'])) {
     session_unset();
     session_destroy();
     header("Location: index.php");
+    exit();
+}
+if(!isset($_SESSION['nickname'])){
+    header("Location: login.php");
     exit();
 }
 
@@ -39,7 +42,6 @@ if(!$connessioneOK){
             exit();
         }
         
-
     } else {
         // Nessun utente in sessione -> redirect o messaggio di errore
         echo "<p>Devi essere loggato per vedere il tuo profilo.</p>";

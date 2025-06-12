@@ -1,9 +1,7 @@
 <?php
 require_once "template.php";
 require_once "dbconnections.php";
-
 $paginaHTML = new Template("banana","banana","html/registra.html");
-
 use DB\DBAccess;
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();

@@ -185,11 +185,14 @@ class Template {
             $header = str_replace("[categorie]",'<li><a href="categorie.php"><div class="navbar_link">Categorie</div></a></li>', $header);
             $header = str_replace("[eventi]",'<li><a href="eventi.php"><div class="navbar_link">Prossimi eventi</div></a></li>', $header);
             $header = str_replace("[login]", '<li class="current-page">Profilo</li>', $header);
-            if($_SESSION['nickname'] === 'admin'){
-                $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>', $header);
-            }else{
-                $header = str_replace("[libreria]",' <li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>', $header);
-            }   
+            if(isset($_SESSION['nickname'])){
+                if($_SESSION['nickname'] === 'admin'){
+                    $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>', $header);
+                }else{
+                    $header = str_replace("[libreria]",' <li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>', $header);
+                }
+            }
+
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; Profilo</p> </div>',$header);
         }
 
