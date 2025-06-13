@@ -4,7 +4,12 @@ require_once "dbconnections.php";
 $paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","videogioco, evento, patch, aggiornamento, biblioteca","html/login.html");
 
 use DB\DBAccess;
-
+$game = "";
+$t = "";
+if(isset($_SESSION['nickname'])){
+    header("Location: profilo.php");
+    exit;
+}
 if (isset($_POST['submit'])) {
     $user = ($_POST['username']);
     $pass = ($_POST['password']);
@@ -34,9 +39,9 @@ if (isset($_POST['submit'])) {
                     $user_data = mysqli_fetch_assoc($result);
 
                     if($user_data['password_'] === $pass){
-                        $_SESSION['nickname'] = $user_data['nickname']; 
+                        $_SESSION['nickname'] = $user_data['nickname'];
                         header("Location: profilo.php");
-                        exit();
+                        exit;
                     }else {
                         $error = urlencode("Nome utente o pasword sbagliati. Ripetere il login");
                         header("Location: index.php");

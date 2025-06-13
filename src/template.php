@@ -64,7 +64,7 @@ class Template {
                 if($_SESSION['nickname'] === 'admin'){
                     $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>',$header);
                 }else{
-                    $header = str_replace("[libreria]",' <li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>',$header);
+                    $header = str_replace("[libreria]",' <li></li>',$header);
                 }
                 $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
@@ -85,7 +85,7 @@ class Template {
             if($_SESSION['nickname'] === 'admin'){
                 $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>',$header);
             }else{
-                $header = str_replace("[libreria]",' <li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>',$header);
+                $header = str_replace("[libreria]",' <li></li>',$header);
             }                
             $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
@@ -106,7 +106,7 @@ class Template {
             if($_SESSION['nickname'] === 'admin'){
                 $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>',$header);
             }else{
-                $header = str_replace("[libreria]",' <li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>',$header);
+                $header = str_replace("[libreria]",' <li></li>',$header);
             }                
             $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
@@ -128,7 +128,7 @@ class Template {
             if($_SESSION['nickname'] === 'admin'){
                 $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>',$header);
             }else{
-                $header = str_replace("[libreria]",' <li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>',$header);
+                $header = str_replace("[libreria]",' <li></li>',$header);
             }
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; Libreria</p></div>',$header);
         }
@@ -169,7 +169,7 @@ class Template {
                 if($_SESSION['nickname'] === 'admin'){
                     $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>',$header);
                 }else{
-                    $header = str_replace("[libreria]",' <li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>',$header);
+                    $header = str_replace("[libreria]",' <li></li>',$header);
                 }                
                 $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
@@ -189,7 +189,7 @@ class Template {
                 if($_SESSION['nickname'] === 'admin'){
                     $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>', $header);
                 }else{
-                    $header = str_replace("[libreria]",' <li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>', $header);
+                    $header = str_replace("[libreria]",' <li></li>', $header);
                 }
             }
 
@@ -206,7 +206,7 @@ class Template {
                 if($_SESSION['nickname'] === 'admin'){
                     $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>',$header);
                 }else{
-                    $header = str_replace("[libreria]",' <li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>',$header);
+                    $header = str_replace("[libreria]",' <li></li>',$header);
                 }                
                 $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
@@ -222,12 +222,12 @@ class Template {
             $header = str_replace("[home]",'<li><a href="index.php"><div class="navbar_link"><span lang="en">Home</span></div></a></li>',$header);
             $header = str_replace("[categorie]",'<li><a href="categorie.php"><div class="navbar_link">Categorie</div></a></li>',$header);
             $header = str_replace("[eventi]",'<li><a href="eventi.php"><div class="navbar_link">Prossimi eventi</div></a></li>',$header);
-            $header = str_replace("[libreria]",'<li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>',$header);
+            $header = str_replace("[libreria]",'<li></li>',$header);
             $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             if($_SESSION['nickname'] === 'admin'){
                 $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>',$header);
             }else{
-                $header = str_replace("[libreria]",' <li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>',$header);
+                $header = str_replace("[libreria]",' <li></li>',$header);
             }
 
             $header = str_replace("[breadcrump]",'<div class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a>&gt&gt;<a href="profilo.php">Profilo</a> &gt&gt; Modifica Password</p> </div>',$header);
@@ -243,7 +243,7 @@ class Template {
             if($_SESSION['nickname'] === 'admin'){
                 $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>',$header);
             }else{
-                $header = str_replace("[libreria]",' <li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>',$header);
+                $header = str_replace("[libreria]",' <li></li>',$header);
             }                
             $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
@@ -263,7 +263,7 @@ class Template {
                 if($_SESSION['nickname'] === 'admin'){
                     $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>',$header);
                 }else{
-                    $header = str_replace("[libreria]",' <li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>',$header);
+                    $header = str_replace("[libreria]",' <li></li>',$header);
                 }                
                 $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
@@ -284,7 +284,7 @@ class Template {
                 if($_SESSION['nickname'] === 'admin'){
                     $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>',$header);
                 }else{
-                    $header = str_replace("[libreria]",' <li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>',$header);
+                    $header = str_replace("[libreria]",' <li></li>',$header);
                 }                
                 $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
@@ -305,7 +305,7 @@ class Template {
                 if($_SESSION['nickname'] === 'admin'){
                     $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>',$header);
                 }else{
-                    $header = str_replace("[libreria]",' <li><a href="libreria.php"><div class="navbar_link">Libreria</div></a></li>',$header);
+                    $header = str_replace("[libreria]",' <li></li>',$header);
                 }                
                 $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
             }else{
