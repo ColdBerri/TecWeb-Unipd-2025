@@ -262,6 +262,11 @@ h1.h-index{
     margin-top:0em
 }
 
+
+.link_giocosingolo:visited {
+    color: var(--linkvisited);
+}
+
 .top-list img {
     width: 15em;
     aspect-ratio: 4 / 5;
@@ -313,16 +318,15 @@ h1.h-index{
 }
 
 .eventi-home {
-   border-left: 5px green solid;
-   background-color: white;
+   background-color: var(--headerbgcolor);
    border-radius: 0.7em;
    padding: 0.7em;
    text-align: center;
 }
 
 .eventi-home:hover {
-   border: 1px green solid;
-   border-left: 5px green solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+    transition: all 0.1s ease;
 }
 
 .eventi-home:first-child{
@@ -330,16 +334,16 @@ h1.h-index{
 }
 
 .notizie-home{
-   border-left: 5px red solid;
-   background-color: white;
+   background-color: var(--headerbgcolor);
    border-radius: 0.7em;
    padding: 0.7em;
    text-align: center;
+   text-decoration: underline;
 }
 
 .notizie-home:hover{
-   border: 1px red solid;
-   border-left: 5px red solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+    transition: all 0.1s ease;
 }
 
 /*CATEGORIE*/
@@ -932,6 +936,15 @@ fieldset {
     color: white;
 }
 
+
+.link_articolo {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .link_articolo:visited .miniGiornale {
+    color: var(--linkvisited);
+  }
 
 /* Contenitore bottoni finali */
 .button-container {
@@ -1562,37 +1575,47 @@ fieldset .suggForm {
 
 .dettagli-evento {
     width: 55%;
-    min-width: 28em;
+    min-width: 26em;
     list-style: none;
     padding: 0;
     margin: 0 auto;
 }
 
+.link_giocosingolo {
+    color: white;
+}
 
 .dettaglio {
-    display: flex;
-    flex-wrap: wrap;
     color: black;
     margin-bottom: 1em;
     padding: 1em;
     border-left: 0.25em solid var(--linkvisited);
-    background-color: #fff;
+    background-color: var(--headerbgcolor);
     border-radius: 0.5em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.dettaglio:last-child {
+    margin-bottom: 2em;
+}
+
 .etichetta {
+    display: inline-block;
     font-weight: bold;
     width: 9.375em;
     min-width: 9.375em;
     color: var(--headerbgcolor);
+    vertical-align: top;
 }
 
 .valore {
-    flex: 1;
-    color: black;
+    display: inline-block;
+    color: white;
     font-weight: bold;
+    width: calc(100% - 9.375em);
+    vertical-align: top;
 }
+
 
 .errore-evento {
     color: red;
@@ -1980,15 +2003,6 @@ p.testo_recensione {
     vertical-align: middle;
   }
   
-
-  .link_articolo {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .link_articolo:visited .miniGiornale {
-    color: var(--linkvisited);
-  }
   
   .miniGiornale {
     display: inline-block;
@@ -2124,6 +2138,22 @@ p.testo_recensione {
 
 .articoli_gioco li {
     flex: 0 0 auto; /* mantieni larghezza fissa degli articoli */
+}
+
+/*=====ARTICOLO SINGOLO=====*/
+.contenuto_articolo {
+    font-size: 1.125em;        /* leggermente più grande del normale */
+    line-height: 1.8em;        /* buona interlinea per la lettura */
+    color: #222;               /* colore scuro ma non nero assoluto */
+    background-color: #fafafa; /* sfondo molto chiaro per contrasto */
+    padding: 1.5em;
+    margin: 0 auto;
+    border-radius: 0.5em;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.05);
+    text-align: justify;       
+    word-wrap: break-word;
+    white-space: pre-line;    
+    max-width: 80%; 
 }
 
 

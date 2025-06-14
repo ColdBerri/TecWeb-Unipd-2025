@@ -21,7 +21,7 @@ if(!$connessioneOK){
 
         $nome = $evento['nome_evento'];
         $nomeVideogioco = $evento['nome_videogioco'];
-        $gioco = "<a href='gioco_singolo.php?gioco={$nomeVideogioco}'>".  $nomeVideogioco . "</a>";
+        $gioco = "<a class='link_giocosingolo' href='gioco_singolo.php?gioco={$nomeVideogioco}'>".  $nomeVideogioco . "</a>";
         $data_inizio = $evento['data_inizio_evento'];
         $data_fine = $evento['data_fine_evento'];
         $squadre = $evento['squadre_coinvolte'];

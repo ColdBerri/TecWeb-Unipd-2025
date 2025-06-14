@@ -1,7 +1,9 @@
-<ul class= 'intestazione_articolo'>
-    <li><h1><strong>Titolo : {{nomeArt}}</strong> <h1></li>
-    <li><strong>Videogioco : </strong>{{gioco}}</li>
-    <li><strong>Autore : </strong> {{autore}}</li>
-    <li><strong>Data Pubblicazione</strong> : {{data}}</li>
-</ul>
-<p class="contenuto_articolo">{{testo}}</p>
+<section id="articolo_singolo">
+    <h1 class="titolo_evento">{{nomeArt}}</h1>
+    <ul class="dettagli-evento">
+        <li class="dettaglio"><span class="etichetta">Videogioco:</span> <span class="valore">{{gioco}}</span></li>
+        <li class="dettaglio"><span class="etichetta">Autore:</span> <span class="valore">{{autore}}</span></li>
+        <li class="dettaglio"><span class="etichetta">Data Pubblicazione:</span> <span class="valore">{{data}}</span></li>
+    </ul>
+    <p class="contenuto_articolo">{{testo}}</p>
+</section>

@@ -32,7 +32,7 @@ if (!$connessioneOK) {
     if (is_array($img)) {
         foreach($img as $giuco){
             $nomeG = urlencode($giuco['nome_gioco']);
-            $listaGiuchi .= "<li><a href='gioco_singolo.php?gioco={$nomeG}'>";
+            $listaGiuchi .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco={$nomeG}'>";
             $listaGiuchi .= "<img src='assets/img/".$giuco['immagine']."' alt='".$giuco['nome_gioco']."'>";
             $listaGiuchi .= "<p class='titolo_gioco'>".$giuco['nome_gioco']."</p>";
             $listaGiuchi .= "</a></li>";
@@ -48,7 +48,7 @@ if (!$connessioneOK) {
         foreach($not as $eventi){
             $dataCompleta = date('d F Y', strtotime($eventi['data_inizio_evento'])); 
             $nomeEvent = urlencode($eventi['nome_evento']);
-            $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='eventi-home'>";
+            $listaEventi .= "<li><a class='link_articolo' href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='eventi-home'>";
             $listaEventi .= "<p class='miniCalendarioH'>" . $dataCompleta . "</p>";
             $listaEventi .= "<p class='miniCalendarioB'>" . $eventi['nome_evento'] . "</p>";
             $listaEventi .= "</div></a></li>";
