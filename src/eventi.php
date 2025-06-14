@@ -61,7 +61,7 @@ $indiceUltimoGiorno = date('N', $ultimoGiorno);
 $giorniFinaliVuoti = 7 - $indiceUltimoGiorno;
 
 $calendarioHTML .= "<thead>";
-$calendarioHTML .= "<div><tr class='mese_selezionato'><th colspan='7' lang='en'>" . date('F Y', $primoGiorno) . "</th></tr></div>";
+$calendarioHTML .= "<div><tr class='mese_selezionato'><th colspan='7' lang='en'><div>" . date('F Y', $primoGiorno) . "</div></th></tr></div>";
 
 $tmp = false;
 if (date('m', $primoGiorno) === $oggiM) {

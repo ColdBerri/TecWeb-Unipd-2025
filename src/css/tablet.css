@@ -202,8 +202,6 @@ li.current-page {
     margin-bottom: 4em;
   }
 
-
-
   /* ABOUT US */
 .aboutus_text {
     margin: 1.5em;
@@ -261,9 +259,31 @@ li.current-page {
   display: none;
 }
 
-thead{
+thead {
+  display: table-header-group;
+  border-radius: 1em;
+}
+
+thead .listaGiorniCalendario {
   display: none;
 }
+
+.mese_selezionato>th {
+  display: inline-block;
+  color: #111;
+}
+
+.mese_selezionato>th>div {
+  background-color:#1A2333;
+  padding: 0.5em;
+  color: white;
+  border-radius: 0.6em;
+}
+
+.calendario-tabella thead {
+  background-color: transparent;
+}
+
 
 tr, td{
   display: block;
@@ -278,12 +298,11 @@ td, th{
   border-top: none;
 }
 
-th[data-title]:before, td[data-title]:before{
-  content: attr(data-title) "- ";
+td[data-title]:before{
+  content: attr(data-title) " - ";
   font-weight: bold;
 }
 
-.calendario-tabella th,
 .calendario-tabella td{
   height: 2.5em;
   min-height: 4em;
@@ -299,7 +318,6 @@ th[data-title]:before, td[data-title]:before{
 .calendario-tabella td:first{
   border-radius: 0 1em 0 1em;
 }
-
 
 /* ASSISTENZA */
 details {
