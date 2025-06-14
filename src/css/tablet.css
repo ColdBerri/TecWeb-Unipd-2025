@@ -202,6 +202,62 @@ li.current-page {
     margin-bottom: 4em;
   }
 
+
+.top-liste {
+        display: block;
+        margin: 0 auto; /* Centrato orizzontalmente */
+        text-align: left;
+    }
+
+    /* Solo per eventi e notizie */
+    .eventi-home,
+    .notizie-home {
+        width: 80%; /* Forza la larghezza al 80% */
+        max-width: 900px; /* Imposta una larghezza massima */
+        margin: 0 auto; /* Centrato orizzontalmente con margini automatici */
+        padding: 1em;
+        border-radius: 0.7em; /* Manteniamo il bordo arrotondato */
+    }
+
+    /* Impostare larghezza uguale per gli item nelle liste delle notizie e degli eventi */
+    .top-liste li {
+        width: 100%; /* Forza la larghezza del li al 100% */
+        display: block; /* Imposta gli elementi a blocchi, per impilarli */
+        margin: 1em 0; /* Spazio verticale tra gli elementi */
+        box-sizing: border-box;
+    }
+
+    /* Assicurati che i contenuti siano centrati senza spazi strani */
+    .top-list {
+        display: block;  /* Impedisce l'influenza sul layout dei videogiochi */
+    }
+
+
+/* Ridurre i margini laterali */
+.miniCalendarioH, .miniCalendarioB {
+    text-align: center; /* Centra il testo */
+    width: 30%;         /* Allarga il contenuto fino al 90% */
+    margin: 0 5%;       /* Spaziatura laterale ridotta */
+}
+
+
+.eventi-home, .notizie-home {
+    cursor: pointer;  /* Manina cliccabile dentro il riquadro blu */
+}
+
+/* Rimuovere la manina fuori dai riquadri blu (stessa altezza) */
+.top-liste li {
+    cursor: default;  /* Rimuove la manina fuori dai riquadri */
+}
+
+
+.top-liste li a {
+    cursor: default;  /* Mantieni il cursore normale sui link fuori dai riquadri */
+}
+
+
+
+
   /* ABOUT US */
 .aboutus_text {
     margin: 1.5em;
