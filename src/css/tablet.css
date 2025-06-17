@@ -1,15 +1,18 @@
-main, section, .container {
-  margin-top: 7em;          /* spesso qui c'è spazio inutile */
+main,
+section,
+.container {
+  margin-top: 7em;
+  /* spesso qui c'è spazio inutile */
 }
 
-h1{
+h1 {
   margin: 0.8em;
   margin-top: 1.5em;
   max-width: 80%;
 }
 
-.search-container{
-    display: none;
+.search-container {
+  display: none;
 }
 
 .menu ul li:not(:first-child) {
@@ -18,50 +21,55 @@ h1{
 
 .menu {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   position: relative;
 }
 
-.burger{
+.burger {
   display: block;
-  margin-left: auto; 
+  margin-left: auto;
   position: absolute;
   padding: 1em;
   right: 0;
 }
 
-.burger>img{
+.burger>img {
   width: 2.2em;
   cursor: pointer;
 }
 
 nav.menuHamberger {
-    display: flex;
-    flex-direction: column;         /* Importante per layout verticale */
-    background-color: var(--headerbgcolor);
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100vh;                  /* Occupa tutta l'altezza visibile */
-    overflow-y: auto;               /* Scroll verticale se necessario */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 1);
-    list-style: none;
-    position: fixed;
-    margin: 0;
-    padding-top: 1em;               /* Aumenta il padding-top se necessario */
-    padding-bottom: 4m;            /* Aggiungi un padding-bottom per non tagliare l'ultima voce */
-    z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  /* Importante per layout verticale */
+  background-color: var(--headerbgcolor);
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  /* Occupa tutta l'altezza visibile */
+  overflow-y: auto;
+  /* Scroll verticale se necessario */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 1);
+  list-style: none;
+  position: fixed;
+  margin: 0;
+  padding-top: 1em;
+  /* Aumenta il padding-top se necessario */
+  padding-bottom: 4m;
+  /* Aggiungi un padding-bottom per non tagliare l'ultima voce */
+  z-index: 9999;
 }
 
 
-.overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0);
-    z-index: 9998; 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 9998;
 }
 
 
@@ -86,210 +94,234 @@ nav.menuHamberger {
 }
 
 .nascondiul {
-    display: flex;
-    list-style: none;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-    gap: 1em;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  gap: 1em;
 }
 
-nav.menuHamberger > ul {
-    width: 100%;
-    list-style: none;
-    text-align: center;
-    color: var(--textcolor);
+nav.menuHamberger>ul {
+  width: 100%;
+  list-style: none;
+  text-align: center;
+  color: var(--textcolor);
 }
 
-nav.menuHamberger > ul > li {
+nav.menuHamberger>ul>li {
   padding: 3em;
- }
+}
 
-nav.menuHamberger > ul > :first-child{
-    text-align: right;
-    padding-bottom: 3em;
+nav.menuHamberger>ul> :first-child {
+  text-align: right;
+  padding-bottom: 3em;
 }
 
 li.current-page {
   list-style: url("../assets/fast-forward.png");
-     list-style-position: inside;
+  list-style-position: inside;
 }
 
-.navbar_link{
+.navbar_link {
   background-color: var(--div_navbar_link);
 }
 
 /* Menu */
 
-  .nav-menu, .nascondi {
-    background-color: #333;
-  }
+.nav-menu,
+.nascondi {
+  background-color: #333;
+}
 
-  /* Voci di menu */
-  .barraCentrale a, .barraCentrale2 a {
-    color: white;
-    font-size: 1.5em;  /* Aumento della dimensione del testo per tablet */
-    padding: 10px 15px; /* Più spazio per i touch */
-  }
+/* Voci di menu */
+.barraCentrale a,
+.barraCentrale2 a {
+  color: white;
+  font-size: 1.5em;
+  /* Aumento della dimensione del testo per tablet */
+  padding: 10px 15px;
+  /* Più spazio per i touch */
+}
 
-  /* Rimuove i punti dalle liste */
-  .barraCentrale li, .barraCentrale2 li {
-    list-style: none;
-    margin: 1.5em 0;
-  }
+/* Rimuove i punti dalle liste */
+.barraCentrale li,
+.barraCentrale2 li {
+  list-style: none;
+  margin: 1.5em 0;
+}
 
 /* Aggiustamenti per header e breadcrumb su tablet */
-  
-  /* Header */
-  .menu {
-    text-align: center;
-  }
 
-  /* Logo */
- 
-  .logo h1 {
-    font-size: 1em;
-  }
+/* Header */
+.menu {
+  text-align: center;
+}
 
+/* Logo */
 
-  /* Contenitore principale */
-  .container {
-    padding-top: 70px; /* Aggiunge spazio sopra il contenuto per evitare che venga sovrapposto dall'header */
-  }
-
-  /* Altri aggiustamenti */
-  .nav-links {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .library-search-container {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: 2em auto;
-    gap: 1em;
-    flex-wrap: wrap;
-  }
-
-  .library-search-box {
-    flex: 1;
-    min-width: 0;
-    padding: 1em;
-    font-size: 1.2em;
-    border: 1px solid #ccc;
-    border-radius: 1em;
-  }
-
-  .library-search-button {
-    padding: 1em;
-    font-size: 1.2em;
-    border-radius: 1em;
-    border: 1px solid #ccc;
-    background-color: var(--headerbgcolor);
-    cursor: pointer;
-  }
-
-  .library-search-button img {
-    width: 1.5em;
-    height: 1.5em;
-  }
-
-  div.login-box {
-    width: 80%;
-    padding: 1.5em;
-    margin-top: 3em;
-    margin-bottom: 4em;
-  }
-
-
-.top-liste {
-        display: block;
-        margin: 0 auto; /* Centrato orizzontalmente */
-        text-align: left;
-    }
-
-    /* Solo per eventi e notizie */
-    .eventi-home,
-    .notizie-home {
-        width: 80%; /* Forza la larghezza al 80% */
-        max-width: 900px; /* Imposta una larghezza massima */
-        margin: 0 auto; /* Centrato orizzontalmente con margini automatici */
-        padding: 1em;
-        border-radius: 0.7em; /* Manteniamo il bordo arrotondato */
-    }
-
-    /* Impostare larghezza uguale per gli item nelle liste delle notizie e degli eventi */
-    .top-liste li {
-        width: 100%; /* Forza la larghezza del li al 100% */
-        display: block; /* Imposta gli elementi a blocchi, per impilarli */
-        margin: 1em 0; /* Spazio verticale tra gli elementi */
-        box-sizing: border-box;
-    }
-
-    /* Assicurati che i contenuti siano centrati senza spazi strani */
-    .top-list {
-        display: block;  /* Impedisce l'influenza sul layout dei videogiochi */
-    }
-
-
-/* Ridurre i margini laterali */
-.miniCalendarioH, .miniCalendarioB {
-    text-align: center; /* Centra il testo */
-    width: 30%;         /* Allarga il contenuto fino al 90% */
-    margin: 0 5%;       /* Spaziatura laterale ridotta */
+.logo h1 {
+  font-size: 1em;
 }
 
 
-.eventi-home, .notizie-home {
-    cursor: pointer;  /* Manina cliccabile dentro il riquadro blu */
+/* Contenitore principale */
+.container {
+  padding-top: 70px;
+  /* Aggiunge spazio sopra il contenuto per evitare che venga sovrapposto dall'header */
+}
+
+/* Altri aggiustamenti */
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.library-search-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 2em auto;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.library-search-box {
+  flex: 1;
+  min-width: 0;
+  padding: 1em;
+  font-size: 1.2em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+
+.library-search-button {
+  padding: 1em;
+  font-size: 1.2em;
+  border-radius: 1em;
+  border: 1px solid #ccc;
+  background-color: var(--headerbgcolor);
+  cursor: pointer;
+}
+
+.library-search-button img {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+div.login-box {
+  width: 80%;
+  padding: 1.5em;
+  margin-top: 3em;
+  margin-bottom: 4em;
+}
+
+
+.top-liste {
+  display: block;
+  margin: 0 auto;
+  /* Centrato orizzontalmente */
+  text-align: left;
+}
+
+/* Solo per eventi e notizie */
+.eventi-home,
+.notizie-home {
+  width: 80%;
+  /* Forza la larghezza al 80% */
+  max-width: 900px;
+  /* Imposta una larghezza massima */
+  margin: 0 auto;
+  /* Centrato orizzontalmente con margini automatici */
+  padding: 1em;
+  border-radius: 0.7em;
+  /* Manteniamo il bordo arrotondato */
+}
+
+/* Impostare larghezza uguale per gli item nelle liste delle notizie e degli eventi */
+.top-liste li {
+  width: 100%;
+  /* Forza la larghezza del li al 100% */
+  display: block;
+  /* Imposta gli elementi a blocchi, per impilarli */
+  margin: 1em 0;
+  /* Spazio verticale tra gli elementi */
+  box-sizing: border-box;
+}
+
+/* Assicurati che i contenuti siano centrati senza spazi strani */
+.top-list {
+  display: block;
+  /* Impedisce l'influenza sul layout dei videogiochi */
+}
+
+
+/* Ridurre i margini laterali */
+.miniCalendarioH,
+.miniCalendarioB {
+  text-align: center;
+  /* Centra il testo */
+  width: 30%;
+  /* Allarga il contenuto fino al 90% */
+  margin: 0 5%;
+  /* Spaziatura laterale ridotta */
+}
+
+
+.eventi-home,
+.notizie-home {
+  cursor: pointer;
+  /* Manina cliccabile dentro il riquadro blu */
 }
 
 /* Rimuovere la manina fuori dai riquadri blu (stessa altezza) */
 .top-liste li {
-    cursor: default;  /* Rimuove la manina fuori dai riquadri */
+  cursor: default;
+  /* Rimuove la manina fuori dai riquadri */
 }
 
 
 .top-liste li a {
-    cursor: default;  /* Mantieni il cursore normale sui link fuori dai riquadri */
+  cursor: default;
+  /* Mantieni il cursore normale sui link fuori dai riquadri */
 }
 
 
 
 
-  /* ABOUT US */
+/* ABOUT US */
 .aboutus_text {
-    margin: 1.5em;
+  margin: 1.5em;
 }
 
 .container {
-    display: block;
-    align-items: center;
-  }
+  display: block;
+  align-items: center;
+}
 
 
-  .container > div {
-    width: 100%;
-    max-width: 450px; /* Larghezza più ampia rispetto alla versione mobile */
-    margin-bottom: 20px;
-  }
+.container>div {
+  width: 100%;
+  max-width: 450px;
+  /* Larghezza più ampia rispetto alla versione mobile */
+  margin-bottom: 20px;
+}
 
 
 .aboutus_team {
-    margin-bottom: -1em;
+  margin-bottom: -1em;
 }
 
-.team_info{
-    margin-top: 1em;
+.team_info {
+  margin-top: 1em;
 }
 
 .container {
-    max-width: 80%;
-    margin-top: 0;
+  max-width: 80%;
+  margin-top: 0;
 }
 
-  /*ASSISTENZA*/
+/*ASSISTENZA*/
 .support_details {
   width: 90%;
   max-width: 100%;
@@ -307,11 +339,11 @@ li.current-page {
 
 /* CALENDARIO EVENTI */
 
-.listaGiorniCalendario{
+.listaGiorniCalendario {
   display: none;
 }
 
-.giornoFuori{
+.giornoFuori {
   display: none;
 }
 
@@ -330,7 +362,7 @@ thead .listaGiorniCalendario {
 }
 
 .mese_selezionato>th>div {
-  background-color:#1A2333;
+  background-color: #1A2333;
   padding: 0.5em;
   color: white;
   border-radius: 0.6em;
@@ -341,25 +373,27 @@ thead .listaGiorniCalendario {
 }
 
 
-tr, td{
+tr,
+td {
   display: block;
   padding: 0;
 }
 
-.calendario-tabella thead>tr{
+.calendario-tabella thead>tr {
   text-align: center;
 }
 
-td, th{
+td,
+th {
   border-top: none;
 }
 
-td[data-title]:before{
+td[data-title]:before {
   content: attr(data-title) " - ";
   font-weight: bold;
 }
 
-.calendario-tabella td{
+.calendario-tabella td {
   height: 2.5em;
   min-height: 4em;
   padding: 1em 1em 0em 1em;
@@ -367,140 +401,134 @@ td[data-title]:before{
   text-align: center;
 }
 
-.marked{
+.marked {
   text-align: center;
 }
 
-.calendario-tabella td:first{
+.calendario-tabella td:first {
   border-radius: 0 1em 0 1em;
 }
 
 /* ASSISTENZA */
 details {
-  width: 90%; /* Imposta una larghezza per il contenitore */
-  max-width: 100%; /* Limita la larghezza massima per evitare che si allunghi troppo su schermi grandi */
-  padding: 16px; /* Aggiungi padding interno per un po' di spazio */
-  margin: 20px auto; /* Centra il contenitore orizzontalmente (auto sui lati) */
-  box-sizing: border-box; /* Include il padding nel calcolo della larghezza */
+  width: 90%;
+  /* Imposta una larghezza per il contenitore */
+  max-width: 100%;
+  /* Limita la larghezza massima per evitare che si allunghi troppo su schermi grandi */
+  padding: 16px;
+  /* Aggiungi padding interno per un po' di spazio */
+  margin: 20px auto;
+  /* Centra il contenitore orizzontalmente (auto sui lati) */
+  box-sizing: border-box;
+  /* Include il padding nel calcolo della larghezza */
 }
 
 details summary {
-  font-size: 1.3em; /* Aumenta la dimensione del testo */
-  font-weight: bold; /* Aggiungi un po' di enfasi al testo */
-  text-align: center; /* Allinea il testo al centro */
+  font-size: 1.3em;
+  /* Aumenta la dimensione del testo */
+  font-weight: bold;
+  /* Aggiungi un po' di enfasi al testo */
+  text-align: center;
+  /* Allinea il testo al centro */
 }
 
 .blocco-contatto {
-  width: 60%; /* Adatta i riquadri alla larghezza del contenitore */
-  max-width: 600px; /* Imposta una larghezza massima */
-  margin: 20px auto; /* Centra i riquadri */
+  width: 60%;
+  /* Adatta i riquadri alla larghezza del contenitore */
+  max-width: 600px;
+  /* Imposta una larghezza massima */
+  margin: 20px auto;
+  /* Centra i riquadri */
 }
 
 .contatti {
-  display: flex; /* Usa flexbox per il layout dei contenitori */
+  display: flex;
+  /* Usa flexbox per il layout dei contenitori */
   flex-direction: column;
-  align-items: center; /* Centra i contenitori orizzontalmente */
+  align-items: center;
+  /* Centra i contenitori orizzontalmente */
   justify-content: center;
-  gap: 20px; /* Distanza tra i contenitori */
+  gap: 20px;
+  /* Distanza tra i contenitori */
 }
 
 /*GIOCO SINGOLO */
-  .contenuto_gioco {
-      margin-top: 3em;
-          padding: 0 1em;
-      width: 100%;  /* Si adatta alla larghezza dello schermo */
-        max-width: none;  /* Nessun limite di larghezza massima */
-    max-width: 1200px;
-   
-    }
+.scheda-gioco {
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+  display: table;
+  /* contenitore tabella */
+  width: 100%;
+  box-sizing: border-box;
+}
 
-    /* Scheda gioco (blocco blu) */
-  .scheda-gioco {
-    width: 90%;  /* Si adatta alla larghezza disponibile */
-    max-width: 100%;  /* Limite massimo per evitare che diventi troppo largo */
-    min-width: 300px;  /* Limite minimo per evitare che diventi troppo stretto */
-    height: 500px;  /* Imposta un'altezza fissa, non cambierà quando ridimensioni */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1em;  /* Padding per evitare che il contenuto tocchi i bordi */
-    box-sizing: border-box;  /* Include padding e bordi nella larghezza totale */
-    
+.img-wrapper {
+  width: 16em;
+  height: 24em;
+  float: left;
+  box-sizing: border-box;
+  display: table-cell;
+  /* comporta il comportamento di cella */
+  vertical-align: middle;
+  /* centra verticalmente */
+  float: none;
+  /* serve togliere il float per far funzionare table-cell */
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.contenuto_gioco {
+  margin-top: 3em;
+  padding: 0 1em;
+  width: 100%;
+  /* Si adatta alla larghezza dello schermo */
+  max-width: none;
+  /* Nessun limite di larghezza massima */
+  max-width: 1200px;
+}
+
+/* Contenitore principale */
+.top-container {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 75em;
+  padding: 1em;
+  box-sizing: border-box;
 }
 
 
-.scheda-gioco > .contenuto {
-    width: 100%;
-    height: 100%;
-    transform-origin: top left;  /* Punti di riferimento per il ridimensionamento */
-    transition: transform 0.2s ease;  /* Aggiunge una transizione morbida */
+/* Form recensione */
+.recensione-form {
+  display: block;
+  width: 86%;
+  padding: 1em;
+  margin: 0 auto;
+  border-radius: 8px;
+  clear: both;
 }
 
-/* Immagine all'interno della scheda gioco */
-.scheda-gioco img {
-    width: 100%;  /* L'immagine si adatta alla larghezza del contenitore */
-    height: auto;  /* Mantiene le proporzioni dell'immagine */
+.intestazione_recensione {
+  margin-bottom: 0.5em;
 }
 
-    /* Box recensioni */
-    .box_recensioni {
-        width: 90%;  /* La larghezza si adatta alla schermata */
-        margin-left: auto;
-        margin-right: auto;
-    }
+.recensione-rating {
+  margin-bottom: 1em;
+}
 
-    /* Login required */
-    .login_required {
-        width: 95%;  /* La larghezza si adatta alla schermata */
-        margin-left: auto;
-        margin-right: auto;
-    }
+.recensione-textarea {
+  width: 100%;
+  height: 100px;
+  resize: none;
+  margin-bottom: 1em;
 
-    /* Top container */
-    .top-container {
-        display: block;  /* Impedisce il layout a tabella e lo rende un blocco normale */
-        margin-left: auto;
-        margin-right: auto;
-    }
+}
 
-
- .eventi_gioco {
-    display: block ;        
-    overflow-x: visible ;
-    white-space: normal;
-    text-align: center; /* centra gli elementi inline-block */
-  }
-
-  .eventi_gioco li {
-    display: block;
-    margin: 1em 0;
-    text-align: center;
-  }
-
-  .box_nuovo_evento {
-    display: inline-block; /* blocco centrato */
-    width: 100%;
-    max-width: 28em;                  /* imposta larghezza uguale per tutti */
-    box-sizing: border-box;
-    margin: 0 auto;
-  }
-
-.articoli_gioco {
-    display: block !important;
-    overflow-x: visible !important;
-    white-space: normal !important;
-    text-align: center;
-  }
-
-  .articoli_gioco li {
-    display: block !important;
-    margin: 1em 0;
-    text-align: center;
-  }
-
-  .box_articolo {
-    display: inline-block !important;
-    width: 100%;
-    max-width: 28em;
-    box-sizing: border-box;
-    margin: 0 auto;
-  }
+.recensione-submit {
+  padding: 0.5em 1em;
+}

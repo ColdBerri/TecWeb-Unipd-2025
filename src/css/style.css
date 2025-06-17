@@ -66,7 +66,7 @@ footer a:visited {
     color: var(--linkvisited);
 }
 
-footer a{
+footer a {
     color: white;
 }
 
@@ -222,7 +222,7 @@ ul .current-page {
     /* Sostituisce l'immagine con search_red.png al passaggio del mouse */
 }
 
-.div-h{
+.div-h {
     text-align: center;
 }
 
@@ -249,17 +249,16 @@ ul .current-page {
 
 /*=====MAIN=====*/
 
-.top-list{
+.top-list {
     text-align: center;
 }
 
-.titolo_gioco
-{
+.titolo_gioco {
     padding-bottom: 0.4em;
 }
 
-h1.h-index{
-    margin-top:0em
+h1.h-index {
+    margin-top: 0em
 }
 
 
@@ -276,13 +275,13 @@ h1.h-index{
 
 .top-list li {
     background-color: var(--headerbgcolor);
-    display:inline-block;
+    display: inline-block;
     margin: 3em;
     margin-top: 0em;
     border-radius: 0.7em;
 }
 
-.top-list li:hover{
+.top-list li:hover {
     transform: scale(1.05);
     opacity: 0.5;
     transition: transform 0.5s ease;
@@ -297,31 +296,33 @@ h1.h-index{
     color: white;
 }
 
-.top-liste{
+.top-liste {
     text-align: center;
     margin: 1em;
-    padding-top:1em;
-    padding-bottom:1em;
-    
+    padding-top: 1em;
+    padding-bottom: 1em;
+
 }
 
 .top-liste li {
-    display:inline-block;
+    display: inline-block;
     margin: 0.5em;
     border-radius: 0.7em;
 }
-.top-liste li:first-child{
+
+.top-liste li:first-child {
     margin-left: 0;
 }
+
 .top-liste li:last-child {
     margin-right: 0;
 }
 
 .eventi-home {
-   background-color: var(--headerbgcolor);
-   border-radius: 0.7em;
-   padding: 0.7em;
-   text-align: center;
+    background-color: var(--headerbgcolor);
+    border-radius: 0.7em;
+    padding: 0.7em;
+    text-align: center;
 }
 
 .eventi-home:hover {
@@ -329,33 +330,33 @@ h1.h-index{
     transition: all 0.1s ease;
 }
 
-.eventi-home:first-child{
+.eventi-home:first-child {
     text-align: center;
 }
 
-.notizie-home{
-   background-color: var(--headerbgcolor);
-   border-radius: 0.7em;
-   padding: 0.7em;
-   text-align: center;
-   text-decoration: underline;
+.notizie-home {
+    background-color: var(--headerbgcolor);
+    border-radius: 0.7em;
+    padding: 0.7em;
+    text-align: center;
+    text-decoration: underline;
 }
 
-.notizie-home:hover{
+.notizie-home:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
     transition: all 0.1s ease;
 }
 
 /*CATEGORIE*/
 
-.categoria h2>a{
+.categoria h2>a {
     background-color: whitesmoke;
     padding: 0.5em;
     border-radius: 0.7em;
     cursor: pointer;
 }
 
-.filedset-cat{
+.filedset-cat {
     margin: 0;
 }
 
@@ -376,7 +377,7 @@ ul.ulCategorie>li:first-child {
     margin: 0.3em;
 }
 
-ul.ulCategorie select{
+ul.ulCategorie select {
     padding: 0.5em 0.5em;
     border: 1px solid #ccc;
     border-radius: 1.4em;
@@ -415,8 +416,8 @@ ul.ulCategorie>li {
     margin-bottom: 1em;
 }
 
-ul.ulCategorie>li input{
-    padding:0.8em 1.1em;
+ul.ulCategorie>li input {
+    padding: 0.8em 1.1em;
     border: 1px solid #ccc;
     border-radius: 1.4em;
     background-color: var(--headerbgcolor);
@@ -471,18 +472,18 @@ div.categoria>h2 {
     cursor: pointer;
 }
 
-.GiocoRicerca{
+.GiocoRicerca {
     text-align: center;
     padding: 0 0 1em 0;
 }
 
-.GiocoRicerca>p{
+.GiocoRicerca>p {
     font-size: 1.3em;
     font-weight: bold;
     padding: 0.5em 0 1em 0;
 }
 
-.erroreRicerca{
+.erroreRicerca {
     padding-top: 3em;
     text-align: center;
     font-size: 1.5em;
@@ -567,7 +568,7 @@ input[type="submit"][value="CERCA EVENTI"]:hover {
     /* Colore di sfondo al passaggio del mouse */
 }
 
-.thead>tr>th{
+.thead>tr>th {
     color: white;
 }
 
@@ -673,7 +674,7 @@ td.giornoFuori>p {
     text-indent: -999em;
 }
 
-.titolo_calendario{
+.titolo_calendario {
     font-size: 1.5em;
     background-color: white;
     border-radius: 1em;
@@ -940,11 +941,11 @@ fieldset {
 .link_articolo {
     text-decoration: none;
     color: white;
-  }
-  
-  .link_articolo:visited .miniGiornale {
+}
+
+.link_articolo:visited .miniGiornale {
     color: var(--linkvisited);
-  }
+}
 
 /* Contenitore bottoni finali */
 .button-container {
@@ -1302,8 +1303,7 @@ aside {
 
 
 /*=====ABOUT US=====*/
-.team_info_box
-{
+.team_info_box {
     background-color: white;
     width: 80%;
     margin: 0 auto;
@@ -1313,11 +1313,16 @@ aside {
     border-radius: 2em;
     margin-bottom: 1em;
 }
+
 .aboutus_text {
-    margin: 2em auto;   /* Auto centra orizzontalmente il blocco */
-    max-width: 80%;     /* Imposta una larghezza massima (regolala se necessario) */
-    text-align: center; /* Allinea il testo al centro */
-    padding: 0 2em;     /* Aggiunge spazio interno se necessario */
+    margin: 2em auto;
+    /* Auto centra orizzontalmente il blocco */
+    max-width: 80%;
+    /* Imposta una larghezza massima (regolala se necessario) */
+    text-align: center;
+    /* Allinea il testo al centro */
+    padding: 0 2em;
+    /* Aggiunge spazio interno se necessario */
     font-size: 1.3em;
     text-align: justify;
 }
@@ -1331,8 +1336,10 @@ h2 {
 }
 
 .container {
-    text-align: center; /* Allinea inline-block al centro */
-    max-width: 62.5em; /* 1000px */
+    text-align: center;
+    /* Allinea inline-block al centro */
+    max-width: 62.5em;
+    /* 1000px */
     margin: 0 auto;
 }
 
@@ -1344,13 +1351,18 @@ h2 {
     vertical-align: top;
     width: 42%;
     margin: 1.5%;
-    min-height: 25em; /* 490px */
+    min-height: 25em;
+    /* 490px */
     background-color: #f9f9f9;
-    border: 0.0625em solid #ccc; /* 1px */
-    border-radius: 0.5em; /* 8px */
-    padding: 3.75em 0.625em; /* 60px 10px */
+    border: 0.0625em solid #ccc;
+    /* 1px */
+    border-radius: 0.5em;
+    /* 8px */
+    padding: 3.75em 0.625em;
+    /* 60px 10px */
     padding-top: 2.5em;
-    box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.1); /* 0 2px 5px */
+    box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.1);
+    /* 0 2px 5px */
     text-align: left;
     box-sizing: border-box;
 }
@@ -1361,8 +1373,10 @@ h2 {
 .colonna4 ul {
     list-style-type: none;
     padding-left: 0;
-    margin: 1.875em; /* 30px */
-    margin-top: 1.25em; /* 20px */
+    margin: 1.875em;
+    /* 30px */
+    margin-top: 1.25em;
+    /* 20px */
     text-align: justify;
 
 }
@@ -1371,8 +1385,10 @@ h2 {
 .colonna2 li,
 .colonna3 li,
 .colonna4 li {
-    margin-bottom: 1.25em; /* 20px */
-    font-size: 1.125em; /* 18px */
+    margin-bottom: 1.25em;
+    /* 20px */
+    font-size: 1.125em;
+    /* 18px */
     line-height: 1.5;
 }
 
@@ -1384,16 +1400,19 @@ h2 {
 }
 
 .galleria img {
-    max-width: 8em; /* 100px */
+    max-width: 8em;
+    /* 100px */
     display: block;
     margin: 0 auto;
     margin-bottom: 2.5em;
 }
 
 
-.colonna3, colonna4 {
+.colonna3,
+colonna4 {
     margin-bottom: 3em;
 }
+
 /*=====ASSISTENZA=====*/
 
 
@@ -1632,26 +1651,13 @@ fieldset .suggForm {
 
 /* GIOCO SINGOLO */
 
-@media (max-width: 1140px) {
-    .scheda-gioco {
-        width: 100%; /* oppure modifica flex, margini, padding, ecc. */
-        display: block;
-        margin-bottom: 1em;
-    }
-
-    .contenitore {
-        flex-direction: column; /* se usi un layout flex */
-    }
-}
-
-
 
 .contenuto_gioco {
     margin-top: 1em;
     padding: 0 2em;
     margin-left: auto;
     margin-right: auto;
-     width: 100%;
+    width: 100%;
     max-width: 80em;
     box-sizing: border-box;
 }
@@ -1660,19 +1666,15 @@ fieldset .suggForm {
 .top-container {
     display: table;
     width: 100%;
-    border-spacing: 1em; /* Sostituisce margin/padding tra le celle */
-    margin-bottom: 2em; /* Spazio prima delle recensioni */
+    border-spacing: 1em;
+    /* Sostituisce margin/padding tra le celle */
+    margin-bottom: 2em;
+    /* Spazio prima delle recensioni */
     margin-left: auto;
     margin-right: auto;
 }
 
 
-.scheda-gioco,
-.recensione-form {
-    display: table-cell;
-    vertical-align: top; /* Allineamento in alto */
-    width: 65% 35%; /* Proporzioni colonne */
-}
 
 /* Scheda gioco a sinistra */
 .scheda-gioco {
@@ -1681,21 +1683,21 @@ fieldset .suggForm {
     box-shadow: 0 0.5em 1.25em rgba(0, 0, 0, 0.3);
     color: white;
     padding: 1em;
-    min-width: 35em;  /* Impedisce che il blocco si rimpicciolisca oltre una certa larghezza */
-    display: table-cell;
-    vertical-align: top;
-        overflow: hidden;  /* Impedisce lo scorrimento orizzontale */
+    min-width: 35em;
+
+    display: table; /* <-- importante: il contenitore diventa una tabella */
+    width: 100%; /* o una larghezza fissa se vuoi */
     box-sizing: border-box;
 }
 
-
 .img-wrapper {
+    display: table-cell;
+    vertical-align: top;  /* allinea in alto */
     width: 16em;
     height: 24em;
-    float: left;
-    margin: 1em;
     border-radius: 0.5em;
     overflow: hidden;
+    padding: 1em;
 }
 
 .img-gioco {
@@ -1706,13 +1708,18 @@ fieldset .suggForm {
 }
 
 .dati-gioco {
+    display: table-cell;
+    vertical-align: top;
     padding: 1em;
-    overflow: hidden; /* Clearfix per il float */
+    overflow: hidden;
+    width: auto; /* si adatta allo spazio rimanente */
 }
 
 
+
 .recensioni {
-    clear: both; /* Andrà sotto gli elementi float */
+    clear: both;
+    /* Andrà sotto gli elementi float */
     width: 100%;
 }
 
@@ -1791,10 +1798,13 @@ fieldset .suggForm {
 
 
 .login_required {
-    display: block; /* Rimuove flex */
-    width: auto; /* O una larghezza fissa se necessario (es. 100%) */
+    display: block;
+    /* Rimuove flex */
+    width: auto;
+    /* O una larghezza fissa se necessario (es. 100%) */
     height: auto;
-    min-height: 8em; /* Altezza minima per coerenza visiva */
+    min-height: 8em;
+    /* Altezza minima per coerenza visiva */
     background-color: white;
     border-left: 0.4em solid var(--headerbgcolor);
     border-radius: 0.5em;
@@ -1803,8 +1813,11 @@ fieldset .suggForm {
     font-size: 1.1em;
     text-align: center;
     padding: 1.5em;
-    margin-bottom: 1em; /* Spazio sotto se necessario */
-    box-sizing: border-box; /* Include padding/border nell'altezza/larghezza */
+    margin-bottom: 1em;
+    margin-top: 2em;
+    /* Spazio sotto se necessario */
+    box-sizing: border-box;
+    /* Include padding/border nell'altezza/larghezza */
 }
 
 /* Se hai elementi interni (es. un messaggio o un link) */
@@ -1812,12 +1825,15 @@ fieldset .suggForm {
     color: orange;
     text-decoration: underline;
     font-weight: bold;
-    display: inline-block; /* Per allineare correttamente */
-    margin-top: 1em; /* Spazio sopra il link */
+    display: inline-block;
+    /* Per allineare correttamente */
+    margin-top: 1em;
+    /* Spazio sopra il link */
 }
 
 .recensione-form {
-      width: 30%;  /* Recensione form occupa il 30% della larghezza */
+    width: 30%;
+    /* Recensione form occupa il 30% della larghezza */
     background: white;
     border-radius: 0.5em;
     box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
@@ -1826,6 +1842,7 @@ fieldset .suggForm {
     vertical-align: top;
     min-width: 15em;
 }
+
 
 .intestazione_recensione {
     margin-bottom: 0.5em;
@@ -1853,7 +1870,7 @@ fieldset .suggForm {
 
 .recensione-textarea {
     resize: none;
-    min-height: 9em;
+    min-height: 11em;
     font-family: inherit;
     font-size: 1.1em;
 }
@@ -1912,7 +1929,8 @@ fieldset .suggForm {
 ul.tutte_recensioni {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /* ✅ Permette l'andare a capo */
+    flex-wrap: wrap;
+    /* ✅ Permette l'andare a capo */
     gap: 1.25em;
     padding: 1.25em;
     padding-top: 0;
@@ -1920,12 +1938,14 @@ ul.tutte_recensioni {
     list-style: none;
     font-family: Arial, sans-serif;
     max-width: 100%;
-    scrollbar-width: thin; /* puoi anche rimuoverlo se non serve più */
+    scrollbar-width: thin;
+    /* puoi anche rimuoverlo se non serve più */
 }
 
 /* Singola recensione */
 li.single_review {
-    flex: 0 1 calc(33.33% - 1.25em); /* 3 per riga con gap */
+    flex: 0 1 calc(33.33% - 1.25em);
+    /* 3 per riga con gap */
     background-color: white;
     border: 0.0625em solid #ddd;
     padding: 0.9375em;
@@ -1936,11 +1956,12 @@ li.single_review {
     box-sizing: border-box;
     min-width: 15.625em;
     max-width: 100%;
-    height: auto;              
-    overflow-wrap: break-word; 
-    word-break: break-word;    
+    height: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
     font-size: 1.1em;
 }
+
 /* Nome utente e voto */
 li.single_review strong {
     display: block;
@@ -1966,23 +1987,25 @@ p.testo_recensione {
     white-space: nowrap;
     background-color: var(--headerbgcolor);
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .miniCalendario:hover {
+}
+
+.miniCalendario:hover {
     background-color: var(--breadcrump-bg);
     box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.15);
-  }
+}
 
-  a .miniCalendario {
-    color: white; /* colore che vuoi per il testo quando il link è visitato */
-  }
-  
+a .miniCalendario {
+    color: white;
+    /* colore che vuoi per il testo quando il link è visitato */
+}
 
-  a:visited .miniCalendario {
-    color: var(--linkvisited); /* colore che vuoi per il testo quando il link è visitato */
-  }
-  
-  .miniCalendarioH {
+
+a:visited .miniCalendario {
+    color: var(--linkvisited);
+    /* colore che vuoi per il testo quando il link è visitato */
+}
+
+.miniCalendarioH {
     display: inline-block;
     font-weight: bold;
     color: var(--headerbgcolor);
@@ -1993,18 +2016,18 @@ p.testo_recensione {
     font-size: 0.95em;
     margin-right: 1em;
     vertical-align: middle;
-  }
-  
-  .miniCalendarioB {
+}
+
+.miniCalendarioB {
     text-decoration: underline;
     display: inline-block;
     font-size: 1.1em;
     font-weight: 500;
     vertical-align: middle;
-  }
-  
-  
-  .miniGiornale {
+}
+
+
+.miniGiornale {
     display: inline-block;
     background-color: var(--headerbgcolor);
     border-radius: 0.75em;
@@ -2013,14 +2036,14 @@ p.testo_recensione {
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
     white-space: nowrap;
     color: white;
-  }
-  
-  .miniGiornale:hover {
+}
+
+.miniGiornale:hover {
     background-color: var(--breadcrump-bg);
     box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.15);
-  }
-  
-  .titoloNotiziaIndex {
+}
+
+.titoloNotiziaIndex {
     display: inline-block;
     font-weight: bold;
     font-size: 0.95em;
@@ -2030,21 +2053,21 @@ p.testo_recensione {
     margin-right: 1em;
     vertical-align: middle;
     color: white;
-    background-color: var(--linkvisited); /* se vuoi che la testata abbia il colore "visited" */
-  }
-  
-  .contenutoNotiziaIndex {
+    background-color: var(--linkvisited);
+    /* se vuoi che la testata abbia il colore "visited" */
+}
+
+.contenutoNotiziaIndex {
     display: inline-block;
     font-size: 1.1em;
     font-weight: 500;
     vertical-align: middle;
     text-decoration: underline;
     color: inherit;
-  }
-  
+}
 
-.h2_eventi
-{
+
+.h2_eventi {
     margin-top: 1em;
     margin-bottom: 0;
 }
@@ -2058,14 +2081,17 @@ p.testo_recensione {
     display: flex;
     flex-direction: row;
     gap: 1.5em;
-    justify-content: center; /* centra se tutto ci sta */
+    justify-content: center;
+    /* centra se tutto ci sta */
     list-style: none;
     margin: 0;
     padding: 0;
-    min-width: max-content; /* forza il contenuto a non andare a capo */
+    min-width: max-content;
+    /* forza il contenuto a non andare a capo */
     box-sizing: border-box;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* per iOS */
+    -webkit-overflow-scrolling: touch;
+    /* per iOS */
 }
 
 .eventi_gioco li {
@@ -2117,43 +2143,52 @@ p.testo_recensione {
 }
 
 .bottone_aggiungi_evento:hover {
-   background-color: var(--div_navbar_link_hover);
+    background-color: var(--div_navbar_link_hover);
 }
 
 .contenitore_articoli {
-    overflow-x: auto; /* abilita lo scroll orizzontale */
+    overflow-x: auto;
+    /* abilita lo scroll orizzontale */
     padding: 1em;
 }
 
 .articoli_gioco {
     display: flex;
-    flex-wrap: nowrap; /* NON vanno a capo */
+    flex-wrap: nowrap;
+    /* NON vanno a capo */
     gap: 1em;
-    justify-content: center; /* centra se ci stanno */
+    justify-content: center;
+    /* centra se ci stanno */
     list-style: none;
     padding: 0;
     margin: 0;
-    min-width: max-content; /* forza la larghezza minima a contenere tutti gli elementi */
+    min-width: max-content;
+    /* forza la larghezza minima a contenere tutti gli elementi */
 }
 
 .articoli_gioco li {
-    flex: 0 0 auto; /* mantieni larghezza fissa degli articoli */
+    flex: 0 0 auto;
+    /* mantieni larghezza fissa degli articoli */
 }
 
 /*=====ARTICOLO SINGOLO=====*/
 .contenuto_articolo {
-    font-size: 1.125em;        /* leggermente più grande del normale */
-    line-height: 1.8em;        /* buona interlinea per la lettura */
-    color: #222;               /* colore scuro ma non nero assoluto */
-    background-color: #fafafa; /* sfondo molto chiaro per contrasto */
+    font-size: 1.125em;
+    /* leggermente più grande del normale */
+    line-height: 1.8em;
+    /* buona interlinea per la lettura */
+    color: #222;
+    /* colore scuro ma non nero assoluto */
+    background-color: #fafafa;
+    /* sfondo molto chiaro per contrasto */
     padding: 1.5em;
     margin: 0 auto;
     border-radius: 0.5em;
     box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.05);
-    text-align: justify;       
+    text-align: justify;
     word-wrap: break-word;
-    white-space: pre-line;    
-    max-width: 80%; 
+    white-space: pre-line;
+    max-width: 80%;
 }
 
 
@@ -2215,40 +2250,42 @@ footer {
     margin-top: 0;
 }
 
-.ffild{
+.ffild {
     margin: 0;
 }
 
 /*======404======*/
 
-.errore404{
-   background-image: url("../assets/404.jpeg");
-   background-repeat: no-repeat;
-   background-size: contain;
-   background-color: #000000;
+.errore404 {
+    background-image: url("../assets/404.jpeg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #000000;
 }
 
-.errore404>main{
+.errore404>main {
     color: white;
     font-size: 1.6em;
     background-color: transparent;
     text-align: center;
 }
-.errore404>main div{
+
+.errore404>main div {
     display: inline-block;
     background-color: #111;
     padding: 1em;
     border-radius: 1em;
 }
-.errore404>main a{
+
+.errore404>main a {
     color: white;
 }
 
-.errore404>main a img{
+.errore404>main a img {
     vertical-align: middle;
     width: 1.4em;
 }
 
-.p{
-  white-space: pre-line;
+.p {
+    white-space: pre-line;
 }
