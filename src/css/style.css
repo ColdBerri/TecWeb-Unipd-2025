@@ -1864,6 +1864,12 @@ fieldset .suggForm {
     font-size: 1.5em;
 }
 
+.intestazione_recensione_log {
+    color: var(--headerbgcolor);
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+}
+
 .login_required_message
 {
     color: white;

@@ -63,7 +63,7 @@ if(!$connessioneOK) {
         if (isset($_SESSION['nickname'])) {
             $formRecensioneHTML .= "
                 <form method='post' class='recensione-form'>
-                    <h3 class='intestazione_recensione'>Scrivi una recensione</h3>
+                    <h3 class='intestazione_recensione_log'>Scrivi una recensione</h3>
                     <label class='recensione-label'>Valutazione (1–5):</label>
                     <div class='recensione-rating'>
             ";
