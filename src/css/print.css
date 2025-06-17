@@ -1,0 +1,266 @@
+* { 
+    padding: 0; 
+    margin: 0; 
+} 
+
+html, body {
+  font-family: "Times New Roman", serif;
+  color: black;
+  background: none;
+}
+
+h1 {
+  font-size: 2em; /* puoi regolare la dimensione come preferisci */
+  font-weight: bold;
+  margin: 0.5em 0;
+      text-align: center;    /* centrato */
+
+}
+
+header ul li:not(:first-child) {
+  display: none;
+}
+
+header {
+  position: relative; /* contenitore di riferimento per il logo */
+  padding-left: 170px; /* spazio a sinistra per il logo largo 150 + 20 px margine */
+  /* eventualmente anche padding-top se serve */
+}
+
+/* LOGO */
+.logo {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  width: 150px;
+  height: auto;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo h1 {
+  text-transform: uppercase;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+/* BREADCRUMB */
+.breadcrump {
+  display: block;
+  position: absolute;
+  margin: 9em;  /* sotto al logo */
+      left: -7em;
+
+  font-size: 1.3em;
+  background: none;
+  color: black;
+}
+
+h2 {
+      font-weight: bold;
+
+}
+
+.menuHamberger,
+  .burger,
+.nascondi {
+    display: none;
+  }
+
+
+
+/* Aggiusta margine del main */
+main {
+  margin-top: 250px;
+}
+
+
+.top-list {
+  text-align: center;
+}
+
+.top-list li {
+  display: inline-block;
+  margin: 2em 2em;
+  width: 10em;
+  background: none;
+  color: black;
+  vertical-align: top;
+  border: none;
+  border-radius: 0;       /* rimuove angoli arrotondati */
+  box-shadow: none;       /* se c’erano ombre */
+}
+
+.top-list img {
+  width: 100%;
+  border-radius: 0;       /* rimuove bordi stondati all'immagine */
+}
+
+.top-list li p {
+  padding-top: 0.5em;
+  margin-top: 0.5em;
+  background: none;
+  color: black;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 0;
+}
+
+.top-list li a {
+  text-decoration: none;
+  color: black;
+}
+
+.titolo_gioco {
+  padding-bottom: 0.4em;
+  font-weight: bold;
+  font-size: 0.95em;
+}
+
+
+.div-h h2 {
+  text-align: center;
+  font-size: 2em;  /* Più piccolo di h1 */
+  margin-top: 0.5em;
+  color: black;
+}
+
+* {
+  color: black !important;
+}
+
+/* Tutti i link in nero e senza sottolineatura */
+a,
+a:visited,
+a:hover,
+a:active {
+  color: black !important;
+  text-decoration: none !important;
+}
+
+.eventi-home,
+.notizie-home {
+  margin-left: 2em;
+}
+
+
+/* CATEGORIE */
+.search-container,
+.search-box,
+.ulCategorie{
+  display: none !important;
+}
+
+.lista-giochi > li {
+  display: inline-block;
+  width: 10em;
+  margin: 1em;
+  border-radius: 0.5em;
+  vertical-align: top;
+  transition: transform 0.3s ease;
+}
+
+.ImgGiocoCat {
+  width: 100%;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  object-fit: cover;
+}
+
+
+/* EVENTI */
+/* Nasconde le etichette "Seleziona un mese" e "Seleziona l'anno" */
+.formCalendario label[for="mese"],
+.formCalendario label[for="anno"] {
+  display: none;
+}
+
+/* Nasconde i dropdown mese e anno */
+#mese,
+#anno {
+  display: none;
+}
+
+/* Nasconde il pulsante cerca eventi */
+input[type="submit"][value="CERCA EVENTI"] {
+  display: none;
+}
+
+/* Nascondi il titolo "Calendario prossimi eventi" */
+.titolo_calendario {
+  display: none;
+}
+
+/* Aggiungi spazio sopra il calendario */
+.calendario-tabella {
+  margin-top: 2em; /* puoi regolare il valore */
+  margin-left: auto;
+  margin-right: auto;
+  display: block; /* assicura che margini auto centrino il blocco */
+}
+
+.formCalendario fieldset {
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* REGISTRATI */
+.form-container {
+    width: 100%;
+    padding: 2em 0;
+    display: flex;
+    justify-content: center; /* centra orizzontalmente */
+}
+
+.form-box {
+    background-color: var(--login-bgcolor);
+    border-radius: 15px;
+    /* Rimuovo il box-shadow */
+    box-shadow: none;
+    max-width: 28em;
+    min-width: 20em;
+    width: 100%;
+    padding: 2.5em;
+    font-size: 1em;
+    box-sizing: border-box;
+    border: none; /* Assicuro che non ci siano bordi */
+}
+
+input[type="password"]::placeholder {
+    color: transparent;
+}
+
+/* LA NOSTRA STORIA */
+.galleria img {
+    max-width: 5em; /* ridotto da 8em a 5em */
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2.5em;
+}
+
+/* ASSISTENZA */
+.paragrafo1 img {
+    width: 2em;   /* prima era 3em */
+    height: 2em;  /* prima era 3em */
+}
+.support_summary {
+    font-weight: bold;
+}
+
+.support_final {
+  margin-top: 5em; /* aumenta il valore secondo necessità */
+}
+
+/* GIOCO SINGOLO */
+
+
+
+footer{ 
+    display: none; 
+}
