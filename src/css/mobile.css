@@ -209,3 +209,13 @@ input[type="submit"][value="CERCA EVENTI"] {
 .recensione-submit {
   width: 100%;
 }
+
+ul.tutte_recensioni {
+  flex-direction: column;
+  align-items: center;
+}
+
+.single_review {
+  width: 90%; /* o una larghezza fissa tipo 20em */
+  max-width: 30em;
+}

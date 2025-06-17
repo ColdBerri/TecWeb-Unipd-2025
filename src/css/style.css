@@ -350,10 +350,17 @@ h1.h-index {
 /*CATEGORIE*/
 
 .categoria h2>a {
-    background-color: whitesmoke;
+    background-color: var(--headerbgcolor);
     padding: 0.5em;
     border-radius: 0.7em;
     cursor: pointer;
+}
+.categoria h2>a:not(:visited) {
+    color: white;
+}
+
+.categoria h2>a:visited {
+    color: var(--linkvisited);
 }
 
 .filedset-cat {
@@ -1033,6 +1040,15 @@ fieldset {
     font-size: 2em;
 }
 
+.valore_profile_info
+{
+    display: inline-block;
+    color: black;
+    font-weight: bold;
+    width: calc(100% - 9.375em);
+    vertical-align: top;
+}
+
 .profilo-box {
     max-width: 25em;
     /* 500px */
@@ -1636,6 +1652,8 @@ fieldset .suggForm {
 }
 
 
+
+
 .errore-evento {
     color: red;
     text-align: center;
@@ -1684,7 +1702,6 @@ fieldset .suggForm {
     color: white;
     padding: 1em;
     min-width: 35em;
-
     display: table; /* <-- importante: il contenitore diventa una tabella */
     width: 100%; /* o una larghezza fissa se vuoi */
     box-sizing: border-box;
@@ -1773,7 +1790,7 @@ fieldset .suggForm {
     padding: 1.5em;
     background-color: white;
     border-left: 0.4em solid var(--headerbgcolor);
-    border-radius: 0.5em;
+    border-radius: 0.75em;
     box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
     color: #333;
     font-size: 1.1em;
@@ -1804,10 +1821,9 @@ fieldset .suggForm {
     /* O una larghezza fissa se necessario (es. 100%) */
     height: auto;
     min-height: 8em;
-    /* Altezza minima per coerenza visiva */
-    background-color: white;
+    background-color: var(--headerbgcolor);
     border-left: 0.4em solid var(--headerbgcolor);
-    border-radius: 0.5em;
+    border-radius: 0.75em;
     box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
     color: #333;
     font-size: 1.1em;
@@ -1815,9 +1831,7 @@ fieldset .suggForm {
     padding: 1.5em;
     margin-bottom: 1em;
     margin-top: 2em;
-    /* Spazio sotto se necessario */
     box-sizing: border-box;
-    /* Include padding/border nell'altezza/larghezza */
 }
 
 /* Se hai elementi interni (es. un messaggio o un link) */
@@ -1845,8 +1859,14 @@ fieldset .suggForm {
 
 
 .intestazione_recensione {
+    color: white;
     margin-bottom: 0.5em;
     font-size: 1.5em;
+}
+
+.login_required_message
+{
+    color: white;
 }
 
 .recensione-label {
@@ -1930,7 +1950,6 @@ ul.tutte_recensioni {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* ✅ Permette l'andare a capo */
     gap: 1.25em;
     padding: 1.25em;
     padding-top: 0;
@@ -2052,7 +2071,7 @@ a:visited .miniCalendario {
     border-radius: 0.5em;
     margin-right: 1em;
     vertical-align: middle;
-    color: white;
+    color: var(--headerbgcolor);
     background-color: var(--linkvisited);
     /* se vuoi che la testata abbia il colore "visited" */
 }

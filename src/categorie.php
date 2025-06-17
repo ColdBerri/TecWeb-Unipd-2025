@@ -39,8 +39,8 @@ if(!$connessioneOK){
             foreach ($giochi as $gioco) {
                 $nome = htmlspecialchars($gioco['nome_gioco']);
                 $immagine = htmlspecialchars($gioco['immagine']);
-                $lista .= "<li><a href='gioco_singolo.php?gioco={$nome}' >";
-                $lista .= "<img src='assets/img/$immagine' class='ImgGiocoCat' alt='vidoe'><p>$nome</p></a></li>";
+                $lista .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco={$nome}' >";
+                $lista .= "<img src='assets/img/$immagine' class='ImgGiocoCat' alt='vidoe'><p class='titolo_gioco'>$nome</p></a></li>";
             }
 
             $lista .= "</ul>";
