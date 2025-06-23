@@ -10,10 +10,10 @@ html, body {
 }
 
 h1 {
-  font-size: 2em; /* puoi regolare la dimensione come preferisci */
+  font-size: 2em; 
   font-weight: bold;
   margin: 0.5em 0;
-      text-align: center;    /* centrato */
+      text-align: center;   
 
 }
 
@@ -22,18 +22,26 @@ header ul li:not(:first-child) {
 }
 
 header {
-  position: relative; /* contenitore di riferimento per il logo */
-  padding-left: 170px; /* spazio a sinistra per il logo largo 150 + 20 px margine */
-  /* eventualmente anche padding-top se serve */
+  position: relative; 
+  padding-left: 170px; 
 }
 
+a[href]:after {
+    content: none !important;
+  }
+
 /* LOGO */
+.logo img {
+    content: url("../assets/img_transparent_b&n.png") !important;
+  }
+
 .logo {
   position: absolute;
   top: 1em;
-  left: 1em;
+  left: 0em;
   width: 150px;
   height: auto;
+      margin-bottom: 0.2em; 
 }
 
 .logo img {
@@ -46,19 +54,19 @@ header {
   text-transform: uppercase;
   font-size: 2em;
   text-align: center;
-  margin-top: 0.5em;
+  margin-top: 0.2em;
 }
 
 /* BREADCRUMB */
 .breadcrump {
   display: block;
   position: absolute;
-  margin: 9em;  /* sotto al logo */
-      left: -7em;
-
+  top: 9em;        
+  left: 1em;    
   font-size: 1.3em;
   background: none;
   color: black;
+  margin: 0;   
 }
 
 h2 {
@@ -74,7 +82,7 @@ h2 {
 
 
 
-/* Aggiusta margine del main */
+
 main {
   margin-top: 250px;
 }
@@ -92,13 +100,13 @@ main {
   color: black;
   vertical-align: top;
   border: none;
-  border-radius: 0;       /* rimuove angoli arrotondati */
-  box-shadow: none;       /* se c’erano ombre */
+  border-radius: 0;      
+  box-shadow: none;      
 }
 
 .top-list img {
   width: 100%;
-  border-radius: 0;       /* rimuove bordi stondati all'immagine */
+  border-radius: 0;     
 }
 
 .top-list li p {
@@ -125,7 +133,7 @@ main {
 
 .div-h h2 {
   text-align: center;
-  font-size: 2em;  /* Più piccolo di h1 */
+  font-size: 2em;  
   margin-top: 0.5em;
   color: black;
 }
@@ -134,7 +142,7 @@ main {
   color: black !important;
 }
 
-/* Tutti i link in nero e senza sottolineatura */
+
 a,
 a:visited,
 a:hover,
@@ -149,11 +157,55 @@ a:active {
 }
 
 
+.top-list img,
+  .lista-giochi .ImgGiocoCat,
+  .img-gioco {
+    width: 10em;         
+    aspect-ratio: 2 / 3; 
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 0.5em auto;
+    border-radius: 0.5em;
+  }
+
+.top-list li,
+  .lista-giochi > li {
+    width: 9em; 
+    text-align: center;
+  }
+
+/* GIOCO SINGOLO */
+.nuova_recensione {
+    padding: 1.5em;
+    background-color: white;
+    border-left: 0.4em solid var(--headerbgcolor);
+    border-radius: 0.75em;
+    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+
+.titolo-gioco {
+  font-size: 1.5em;
+    margin: 0.5em auto 0.5em auto; /* centro il margine orizzontale */
+    padding-top: 0.5em; 
+    text-align: center;
+    width: fit-content; 
+
+
+}
+
+
 /* CATEGORIE */
 .search-container,
 .search-box,
+.search-icon,
+.search-box,
 .ulCategorie{
-  display: none !important;
+  display: none;
 }
 
 .lista-giochi > li {
@@ -174,48 +226,93 @@ a:active {
 
 
 /* EVENTI */
-/* Nasconde le etichette "Seleziona un mese" e "Seleziona l'anno" */
+.titolo_calendario {
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#sum {
+  display: none !important;
+}
+
 .formCalendario label[for="mese"],
 .formCalendario label[for="anno"] {
   display: none;
 }
 
-/* Nasconde i dropdown mese e anno */
 #mese,
 #anno {
   display: none;
 }
 
-/* Nasconde il pulsante cerca eventi */
 input[type="submit"][value="CERCA EVENTI"] {
   display: none;
 }
 
-/* Nascondi il titolo "Calendario prossimi eventi" */
+
 .titolo_calendario {
-  display: none;
+  font-size: 1.2em;
+  background-color: white;
+  border-radius: 1em;
+  padding: 0.3em;
+  margin-bottom: 0.8em;
+  text-align: center;
+  color: black;
+  display: block !important;
 }
 
-/* Aggiungi spazio sopra il calendario */
 .calendario-tabella {
-  margin-top: 2em; /* puoi regolare il valore */
-  margin-left: auto;
-  margin-right: auto;
-  display: block; /* assicura che margini auto centrino il blocco */
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: none;
+  border: 1px solid black;
+  table-layout: fixed;
+  border-radius: 0;
+  font-size: 0.85em;
 }
 
-.formCalendario fieldset {
-    border: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
+.calendario-tabella thead {
+  background-color: #000;
+  color: white;
 }
+
+.calendario-tabella th {
+  padding: 0.5em;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.85em;
+  border: 1px solid white;
+}
+
+.calendario-tabella td {
+  height: 4.5em;
+  padding: 0.3em;
+  text-align: right;
+  vertical-align: top;
+  font-size: 0.75em;
+  border: 1px solid black;
+  position: relative;
+  background-color: white;
+  color: black;
+}
+
+
+
 
 /* REGISTRATI */
+ #data-nascita {
+    display: none;
+  }
+
 .form-container {
     width: 100%;
     padding: 2em 0;
     display: flex;
-    justify-content: center; /* centra orizzontalmente */
+    justify-content: center; 
 }
 
 .form-box {
@@ -229,33 +326,54 @@ input[type="submit"][value="CERCA EVENTI"] {
     padding: 2.5em;
     font-size: 1em;
     box-sizing: border-box;
-    border: none; /* Assicuro che non ci siano bordi */
+    border: none; 
 }
 
 input[type="password"]::placeholder {
     color: transparent;
 }
 
+
+
 /* LA NOSTRA STORIA */
 .galleria img {
-    max-width: 5em; /* ridotto da 8em a 5em */
+    max-width: 5em; 
     display: block;
     margin: 0 auto;
     margin-bottom: 2.5em;
 }
 
+ .colonna1,
+  .colonna2,
+  .colonna3,
+  .colonna4 {
+    page-break-inside: avoid; 
+    margin-bottom: 3em; 
+  }
+
+
 /* ASSISTENZA */
 .paragrafo1 img {
-    width: 2em;   /* prima era 3em */
-    height: 2em;  /* prima era 3em */
+    width: 2em;   
+    height: 2em;  
 }
 .support_summary {
     font-weight: bold;
 }
 
 .support_final {
-  margin-top: 5em; /* aumenta il valore secondo necessità */
+  margin-top: 5em;
 }
+
+ .support_details {
+    page-break-inside: avoid; 
+    margin-bottom: 2em !important; 
+}
+
+.paragrafo1 img {
+    display: none !important;
+  }
+
 
 /* GIOCO SINGOLO */
     body {
@@ -273,10 +391,9 @@ input[type="password"]::placeholder {
         max-width: 100%;
     }
 
-    /* Breadcrumb - "Ti trovi in" - più spazio sotto */
     .breadcrumb {
         display: block;
-        margin: 0 0 2em 0; /* Aumentato margine inferiore */
+        margin: 0 0 2em 0;
         padding: 0;
         font-size: 0.9em;
         color: #666;
@@ -284,22 +401,21 @@ input[type="password"]::placeholder {
         padding-bottom: 0.5em;
     }
 
-    /* Scheda gioco con margine superiore aumentato */
+    
     .scheda-gioco {
         background: transparent;
         color: #000;
         padding: 0;
-        margin: 3em 0 1em 0; /* Aumentato margine superiore a 3em */
+        margin: 3em 0 1em 0; 
         display: block;
         page-break-inside: avoid;
     }
 
-    /* Immagine abbassata con margine superiore */
-    .img-wrapper {
+.img-wrapper {
         display: block;
         width: 150px;
         float: left;
-        margin: 3em 1em 0.5em 0; /* Aumentato margine superiore a 1em */
+        margin: 3em 1em 0.5em 0;
         padding: 0;
         height: auto;
     }
@@ -311,17 +427,15 @@ input[type="password"]::placeholder {
         object-fit: contain;
     }
 
-    /* Titolo abbassato con margine superiore aumentato */
     .titolo-gioco {
         font-size: 1.5em;
-        margin: 1em 0 0.5em 0; /* Aumentato margine superiore a 1em */
+        margin: 1em 0 0.5em 0; 
         color: #000;
         text-shadow: none;
-        padding-top: 0.5em; /* Padding aggiuntivo */
+        padding-top: 0.5em; 
         clear: both;
     }
 
-    /* Resto del CSS invariato */
     .dati-gioco {
         display: block;
         padding: 0;
@@ -450,6 +564,14 @@ input[type="password"]::placeholder {
     display: none;
 }
 
+/* AGGIUNGI VIDEOGIOCO */
+#anno_di_pubblicazione {
+  display: none;
+}
+
+
 footer{ 
     display: none; 
 }
+
+
