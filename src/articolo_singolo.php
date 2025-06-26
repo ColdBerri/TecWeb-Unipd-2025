@@ -9,22 +9,24 @@ if(!isset($_GET['titolo_articolo'])){
     header('Location : index.php');
     exit;
 }
-$artName = $_GET['titolo_articolo'];
 
+$artName = urldecode($_GET['titolo_articolo']);
 
-$paginaHTML = new Template ("Aticolo {$artName}", "articolo {$artName}, videogioco, patch, aggiornamento", "html/articolo_singolo.html");
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
+$paginaHTML = new Template ("Articolo {$artName}", "articolo {$artName}, videogioco, patch, aggiornamento", "html/articolo_singolo.html");
+
 if(!$connessioneOK){ 
     $articolo = $connessione->getArticolo($artName);
-    $dataP = $articolo['data_pubblicazione'];
-    $autore = $articolo['autore'];
-    $testo = $articolo['testo_articolo'];
-    $gioco = $articolo['nome_videogioco'];
     $connessione->closeConnection();
 
     if($articolo){
+        $dataP = $articolo['data_pubblicazione'];
+        $autore = $articolo['autore'];
+        $testo = $articolo['testo_articolo'];
+        $gioco = $articolo['nome_videogioco'];
+
         $paginaHTML->aggiungiContenuto("{{nomeArt}}", $artName);
         $paginaHTML->aggiungiContenuto("{{autore}}", $autore);
         $paginaHTML->aggiungiContenuto("{{data}}", $dataP);
@@ -33,9 +35,10 @@ if(!$connessioneOK){
 
 
     }else{
-        $cont = "<p>Articolo non trovato!!</p>";
+        header('Location: index.php');
     }
 
     $paginaHTML->getPagina();
-}
+} 
+
 ?>

@@ -165,19 +165,12 @@ if(!$connessioneOK) {
             }
         }
     } else {
-        $paginaHTML->aggiungiContenuto("{{nome}}", "");
-        $paginaHTML->aggiungiContenuto("{{img}}", "");
-        $paginaHTML->aggiungiContenuto("{{casa}}", "");
-        $paginaHTML->aggiungiContenuto("{{console}}", "");
-        $paginaHTML->aggiungiContenuto("{{anno}}", "");
-        $paginaHTML->aggiungiContenuto("{{desc}}", "");
-        $paginaHTML->aggiungiContenuto("[link_categoria]", "categoria_singola.php?categoria=".htmlspecialchars($categoria));
         $connessione->closeConnection();
-        $listaArticoli = "Niente :'(";
+        header('Location: categorie.php');
     }   
     $paginaHTML->aggiungiContenuto("[libri]", "");
     $paginaHTML->aggiungiContenuto("[eventi]", "");
     $paginaHTML->aggiungiContenuto("[articoli]", $listaArticoli);
-    $paginaHTML->getPagina();;
+    $paginaHTML->getPagina();
 }
 ?>

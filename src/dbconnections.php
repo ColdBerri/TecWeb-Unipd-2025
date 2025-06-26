@@ -364,87 +364,6 @@ class DBAccess {
 
     	return null;
 	}
-
-	public function addLibreria($gioco, $utente){
-		$query = "INSERT INTO Utente_Videogiochi (nickname, nome_gioco, preferito) VALUES (?, ?, ?)";
-		$stmt = mysqli_prepare($this->connection, $query);
-	
-		if (!$stmt) {
-			throw new Exception("Errore prepare: " . mysqli_error($this->connection));
-		}
-	
-		$preferito = FALSE;
-		mysqli_stmt_bind_param($stmt, "ssi", $utente, $gioco, $preferito);
-		mysqli_stmt_execute($stmt);
-	}
-	
-
-	public function removeLibreria($gioco, $utente){
-		$query = "DELETE FROM Utente_Videogiochi WHERE nickname = ? AND nome_gioco = ?";
-		$stmt = $this->connection->prepare($query);
-		
-		if ($stmt->execute([$utente, $gioco])) {
-			return true; 
-		} else {
-			return false;
-		}
-	}
-
-
-	public function getLibreria($user) {
-		$query = "
-			SELECT U.nome_gioco, V.immagine 
-			FROM Utente_Videogiochi AS U 
-			JOIN Videogiochi AS V ON U.nome_gioco = V.nome_gioco 
-			WHERE U.nickname = ?
-		";
-	
-		$stmt = mysqli_prepare($this->connection, $query);
-		if (!$stmt) {
-			throw new Exception("Errore: libreria utente non trovata! " . mysqli_error($this->connection));
-		}
-	
-		mysqli_stmt_bind_param($stmt, "s", $user);
-		mysqli_stmt_execute($stmt);
-		$result = mysqli_stmt_get_result($stmt);
-	
-		$preferiti = [];
-		while ($row = mysqli_fetch_assoc($result)) {
-			$preferiti[] = $row;
-		}
-	
-		return $preferiti;
-	}
-	
-	public function isPrefe($gioco, $utente) {
-		$query = "SELECT preferito FROM Utente_Videogiochi 
-				  WHERE nome_gioco = ? AND nickname = ?";
-		$stmt = mysqli_prepare($this->connection, $query);
-	
-		if (!$stmt) {
-			throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->connection));
-		}
-	
-		mysqli_stmt_bind_param($stmt, "ss", $gioco, $utente);
-		mysqli_stmt_execute($stmt);
-		$result = mysqli_stmt_get_result($stmt);
-	
-		if ($row = mysqli_fetch_assoc($result)) {
-			return $row['preferito'] == 1 ? true : false; // restituisce true o false
-		}
-	
-		return null;
-	}
-	
-	
-	public function updatePreferito($gioco, $utente, $valore) {
-		$query = "UPDATE Utente_Videogiochi SET preferito = ? WHERE nickname = ? AND nome_gioco = ?";
-		$stmt = mysqli_prepare($this->connection, $query);
-		mysqli_stmt_bind_param($stmt, "iss", $valore, $utente, $gioco);
-		mysqli_stmt_execute($stmt);
-	}
-	
-
 	public function addGioco($nome_gioco, $casa_produttrice, $console_compatibili, $descrizione, $anno_di_pubblicazione, $immagine, $categoria){
 		$query = "INSERT INTO Videogiochi (nome_gioco, casa_produttrice, console_compatibili, descrizione, anno_di_pubblicazione, immagine, categoria)
 		VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -519,32 +438,41 @@ class DBAccess {
 		mysqli_stmt_close($stmt);
 	}
 
-	public function updateImmagineProfilo($nick, $nuovaImmagine) {
-    	$conn = $this->connection;
-    	$query = "UPDATE Utente SET immagine_profilo = ? WHERE nickname = ?";
-    	$stmt = mysqli_prepare($this->connection, $query);
-    
-    	if ($stmt) {
-        	mysqli_stmt_bind_param($stmt, "ss", $nuovaImmagine, $nick);
-        	mysqli_stmt_execute($stmt);
-        	mysqli_stmt_close($stmt);
-    	} else {
-        	error_log("Errore update immagine profilo: " . mysqli_error($conn));
-    	}
-	}
+	public function getArticoliMese($mese, $anno){
 
-	public function getPic($nickname) {
-    	$query = "SELECT immagine_profilo FROM Utente WHERE nickname = ?";
-    	$stmt = mysqli_prepare($this->connection, $query);
-    	mysqli_stmt_bind_param($stmt, "s", $nickname);
-    	mysqli_stmt_execute($stmt);
-
-    	$result = mysqli_stmt_get_result($stmt);
-    	if ($result && $row = mysqli_fetch_assoc($result)) {
-        	return $row['immagine_profilo'];
-    	}
-
-    	return null; 
+		$query = "SELECT titolo_articolo,data_pubblicazione FROM Articoli_e_patch 
+				  WHERE MONTH(data_pubblicazione) = ? 
+				  AND YEAR(data_pubblicazione) = ?";
+	
+		$stmt = mysqli_prepare($this->connection, $query);
+	
+		if (!$stmt) {
+			die("Errore nella preparazione della query: " . mysqli_error($this->connection));
+		}
+	
+		mysqli_stmt_bind_param($stmt, "ii", $mese, $anno);
+	
+		if (!mysqli_stmt_execute($stmt)) {
+			die("Errore nell'esecuzione della query: " . mysqli_stmt_error($stmt));
+		}
+	
+		$result = mysqli_stmt_get_result($stmt);
+	
+		if (!$result || mysqli_num_rows($result) === 0) {
+			mysqli_stmt_close($stmt);
+			return null;
+		}
+	
+		$eventi = array();
+		while ($row = mysqli_fetch_assoc($result)) {
+			$eventi[] = $row;
+		}
+	
+		mysqli_free_result($result);
+		mysqli_stmt_close($stmt);
+	
+		return $eventi;
+		
 	}
 }
 ?>

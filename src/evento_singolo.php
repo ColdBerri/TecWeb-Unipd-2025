@@ -47,6 +47,8 @@ if(!$connessioneOK){
             $vincitore = "Evento non finito, vinicitore non disponibile";
             $paginaHTML->aggiungiContenuto("{{vincitore}}", $vincitore); 
         }
+    } else{
+        header('Location: eventi.php');
     }
 
     $paginaHTML->getPagina();

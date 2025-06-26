@@ -33,7 +33,7 @@ if(!$connessioneOK) {
         }
     $lista .= "</ul>";
     } else {
-        $lista = "niente :/";
+        header('Location: categorie.php');
     }
 
     

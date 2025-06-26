@@ -17,6 +17,7 @@ $anno = "2025";
 
 $oggiG = date('d', $timestamp);
 $oggiM = date('m', $timestamp);
+$oggiY = date('y', $timestamp);
 
 $calendarioHTML = "";
 
@@ -64,7 +65,7 @@ $calendarioHTML .= "<thead>";
 $calendarioHTML .= "<div><tr class='mese_selezionato'><th colspan='7' lang='en'><div>" . date('F Y', $primoGiorno) . "</div></th></tr></div>";
 
 $tmp = false;
-if (date('m', $primoGiorno) === $oggiM) {
+if (date('m', $primoGiorno) === $oggiM && date('y', $primoGiorno) === $oggiY) {
     $tmp = true;
 }
 
@@ -76,7 +77,6 @@ $calendarioHTML .= "</tr></thead><tbody><tr>";
 
 $indiceGiornoSettimana = 0;
 
-// Giorni vuoti iniziali
 for ($i = $giorniInizialiVuoti; $i > 0; $i--) {
     $giorno = $giorniDelMesePrecedente - $i + 1;
     $giornoSettimanaC = $giorniSettimanaC[$indiceGiornoSettimana % 7];
@@ -124,7 +124,6 @@ while ($giornoCorrente <= $numeroGiorni) {
     $indiceGiornoSettimana++;
 }
 
-// Giorni vuoti finali
 $giornoSuccessivo = 1;
 for ($i = 0; $i < $giorniFinaliVuoti; $i++) {
     $giornoSettimana = $giorniSettimana[$indiceGiornoSettimana % 7];
@@ -136,16 +135,15 @@ for ($i = 0; $i < $giorniFinaliVuoti; $i++) {
 $calendarioHTML .= "</tr>";
 $calendarioHTML .= "</tbody>";
 
-// Selezione mese
 for ($i = 1; $i <= 12; $i++) {
     $paginaHTML->aggiungiContenuto("[selected_mese_$i]", ($i == $mese) ? "selected" : "");
 }
 
-// Selezione anno
 for ($i = 2023; $i <= 2030; $i++) {
     $paginaHTML->aggiungiContenuto("[selected_anno_$i]", ($i == $anno) ? "selected" : "");
 }
 
 $paginaHTML->aggiungiContenuto("[calendario]", $calendarioHTML);
 $paginaHTML->getPagina();
+
 ?>
