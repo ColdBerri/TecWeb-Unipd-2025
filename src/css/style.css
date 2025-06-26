@@ -2321,13 +2321,14 @@ footer {
 .errore404 {
     background-image: url("../assets/404.jpeg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     background-color: #000000;
 }
 
 .errore404>main {
     color: white;
-    font-size: 1.6em;
+    font-size: 1.3em;
     background-color: transparent;
     text-align: center;
 }
@@ -2335,8 +2336,8 @@ footer {
 .errore404>main div {
     display: inline-block;
     background-color: #111;
-    padding: 1em;
-    border-radius: 1em;
+    padding: 0.7em;
+    border-radius: 0.7em;
 }
 
 .errore404>main a {

@@ -3,21 +3,57 @@
     <head>
         <meta charset="UTF-8">
         <title>404 - Pagina non trovata</title>
-        <meta name="keywords" content="Pagina non trovata">
+        <meta name="keywords" content="Pagina non trovata, 404">
         <meta name="description" content="Pagina non trovata">
         <link rel="shortcut icon" type="image/jpg" href="assets/img_transparent.png">
         <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="css/tablet.css" media="screen and (max-width:700px)">
+        <link rel="stylesheet" type="text/css" href="css/tablet.css" media="screen and (max-width:1024px)">
         <link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width:600px)">
         <script src="js/mburger.js"></script>
     </head>
+
+    <header>
+    <nav aria-label="aiuti alla navigazione" class="listAiuti">
+        <ul>
+            <li><a href="#content" class="navicationHelp">Vai al contenuto</a></li>
+        </ul>
+    </nav>
+    <nav class="menu">
+        <a class="burger" onclick="apriMenu()"><img src="assets/menu_2.png" alt="apri menu laterale"></a>
+        <ul>
+           <li><a href="index.php" class="logoLink"><div class="logo"><img src="assets/icone.png" alt="logo sito"><h1><span lang="en">Vapor</span></h1></div></a></li>
+            <li><a href="index.php"><div class="navbar_link"><span lang="en">Home</span></div></a></li>
+            <li><a href="categorie.php"><div class="navbar_link">Categorie</div></a></li>
+            <li><a href="eventi.php"><div class="navbar_link">Prossimi eventi</div></a></li>
+            <li><a href="login.php"><div class="navbar_link"><span lang="en">Login</span>/Registrati</div></a></li>
+        </ul>
+    </nav>
+
+    <div class="overlayNascondi" onclick="chiudiMenu()" aria-label="chiudi menu laterale"></div>
+
+    <nav class="nascondi">
+       <ul>
+            <li><a class="exit" onclick="chiudiMenu()"><img src="assets/x_1.png" alt="chiudi menu"></a> </li>
+            <li><a href="index.php"><div class="navbar_link"><span lang="en">Home</span></div></a></li>
+            <li><a href="categorie.php"><div class="navbar_link">Categorie</div></a></li>
+            <li><a href="eventi.php"><div class="navbar_link">Prossimi eventi</div></a></li>
+            <li><a href="login.php"><div class="navbar_link"><span lang="en">Login</span>/Registrati</div></a></li>
+        </ul>
+    </nav>
+
+     <nav class="breadcrump"><p>Ti trovi in: Pagina 404</p></nav>
+
+    </header>
+
     <body class="errore404">
         <main>
+            <h1 id="content">404 - Pagina non trovata</h1>
             <div>
                 <p class="p">Non hai ancora sbloccato quest'area della mappa,
                     Torna con tranquillita all'ultimo punto di salvataggio, non perderai nulla!</p>
-                <a href="/index.php">Ricarica salvataggio
-                    <img src="/assets/save.png" alt="Ricarica salvataggio">
+                <a href="/index.php">
+                    <img src="/assets/save.png" alt="Torna alla pagina iniziale">
+                    Ricarica salvataggio (torna alla <span lang="en">home</span>)
                 </a>                
             </div>
 
