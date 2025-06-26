@@ -82,6 +82,44 @@ td.eventoPresente>a {
     color: white;
 }
 
+/*=====SPEED LINK=======*/
+
+.navicationHelp{
+    position: absolute;
+    font-size: 1.2em;
+    text-indent: -999em;
+    text-transform: uppercase;
+    padding: 0.5em;
+}
+
+.navicationHelp:focus{
+    position: relative;
+    text-align: center;
+    background-color: var(--div_navbar_link_hover);
+}
+
+.listAiuti li{
+    list-style-type: none;
+}
+
+.tornaSU{
+    text-align: right;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    padding: 0 2em 1em 0;
+}
+
+.tornaSU>a{
+    padding: 0.5em;
+    background-color: white;
+    border-radius: 0.7em;
+}
+
+.tornaSU>a:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
+    transition: all 0.1s ease;
+}
+
 /*===== HEADER =====*/
 
 header {
@@ -245,6 +283,11 @@ ul .current-page {
 .erroreForm {
     color: red;
     font-size: 1em;
+}
+
+#dropContainer{
+    border:1px solid black;
+    height:6.25em;
 }
 
 /*=====MAIN=====*/
@@ -1532,6 +1575,15 @@ fieldset .suggForm {
 
 
 /*=====OPZIONI SVILUPPATORE=====*/
+
+.linguaDev>label{
+    display: inline;
+}
+
+.linguaDev input{
+    display: inline;   
+}
+
 .admin-options-list {
     max-width: 37.5em;
     margin: 2.5em auto;
@@ -1580,8 +1632,12 @@ fieldset .suggForm {
     /* Mantiene la sottolineatura */
 }
 
+fieldset.selezionaLingua{
+    margin-bottom: 0em;
+}
 
 /*=====EVENTO SINGOLO=====*/
+
 #evento-singolo {
     max-width: 50em;
     min-width: 20em;
@@ -1647,9 +1703,6 @@ fieldset .suggForm {
     vertical-align: top;
 }
 
-
-
-
 .errore-evento {
     color: red;
     text-align: center;
@@ -1662,9 +1715,7 @@ fieldset .suggForm {
     margin: 2em auto;
 }
 
-
 /* GIOCO SINGOLO */
-
 
 .contenuto_gioco {
     margin-top: 1em;
@@ -1687,8 +1738,6 @@ fieldset .suggForm {
     margin-left: auto;
     margin-right: auto;
 }
-
-
 
 /* Scheda gioco a sinistra */
 .scheda-gioco {
@@ -1727,7 +1776,6 @@ fieldset .suggForm {
     overflow: hidden;
     width: auto; /* si adatta allo spazio rimanente */
 }
-
 
 .recensioni {
     clear: both;
@@ -1808,7 +1856,6 @@ fieldset .suggForm {
     margin-bottom: 1em;
 }
 
-
 .login_required {
     display: block;
     /* Rimuove flex */
@@ -1851,7 +1898,6 @@ fieldset .suggForm {
     vertical-align: top;
     min-width: 15em;
 }
-
 
 .intestazione_recensione {
     color: white;
@@ -2246,9 +2292,8 @@ a:visited .miniCalendario {
     padding-right: 1em;
 }
 
-
-
 /*=====ARTICOLO SINGOLO=====*/
+
 .intestazione_articolo {
     margin-top: 4em;
 }

@@ -528,3 +528,7 @@ ul.tutte_recensioni {
   width: 90%; /* o una larghezza fissa tipo 20em */
   max-width: 30em;
 }
+
+.menu ul:last-child{
+  padding-right: 0;
+}

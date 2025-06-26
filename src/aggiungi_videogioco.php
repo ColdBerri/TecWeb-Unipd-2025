@@ -17,6 +17,7 @@ if(!$connessioneOK){
         $descrizione = trim($_POST["descrizione"]);
         $anno = intval($_POST["anno_di_pubblicazione"]);
         $immagine = trim($_POST["immagine"]);
+        
         $categoria = trim($_POST["categoria"]);
         try {
             $connessione->addGioco($nome, $casa, $console, $descrizione, $anno, $immagine, $categoria);

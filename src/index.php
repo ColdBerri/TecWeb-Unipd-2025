@@ -71,8 +71,8 @@ if (!$connessioneOK) {
     }
 
     $listaPath .= "</ul>";
-    $paginaHTML->aggiungiContenuto("[notisie]", $listaPath);
 
+    $paginaHTML->aggiungiContenuto("[notisie]", $listaPath);
     $paginaHTML->getPagina();
 
 } else {

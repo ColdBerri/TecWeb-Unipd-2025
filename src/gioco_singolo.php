@@ -23,10 +23,10 @@ if(!$connessioneOK) {
     $evento = $connessione->getEventiGioco($nomeGioco);
     $articolo = $connessione->getArticoliGioco($nomeGioco);
     $recensioni = $connessione->getRecensioni($nomeGioco);
-    $categoria = $dati['categoria'];
-    $paginaHTML->aggiungiContenuto("[link_categoria]", "categoria_singola.php?categoria=".htmlspecialchars($categoria));
+
     if($dati){
 
+        $categoria = $dati['categoria'];
         $img = $dati['immagine'];
         $casa = $dati['casa_produttrice'];
         $console = $dati['console_compatibili'];
@@ -40,6 +40,7 @@ if(!$connessioneOK) {
         $paginaHTML->aggiungiContenuto("{{console}}", $console);
         $paginaHTML->aggiungiContenuto("{{anno}}", $anno);
         $paginaHTML->aggiungiContenuto("{{desc}}", $desc);
+        $paginaHTML->aggiungiContenuto("[link_categoria]", "categoria_singola.php?categoria=".htmlspecialchars($categoria));
 
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_SESSION['nickname'])) {
             if (!empty($_POST['testo']) && isset($_POST['gioco']) && isset($_POST['stelle'])) {
@@ -164,6 +165,13 @@ if(!$connessioneOK) {
             }
         }
     } else {
+        $paginaHTML->aggiungiContenuto("{{nome}}", "");
+        $paginaHTML->aggiungiContenuto("{{img}}", "");
+        $paginaHTML->aggiungiContenuto("{{casa}}", "");
+        $paginaHTML->aggiungiContenuto("{{console}}", "");
+        $paginaHTML->aggiungiContenuto("{{anno}}", "");
+        $paginaHTML->aggiungiContenuto("{{desc}}", "");
+        $paginaHTML->aggiungiContenuto("[link_categoria]", "categoria_singola.php?categoria=".htmlspecialchars($categoria));
         $connessione->closeConnection();
         $listaArticoli = "Niente :'(";
     }   

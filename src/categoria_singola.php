@@ -23,7 +23,7 @@ if(!$connessioneOK) {
     $connessione->closeConnection();
 
     if($giochi){
-        $lista = "<div class='div-h'><h1 class='h-white'>Categoria: {$catName}</h1></div>";
+        $lista = "<div id='content' class='div-h'><h1 class='h-white'>Categoria: {$catName}</h1></div>";
         $lista .= "<ul class='lista-giochi'>";
         foreach($giochi as $gioco) {
                 $nome = htmlspecialchars($gioco['nome_gioco']);
@@ -35,6 +35,8 @@ if(!$connessioneOK) {
     } else {
         $lista = "niente :/";
     }
+
+    
 
     $paginaHTML->aggiungiContenuto("[tuttigiochi]", $lista);
     $paginaHTML->getPagina();

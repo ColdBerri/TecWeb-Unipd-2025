@@ -1,6 +1,6 @@
 <div class="form-container">
     <div class="form-box">
-        <h1 class="form-welcome-message">Ti diamo il benvenuto</h1>
+        <h1 id="content" class="form-welcome-message">Ti diamo il benvenuto</h1>
         <form id="registration-form" method="POST" action="registra.php" onsubmit="return validazioneForm();">
             
             <fieldset>
@@ -44,6 +44,11 @@
         </form>
     </div>
 </div>
+
+<div>
+    <a class="navicationHelp" href="#content">Torna su</a></li>
+</div>
+
 <script src="js/validaPassword.js"></script>
 <script src="js/controlloInjection.js"></script>
 <script src="js/nomeDoppio.js"></script>

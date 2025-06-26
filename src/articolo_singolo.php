@@ -30,9 +30,12 @@ if(!$connessioneOK){
         $paginaHTML->aggiungiContenuto("{{data}}", $dataP);
         $paginaHTML->aggiungiContenuto("{{gioco}}", $gioco);
         $paginaHTML->aggiungiContenuto("{{testo}}", $testo);
+
+
     }else{
         $cont = "<p>Articolo non trovato!!</p>";
     }
+
     $paginaHTML->getPagina();
 }
 ?>

@@ -1,6 +1,6 @@
 <div class="form-container">
     <div class="form-box">
-        <h1 class="form-welcome-message">Modifica la tua password</h1>
+        <h1 id="content" class="form-welcome-message">Modifica la tua password</h1>
         <form id="modifica-form" method="POST" action="modifica_profilo.php" onsubmit="return checkForm();">
             
             <fieldset>
@@ -12,7 +12,7 @@
 
             <fieldset>
                 <label for="nuova_password">
-                    <span lang="it">Nuova</span> <span lang="en">Password:</span>
+                    Nuova <span lang="en">Password:</span>
                 </label>
                 <input type="password" id="nuova_password" name="nuova_password" required>
             </fieldset>
@@ -30,4 +30,8 @@
             </div>
         </form>
     </div>
+</div>
+
+<div>
+    <a class="navicationHelp" href="#content">Torna su</a></li>
 </div>
