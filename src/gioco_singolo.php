@@ -24,6 +24,8 @@ if(!$connessioneOK) {
     $articolo = $connessione->getArticoliGioco($nomeGioco);
     $recensioni = $connessione->getRecensioni($nomeGioco);
 
+    $_SESSION['nomeGioco'] = $nomeGioco;
+
     if($dati){
 
         $categoria = $dati['categoria'];
@@ -33,6 +35,7 @@ if(!$connessioneOK) {
         $anno = $dati['anno_di_pubblicazione'];
         $desc = $dati['descrizione'];
         $recensioniHTML = "";
+
         
         $paginaHTML->aggiungiContenuto("{{nome}}", $nomeGioco);
         $paginaHTML->aggiungiContenuto("{{img}}", $img);
@@ -64,7 +67,7 @@ if(!$connessioneOK) {
         if (isset($_SESSION['nickname'])) {
             $formRecensioneHTML .= "
                 <form method='post' class='recensione-form'>
-                    <h3 class='intestazione_recensione_log'>Scrivi una recensione</h3>
+                    <h2 class='intestazione_recensione_log'>Scrivi una recensione</h2>
                     <label class='recensione-label'>Valutazione (1–5):</label>
                     <div class='recensione-rating'>
             ";
@@ -95,7 +98,7 @@ if(!$connessioneOK) {
 
         // RECENSIONI PASSATE
         if ($recensioni) {
-            $recensioniHTML .= "<h1 class='h1_recensioni'>Recensioni</h1><ul class='tutte_recensioni'>";
+            $recensioniHTML .= "<h2 class='h1_recensioni'>Recensioni</h2><ul class='tutte_recensioni'>";
             foreach ($recensioni as $rec) {
                 $utente = htmlspecialchars($rec['nickname']);
                 $testo = htmlspecialchars($rec['contenuto_recensione']);
@@ -172,5 +175,9 @@ if(!$connessioneOK) {
     $paginaHTML->aggiungiContenuto("[eventi]", "");
     $paginaHTML->aggiungiContenuto("[articoli]", $listaArticoli);
     $paginaHTML->getPagina();
+
+    if (!empty($_SESSION[$nomeGioco]))
+        unset($_SESSION['$nomeGioco']);
+    
 }
 ?>

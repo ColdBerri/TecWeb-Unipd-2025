@@ -25,7 +25,9 @@ if(!$connessioneOK){
         $dataP = $articolo['data_pubblicazione'];
         $autore = $articolo['autore'];
         $testo = $articolo['testo_articolo'];
-        $gioco = $articolo['nome_videogioco'];
+        $nomeVideogioco = $articolo['nome_videogioco'];
+
+        $gioco = "<a class='link_giocosingolo' href='gioco_singolo.php?gioco={$nomeVideogioco}'>".  $nomeVideogioco . "</a>";
 
         $paginaHTML->aggiungiContenuto("{{nomeArt}}", $artName);
         $paginaHTML->aggiungiContenuto("{{autore}}", $autore);

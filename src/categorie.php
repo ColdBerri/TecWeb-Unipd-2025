@@ -122,7 +122,7 @@ if(!$connessioneOK){
 
 
     $paginaHTML->getPagina();  
-
+    
     unset($_POST['ricercaCategorie']);
 }
 ?>

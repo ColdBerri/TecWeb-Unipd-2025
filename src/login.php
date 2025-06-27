@@ -40,16 +40,26 @@ if (isset($_POST['submit'])) {
 
                     if($user_data['password_'] === $pass){
                         $_SESSION['nickname'] = $user_data['nickname'];
+
+                    $backVideo = $_SESSION['nomeGioco'] ?? null;
+
+                    if (empty($backVideo)) {
                         header("Location: profilo.php");
                         exit;
+                    } else {
+                        unset($_SESSION['nomeGioco']);
+                        header("Location: gioco_singolo.php?gioco={$backVideo}");
+                        exit;
+                    }
+                        
                     }else {
                         $error = urlencode("Nome utente o pasword sbagliati. Ripetere il login");
-                        header("Location: index.php");
+//                        header("Location: index.php");
                         exit;
                     }
                 } else {
                     $error = urlencode("Nome utente o pasword sbagliati. Ripetere il login");
-                    header("Location: index.php");
+  //                  header("Location: index.php");
                     exit;
                 }
             }
