@@ -54,12 +54,12 @@ if (isset($_POST['submit'])) {
                         
                     }else {
                         $error = urlencode("Nome utente o pasword sbagliati. Ripetere il login");
-//                        header("Location: index.php");
+                        header("Location: login.php");
                         exit;
                     }
                 } else {
                     $error = urlencode("Nome utente o pasword sbagliati. Ripetere il login");
-  //                  header("Location: index.php");
+                    header("Location: login.php");
                     exit;
                 }
             }
