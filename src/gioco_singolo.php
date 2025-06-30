@@ -116,8 +116,6 @@ if(!$connessioneOK) {
         $paginaHTML->aggiungiContenuto("[contenuto_gioco]", $formRecensioneHTML);      
         $paginaHTML->aggiungiContenuto("[recensioni_passate]", $recensioniHTML);   
 
-
-
         // EVENTI
         $listaEventi = "";
         if (!empty($evento) && is_array($evento)) {

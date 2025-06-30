@@ -3,6 +3,10 @@
     margin: 0; 
 } 
 
+.listAiuti,.tornaSU{
+  display: none;
+}
+
 html, body {
   font-family: "Times New Roman", serif;
   color: black;
@@ -12,8 +16,7 @@ html, body {
 h1 {
   font-size: 2em; 
   font-weight: bold;
-  margin: 0.5em 0;
-      text-align: center;   
+  text-align: center;   
 
 }
 
@@ -21,46 +24,40 @@ header ul li:not(:first-child) {
   display: none;
 }
 
+a{
+    content: none;
+}
+
+/*
 header {
   position: relative; 
   padding-left: 170px; 
 }
 
-a[href]:after {
-    content: none !important;
-  }
-
-/* LOGO */
+/* LOGO 
 .logo img {
     content: url("../assets/img_transparent_b&n.png") !important;
   }
-
+*/
 .logo {
-  position: absolute;
-  top: 1em;
-  left: 0em;
-  width: 150px;
-  height: auto;
-      margin-bottom: 0.2em; 
+  margin-top: 10px;
+  text-align: center;
 }
 
 .logo img {
-  width: 100%;
+  width: 100px;
   height: auto;
-  display: block;
 }
 
 .logo h1 {
   text-transform: uppercase;
   font-size: 2em;
-  text-align: center;
   margin-top: 0.2em;
 }
 
 /* BREADCRUMB */
 .breadcrump {
-  display: block;
-  position: absolute;
+  text-align: center;
   top: 9em;        
   left: 1em;    
   font-size: 1.3em;
@@ -70,8 +67,7 @@ a[href]:after {
 }
 
 h2 {
-      font-weight: bold;
-
+  font-weight: bold;
 }
 
 .menuHamberger,
@@ -80,11 +76,8 @@ h2 {
     display: none;
   }
 
-
-
-
 main {
-  margin-top: 250px;
+  margin-top: 20px;
 }
 
 
@@ -530,14 +523,7 @@ input[type="password"]::placeholder {
         color: #000 !important;
         text-decoration: underline;
     }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-        font-size: 0.8em;
-        font-weight: normal;
-    }
-
-
+    
 /* PROFILO */
 .profilo-links,
     .profile_button,
