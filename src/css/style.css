@@ -317,6 +317,37 @@ h1.h-index {
     border-top-right-radius: 0.7em;
 }
 
+.divMain {
+    overflow: hidden; 
+    margin: 0 auto;
+    padding-bottom: 2em;
+    width: 90%;
+    text-align: center;
+}
+
+.divMain .box {
+    float: left;
+    width: 48%;
+    margin-right: 2%; 
+    border-radius: 0.5em;
+    padding: 0.8em;
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+
+.divMain:not(:first-child){
+     margin-right: 3em;
+}
+
+.div-h {
+    margin-bottom: 0.8em;
+}
+
+.hMain{
+    border-bottom: 1px solid black;
+}
+
+
 .top-list li {
     background-color: var(--headerbgcolor);
     display: inline-block;
@@ -327,6 +358,7 @@ h1.h-index {
     word-wrap: break-word; /* Ensure text wraps within the box */
     overflow-wrap: break-word; /* Handle long words */
     text-align: center; /* Center-align text */
+    min-height: 10em;    
 }
 
 .top-list li:hover {
@@ -348,11 +380,10 @@ h1.h-index {
     margin: 1em;
     padding-top: 1em;
     padding-bottom: 1em;
-
+    list-style: none;
 }
 
 .top-liste li {
-    display: inline-block;
     margin: 0.5em;
     border-radius: 0.7em;
 }
@@ -377,10 +408,6 @@ h1.h-index {
     transition: all 0.1s ease;
 }
 
-.eventi-home:first-child {
-    text-align: center;
-}
-
 .notizie-home {
     background-color: var(--headerbgcolor);
     border-radius: 0.7em;
@@ -392,6 +419,36 @@ h1.h-index {
 .notizie-home:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
     transition: all 0.1s ease;
+}
+
+
+.top-liste {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.top-liste li {
+    display: inline-block;
+    vertical-align: top;
+    width: 90%;
+    margin: 1%;
+    min-height: 6em;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+
+.link_articolo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.notizie-home {
+    padding: 0.8em;
 }
 
 /*CATEGORIE*/

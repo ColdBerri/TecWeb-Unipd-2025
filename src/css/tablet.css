@@ -262,6 +262,19 @@ div.login-box {
   /* Manina cliccabile dentro il riquadro blu */
 }
 
+.divMain .box {
+    float: none;
+    width: 100%;
+    border: none;
+}
+
+.hMain{
+    border-bottom: none;
+    background-color: whitesmoke;
+    border-radius: 0.7em;
+    padding: 0.2em 2em 0.2em 2em;
+}
+
 /* Rimuovere la manina fuori dai riquadri blu (stessa altezza) */
 .top-liste li {
   cursor: default;
@@ -273,8 +286,6 @@ div.login-box {
   cursor: default;
   /* Mantieni il cursore normale sui link fuori dai riquadri */
 }
-
-
 
 
 /* ABOUT US */
