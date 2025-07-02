@@ -251,13 +251,11 @@ ul .current-page {
 
 .search-icon {
     width: 2em;
-    /* Dimensione dell'icona */
     height: 2em;
 }
 
 .search-icon:hover {
     content: url('../assets/search_red.png');
-    /* Sostituisce l'immagine con search_red.png al passaggio del mouse */
 }
 
 .div-h {
@@ -325,14 +323,31 @@ h1.h-index {
     text-align: center;
 }
 
+.box>.div-h{
+    position: absolute;
+    top: -1.6em;
+    background-color: var(--bgcolor);
+    text-align: center;
+}
+
+.box>.div-h>h2{
+    margin: 0;
+    font-size: 2em;
+}
+
 .divMain .box {
+    margin-top: 2em;
     float: left;
     width: 48%;
     margin-right: 2%; 
     border-radius: 0.5em;
-    padding: 0.8em;
+    padding: 2.5em 0.8em 0.8em 0.8em;
     box-sizing: border-box;
-    border: 2px solid black;
+    border-top: 5px solid white;
+    border-left: 4px solid white;
+    border-right: 4px solid white;
+    border-bottom: 5px solid white;
+    position: relative;
 }
 
 .divMain:not(:first-child){
@@ -343,22 +358,17 @@ h1.h-index {
     margin-bottom: 0.8em;
 }
 
-.hMain{
-    border-bottom: 1px solid black;
-}
-
-
 .top-list li {
     background-color: var(--headerbgcolor);
     display: inline-block;
     margin: 3em;
     margin-top: 0em;
     border-radius: 0.7em;
-    width: 15em; /* Match the width of the image */
+    width: 15em; /* Match the w   idth of the image */
     word-wrap: break-word; /* Ensure text wraps within the box */
     overflow-wrap: break-word; /* Handle long words */
     text-align: center; /* Center-align text */
-    min-height: 10em;    
+/*    min-height: 10em;*/    
 }
 
 .top-list li:hover {

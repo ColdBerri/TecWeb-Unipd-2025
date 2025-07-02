@@ -320,6 +320,24 @@ div.login-box {
   margin-top: 0;
 }
 
+/*====INDEX===*/
+
+.box>.div-h{
+  position: relative;
+  background-color: whitesmoke;
+  border-radius: 0.7em;
+}
+
+.divMain .box{
+  margin-top: 0;
+}
+
+.box>.div-h>h2{
+    display: inline-block;
+    border-radius: 0.7em;
+    padding: 0.2em 2em 0.2em 2em;
+}
+
 /*ASSISTENZA*/
 .support_details {
   width: 90%;
