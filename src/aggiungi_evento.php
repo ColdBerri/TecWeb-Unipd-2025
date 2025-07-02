@@ -14,11 +14,24 @@ $nome_gioco = "";
 if(!$connessioneOK){
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $messaggio = "";
-        $nome_evento = trim($_POST['nome_evento']);
+        $nome_eventoTmp = trim($_POST['nome_evento']);
         //if(isset($_GET['gioco'])){
           //  $nome_gioco = urlencode($_GET['gioco']);
         //}else{
-            $nome_gioco = trim($_POST['nome_gioco']);
+        $nome_giocoTmp = trim($_POST['nome_gioco']);
+
+        if(isset($_POST['lnGioco'])){
+            $nome_gioco = "<span lang='en'>" .$nome_giocoTmp . "</span>" ;
+        } else {
+            $nome_gioco = $nome_giocoTmp;
+        }   
+
+        if(isset($_POST['lnNome'])){
+            $nome_evento = "<span lang='en'>" .$nome_eventoTmp . "</span>" ;
+        } else {
+            $nome_evento = $nome_eventoTmp;
+        }
+
         //}
         $data_inizio = trim($_POST['data_inizio_evento']);
         $data_fine = trim ($_POST['data_fine_evento']);
@@ -37,9 +50,9 @@ if(!$connessioneOK){
 
     if(isset($_GET['gioco'])){
         $nome = urlencode($_GET['gioco']);
-        $cont .="<fieldset><div><label for='nomeGioco'> Nome gioco : </label><input type='text' name='nome_gioco' value={$nome} id='nomeGioco'required></div></fieldset>";
+        $cont .="<fieldset class='selezionaLingua'><div><label for='nomeGioco'> Nome gioco : </label><input type='text' name='nome_gioco' value={$nome} id='nomeGioco'required></div></fieldset>";
     }else{
-        $cont .="<fieldset><div><label for='nomeGioco'> Nome Gioco : </label><input type='text' name='nome_gioco' id='nomeGioco' required></div></fieldset>";
+        $cont .="<fieldset class='selezionaLingua'><div><label for='nomeGioco'> Nome Gioco : </label><input type='text' name='nome_gioco' id='nomeGioco' required></div></fieldset>";
     }
 
 }   

@@ -15,7 +15,14 @@ if(!$connessioneOK){
         $autore = trim($_POST['autore']);
         $data_pubblicazione = trim($_POST['data_pubblicazione']);
         $testo = trim($_POST['testo_articolo']);
-        $gioco = trim($_POST['nome_videogioco']);
+        $giocoTmp = trim($_POST['nome_videogioco']);
+
+        if(isset($_POST['lnGioco'])){
+            $gioco = "<span lang='en'>" .$giocoTmp . "</span>" ;
+        } else {
+            $gioco = $giocoTmp;
+        }  
+        
         try{
             $connessione->addArticolo($titolo_articolo, $autore, $data_pubblicazione, $testo, $gioco);
             $messaggio = "<p>Articolo aggiunto correttamente!</p>";
@@ -25,11 +32,12 @@ if(!$connessioneOK){
         $connessione->closeConnection();
     }   
     $cont = "";
+
     if(isset($_GET['gioco'])){
         $gioco = urlencode($_GET['gioco']);
-        $cont .= "<fieldset><div><label for='nome_videogioco'>Nome Gioco :</label><input type ='text' name='nome_videogioco' value={$gioco} id ='nome_videogioco'></div></fieldset>";
+        $cont .= "<fieldset class='selezionaLingua'><div><label for='nome_videogioco'>Nome Gioco :</label><input type ='text' name='nome_videogioco' value={$gioco} id ='nome_videogioco'></div></fieldset>";
     }else{
-        $cont .= "<fieldset><div><label for='nome_videogioco'>Nome Gioco :</label><input type='text' name='nome_videogioco' required id ='nome_videogioco'></div></fieldset>";
+        $cont .= "<fieldset class='selezionaLingua'><div><label for='nome_videogioco'>Nome Gioco :</label><input type='text' name='nome_videogioco' required id ='nome_videogioco'></div></fieldset>";
     }
 
 }

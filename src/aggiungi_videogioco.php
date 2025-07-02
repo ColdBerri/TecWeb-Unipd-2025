@@ -11,12 +11,25 @@ $connessioneOK = $connessione->openDBConnection();
 if(!$connessioneOK){
     $messaggio="";
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $nome = trim($_POST["nome_gioco"]);
-        $casa = trim($_POST["casa_produttrice"]);
+        $nomeTmp = trim($_POST["nome_gioco"]);
+        $casaTmp = trim($_POST["casa_produttrice"]);
         $console = trim($_POST["console_compatibili"]);
         $descrizione = trim($_POST["descrizione"]);
         $anno = intval($_POST["anno_di_pubblicazione"]);
         $immagine = trim($_POST["immagine"]);
+
+        if(isset($_POST['lnGioco'])){
+            $nome = "<span lang='en'>" .$nomeTmp . "</span>" ;
+        } else {
+            $nome = $nomeTmp;
+        }
+
+        if(isset($_POST['lnCasa'])){
+            $casa = "<span lang='en'>" .$casaTmp . "</span>" ;
+        } else{
+            $casa = $casaTmp;
+        }
+
         
         $categoria = trim($_POST["categoria"]);
         try {

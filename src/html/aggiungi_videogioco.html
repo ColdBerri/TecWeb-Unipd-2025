@@ -3,7 +3,6 @@
         <h1 id="content" class="form-welcome-message">Aggiungi Videogioco</h1>
 
         <form method="post" action="aggiungi_videogioco.php" onsubmit="return validazioneForm();">
-
             
             <fieldset class="selezionaLingua">
                 <div>
@@ -15,12 +14,11 @@
 
             <fieldset>
                 <div class="linguaDev">
-                    <input type="checkbox" id="lnGioco">
+                    <input type="checkbox" id="lnGioco" name="lnGioco">
                     <label for="lnGioco">Seleziona se il nome è in lingua inglese</label>                 
                 </div>                 
             </fieldset>
       
-
             <fieldset class="selezionaLingua">
                 <div>
                     <label for="casa_produttrice">Casa produttrice: </label>
@@ -30,7 +28,7 @@
 
             <fieldset>
                 <div class="linguaDev">
-                    <input type="checkbox" id="lnCasa">
+                    <input type="checkbox" id="lnCasa" name="lnCasa">
                     <label for="lnCasa">Seleziona se il nome della casa_produttrice è in lingua inglese</label>                 
                 </div>                 
             </fieldset>
@@ -56,7 +54,7 @@
             <fieldset>
                 <div>
                     <label for="anno_di_pubblicazione">Anno di pubblicazione: </label>
-                    <input type="number" id="anno_di_pubblicazione" name="anno_di_pubblicazione" required>                    
+                    <input type="date" id="anno_di_pubblicazione" name="anno_di_pubblicazione" required>                    
                 </div>
 
             </fieldset>
@@ -71,7 +69,6 @@
                 </div>
 
             </fieldset>
-
             
             <fieldset>
                 <div>
