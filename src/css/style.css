@@ -955,7 +955,7 @@ td.giornoFuori>p {
 /* Contenitore esterno */
 .form-container {
     width: 100%;
-    float: left;
+    /*float: left;*/
     padding: 2em 0;
 }
 
