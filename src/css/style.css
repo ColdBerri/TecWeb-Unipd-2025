@@ -261,7 +261,8 @@ ul .current-page {
 
 .titolo_gioco {
     padding-bottom: 0.4em;
-
+    overflow: auto;
+    max-height: 1.5em;
 }
 
 h1.h-index {
@@ -514,6 +515,8 @@ div.categoria>h2 {
     border-radius: 0.5em;
     transition: transform 0.3s ease;
     margin-left: 1em;
+    max-height: 18em;
+    max-width: min-content;
 }
 
 .lista-giochi>li>a {

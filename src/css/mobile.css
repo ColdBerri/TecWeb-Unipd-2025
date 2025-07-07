@@ -139,12 +139,13 @@ div.categoria>h2{
 
 .lista-giochi>li{
   width:90%;
-  overflow: overlay;
+  max-height: 5.6em;
+  overflow: scroll;
+  max-width: none;
 }
 
 .divFormCategorie{
   font-size: 1.1em;
-  
 }
 
 .formCategorie>div{
