@@ -1,7 +1,26 @@
-h1 {
-  margin: 0.8em;
-  margin-top: 1.5em;
-  max-width: 80%;
+.menu{
+  text-align: left;
+  display: inline-block;
+  padding-bottom: 0.7em;
+}
+
+.logo>img{
+  float: left;
+}
+.logo h1>span{
+ margin-top: 0.6em;
+ position: absolute;
+}
+
+.h-white{
+  padding: 0;
+  border-radius: 0.3em;
+  padding: 0 0.1em 0;
+}
+
+.menu ul{
+  padding-bottom: 1em;
+  display: inline;
 }
 
 /* Voci del menu */
@@ -28,6 +47,72 @@ nav.menuHamberger {
 /* Nasconde il campo input della ricerca */
 .library-search-box {
   display: none;
+}
+
+/*===CATEGORIA====*/
+
+.labelFiltro{
+  padding-right:0.5em;
+}
+
+div.categoria>h2{
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+.formCategorie{
+  margin-bottom: 2em;
+}
+
+.post-ricerca{
+  margin: 0;
+}
+
+.categoria{
+  padding: 0;
+}
+
+.titolo_gioco {
+  padding: 0.8em;
+  font-size: 1.25em;
+  font-weight: bold;
+  padding-top: 1.4em;
+}
+
+.ImgGiocoCat{
+  float: left;
+  width: 5em;
+  height: 5em;
+  padding: 0.3em;
+  border-right: 1px solid white;
+  border-radius: 0;
+}
+
+.lista-giochi{
+  display: inline;
+  text-align: center;
+}
+
+.lista-giochi>li{
+  width:90%;
+}
+
+.divFormCategorie{
+  background-color: var(--grigiobg);
+}
+
+ul.ulCategorie{
+  font-size: 1em;
+}
+.ulCategorie>li{
+  display: inline-block;
+}
+
+ul.ulCategorie>li input{
+  width: 20em;
+  padding: 0.3em 1.1em; 
+  background-color: var(--grigiobg);
+  color: black;
 }
 
 .search-container {

@@ -1,14 +1,18 @@
-main,
-section,
-.container {
-  margin-top: 7em;
-  /* spesso qui c'è spazio inutile */
-}
+/*===H===*/
 
 h1 {
   margin: 0.8em;
   margin-top: 1.5em;
   max-width: 80%;
+}
+
+
+
+main,
+section,
+.container {
+  margin-top: 7em;
+  /* spesso qui c'è spazio inutile */
 }
 
 .search-container {
@@ -274,8 +278,11 @@ div.login-box {
   /* Mantieni il cursore normale sui link fuori dai riquadri */
 }
 
+/*====CATEGORIE===*/
 
-
+.labelFiltro{
+  padding-right:0.5em;
+}
 
 /* ABOUT US */
 .aboutus_text {
@@ -321,8 +328,6 @@ div.login-box {
 .support_details summary {
   font-size: 1.3em;
 }
-
-
 
 /* CALENDARIO EVENTI */
 

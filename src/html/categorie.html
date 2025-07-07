@@ -17,19 +17,21 @@
 </form>
 
 <form class="formCategorie" method="post" action="categorie.php">
-    <ul class="ulCategorie">
-        <li><label for="comboBoxCategoria">Filtra per categoria</label>
-            <select name="comboBoxCategoria" id="comboBoxCategoria">
-            [categoria]
-            <option value="tutte" [tutte] >Tutte</option>
-        </select>
-        </li>
-        <li>
-            <fieldset class="filedset-cat">
-                <input type="submit" name="submit" value="CERCA">
-            </fieldset>
-        </li>   
-    </ul>
+    <div class="divFormCategorie">
+        <ul class="ulCategorie">
+            <li><label for="comboBoxCategoria" class="labelFiltro">Filtra per categoria</label>
+                <select name="comboBoxCategoria" id="comboBoxCategoria">
+                [categoria]
+                <option value="tutte" [tutte] >Tutte</option>
+            </select>
+            </li>
+            <li>
+                <fieldset class="filedset-cat">
+                    <input type="submit" name="submit" value="CERCA">
+                </fieldset>
+            </li>   
+        </ul>
+    </div>
 </form>
 
 

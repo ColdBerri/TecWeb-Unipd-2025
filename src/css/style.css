@@ -220,46 +220,6 @@ ul .current-page {
     margin-top: 0.5em;
 }
 
-.search-box {
-    width: 33em;
-    padding: 1em;
-}
-
-.search-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1em;
-}
-
-.search-box {
-    padding: 0.75em 1em;
-    border: 2px solid #ccc;
-    border-radius: 2em 0em 0em 2em;
-    font-size: 1em;
-    background-color: white;
-    color: #333;
-    border-right: none;
-}
-
-.search-button {
-    border: 2px solid #ccc;
-    background-color: white;
-    border-radius: 0em 2.5em 2.5em 0em;
-    width: 7em;
-    cursor: pointer;
-}
-
-.search-icon {
-    width: 2em;
-    /* Dimensione dell'icona */
-    height: 2em;
-}
-
-.search-icon:hover {
-    content: url('../assets/search_red.png');
-    /* Sostituisce l'immagine con search_red.png al passaggio del mouse */
-}
-
 .div-h {
     text-align: center;
 }
@@ -267,6 +227,7 @@ ul .current-page {
 .h-white {
     display: inline-block;
     background-color: whitesmoke;
+    font-size: 2.5em;
     border-radius: 0.7em;
     padding: 0.2em 2em 0.2em 2em;
 }
@@ -294,6 +255,8 @@ ul .current-page {
 
 .top-list {
     text-align: center;
+    margin-top: 1em;
+    padding-top: 1em;
 }
 
 .titolo_gioco {
@@ -410,8 +373,58 @@ h1.h-index {
     color: var(--linkvisited);
 }
 
+.post-ricerca{
+    margin-top: 2em;
+}
+
+.search-box {
+    width: 33em;
+    padding: 1em;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.search-box {
+    padding: 0.75em 1em;
+    border: 2px solid #ccc;
+    border-radius: 2em 0em 0em 2em;
+    font-size: 1em;
+    background-color: white;
+    color: #333;
+    border-right: none;
+}
+
+.search-button {
+    border: 2px solid #ccc;
+    background-color: white;
+    border-radius: 0em 2.5em 2.5em 0em;
+    width: 7em;
+    cursor: pointer;
+}
+
+.search-icon {
+    width: 2em;
+    height: 2em;
+}
+
+.search-icon:hover {
+    content: url('../assets/search_red.png');
+}
+
+.labelFiltro{
+  padding-right:0.5em;
+}
+
 .filedset-cat {
     margin: 0;
+}
+
+.lista-giochi{
+    margin-top: 2em;
 }
 
 ul.ulCategorie {
@@ -549,6 +562,10 @@ div.categoria>h2 {
     margin-bottom: 0.5em;
 }
 
+.formCalendario{
+    margin-top: 2em;
+}
+
 .titolo_calendario {
     font-size: 1.3em;
     margin-bottom: 0.3em;
@@ -658,7 +675,6 @@ input[type="submit"][value="CERCA EVENTI"]:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     table-layout: fixed;
-    min-width: 40em;
     max-width: 70em;
     border-radius: 1em;
 }
@@ -885,7 +901,7 @@ td.giornoFuori>p {
 
 /* FORM LOGIN, REGISTRA E MODIFICA PASS, OPZIONI SVILUPPATORE */
 
-/* Contenitore esterno */
+/* Contenitore esterno 
 .form-container {
     width: 100%;
     float: left;
@@ -1382,14 +1398,6 @@ aside {
     text-align: justify;
 }
 
-h1,
-h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    /* spazio tra il titolo e i riquadri */
-    font-size: 2.5em;
-}
-
 .container {
     text-align: center;
     /* Allinea inline-block al centro */
@@ -1637,6 +1645,11 @@ fieldset.selezionaLingua{
 }
 
 /*=====EVENTO SINGOLO=====*/
+
+.titolo_evento{
+    text-align: center;
+    padding: 0 0em 1em 0;
+}
 
 #evento-singolo {
     max-width: 50em;
