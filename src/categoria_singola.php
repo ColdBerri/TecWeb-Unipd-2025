@@ -24,14 +24,14 @@ if(!$connessioneOK) {
 
     if($giochi){
         $lista = "<div id='content' class='div-h'><h1 class='h-white'>Categoria: {$catName}</h1></div>";
-        $lista .= "<ul class='lista-giochi'>";
+        $lista .= "<div class='divListaCatSing'><ul class='lista-giochi'>";
         foreach($giochi as $gioco) {
                 $nome = htmlspecialchars($gioco['nome_gioco']);
                 $immagine = htmlspecialchars($gioco['immagine']);
                 $lista .= "<li><a href='gioco_singolo.php?gioco={$nome}' >";
-                $lista .= "<img src='assets/img/$immagine' class='ImgGiocoCat'><p>$nome</p></a></li>";
+                $lista .= "<img src='assets/img/$immagine' class='ImgGiocoCat'><p class='titolo_gioco'>$nome</p></a></li>";
         }
-    $lista .= "</ul>";
+    $lista .= "</ul></div>";
     } else {
         header('Location: categorie.php');
     }

@@ -16,23 +16,23 @@
     </div>
 </form>
 
-<form class="formCategorie" method="post" action="categorie.php">
-    <div class="divFormCategorie">
-        <ul class="ulCategorie">
-            <li><label for="comboBoxCategoria" class="labelFiltro">Filtra per categoria</label>
-                <select name="comboBoxCategoria" id="comboBoxCategoria">
-                [categoria]
-                <option value="tutte" [tutte] >Tutte</option>
-            </select>
-            </li>
-            <li>
-                <fieldset class="filedset-cat">
-                    <input type="submit" name="submit" value="CERCA">
-                </fieldset>
-            </li>   
-        </ul>
-    </div>
-</form>
+    <form class="formCategorie" method="post" action="categorie.php">
+        <div class="divFormCategorie">
+                <div class="divFiltro"><label for="comboBoxCategoria" class="labelFiltro">Filtra per categoria</label>
+                    <select name="comboBoxCategoria" id="comboBoxCategoria">
+                    [categoria]
+                    <option value="tutte" [tutte] >Tutte</option>
+                    </select>
+                 </div>
+                <div class="divInputCat">
+                    <fieldset class="filedset-cat">
+                        <input type="submit" name="submit" value="CERCA">
+                    </fieldset>                    
+                </div>
+
+        </div>
+    </form>
+
 
 
 [gioco]

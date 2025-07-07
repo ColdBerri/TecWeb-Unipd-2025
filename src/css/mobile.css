@@ -1,3 +1,7 @@
+body,main{
+  width: 100%;
+}
+
 .menu{
   text-align: left;
   display: inline-block;
@@ -8,7 +12,7 @@
   float: left;
 }
 .logo h1>span{
- margin-top: 0.6em;
+ margin-top: 0.8em;
  position: absolute;
 }
 
@@ -55,13 +59,46 @@ nav.menuHamberger {
   padding-right:0.5em;
 }
 
+.formCategorie{
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
 div.categoria>h2{
   padding-bottom: 1em;
   text-align: center;
+  padding-left: 0;
+  width: 100%;
+}
+
+.divFormCAT{
+  margin: auto;
+}
+
+.divFormCategorie>div:first-child {
+  margin: 0;
+  padding: 0.3em 0em 1em 0em;
+  background-color: transparent;
+  width: 90%;
 }
 
 .formCategorie{
   margin-bottom: 2em;
+  background-color: var(--grigiobg);
+  border-radius: 1em;
+}
+
+.divInputCat{
+  width: 90%;
+}
+
+.filedset-cat input{
+  padding: 0.6em 0.9em;
+  color: black;
+  border: 1px solid var(--grigiobg);
+  background-color: white;
+  width: 100%;
 }
 
 .post-ricerca{
@@ -70,6 +107,8 @@ div.categoria>h2{
 
 .categoria{
   padding: 0;
+  text-align: center;
+  margin-bottom: 2.5em;
 }
 
 .titolo_gioco {
@@ -88,31 +127,28 @@ div.categoria>h2{
   border-radius: 0;
 }
 
+.lista-giochi>li{
+  margin-left: 0;
+}
+
 .lista-giochi{
   display: inline;
   text-align: center;
+  width: 100%;
 }
 
 .lista-giochi>li{
   width:90%;
+  overflow: overlay;
 }
 
 .divFormCategorie{
-  background-color: var(--grigiobg);
+  font-size: 1.1em;
+  
 }
 
-ul.ulCategorie{
-  font-size: 1em;
-}
-.ulCategorie>li{
-  display: inline-block;
-}
-
-ul.ulCategorie>li input{
-  width: 20em;
-  padding: 0.3em 1.1em; 
-  background-color: var(--grigiobg);
-  color: black;
+.formCategorie>div{
+  display: inline;
 }
 
 .search-container {
@@ -150,6 +186,10 @@ div.login-box {
   /* meno spazio sopra */
   margin-bottom: 5em;
   /* più spazio sotto */
+}
+
+.divListaCatSing{
+  text-align: center;
 }
 
 /*ABOUT US*/

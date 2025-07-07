@@ -419,6 +419,10 @@ h1.h-index {
   padding-right:0.5em;
 }
 
+.formCategorie{
+    align-items: center;
+}
+
 .filedset-cat {
     margin: 0;
 }
@@ -427,16 +431,16 @@ h1.h-index {
     margin-top: 2em;
 }
 
-ul.ulCategorie {
+.divFormCategorie {
     text-align: center;
     font-size: 1.5em;
 }
 
-ul.ulCategorie>li {
+.divFormCategorie>div {
     display: inline-block;
 }
 
-ul.ulCategorie>li:first-child {
+.divFormCategorie>div:first-child {
     border-radius: 0.7em;
     background-color: var(--grigiobg);
     width: 20em;
@@ -444,7 +448,7 @@ ul.ulCategorie>li:first-child {
     margin: 0.3em;
 }
 
-ul.ulCategorie select {
+.divFormCategorie select {
     padding: 0.5em 0.5em;
     border: 1px solid #ccc;
     border-radius: 1.4em;
@@ -463,14 +467,14 @@ ul.ulCategorie select {
     margin-top: 0.4em;
 }
 
-ul.ulCategorie select:hover {
+.divFormCategorie select:hover {
     background-color: #e6e6e6;
     border-color: #999;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
 }
 
-ul.ulCategorie>li {
+.divFormCategorie>div {
     font-size: 1em;
     padding: 0.5em;
     font-weight: bold;
@@ -481,7 +485,7 @@ ul.ulCategorie>li {
     margin-bottom: 1em;
 }
 
-ul.ulCategorie>li input {
+.divFormCategorie input {
     padding: 0.8em 1.1em;
     border: 1px solid #ccc;
     border-radius: 1.4em;
@@ -491,12 +495,6 @@ ul.ulCategorie>li input {
     transition: background-color 0.2s ease, transform 0.2s ease;
     margin-top: -0.5em;
     font-size: 1em;
-}
-
-.formCategorie>div {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 0.8em;
 }
 
 div.categoria>h2 {
