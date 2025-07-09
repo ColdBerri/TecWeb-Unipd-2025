@@ -1,28 +1,7 @@
 services:
-  php:
+  web:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "80:80"
-    volumes:
-      - ./src:/var/www/html/
-  db:
-    image: mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: xxx123
-      MYSQL_DATABASE: mydb
-      MYSQL_USER: mario
-      MYSQL_PASSWORD: mario123
-  
-  phpmyadmin:
-    image: phpmyadmin
-    restart: always
-    ports:
-      - 8080:80
-    environment:
-      - PMA_ARBITRARY=1
-      - PMA_HOST=db
-      - PMA_USER=mario
-      - PMA_PASSWORD=mario123
