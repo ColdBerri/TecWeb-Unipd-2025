@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   web:
     build:
@@ -5,3 +7,26 @@ services:
       dockerfile: Dockerfile
     ports:
       - "80:80"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: xxx123
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: mario
+      MYSQL_PASSWORD: mario123
+    volumes:
+      - ./src/Vapor-Database-Implementation.sql:/docker-entrypoint-initdb.d/init.sql
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=mario
+      - PMA_PASSWORD=mario123
