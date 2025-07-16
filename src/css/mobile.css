@@ -48,12 +48,41 @@ nav.menuHamberger {
   font-size: 1.2em;
 }
 
+.miniCalendarioH{
+  display: block;
+  margin: auto;
+  width: 50%;
+  font-weight:bold ;
+  text-transform: uppercase;
+}
+
+.miniCalendarioB{
+  padding-top: 0.5em;
+}
+
+.notizie-home>p:first-child{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 /* Nasconde il campo input della ricerca */
 .library-search-box {
   display: none;
 }
 
 /*===CATEGORIA====*/
+
+.categoria h2>a:not(:visited){
+  color: var(--headerbgcolor);
+}
+
+.categoria h2>a {
+  background-color: white;
+  padding: 0.5em;
+  border-radius: 0.7em;
+  cursor: pointer;
+  border: 1px solid;
+}
 
 .labelFiltro{
   padding-right:0.5em;
@@ -111,20 +140,38 @@ div.categoria>h2{
   margin-bottom: 2.5em;
 }
 
-.titolo_gioco {
-  padding: 0.8em;
-  font-size: 1.25em;
-  font-weight: bold;
-  padding-top: 1.4em;
+div.divCat .titolo_gioco{
+  max-height: 100%;
+  text-overflow:ellipsis;
 }
 
-.ImgGiocoCat{
-  float: left;
-  width: 5em;
+.divCat {
+  width: 100%;
+  height: auto;
+  white-space: nowrap; 
+  text-align: left;
+}
+
+.ImgGiocoCat {
+  display: inline-block;
+  vertical-align: middle;
+  width: 6em;
   height: 5em;
   padding: 0.3em;
   border-right: 1px solid white;
   border-radius: 0;
+}
+
+.divCat .titolo_gioco {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center; 
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-left: 0.5em;
+  max-width: calc(100% - 6em);
+  white-space: normal; 
 }
 
 .lista-giochi>li{
@@ -139,8 +186,7 @@ div.categoria>h2{
 
 .lista-giochi>li{
   width:90%;
-  max-height: 5.6em;
-  overflow: scroll;
+  max-height: fit-content;
   max-width: none;
 }
 
