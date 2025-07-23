@@ -48,10 +48,32 @@ nav.menuHamberger {
   font-size: 1.2em;
 }
 
+.top-list{
+  margin-bottom: 2em;
+  padding: 0;
+}
+
+ul.top-list li{
+  width: fit-content;
+  margin: 0;
+}
+ul.top-list li:not(:first-child){
+  margin: 1em;
+}
+
+.top-list img {
+    width: 20em;
+    aspect-ratio: 6 / 4;
+}
+
+.eventi-home:first-child{
+  text-align: center;
+}
+
 .miniCalendarioH{
   display: block;
   margin: auto;
-  width: 50%;
+  width: 90%;
   font-weight:bold ;
   text-transform: uppercase;
 }
@@ -60,9 +82,16 @@ nav.menuHamberger {
   padding-top: 0.5em;
 }
 
+.notizie-home{
+  background-color: #091727;
+}
+
 .notizie-home>p:first-child{
   text-transform: uppercase;
   font-weight: bold;
+  
+  background-color: var(--headerbgcolor);
+  border-radius: 0.5em;
 }
 
 /* Nasconde il campo input della ricerca */
@@ -293,11 +322,6 @@ div.login-box {
   line-height: 1.5em;
 }
 
-.formCalendario {
-  flex-direction: column;
-  align-items: center;
-}
-
 .selettore {
   background-color: rgb(203, 203, 203);
   font-weight: bold;
@@ -350,6 +374,18 @@ input[type="submit"][value="CERCA EVENTI"] {
   /* ✅ importante per evitare overflow */
 }
 
+.button-container{
+  display: inline-block;
+}
+
+.submit_button,.cancella {
+  float: none;
+  width: 100%;
+}
+
+.submit_button{
+  margin-bottom: 0.5em;
+}
 
 .scheda-gioco {
   display: block;

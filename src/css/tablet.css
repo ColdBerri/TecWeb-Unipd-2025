@@ -59,6 +59,7 @@ nav.menuHamberger {
   padding-bottom: 4em;
   /* Aggiungi un padding-bottom per non tagliare l'ultima voce */
   z-index: 9999;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 
@@ -255,6 +256,9 @@ div.login-box {
   /* Impedisce l'influenza sul layout dei videogiochi */
 }
 
+.eventi-home:first-child{
+  text-align: left;
+}
 
 .eventi-home,
 .notizie-home {

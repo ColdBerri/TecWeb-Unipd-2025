@@ -131,12 +131,13 @@ header {
 }
 
 .nascondi {
-    display: none;
+  display: none;
 }
 
 .menuHamberger,
 .burger {
     display: none;
+    transition: ease 0.3s;
 }
 
 .navbar_link {
@@ -515,7 +516,7 @@ div.categoria>h2 {
     transition: transform 0.3s ease;
     margin-left: 1em;
     max-height: 18em;
-    max-width: min-content;
+    width: 14em;
     vertical-align:middle ;
 }
 
@@ -525,8 +526,8 @@ div.categoria>h2 {
 }
 
 .ImgGiocoCat {
-    width: 10em;
-    height: auto;
+    width: 14em;
+    height: 14em;
     aspect-ratio: 2 / 3;
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
@@ -2324,6 +2325,10 @@ footer {
     padding: 2em 0;
     text-align: center;
     margin-top: 0;
+}
+
+footer p>a{
+    padding:0 1em;
 }
 
 .ffild {
