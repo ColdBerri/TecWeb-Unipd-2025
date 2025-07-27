@@ -32,9 +32,9 @@ if (!$connessioneOK) {
     if (is_array($img)) {
         foreach($img as $giuco){
             $nomeG = urlencode($giuco['nome_gioco']);
-            $listaGiuchi .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco={$nomeG}'>";
+            $listaGiuchi .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco={$nomeG}'><div class='divGiochiTop'>";
             $listaGiuchi .= "<img src='assets/img/".$giuco['immagine']."' alt='".$giuco['nome_gioco']."'>";
-            $listaGiuchi .= "<p class='titolo_gioco'>".$giuco['nome_gioco']."</p>";
+            $listaGiuchi .= "<p class='titolo_gioco'>".$giuco['nome_gioco']."</div></p>";
             $listaGiuchi .= "</a></li>";
         }
     }

@@ -258,6 +258,8 @@ ul .current-page {
     text-align: center;
     margin-top: 1em;
     padding-top: 1em;
+    overflow: hidden;
+    position: relative;
 }
 
 .titolo_gioco {
@@ -274,8 +276,14 @@ h1.h-index {
     color: var(--linkvisited);
 }
 
+.divGiochiTop{
+    height: 23em;
+    overflow: hidden;
+}
+
 .top-list img {
-    width: 15em;
+    width: 100%;
+    height: calc(100% - 2.4em);
     aspect-ratio: 4 / 5;
     border-top-left-radius: 0.7em;
     border-top-right-radius: 0.7em;
@@ -284,13 +292,13 @@ h1.h-index {
 .top-list li {
     background-color: var(--headerbgcolor);
     display: inline-block;
-    margin: 3em;
+    margin: 2em;
     margin-top: 0em;
     border-radius: 0.7em;
-    width: 15em; /* Match the width of the image */
     word-wrap: break-word; /* Ensure text wraps within the box */
     overflow-wrap: break-word; /* Handle long words */
     text-align: center; /* Center-align text */
+    width: 20em;
 }
 
 .top-list li:hover {
@@ -301,6 +309,7 @@ h1.h-index {
 .top-list li p {
     background-color: var(--headerbgcolor);
     border-radius: 0.7em;
+    height:1em;
 }
 
 .top-list li a {
@@ -481,6 +490,12 @@ h1.h-index {
     font-weight: bold;
 }
 
+.divCat {
+    position: relative;
+    height: 18em;
+    overflow: hidden;
+}
+
 .categoria {
     padding: 1em;
     margin-bottom: 1em;
@@ -516,8 +531,8 @@ div.categoria>h2 {
     transition: transform 0.3s ease;
     margin-left: 1em;
     max-height: 18em;
-    width: 14em;
-    vertical-align:middle ;
+    width: 16em;
+    /*vertical-align:middle ;*/
 }
 
 .lista-giochi>li>a {
@@ -526,12 +541,18 @@ div.categoria>h2 {
 }
 
 .ImgGiocoCat {
-    width: 14em;
-    height: 14em;
-    aspect-ratio: 2 / 3;
+    width: 100%;
+    height: calc(100% - 3.4em);
+    object-fit: cover;
     border-top-left-radius: 0.5em;
     border-top-right-radius: 0.5em;
-    object-fit: cover;
+}
+
+.titolo_gioco {
+    padding: 0.5em;
+    font-size: 1em;
+    line-height: 1.2em;
+    height: auto;
 }
 
 .lista-giochi>li:hover {
@@ -1379,12 +1400,11 @@ aside {
 .team_info_box {
     background-color: white;
     width: 80%;
-    margin: 0 auto;
+    margin: 1em auto;
     padding: 1em;
     padding-left: 0.2em;
     padding-right: 0.2em;
     border-radius: 2em;
-    margin-bottom: 1em;
 }
 
 .aboutus_text {
@@ -1476,6 +1496,10 @@ aside {
 .colonna3,
 colonna4 {
     margin-bottom: 3em;
+}
+
+#team{
+    text-align: center;
 }
 
 /*=====ASSISTENZA=====*/
@@ -1677,7 +1701,7 @@ fieldset.selezionaLingua{
 
 .dettagli-evento {
     width: 55%;
-    min-width: 26em;
+    min-width: 20em;
     list-style: none;
     padding: 0;
     margin: 0 auto;

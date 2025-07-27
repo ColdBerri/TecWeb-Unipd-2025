@@ -48,6 +48,10 @@ nav.menuHamberger {
   font-size: 1.2em;
 }
 
+.divGiochiTop{
+  height: auto;
+}
+
 .top-list{
   margin-bottom: 2em;
   padding: 0;
@@ -269,6 +273,11 @@ div.login-box {
 }
 
 /*ABOUT US*/
+
+.team_info_box{
+  width: 95%;
+}
+
 .aboutus_team {
   margin-bottom: -1em;
 }
@@ -381,6 +390,10 @@ input[type="submit"][value="CERCA EVENTI"] {
 .submit_button,.cancella {
   float: none;
   width: 100%;
+}
+
+.cancella{
+  padding: 0.75em 0.85em;
 }
 
 .submit_button{
