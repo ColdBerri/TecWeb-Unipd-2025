@@ -2,6 +2,10 @@ body,main{
   width: 100%;
 }
 
+.divMain:not(:first-child) {
+    margin-right: none;
+}
+
 .menu{
   text-align: left;
   display: inline-block;
@@ -86,6 +90,10 @@ ul.top-list li:not(:first-child){
   padding-top: 0.5em;
 }
 
+.divMain{
+  width: 100%;
+}
+
 .notizie-home{
   background-color: #091727;
 }
@@ -101,6 +109,11 @@ ul.top-list li:not(:first-child){
 /* Nasconde il campo input della ricerca */
 .library-search-box {
   display: none;
+}
+
+.div-h>h2{
+  border-radius: 0.3em;
+  padding: 0 0.1em 0;
 }
 
 /*===CATEGORIA====*/
@@ -270,6 +283,11 @@ div.login-box {
 
 .divListaCatSing{
   text-align: center;
+}
+
+.eventi-home,
+.notizie-home {
+  width: 80%;
 }
 
 /*ABOUT US*/

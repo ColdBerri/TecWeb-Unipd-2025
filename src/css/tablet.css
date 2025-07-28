@@ -210,6 +210,11 @@ li.current-page {
   height: 1.5em;
 }
 
+.top-liste li{
+  min-height: 0;
+  padding-bottom: 1em;
+}
+
 div.login-box {
   width: 80%;
   padding: 1.5em;
@@ -217,20 +222,48 @@ div.login-box {
   margin-bottom: 4em;
 }
 
+.divMain .box {
+    float: none;
+    width: 100%;
+    border: none;
+}
+
+.hMain{
+    border-bottom: none;
+    background-color: whitesmoke;
+    border-radius: 0.7em;
+    /*padding: 0.2em 2em 0.2em 2em;*/
+}
+
+.box>.div-h{
+  position: relative;
+  top: 0;
+}
+
+.div-h>h2{
+    display: inline-block;
+    background-color: whitesmoke;
+    font-size: 2.5em
+40px
+;
+    border-radius: 0.7em;
+    padding: 0.2em 2em 0.2em 2em;
+}
+
+.divMain .box{
+  margin-top: 0;
+  padding: 1.5em 0.8em 0.8em 0.8em
+}
 
 .top-liste {
   display: block;
-  margin: 0 auto;
-  /* Centrato orizzontalmente */
   text-align: left;
 }
 
 /* Solo per eventi e notizie */
 .eventi-home,
 .notizie-home {
-  width: 80%;
-  /* Forza la larghezza al 80% */
-  max-width: 900px;
+  width: 95%;
   /* Imposta una larghezza massima */
   margin: 0 auto;
   /* Centrato orizzontalmente con margini automatici */
@@ -245,7 +278,7 @@ div.login-box {
   /* Forza la larghezza del li al 100% */
   display: block;
   /* Imposta gli elementi a blocchi, per impilarli */
-  margin: 1em 0;
+  margin: 0;
   /* Spazio verticale tra gli elementi */
   box-sizing: border-box;
 }
@@ -254,10 +287,6 @@ div.login-box {
 .top-list {
   display: block;
   /* Impedisce l'influenza sul layout dei videogiochi */
-}
-
-.eventi-home:first-child{
-  text-align: left;
 }
 
 .eventi-home,
