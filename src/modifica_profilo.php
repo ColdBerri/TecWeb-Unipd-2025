@@ -6,7 +6,7 @@ use DB\DBAccess;
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
-$paginaHTML = new Template("Modifica I tuoi dati", "profilo, dati, password, nome", "html/modifica_profilo.html");
+$paginaHTML = new Template("Modifica I tuoi dati", "profilo, password, modifica, vapor", "html/modifica_profilo.html");
 $password = "";
 
 if(!$connessioneOK){

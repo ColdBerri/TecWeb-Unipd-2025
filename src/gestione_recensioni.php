@@ -4,7 +4,7 @@ require_once "dbconnections.php";
 
 use DB\DBAccess;
 
-$paginaHTML = new Template("Gestione delle recensioni", "Recensioni, gestione, videogiochi, amministratore", 
+$paginaHTML = new Template("Gestione delle recensioni, elimina se necessario", "Recensioni, gestione, sviluppatore, vapor, elimina", 
 "html/gestione_recensioni.html");
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();

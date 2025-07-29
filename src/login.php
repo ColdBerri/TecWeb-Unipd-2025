@@ -1,7 +1,7 @@
 <?php
 require_once "template.php";
 require_once "dbconnections.php";
-$paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","videogioco, evento, patch, aggiornamento, biblioteca","html/login.html");
+$paginaHTML = new Template("pagina di accesso con account registrato e link per la registrazione","vapor, username, password, login","html/login.html");
 
 use DB\DBAccess;
 $game = "";

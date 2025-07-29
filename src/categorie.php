@@ -6,7 +6,7 @@ use DB\DBAccess;
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
-$paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","videogioco, evento, patch, aggiornamento, biblioteca","html/categorie.html");
+$paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","vapor, categorie, home, cerca","html/categorie.html");
 
 $lista = "";
 $categoriaComboBox = "";
@@ -33,7 +33,7 @@ if(!$connessioneOK){
 
         if (!isset($_POST['submit']) || $_POST['comboBoxCategoria'] === "tutte") {
             $lista .= "<div class='categoria'>";
-            $lista .= "<h2><a href='categoria_singola.php?categoria={$categoria}'>" . htmlspecialchars($categoria) . "</a></h2>";
+            $lista .= "<h2>". htmlspecialchars($categoria) . "</h2>";
             $lista .= "<ul class='lista-giochi'>";
 
             foreach ($giochi as $gioco) {
@@ -48,7 +48,7 @@ if(!$connessioneOK){
 
         } elseif ($categoria === $_POST['comboBoxCategoria']) {
             $lista .= "<div class='categoria'>";
-            $lista .= "<h2><a href='categoria_singola.php?categoria={$categoria}'>" . htmlspecialchars($categoria) . "</a></h2>";
+            $lista .= "<h2>" . htmlspecialchars($categoria) . "</h2>";
             $lista .= "<ul class='lista-giochi'>";
 
             foreach ($giochi as $gioco) {

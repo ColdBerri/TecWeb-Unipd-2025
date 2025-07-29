@@ -13,7 +13,7 @@ $connessioneOK = $connessione->openDBConnection();
 
 $paginaHTML = new Template(
     "Dettagli videogioco: {$nomeGioco}",
-    "videogioco, {$nomeGioco}",
+    "videogioco, {$nomeGioco}, eventi, articoli",
     "html/gioco_singolo.html"
 );
 
@@ -173,9 +173,5 @@ if(!$connessioneOK) {
     $paginaHTML->aggiungiContenuto("[eventi]", "");
     $paginaHTML->aggiungiContenuto("[articoli]", $listaArticoli);
     $paginaHTML->getPagina();
-
-    if (!empty($_SESSION[$nomeGioco]))
-        unset($_SESSION['$nomeGioco']);
-    
 }
 ?>

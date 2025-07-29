@@ -1,7 +1,7 @@
 <?php
 require_once "template.php";
 require_once "dbconnections.php";
-$paginaHTML = new Template("banana","banana","html/registra.html");
+$paginaHTML = new Template("Pagina di registrazione di un nuovo account","vapor, registrati, password, username","html/registra.html");
 use DB\DBAccess;
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();

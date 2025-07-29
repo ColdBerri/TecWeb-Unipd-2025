@@ -4,7 +4,7 @@ require_once "dbconnections.php";
 
 use DB\DBAccess;
 
-$paginaHTML = new Template("Pagina da amministratore per aggiunta di un gioco", "videogioco, aggiunta, admin, amministratore", "html/aggiungi_articolo.html");
+$paginaHTML = new Template("Pagina da amministratore per aggiunta di un gioco", "sviluppatore, gioco, aggiungi, articolo", "html/aggiungi_articolo.html");
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
