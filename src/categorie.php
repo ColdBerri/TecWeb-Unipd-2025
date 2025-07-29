@@ -34,7 +34,7 @@ if(!$connessioneOK){
         if (!isset($_POST['submit']) || $_POST['comboBoxCategoria'] === "tutte") {
             $lista .= "<div class='categoria'>";
 
-            $lista .= "<h2>" . ($categoria) . "</h2>";
+            $lista .= "<h2><div class='catH2'>" . ($categoria) . "</div></h2>";
 
             $lista .= "<ul class='lista-giochi'>";
 
@@ -51,7 +51,7 @@ if(!$connessioneOK){
         } elseif ($categoria === $_POST['comboBoxCategoria']) {
             $lista .= "<div class='categoria'>";
 
-            $lista .= "<h2>" . ($categoria) . "</h2>";
+            $lista .= "<h2><div class='catH2'>" . ($categoria) . "</div></h2>";
             $lista .= "<ul class='lista-giochi'>";
 
             foreach ($giochi as $gioco) {

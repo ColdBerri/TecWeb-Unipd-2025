@@ -122,14 +122,6 @@ ul.top-list li:not(:first-child){
   color: var(--headerbgcolor);
 }
 
-.categoria h2>a {
-  background-color: white;
-  padding: 0.5em;
-  border-radius: 0.7em;
-  cursor: pointer;
-  border: 1px solid;
-}
-
 .labelFiltro{
   padding-right:0.5em;
 }

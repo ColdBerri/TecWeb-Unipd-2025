@@ -443,18 +443,12 @@ h1.h-index {
 
 /*CATEGORIE*/
 
-.categoria h2>a {
-    background-color: var(--headerbgcolor);
+.catH2 {
+    background-color: white;
     padding: 0.5em;
     border-radius: 0.7em;
-    cursor: pointer;
-}
-.categoria h2>a:not(:visited) {
-    color: white;
-}
-
-.categoria h2>a:visited {
-    color: var(--linkvisited);
+    border: 1px solid;
+    display: inline-block;
 }
 
 .post-ricerca{
