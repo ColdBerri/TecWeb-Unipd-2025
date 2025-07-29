@@ -3,6 +3,8 @@ require_once "dbconnections.php";
 require_once "template.php";
 use DB\DBAccess;
 
+use function DB\traduciData;
+
 if(!isset($_GET['gioco'])) {
     header('Location: categorie.php');
     exit;
@@ -19,6 +21,7 @@ $paginaHTML = new Template(
 
 
 if(!$connessioneOK) {
+
     $dati = $connessione->getVideogioco($nomeGioco);
     $evento = $connessione->getEventiGioco($nomeGioco);
     $articolo = $connessione->getArticoliGioco($nomeGioco);
@@ -27,7 +30,7 @@ if(!$connessioneOK) {
     $_SESSION['nomeGioco'] = $nomeGioco;
 
     if($dati){
-
+        
         $categoria = $dati['categoria'];
         $img = $dati['immagine'];
         $casa = $dati['casa_produttrice'];
@@ -35,7 +38,6 @@ if(!$connessioneOK) {
         $anno = $dati['anno_di_pubblicazione'];
         $desc = $dati['descrizione'];
         $recensioniHTML = "";
-
         
         $paginaHTML->aggiungiContenuto("{{nome}}", $nomeGioco);
         $paginaHTML->aggiungiContenuto("{{img}}", $img);
@@ -121,11 +123,12 @@ if(!$connessioneOK) {
         if (!empty($evento) && is_array($evento)) {
             $listaEventi .= "<div class='contenitore_eventi'><ul class='eventi_gioco'>";
             foreach ($evento as $e) {
-                $dataCompleta = date('d F Y', strtotime($e['data_inizio_evento'])); 
+                $dataCompleta = date('d F Y', strtotime($e['data_inizio_evento']));
+                $dataCompleta = traduciData($dataCompleta);
                 $nomeEvent = urlencode($e['nome_evento']);
                 $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='miniCalendario'>";        
                 $listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
-                $listaEventi .= "<div class='miniCalendarioB'>" . htmlspecialchars($e['nome_evento']) . "</div>";
+                $listaEventi .= "<div class='miniCalendarioB'>" . ($e['nome_evento']) . "</div>";
                 $listaEventi .= "</div></a></li>";
             }
             $listaEventi .= "</ul></div>";
@@ -149,8 +152,8 @@ if(!$connessioneOK) {
             foreach ($articolo as $a) {
                 $nomeArti = urlencode($a['titolo_articolo']);
                 $listaArticoli .= "<li><a class='link_articolo' href='articolo_singolo.php?titolo_articolo={$nomeArti}'><div class='miniGiornale'>";
-                $listaArticoli .= "<div class='titoloNotiziaIndex'>" . htmlspecialchars($a['nome_videogioco']) . "</div>";
-                $listaArticoli .= "<div class='contenutoNotiziaIndex'>" . htmlspecialchars($a['titolo_articolo']) . "</div>";
+                $listaArticoli .= "<div class='titoloNotiziaIndex'>" . ($a['nome_videogioco']) . "</div>";
+                $listaArticoli .= "<div class='contenutoNotiziaIndex'>" . ($a['titolo_articolo']) . "</div>";
                 $listaArticoli .= "</div></a></li>";
             }
             $listaArticoli .= "</ul></div>";

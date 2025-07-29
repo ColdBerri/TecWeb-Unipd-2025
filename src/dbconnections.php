@@ -474,5 +474,48 @@ class DBAccess {
 		return $eventi;
 		
 	}
+
+
 }
+
+function traduciData($dataInput) {
+    if (!is_string($dataInput) || empty($dataInput)) {
+        return "Data non valida";
+    }
+
+    $mesi = [
+        "january" => "Gennaio",
+        "february" => "Febbraio",
+        "march" => "Marzo",
+        "april" => "Aprile",
+        "may" => "Maggio",
+        "june" => "Giugno",
+        "july" => "Luglio",
+        "august" => "Agosto",
+        "september" => "Settembre",
+        "october" => "Ottobre",
+        "november" => "Novembre",
+        "december" => "Dicembre"
+    ];
+
+    $parti = explode(' ', trim($dataInput));
+
+    if (count($parti) === 3) {
+        $giorno = $parti[0];
+        $meseEng = strtolower($parti[1]);
+        $anno = $parti[2];
+        $meseIta = $mesi[$meseEng] ?? $parti[1];
+        return "$giorno $meseIta $anno";
+
+    } elseif (count($parti) === 2) {
+        $meseEng = strtolower($parti[0]);
+        $anno = $parti[1];
+        $meseIta = $mesi[$meseEng] ?? $parti[0];
+        return "$meseIta $anno";
+
+    } else {
+        return "errore Data";
+    }
+}	
+
 ?>

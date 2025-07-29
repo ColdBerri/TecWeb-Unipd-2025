@@ -376,15 +376,12 @@ h1.h-index {
     margin-right: 0;
 }
 
-.eventi-home:first-child{
-  text-align: left;
-}
-
 .eventi-home {
     background-color: var(--headerbgcolor);
     border-radius: 0.7em;
     padding: 0.7em;
-    text-align: center;
+    text-align: left;
+    width: 100%;
 }
 
 .eventi-home:hover {
@@ -405,7 +402,6 @@ h1.h-index {
     transition: all 0.1s ease;
 }
 
-
 .top-liste {
     list-style: none;
     padding: 0;
@@ -418,6 +414,7 @@ h1.h-index {
     width: 90%;
     margin: 1%;
     min-height: 6em;
+    max-height: 20em;
     border-radius: 8px;
     box-sizing: border-box;
     text-align: left;
@@ -1924,6 +1921,7 @@ fieldset.selezionaLingua{
     margin-bottom: 0.5em;
     color: var(--linkvisited);
     text-shadow: 0.05em 0.05em 0.1em #000;
+    text-align: center;
 }
 
 .game_detail {
@@ -2189,6 +2187,8 @@ a:visited .miniCalendario {
 .miniCalendarioH {
     display: inline-block;
     font-weight: bold;
+    width: 10em;
+    text-align: center;
     color: var(--headerbgcolor);
     background-color: #444;
     background-color: var(--linkvisited);
@@ -2205,6 +2205,8 @@ a:visited .miniCalendario {
     font-size: 1.1em;
     font-weight: 500;
     vertical-align: middle;
+    max-width: calc(100% - 12em);
+    overflow: hidden;
 }
 
 

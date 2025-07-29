@@ -26,11 +26,12 @@ CREATE TABLE IF NOT EXISTS Videogiochi(
     immagine VARCHAR(255) NOT NULL,
     categoria VARCHAR(125) NOT NULL
 ); 
+
 INSERT INTO Videogiochi (nome_gioco, casa_produttrice, console_compatibili, descrizione, anno_di_pubblicazione, immagine, categoria) VALUES
-('The Legend of Zelda', 'Nintendo', 'Nintendo Switch', 'Un action-adventure open-world ambientato nel regno di Hyrule.', 2017, 'z.jpg', 'RPG'),
-('Cyberpunk 2077', 'CD Projekt Red', 'PC, PlayStation, Xbox', 'Un RPG open-world futuristico ambientato nella città di Night City.', 2020, 'c.jpg', 'Action'),
-('Minecraft', 'Mojang Studios', 'PC, PlayStation, Xbox, Nintendo Switch', 'Un sandbox dove i giocatori possono costruire ed esplorare mondi infiniti.', 2011, 'm.jpg', 'sandbox'),
-('Super Mario Odyssey', 'Nintendo', 'Nintendo Switch', 'Platform 3D con Mario che esplora regni diversi con il suo cappello magico.', 2017, 'mario_odyssey.jpg', 'Platform'),
+('<span lang="en">The Legend of Zelda</span>', '<span lang="en">Nintendo</span>', '<span lang="en">Nintendo Switch</span>', 'Un <span lang="en">action-adventure</span> <span lang="en">open-world</span> ambientato nel regno di Hyrule.', 2017, 'z.jpg', '<span lang="en">RPG</span>'),
+('<span lang="en">Cyberpunk 2077</span>', '<span lang="en">CD Projekt Red</span>', '<span lang="en">PC</span>, <span lang="en">PlayStation</span>, <span lang="en">Xbox</span>', 'Un <span lang="en">RPG</span> <span lang="en">open-world</span> futuristico ambientato nella città di Night City.', 2020, 'c.jpg', '<span lang="en">Action</span>'),
+('<span lang="en">Minecraft</span>', '<span lang="en">Mojang Studios</span>', '<span lang="en">PC</span>, <span lang="en">PlayStation</span>, <span lang="en">Xbox</span>, <span lang="en">Nintendo Switch</span>', 'Un <span lang="en">sandbox</span> dove i giocatori possono costruire ed esplorare mondi infiniti.', 2011, 'm.jpg', '<span lang="en">Sandbox</span>');
+/*('Super Mario Odyssey', 'Nintendo', 'Nintendo Switch', 'Platform 3D con Mario che esplora regni diversi con il suo cappello magico.', 2017, 'mario_odyssey.jpg', 'Platform'),
 ('Red Dead Redemption 2', 'Rockstar Games', 'PlayStation 4, Xbox One, PC', 'Avventura western con un vasto mondo aperto e una storia profonda.', 2018, 'rdr2.jpg', 'Avventura'),
 ('The Witcher 3: Wild Hunt', 'CD Projekt Red', 'PC, PlayStation, Xbox, Switch', 'Un epico RPG con un mondo aperto ricco di storie e personaggi.', 2015, 'witcher3.jpg', 'RPG'),
 ('Fortnite', 'Epic Games', 'PC, PlayStation, Xbox, Switch, Mobile', 'Battle royale con meccaniche di costruzione e skin personalizzabili.', 2017, 'fortnite.jpg', 'Battle Royale'),
@@ -77,7 +78,7 @@ INSERT INTO Videogiochi (nome_gioco, casa_produttrice, console_compatibili, desc
 ('Metal Gear Solid 3', 'Konami', 'PlayStation 2', 'Stealth action con una storia complessa e gameplay innovativo.', 2004, 'mgs3.jpg', 'Stealth'),
 ('Castlevania: Symphony of the Night', 'Konami', 'PlayStation', 'Metroidvania classico con esplorazione e combattimenti.', 1997, 'sotn.jpg', 'Metroidvania'),
 ('Super Metroid', 'Nintendo', 'SNES', 'Pietra miliare dei metroidvania con atmosfera e gameplay eccezionali.', 1994, 'metroid.jpeg', 'Metroidvania');
-
+*/
 CREATE TABLE IF NOT EXISTS Recensioni(
     ID_recensione VARCHAR(64) PRIMARY KEY,
     nickname VARCHAR(64) NOT NULL,
@@ -99,12 +100,10 @@ CREATE TABLE IF NOT EXISTS Eventi(
 );
 
 INSERT INTO Eventi (nome_evento, nome_videogioco, data_inizio_evento, data_fine_evento, squadre_coinvolte, vincitore_evento) VALUES
-('Minecraft hermitcraft 10','Minecraft','2025-04-17',NULL,'BdoubleO, cubfan135, Docm77, Etho, False, GeminiTay, Grian, Hypno, impulseSV, Jevin, joehills, Keralis, MumboJumbo, PearlescentMoon, rendog, Scar(il GOAT), Skizzleman, Smallishbeans, Tango Tek, Vintage Beef, Welsknight, xBCrafted, Xisuma, ZedaphPlays, ZombieCleo','l\'amore'),
-('Minecraft ALL-IN competition','Minecraft','2025-11-17','2025-11-18','MumboJumbo,Grian',NULL),
-('Cyberpunk SPEED RUN Competition','Cyberpunk 2077','2025-10-07','2025-10-09','Fnatic,Falcon,Cluod,M80',NULL),
-('DRESS TO IMPRESS cyber-edition','Cyberpunk 2077','2026-01-15','2026-02-01','Bang Bang,Women of the eRena, ESL',NULL),
-('The Legend of Zelda: GLOBAL SPEED RUN','The Legend of Zelda','2026-10-07','2026-10-09','Fnatic,Falcon,Cluod,M80',NULL),
-('Apex Legends Global Series 2025', 'Apex Legends', '2025-06-15', '2025-06-18', 'TSM, NRG, Fnatic, Cloud9, Team Liquid', NULL),
+('<span lang="en">Minecraft hermitcraft 10</span>', '<span lang="en">Minecraft</span>', '2025-04-17', NULL, '<span lang="en">BdoubleO</span>, <span lang="en">cubfan135</span>, <span lang="en">Docm77</span>, <span lang="en">Etho</span>, <span lang="en">False</span>, <span lang="en">GeminiTay</span>, <span lang="en">Grian</span>, <span lang="en">Hypno</span>, <span lang="en">impulseSV</span>, <span lang="en">Jevin</span>, <span lang="en">joehills</span>, <span lang="en">Keralis</span>, <span lang="en">MumboJumbo</span>, <span lang="en">PearlescentMoon</span>, <span lang="en">rendog</span>, <span lang="en">Scar</span>(il <span lang="en">GOAT</span>), <span lang="en">Skizzleman</span>, <span lang="en">Smallishbeans</span>, <span lang="en">Tango Tek</span>, <span lang="en">Vintage Beef</span>, <span lang="en">Welsknight</span>, <span lang="en">xBCrafted</span>, <span lang="en">Xisuma</span>, <span lang="en">ZedaphPlays</span>, <span lang="en">ZombieCleo</span>', 'l\'amore'),
+('<span lang="en">Minecraft ALL-IN competition</span>', '<span lang="en">Minecraft</span>', '2025-11-17', '2025-11-18', '<span lang="en">MumboJumbo</span>, <span lang="en">Grian</span>', NULL),
+('<span lang="en">Cyberpunk SPEED RUN Competition</span>', '<span lang="en">Cyberpunk 2077</span>', '2025-10-07', '2025-10-09', '<span lang="en">Fnatic</span>, <span lang="en">Falcon</span>, <span lang="en">Cluod</span>, <span lang="en">M80</span>', NULL);
+/*('Apex Legends Global Series 2025', 'Apex Legends', '2025-06-15', '2025-06-18', 'TSM, NRG, Fnatic, Cloud9, Team Liquid', NULL),
 ('The International 2025', 'Dota 2', '2025-08-20', '2025-08-25', 'Team Spirit, OG, PSG.LGD, Evil Geniuses', NULL),
 ('EVO 2025 - Street Fighter 6', 'Street Fighter 6', '2025-07-15', '2025-07-17', 'Punk, Daigo, Tokido, MenaRD', NULL),
 ('Overwatch 2 World Cup', 'Overwatch 2', '2025-09-10', '2025-09-15', 'Corea del Sud, USA, Cina, Svezia', NULL),
@@ -118,6 +117,7 @@ INSERT INTO Eventi (nome_evento, nome_videogioco, data_inizio_evento, data_fine_
 ('Genshin Impact Fan Art Contest', 'Genshin Impact', '2025-10-15', '2025-10-30', 'Community artists', NULL),
 ('Fighting Game Community Expo', 'Street Fighter 6', '2025-08-15', '2025-08-20', 'Tutti i principali player mondiali', NULL),
 ('League of Legends 2024 World Cup Playoffs', 'League of Legends', '2024-11-11', '2024-11-30', 'T1, KC, GenG, BLS', 'T1');
+*/
 
 
 CREATE TABLE IF NOT EXISTS Articoli_e_patch(
@@ -130,9 +130,10 @@ CREATE TABLE IF NOT EXISTS Articoli_e_patch(
 );
 
 INSERT INTO Articoli_e_patch (titolo_articolo, autore, data_pubblicazione, testo_articolo, nome_videogioco) VALUES
-('Patch 1.2: Nuove funzionalità e bugfix', 'LucaR', '2025-04-15', 'La patch 1.2 introduce nuove armi e corregge oltre 30 bug minori.', 'The Legend of Zelda'),
-('Guida alla sopravvivenza – Parte 1', 'ValeGamer', '2025-04-10', 'Scopri come sopravvivere i primi giorni in un mondo ostile.', 'Minecraft'),
-('Patch 3.5 – Modalità Co-op!', 'Marta88', '2025-04-01', 'Finalmente arriva la tanto attesa modalità cooperativa per giocare con gli amici.', 'Minecraft'),
+('<span lang="en">Patch 1.2</span>: Nuove funzionalità e <span lang="en">bugfix</span>', 'LucaR', '2025-04-15', 'La <span lang="en">patch 1.2</span> introduce nuove armi e corregge oltre 30 <span lang="en">bug</span> minori.', '<span lang="en">The Legend of Zelda</span>'),
+('Guida alla sopravvivenza – Parte 1', 'ValeGamer', '2025-04-10', 'Scopri come sopravvivere i primi giorni in un mondo ostile.', '<span lang="en">Minecraft</span>'),
+('<span lang="en">Patch 3.5</span> – Modalità <span lang="en">Co-op</span>!', 'Marta88', '2025-04-01', 'Finalmente arriva la tanto attesa modalità cooperativa per giocare con gli amici.', '<span lang="en">Minecraft</span>');
+/*
 ('Analisi approfondita del nuovo bilanciamento', 'GiulioTech', '2025-04-18', 'Il nuovo update modifica pesantemente il bilanciamento delle classi.', 'Cyberpunk 2077'),
 ('Patch note 2.0 – Cambiamenti radicali', 'AleDev', '2025-04-20', 'Grafica migliorata, IA potenziata e un nuovo sistema di combattimento.', 'Cyberpunk 2077'),
 ('New expansion Shadow of the Erdtree annunciata', 'FromSoftware Team', '2025-05-10', 'La tanto attesa espansione di Elden Ring porterà nuove aree, nemici e armi nel 2025.', 'Elden Ring'),
@@ -144,5 +145,5 @@ INSERT INTO Articoli_e_patch (titolo_articolo, autore, data_pubblicazione, testo
 ('Update The End of Times - Nuova classe', 'Blizzard Devs', '2025-05-05', 'Introduzione della classe Necromante con abilità uniche.', 'Diablo IV'),
 ('Guida avanzata al parrying', 'FromSoftware JP', '2025-04-27', 'Tecniche avanzate per padroneggiare il sistema di parata.', 'Sekiro Shadows Die Twice'),
 ('Patch 3.2: Ottimizzazioni prestazioni', 'Mojang Studios', '2025-04-29', 'Miglioramenti significativi per le versioni console.', 'Minecraft'),
-('Nuova modalità Zombie Survival', 'Capcom Team', '2025-05-03', 'Affronta orde di nemici in questa nuova modalità cooperativa.', 'Resident Evil Village');
+('Nuova modalità Zombie Survival', 'Capcom Team', '2025-05-03', 'Affronta orde di nemici in questa nuova modalità cooperativa.', 'Resident Evil Village');*/
 

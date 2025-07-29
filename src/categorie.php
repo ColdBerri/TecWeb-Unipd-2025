@@ -33,11 +33,13 @@ if(!$connessioneOK){
 
         if (!isset($_POST['submit']) || $_POST['comboBoxCategoria'] === "tutte") {
             $lista .= "<div class='categoria'>";
-            $lista .= "<h2>". htmlspecialchars($categoria) . "</h2>";
+
+            $lista .= "<h2>" . ($categoria) . "</h2>";
+
             $lista .= "<ul class='lista-giochi'>";
 
             foreach ($giochi as $gioco) {
-                $nome = htmlspecialchars($gioco['nome_gioco']);
+                $nome = ($gioco['nome_gioco']);
                 $immagine = htmlspecialchars($gioco['immagine']);
                 $lista .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco={$nome}' ><div class='divCat'>";
                 $lista .= "<img src='assets/img/$immagine' class='ImgGiocoCat' alt='vidoe'><p class='titolo_gioco'>$nome</p></div></a></li>";
@@ -48,11 +50,12 @@ if(!$connessioneOK){
 
         } elseif ($categoria === $_POST['comboBoxCategoria']) {
             $lista .= "<div class='categoria'>";
-            $lista .= "<h2>" . htmlspecialchars($categoria) . "</h2>";
+
+            $lista .= "<h2>" . ($categoria) . "</h2>";
             $lista .= "<ul class='lista-giochi'>";
 
             foreach ($giochi as $gioco) {
-                $nome = htmlspecialchars($gioco['nome_gioco']);
+                $nome = ($gioco['nome_gioco']);
                 $immagine = htmlspecialchars($gioco['immagine']);
                 $lista .= "<li><a href='gioco_singolo.php?gioco={$nome}' >";
                 $lista .= "<div class='divCat'><img src='assets/img/$immagine' class='ImgGiocoCat'><p class='titolo_gioco'>$nome</p></div></a></li>";

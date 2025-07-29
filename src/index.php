@@ -5,6 +5,7 @@ require_once "template.php";
 use DB\DBAccess;
 
 $paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","videogiochi, categorie, eventi, home, vapor","html/index.html");
+use function DB\traduciData;
 
 $connessione = new DBAccess();
 
@@ -33,7 +34,7 @@ if (!$connessioneOK) {
         foreach($img as $giuco){
             $nomeG = urlencode($giuco['nome_gioco']);
             $listaGiuchi .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco={$nomeG}'><div class='divGiochiTop'>";
-            $listaGiuchi .= "<img src='assets/img/".$giuco['immagine']."' alt='".$giuco['nome_gioco']."'>";
+            $listaGiuchi .= "<img src='assets/img/".$giuco['immagine']."' alt=' '>";
             $listaGiuchi .= "<p class='titolo_gioco'>".$giuco['nome_gioco']."</div></p>";
             $listaGiuchi .= "</a></li>";
         }
@@ -46,7 +47,8 @@ if (!$connessioneOK) {
 
     if (is_array($not)) {
         foreach($not as $eventi){
-            $dataCompleta = date('d F Y', strtotime($eventi['data_inizio_evento'])); 
+            $dataCompleta = date('d F Y', strtotime($eventi['data_inizio_evento']));
+            $dataCompleta = traduciData($dataCompleta);
             $nomeEvent = urlencode($eventi['nome_evento']);
             $listaEventi .= "<li><a class='link_articolo' href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='eventi-home'>";
             $listaEventi .= "<p class='miniCalendarioH'>" . $dataCompleta . "</p>";

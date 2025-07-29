@@ -3,6 +3,8 @@ require_once "dbconnections.php";
 require_once "template.php";
 use DB\DBAccess;
 
+use function DB\traduciData;
+
 $paginaHTML = new Template("Pagina con calendario degli eventi suddivisi per giorno, mese ed anno", "eventi, anno, mese, giorno, vapor", "html/eventi.html");
 
 $month = date('n');
@@ -61,8 +63,12 @@ $ultimoGiorno = mktime(0, 0, 0, $mese, $numeroGiorni, $anno);
 $indiceUltimoGiorno = date('N', $ultimoGiorno);
 $giorniFinaliVuoti = 7 - $indiceUltimoGiorno;
 
+$data = date('F Y', $primoGiorno);
+$data = traduciData($data);
+
+
 $calendarioHTML .= "<thead>";
-$calendarioHTML .= "<div><tr class='mese_selezionato'><th colspan='7' lang='en'><div>" . date('F Y', $primoGiorno) . "</div></th></tr></div>";
+$calendarioHTML .= "<div><tr class='mese_selezionato'><th colspan='7'><div>" . $data . "</div></th></tr></div>";
 
 $tmp = false;
 if (date('m', $primoGiorno) === $oggiM && date('y', $primoGiorno) === $oggiY) {
