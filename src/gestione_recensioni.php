@@ -22,7 +22,7 @@ if(!$connessioneOK){
         $cont = "<div class='box_err_no_recensioni'><p>Non ci sono ancora recensioni.</p></div>";
     } else {
         // Costruzione della lista delle recensioni
-        $cont = "<h1 class='h1_recensioni'>Recensioni</h1><ul class='tutte_recensioni'>";
+        $cont = "<ul class='tutte_recensioni'>";
         
         foreach($recensioni as $r){
             $utente = htmlspecialchars($r['nickname']);
