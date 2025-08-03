@@ -137,10 +137,10 @@ if(!$connessioneOK) {
             } 
         } else {
             if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
-                $listaEventi .= "<p><em>Nessun articolo disponibile per questo gioco.</em>";
+                $listaEventi .= "<p class='box_recensioni'><em>Nessun articolo disponibile per questo gioco.</em>";
                 $listaEventi .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un evento relativo a questo videogioco?</p><a href = 'aggiungi_evento.php?gioco={$nomeGioco}' class='bottone_aggiungi_evento'> Aggiungi evento</a></div>";
             }else{
-                $listaEventi = "<p><em>Nessun articolo disponibile per questo gioco.</em></p>";
+                $listaEventi = "<p class='no_correlato'><em>Nessun articolo disponibile per questo gioco.</em></p>";
             }    
         }
         $paginaHTML->aggiungiContenuto("[eventi]", $listaEventi);
@@ -162,10 +162,10 @@ if(!$connessioneOK) {
             }
         } else {
             if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
-                $listaArticoli .= "<p><em>Nessun articolo disponibile per questo gioco.</em>";
+                $listaArticoli .= "<p class='no_correlato'><em>Nessun articolo disponibile per questo gioco.</em>";
                 $listaArticoli .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un articolo relativo a questo videogioco?</p><a href = 'aggiungi_articolo.php?gioco={$nomeGioco}' class='bottone_aggiungi_evento'> Aggiungi articolo</a></div>";
             }else{
-                $listaArticoli = "<p>Nessun articolo disponibile per questo gioco.</p>";
+                $listaArticoli = "<p class='no_correlato'>Nessun articolo disponibile per questo gioco.</p>";
             }
         }
     } else {

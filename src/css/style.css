@@ -248,7 +248,7 @@ ul .current-page {
 }
 
 #dropContainer{
-    border:1px solid black;
+    border:0.0625em solid black;
     height:6.25em;
 }
 
@@ -304,12 +304,13 @@ h1.h-index {
     border-radius: 0.5em;
     padding: 2.5em 0.8em 0.8em 0.8em;
     box-sizing: border-box;
-    border-top: 5px solid white;
-    border-left: 4px solid white;
-    border-right: 4px solid white;
-    border-bottom: 5px solid white;
+    border-top: 0.3125em solid white;     /* 5px */
+    border-left: 0.25em solid white;      /* 4px */
+    border-right: 0.25em solid white;     /* 4px */
+    border-bottom: 0.3125em solid white;  /* 5px */
     position: relative;
 }
+
 
 .div-h {
     margin-bottom: 0.8em;
@@ -447,7 +448,7 @@ h1.h-index {
     background-color: white;
     padding: 0.5em;
     border-radius: 0.7em;
-    border: 1px solid;
+    border: 0.0625em solid;
     display: inline-block;
 }
 
@@ -468,7 +469,7 @@ h1.h-index {
 
 .search-box {
     padding: 0.75em 1em;
-    border: 2px solid #ccc;
+    border: 0.125em solid #ccc;
     border-radius: 2em 0em 0em 2em;
     font-size: 1em;
     background-color: white;
@@ -477,7 +478,7 @@ h1.h-index {
 }
 
 .search-button {
-    border: 2px solid #ccc;
+    border: 0.125em solid #ccc;
     background-color: white;
     border-radius: 0em 2.5em 2.5em 0em;
     width: 7em;
@@ -528,7 +529,7 @@ h1.h-index {
 
 .divFormCategorie select {
     padding: 0.5em 0.5em;
-    border: 1px solid #ccc;
+    border: 0.0625em solid #ccc;
     border-radius: 1.4em;
     background-color: #f9f9f9;
     font-size: 0.8em;
@@ -857,31 +858,31 @@ td.giornoFuori>p {
 .mese_selezionato th {
     font-size: 1.5em;
     font-weight: bold;
-    padding: 10px 0;
+    padding: 0.625em 0;
 }
 
 .library-search-container {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin: 10px 20px;
+    margin: 0.625em 1.25em;
 }
 
 .library-search-box {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    width: 200px;
+    padding: 0.5em;
+    border: 0.0625em solid #ccc;
+    border-radius: 0.25em;
+    font-size: 0.875em;
+    width: 12.5em; /* 200px */
 }
 
 .library-search-button {
     background-color: var(--headerbgcolor);
     border: none;
-    padding: 8px;
-    margin-left: 5px;
+    padding: 0.5em;
+    margin-left: 0.3125em;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 0.25em;
 }
 
 .library-search-button img {
@@ -891,15 +892,14 @@ td.giornoFuori>p {
 
 .welcome-message {
     text-align: left;
-    font-size: 30px;
+    font-size: 1.875em;
     font-weight: bold;
-    margin-bottom: 1px;
-    max-width: 600px;
-    /* Larghezza uguale alla .profile-container */
+    margin-bottom: 0.0625em;
+    max-width: 37.5em; /* 600px */
     margin-left: auto;
     margin-right: auto;
-    /* Centra il testo sopra il box */
 }
+
 
 .eventoPresenteOggi,
 .eventoOggi {
@@ -914,89 +914,6 @@ td.giornoFuori>p {
     font-weight: bold;
     font-size: 0.9em;
     margin-bottom: 0.1em;
-}
-
-/*
-
-.profile-form {
-    width: 30%;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-}
-
-.profile-form fieldset {
-    border: none;
-    display: flex;
-    flex-direction: column;
-}
-
-.profile-form label {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.profile-form input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 5px;
-}
-
-.profile-form input[readonly] {
-    background-color: #e9ecef;
-    cursor: not-allowed;
-}
-
-.profile-form button {
-    width: 48%; 
-    padding: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    background-color: var(--headerbgcolor);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-}
-
-.profile-form .button-container {
-    display: flex;
-    justify-content: space-between; 
-}
-
-.save-button {
-    background-color: #28a745; 
-}
-
-.back-button {
-    background-color: #dc3545; 
-
-.back-button:hover {
-    background-color: var(--bandiera);
-}
-
-.save-button:hover {
-    background-color:#1c7731;
-}
-
-*/
-
-/* FORM LOGIN, REGISTRA E MODIFICA PASS, OPZIONI SVILUPPATORE */
-
-/* Contenitore esterno 
-.form-container {
-    width: 100%;
-    float: left;
-    padding: 2em 0;
 }
 
 /* Box principale */
@@ -1315,20 +1232,16 @@ fieldset {
 /*FAQ*/
 
 .faq {
-    max-width: 600px;
-    padding-left: 20px;
+    max-width: 37.5em;           /* 600px */
+    padding-left: 1.25em;        /* 20px */
 }
 
 .faq-item {
-    background: #fff;
-    /* Sfondo bianco */
-    border-radius: 10px;
-    /* Angoli arrotondati */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Ombra per effetto "staccato" */
-    padding: 15px;
-    margin-bottom: 10px;
-    /* Spazio tra le domande */
+    background: #fff;           
+    border-radius: 0.625em;      /* 10px */
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);  /* 4px 8px */
+    padding: 0.9375em;           /* 15px */
+    margin-bottom: 0.625em;      /* 10px */
 }
 
 .faq-question {
@@ -1336,16 +1249,16 @@ fieldset {
     color: var(--linkcolor);
     cursor: pointer;
     display: block;
-    padding: 10px;
+    padding: 0.625em;            /* 10px */
 }
 
 .faq-answer {
     display: none;
-    margin-top: 5px;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-    /* Separatore sottile */
+    margin-top: 0.3125em;        /* 5px */
+    padding: 0.625em;            /* 10px */
+    border-top: 0.0625em solid #ddd; /* 1px */
 }
+
 
 .faq-input {
     display: none;
@@ -1365,13 +1278,13 @@ fieldset {
 }
 
 .faq-sidebar {
-    margin-top: 80px;
-    margin-right: 70px;
+    margin-top: 5em;                /* 80px */
+    margin-right: 4.375em;          /* 70px */
     width: 25%;
     background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0.9375em;              /* 15px */
+    border-radius: 0.625em;         /* 10px */
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1); /* 4px 8px */
 }
 
 .faq-content {
@@ -1381,12 +1294,12 @@ fieldset {
 aside {
     width: 30%;
     float: right;
-    padding: 20px;
+    padding: 1.25em;                /* 20px */
     background-color: #f4f4f4;
-    border-radius: 8px;
-    margin-right: 80px;
-    margin-top: 85px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5em;           /* 8px */
+    margin-right: 5em;              /* 80px */
+    margin-top: 5.3125em;           /* 85px */
+    box-shadow: 0 0.125em 0.625em rgba(0, 0, 0, 0.1); /* 2px 10px */
 }
 
 .videogame_info {
@@ -1397,7 +1310,7 @@ aside {
 .review_form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 0.9375em;                  /* 15px */
     width: 100%;
 }
 
@@ -1408,23 +1321,23 @@ aside {
 .review_form input,
 .review_form textarea,
 .review_form select {
-    padding: 10px;
+    padding: 0.625em;               /* 10px */
     font-size: 1em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 0.0625em solid #ddd;    /* 1px */
+    border-radius: 0.3125em;        /* 5px */
 }
 
 .review_form textarea {
     resize: vertical;
-    height: 150px;
+    height: 9.375em;                /* 150px */
 }
 
 .review_form button {
-    padding: 10px;
+    padding: 0.625em;               /* 10px */
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.3125em;        /* 5px */
     cursor: pointer;
 }
 
@@ -1434,8 +1347,9 @@ aside {
 
 .stars {
     display: flex;
-    gap: 10px;
+    gap: 0.625em;                   /* 10px */
 }
+
 
 .stars input[type="radio"] {
     display: none;
@@ -1600,20 +1514,18 @@ colonna4 {
 .contatti {
     display: flex;
     justify-content: space-between;
-    /* Spinge i riquadri agli estremi */
-    margin: 40px auto;
-    max-width: 1000px;
-    padding: 0 20px;
+    margin: 2.5em auto;               /* 40px */
+    max-width: 62.5em;                /* 1000px */
+    padding: 0 1.25em;                /* 20px */
     flex-wrap: wrap;
 }
 
 .blocco-contatto {
-    width: 300px;
-    /* Fisso per evitare che si allarghino */
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 18.75em;                   /* 300px */
+    border: 0.0625em solid #ccc;      /* 1px */
+    border-radius: 0.5em;             /* 8px */
+    padding: 1.25em;                  /* 20px */
+    box-shadow: 0 0.125em 0.375em rgba(0, 0, 0, 0.1); /* 2px 6px */
     background-color: #fff;
 }
 
@@ -1625,14 +1537,10 @@ colonna4 {
     text-align: center;
     margin: 0 auto;
     display: flex;
-    /* Usa Flexbox per allineare orizzontalmente */
     align-items: center;
-    /* Allinea verticalmente l'immagine e il testo */
     justify-content: center;
-    gap: 15px;
-    /* Aggiungi spazio tra l'icona e il numero */
+    gap: 0.9375em;                    /* 15px */
     font-size: 1.3em;
-    /* Imposta la dimensione del testo */
 }
 
 .paragrafo1 img {
@@ -2245,13 +2153,23 @@ a:visited .miniCalendario {
 
 
 .h2_eventi {
-    margin-top: 1em;
+    width: 8em; /* o qualunque altra larghezza */
+    margin: 1em auto;
     margin-bottom: 0;
 }
+
 
 .contenitore_eventi {
     overflow-x: auto;
     padding: 1em;
+}
+
+.no_correlato{
+    background: white;
+    border-radius: 0.5em;
+    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    margin-bottom: 1em;
 }
 
 .eventi_gioco {
