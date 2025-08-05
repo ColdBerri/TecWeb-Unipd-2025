@@ -18,12 +18,9 @@ if(!$connessioneOK){
     $recensioni = $connessione->getAllRecensioni();
     
     if (empty($recensioni)) {
-        // Nessuna recensione trovata
         $cont = "<div class='box_err_no_recensioni'><p>Non ci sono ancora recensioni.</p></div>";
     } else {
-        // Costruzione della lista delle recensioni
-        $cont = "<ul class='tutte_recensioni'>";
-        
+        // Costruzione della lista delle recensioni        
         foreach($recensioni as $r){
             $utente = htmlspecialchars($r['nickname']);
             $gioco = htmlspecialchars($r['nome_videogioco']);
@@ -42,7 +39,6 @@ if(!$connessioneOK){
             </li>";
         }
 
-        $cont .= "</ul>";
     }
 }
 
