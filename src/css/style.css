@@ -102,23 +102,26 @@ td.eventoPresente>a {
     list-style-type: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .tornaSU{
     text-align: right;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    padding: 0 2em 1em 0;
+    padding: 0 1.7em 1em 0;
 }
 
-.tornaSU>a{
-    padding: 0.5em;
-    background-color: white;
-    border-radius: 0.7em;
+
+.tornaSU > a {
+    display: inline-block; /* necessario per trasformazioni */
+    transition: transform 0.2s ease;
 }
 
-.tornaSU>a:hover{
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.19);
-    transition: all 0.1s ease;
+.tornaSU > a:hover {
+    transform: scale(1.2); /* ingrandisce del 20% */
 }
+
+
 
 /*===== HEADER =====*/
 
