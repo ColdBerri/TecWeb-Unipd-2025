@@ -28,17 +28,6 @@ a{
     content: none;
 }
 
-/*
-header {
-  position: relative; 
-  padding-left: 170px; 
-}
-
-/* LOGO 
-.logo img {
-    content: url("../assets/img_transparent_b&n.png") !important;
-  }
-*/
 .logo {
   margin-top: 10px;
   text-align: center;
@@ -197,7 +186,10 @@ a:active {
 .search-box,
 .search-icon,
 .search-box,
-.ulCategorie{
+.ulCategorie,
+.formCategorie,
+ .post-ricerca
+{
   display: none;
 }
 
@@ -218,6 +210,7 @@ a:active {
 }
 
 
+
 /* EVENTI */
 .titolo_calendario {
   visibility: hidden;
@@ -229,6 +222,10 @@ a:active {
 #sum {
   display: none;
 }
+
+ .formCalendario {
+        display: none;
+    }
 
 .formCalendario label[for="mese"],
 .formCalendario label[for="anno"] {
@@ -343,6 +340,15 @@ input[type="password"]::placeholder {
     page-break-inside: avoid; 
     margin-bottom: 3em; 
   }
+
+.aboutus_team {
+    margin-top: 2rem;   
+    margin-bottom: 1.7rem;
+}
+
+#content {
+    margin-bottom: 2rem; /* oppure 32px */
+}
 
 
 /* ASSISTENZA */
