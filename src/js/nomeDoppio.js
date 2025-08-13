@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
           document.body.insertBefore(msg, document.body.firstChild);
         }
       }
-  
+
       params.delete("errore");
       const newUrl = window.location.pathname +
                      (params.toString() ? "?" + params.toString() : "");
