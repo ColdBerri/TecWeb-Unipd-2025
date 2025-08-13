@@ -28,8 +28,8 @@ if(!$connessioneOK){
                 header("Location: registra.php?errore=utente_esiste");
                 exit();
             }
-            $stmt = $conn->prepare("INSERT INTO Utente (nickname, password_, datan) VALUES (?,?,?)");
-            $stmt->bind_param("sss", $nickname, $password_, $datanascita);
+            $stmt = $conn->prepare("INSERT INTO Utente (nickname, password_) VALUES (?,?)");
+            $stmt->bind_param("sss", $nickname, $password_);
             if($stmt->execute()){
                 $_SESSION['nickname'] = $nickname; 
                 header("Location: profilo.php");

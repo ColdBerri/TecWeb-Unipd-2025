@@ -24,10 +24,10 @@ if(!$connessioneOK){
     if (isset($_SESSION['nickname'])) {
         $selettoreImmagini ="";
         $utenteNickname = $_SESSION['nickname'];
-        $stmt = $connessione->getConnection()->prepare("SELECT nickname, datan FROM Utente WHERE nickname = ?");
+        $stmt = $connessione->getConnection()->prepare("SELECT nickname FROM Utente WHERE nickname = ?");
         $stmt->bind_param("s", $utenteNickname);
         $stmt->execute();
-        $stmt->bind_result($nickname, $data_nascita);
+        $stmt->bind_result($nickname);
         $stmt->fetch();
         $stmt->close();
  
