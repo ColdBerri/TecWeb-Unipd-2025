@@ -101,8 +101,8 @@ while ($giornoCorrente <= $numeroGiorni) {
         foreach ($eventi as $ev) {
             $giornoEvento = intval(date('j', strtotime($ev['data_inizio_evento'])));
             if ($giornoEvento === $giornoCorrente && !$eventoStampato) {
-                $nomeEvento = htmlspecialchars($ev['nome_evento']);
-                $eventoLink = urldecode($ev['nome_evento']);
+                $nomeEvento = ($ev['nome_evento']);
+                $eventoLink = ($ev['nome_evento']);
 
                 if (!($tmp && $giornoCorrente == $oggiG)) {
                     $calendarioHTML .= "<td data-title='$giornoSettimanaC'><span class='eventoPresente'>$giornoCorrente</span><a href='evento_singolo.php?nome_evento={$eventoLink}'><p class='marked'>$nomeEvento</p></a></td>";
