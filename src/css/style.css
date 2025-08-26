@@ -84,6 +84,10 @@ td.eventoPresente>a {
     color: white;
 }
 
+.grassetto {
+    font-weight: bold;
+  }  
+
 /*=====SPEED LINK=======*/
 
 .navicationHelp{
