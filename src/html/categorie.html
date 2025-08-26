@@ -1,16 +1,17 @@
 <script src="js/categorieScroll.js"></script>
 <script src="js/tornaSu.js"></script>
+<script src="js/liveSearch.js"></script>
 
 <div class="div-h">
     <h1 id="content" class="h-white">Categorie</h1>
 </div>
 
-<form action="categorie.php" method="post" class="post-ricerca">
+<form action="categorie.php" class="post-ricerca">
     <div class="search-container">
         <div class="search">
             <fieldset class="ffild">
                 <label class="sr-only">Cerca</label>
-                <input title="barraricerca" type="text"  name="ricercaCategorie" placeholder="Cerca..." class="search-box" aria-label="Cerca">
+                <input id="live-search-input" title="barraricerca" type="text"  name="ricercaCategorie" placeholder="Cerca..." class="search-box" aria-label="Cerca">
             </fieldset>
         </div>
         <button type="submit" class="search-button" aria-label="Esegui ricerca">
@@ -18,6 +19,8 @@
         </button>
     </div>
 </form>
+
+<div id="live-search-results" aria-live="polite"></div>
 
     <form class="formCategorie" method="post" action="categorie.php">
         <div class="divFormCategorie">
@@ -37,9 +40,9 @@
     </form>
 
 
-
-[gioco]
-[tuttigiuchi]
+<div id="category-results">
+    [tuttigiuchi]
+</div>
 
 <div class="tornaSU">
     <a href="#content"><img src="assets/up-arrow_.png" alt="Torna su"></a>

@@ -187,7 +187,7 @@ class DBAccess {
 
     	mysqli_stmt_close($stmt);
     	return null;
-	}	
+	}
 
 	public function getEventiGioco($nome){
 		$query = "SELECT nome_evento, nome_videogioco, data_inizio_evento, data_fine_evento, squadre_coinvolte FROM Eventi WHERE nome_videogioco = ?";
@@ -475,6 +475,20 @@ class DBAccess {
 		
 	}
 
+	public function cercaVideogiochiLive($query) {
+		$query_sanificata = "%" . strtolower($this->connection->real_escape_string($query)) . "%"; 
+		$sql = "SELECT nome_gioco, immagine FROM Videogiochi WHERE LOWER(nome_gioco) LIKE ?";
+		
+		$stmt = $this->connection->prepare($sql);
+		$stmt->bind_param("s", $query_sanificata);
+		$stmt->execute();
+		
+		$result = $stmt->get_result();
+		$risultati = $result->fetch_all(MYSQLI_ASSOC);
+		
+		$stmt->close();
+		return $risultati;
+	}
 
 }
 
@@ -516,6 +530,8 @@ function traduciData($dataInput) {
     } else {
         return "errore Data";
     }
+
+	
 }	
 
 ?>
