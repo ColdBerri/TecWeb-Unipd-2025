@@ -285,10 +285,6 @@ div.login-box {
 
 /*ABOUT US*/
 
-.team_info_box{
-  width: 95%;
-}
-
 .aboutus_team {
   margin-bottom: -1em;
 }
@@ -309,14 +305,6 @@ div.login-box {
   /* Centra i contenitori orizzontalmente */
 }
 
-.blocco-contatto {
-  width: 60%;
-  /* Rende i contenitori più piccoli e centrati */
-  max-width: 400px;
-  /* Imposta una larghezza massima per ogni contenitore */
-  margin: 10px 0;
-  /* Aggiunge spazio tra i contenitori */
-}
 
 .paragrafo1 {
   font-size: 1.1em;
@@ -379,19 +367,14 @@ input[type="submit"][value="CERCA EVENTI"] {
   font-size: 1.3em;
 }
 
-
 /* LOGIN/REGISTRA */
 
 .form-box {
   max-width: 400px;
-  /* ✅ larghezza massima */
   width: 90%;
-  /* ✅ occuperà solo il 90% dello schermo */
   margin: 2em auto;
-  /* ✅ centrato orizzontalmente */
   padding: 1.5em;
   box-sizing: border-box;
-  /* ✅ importante per evitare overflow */
 }
 
 .button-container{

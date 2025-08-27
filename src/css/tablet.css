@@ -307,6 +307,11 @@ div.login-box {
   /* Mantieni il cursore normale sui link fuori dai riquadri */
 }
 
+#evento_singolo
+{
+  margin: -1em;
+}
+
 /*====CATEGORIE===*/
 
 .labelFiltro{
@@ -342,6 +347,25 @@ div.login-box {
   margin-top: 0;
 }
 
+.team_info_box {
+  background-color: white;
+  width: 75%;              
+  margin: 1.5em auto;   /* auto a sinistra e destra => centrato */
+  padding: 1.5em;
+  border-radius: 1.2em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.aboutus_text {
+  margin: 1em auto;
+  max-width: 100%;
+  font-size: 1.05em;       
+  line-height: 1.6;
+  text-align: left;
+  padding: 0 0.5em;        
+}
+
+
 /*ASSISTENZA*/
 .support_details {
   width: 90%;
@@ -353,6 +377,11 @@ div.login-box {
 
 .support_details summary {
   font-size: 1.3em;
+}
+
+#secondo_paragrafo {
+  text-align: center;
+  margin: 1em;
 }
 
 /* CALENDARIO EVENTI */
@@ -450,14 +479,6 @@ details summary {
   /* Allinea il testo al centro */
 }
 
-.blocco-contatto {
-  width: 60%;
-  /* Adatta i riquadri alla larghezza del contenitore */
-  max-width: 600px;
-  /* Imposta una larghezza massima */
-  margin: 20px auto;
-  /* Centra i riquadri */
-}
 
 .contatti {
   display: flex;
@@ -466,7 +487,7 @@ details summary {
   align-items: center;
   /* Centra i contenitori orizzontalmente */
   justify-content: center;
-  gap: 20px;
+  gap: 1.25em;
   /* Distanza tra i contenitori */
 }
 
@@ -501,7 +522,7 @@ details summary {
 }
 
 .contenuto_gioco {
-  margin-top: 3em;
+  margin-top: 1em;
   padding: 0 1em;
   width: 100%;
   /* Si adatta alla larghezza dello schermo */
@@ -562,4 +583,10 @@ ul.tutte_recensioni {
 
 .menu ul:last-child{
   padding-right: 0;
+}
+
+/*ARTICOLO SINGOLO */
+#articolo_singolo
+{
+  margin-top: -4em;
 }
