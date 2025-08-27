@@ -3,7 +3,7 @@ body,main{
 }
 
 .divMain:not(:first-child) {
-    margin-right: none;
+    margin-right: 0;
 }
 
 .menu{

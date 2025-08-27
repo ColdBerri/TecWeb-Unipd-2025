@@ -222,6 +222,15 @@ div.login-box {
   margin-bottom: 4em;
 }
 
+.form-box {
+  max-width: 400px;
+  width: 90%;
+  margin: 2em auto;
+  margin-top: 4em;
+  padding: 1.5em;
+  box-sizing: border-box;
+}
+
 .divMain .box {
     float: none;
     width: 100%;
@@ -243,9 +252,7 @@ div.login-box {
 .div-h>h2{
     display: inline-block;
     background-color: whitesmoke;
-    font-size: 2.5em
-40px
-;
+    font-size: 2.5em;
     border-radius: 0.7em;
     padding: 0.2em 2em 0.2em 2em;
 }
