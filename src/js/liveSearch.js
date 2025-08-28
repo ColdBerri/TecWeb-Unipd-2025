@@ -5,15 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryResultsContainer = document.getElementById('category-results');
 
     let debounceTimeout;
-    let isStaticSearch = false;
 
-    function debounce(func, delay) {
-        clearTimeout(debounceTimeout);
-        debounceTimeout = setTimeout(func, delay);
+    //ripristinare la visualizzazione iniziale
+    function resetToDefaultView() {
+        resultsContainer.innerHTML = '';
+        resultsContainer.setAttribute('aria-label', 'Risultati azzerati');
+        if (categoryResultsContainer) {
+            categoryResultsContainer.style.display = 'block';
+        }
     }
 
-
-    //aggiorna i risultati in live
+    // ricerca e aggiorna risultati
     function performSearch(query) {
         if (categoryResultsContainer) {
             categoryResultsContainer.style.display = 'none';
@@ -39,18 +41,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (searchInput) {
         searchInput.addEventListener('input', function() {
             const query = this.value.trim();
-            isStaticSearch = false; 
-
+            
             if (query.length === 0) {
-                resultsContainer.innerHTML = '';
-                resultsContainer.setAttribute('aria-label', 'Risultati azzerati');
-                if (categoryResultsContainer) {
-                    categoryResultsContainer.style.display = 'block';
-                }
+                clearTimeout(debounceTimeout); 
+                resetToDefaultView();
                 return;
             }
 
-            debounce(() => {
+            clearTimeout(debounceTimeout);
+            debounceTimeout = setTimeout(() => {
                 performSearch(query);
             }, 300);
         });
@@ -58,31 +57,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (searchForm) {
         searchForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-
+            event.preventDefault(); 
             const query = searchInput.value.trim();
+            
             if (query.length > 0) {
-                isStaticSearch = true;
                 performSearch(query);
-                searchInput.value = ''; 
-                searchInput.blur(); 
+                
+                searchInput.value = '';
+                searchInput.blur();
+
             } else {
-                isStaticSearch = false;
-                resultsContainer.innerHTML = '';
-                if (categoryResultsContainer) {
-                    categoryResultsContainer.style.display = 'block';
-                }
+                resetToDefaultView();
             }
         });
     }
-
-    searchInput.addEventListener('input', function() {
-        if (this.value.trim() === '') {
-            isStaticSearch = false;
-            resultsContainer.innerHTML = '';
-            if (categoryResultsContainer) {
-                categoryResultsContainer.style.display = 'block';
-            }
-        }
-    });
 });
