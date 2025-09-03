@@ -261,6 +261,11 @@ ul .current-page {
     text-align: right;
 }
 
+.suggFormM{
+    color: black;
+    font-size: 1em;
+}
+
 .erroreForm {
     color: red;
     font-size: 1em;
@@ -984,7 +989,8 @@ td.giornoFuori>p {
 .form-box input[type="text"],
 .form-box input[type="password"],
 .form-box input[type="date"],
-.form-box input[type="number"] {
+.form-box input[type="number"],
+.form-box select {
     width: 100%;
     padding: 0.85em;
     margin: 0.3em 0 0.8em;
@@ -1992,12 +1998,50 @@ fieldset.selezionaLingua{
     color: white;
 }
 
-.recensione-label {
-    font-weight: 600;
+.recensioneModifica{
+    text-align: center;
+}
+
+.recensioneModifica .recensione-label{
     color: #333;
-    display: block;
-    font-size: 1em;
-    margin-bottom: 2em;
+    font-size: 1.8em;
+    margin-bottom: 2.2em;
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+}
+
+.inputFormModifica{
+    width: 80%;
+    margin: auto;
+    display: inline-block;
+}
+
+.inputFormModifica input, .inputFormModifica button{
+    float: left;
+    padding: 0.5em 0;
+    width: 49.4%;
+    margin: 0 0.3%;
+    font-size: 1.2em;
+}
+
+.recensioneModifica .recensione-textarea{
+    width: 80%;
+}
+
+.indietroRecenzione{
+    margin-top: 1em;
+    display: inline-block;
+    width: 30%;
+    background-color: var(--headerbgcolor);
+    color: var(--linkvisited);
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    padding: 0.3em;
+    
+    transition: background-color 0.3s ease;
 }
 
 .recensione-textarea,
@@ -2025,7 +2069,7 @@ fieldset.selezionaLingua{
     border: none;
     padding: 0.75em;
     width: 100%;
-    border-radius: 0.5em;
+    border-radius: 0.8em;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -2103,14 +2147,15 @@ li.single_review {
     font-size: 1.1em;
 }
 
-/* Nome utente e voto */
-li.single_review strong {
-    display: block;
-    font-size: 1.1em;
-    color: #333;
-    margin-bottom: 0.3125em;
+.pulsanteModificaRec {
+    display: inline-block;   
+    background-color: var(--footer-bg);
+    width: 100%; 
+    color: white;                   
+    text-decoration: none;   
+    text-align: center;
+    border-radius: 0.5em;
 }
-
 /* Testo recensione */
 p.testo_recensione {
     margin: 0;

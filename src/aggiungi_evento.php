@@ -7,24 +7,26 @@ use DB\DBAccess;
 $paginaHTML = new Template("Pagina da amministratore per aggiunta di un gioco", "sviluppatore, aggiungi, articolo, vapor", "html/aggiungi_evento.html");
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
-$nome_gioco = "";
-
-
 
 if(!$connessioneOK){
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $messaggio = "";
-        $nome_eventoTmp = trim($_POST['nome_evento']);
-        //if(isset($_GET['gioco'])){
-          //  $nome_gioco = urlencode($_GET['gioco']);
-        //}else{
-        $nome_giocoTmp = trim($_POST['nome_gioco']);
 
-        if(isset($_POST['lnGioco'])){
-            $nome_gioco = "<span lang='en'>" .$nome_giocoTmp . "</span>" ;
-        } else {
-            $nome_gioco = $nome_giocoTmp;
-        }   
+        $nome_gioco_selezionato_pulito = trim($_POST['nome_videogioco']);
+
+        $gioco_da_inserire = "";
+
+        $lista_giochi_completa = $connessione->allVideogame();
+        
+        foreach ($lista_giochi_completa as $gioco_db) {
+        
+            if (strip_tags($gioco_db['nome_gioco']) == $nome_gioco_selezionato_pulito) {
+                $gioco_da_inserire = $gioco_db['nome_gioco'];
+                break;
+            }
+        }
+
+        $nome_eventoTmp = trim($_POST['nome_evento']);
 
         if(isset($_POST['lnNome'])){
             $nome_evento = "<span lang='en'>" .$nome_eventoTmp . "</span>" ;
@@ -32,29 +34,30 @@ if(!$connessioneOK){
             $nome_evento = $nome_eventoTmp;
         }
 
-        //}
-        $data_inizio = trim($_POST['data_inizio_evento']);
-        $data_fine = trim ($_POST['data_fine_evento']);
-        $squadre = trim($_POST['squadre_coinvolte']);
-        $vincitore = trim($_POST['vincitore_evento']);
-        try{
-            $connessione->addEvento($nome_evento, $nome_gioco, $data_inizio, $data_fine, $squadre, $vincitore);
-            $messaggio = "<p>evento aggiunto correttamente!</p>";
-        }catch (Exception $e){
-            $messaggio = "<p>errore nel caricamento dell'evento!</p>";
+        if (!empty($gioco_da_inserire)) {
+            $data_inizio = trim($_POST['data_inizio_evento']);
+            $data_fine = trim ($_POST['data_fine_evento']);
+            $squadre = trim($_POST['squadre_coinvolte']);
+            $vincitore = trim($_POST['vincitore_evento']);
+
+            $connessione->addEvento($nome_evento, $gioco_da_inserire, $data_inizio, $data_fine, $squadre, $vincitore);
         }
-        $connessione->closeConnection();
+
     }
-
-    $cont ="";
-
-    if(isset($_GET['gioco'])){
-        $nome = urlencode($_GET['gioco']);
-        $cont .="<fieldset class='selezionaLingua'><div><label for='nomeGioco'> Nome gioco : </label><input type='text' name='nome_gioco' value={$nome} id='nomeGioco'required></div></fieldset>";
-    }else{
-        $cont .="<fieldset class='selezionaLingua'><div><label for='nomeGioco'> Nome Gioco : </label><input type='text' name='nome_gioco' id='nomeGioco' required></div></fieldset>";
+           
+    $lista_giochi = $connessione->allVideogame();
+    $select_giochi_html = "<label for='nome_videogioco'>Seleziona Gioco:</label>" .
+                          "<select name='nome_videogioco' id='nome_videogioco' required>";
+    $select_giochi_html .= "<option value='' disabled selected>-- Seleziona un gioco --</option>";
+    foreach ($lista_giochi as $singolo_gioco) {
+        $nome_gioco_con_html = $singolo_gioco['nome_gioco'];
+        $nome_gioco_pulito = strip_tags($nome_gioco_con_html);
+        $select_giochi_html .= "<option value='{$nome_gioco_pulito}'>{$nome_gioco_pulito}</option>";
     }
+    $select_giochi_html .= "</select>";
+    $cont = "<fieldset class='selezionaLingua'><div>" . $select_giochi_html . "</div></fieldset>";        
 
+    $connessione->closeConnection();
 }   
 
 $paginaHTML->aggiungiContenuto("[addEvento]", $cont);

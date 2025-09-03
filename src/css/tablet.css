@@ -575,6 +575,25 @@ details summary {
 
 }
 
+.inputFormModifica{
+  display: inline-block;
+}
+
+.inputFormModifica input, .inputFormModifica button{
+    float: none;
+    width: 100%;
+    font-size: 1.1em;
+}
+.indietroRecenzione{
+  width: 60%;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.inputFormModifica input{
+  margin-bottom: 0.5em;
+}
+
 .recensione-submit {
   padding: 0.5em 1em;
 }

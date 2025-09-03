@@ -87,6 +87,8 @@ class DBAccess {
 		}
 	}
 
+
+
     public function allVideogame() {
         $query = 
             "SELECT V1.nome_gioco, V1.immagine, V1.categoria
@@ -235,9 +237,8 @@ class DBAccess {
 		}
 
 	}
-
 	public function getRecensioni($gioco) {
-		$query = "SELECT nickname, contenuto_recensione, numero_stelle FROM Recensioni WHERE nome_videogioco = ?";
+		$query = "SELECT ID_recensione, nickname, contenuto_recensione, numero_stelle FROM Recensioni WHERE nome_videogioco = ?";
 		$stmt = mysqli_prepare($this->connection, $query);
 		mysqli_stmt_bind_param($stmt, "s", $gioco);
 		mysqli_stmt_execute($stmt);
@@ -248,6 +249,56 @@ class DBAccess {
 		}
 		return $recensioni;
 	}
+
+	public function getRecensioniID($id) {
+	    $query = "SELECT ID_recensione,nome_videogioco ,contenuto_recensione, numero_stelle 
+	              FROM Recensioni 
+	              WHERE ID_recensione = ?";
+	    $stmt = mysqli_prepare($this->connection, $query);
+	    mysqli_stmt_bind_param($stmt, "s", $id);
+	    mysqli_stmt_execute($stmt);
+	    $result = mysqli_stmt_get_result($stmt);
+	    return mysqli_fetch_assoc($result);
+	}
+
+	public function isReattore($utente, $gioco) {
+	    $query = "SELECT 1
+	              FROM Recensioni 
+	              WHERE nickname = ? AND nome_videogioco = ?
+	              LIMIT 1";
+	    $stmt = mysqli_prepare($this->connection, $query);
+	    mysqli_stmt_bind_param($stmt, "ss", $utente, $gioco);
+	    mysqli_stmt_execute($stmt);
+	    $result = mysqli_stmt_get_result($stmt);
+
+	    $ok = mysqli_num_rows($result) > 0;
+
+	    mysqli_stmt_close($stmt);
+	    return $ok;
+	}
+
+	public function modificaRecensione($id, $testo, $stelle) {
+	    $query = "UPDATE Recensioni 
+	              SET contenuto_recensione = ?, numero_stelle = ? 
+	              WHERE ID_recensione = ?";
+	
+	    $stmt = mysqli_prepare($this->connection, $query);
+	    if (!$stmt) {
+	        die("Errore nella prepare: " . mysqli_error($this->connection));
+	    }
+
+	    mysqli_stmt_bind_param($stmt, "sds", $testo, $stelle, $id);
+
+	    if (!mysqli_stmt_execute($stmt)) {
+	        die("Errore nell'execute: " . mysqli_stmt_error($stmt));
+	    }
+
+	    $ok = mysqli_stmt_affected_rows($stmt) > 0;
+	    mysqli_stmt_close($stmt);
+
+	    return $ok;
+	}
+
 	
 	public function inserisciRecensione($gioco, $nickname, $contenuto, $stelle) {
 		$queryMaxId = "SELECT MAX(CAST(SUBSTRING(ID_recensione, 2) AS UNSIGNED)) AS max_id FROM Recensioni";

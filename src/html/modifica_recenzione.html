@@ -1,0 +1,22 @@
+<form method="post" class="recensioneModifica" action="modifica_recensione.php" onsubmit="return validazioneForm();">
+    <div class="div-h">
+        <h1 id="content" class="h-white">Modifica la tua recensione</h1>
+    </div>
+    <label class="recensione-label">Valutazione (1 &#92 5):</label>
+    <div class="recensione-rating">
+
+    [form]
+
+    <div class="inputFormModifica">
+        <input type='submit' name='inviaModifica' value='Conferma modifica' class='recensione-submit'>
+        <button type="submit" name="cancellaRecenzione" class="recensione-submit"
+            onclick="return confirm('Sei sicuro di voler cancellare questa recensione?');">
+            Cancella recensione
+        </button>
+        <a href='gioco_singolo.php?gioco=[link_gioco]' class="indietroRecenzione">Torna Indietro</a>
+
+    </div>
+
+
+</form>
+<script src="js/validaRecenzione.js"></script>

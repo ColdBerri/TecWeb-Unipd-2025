@@ -26,6 +26,8 @@ if(!$connessioneOK) {
     $evento = $connessione->getEventiGioco($nomeGioco);
     $articolo = $connessione->getArticoliGioco($nomeGioco);
     $recensioni = $connessione->getRecensioni($nomeGioco);
+    if(isset($_SESSION['nickname']))
+        $ok = $connessione->isReattore($_SESSION['nickname'],$nomeGioco);
 
     $_SESSION['nomeGioco'] = $nomeGioco;
 
@@ -60,54 +62,78 @@ if(!$connessioneOK) {
             }
         }
 
-    
         // RECENSIONI
         $formRecensioneHTML = "";   // Form per nuove recensioni o messaggio di login
         $recensioniHTML = "";       // Recensioni già lasciate
 
-        // FORM RECENSIONE O MESSAGGIO DI LOGIN
         if (isset($_SESSION['nickname'])) {
-            $formRecensioneHTML .= "
-                <form method='post' class='recensione-form'>
-                    <h2 class='intestazione_recensione_log'>Scrivi una recensione</h2>
-                    <label class='recensione-label'>Valutazione (1–5):</label>
-                    <div class='recensione-rating'>
-            ";
+            $nickname = $_SESSION['nickname'];
 
-            for ($i = 5; $i > 0; $i--) {
+            if ($ok) {
+                $formRecensioneHTML = "";
+            } else {
+                
                 $formRecensioneHTML .= "
-                    <input type='radio' id='val{$i}' name='stelle' value='{$i}' required>
-                    <label for='val{$i}' title='{$i}'></label>
+                    <form method='post' class='recensione-form' onsubmit='return validazioneForm();'>
+                        <h2 class='intestazione_recensione_log'>Scrivi una recensione</h2>
+                        <label class='recensione-label'>Valutazione (1–5):</label>
+                        <div class='recensione-rating'>
+                ";
+            
+                for ($i = 5; $i > 0; $i--) {
+                    $formRecensioneHTML .= "
+                        <input type='radio' id='val{$i}' name='stelle' value='{$i}' required>
+                        <label for='val{$i}' title='{$i}'></label>
+                    ";
+                }
+            
+                $formRecensioneHTML .= "
+                        </div>
+                        <textarea name='testo' required class='recensione-textarea' id='testoRecenzione' placeholder='Scrivi la tua recensione...'></textarea>
+                        <input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>
+                        <input type='submit' name='invio' value='invia' class='recensione-submit'>
+                    </form>
                 ";
             }
-
-            $formRecensioneHTML .= "
-                    </div>
-                    <textarea name='testo' required class='recensione-textarea' placeholder='Scrivi la tua recensione...'></textarea><br>
-                    <input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>
-                    <input type='submit' name='invio' value='invia' class='recensione-submit'><br>
-                </form>
-            ";
+        
         } else {
+
             $formRecensioneHTML .= "
                 <div class='login_required'>
                     <h2 class='intestazione_recensione'>Scrivi una recensione</h2>
                     <p class='login_required_message'>
-                        Devi aver fatto il <a href='login.php?'><span lang='en'>Login</span></a> per scrivere una recensione.
+                        Devi aver fatto il <a href='login.php'><span lang='en'>Login</span></a> per scrivere o modificare una recensione.
                     </p>
                 </div>";
         }
 
-        // RECENSIONI PASSATE
+    
         if ($recensioni) {
             $recensioniHTML .= "<h2 class='h1_recensioni'>Recensioni</h2><ul class='tutte_recensioni'>";
             foreach ($recensioni as $rec) {
+
                 $utente = htmlspecialchars($rec['nickname']);
                 $testo = htmlspecialchars($rec['contenuto_recensione']);
                 $stelle = htmlspecialchars($rec['numero_stelle']);
-                $recensioniHTML .= "<li class='single_review'><strong>$utente</strong> ($stelle ★):<br><p class='testo_recensione'>$testo</p></li>";
+                $id_recensione = htmlspecialchars($rec['ID_recensione']);
+
+                if(isset($_SESSION['nickname'])){
+
+                if ($utente === $_SESSION['nickname']) {
+                    $recensioniHTML .= "<li class='single_review'>
+                                            <p>$utente</p> ($stelle ★):
+                                            <p class='testo_recensione'>$testo</p>
+                                            <a href='modifica_recensione.php?id=$id_recensione' class='pulsanteModificaRec'>Modifica</a>
+                                        </li>";
+                } else {
+                    $recensioniHTML .= "<li class='single_review'>
+                                            <p>$utente</p> ($stelle ★):
+                                            <p class='testo_recensione'>$testo</p>
+                                        </li>";
+                }
             }
-            $recensioniHTML .= "</ul>";
+
+            }
         } else {
             $recensioniHTML .= "<div class='box_recensioni'><p>Ancora nessuna recensione.</p></div>";
         }
@@ -133,12 +159,13 @@ if(!$connessioneOK) {
             }
             $listaEventi .= "</ul></div>";
             if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
-                $listaEventi .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un evento relativo a questo videogioco?</p><a href = 'aggiungi_evento.php?gioco={$nomeGioco}' class='bottone_aggiungi_evento'> Aggiungi evento</a></div>";
+                $nomeGioco = htmlspecialchars($nomeGioco);
+                $listaEventi .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un evento relativo a questo videogioco?</p><a href = 'aggiungi_evento.php?' class='bottone_aggiungi_evento'> Aggiungi evento</a></div>";
             } 
         } else {
             if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
                 $listaEventi .= "<p class='box_recensioni'><em>Nessun articolo disponibile per questo gioco.</em>";
-                $listaEventi .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un evento relativo a questo videogioco?</p><a href = 'aggiungi_evento.php?gioco={$nomeGioco}' class='bottone_aggiungi_evento'> Aggiungi evento</a></div>";
+                $listaEventi .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un evento relativo a questo videogioco?</p><a href = 'aggiungi_evento.php' class='bottone_aggiungi_evento'> Aggiungi evento</a></div>";
             }else{
                 $listaEventi = "<p class='no_correlato'><em>Nessun articolo disponibile per questo gioco.</em></p>";
             }    

@@ -24,7 +24,7 @@ class Template {
 
         
 
-        if(!($pagina == "html/registra.html") && !($pagina == "html/aggiungi_articolo.html") && !($pagina == "html/aggiungi_videogioco.html") && !($pagina == "html/aggiungi_evento.html")){
+        if(!($pagina == "html/registra.html") && !($pagina == "html/aggiungi_articolo.html") && !($pagina == "html/aggiungi_videogioco.html") && !($pagina == "html/aggiungi_evento.html") && !($pagina == "html/modifica_recenzione.html") && !($pagina == "html/gioco_singolo.html")){
            $this->pagina = str_replace("[body]", $budi, $this->pagina);
         } else {
             $this->pagina = str_replace("[body]", $budijs, $this->pagina);
@@ -252,6 +252,27 @@ class Template {
             }   
 
             $header = str_replace("[breadcrump]",'<nav class="breadcrump"><p>Ti trovi in: <a href="index.php" lang="en">Home</a> &gt&gt; <a href="categorie.php">Categorie</a> &gt&gt; Gioco Singolo</p> </nav>',$header);
+        }
+
+        if($pagina === "html/modifica_recenzione.html"){
+            $header = str_replace("[logo]",'<li><a href="index.php" class="logoLink" ><div class="logo"><img src="assets/icone.png" alt=" "><h1><span lang="en">Vapor</span></h1></div></a></li>', subject: $header);
+
+            $header = str_replace("[home]",'<li><a href="index.php"><div class="navbar_link"><span lang="en">Home</span></div></a></li>',$header);
+            $header = str_replace("[categorie]",'<li><a href="categorie.php"><div class="navbar_link">Categorie</div></a></li>',$header);
+            $header = str_replace("[eventi]",'<li><a href="eventi.php"><div class="navbar_link">Prossimi eventi</div></a></li>',$header);
+            if(isset($_SESSION['nickname'])){
+                if($_SESSION['nickname'] === 'admin'){
+                    $header = str_replace("[libreria]",' <li><a href="opzioni_sviluppatore.php"><div class="navbar_link">Opzioni sviluppatore</div></a></li>',$header);
+                }else{
+                    $header = str_replace("[libreria]",'',$header);
+                }                
+                $header = str_replace("[login]", '<li><a href="profilo.php"><div class="navbar_link">Profilo</div></a></li>', $header);
+            }else{
+                $header = str_replace("[libreria]", "", $header);
+                $header = str_replace("[login]", '<li><a href="login.php"><div class="navbar_link"><span lang="en">Login</span>/Registrati</div></a></li>', $header);
+            }   
+
+            $header = str_replace('[breadcrump]',"<nav class='breadcrump'><p>Ti trovi in: <a href='index.php' lang='en'>Home</a> &gt&gt; <a href='categorie.php'>Categorie</a> &gt&gt; <a href='gioco_singolo.php?gioco=[link_gioco]'>Gioco Singolo</a> &gt&gt Modifica Recenzione</p> </nav>",$header);
         }
 
         if($pagina === "html/evento_singolo.html"){
