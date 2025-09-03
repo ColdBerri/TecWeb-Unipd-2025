@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+
 }
 
 :root {
@@ -2226,16 +2227,23 @@ a:visited .miniCalendario {
 }
 
 
+/* Contenitore che gestisce tutti i box in griglia */
+.contenitoreGiornale {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 1em; /* spazio tra i box */
+}
+
+/* Box della notizia */
 .miniGiornale {
-    display: inline-block;
+    display: flex; /* per allineare titolo e contenuto */
+    align-items: center;
     background-color: var(--headerbgcolor);
     border-radius: 0.75em;
-    padding: 0.7em 1em;
-    box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.1);
+    padding: 0.5em 0.8em;
+    box-shadow: 0 0.15em 0.4em rgba(0, 0, 0, 0.1);
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
-    white-space: nowrap;
     color: white;
-    max-height: 4.3em;   
     overflow: hidden;
 }
 
@@ -2244,28 +2252,29 @@ a:visited .miniCalendario {
     box-shadow: 0 0.3em 0.6em rgba(0, 0, 0, 0.15);
 }
 
+/* Titolo della notizia */
 .titoloNotiziaIndex {
-    display: inline-block;
     font-weight: bold;
     font-size: 0.95em;
-    background-color: #444;
     padding: 0.5em 0.8em;
     border-radius: 0.5em;
     margin-right: 1em;
-    vertical-align: middle;
     color: var(--headerbgcolor);
     background-color: var(--linkvisited);
-    /* se vuoi che la testata abbia il colore "visited" */
+    white-space: nowrap; /* il titolo resta su una riga */
 }
 
+/* Contenuto della notizia */
 .contenutoNotiziaIndex {
-    display: inline-block;
     font-size: 1.1em;
     font-weight: 500;
-    vertical-align: middle;
     text-decoration: underline;
     color: inherit;
+    white-space: normal;     /* può andare a capo */
+    word-break: break-word;  /* evita overflow con parole troppo lunghe */
 }
+
+
 
 .h2_eventi {
     width: 8em; /* o qualunque altra larghezza */

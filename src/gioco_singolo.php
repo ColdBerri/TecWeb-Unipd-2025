@@ -175,7 +175,7 @@ if(!$connessioneOK) {
         // ARTICOLI
         $listaArticoli = "";
         if (!empty($articolo) && is_array($articolo)) {
-            $listaArticoli .= "<div class='contenitore_articoli'><ul class='articoli_gioco'>";
+            $listaArticoli .= "<div class='contenitore_eventi'><ul class='articoli_gioco'>";
             foreach ($articolo as $a) {
                 $nomeArti = urlencode($a['titolo_articolo']);
                 $listaArticoli .= "<li><a class='link_articolo' href='articolo_singolo.php?titolo_articolo={$nomeArti}'><div class='miniGiornale'>";
