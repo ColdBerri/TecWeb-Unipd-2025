@@ -2085,6 +2085,7 @@ fieldset.selezionaLingua{
     justify-content: center;
     margin-bottom: 1.6em;
     direction: rtl;
+    margin-top: 1em;
 }
 
 .recensione-rating input[type="radio"] {
