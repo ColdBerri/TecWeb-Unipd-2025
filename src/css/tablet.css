@@ -54,6 +54,7 @@ nav.menuHamberger {
   list-style: none;
   position: fixed;
   margin: 0;
+  justify-content: space-evenly;
   padding-top: 1em;
   /* Aumenta il padding-top se necessario */
   padding-bottom: 4em;
@@ -61,7 +62,6 @@ nav.menuHamberger {
   z-index: 9999;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
-
 
 .overlay {
   position: fixed;
@@ -110,8 +110,12 @@ nav.menuHamberger>ul {
   color: var(--textcolor);
 }
 
+nav.menuHamberger a {
+  padding: 1em 0;
+}
+
 nav.menuHamberger>ul>li {
-  padding: 3em;
+  padding: 3em 0.5em;
 }
 
 nav.menuHamberger>ul> :first-child {
@@ -126,6 +130,8 @@ li.current-page {
 
 .navbar_link {
   background-color: var(--div_navbar_link);
+  padding: 0.7em;
+  font-weight: bold;
 }
 
 /* Menu */
@@ -210,7 +216,7 @@ li.current-page {
   height: 1.5em;
 }
 
-.top-liste li{
+.top-liste li , .articoli_gioco li{
   min-height: 0;
   padding-bottom: 1em;
 }
@@ -262,14 +268,14 @@ div.login-box {
   padding: 1.5em 0.8em 0.8em 0.8em
 }
 
-.top-liste {
+.top-liste, .eventi_gioco{
   display: block;
   text-align: left;
 }
 
 /* Solo per eventi e notizie */
 .eventi-home,
-.notizie-home {
+.notizie-home, .miniCalendario, .miniGiornale {
   width: 95%;
   /* Imposta una larghezza massima */
   margin: 0 auto;
@@ -280,7 +286,7 @@ div.login-box {
 }
 
 /* Impostare larghezza uguale per gli item nelle liste delle notizie e degli eventi */
-.top-liste li {
+.top-liste li, .eventi_gioco li, .articoli_gioco li{
   width: 100%;
   /* Forza la larghezza del li al 100% */
   display: block;
@@ -291,7 +297,7 @@ div.login-box {
 }
 
 /* Assicurati che i contenuti siano centrati senza spazi strani */
-.top-list {
+.top-list, .eventi_gioco {
   display: block;
   /* Impedisce l'influenza sul layout dei videogiochi */
 }

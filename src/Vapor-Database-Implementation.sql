@@ -11,6 +11,9 @@ CREATE TABLE IF NOT EXISTS Utente(
 
 INSERT INTO Utente(nickname,password_) VALUES
 ('admin', 'admin'),
+('luca','luca'),
+('matteo','matteo'),
+('riccardo','gay'),
 ('user','user');
 
 
@@ -84,6 +87,12 @@ CREATE TABLE IF NOT EXISTS Recensioni(
     FOREIGN KEY (nickname) REFERENCES Utente(nickname),
     FOREIGN KEY (nome_videogioco) REFERENCES Videogiochi(nome_gioco)
 );
+
+INSERT INTO `Recensioni` (`ID_recensione`, `nickname`, `contenuto_recensione`, `numero_stelle`, `nome_videogioco`) VALUES
+('R1', 'riccardo', 'bello bello nige', 3.0, '<span lang=\"en\">Bayonetta 3</span>'),
+('R2', 'matteo', 'MOLTO BELLO CONSIGLIO A TUTTI', 5.0, '<span lang=\"en\">Bayonetta 3</span>'),
+('R3', 'luca', 'non ascoltati i coglioni è una merda peggio della rube blah', 1.0, '<span lang=\"en\">Bayonetta 3</span>');
+
 
 CREATE TABLE IF NOT EXISTS Eventi(
     nome_evento VARCHAR(64)PRIMARY KEY,

@@ -56,6 +56,10 @@ nav.menuHamberger {
   height: auto;
 }
 
+.eventi_gioco{
+  text-align: center;
+}
+
 .top-list{
   margin-bottom: 2em;
   padding: 0;
@@ -99,12 +103,16 @@ ul.top-list li:not(:first-child){
   background-color: #091727;
 }
 
-.notizie-home>p:first-child{
+.notizie-home>p:first-child, .titoloNotiziaIndex>span{
   text-transform: uppercase;
   font-weight: bold;
   
   background-color: var(--headerbgcolor);
   border-radius: 0.5em;
+}
+
+.eventi_relativi{
+  text-align: center;
 }
 
 /* Nasconde il campo input della ricerca */
@@ -259,7 +267,7 @@ div.login-box {
 }
 
 .eventi-home,
-.notizie-home {
+.notizie-home, .miniCalendario, .miniGiornale {
   width: 80%;
 }
 

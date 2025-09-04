@@ -598,14 +598,16 @@ h1.h-index {
 
 .divFormCategorie input {
     padding: 0.8em 1.1em;
-    border: 1px solid #ccc;
+    border: 2px solid #999;                
     border-radius: 1.4em;
     background-color: var(--headerbgcolor);
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     margin-top: -0.5em;
     font-size: 1em;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.4), 
+-3px -4px 6px rgba(255,255,255,0.2);
 }
 
 div.categoria>h2 {
@@ -2132,7 +2134,7 @@ ul.tutte_recensioni {
 
 /* Singola recensione */
 li.single_review {
-    flex: 0 1 calc(33.33% - 1.25em);
+    flex: 0 1 calc(49% - 1.25em);
     /* 3 per riga con gap */
     background-color: white;
     border: 0.0625em solid #ddd;
