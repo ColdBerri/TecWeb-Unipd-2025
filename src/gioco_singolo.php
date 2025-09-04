@@ -15,8 +15,8 @@ $connessioneOK = $connessione->openDBConnection();
 
 $paginaHTML = new Template(
     strip_tags($nomeGioco),
-    "Dettagli videogioco: {$nomeGioco}",
-    "videogioco, {$nomeGioco}, eventi, articoli",
+    "Dettagli videogioco: ".strip_tags($nomeGioco),
+    "videogioco, " .strip_tags($nomeGioco) . ", eventi, articoli",
     "html/gioco_singolo.html"
 );
 

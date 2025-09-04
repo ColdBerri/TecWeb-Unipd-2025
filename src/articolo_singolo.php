@@ -12,10 +12,10 @@ if(!isset($_GET['titolo_articolo'])){
 
 $artName = urldecode($_GET['titolo_articolo']);
 
+$paginaHTML = new Template (strip_tags($artName),"Articolo " . strip_tags($artName) , ", videogioco, patch, aggiornamento", "html/articolo_singolo.html");
+
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
-
-$paginaHTML = new Template (strip_tags($artName),"Articolo {$artName}", "articolo {$artName}, videogioco, patch, aggiornamento", "html/articolo_singolo.html");
 
 if(!$connessioneOK){ 
     $articolo = $connessione->getArticolo($artName);
@@ -40,7 +40,8 @@ if(!$connessioneOK){
         header('Location: index.php');
     }
 
-    $paginaHTML->getPagina();
 } 
+
+$paginaHTML->getPagina();
 
 ?>
