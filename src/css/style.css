@@ -163,6 +163,7 @@ header {
 .navbar_link {
     padding: 0.6em;
     border-radius: 0.5em;
+    font-size: 0.8em;
 }
 
 .navbar_link:hover {
@@ -230,6 +231,8 @@ header {
 
 ul .current-page {
     color: white;
+    font-weight: bolder;
+    font-size: 1.1em;
 }
 
 .breadcrump {

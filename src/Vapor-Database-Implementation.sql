@@ -89,9 +89,9 @@ CREATE TABLE IF NOT EXISTS Recensioni(
 );
 
 INSERT INTO `Recensioni` (`ID_recensione`, `nickname`, `contenuto_recensione`, `numero_stelle`, `nome_videogioco`) VALUES
-('R1', 'riccardo', 'bello bello nige', 3.0, '<span lang=\"en\">Bayonetta 3</span>'),
+('R1', 'riccardo', 'bello bello', 3.0, '<span lang=\"en\">Bayonetta 3</span>'),
 ('R2', 'matteo', 'MOLTO BELLO CONSIGLIO A TUTTI', 5.0, '<span lang=\"en\">Bayonetta 3</span>'),
-('R3', 'luca', 'non ascoltati i coglioni è una merda peggio della rube blah', 1.0, '<span lang=\"en\">Bayonetta 3</span>');
+('R3', 'luca', 'non ascoltati i  è stupendo', 1.0, '<span lang=\"en\">Bayonetta 3</span>');
 
 
 CREATE TABLE IF NOT EXISTS Eventi(
