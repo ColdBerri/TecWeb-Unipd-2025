@@ -73,7 +73,6 @@ nav.menuHamberger {
   z-index: 9998;
 }
 
-
 .exit img {
   position: absolute;
   right: 1.9em;
@@ -116,6 +115,12 @@ nav.menuHamberger a {
 
 nav.menuHamberger>ul>li {
   padding: 3em 0.5em;
+  font-size: 1.2em;
+}
+
+ul .current-page{
+  font-weight: normal;
+  font-size: 1.2em;
 }
 
 nav.menuHamberger>ul> :first-child {
@@ -250,17 +255,17 @@ div.login-box {
     /*padding: 0.2em 2em 0.2em 2em;*/
 }
 
+#content{
+  margin-top: 1.2em;
+}
+
 .box>.div-h{
   position: relative;
   top: 0;
 }
 
 .div-h>h2{
-    display: inline-block;
     background-color: whitesmoke;
-    font-size: 2.5em;
-    border-radius: 0.7em;
-    padding: 0.2em 2em 0.2em 2em;
 }
 
 .divMain .box{
@@ -271,6 +276,7 @@ div.login-box {
 .top-liste, .eventi_gioco{
   display: block;
   text-align: left;
+  margin-top: 1em;
 }
 
 /* Solo per eventi e notizie */

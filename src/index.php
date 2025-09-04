@@ -60,7 +60,7 @@ if (!$connessioneOK) {
     $listaEventi .= "</ul>";
     $paginaHTML->aggiungiContenuto("[eventi]", $listaEventi);
 
-    $listaPath = "<ul class='top-liste'>";
+    $listaPath = "<ul class='top-eventi'>";
 
     if (is_array($path)) {
         foreach($path as $paths){
