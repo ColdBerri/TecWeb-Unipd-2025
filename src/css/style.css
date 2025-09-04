@@ -2111,7 +2111,7 @@ fieldset.selezionaLingua{
 }
 
 .h1_recensioni {
-    margin: 0;
+    text-align: center;
 }
 
 /* Contenitore delle recensioni con layout a griglia flessibile */

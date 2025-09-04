@@ -4,7 +4,7 @@ require_once "dbconnections.php";
 require_once "template.php";
 use DB\DBAccess;
 
-$paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","videogiochi, categorie, eventi, home, vapor","html/index.html");
+$paginaHTML = new Template("Videogames' Useless Opinions","Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","videogiochi, categorie, eventi, home, vapor","html/index.html");
 use function DB\traduciData;
 
 $connessione = new DBAccess();

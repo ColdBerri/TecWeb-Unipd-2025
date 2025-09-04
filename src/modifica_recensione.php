@@ -13,6 +13,7 @@ $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
 $paginaHTML = new Template(
+    "Modifica recenzione",
     "brother may i have some oats",
     "banana",
     "html/modifica_recenzione.html"

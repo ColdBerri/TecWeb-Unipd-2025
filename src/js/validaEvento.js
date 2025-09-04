@@ -1,7 +1,7 @@
 var dettagli_form = {
   "nome_videogioco": [
     '',
-    /^[a-zA-Z0-9\s]{2,50}$/, 
+    /{2,50}$/, 
     'Il nome del gioco deve essere lungo tra 2 e 50 caratteri e può contenere solo lettere, numeri e spazi'
   ],
   

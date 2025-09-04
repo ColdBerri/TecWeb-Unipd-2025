@@ -9,7 +9,7 @@ if(!isset($_GET['nome_evento'])) {
 }
 $evName = urldecode($_GET['nome_evento']);
 
-$paginaHTML = new Template("Evento : {$evName}", "{$evName}, videogioco, squadre, vincitore", "html/evento_singolo.html");
+$paginaHTML = new Template(strip_tags($evName),"Evento : {$evName}", "{$evName}, videogioco, squadre, vincitore", "html/evento_singolo.html");
 $connessione = new DBAccess(); 
 $connessioneOK = $connessione->openDBConnection();
 

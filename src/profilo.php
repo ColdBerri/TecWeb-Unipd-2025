@@ -5,7 +5,7 @@ use DB\DBAccess;
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
-$pagina = new Template("Il tuo profilo", "profilo, password, logout", "html/profilo.html");
+$pagina = new Template("Il tuo profilo","Il tuo profilo", "profilo, password, logout", "html/profilo.html");
 $nickname = "";
 $data_nascita = "";
 

@@ -5,7 +5,7 @@ use DB\DBAccess;
 
 use function DB\traduciData;
 
-$paginaHTML = new Template("Pagina con calendario degli eventi suddivisi per giorno, mese ed anno", "eventi, anno, mese, giorno, vapor", "html/eventi.html");
+$paginaHTML = new Template("Eventi ","Pagina con calendario degli eventi suddivisi per giorno, mese ed anno", "eventi, anno, mese, giorno, vapor", "html/eventi.html");
 
 $month = date('n');
 $year = date('Y');

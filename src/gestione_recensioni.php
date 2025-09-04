@@ -4,7 +4,7 @@ require_once "dbconnections.php";
 
 use DB\DBAccess;
 
-$paginaHTML = new Template("Gestione delle recensioni, elimina se necessario", "Recensioni, gestione, sviluppatore, vapor, elimina", 
+$paginaHTML = new Template("Gestione delle recensioni","Gestione delle recensioni, elimina se necessario", "Recensioni, gestione, sviluppatore, vapor, elimina", 
 "html/gestione_recensioni.html");
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
@@ -23,7 +23,7 @@ if(!$connessioneOK){
         // Costruzione della lista delle recensioni        
         foreach($recensioni as $r){
             $utente = htmlspecialchars($r['nickname']);
-            $gioco = htmlspecialchars($r['nome_videogioco']);
+            $gioco = strip_tags($r['nome_videogioco']);
             $testo = htmlspecialchars($r['contenuto_recensione']);
             $stelle = htmlspecialchars($r['numero_stelle']);
             $idRec = htmlspecialchars($r['ID_recensione']);

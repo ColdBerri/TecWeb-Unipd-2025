@@ -4,13 +4,14 @@ class Template {
     private $search;
     private $pagina;
     
-    public function __construct($description, $keywords, $pagina) {
+    public function __construct($titolo,$description, $keywords, $pagina) {
         $this->footer = '<p><a href="assistenza.php">Assistenza</a> 
                          <a href="aboutus.php">La nostra storia</a></p>
                          <p><span lang="en">© 2025 VAPOR - Videogames\' Useless Opinions</span></p>';
 
         $this->pagina = file_get_contents('html/template_html.html');
 
+        $this->pagina = str_replace("[title]", $titolo, $this->pagina);
         $this->pagina = str_replace("[description]", $description, $this->pagina);
         $this->pagina = str_replace("[keywords]", $keywords, $this->pagina);
         $this->pagina = str_replace("[footer]", $this->footer, $this->pagina);

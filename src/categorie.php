@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$paginaHTML = new Template("Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","vapor, categorie, home, cerca","html/categorie.html");
+$paginaHTML = new Template("Categorie Giochi","Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","vapor, categorie, home, cerca","html/categorie.html");
 
 $lista = "";
 $categoriaComboBox = "";

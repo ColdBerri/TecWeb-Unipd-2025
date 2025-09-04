@@ -6,7 +6,24 @@
     <h1 id="content" class="h-white">Categorie</h1>
 </div>
 
-<form action="categorie.php" class="post-ricerca">
+    <form class="formCategorie" method="post" action="categorie.php">
+        <div class="divFormCategorie">
+                <div class="divFiltro"><label for="comboBoxCategoria" class="labelFiltro">Filtra per categoria</label>
+                    <select name="comboBoxCategoria" id="comboBoxCategoria">
+                    [categoria]
+                    <option value="tutte" [tutte] >Tutte</option>
+                    </select>
+                 </div>
+                <div class="divInputCat">
+                    <fieldset class="filedset-cat">
+                        <legend class="sr-only"> Filtra </legend>
+                        <input type="submit" name="submit" value="FILTRA">
+                    </fieldset>                    
+                </div>
+        </div>
+    </form>
+
+    <form action="categorie.php" class="post-ricerca">
     <div class="search-container">
         <div class="search">
             <fieldset class="ffild">
@@ -21,24 +38,6 @@
 </form>
 
 <div id="live-search-results" aria-live="polite"></div>
-
-    <form class="formCategorie" method="post" action="categorie.php">
-        <div class="divFormCategorie">
-                <div class="divFiltro"><label for="comboBoxCategoria" class="labelFiltro">Filtra per categoria</label>
-                    <select name="comboBoxCategoria" id="comboBoxCategoria">
-                    [categoria]
-                    <option value="tutte" [tutte] >Tutte</option>
-                    </select>
-                 </div>
-                <div class="divInputCat">
-                    <fieldset class="filedset-cat">
-                        <legend class="sr-only"> Cerca </legend>
-                        <input type="submit" name="submit" value="CERCA">
-                    </fieldset>                    
-                </div>
-        </div>
-    </form>
-
 
 <div id="category-results">
     [tuttigiuchi]

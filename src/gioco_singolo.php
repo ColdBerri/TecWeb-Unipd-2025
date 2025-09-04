@@ -14,6 +14,7 @@ $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
 $paginaHTML = new Template(
+    strip_tags($nomeGioco),
     "Dettagli videogioco: {$nomeGioco}",
     "videogioco, {$nomeGioco}, eventi, articoli",
     "html/gioco_singolo.html"
@@ -121,7 +122,7 @@ if(!$connessioneOK) {
 
                 if ($utente === $_SESSION['nickname']) {
                     $recensioniHTML .= "<li class='single_review'>
-                                            <p>$utente</p> ($stelle ★):
+                                            <p>La tua recensione: </p> ($stelle ★):
                                             <p class='testo_recensione'>$testo</p>
                                             <a href='modifica_recensione.php?id=$id_recensione' class='pulsanteModificaRec'>Modifica</a>
                                         </li>";

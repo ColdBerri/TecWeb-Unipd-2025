@@ -15,7 +15,7 @@ $artName = urldecode($_GET['titolo_articolo']);
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
-$paginaHTML = new Template ("Articolo {$artName}", "articolo {$artName}, videogioco, patch, aggiornamento", "html/articolo_singolo.html");
+$paginaHTML = new Template (strip_tags($artName),"Articolo {$artName}", "articolo {$artName}, videogioco, patch, aggiornamento", "html/articolo_singolo.html");
 
 if(!$connessioneOK){ 
     $articolo = $connessione->getArticolo($artName);
