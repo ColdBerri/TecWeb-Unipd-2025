@@ -34,13 +34,14 @@ if (!$connessioneOK) {
         $stelle = $rec['numero_stelle'];
         $giochiSingolo = $rec['nome_videogioco'];
 
-        for ($i = 5; $i >= 1; $i--) {
-            $checked = ($stelle == $i) ? 'checked' : '';
-            $form .= "
-                <input type='radio' id='val{$i}' name='stellem' value='{$i}' {$checked}>
-                <label for='val{$i}' title='{$i}'></label>
-            ";
-        }
+        $form .=    "<select name='stellem' id='stelle'>
+                        <option value='1'>1 stella</option>
+                        <option value='2'>2 stelle</option>
+                        <option value='3'>3 stelle</option>
+                        <option value='4'>4 stelle</option>
+                        <option value='5'>5 stelle</option>
+                    </select>";
+        
 
         $form .= "
             </div>

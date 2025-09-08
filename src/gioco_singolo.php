@@ -54,7 +54,7 @@ if(!$connessioneOK) {
             if (!empty($_POST['testo']) && isset($_POST['gioco']) && isset($_POST['stelle'])) {
                 $contenuto = trim($_POST['testo']);
                 $gioco = trim($_POST['gioco']);
-                $stelle = floatval($_POST['stelle']);
+                $stelle = intval($_POST['stelle']);
                 $utente = $_SESSION['nickname'];
         
                 $connessione->inserisciRecensione($gioco, $utente, $contenuto, $stelle);    
@@ -81,13 +81,17 @@ if(!$connessioneOK) {
                         <div class='recensione-rating'>
                 ";
             
-                for ($i = 5; $i > 0; $i--) {
-                    $formRecensioneHTML .= "
-                        <input type='radio' id='val{$i}' name='stelle' value='{$i}' required>
-                        <label for='val{$i}' title='{$i}'></label>
+                $formRecensioneHTML .= "
+                    <select name='stelle' id='stelle'>
+                        <option value='1'>1 stella</option>
+                        <option value='2'>2 stelle</option>
+                        <option value='3'>3 stelle</option>
+                        <option value='4'>4 stelle</option>
+                        <option value='5'>5 stelle</option>
+                    </select>
                     ";
-                }
             
+                    
                 $formRecensioneHTML .= "
                         </div>
                         <textarea name='testo' required class='recensione-textarea' id='testoRecenzione' placeholder='Scrivi la tua recensione...'></textarea>

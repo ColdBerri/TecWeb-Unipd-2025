@@ -550,7 +550,7 @@ h1.h-index {
     margin: 0.3em;
 }
 
-.divFormCategorie select {
+.divFormCategorie select, #stelle{
     padding: 0.5em 0.5em;
     border: 0.0625em solid #ccc;
     border-radius: 1.4em;
@@ -569,11 +569,15 @@ h1.h-index {
     margin-top: 0.4em;
 }
 
-.divFormCategorie select:hover {
+.divFormCategorie select:hover, #stelle:hover {
     background-color: #e6e6e6;
     border-color: #999;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
+}
+
+#stelle, #stelle:hover{
+    text-align: left;
 }
 
 .divFormCategorie>div {
