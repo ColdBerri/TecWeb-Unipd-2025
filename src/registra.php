@@ -28,7 +28,7 @@ if(!$connessioneOK){
                 exit();
             }
             else{
-                $connessione->addUser($nickname, $password);
+                $connessione->addUser($nickname, $password_);
                 header("Location: profilo.php");
                 exit;
             }

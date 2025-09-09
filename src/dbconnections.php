@@ -542,16 +542,21 @@ class DBAccess {
 		return $risultati;
 	}
 
-	public function addUser($username, $password){
-		$query = "INSERT INTO Utente (nickname, password_) VALUES (??)";
-
-		$stmt = mysqly_prepare($this->connection, $query);
-		if($stmt === false){
-			die("errore!!" .myslqi_error($this->connection));
-		}	
-		mysqly_stmt_bind_param($stmt, "ss", $username, $password);
-		mysqly_stmt_execute($stmt);
-		mysqli_stmt_close($stmt);
+	public function addUser($username, $password) {
+	    $query = "INSERT INTO Utente (nickname, password_) VALUES (?, ?)";
+	
+	    $stmt = mysqli_prepare($this->connection, $query);
+	    if ($stmt === false) {
+	        die("Errore nella prepare: " . mysqli_error($this->connection));
+	    }
+	
+	    mysqli_stmt_bind_param($stmt, "ss", $username, $password);
+	
+	    if (!mysqli_stmt_execute($stmt)) {
+	        die("Errore nell'execute: " . mysqli_stmt_error($stmt));
+	    }
+	
+	    mysqli_stmt_close($stmt);
 	}
 }
 

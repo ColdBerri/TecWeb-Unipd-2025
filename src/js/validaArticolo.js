@@ -69,7 +69,6 @@ function riempimentoVar() {
 
 			var node;
 			var p=input.parentNode; 
-			
 
       if (!mode) {
           node = document.createElement('span');
