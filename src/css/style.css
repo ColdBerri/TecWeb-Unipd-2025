@@ -2116,6 +2116,7 @@ fieldset.selezionaLingua{
 
 .h1_recensioni {
     text-align: center;
+    padding-bottom: 1em;
 }
 
 /* Contenitore delle recensioni con layout a griglia flessibile */
@@ -2133,6 +2134,15 @@ ul.tutte_recensioni {
     scrollbar-width: thin;
     /* puoi anche rimuoverlo se non serve più */
 }
+
+#miaRecenzione{
+    order: -1;
+}
+
+#miaRecenzione>p:first-child,.single_review>p:first-child{
+    font-weight: bold;
+}
+
 
 /* Singola recensione */
 li.single_review {
@@ -2280,12 +2290,10 @@ a:visited .miniCalendario {
     word-break: break-word;  /* evita overflow con parole troppo lunghe */
 }
 
-
-
 .h2_eventi {
-    width: 10em;
-    margin: auto;
-    margin-bottom: 0;
+    text-align: center;
+    padding-bottom: 1em;
+    padding-top: 1.5em;
 }
 
 

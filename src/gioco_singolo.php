@@ -99,6 +99,7 @@ if(!$connessioneOK) {
                         <input type='submit' name='invio' value='invia' class='recensione-submit'>
                     </form>
                 ";
+
             }
         
         } else {
@@ -122,10 +123,9 @@ if(!$connessioneOK) {
                 $stelle = htmlspecialchars($rec['numero_stelle']);
                 $id_recensione = htmlspecialchars($rec['ID_recensione']);
 
-                if(isset($_SESSION['nickname'])){
 
-                if ($utente === $_SESSION['nickname']) {
-                    $recensioniHTML .= "<li class='single_review'>
+                if (isset($_SESSION['nickname']) && $utente === $_SESSION['nickname']) {
+                    $recensioniHTML .= "<li class='single_review' id='miaRecenzione'>
                                             <p>La tua recensione: </p> ($stelle ★):
                                             <p class='testo_recensione'>$testo</p>
                                             <a href='modifica_recensione.php?id=$id_recensione' class='pulsanteModificaRec'>Modifica</a>
@@ -136,7 +136,7 @@ if(!$connessioneOK) {
                                             <p class='testo_recensione'>$testo</p>
                                         </li>";
                 }
-            }
+            
 
             }
         } else {
@@ -172,7 +172,7 @@ if(!$connessioneOK) {
                 $listaEventi .= "<p class='box_recensioni'><p>Nessun articolo disponibile per questo gioco.</p>";
                 $listaEventi .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un evento relativo a questo videogioco?</p><a href = 'aggiungi_evento.php' class='bottone_aggiungi_evento'> Aggiungi evento</a></div>";
             }else{
-                $listaEventi = "<p class='no_correlato'><p>Nessun articolo disponibile per questo gioco.</p></p>";
+                $listaEventi = "<p class='no_correlato'>Nessun articolo disponibile per questo gioco.</p>";
             }    
         }
         $paginaHTML->aggiungiContenuto("[eventi]", $listaEventi);
@@ -196,7 +196,7 @@ if(!$connessioneOK) {
             }
         } else {
             if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
-                $listaArticoli .= "<p class='no_correlato'><em>Nessun articolo disponibile per questo gioco.</em>";
+                $listaArticoli .= "<p class='no_correlato'>Nessun articolo disponibile per questo gioco.";
                 $listaArticoli .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un articolo relativo a questo videogioco?</p><a href = 'aggiungi_articolo.php?gioco={$nomeGioco}' class='bottone_aggiungi_evento'> Aggiungi articolo</a></div>";
             }else{
                 $listaArticoli = "<p class='no_correlato'>Nessun articolo disponibile per questo gioco.</p>";

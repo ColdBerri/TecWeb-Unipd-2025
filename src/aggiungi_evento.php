@@ -52,7 +52,7 @@ if(!$connessioneOK){
     foreach ($lista_giochi as $singolo_gioco) {
         $nome_gioco_con_html = $singolo_gioco['nome_gioco'];
         $nome_gioco_pulito = strip_tags($nome_gioco_con_html);
-        $select_giochi_html .= "<option value='{$nome_gioco_pulito}'>{$nome_gioco_pulito}</option>";
+        $select_giochi_html .= "<option value='{$nome_gioco_pulito}'>{$nome_gioco_con_html}</option>";
     }
     $select_giochi_html .= "</select>";
     $cont = "<fieldset class='selezionaLingua'><div>" . $select_giochi_html . "</div></fieldset>";        
