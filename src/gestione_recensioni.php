@@ -8,7 +8,7 @@ $paginaHTML = new Template("Gestione delle recensioni","Gestione delle recension
 "html/gestione_recensioni.html");
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
-
+$cont = "";
 if(!$connessioneOK){
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $id = $_POST['ID_recensione'];
@@ -18,7 +18,7 @@ if(!$connessioneOK){
     $recensioni = $connessione->getAllRecensioni();
     
     if (empty($recensioni)) {
-        $cont = "<div class='box_err_no_recensioni'><p>Non ci sono ancora recensioni.</p></div>";
+        $cont.= "<div class='box_err_no_recensioni'><p>Non ci sono ancora recensioni.</p></div>";
     } else {
         // Costruzione della lista delle recensioni        
         foreach($recensioni as $r){
@@ -30,11 +30,11 @@ if(!$connessioneOK){
 
             $cont .= "
             <li class='single_review'>
-                <strong>$utente</strong> su <em>$gioco</em> ($stelle ★):<br>
+                $utente su $gioco ($stelle ★):
                 <p class='testo_recensione'>$testo</p>
                 <form method='post' action='gestione_recensioni.php'>
-                    <input type='hidden' name='ID_recensione' value='$idRec'>
-                    <input type='submit' name='eliminarecensione' value='Elimina' class='btn_elimina'>
+                <input type='hidden' name='ID_recensione' value='<s>" . $idRec . "'>
+                <input type='submit' name='eliminarecensione 'value='Elimina ".$idRec."' class='btn_elimina'>
                 </form>
             </li>";
         }

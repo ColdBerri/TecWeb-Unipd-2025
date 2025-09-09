@@ -29,6 +29,8 @@ if(!$connessioneOK){
 
         $gioco = "<a class='link_giocosingolo' href='gioco_singolo.php?gioco={$nomeVideogioco}'>".  $nomeVideogioco . "</a>";
 
+        $paginaHTML->aggiungiContenuto("[link_gioco]", $nomeVideogioco);
+
         $paginaHTML->aggiungiContenuto("{{nomeArt}}", $artName);
         $paginaHTML->aggiungiContenuto("{{autore}}", $autore);
         $paginaHTML->aggiungiContenuto("{{data}}", $dataP);

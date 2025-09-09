@@ -54,7 +54,7 @@ class DBAccess {
 	}
 
 	public function categorie(){
-		$query = "SELECT categoria, nome_gioco, immagine FROM Videogiochi ORDER BY categoria;";
+		$query = "SELECT categoria, nome_gioco, immagine FROM Videogiochi ORDER BY REGEXP_REPLACE(categoria, '<[^>]*>', '');";
         $queryResult = mysqli_query($this->connection, $query) or die("Errore in openDBConnection: " . mysqli_error($this->connection));
 
         if(mysqli_num_rows($queryResult) == 0) {

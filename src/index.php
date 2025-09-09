@@ -35,7 +35,7 @@ if (!$connessioneOK) {
             $nomeG = urlencode($giuco['nome_gioco']);
             $listaGiuchi .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco={$nomeG}'><div class='divGiochiTop'>";
             $listaGiuchi .= "<img src='assets/img/".$giuco['immagine']."' alt=' '>";
-            $listaGiuchi .= "<p class='titolo_gioco'>".$giuco['nome_gioco']."</div></p>";
+            $listaGiuchi .= "<p class='titolo_gioco'>".$giuco['nome_gioco']."</p></div>";
             $listaGiuchi .= "</a></li>";
         }
     }

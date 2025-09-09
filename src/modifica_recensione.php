@@ -13,9 +13,9 @@ $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
 $paginaHTML = new Template(
-    "Modifica recenzione",
-    "brother may i have some oats",
-    "banana",
+    "Modifica recensione",
+    "modifica recensione, stelle, valutazione, critica",
+    "pagina della modifica della tua recensione relativa al gioco",
     "html/modifica_recenzione.html"
 );
 
@@ -34,7 +34,7 @@ if (!$connessioneOK) {
         $stelle = $rec['numero_stelle'];
         $giochiSingolo = $rec['nome_videogioco'];
 
-        $form .=    "<select name='stellem' id='stelle'>
+        $form .=    "<select name='stellem' id='stelle' aria-label='seleziona una valutazione da 1 a 5'>
                         <option value='1'>1 stella</option>
                         <option value='2'>2 stelle</option>
                         <option value='3'>3 stelle</option>
@@ -45,7 +45,7 @@ if (!$connessioneOK) {
 
         $form .= "
             </div>
-            <textarea name='testom' required class='recensione-textarea' id='testoRecenzione'>{$testo}</textarea>
+            <textarea name='testom' required class='recensione-textarea' id='testoRecenzione' aria-label='scrivi qui la tua opinione'>{$testo}</textarea>
             <input type='hidden' name='id_recensione' value='{$id}'>";
     }
 }

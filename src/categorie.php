@@ -64,39 +64,60 @@ $categoriaComboBox = "";
 $videoScelto = "<div class='GiocoRicerca'>";
 
 if(!$connessioneOK){
-    $giochi  = $connessione->categorie();
-    $giochi_per_categoria = [];
+$giochi = $connessione->categorie();
+$giochi_per_categoria = [];
+
+$nomi_categorie_html = []; 
+
+foreach ($giochi as $gioco) {
+   
+    $categoria_con_html = $gioco['categoria']; 
     
-    foreach ($giochi as $gioco) {
-        $categoria = $gioco['categoria'];
-        if (!isset($giochi_per_categoria[$categoria])) {
-            $giochi_per_categoria[$categoria] = [];
-        }
-        $giochi_per_categoria[$categoria][] = $gioco;
+   
+    $categoria_pulita = strip_tags($gioco['categoria']);
+    
+   
+    if (!isset($nomi_categorie_html[$categoria_pulita])) {
+        $nomi_categorie_html[$categoria_pulita] = $categoria_con_html;
     }
-
-    $selected_cat = isset($_GET['categoria']) ? urldecode($_GET['categoria']) : 'tutte';
-
-    foreach ($giochi_per_categoria as $categoria => $giochi) {
-        if ($selected_cat === 'tutte' || $categoria === $selected_cat) {
-            $lista .= "<div class='categoria'>";
-            $lista .= "<h2><div class='catH2'>" . ($categoria) . "</div></h2>";
-            $lista .= "<ul class='lista-giochi'>";
-            foreach ($giochi as $gioco) {
-                $nome = ($gioco['nome_gioco']);
-                $immagine = htmlspecialchars($gioco['immagine']);
-                $lista .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco={$nome}' ><div class='divCat'>";
-                $lista .= "<img src='assets/img/$immagine' class='ImgGiocoCat' alt='vidoe'><p class='titolo_gioco'>$nome</p></div></a></li>";
-            }
-            $lista .= "</ul>";
-            $lista .= "</div>";
-        }
+    
+   
+    if (!isset($giochi_per_categoria[$categoria_pulita])) {
+        $giochi_per_categoria[$categoria_pulita] = [];
     }
+    $giochi_per_categoria[$categoria_pulita][] = $gioco;
+}
 
-    $paginaHTML->aggiungiContenuto("[tutte]", ($selected_cat === 'tutte') ? "selected" : "");
+$selected_cat = isset($_GET['categoria']) ? urldecode($_GET['categoria']) : 'tutte';
+
+$lista = '';
+
+
+foreach ($giochi_per_categoria as $categoria_pulita => $giochi_da_visualizzare) {
+
+    if ($selected_cat === 'tutte' || $categoria_pulita === $selected_cat) {
+        
+        $titolo_categoria_html = $nomi_categorie_html[$categoria_pulita];
+
+        $lista .= "<div class='categoria'>";
+        
+        $lista .= '<h2>' . strip_tags($titolo_categoria_html) . '</h2>';
+        
+        $lista .= "<ul class='lista-giochi'>";
+        foreach ($giochi_da_visualizzare as $gioco) {
+            $nome = ($gioco['nome_gioco']);
+            $immagine = ($gioco['immagine']);
+            $lista .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco=" . ($nome) . "'><div class='divCat'>";
+            $lista .= "<img src='assets/img/$immagine' class='ImgGiocoCat' alt=''><p class='titolo_gioco'>$nome</p></div></a></li>";
+        }
+        $lista .= "</ul>";
+        $lista .= "</div>";
+    }
+}
     foreach ($giochi_per_categoria as $categoria => $giochi) {
         $selected = ($selected_cat === $categoria) ? "selected" : "";
-        $categoriaComboBox .= "<option value='$categoria' $selected>$categoria</option>";
+        $catCacca = ($categoria);
+        $categoriaComboBox .= "<option value='$categoria' $selected>$catCacca</option>";
     }
 
     $paginaHTML->aggiungiContenuto("[categoria]", $categoriaComboBox);
