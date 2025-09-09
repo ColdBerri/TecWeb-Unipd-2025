@@ -5,41 +5,43 @@
 <p id="sum">Calendario gregoriano che elenca gli eventi nel mondo videoludico nel mese corrente</p>
 
 <form class="formCalendario" method="POST" action="eventi.php">
-    <div class="selettore">
-        <label for="mese">Seleziona un <strong>mese</strong></label>
-        <select name="mese" id="mese">
-            <option value="1" [selected_mese_1]>gennaio</option>
-            <option value="2" [selected_mese_2]>febbraio</option>
-            <option value="3" [selected_mese_3]>marzo</option>
-            <option value="4" [selected_mese_4]>aprile</option>
-            <option value="5" [selected_mese_5]>maggio</option>
-            <option value="6" [selected_mese_6]>giugno</option>
-            <option value="7" [selected_mese_7]>luglio</option>
-            <option value="8" [selected_mese_8]>agosto</option>
-            <option value="9" [selected_mese_9]>settembre</option>
-            <option value="10" [selected_mese_10]>ottobre</option>
-            <option value="11" [selected_mese_11]>novembre</option>
-            <option value="12" [selected_mese_12]>dicembre</option>
-        </select>
+    <div class="div_formcalendario">
+        <div class="selettore">
+            <label for="mese">Seleziona un <strong>mese</strong></label>
+            <select name="mese" id="mese">
+                <option value="1" [selected_mese_1]>gennaio</option>
+                <option value="2" [selected_mese_2]>febbraio</option>
+                <option value="3" [selected_mese_3]>marzo</option>
+                <option value="4" [selected_mese_4]>aprile</option>
+                <option value="5" [selected_mese_5]>maggio</option>
+                <option value="6" [selected_mese_6]>giugno</option>
+                <option value="7" [selected_mese_7]>luglio</option>
+                <option value="8" [selected_mese_8]>agosto</option>
+                <option value="9" [selected_mese_9]>settembre</option>
+                <option value="10" [selected_mese_10]>ottobre</option>
+                <option value="11" [selected_mese_11]>novembre</option>
+                <option value="12" [selected_mese_12]>dicembre</option>
+            </select>
+        </div>
+        
+        <div class="selettore">
+            <label for="anno">Seleziona un <strong>anno</strong></label>
+            <select name="anno" id="anno">
+                <option value="2023" [selected_anno_2023]>2023</option>
+                <option value="2024" [selected_anno_2024]>2024</option>
+                <option value="2025" [selected_anno_2025]>2025</option>
+                <option value="2026" [selected_anno_2026]>2026</option>
+                <option value="2027" [selected_anno_2027]>2027</option>
+                <option value="2028" [selected_anno_2028]>2028</option>
+                <option value="2029" [selected_anno_2029]>2029</option>
+                <option value="2030" [selected_anno_2030]>2030</option>
+            </select>
+        </div>
+        <fieldset>
+            <label class="sr-only" for="submit">Cerca eventi:</label>
+            <input type="submit" name="submit" value="CERCA EVENTI">
+        </fieldset>
     </div>
-    
-    <div class="selettore">
-        <label for="anno">Seleziona un <strong>anno</strong></label>
-        <select name="anno" id="anno">
-            <option value="2023" [selected_anno_2023]>2023</option>
-            <option value="2024" [selected_anno_2024]>2024</option>
-            <option value="2025" [selected_anno_2025]>2025</option>
-            <option value="2026" [selected_anno_2026]>2026</option>
-            <option value="2027" [selected_anno_2027]>2027</option>
-            <option value="2028" [selected_anno_2028]>2028</option>
-            <option value="2029" [selected_anno_2029]>2029</option>
-            <option value="2030" [selected_anno_2030]>2030</option>
-        </select>
-    </div>
-    <fieldset>
-        <label class="sr-only" for="submit">Cerca eventi:</label>
-        <input type="submit" name="submit" value="CERCA EVENTI">
-    </fieldset>
 </form>
 
 

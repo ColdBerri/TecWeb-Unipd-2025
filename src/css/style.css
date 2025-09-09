@@ -692,6 +692,11 @@ div.categoria>h2 {
     margin-bottom: 0.3em;
 }
 
+.div_formcalendario {
+    text-align: center; /* Centra gli elementi inline-block */
+    margin-top: 2em;
+}
+
 .selettore {
     background-color: rgb(203, 203, 203);
     font-weight: bold;
@@ -701,6 +706,8 @@ div.categoria>h2 {
     text-align: center;
     font-size: 1.5em;
     width: 13em;
+    /* Proprietà aggiunta */
+    display: inline-block;
 }
 
 #mese,
@@ -773,15 +780,10 @@ input[type="submit"][value="CERCA EVENTI"]:hover {
 }
 
 .formCalendario fieldset {
-    /* occupa tutta la larghezza del form, quindi va in riga nuova */
-    flex-basis: 100%;
-    display: flex;
-    /* per poter centrare il button al suo interno */
-    justify-content: center;
+    display: block; /* Ripristina il comportamento di blocco per il fieldset */
+    text-align: center; /* Centra il pulsante all'interno del fieldset */
     margin-top: 1em;
-    /* spazio sopra il tasto */
     border: none;
-    /* già c’era, ma lo ribadiamo */
     padding: 0;
 }
 
@@ -1861,12 +1863,6 @@ fieldset.selezionaLingua{
     width: auto; /* si adatta allo spazio rimanente */
 }
 
-.recensioni {
-    clear: both;
-    /* Andrà sotto gli elementi float */
-    width: 100%;
-}
-
 /* Stili per i dettagli del gioco */
 .game_detail {
     margin-bottom: 0.5em;
@@ -1912,6 +1908,12 @@ fieldset.selezionaLingua{
     color: white;
 }
 
+
+.recensioni {
+    clear: both;
+    /* Andrà sotto gli elementi float */
+    width: 100%;
+}
 /* Nuova recensione a destra */
 
 .nuova_recensione {

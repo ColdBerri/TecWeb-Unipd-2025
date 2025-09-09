@@ -324,6 +324,7 @@ div.login-box {
   table-layout: fixed;
   border-radius: 0.5em;
   margin: 0 auto;
+  margin-bottom: 2em;
 }
 
 .markerGiorno {
@@ -333,36 +334,99 @@ div.login-box {
   line-height: 1.5em;
 }
 
+/* Stile per il contenitore principale del form */
+/* Stile per il contenitore principale del form (mantenuto per la struttura) */
+.formCalendario {
+  width: 90%;
+  max-width: 650px; /* Aumentato leggermente per accomodare gli elementi affiancati */
+  margin: 2em auto;
+  padding: 1.5em;
+  background-color: #f0f0f0;
+  border-radius: 1em;
+  box-sizing: border-box;
+}
+
+/* Contenitore interno, utile per centrare gli elementi inline-block */
+.div_formcalendario {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Stile per i box che contengono le label e i menu a tendina (DAL TUO NUOVO CODICE) */
 .selettore {
   background-color: rgb(203, 203, 203);
   font-weight: bold;
-  padding: 1em 0;
-  /* Aumentato leggermente */
+  padding: 1.3em 1em; /* Aggiunto padding laterale per più spazio */
   margin: 0.3em;
   border-radius: 10px;
   text-align: center;
-  font-size: 1.2em;
-  /* Da 1.1em a 1.2em */
-  width: 12em;
-  /* Da 10em a 12em */
+  font-size: 1.2em; /* Leggermente ridotto per una migliore compatibilità */
+  width: 13em;
+  display: inline-block; /* ✨ Fa sì che i selettori stiano sulla stessa riga */
+  vertical-align: top; /* Allinea gli elementi al bordo superiore */
 }
 
+.selettore label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+/* Stile per entrambi i menu a tendina (DAL TUO NUOVO CODICE) */
 #mese,
 #anno {
-  padding: 0.6em;
-  /* Ridotto da 0.8em */
-  font-size: 0.75em;
-  /* Appena più piccolo */
-  max-width: 8em;
-  /* Ridotto da 9em */
-}
-
-
-
-input[type="submit"][value="CERCA EVENTI"] {
-  font-size: 1.2em;
   padding: 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 1.4em;
+  background-color: #f9f9f9;
+  font-size: 0.8em;
+  color: #333;
+  appearance: none; /* Rimuove lo stile di default del browser */
+  background-image: url("https://api.iconify.design/mdi/chevron-down.svg?color=%23333"); /* Freccia custom */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 1.5em;
+  width: 100%;
+  max-width: 9em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: max-content;
+  margin-top: 0.4em;
 }
+
+#mese:hover,
+#anno:hover {
+  background-color: #e6e6e6;
+  border-color: #999;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Rimuove lo stile di default del fieldset (mantenuto per pulizia) */
+.div_formcalendario fieldset {
+  border: none;
+  padding: 0;
+  margin: 1em 0 0 0; /* Aggiunto margine per distanziare dal resto */
+}
+
+/* Stile per il pulsante di invio (DAL TUO NUOVO CODICE) */
+.formCalendario input[type="submit"][value="CERCA EVENTI"] {
+  padding: 0.8em 1.1em;
+  border: 1px solid #ccc;
+  border-radius: 1.4em;
+  /* NOTA: Ho usato un colore di default. Sostituiscilo se necessario. */
+  background-color: #1A2333; /* Colore di fallback per var(--headerbgcolor) */
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.formCalendario input[type="submit"][value="CERCA EVENTI"]:hover {
+  background-color: #080c11;
+}
+
+
 
 .titolo_pagina_eventi,
 .titolo_calendario {
