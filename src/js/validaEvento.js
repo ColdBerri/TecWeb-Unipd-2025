@@ -84,7 +84,8 @@ function riempimentoVar() {
       } else {
           node = document.createElement('span');
           node.className = 'erroreForm';
-          node.setAttribute('aria-live', 'assertive'); 
+          node.setAttribute("role", "alert");
+          node.setAttribute("aria-live", "assertive");
           node.appendChild(document.createTextNode(dettagli_form[input.id][2]));
       }
 			

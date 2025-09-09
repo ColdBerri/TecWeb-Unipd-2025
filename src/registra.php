@@ -14,10 +14,6 @@ if(!$connessioneOK){
         $nickname = $_POST['username'];
         $password_ = $_POST['password'];
         $pass_conf = $_POST['confirm-password'];
-        if ($password_ !== $pass_conf) {
-            header("Location: registra.html");
-            exit;
-        }
         if(strtolower($nickname) !== 'admin'){
             $conn = $connessione->getConnection();
             $nickname = $connessione->parser($nickname);
@@ -27,22 +23,20 @@ if(!$connessioneOK){
     
             $result = $conn->query("SELECT * FROM Utente WHERE nickname = '$username'");
             
-            if ($password_ !== $pass_conf){
+            if ($password_ != $pass_conf){
                 header("Location: registra.php?errore=password_diverse");
                 exit();
             }
-            else if ($result->num_rows > 0) {
+            if ($result->num_rows > 0) {
                 header("Location: registra.php?errore=utente_esiste");
                 exit();
             }
-            else{
-                $connessione->addUser($nickname, $password_);
-                $_SESSION['nickname'] = $nickname;
-                header("Location: profilo.php");
-                exit;
-            }
-        }else{
-            echo("Non è possibile inseire ADMIN come username!!");
+            
+            $connessione->addUser($nickname, $password_);
+            $_SESSION['nickname'] = $nickname;
+            header("Location: profilo.php");
+            exit;
+            
         }
     }   
 }

@@ -83,11 +83,11 @@ if(!$connessioneOK) {
             
                 $formRecensioneHTML .= "
                     <select name='stelle' id='stelle'>
-                        <option value='1'>1 stella</option>
-                        <option value='2'>2 stelle</option>
-                        <option value='3'>3 stelle</option>
-                        <option value='4'>4 stelle</option>
-                        <option value='5'>5 stelle</option>
+                        <option value='1'>una stella</option>
+                        <option value='2'>due stelle</option>
+                        <option value='3'>tre stelle</option>
+                        <option value='4'>quattro stelle</option>
+                        <option value='5'>cinque stelle</option>
                     </select>
                     ";
             
@@ -192,6 +192,7 @@ if(!$connessioneOK) {
             }
             $listaArticoli .= "</ul></div>";
             if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
+                $nomeGioco = strip_tags($nomeGioco);
                 $listaArticoli .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un articolo relativo a questo videogioco?</p><a href = 'aggiungi_articolo.php?gioco={$nomeGioco}' class='bottone_aggiungi_evento'> Aggiungi articolo</a></div>";
             }
         } else {
