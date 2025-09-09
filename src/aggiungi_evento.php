@@ -10,6 +10,9 @@ $connessioneOK = $connessione->openDBConnection();
 
 if(!$connessioneOK){
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        if(isset($_GET['gioco'])){
+            $gioco_sel = $_GET['gioco'];
+        }
         $messaggio = "";
 
         $nome_gioco_selezionato_pulito = trim($_POST['nome_videogioco']);
@@ -19,7 +22,6 @@ if(!$connessioneOK){
         $lista_giochi_completa = $connessione->allVideogame();
         
         foreach ($lista_giochi_completa as $gioco_db) {
-        
             if (strip_tags($gioco_db['nome_gioco']) == $nome_gioco_selezionato_pulito) {
                 $gioco_da_inserire = $gioco_db['nome_gioco'];
                 break;
@@ -49,11 +51,13 @@ if(!$connessioneOK){
     $select_giochi_html = "<label for='nome_videogioco'>Seleziona Gioco:</label>" .
                           "<select name='nome_videogioco' id='nome_videogioco' required>";
     $select_giochi_html .= "<option value='' disabled selected>-- Seleziona un gioco --</option>";
+
     foreach ($lista_giochi as $singolo_gioco) {
         $nome_gioco_con_html = $singolo_gioco['nome_gioco'];
         $nome_gioco_pulito = strip_tags($nome_gioco_con_html);
         $select_giochi_html .= "<option value='{$nome_gioco_pulito}'>{$nome_gioco_con_html}</option>";
     }
+
     $select_giochi_html .= "</select>";
     $cont = "<fieldset class='selezionaLingua'><div>" . $select_giochi_html . "</div></fieldset>";        
 

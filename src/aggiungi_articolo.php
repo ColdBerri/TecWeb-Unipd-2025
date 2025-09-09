@@ -10,6 +10,10 @@ $connessioneOK = $connessione->openDBConnection();
 
 if (!$connessioneOK) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if(isset($_GET['gioco'])){
+            $gioco_sel = $_GET['gioco'];
+        }
+        
         $messaggio = "";
         
         $nome_gioco_selezionato_pulito = trim($_POST['nome_videogioco']);
@@ -33,7 +37,7 @@ if (!$connessioneOK) {
             $testo = trim($_POST['testo_articolo']);
             $connessione->addArticolo($titolo_articolo, $autore, $data_pubblicazione, $testo, $gioco_da_inserire);
         }
-     
+    
     }
     $lista_giochi = $connessione->allVideogame();
     $select_giochi_html = "<label for='nome_videogioco'>Seleziona Gioco:</label>" .
