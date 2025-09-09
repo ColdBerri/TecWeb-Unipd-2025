@@ -27,18 +27,14 @@ if(!$connessioneOK){
                 header("Location: registra.php?errore=utente_esiste");
                 exit();
             }
-            $stmt = $conn->prepare("INSERT INTO Utente (nickname, password_) VALUES (?,?)");
-            $stmt->bind_param("ss", $nickname, $password_);
-            if($stmt->execute()){
-                $_SESSION['nickname'] = $nickname; 
+            else{
+                $connessione->addUser($nickname, $password);
                 header("Location: profilo.php");
                 exit;
             }
-            $stmt->close();
         }else{
             echo("Non è possibile inseire ADMIN come username!!");
         }
-
     }   
 }
 $connessione->closeConnection();
