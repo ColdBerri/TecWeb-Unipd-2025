@@ -7,7 +7,6 @@ $connessioneOK = $connessione->openDBConnection();
 
 $pagina = new Template("Il tuo profilo","Il tuo profilo", "profilo, password, logout", "html/profilo.html");
 $nickname = "";
-$data_nascita = "";
 
 if (isset($_GET['logout'])) {
     session_unset();
@@ -49,6 +48,5 @@ if(!$connessioneOK){
 
 }
 $pagina->aggiungiContenuto("{{nickname}}", htmlspecialchars($nickname));
-$pagina->aggiungiContenuto("{{data_nascita}}", htmlspecialchars($data_nascita));
 $pagina->getPagina();
 ?>

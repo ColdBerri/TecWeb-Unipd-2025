@@ -9,7 +9,6 @@ if(!$connessioneOK){
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $nickname = $_POST['username'];
         $password_ = $_POST['password'];
-        $datanascita = $_POST['data-nascita'];
         $pass_conf = $_POST['confirm-password'];
         if ($password_ !== $pass_conf) {
             header("Location: registra.html");
@@ -29,7 +28,7 @@ if(!$connessioneOK){
                 exit();
             }
             $stmt = $conn->prepare("INSERT INTO Utente (nickname, password_) VALUES (?,?)");
-            $stmt->bind_param("sss", $nickname, $password_);
+            $stmt->bind_param("ss", $nickname, $password_);
             if($stmt->execute()){
                 $_SESSION['nickname'] = $nickname; 
                 header("Location: profilo.php");
