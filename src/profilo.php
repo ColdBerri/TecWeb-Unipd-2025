@@ -19,6 +19,7 @@ if(!isset($_SESSION['nickname'])){
     exit();
 }
 
+
 if(!$connessioneOK){
     if (isset($_SESSION['nickname'])) {
         $selettoreImmagini ="";

@@ -5,6 +5,10 @@ $paginaHTML = new Template("Registrazione ","Pagina di registrazione di un nuovo
 use DB\DBAccess;
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
+if(isset($_SESSION['nickname'])){
+    header("Location: profilo.php");
+    exit;
+}
 if(!$connessioneOK){
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         $nickname = $_POST['username'];
@@ -22,13 +26,18 @@ if(!$connessioneOK){
             $username = $conn->real_escape_string($_POST['username']);
     
             $result = $conn->query("SELECT * FROM Utente WHERE nickname = '$username'");
-    
-            if ($result->num_rows > 0) {
+            
+            if ($password_ !== $pass_conf){
+                header("Location: registra.php?errore=password_diverse");
+                exit();
+            }
+            else if ($result->num_rows > 0) {
                 header("Location: registra.php?errore=utente_esiste");
                 exit();
             }
             else{
                 $connessione->addUser($nickname, $password_);
+                $_SESSION['nickname'] = $nickname;
                 header("Location: profilo.php");
                 exit;
             }
