@@ -1,0 +1,16 @@
+<form method='post' class='recensione-form' onsubmit='return validazioneForm();'>
+    <h2 class='intestazione_recensione_log'>Scrivi una recensione</h2>
+    <label class='recensione-label'>Valutazione (1–5):</label>
+    <div class='recensione-rating'>
+        <select name='stelle' id='stelle'>
+            <option value='1'>una stella</option>
+            <option value='2'>due stelle</option>
+            <option value='3'>tre stelle</option>
+            <option value='4'>quattro stelle</option>
+            <option value='5'>cinque stelle</option>
+        </select>
+    </div>
+    <textarea name='testo' required class='recensione-textarea' id='testoRecenzione' placeholder='Scrivi la tua recensione...'></textarea>
+    <input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>
+    <input type='submit' name='invio' value='invia' class='recensione-submit'>
+</form>

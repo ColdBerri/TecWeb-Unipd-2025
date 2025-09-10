@@ -21,6 +21,7 @@ $paginaHTML = new Template(
 );
 
 
+
 if(!$connessioneOK) {
 
     $dati = $connessione->getVideogioco($nomeGioco);
@@ -73,47 +74,15 @@ if(!$connessioneOK) {
             if ($ok) {
                 $formRecensioneHTML = "";
             } else {
-                
-                $formRecensioneHTML .= "
-                    <form method='post' class='recensione-form' onsubmit='return validazioneForm();'>
-                        <h2 class='intestazione_recensione_log'>Scrivi una recensione</h2>
-                        <label class='recensione-label'>Valutazione (1–5):</label>
-                        <div class='recensione-rating'>
-                ";
-            
-                $formRecensioneHTML .= "
-                    <select name='stelle' id='stelle'>
-                        <option value='1'>una stella</option>
-                        <option value='2'>due stelle</option>
-                        <option value='3'>tre stelle</option>
-                        <option value='4'>quattro stelle</option>
-                        <option value='5'>cinque stelle</option>
-                    </select>
-                    ";
-            
-                    
-                $formRecensioneHTML .= "
-                        </div>
-                        <textarea name='testo' required class='recensione-textarea' id='testoRecenzione' placeholder='Scrivi la tua recensione...'></textarea>
-                        <input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>
-                        <input type='submit' name='invio' value='invia' class='recensione-submit'>
-                    </form>
-                ";
-
+                $form = 'html/extra_form.html';
+                $formRecensioneHTML = file_get_contents($form);
             }
         
         } else {
-
-            $formRecensioneHTML .= "
-                <div class='login_required'>
-                    <h2 class='intestazione_recensione'>Scrivi una recensione</h2>
-                    <p class='login_required_message'>
-                        Devi aver fatto il <a href='login.php'><span lang='en'>Login</span></a> per scrivere o modificare una recensione.
-                    </p>
-                </div>";
+            $form1 = 'html/extra_form2.html';
+            $formRecensioneHTML = file_get_contents($form1);
         }
 
-    
         if ($recensioni) {
             $recensioniHTML .= "<h2 class='h1_recensioni'>Recensioni</h2><ul class='tutte_recensioni'>";
             foreach ($recensioni as $rec) {
@@ -122,7 +91,6 @@ if(!$connessioneOK) {
                 $testo = htmlspecialchars($rec['contenuto_recensione']);
                 $stelle = htmlspecialchars($rec['numero_stelle']);
                 $id_recensione = htmlspecialchars($rec['ID_recensione']);
-
 
                 if (isset($_SESSION['nickname']) && $utente === $_SESSION['nickname']) {
                     $recensioniHTML .= "<li class='single_review' id='miaRecenzione'>
@@ -136,7 +104,6 @@ if(!$connessioneOK) {
                                             <p class='testo_recensione'>$testo</p>
                                         </li>";
                 }
-            
 
             }
         } else {
