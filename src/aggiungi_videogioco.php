@@ -19,13 +19,13 @@ if(!$connessioneOK){
         $immagine = trim($_POST["immagine"]);
 
         if(isset($_POST['lnGioco'])){
-            $nome = "<span lang='en'>" .$nomeTmp . "</span>" ;
+            $nome = '<span lang="en">' .$nomeTmp . '</span>';
         } else {
             $nome = $nomeTmp;
         }
 
         if(isset($_POST['lnCasa'])){
-            $casa = "<span lang='en'>" .$casaTmp . "</span>" ;
+            $casa = '<span lang="en">' .$casaTmp . '</span>' ;
         } else{
             $casa = $casaTmp;
         }
