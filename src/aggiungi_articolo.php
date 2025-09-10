@@ -8,12 +8,11 @@ $paginaHTML = new Template("aggiungi articolo","Pagina da amministratore per agg
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
-$gioco_sel = isset($_GET['gioco']) ? $_GET['gioco'] : "";
-
 if (!$connessioneOK) {
-
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        
+        if(isset($_GET['gioco'])){
+            $gioco_sel = $_GET['gioco'];
+        }
         
         $messaggio = "";
         
@@ -37,33 +36,25 @@ if (!$connessioneOK) {
             $data_pubblicazione = trim($_POST['data_pubblicazione']);
             $testo = trim($_POST['testo_articolo']);
             $connessione->addArticolo($titolo_articolo, $autore, $data_pubblicazione, $testo, $gioco_da_inserire);
-            
         }
     
     }
-    
     $lista_giochi = $connessione->allVideogameNomi();
-    $select_giochi_html = "";
+    $select_giochi_html = "<label for='nome_videogioco'>Seleziona Gioco:</label>" .
+                          "<select name='nome_videogioco' id='nome_videogioco' required>";
+    $select_giochi_html .= "<option value='' disabled selected>-- Seleziona un gioco --</option>";
 
     foreach ($lista_giochi as $singolo_gioco) {
         $nome_gioco_con_html = $singolo_gioco['nome_gioco'];
         $nome_gioco_pulito = strip_tags($nome_gioco_con_html);
-
-        if ($nome_gioco_pulito === strip_tags($gioco_sel)) {
-            $select_giochi_html .= "<option value='{$nome_gioco_pulito}' selected>{$nome_gioco_con_html}</option>";
-        } else {
-            $select_giochi_html .= "<option value='{$nome_gioco_pulito}'>{$nome_gioco_con_html}</option>";
-        }
-        
+        $select_giochi_html .= "<option value='{$nome_gioco_pulito}'>{$nome_gioco_con_html}</option>";
     }
-    $cont = $select_giochi_html;
+    $select_giochi_html .= "</select>";
+    $cont = "<fieldset class='selezionaLingua'><div>" . $select_giochi_html . "</div></fieldset>";
     
     $connessione->closeConnection();
 
 }
-
-$paginaHTML->aggiungiContenuto("[d]", strip_tags($gioco_sel));
-
 
 $paginaHTML->aggiungiContenuto("[addArticolo]", $cont);
 $paginaHTML->getPagina();

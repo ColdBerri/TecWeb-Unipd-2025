@@ -114,9 +114,11 @@ $lista = '';
             $lista .= "</div>";
         }
     }
+    $categoriaComboBox.='<option value="tutte" [tutte] >Tutte</option>';
 foreach ($giochi_per_categoria as $categoria => $giochi) {
     $selected = ($selected_cat === $categoria) ? "selected" : "";
     $titolo_categoria_html = $nomi_categorie_html[$categoria]; 
+   
     $categoriaComboBox .= "<option value='$categoria' $selected>$titolo_categoria_html</option>";
 }
 

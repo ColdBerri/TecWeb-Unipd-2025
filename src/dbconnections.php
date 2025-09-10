@@ -37,20 +37,19 @@ class DBAccess {
     }
 
     public function getFirstImg() {
-        $query = "SELECT nome_gioco, immagine FROM Videogiochi LIMIT 3";
-        $queryResult = mysqli_query($this->connection, $query) or die("Errore in openDBConnection: " . mysqli_error($this->connection));
+    $query = "SELECT V.nome_gioco, V.immagine, AVG(R.numero_stelle) AS media_stelle FROM Videogiochi AS V LEFT JOIN Recensioni AS R ON V.nome_gioco = R.nome_videogioco GROUP BY V.nome_gioco, V.immagine ORDER BY COALESCE(AVG(R.numero_stelle), 0) DESC, V.nome_gioco ASC LIMIT 3;";
 
-        if(mysqli_num_rows($queryResult) == 0) {
-			return null;
-		}
-		else {
-            $result = array();
-			while($row = mysqli_fetch_assoc($queryResult)){
-				array_push($result, $row);
-			}
-			mysqli_free_result($queryResult);
-			return $result;
-		}
+    $queryResult = mysqli_query($this->connection, $query);
+
+    $result = array();
+
+    while($row = mysqli_fetch_assoc($queryResult)){
+        $result[] = $row;
+    }
+
+    mysqli_free_result($queryResult);
+
+    return $result;
 	}
 
 	public function categorie(){
