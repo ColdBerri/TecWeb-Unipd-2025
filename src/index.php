@@ -29,16 +29,17 @@ if (!$connessioneOK) {
     $connessione->closeConnection();
 
     if (is_array($img)) {
+        $i=1;
         foreach($img as $giuco){
             $nomeG = urlencode($giuco['nome_gioco']);
-            $listaGiuchi .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco={$nomeG}'><div class='divGiochiTop'>";
-            $listaGiuchi .= "<img src='assets/img/".$giuco['immagine']."' alt=' '>";
-            $listaGiuchi .= "<p class='titolo_gioco'>".$giuco['nome_gioco']."</p></div>";
-            $listaGiuchi .= "</a></li>";
+            $imma = $giuco['immagine'];
+            $gn = $giuco['nome_gioco'];
+            $paginaHTML->aggiungiContenuto("[nomeG".$i."]", $nomeG);
+            $paginaHTML->aggiungiContenuto("{{ima".$i."}}", $imma);
+            $paginaHTML->aggiungiContenuto("{{ng".$i."}}", $gn);
+            $i++;
         }
     }
-
-    $paginaHTML->aggiungiContenuto("[giochi]", $listaGiuchi);
 
     if (is_array($not)) {
         foreach($not as $eventi){
@@ -54,7 +55,6 @@ if (!$connessioneOK) {
 
     $paginaHTML->aggiungiContenuto("[eventi]", $listaEventi);
 
-
     if (is_array($path)) {
         foreach($path as $paths){
             $nomeArti = urlencode($paths['titolo_articolo']);
@@ -64,6 +64,7 @@ if (!$connessioneOK) {
             $listaPath .= "</div></a></li>";
         }
     }
+
 
     $paginaHTML->aggiungiContenuto("[notisie]", $listaPath);
     $paginaHTML->getPagina();
