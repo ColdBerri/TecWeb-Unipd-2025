@@ -1,8 +1,8 @@
 var dettagli_form = {
   "nome_gioco": [
     'es: Peggle 2',
-    /^[a-zA-Z0-9\s]{2,30}$/, 
-    'Il nome del gioco deve essere lungo tra 2 e 30 caratteri e può contenere solo lettere, numeri e spazi'
+    /^[a-zA-Z0-9\s:-]{2,30}$/,
+    'Il nome del videogioco deve essere lungo tra 2 e 30 caratteri e può contenere solo lettere, numeri e spazi'
   ],
 
   "casa_produttrice": [
