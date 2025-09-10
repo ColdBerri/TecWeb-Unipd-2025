@@ -124,7 +124,7 @@ INSERT INTO Eventi (nome_evento, nome_videogioco, data_inizio_evento, data_fine_
 ('<span lang="en">League of Legends 2024 World Cup Playoffs</span>', '<span lang="en">League of Legends</span>', '2024-11-11', '2024-11-30', '<span lang="en">T1</span>, <span lang="en">KC</span>, <span lang="en">GenG</span>, <span lang="en">BLS</span>', '<span lang="en">T1</span>');
 
 CREATE TABLE IF NOT EXISTS Articoli_e_patch(
-    titolo_articolo VARCHAR(255) NOT NULL,
+    titolo_articolo VARCHAR(255) PRIMARY KEY,
     autore VARCHAR(64) NOT NULL,
     data_pubblicazione DATE NOT NULL,
     testo_articolo TEXT NOT NULL,
