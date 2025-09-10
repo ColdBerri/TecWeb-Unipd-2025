@@ -11,6 +11,6 @@
         </select>
     </div>
     <textarea name='testo' required class='recensione-textarea' id='testoRecenzione' placeholder='Scrivi la tua recensione...'></textarea>
-    <input type='hidden' name='gioco' value='" . htmlspecialchars($nomeGioco) . "'>
+    <input type='hidden' name='gioco' value='{{nome}}'>
     <input type='submit' name='invio' value='invia' class='recensione-submit'>
 </form>
