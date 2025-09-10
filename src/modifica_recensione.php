@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $testo = trim($_POST['testom']);
         if(isset($_POST['stellem']))
             $stelle = intval($_POST['stellem']);
-
+   
 
         $success = $connessione->modificaRecensione($id, $testo, $stelle);
 
