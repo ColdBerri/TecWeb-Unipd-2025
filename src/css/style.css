@@ -1860,11 +1860,9 @@ fieldset.selezionaLingua{
 }
 
 .dati-gioco {
-    /* display: table-cell; <-- NON SERVE PIÙ */
-    /* vertical-align: top; <-- NON SERVE PIÙ */
     padding: 1em;
     overflow: hidden;
-    /* Non serve specificare la larghezza, occuperà lo spazio rimanente */
+    width: 100%;
 }
 
 /* Stili per i dettagli del gioco (invariati) */
@@ -1873,7 +1871,7 @@ fieldset.selezionaLingua{
     overflow: hidden;
     margin: 0.25em;
     background-color: var(--div_navbar_link);
-    border-radius: 0.25em;
+    border-radius: 0.5em;
     padding: 1em;
 }
 

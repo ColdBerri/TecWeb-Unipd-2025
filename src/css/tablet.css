@@ -616,8 +616,10 @@ details summary {
 }
 
 .recensione-submit {
-  padding: 0.5em 1em;
+  width: 100%;
+  padding: 1em;
 }
+
 ul.tutte_recensioni {
   flex-direction: column;
   align-items: center;
