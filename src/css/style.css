@@ -1101,29 +1101,25 @@ fieldset {
 .registra_linkB {
     color: white;
 }
-/*
-.custom-file-upload {
-    width: 5em;
-    background-color: var(--bgcolor);
-    color: var(--headerbgcolor) !important;
-    padding: 0.85em 1.2em;
-    border-radius: 1em;
-    cursor: pointer;
-    font-size: 1em;
-    text-align: center;
-    font-weight: bold;
-}*/
-
-
-.custom-file-upload:hover {
-    background-color: white;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
 
 /* Form di registrazione */
 #registration-form,
 #modifica-form {
     color: white;
+}
+
+#immagine::file-selector-button {
+  padding: 0.4em 1.25em;
+  font-size: 1.3em;
+  border-radius: 6px;
+  background-color: var(--bgcolor);
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+#immagine::file-selector-button:hover {
+  background-color: white;
 }
 
 #registration-form div,
@@ -2529,8 +2525,4 @@ footer p>a{
   clip: rect(0 0 0 0);
   white-space: nowrap;
   border: 0;
-}
-
-#immagine{
-
 }
