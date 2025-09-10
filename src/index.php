@@ -28,8 +28,6 @@ if (!$connessioneOK) {
 
     $connessione->closeConnection();
 
-    $listaGiuchi = "<ul class='top-list'>";
-
     if (is_array($img)) {
         foreach($img as $giuco){
             $nomeG = urlencode($giuco['nome_gioco']);
@@ -40,10 +38,7 @@ if (!$connessioneOK) {
         }
     }
 
-    $listaGiuchi .= "</ul>";
     $paginaHTML->aggiungiContenuto("[giochi]", $listaGiuchi);
-
-    $listaEventi = "<ul class='top-liste'>";
 
     if (is_array($not)) {
         foreach($not as $eventi){
@@ -57,10 +52,8 @@ if (!$connessioneOK) {
         }
     }
 
-    $listaEventi .= "</ul>";
     $paginaHTML->aggiungiContenuto("[eventi]", $listaEventi);
 
-    $listaPath = "<ul class='top-eventi'>";
 
     if (is_array($path)) {
         foreach($path as $paths){
@@ -71,8 +64,6 @@ if (!$connessioneOK) {
             $listaPath .= "</div></a></li>";
         }
     }
-
-    $listaPath .= "</ul>";
 
     $paginaHTML->aggiungiContenuto("[notisie]", $listaPath);
     $paginaHTML->getPagina();

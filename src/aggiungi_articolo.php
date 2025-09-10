@@ -37,14 +37,13 @@ if (!$connessioneOK) {
             $data_pubblicazione = trim($_POST['data_pubblicazione']);
             $testo = trim($_POST['testo_articolo']);
             $connessione->addArticolo($titolo_articolo, $autore, $data_pubblicazione, $testo, $gioco_da_inserire);
+            
         }
     
     }
     
     $lista_giochi = $connessione->allVideogameNomi();
-    $select_giochi_html = "<label for='nome_videogioco'>Seleziona Gioco:</label>" .
-                          "<select name='nome_videogioco' id='nome_videogioco' required>";
-    $select_giochi_html .= "<option value='' disabled selected>-- Seleziona un gioco --</option>";
+    $select_giochi_html = "";
 
     foreach ($lista_giochi as $singolo_gioco) {
         $nome_gioco_con_html = $singolo_gioco['nome_gioco'];
@@ -57,15 +56,13 @@ if (!$connessioneOK) {
         }
         
     }
-    $select_giochi_html .= "</select>";
-    $cont = "<fieldset class='selezionaLingua'><div>" . $select_giochi_html . "</div></fieldset>";
+    $cont = $select_giochi_html;
     
     $connessione->closeConnection();
 
 }
 
 $paginaHTML->aggiungiContenuto("[d]", strip_tags($gioco_sel));
-$paginaHTML->aggiungiContenuto("[d1]", $all);
 
 
 $paginaHTML->aggiungiContenuto("[addArticolo]", $cont);

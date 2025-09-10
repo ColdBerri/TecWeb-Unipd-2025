@@ -42,9 +42,6 @@ if(!$connessioneOK){
             exit();
         }
         
-    } else {
-        // Nessun utente in sessione -> redirect o messaggio di errore
-        echo "<p>Devi essere loggato per vedere il tuo profilo.</p>";
     }
 
 }

@@ -27,7 +27,7 @@ if(!$connessioneOK){
         $testo = $articolo['testo_articolo'];
         $nomeVideogioco = $articolo['nome_videogioco'];
 
-        $gioco = "<a class='link_giocosingolo' href='gioco_singolo.php?gioco={$nomeVideogioco}'>".  $nomeVideogioco . "</a>";
+        $gioco = $nomeVideogioco;
 
         $paginaHTML->aggiungiContenuto("[link_gioco]", $nomeVideogioco);
 
@@ -36,7 +36,6 @@ if(!$connessioneOK){
         $paginaHTML->aggiungiContenuto("{{data}}", $dataP);
         $paginaHTML->aggiungiContenuto("{{gioco}}", $gioco);
         $paginaHTML->aggiungiContenuto("{{testo}}", $testo);
-
 
     }else{
         header('Location: index.php');

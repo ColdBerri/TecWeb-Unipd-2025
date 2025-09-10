@@ -315,8 +315,9 @@ class DBAccess {
 		}
 	
 		mysqli_stmt_bind_param($stmt, "sssds", $newId, $nickname, $contenuto, $stelle, $gioco);
-		mysqli_stmt_execute($stmt);
+		$success = mysqli_stmt_execute($stmt);
 		mysqli_stmt_close($stmt);
+		return $success;
 	}
 
 	public function getEventiMese($mese, $anno) {
@@ -417,8 +418,9 @@ class DBAccess {
 			die("Erroere nella preparazione della query : " .myslqi_error($this->connection));
 		}
 		mysqli_stmt_bind_param($stmt, "ssssiss", $nome_gioco, $casa_produttrice, $console_compatibili, $descrizione, $anno_di_pubblicazione, $immagine, $categoria);
-		mysqli_stmt_execute($stmt);
+		$success = mysqli_stmt_execute($stmt);
 		mysqli_stmt_close($stmt);
+		return $success;
 	}
 
 
@@ -443,8 +445,9 @@ class DBAccess {
         	$vincitore_evento
     	);
 
-    	mysqli_stmt_execute($stmt);
+    	$success = mysqli_stmt_execute($stmt);
     	mysqli_stmt_close($stmt);
+		return $success;
 	}
 
 
@@ -458,8 +461,9 @@ class DBAccess {
 		}
 
 		mysqLi_stmt_bind_param($stmt, "sssss", $titolo_articolo, $autore, $data_pubblicazione, $testo_articolo, $nome_videogioco);
-		mysqli_stmt_execute($stmt);
+		$success = mysqli_stmt_execute($stmt);
 		mysqli_stmt_close($stmt);
+		return $success;
 	}
 
 	public function getAllRecensioni(){

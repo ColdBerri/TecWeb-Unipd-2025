@@ -3,8 +3,13 @@
         <h1 id="content" class="form-welcome-message"><strong>Aggiungi Articolo</strong></h1>
 
         <form method="post" action="aggiungi_articolo.php" onsubmit="return validazioneForm();">
-
-            [addArticolo]
+            <label for='nome_videogioco'>Seleziona Gioco:</label>
+            <select name='nome_videogioco' id='nome_videogioco' required>
+                <option value='' disabled selected>-- Seleziona un gioco --</option>
+                <fieldset class='selezionaLingua'><div>
+                    [addArticolo]
+                </div></fieldset>
+            </select>
 
             <fieldset>
                 <div>
