@@ -25,6 +25,7 @@ html {
     background-color: var(--bgcolor);
     color: var(--textcolor);
     max-width: 1920px;
+    margin: auto;
 }
 
 body {
@@ -148,6 +149,7 @@ header {
     background-color: var(--headerbgcolor);
     position: fixed;
     z-index: 9999;
+    max-width: 1920px;
 }
 
 .nascondi {
@@ -1833,16 +1835,18 @@ fieldset.selezionaLingua{
     color: white;
     padding: 1em;
     min-width: 35em;
-    display: table; /* <-- importante: il contenitore diventa una tabella */
-    width: 100%; /* o una larghezza fissa se vuoi */
+    display: flex; /* <-- USA FLEXBOX */
+    align-items: center; /* <-- CENTRA VERTICALMENTE I FIGLI */
+    width: 100%;
     box-sizing: border-box;
 }
 
 .img-wrapper {
-    display: table-cell;
-    vertical-align: top;  /* allinea in alto */
+    /* display: table-cell; <-- NON SERVE PIÙ */
+    /* vertical-align: top; <-- NON SERVE PIÙ */
     width: 16em;
     height: 24em;
+    flex-shrink: 0; /* Impedisce all'immagine di rimpicciolirsi */
     border-radius: 0.5em;
     overflow: hidden;
     padding: 1em;
@@ -1856,25 +1860,31 @@ fieldset.selezionaLingua{
 }
 
 .dati-gioco {
-    display: table-cell;
-    vertical-align: top;
+    /* display: table-cell; <-- NON SERVE PIÙ */
+    /* vertical-align: top; <-- NON SERVE PIÙ */
     padding: 1em;
     overflow: hidden;
-    width: auto; /* si adatta allo spazio rimanente */
+    /* Non serve specificare la larghezza, occuperà lo spazio rimanente */
 }
 
-/* Stili per i dettagli del gioco */
+/* Stili per i dettagli del gioco (invariati) */
 .game_detail {
     margin-bottom: 0.5em;
     overflow: hidden;
+    margin: 0.25em;
+    background-color: var(--div_navbar_link);
+    border-radius: 0.25em;
+    padding: 1em;
 }
 
 .etichetta {
     font-weight: bold;
+    color: var(--linkvisited);
 }
 
-.valore_gioco {
-    margin-left: 0.5em;
+.valore_gioco,
+.valore_descrizione {
+    color: white;
 }
 
 .valore_descrizione {

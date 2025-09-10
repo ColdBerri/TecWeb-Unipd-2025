@@ -17,8 +17,10 @@ body,main{
 }
 
 .logo h1>span{
- margin-top: 0.8em;
+ margin-top: 0.38em;
+ margin-left: 0.3em;
  position: absolute;
+
 }
 
 .menu ul{
