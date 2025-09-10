@@ -3,7 +3,12 @@ var dettagli_form = {
         'Testo minimo 6 caratteri e massimo 200',
         /^.{6,200}$/,
         'il testo deve essere tra i 6 e 200 caratteri'
-    ]
+    ],
+	"stelle": [
+  		'',
+		/^[1-5]$/,
+	  'Il valore delle stelle deve essere tra 1 e 5'
+]
 };
 
 function riempimentoVar() {
@@ -26,7 +31,7 @@ function riempimentoVar() {
 
 			if(text.search(regex) != 0){
                 messaggio(input, 1);
-				input.select();
+				input.focus();
 				return false;
 			}
 

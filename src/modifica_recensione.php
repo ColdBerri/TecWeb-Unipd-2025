@@ -33,6 +33,20 @@ if (!$connessioneOK) {
         $testo = $rec['contenuto_recensione'];
         $stelle = $rec['numero_stelle'];
         $giochiSingolo = $rec['nome_videogioco'];
+
+        $form .=    "<select name='stellem' id='stelle' aria-label='seleziona una valutazione da 1 a 5'>
+                        <option value='1'>1 stella</option>
+                        <option value='2'>2 stelle</option>
+                        <option value='3'>3 stelle</option>
+                        <option value='4'>4 stelle</option>
+                        <option value='5'>5 stelle</option>
+                    </select>";
+        
+
+        $form .= "
+            </div>
+            <textarea name='testom' required class='recensione-textarea' id='testoRecenzione' aria-label='scrivi qui la tua opinione'>{$testo}</textarea>
+            <input type='hidden' name='id_recensione' value='{$id}'>";
     }
 }
 
@@ -50,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $testo = trim($_POST['testom']);
         if(isset($_POST['stellem']))
             $stelle = intval($_POST['stellem']);
-   
+
 
         $success = $connessione->modificaRecensione($id, $testo, $stelle);
 
@@ -63,6 +77,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $paginaHTML->aggiungiContenuto("[linkBack]", $giochiSingolo);
 $paginaHTML->aggiungiContenuto("[link_gioco]", $giochiSingolo);
 $paginaHTML->aggiungiContenuto("[form]", $form);
-$paginaHTML->aggiungiContenuto("{{id}}", $id);
 $paginaHTML->aggiungiContenuto("[test]", $testo);
 $paginaHTML->getPagina();

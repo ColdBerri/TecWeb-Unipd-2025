@@ -42,9 +42,8 @@ if (!$connessioneOK) {
     }
     
     $lista_giochi = $connessione->allVideogameNomi();
-    $select_giochi_html = "<label for='nome_videogioco'>Seleziona Gioco:</label>" .
-                          "<select name='nome_videogioco' id='nome_videogioco' required>";
-    $select_giochi_html .= "<option value='' disabled selected>-- Seleziona un gioco --</option>";
+    
+    $select_giochi_html = "";
 
     foreach ($lista_giochi as $singolo_gioco) {
         $nome_gioco_con_html = $singolo_gioco['nome_gioco'];

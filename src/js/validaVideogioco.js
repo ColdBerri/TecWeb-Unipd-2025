@@ -1,8 +1,8 @@
 var dettagli_form = {
   "nome_gioco": [
     'es: Peggle 2',
-    /^[a-zA-Z0-9\s:-]{2,30}$/,
-    'Il nome del videogioco deve essere lungo tra 2 e 30 caratteri e può contenere solo lettere, numeri e spazi'
+    /^[a-zA-Z0-9\s:-]{2,40}$/,
+    'Il nome del videogioco deve essere lungo tra 2 e 40 caratteri e può contenere solo lettere, numeri e spazi'
   ],
 
   "casa_produttrice": [
@@ -36,64 +36,76 @@ var dettagli_form = {
   ],
 
   "immagine": [
-    'Preferibilmente .png',
-    /^[\w,\s-]+\.(png|jpg|jpeg|gif)$/,
-    'Il nome del file immagine deve terminare con .png, .jpg, .jpeg o .gif'
+    'es: nomefile.png',
+    (valore) => {
+      if (!valore) return false;
+      const estensione = valore.split(".").pop().toLowerCase();
+      return ["png", "jpg", "jpeg", "gif"].includes(estensione);
+    },
+    'Il file deve avere estensione png, jpg, jpeg o gif'
   ]
 };
 
 function riempimentoVar() {
-      for(var key in dettagli_form){
-			  var input = document.getElementById(key);
-			  messaggio(input, 0);
-			  input.onblur = function() {validazioneCampo(this);};
-		   }
-		}
+  for (var key in dettagli_form) {
+    var input = document.getElementById(key);
+    messaggio(input, 0);
+    input.onblur = function () { validazioneCampo(this); };
+  }
+}
 
-		function validazioneCampo(input) {		
-      var regex = dettagli_form[input.id][1];
-			var text = input.value;
+function validazioneCampo(input) {
+  var validator = dettagli_form[input.id][1];
 
-			var p = input.parentNode;
-			p.removeChild(p.children[2]);
+  var text = input.type === "file" && input.files.length > 0 ? input.files[0].name : input.value;
 
-			if(text.search(regex) != 0){
-                messaggio(input, 1);
-				input.focus(); 
-				input.select();
-				return false;
-			}
+  rimuoviMessaggi(input);
 
-			return true;
-		}
-		
-		function validazioneForm() {
-			for (var key in dettagli_form){
-				var input = document.getElementById(key);
-				if(!validazioneCampo(input)){
-					return false;
-				}
-			}
-			return true;
-		}
-			
-		function messaggio(input, mode) {
+  let valido;
+  if (typeof validator === "function") {
+    valido = validator(text);
+  } else {
+    valido = validator.test(text);
+  }
 
-			var node;
-			var p=input.parentNode; 
-			
+  if (!valido) {
+    messaggio(input, 1);
+    input.focus(); 
+    return false;
+  }
 
-      if (!mode) {
-          node = document.createElement('span');
-          node.className = 'suggForm';
-          node.appendChild(document.createTextNode(dettagli_form[input.id][0]));
-      } else {
-          node = document.createElement('span');
-          node.className = 'erroreForm';
-          node.setAttribute("role", "alert");
-          node.setAttribute("aria-live", "assertive");
-          node.appendChild(document.createTextNode(dettagli_form[input.id][2]));
-      }
-			
-			p.appendChild(node);
-		}
+  return true;
+}
+
+function validazioneForm() {
+  for (var key in dettagli_form) {
+    var input = document.getElementById(key);
+    if (!validazioneCampo(input)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function messaggio(input, mode) {
+  var node = document.createElement('span');
+  var config = dettagli_form[input.id];
+
+  if (!mode) {
+    node.className = 'suggForm';
+    node.textContent = config[0];
+  } else {
+    node.className = 'erroreForm';
+    node.setAttribute("role", "alert");
+    node.setAttribute("aria-live", "assertive");
+    node.textContent = config[2];
+  }
+
+  input.parentNode.appendChild(node);
+}
+
+function rimuoviMessaggi(input) {
+  var p = input.parentNode;
+  var spans = p.querySelectorAll(".suggForm, .erroreForm");
+  spans.forEach(s => p.removeChild(s));
+}

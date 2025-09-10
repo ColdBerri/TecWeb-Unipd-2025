@@ -1,8 +1,8 @@
 var dettagli_form = {
   "nome_videogioco": [
     '',
-    /^[a-zA-Z0-9\s:-]{2,30}$/,
-    'Il nome del videogioco deve essere lungo tra 2 e 30 caratteri e può contenere solo lettere, numeri e spazi'
+    /^[a-zA-Z0-9\s:-]{2,40}$/,
+    'Il nome del videogioco deve essere lungo tra 2 e 40 caratteri e può contenere solo lettere, numeri e spazi'
   ],
   
   "nome_evento": [
@@ -52,9 +52,8 @@ function riempimentoVar() {
 			p.removeChild(p.children[2]);
 
 			if(text.search(regex) != 0){
-                messaggio(input, 1);
+        messaggio(input, 1);
 				input.focus(); 
-				input.select();
 				return false;
 			}
 

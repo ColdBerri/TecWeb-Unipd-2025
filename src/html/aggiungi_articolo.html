@@ -4,8 +4,17 @@
 
         <form method="post" action="aggiungi_articolo.php" onsubmit="return validazioneForm();">
 
-            [addArticolo]
 
+            <fieldset class='selezionaLingua'>
+            
+                <div>
+
+                    <label for='nome_videogioco'>Seleziona Gioco:</label>
+                    <select name='nome_videogioco' id='nome_videogioco' required>
+
+                        <option value='' disabled selected>-- Seleziona un gioco --</option>
+                        [addArticolo]
+                        
             <fieldset>
                 <div>
                     <label for="titolo_articolo">Titolo:</label>

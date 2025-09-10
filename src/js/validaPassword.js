@@ -22,7 +22,6 @@ function riempimentoVar() {
 			if(text.search(regex) != 0){
                 messaggio(input, 1);
 				input.focus(); 
-				input.select();
 				return false;
 			}
 
