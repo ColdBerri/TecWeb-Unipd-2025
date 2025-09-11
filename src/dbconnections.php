@@ -3,20 +3,20 @@ namespace DB;
 
 class DBAccess {
 	//DOCKER
-/*
+
  
     private const HOST_DB = "db";
     private const DATABASE_NAME = "mydb";
     private const USERNAME = "mario";
     private const PASSWORD = "mario123";
-*/
+
 
 	//SERVER
 
-	private const HOST_DB = "localhost";
+	/*private const HOST_DB = "localhost";
     private const DATABASE_NAME = "mdioli";
     private const USERNAME = "mdioli";
-    private const PASSWORD = "ahCh3ahtouYoaNg1";
+    private const PASSWORD = "ahCh3ahtouYoaNg1";*/
 
 
 	private $connection;

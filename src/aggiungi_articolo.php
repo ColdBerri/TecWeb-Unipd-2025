@@ -56,8 +56,7 @@ if (!$connessioneOK) {
         }
         
     }
-    $select_giochi_html .= "</select>";
-    $cont = "<fieldset class='selezionaLingua'><div>" . $select_giochi_html . "</div></fieldset>";
+    $cont =$select_giochi_html;
     
     $connessione->closeConnection();
 

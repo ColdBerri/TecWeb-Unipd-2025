@@ -5,17 +5,8 @@ class Template {
     private $pagina;
     
     public function __construct($titolo,$description, $keywords, $pagina) {
-        $this->footer = '
-    <p>
-        <a href="assistenza.php">Assistenza</a> 
-        <a href="aboutus.php">La nostra storia</a>
-        <a href="https://jigsaw.w3.org/css-validator/check/referer">
-            <img style="border:0;width:88px;height:31px"
-            src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-            alt="Valid CSS!" />
-        </a>
-    </p>
-    <p><span lang="en">© 2025 VAPOR - Videogames\' Useless Opinions</span></p>';
+        $foot = 'html/footer.html';
+        $this->footer = file_get_contents($foot);
 
         $this->pagina = file_get_contents('html/template_html.html');
 
