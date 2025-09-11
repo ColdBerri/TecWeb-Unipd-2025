@@ -28,8 +28,8 @@ if(!$connessioneOK){
             foreach ($risultati as $gioco) {
                 $nome = ($gioco['nome_gioco']);
                 $immagine = htmlspecialchars($gioco['immagine']);
-                $html_risultati .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco={$nome}' ><div class='divCat'>";
-                $html_risultati .= "<img src='assets/img/$immagine' class='ImgGiocoCat' alt='vidoe'><p class='titolo_gioco'>$nome</p></div></a></li>";
+                $html_risultati .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco=". (urldecode($nome)). "' ><div class='divCat'>";
+                $html_risultati .= "<img src='assets/img/$immagine' class='ImgGiocoCat' alt=' '><p class='titolo_gioco'>$nome</p></div></a></li>";
             }
             $html_risultati .= "</ul>";
             $html_risultati .= "</div>";
@@ -58,7 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $paginaHTML = new Template("Categorie Giochi","Pagina di informazione su eventi, aggiornamenti, notizie e opinioni sul gaming","vapor, categorie, home, cerca","html/categorie.html");
-
 $lista = "";
 $categoriaComboBox = "";
 $videoScelto = "<div class='GiocoRicerca'>";
@@ -107,19 +106,25 @@ $lista = '';
             foreach ($giochi_da_visualizzare as $gioco) {
                 $nome = ($gioco['nome_gioco']);
                 $immagine = ($gioco['immagine']);
-                $lista .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco=" . ($nome) . "'><div class='divCat'>";
+                $lista .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco=" . (urldecode($nome)) . "'><div class='divCat'>";
                 $lista .= "<img src='assets/img/$immagine' class='ImgGiocoCat' alt=''><p class='titolo_gioco'>$nome</p></div></a></li>";
             }
             $lista .= "</ul>";
             $lista .= "</div>";
         }
     }
-    $categoriaComboBox.='<option value="tutte" [tutte] >Tutte</option>';
+    $categoriaComboBox.='<option value="tutte">Tutte</option>';
 foreach ($giochi_per_categoria as $categoria => $giochi) {
     $selected = ($selected_cat === $categoria) ? "selected" : "";
     $titolo_categoria_html = $nomi_categorie_html[$categoria]; 
-   
-    $categoriaComboBox .= "<option value='$categoria' $selected>$titolo_categoria_html</option>";
+
+    if(str_contains($titolo_categoria_html, "span")){
+        $categoriaComboBox .= "<option value='$categoria' $selected lang='en'>". strip_tags($titolo_categoria_html)."</option>";
+    } else {
+         $categoriaComboBox .= "<option value='$categoria' $selected>$titolo_categoria_html</option>";
+    }
+    
+    
 }
 
     $paginaHTML->aggiungiContenuto("[categoria]", $categoriaComboBox);
