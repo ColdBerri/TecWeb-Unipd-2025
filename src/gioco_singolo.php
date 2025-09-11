@@ -156,16 +156,16 @@ if(!$connessioneOK) {
                 $listaArticoli .= "<p>".$a['nome_videogioco']."</p>";
                 $listaArticoli .= "<p>".$a['titolo_articolo']."</p>";
                 $listaArticoli .= "</div></a></li>";
+                $nomeGioco = urlencode($nomeGioco);
                 
             }
             $listaArticoli .= "</ul></div>";
             if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
-                $nomeGioco = strip_tags($nomeGioco);
+                
                 $listaArticoli .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un articolo relativo a questo videogioco?</p><a href = 'aggiungi_articolo.php?gioco={$nomeGioco}' class='bottone_aggiungi_evento'> Aggiungi articolo</a></div>";
             }
         } else {
             if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
-                $nomeGioco = strip_tags($nomeGioco);
                 $listaArticoli .= "<p class='no_correlato'>Nessun articolo disponibile per questo gioco.";
                 $listaArticoli .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un articolo relativo a questo videogioco?</p><a href = 'aggiungi_articolo.php?gioco={$nomeGioco}' class='bottone_aggiungi_evento'> Aggiungi articolo</a></div>";
             }else{

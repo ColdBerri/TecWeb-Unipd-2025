@@ -20,7 +20,7 @@ if(!$connessioneOK){
     if ($evento) {
 
         $nome = $evento['nome_evento'];
-        $nomeVideogioco = $evento['nome_videogioco'];
+        $nomeVideogioco = urlencode($evento['nome_videogioco']);
         $gioco =$nomeVideogioco;
         $data_inizio = $evento['data_inizio_evento'];
         $data_fine = $evento['data_fine_evento'];

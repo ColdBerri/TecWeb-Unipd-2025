@@ -32,9 +32,7 @@ if(!$connessioneOK){
 
         $categoria = trim($_POST["categoria"]);
         $successo = $connessione->addGioco($nome, $casa, $console, $descrizione, $anno, $immagine, $categoria);
-
         $connessione->closeConnection();
-
         if ($successo) {
             header('Location: aggiungi_videogioco.php?success=1');
             exit;
@@ -42,6 +40,8 @@ if(!$connessioneOK){
             header('Location: aggiungi_videogioco.php?success=0');
             exit;
         }
+
+
     }
 }
 

@@ -25,7 +25,7 @@ if(!$connessioneOK){
         $dataP = $articolo['data_pubblicazione'];
         $autore = $articolo['autore'];
         $testo = $articolo['testo_articolo'];
-        $nomeVideogioco = $articolo['nome_videogioco'];
+        $nomeVideogioco = urlencode($articolo['nome_videogioco']);
 
         $gioco = $nomeVideogioco;
 

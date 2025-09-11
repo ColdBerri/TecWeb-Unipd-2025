@@ -63,7 +63,8 @@ if (!$connessioneOK) {
         }
         
     }
-    $cont =$select_giochi_html;
+    $select_giochi_html .= "</select>";
+    $cont = $select_giochi_html . "</div></fieldset>";  
 
     $connessione->closeConnection();
 

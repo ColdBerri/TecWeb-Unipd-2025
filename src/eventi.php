@@ -104,10 +104,12 @@ while ($giornoCorrente <= $numeroGiorni) {
                 $nomeEvento = ($ev['nome_evento']);
                 $eventoLink = ($ev['nome_evento']);
 
+                $eventoLinkE = urlencode($eventoLink);
+
                 if (!($tmp && $giornoCorrente == $oggiG)) {
-                    $calendarioHTML .= "<td data-title='$giornoSettimanaC'><span class='eventoPresente'>$giornoCorrente</span><a href='evento_singolo.php?nome_evento={$eventoLink}'><p class='marked'>$nomeEvento</p></a></td>";
+                    $calendarioHTML .= "<td data-title='$giornoSettimanaC'><span class='eventoPresente'>$giornoCorrente</span><a href='evento_singolo.php?nome_evento={$eventoLinkE}'><p class='marked'>$nomeEvento</p></a></td>";
                 } else {
-                    $calendarioHTML .= "<td data-title='$giornoSettimanaC'><span class='eventoPresenteOggi'>$giornoCorrente</span><a href='evento_singolo.php?nome_evento={$eventoLink}'><p class='marked'>$nomeEvento</p></a></td>";
+                    $calendarioHTML .= "<td data-title='$giornoSettimanaC'><span class='eventoPresenteOggi'>$giornoCorrente</span><a href='evento_singolo.php?nome_evento={$eventoLinkE}'><p class='marked'>$nomeEvento</p></a></td>";
                 }
                 $eventoStampato = true;
             }
