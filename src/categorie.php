@@ -28,7 +28,7 @@ if(!$connessioneOK){
             foreach ($risultati as $gioco) {
                 $nome = ($gioco['nome_gioco']);
                 $immagine = htmlspecialchars($gioco['immagine']);
-                $html_risultati .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco=". (urldecode($nome)). "' ><div class='divCat'>";
+                $html_risultati .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco=". (urlencode($nome)). "' ><div class='divCat'>";
                 $html_risultati .= "<img src='assets/img/$immagine' class='ImgGiocoCat' alt=' '><p class='titolo_gioco'>$nome</p></div></a></li>";
             }
             $html_risultati .= "</ul>";
@@ -106,7 +106,7 @@ $lista = '';
             foreach ($giochi_da_visualizzare as $gioco) {
                 $nome = ($gioco['nome_gioco']);
                 $immagine = ($gioco['immagine']);
-                $lista .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco=" . (urldecode($nome)) . "'><div class='divCat'>";
+                $lista .= "<li><a class='link_giocosingolo' href='gioco_singolo.php?gioco=" . (urlencode($nome)) . "'><div class='divCat'>";
                 $lista .= "<img src='assets/img/$immagine' class='ImgGiocoCat' alt=''><p class='titolo_gioco'>$nome</p></div></a></li>";
             }
             $lista .= "</ul>";
