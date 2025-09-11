@@ -21,13 +21,14 @@ if(!$connessioneOK){
 
         $nome = $evento['nome_evento'];
         $nomeVideogioco = urlencode($evento['nome_videogioco']);
-        $gioco =$nomeVideogioco;
+        $gioco =urldecode($nomeVideogioco);
         $data_inizio = $evento['data_inizio_evento'];
         $data_fine = $evento['data_fine_evento'];
         $squadre = $evento['squadre_coinvolte'];
         $vincitore = $evento['vincitore_evento'];
         $paginaHTML->aggiungiContenuto("{{nome}}", $nome);
-        $paginaHTML->aggiungiContenuto("{{gioco}}", $gioco);
+        $paginaHTML->aggiungiContenuto("{{gioco}}", $nomeVideogioco);
+        $paginaHTML->aggiungiContenuto("{{gn}}", $gioco);
         $paginaHTML->aggiungiContenuto("{{dataI}}", $data_inizio); 
         if($data_fine !== null){
             $paginaHTML->aggiungiContenuto("{{dataF}}", $data_fine); 

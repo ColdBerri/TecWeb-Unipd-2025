@@ -27,14 +27,14 @@ if(!$connessioneOK){
         $testo = $articolo['testo_articolo'];
         $nomeVideogioco = urlencode($articolo['nome_videogioco']);
 
-        $gioco = $nomeVideogioco;
+        $gioco = urldecode($nomeVideogioco);
 
-        $paginaHTML->aggiungiContenuto("[link_gioco]", $nomeVideogioco);
 
         $paginaHTML->aggiungiContenuto("{{nomeArt}}", $artName);
         $paginaHTML->aggiungiContenuto("{{autore}}", $autore);
         $paginaHTML->aggiungiContenuto("{{data}}", $dataP);
-        $paginaHTML->aggiungiContenuto("{{gioco}}", $gioco);
+        $paginaHTML->aggiungiContenuto("{{gioco}}", $nomeVideogioco);
+        $paginaHTML->aggiungiContenuto("{{gn}}", $gioco);
         $paginaHTML->aggiungiContenuto("{{testo}}", $testo);
 
     }else{
