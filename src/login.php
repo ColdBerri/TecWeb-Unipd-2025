@@ -6,10 +6,18 @@ $paginaHTML = new Template("Login","pagina di accesso con account registrato e l
 use DB\DBAccess;
 $game = "";
 $t = "";
+
+if(isset($_GET['gioco'])) $backVideo = $_GET['gioco'] ?? " ";
+
+$g = $backVideo;
+
 if(isset($_SESSION['nickname'])){
     header("Location: profilo.php");
     exit;
 }
+
+$paginaHTML->aggiungiContenuto("[p]",$backVideo);
+
 if (isset($_POST['submit'])) {
     $user = ($_POST['username']);
     $pass = ($_POST['password']);
@@ -41,14 +49,12 @@ if (isset($_POST['submit'])) {
                     if($user_data['password_'] === $pass){
                         $_SESSION['nickname'] = $user_data['nickname'];
 
-                    $backVideo = $_SESSION['nomeGioco'] ?? null;
-
-                    if (empty($backVideo)) {
+                    if ($g) {
                         header("Location: profilo.php");
                         exit;
                     } else {
-                        unset($_SESSION['nomeGioco']);
-                        header("Location: gioco_singolo.php?gioco={$backVideo}");
+                        $g = urlencode($g);
+                        header("Location: gioco_singolo.php?gioco={$g}");
                         exit;
                     }
                         
