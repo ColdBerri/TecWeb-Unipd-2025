@@ -12,12 +12,12 @@ class DBAccess {
 
 
 	//SERVER
-
+/*
 	private const HOST_DB = "localhost";
     private const DATABASE_NAME = "mdioli";
     private const USERNAME = "mdioli";
     private const PASSWORD = "ahCh3ahtouYoaNg1";
-
+*/
 
 	private $connection;
 

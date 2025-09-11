@@ -11,31 +11,18 @@ document.addEventListener('DOMContentLoaded', function() {
         resultsContainer.innerHTML = '';
         resultsContainer.setAttribute('aria-label', 'Risultati azzerati');
         if (categoryResultsContainer) {
-            categoryResultsContainer.style.display = 'block';
+            categoryResultsContainer.classList.remove('hide-category-results');
+            categoryResultsContainer.classList.add('show-category-results');
         }
     }
 
     // ricerca e aggiorna risultati
     function performSearch(query) {
         if (categoryResultsContainer) {
-            categoryResultsContainer.style.display = 'none';
+            categoryResultsContainer.classList.remove('show-category-results');
+            categoryResultsContainer.classList.add('hide-category-results');
         }
 
-        fetch(`categorie.php?ajax_search=1&query=${encodeURIComponent(query)}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Errore di rete');
-                }
-                return response.text();
-            })
-            .then(html => {
-                resultsContainer.innerHTML = html;
-                resultsContainer.setAttribute('aria-label', 'Risultati della ricerca aggiornati');
-            })
-            .catch(error => {
-                console.error('Errore durante la ricerca:', error);
-                resultsContainer.innerHTML = '<p class="erroreRicerca">Si è verificato un errore durante la ricerca.</p>';
-            });
     }
 
     if (searchInput) {

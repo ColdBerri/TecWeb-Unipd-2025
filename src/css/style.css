@@ -2526,3 +2526,11 @@ footer p>a{
   white-space: nowrap;
   border: 0;
 }
+
+.hide-category-results {
+    display: none;
+}
+
+.show-category-results {
+    display: block;
+}
