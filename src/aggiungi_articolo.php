@@ -36,7 +36,14 @@ if (!$connessioneOK) {
             $autore = trim($_POST['autore']);
             $data_pubblicazione = trim($_POST['data_pubblicazione']);
             $testo = trim($_POST['testo_articolo']);
-            $connessione->addArticolo($titolo_articolo, $autore, $data_pubblicazione, $testo, $gioco_da_inserire);
+            $successo = $connessione->addArticolo($titolo_articolo, $autore, $data_pubblicazione, $testo, $gioco_da_inserire);
+            if ($successo) {
+                header('Location: aggiungi_videogioco.php?success=1');
+                exit;
+            } else {
+                header('Location: aggiungi_videogioco.php?success=0');
+                exit;
+            }
         }
     
     }
@@ -57,7 +64,7 @@ if (!$connessioneOK) {
         
     }
     $cont =$select_giochi_html;
-    
+
     $connessione->closeConnection();
 
 }

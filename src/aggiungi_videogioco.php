@@ -30,15 +30,18 @@ if(!$connessioneOK){
             $casa = $casaTmp;
         }
 
-        
         $categoria = trim($_POST["categoria"]);
-        try {
-            $connessione->addGioco($nome, $casa, $console, $descrizione, $anno, $immagine, $categoria);
-            $messaggio = "<p >Gioco aggiunto correttamente!</p>";
-        } catch (Exception $e) {
-            $messaggio = "<p>Errore: " . htmlspecialchars($e->getMessage()) . "</p>";
-        }
+        $successo = $connessione->addGioco($nome, $casa, $console, $descrizione, $anno, $immagine, $categoria);
+
         $connessione->closeConnection();
+
+        if ($successo) {
+            header('Location: aggiungi_videogioco.php?success=1');
+            exit;
+        } else {
+            header('Location: aggiungi_videogioco.php?success=0');
+            exit;
+        }
     }
 }
 

@@ -41,7 +41,7 @@ if(!$connessioneOK){
             $squadre = trim($_POST['squadre_coinvolte']);
             $vincitore = trim($_POST['vincitore_evento']);
 
-            $connessione->addEvento($nome_evento, $gioco_da_inserire, $data_inizio, $data_fine, $squadre, $vincitore);
+            $successo = $connessione->addEvento($nome_evento, $gioco_da_inserire, $data_inizio, $data_fine, $squadre, $vincitore);
         }
 
     }
@@ -61,7 +61,13 @@ if(!$connessioneOK){
 
     $select_giochi_html .= "</select>";
     $cont = $select_giochi_html . "</div></fieldset>";        
-
+    if ($successo) {
+        header('Location: aggiungi_videogioco.php?success=1');
+        exit;
+    } else {
+        header('Location: aggiungi_videogioco.php?success=0');
+        exit;
+    }
     $connessione->closeConnection();
 }   
 
