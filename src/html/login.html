@@ -1,28 +1,30 @@
 <div class="form-container">
-    <div class="form-box">
-        <h1 id="content" class="form-welcome-message">Accedi</h1>
-        <form action="login.php" method="POST" id="login">
-            <fieldset>
-                <label for="username"><span lang="en"><strong>Username</strong></span>:</label>
-                <input type="text" id="username" name="username" required>
-            </fieldset>
+        <div class="form-box">
+            <h1 id="content" class="form-welcome-message">Accedi</h1>
+            <form action="login.php" method="POST" id="login">
+                <fieldset>
+                    <label for="username"><span lang="en"><strong>Username</strong></span>:</label>
+                    <input type="text" id="username" name="username" required>
+                </fieldset>
 
-            <fieldset>
-                <label for="password"><span lang="en"><strong>Password</strong></span>:</label>
-                <input type="password" id="password" name="password" required>
-            </fieldset>
+                <fieldset>
+                    <label for="password"><span lang="en"><strong>Password</strong></span>:</label>
+                    <input type="password" id="password" name="password" required>
+                </fieldset>
+            
+                <div class="button-container">
+                    <input type="submit" name="submit" class="submit_button" value="Accedi">
+                    <input type="button" class="cancella" onclick="window.location.href='index.php';" value="Annulla">
+                </div>
 
-            <div class="button-container">
-                <input type="submit" name="submit" class="submit_button" value="Accedi">
-                <input type="button" class="cancella" onclick="window.location.href='index.php';" value="Annulla">
-            </div>
+                <fieldset>
+                    [fieldset]
+                </fieldset>
 
-            <p class="register-link">Non hai un <span lang="en">account</span>? <a href="registra.php" class="registra_linkB">Registrati!</a></p>
-        </form>
+                <p class="register-link">Non hai un <span lang="en">account</span>? <a href="registra.php" class="registra_linkB">Registrati!</a></p>
+            </form>
+        </div>
     </div>
-</div>
-
-[p]
 
 <div>
     <a class="navicationHelp" href="#content">Torna su</a></li>

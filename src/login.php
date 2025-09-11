@@ -6,21 +6,20 @@ $paginaHTML = new Template("Login","pagina di accesso con account registrato e l
 use DB\DBAccess;
 $game = "";
 $t = "";
-
-if(isset($_GET['gioco'])) $backVideo = $_GET['gioco'] ?? " ";
-
-$g = $backVideo;
-
 if(isset($_SESSION['nickname'])){
     header("Location: profilo.php");
     exit;
 }
 
-$paginaHTML->aggiungiContenuto("[p]",$backVideo);
+$backVideo = "";
+
+if (isset($_GET['nomeLinkGioco'])) 
+    $backVideo = $_GET['nomeLinkGioco'];
 
 if (isset($_POST['submit'])) {
     $user = ($_POST['username']);
     $pass = ($_POST['password']);
+    $gioco = ($_POST['gioco']) ?? null;
 
     if(!empty($user) && !empty($pass) && !is_numeric($user)){
 
@@ -48,13 +47,13 @@ if (isset($_POST['submit'])) {
 
                     if($user_data['password_'] === $pass){
                         $_SESSION['nickname'] = $user_data['nickname'];
-
-                    if ($g) {
+                
+                    if (empty($gioco)) {
                         header("Location: profilo.php");
                         exit;
                     } else {
-                        $g = urlencode($g);
-                        header("Location: gioco_singolo.php?gioco={$g}");
+                        $giocoL = urlencode($gioco );
+                        header("Location: gioco_singolo.php?gioco={$giocoL}");
                         exit;
                     }
                         
@@ -62,6 +61,7 @@ if (isset($_POST['submit'])) {
                         header("Location: login.php?errore=errore_login");
                         exit();
                     }
+                    
                 } else {
                     header("Location: login.php?errore=errore_login");
                     exit();
@@ -71,6 +71,11 @@ if (isset($_POST['submit'])) {
         }
     }
 }
+
+
+$postGet = '<input type="hidden" name="gioco" value="' . htmlspecialchars($backVideo) . '">';
+
+$paginaHTML->aggiungiContenuto("[fieldset]",$postGet);
 
 $paginaHTML->getPagina();
 
