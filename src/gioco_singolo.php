@@ -30,8 +30,6 @@ if(!$connessioneOK) {
     if(isset($_SESSION['nickname']))
         $ok = $connessione->isReattore($_SESSION['nickname'],$nomeGioco);
 
-    $_SESSION['nomeGioco'] = $nomeGioco;
-
     if($dati){
         
         $categoria = $dati['categoria'];
@@ -74,11 +72,13 @@ if(!$connessioneOK) {
             } else {
                 $form = 'html/extra_form.html';
                 $formRecensioneHTML = file_get_contents($form);
-                $formRecensioneHTML = str_replace('{{nome}}', htmlspecialchars($nomeGioco), $formRecensioneHTML);            }
+                $formRecensioneHTML = str_replace('{{nome}}', htmlspecialchars($nomeGioco), $formRecensioneHTML);         
+            }
         
         } else {
             $form = 'html/extra_form2.html';
             $formRecensioneHTML = file_get_contents($form);
+            $formRecensioneHTML = str_replace('[linkGioco]', urlencode($nomeGioco), $formRecensioneHTML)  ; 
         }
 
     
