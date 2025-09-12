@@ -126,14 +126,14 @@ if(!$connessioneOK) {
                 $dataCompleta = date('d F Y', strtotime($e['data_inizio_evento']));
                 $dataCompleta = traduciData($dataCompleta);
                 $nomeEvent = urlencode($e['nome_evento']);
-                $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='miniCalendario'>";        
+                $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={}'><div class='miniCalendario'>";        
                 $listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
                 $listaEventi .= "<div class='miniCalendarioB'>" . ($e['nome_evento']) . "</div>";
                 $listaEventi .= "</div></a></li>";
             }
             $listaEventi .= "</ul></div>";
             if(isset($_SESSION['nickname']) && $_SESSION['nickname'] === 'admin'){
-                $nomeGioco = htmlspecialchars($nomeGioco);
+                //$nomeGioco = htmlspecialchars($nomeGioco);
                 $listaEventi .= "<div class='box_nuovo_evento'><p class='msg_nuovo_evento'>Vuoi aggiungere un evento relativo a questo videogioco?</p><a href = 'aggiungi_evento.php?gioco={$nomeGioco}' class='bottone_aggiungi_evento'> Aggiungi evento</a></div>";
             } 
         } else {
@@ -157,7 +157,7 @@ if(!$connessioneOK) {
                 $listaArticoli .= "<p>".$a['nome_videogioco']."</p>";
                 $listaArticoli .= "<p>".$a['titolo_articolo']."</p>";
                 $listaArticoli .= "</div></a></li>";
-                $nomeGioco = urlencode($nomeGioco);
+                //$nomeGioco = urlencode($nomeGioco);
                 
             }
             $listaArticoli .= "</ul></div>";
