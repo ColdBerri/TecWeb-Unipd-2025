@@ -68,7 +68,7 @@ $data = traduciData($data);
 
 
 $calendarioHTML .= "<thead>";
-$calendarioHTML .= "<div><tr class='mese_selezionato'><th colspan='7'><div>" . $data . "</div></th></tr></div>";
+$calendarioHTML .= "<tr class='mese_selezionato'><th colspan='7'><div>" . $data . "</div></th></tr>";
 
 $tmp = false;
 if (date('m', $primoGiorno) === $oggiM && date('y', $primoGiorno) === $oggiY) {

@@ -107,6 +107,7 @@ if(!$connessioneOK) {
             
 
             }
+            $recensioniHTML.="</ul>";
         } else {
             $recensioniHTML .= "<div class='box_recensioni'><p>Ancora nessuna recensione.</p></div>";
         }

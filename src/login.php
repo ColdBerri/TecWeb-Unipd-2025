@@ -72,7 +72,7 @@ if (isset($_POST['submit'])) {
 }
 
 
-$postGet = '<input type="hidden" name="gioco" value="' . htmlspecialchars($backVideo) . '">';
+$postGet = htmlspecialchars($backVideo) ;
 
 $paginaHTML->aggiungiContenuto("[fieldset]",$postGet);
 
