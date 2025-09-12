@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let debounceTimeout;
 
-    //ripristinare la visualizzazione iniziale
     function resetToDefaultView() {
         resultsContainer.innerHTML = '';
         resultsContainer.setAttribute('aria-label', 'Risultati azzerati');
@@ -16,29 +15,45 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ricerca e aggiorna risultati
     function performSearch(query) {
         if (categoryResultsContainer) {
             categoryResultsContainer.classList.remove('show-category-results');
             categoryResultsContainer.classList.add('hide-category-results');
         }
 
+        const encodedQuery = encodeURIComponent(query);
+        const url = `categorie.php?ajax_search=1&query=${encodedQuery}`;
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Errore di rete');
+                }
+                return response.text();
+            })
+            .then(data => {
+                resultsContainer.innerHTML = data;
+                resultsContainer.setAttribute('aria-label', `Risultati per ${query}`);
+            })
+            .catch(error => {
+                console.error('Errore nella ricerca:', error);
+            });
     }
 
     if (searchInput) {
         searchInput.addEventListener('input', function() {
             const query = this.value.trim();
             
+            clearTimeout(debounceTimeout);
+            
             if (query.length === 0) {
-                clearTimeout(debounceTimeout); 
                 resetToDefaultView();
                 return;
             }
 
-            clearTimeout(debounceTimeout);
             debounceTimeout = setTimeout(() => {
                 performSearch(query);
-            }, 300);
+            }, 300); 
         });
     }
 
@@ -52,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 searchInput.value = '';
                 searchInput.blur();
-
             } else {
                 resetToDefaultView();
             }
