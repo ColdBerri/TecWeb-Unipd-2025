@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function resetToDefaultView() {
         resultsContainer.innerHTML = '';
-        resultsContainer.setAttribute('aria-label', 'Risultati azzerati');
         if (categoryResultsContainer) {
             categoryResultsContainer.classList.remove('hide-category-results');
             categoryResultsContainer.classList.add('show-category-results');
@@ -33,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 resultsContainer.innerHTML = data;
-                resultsContainer.setAttribute('aria-label', `Risultati per ${query}`);
             })
             .catch(error => {
                 console.error('Errore nella ricerca:', error);

@@ -32,8 +32,7 @@ if (!$connessioneOK) {
     if ($rec) {
         $testo = $rec['contenuto_recensione'];
         $stelle = $rec['numero_stelle'];
-        $giochiSingolo = $rec['nome_videogioco'];
-
+        $giochiSingolo = urlencode($rec['nome_videogioco']);
     }
 }
 
@@ -52,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if(isset($_POST['stellem']))
             $stelle = intval($_POST['stellem']);
    
-
         $success = $connessione->modificaRecensione($id, $testo, $stelle);
 
         if ($success) {
