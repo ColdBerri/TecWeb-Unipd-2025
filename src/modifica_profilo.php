@@ -22,14 +22,13 @@ if(!$connessioneOK){
         $stmt->execute();
         $stmt->bind_result($confronto);
         if (!$stmt->fetch()) {
-            // Nessun utente trovato
             $stmt->close();
             die("Errore: utente non trovato.");
         }
         $stmt->close();
 
         if ($vecchia_pass!==$confronto || $nuova_pass !== $conf_nuova || $vecchia_pass === $nuova_pass) {
-            header("Location: modifica_profilo.php");
+            header("Location: modifica_profilo.php?errore=password_diverse");
             exit();
         }
         $vecchia_pass = $connessione->parser($vecchia_pass);
