@@ -2180,10 +2180,17 @@ li.single_review {
     text-decoration: none;   
     text-align: center;
     border-radius: 0.5em;
+    transition: box-shadow 0.3s ease; /* animazione morbida */
 }
+
+.pulsanteModificaRec:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* ombra scura */
+}
+
 /* Testo recensione */
 p.testo_recensione {
     margin: 0;
+    margin-bottom: 0.5em;
     font-size: 1em;
     color: black;
 }
