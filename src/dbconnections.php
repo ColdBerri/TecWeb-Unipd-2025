@@ -134,12 +134,13 @@ class DBAccess {
 		}
 	}
 
-	public function parser($value){
-		$value = trim($value);
-		$value = strip_tags($value);
-		$value = htmlentities($value);
-		return $value;
-	}
+public function parser($value) {
+    $value = trim($value);                  // Rimuove spazi iniziali/finali
+    $value = strip_tags($value);            // Rimuove tag HTML
+//    $value = stripslashes($value);          // Rimuove backslash \ inseriti da magic_quotes
+    $value = htmlentities($value, ENT_QUOTES, 'UTF-8'); // Converte caratteri speciali
+    return $value;
+}
 
 	public function videogiochi_categoria($categoria) {
 		$query = "SELECT nome_gioco, immagine, categoria FROM Videogiochi WHERE categoria = ?";
