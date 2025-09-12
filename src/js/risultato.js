@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     const risultatoDiv = document.getElementById('risultato-form');
-
     const params = new URLSearchParams(window.location.search);
 
     if (params.has('success')) {
@@ -15,5 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         risultatoDiv.appendChild(messaggio);
+
+        document.addEventListener('click', function(event) {
+            const formContainer = event.target.closest('.form-box');
+
+            if (formContainer && formContainer.id === 'registration-form' && risultatoDiv.contains(messaggio)) {
+                risultatoDiv.removeChild(messaggio);
+            }
+        });
+
+        document.addEventListener('input', function(event) {
+            const formContainer = event.target.closest('.form-box');
+            if (formContainer && formContainer.id === 'registration-form' && risultatoDiv.contains(messaggio)) {
+                risultatoDiv.removeChild(messaggio);
+            }
+        });
     }
 });

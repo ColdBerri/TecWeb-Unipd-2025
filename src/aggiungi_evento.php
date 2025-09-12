@@ -43,10 +43,10 @@ if(!$connessioneOK){
 
             $successo = $connessione->addEvento($nome_evento, $gioco_da_inserire, $data_inizio, $data_fine, $squadre, $vincitore);
                 if ($successo) {
-                    header('Location: aggiungi_videogioco.php?success=1');
+                    header('Location: aggiungi_evento.php?success=1');
                     exit;
                 } else {
-                    header('Location: aggiungi_videogioco.php?success=0');
+                    header('Location: aggiungi_evento.php?success=0');
                     exit;
                 }
         }
