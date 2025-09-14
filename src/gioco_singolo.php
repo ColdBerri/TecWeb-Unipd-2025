@@ -126,7 +126,7 @@ if(!$connessioneOK) {
                 $dataCompleta = date('d F Y', strtotime($e['data_inizio_evento']));
                 $dataCompleta = traduciData($dataCompleta);
                 $nomeEvent = urlencode($e['nome_evento']);
-                $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={}'><div class='miniCalendario'>";        
+                $listaEventi .= "<li><a href='evento_singolo.php?nome_evento={$nomeEvent}'><div class='miniCalendario'>";        
                 $listaEventi .= "<div class='miniCalendarioH'>" . $dataCompleta . "</div>";
                 $listaEventi .= "<div class='miniCalendarioB'>" . ($e['nome_evento']) . "</div>";
                 $listaEventi .= "</div></a></li>";
