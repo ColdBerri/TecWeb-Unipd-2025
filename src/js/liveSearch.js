@@ -25,16 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         fetch(url)
             .then(response => {
-                if (!response.ok) {
-                    throw new Error('Errore di rete');
-                }
                 return response.text();
             })
-            .then(data => {
-                resultsContainer.innerHTML = data;
+            .then(html => {
+                resultsContainer.innerHTML = html;
             })
             .catch(error => {
-                console.error('Errore nella ricerca:', error);
+                console.error('Errore durante la ricerca:', error);
             });
     }
 
