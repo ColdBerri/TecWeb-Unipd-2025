@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
                         header("Location: gioco_singolo.php?gioco={$giocoL}");
                         exit;
                     }
-                        
+                    
                     }else {
                         header("Location: login.php?errore=errore_login");
                         exit();
