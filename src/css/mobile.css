@@ -50,7 +50,7 @@ nav.menuHamberger {
 }
 
 #content{
-  margin-top: 2.5em;
+  margin-top: 1.5em;
 }
 
 
@@ -509,4 +509,13 @@ ul.tutte_recensioni {
 .form-container
 {
   margin-top: 4em;
+}
+
+
+.profilo-box {
+  margin-left: 1em;
+  margin-right: 1em;
+  max-width: 20em; 
+  margin-left: auto;
+  margin-right: auto;
 }
