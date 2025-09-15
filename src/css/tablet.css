@@ -23,12 +23,19 @@
     pointer-events: none;
 }
 
+
+
 .burger:focus-visible, 
 .exit:focus-visible,
 .navicationHelp:focus-visible {
   outline: 3px solid #005fcc;
   outline-offset: 2px;
   border-radius: 3px;
+}
+
+.burger img {
+  width: 40px;   /* aumenta la larghezza */
+  height: auto;  /* mantiene le proporzioni */
 }
 
 .nascondi {
@@ -65,11 +72,15 @@
 }
 
 .exit {
-    position: absolute;
-    top: 1em;
-    right: 1em;
-    padding: 0.5em;
-    line-height: 0;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  padding: 1em; /* Aumentato il padding */
+  line-height: 1; /* Aumentato il line-height */
+  background-color: red;
+  font-size: 2em; /* Aumentata la dimensione del font */
+  width: 1em; /* Aggiunto larghezza */
+  height: 1em; /* Aggiunto altezza */
 }
 
 .exit img {
@@ -107,17 +118,30 @@ section,
   position: relative;
 }
 
-.burger {
-  display: block;
-  margin-left: auto;
-  position: absolute;
-  padding: 1em;
-  right: 0;
-}
 
 .burger>img {
   width: 2.2em;
   cursor: pointer;
+}
+
+.burger {
+  position: absolute;
+  right: 0;
+  margin-left: auto;
+  padding: 0.6em;           /* ingrandisce la hitbox */
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;     /* centra l’immagine */
+  align-items: center;
+  justify-content: center;
+}
+
+.burger img {
+  display: block;
+  width: 4em;   /* dimensione visiva dell’icona */
+  height: auto;
+  pointer-events: none;     /* così il click prende il button, non l’img */
 }
 
 nav.menuHamberger {
@@ -155,12 +179,32 @@ nav.menuHamberger {
   z-index: 9998;
 }
 
-.exit img {
+.exit {
   position: absolute;
-  right: 1.9em;
   top: 1.9em;
-  width: 2em;
+  right: 1.9em;
+  padding: 0.4em;      /* aumenta l’area cliccabile */
+  border: none;
+  background: none;
+  line-height: 0;
   cursor: pointer;
+  display: inline-flex; /* utile per centrare l'immagine */
+  align-items: center;
+  justify-content: center;
+}
+
+.exit img {
+  display: block;
+  width: 1.2em;   /* grandezza visiva */
+  height: auto;
+}
+
+
+
+
+.navbar_link
+{
+  font-size: 1.2em;
 }
 
 .nascondi {
@@ -169,7 +213,7 @@ nav.menuHamberger {
   right: -100%;
   width: 70%;
   height: 100%;
-  background-color: #111;
+  background-color: var(--headerbgcolor);
   transition: right 0.3s ease;
   z-index: 999;
   padding: 20px;
@@ -203,6 +247,8 @@ nav.menuHamberger>ul>li {
 ul .current-page{
   font-weight: normal;
   font-size: 1.2em;
+  margin: 2em;
+  margin-bottom: 1em;
 }
 
 nav.menuHamberger>ul> :first-child {
@@ -216,7 +262,6 @@ li.current-page {
 }
 
 .navbar_link {
-  background-color: var(--div_navbar_link);
   padding: 0.7em;
   font-weight: bold;
 }
@@ -225,7 +270,7 @@ li.current-page {
 
 .nav-menu,
 .nascondi {
-  background-color: #333;
+  background-color: var(--headerbgcolor);
 }
 
 /* Voci di menu */
