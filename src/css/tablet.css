@@ -279,6 +279,11 @@ div.login-box {
   margin-top: 1em;
 }
 
+.h2_eventi
+{
+  margin: -1.5em;
+}
+
 /* Solo per eventi e notizie */
 .eventi-home,
 .notizie-home, .miniCalendario, .miniGiornale {
@@ -287,6 +292,7 @@ div.login-box {
   margin: 0 auto;
   /* Centrato orizzontalmente con margini automatici */
   padding: 1em;
+  margin-bottom: 1em;
   border-radius: 0.7em;
   /* Manteniamo il bordo arrotondato */
 }
