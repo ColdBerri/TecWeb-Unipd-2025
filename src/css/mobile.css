@@ -207,6 +207,7 @@ div.categoria>h2{
 div.divCat .titolo_gioco{
   max-height: 100%;
   text-overflow:ellipsis;
+  text-decoration: underline;
 }
 
 .divCat {
