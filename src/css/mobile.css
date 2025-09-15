@@ -386,7 +386,6 @@ div.login-box {
   font-size: 0.8em;
   color: #333;
   appearance: none; /* Rimuove lo stile di default del browser */
-  background-image: url("https://api.iconify.design/mdi/chevron-down.svg?color=%23333"); /* Freccia custom */
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 1.5em;
