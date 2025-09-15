@@ -563,7 +563,6 @@ details summary {
 
 .game_detail {
     margin: 0.25em 0; /* Leggera modifica per allineamento */
-    background-color: var(--div_navbar_link);
     border-radius: 0.25em;
     padding: 1em;
 }
