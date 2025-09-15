@@ -59,11 +59,24 @@ if(!$connessioneOK){
     foreach ($lista_giochi as $singolo_gioco) {
         $nome_gioco_con_html = $singolo_gioco['nome_gioco'];
         $nome_gioco_pulito = strip_tags($nome_gioco_con_html);
+
         if ($nome_gioco_pulito === strip_tags($gioco_sel)) {
-            $select_giochi_html .= "<option value='{$nome_gioco_pulito}' selected>{$nome_gioco_con_html}</option>";
+
+            if(str_contains($nome_gioco_con_html, "span")){
+                $select_giochi_html .= "<option value='$nome_gioco_pulito'  lang='en' selected>". strip_tags($nome_gioco_con_html)."</option>";
+            } else{
+                $select_giochi_html .= "<option value='$nome_gioco_pulito' selected >$nome_gioco_con_html</option>";
+            }
+            
         } else {
-            $select_giochi_html .= "<option value='{$nome_gioco_pulito}'>{$nome_gioco_con_html}</option>";
+            if(str_contains($nome_gioco_con_html, "span")){
+                $select_giochi_html .= "<option value='$nome_gioco_pulito' lang='en'>". strip_tags($nome_gioco_con_html)."</option>";
+            }else{
+                $select_giochi_html .= "<option value='$nome_gioco_pulito'>$nome_gioco_con_html</option>";
+            }
+        
         }
+
     }
 
     $select_giochi_html .= "</select>";

@@ -114,17 +114,17 @@ $lista = '';
         }
     }
     $categoriaComboBox.='<option value="tutte">Tutte</option>';
-foreach ($giochi_per_categoria as $categoria => $giochi) {
-    $selected = ($selected_cat === $categoria) ? "selected" : "";
-    $titolo_categoria_html = $nomi_categorie_html[$categoria]; 
+    foreach ($giochi_per_categoria as $categoria => $giochi) {
+        $selected = ($selected_cat === $categoria) ? "selected" : "";
+        $titolo_categoria_html = $nomi_categorie_html[$categoria]; 
 
-    if(str_contains($titolo_categoria_html, "span")){
-        $categoriaComboBox .= "<option value='$categoria' $selected lang='en'>". strip_tags($titolo_categoria_html)."</option>";
-    } else {
-         $categoriaComboBox .= "<option value='$categoria' $selected>$titolo_categoria_html</option>";
-    }
-    
-    
+        if(str_contains($titolo_categoria_html, "span")){
+            $categoriaComboBox .= "<option value='$categoria' $selected lang='en'>". strip_tags($titolo_categoria_html)."</option>";
+        } else {
+             $categoriaComboBox .= "<option value='$categoria' $selected>$titolo_categoria_html</option>";
+        }
+
+
 }
 
     $paginaHTML->aggiungiContenuto("[categoria]", $categoriaComboBox);
