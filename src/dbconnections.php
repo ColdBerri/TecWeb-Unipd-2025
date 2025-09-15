@@ -82,7 +82,8 @@ class DBAccess {
 	}
 
 	public function five_little_events() {
-		$query = "SELECT nome_evento, nome_videogioco, data_inizio_evento FROM Eventi ORDER BY data_inizio_evento LIMIT 5";
+		$time = $_SERVER['REQUEST_TIME'];
+		$query = "SELECT nome_evento, nome_videogioco, data_inizio_evento FROM Eventi WHERE data_inizio_evento >= FROM_UNIXTIME({$time}) ORDER BY data_inizio_evento LIMIT 5";
 		$queryResult = mysqli_query($this->connection, $query) or die("Errore in allVideogame: " . mysqli_error($this->connection));
 
 		if(mysqli_num_rows($queryResult) == 0) {
