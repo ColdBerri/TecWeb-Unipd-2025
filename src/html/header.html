@@ -4,8 +4,13 @@
             <li><a href="#content" class="navicationHelp">Vai al contenuto</a></li>
         </ul>
     </nav>
+    
     <nav class="menu">
-        <a class="burger" onclick="apriMenu()"><img src="assets/menu_2.png" alt="apri menu laterale"></a>
+        <button class="burger" aria-haspopup="true" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="visually-hidden">Apri menu di navigazione</span>
+            <img src="assets/menu_2.png" alt="">
+        </button>
+
         <ul>
             [logo]
             [home]
@@ -16,12 +21,16 @@
         </ul>
     </nav>
 
-    <div class="overlayNascondi" role="button" onclick="chiudiMenu()" aria-label="chiudi menu laterale"></div>
+    <div class="overlayNascondi" aria-hidden="true"></div>
 
-    <nav class="nascondi">
+    <nav class="nascondi" id="mobile-menu" hidden>
        <ul>
-        <li>
-        <a class="exit" onclick="chiudiMenu()"><img src="assets/x_1.png" alt="chiudi menu"></a>   </li>
+            <li>
+                <button class="exit">
+                    <span class="visually-hidden">Chiudi menu di navigazione</span>
+                    <img src="assets/x_1.png" alt="">
+                </button>
+            </li>
             [home]
             [categorie]
             [eventi]
@@ -30,6 +39,5 @@
         </ul>
     </nav>
 
-  [breadcrump]
-
+    [breadcrump]
 </header>

@@ -1,3 +1,96 @@
+/* ================================================================ */
+/* BLOCCO FINALE CON STILE ORIGINALE RESTAURATO */
+/* ================================================================ */
+
+/* Classe per nascondere testo visivamente (necessaria per l'accessibilità) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Reset per i bottoni-icona */
+.burger, .exit {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Regola per l'immagine interna (fondamentale per far funzionare i click) */
+.burger img, .exit img {
+    pointer-events: none;
+}
+
+/* Stile di focus per la tastiera */
+.burger:focus-visible, 
+.exit:focus-visible,
+.navicationHelp:focus-visible {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Contenitore del menu a scomparsa con il tuo stile originale */
+.nascondi {
+  /* --- I TUOI STILI VISIVI ORIGINALI --- */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50%; /* La tua larghezza originale del 50% */
+  background-color: var(--headerbgcolor); /* Il tuo colore originale */
+  overflow-y: auto; /* Per lo scroll se il menu è lungo */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 1); /* La tua ombra originale */
+  padding-top: 1em;
+  padding-bottom: 4em;
+
+  /* --- LA MECCANICA FUNZIONANTE CHE ABBIAMO COSTRUITO --- */
+  position: fixed;
+  top: 0;
+  right: -100%; /* Posizione iniziale: fuori schermo */
+  height: 100vh;
+  z-index: 9999;
+  box-sizing: border-box;
+  transition: right 0.4s ease; /* Animazione sulla proprietà 'right' */
+}
+
+/* Regola per mostrare il menu */
+.nascondi:not([hidden]) {
+  right: 0; /* Posizione finale: sullo schermo */
+}
+
+/* Stile per l'overlay di sfondo */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+.exit {
+    position: absolute;
+    top: 1em;    /* Distanza dal bordo superiore del menu */
+    right: 1em;   /* Distanza dal bordo destro del menu */
+    padding: 0.5em; /* Aggiunge un po' di respiro attorno all'icona per un focus più visibile */
+    line-height: 0; /* Previene disallineamenti verticali dell'immagine */
+}
+
+/* Definisce la dimensione dell'icona 'X' all'interno del pulsante */
+.exit img {
+    width: 1.5em;
+    height: 1.5em;
+}
+/*FINE BLOCCO CHAT*/
+
 body,main{
   width: 100%;
 }
