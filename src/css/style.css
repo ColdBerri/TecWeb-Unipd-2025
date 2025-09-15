@@ -6,10 +6,10 @@
 
 :root {
     --bgcolor: #dddddd;
-    --headerbgcolor: #030507;
+    --headerbgcolor: #0A0000;
     --textcolor: #000000;
-    --linkcolor: #9497FF;
-    --linkvisited: #F0C800;
+    --linkcolor: #FFFFFF;
+    --linkvisited: #0079CA;
     --breadcrump-bg: black;
     --login-bgcolor: #1b2838;
     --login-box-bgcolor: #4d4e50;
@@ -19,6 +19,7 @@
     --div_navbar_link_hover: #000000;
     --grigiobg: #CBCBCB;
     --footer-bg: #030507;
+    --etichetta: #00AB7D;
 }
 
 html {
@@ -656,7 +657,6 @@ div.categoria>h2 {
 
 .lista-giochi>li:hover {
     transform: scale(1.05);
-    opacity: 0.5;
     cursor: pointer;
 }
 
@@ -871,7 +871,7 @@ td.giornoFuori>p {
 }
 
 .marked {
-    background-color: green;
+    background-color: var(--headerbgcolor);
     padding: 0.2em;
     font-size: 1em;
     color: white;
@@ -885,6 +885,15 @@ td.giornoFuori>p {
     /* Permette di andare a capo */
     hyphens: auto;
     /* Aggiunge il trattino "-" quando il testo va a capo */
+}
+/* Stile del testo per i link non visitati */
+.evento_calendario .marked {
+    color: var(--linkcolor);
+}
+
+/* Stile del testo per i link visitati */
+.evento_calendario:visited .marked {
+    color: var(--linkvisited);
 }
 
 .mese_selezionato th {
@@ -1063,7 +1072,7 @@ fieldset {
 .submit_button {
     float: right;
     width: 49%;
-    background-color: #17652B;
+    background-color: #0F822A;
     padding: 0.85em;
     color: white;
     border: none;
@@ -1082,7 +1091,7 @@ fieldset {
 .cancella {
     float: left;
     width: 49%;
-    background-color: #9A212D;
+    background-color: #C94855;
     padding: 0.85em;
     color: white;
     border: none;
@@ -1093,7 +1102,7 @@ fieldset {
 }
 
 .cancella:hover {
-    background-color: #7B1721;
+    background-color: #6b282f;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -1755,7 +1764,7 @@ fieldset.selezionaLingua{
     color: black;
     margin-bottom: 1em;
     padding: 1em;
-    border-left: 0.25em solid var(--linkvisited);
+    border-left: 0.25em solid var(--etichetta);
     background-color: var(--headerbgcolor);
     border-radius: 0.5em;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1770,7 +1779,6 @@ fieldset.selezionaLingua{
     font-weight: bold;
     width: 9.375em;
     min-width: 9.375em;
-    color: var(--headerbgcolor);
     vertical-align: top;
 }
 
@@ -1867,7 +1875,7 @@ fieldset.selezionaLingua{
 
 .etichetta {
     font-weight: bold;
-    color: var(--linkvisited);
+    color: var(--etichetta);
 }
 
 .valore_gioco,
@@ -1884,7 +1892,6 @@ fieldset.selezionaLingua{
     font-size: 2.5em;
     margin-top: 0;
     margin-bottom: 0.5em;
-    color: var(--linkvisited);
     text-shadow: 0.05em 0.05em 0.1em #000;
     text-align: center;
 }
@@ -1898,7 +1905,7 @@ fieldset.selezionaLingua{
 
 .etichetta {
     font-weight: bold;
-    color: var(--linkvisited);
+    color: var(--etichetta);
 }
 
 .valore_gioco,
@@ -2221,7 +2228,7 @@ a:visited .miniCalendario {
     text-align: center;
     color: var(--headerbgcolor);
     background-color: #444;
-    background-color: #00E1FF;
+    background-color: var(--etichetta);
     padding: 0.5em 0.8em;
     border-radius: 0.5em;
     font-size: 0.95em;

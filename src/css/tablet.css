@@ -557,7 +557,6 @@ details summary {
     font-size: 2.5em;
     margin-top: 0;
     margin-bottom: 0.5em;
-    color: var(--linkvisited);
     text-shadow: 0.05em 0.05em 0.1em #000;
     text-align: center;
 }
