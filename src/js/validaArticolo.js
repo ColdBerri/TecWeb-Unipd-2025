@@ -24,7 +24,7 @@ var dettagli_form = {
   ],
 
   "testo_articolo": [
-    'es: Questo aggiornamento introduce nuovi effetti visivi e texture HD.',
+    'es: Questo aggiornamento è buggato.',
     /^.{10,1000}$/,
     'Il testo dell\'articolo deve essere lungo almeno 10 caratteri'
   ]
