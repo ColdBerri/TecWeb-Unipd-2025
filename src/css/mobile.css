@@ -593,3 +593,8 @@ ul.tutte_recensioni {
   margin-left: auto;
   margin-right: auto;
 }
+
+.navbar_link
+{
+  font-size: 1.1em;
+}
