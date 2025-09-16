@@ -1,5 +1,3 @@
-/* --- INIZIO BLOCCO MENU ACCESSIBILE (FINALE) --- */
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -35,8 +33,8 @@
 }
 
 .burger img {
-  width: 40px;   /* aumenta la larghezza */
-  height: auto;  /* mantiene le proporzioni */
+  width: 40px;
+  height: auto;  
 }
 
 .nascondi {
@@ -56,10 +54,18 @@
   z-index: 9999;
   box-sizing: border-box;
   transition: right 0.4s ease;
+
+  /*adds*/
+  visibility: hidden;
+  transition: right 0.4s ease, visibility 0s 0.4s
 }
 
 .nascondi:not([hidden]) {
   right: 0;
+
+  /*adds*/
+  visibility: visible;
+  transition: right 0.4s ease;
 }
 
 .overlay {
@@ -76,12 +82,12 @@
   position: absolute;
   top: 1em;
   right: 1em;
-  padding: 1em; /* Aumentato il padding */
-  line-height: 1; /* Aumentato il line-height */
+  padding: 1em;
+  line-height: 1;
   background-color: red;
-  font-size: 2em; /* Aumentata la dimensione del font */
-  width: 1em; /* Aggiunto larghezza */
-  height: 1em; /* Aggiunto altezza */
+  font-size: 2em;
+  width: 1em;
+  height: 1em;
 }
 
 .exit img {
@@ -89,7 +95,6 @@
     height: 1.5em;
 }
 
-/* --- FINE BLOCCO MENU ACCESSIBILE --- */
 
 
 /*===H===*/
@@ -102,13 +107,8 @@ main,
 section,
 .container {
   margin-top: 7em;
-  /* spesso qui c'è spazio inutile */
 }
-/*
-.search-container {
-  display: none;
-}
-*/
+
 .menu ul li:not(:first-child) {
   display: none;
 }
@@ -129,43 +129,38 @@ section,
   position: absolute;
   right: 0;
   margin-left: auto;
-  padding: 0.6em;           /* ingrandisce la hitbox */
+  padding: 0.6em; 
   background: none;
   border: none;
   cursor: pointer;
-  display: inline-flex;     /* centra l’immagine */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 .burger img {
   display: block;
-  width: 4em;   /* dimensione visiva dell’icona */
+  width: 4em;
   height: auto;
-  pointer-events: none;     /* così il click prende il button, non l’img */
+  pointer-events: none;
 }
 
 nav.menuHamberger {
   display: flex;
   flex-direction: column;
-  /* Importante per layout verticale */
   background-color: var(--headerbgcolor);
   top: 0;
   right: 0;
   width: 50%;
   height: 100vh;
-  /* Occupa tutta l'altezza visibile */
   overflow-y: auto;
-  /* Scroll verticale se necessario */
   box-shadow: -2px 0 5px rgba(0, 0, 0, 1);
   list-style: none;
   position: fixed;
   margin: 0;
   justify-content: space-evenly;
   padding-top: 1em;
-  /* Aumenta il padding-top se necessario */
   padding-bottom: 4em;
-  /* Aggiungi un padding-bottom per non tagliare l'ultima voce */
   z-index: 9999;
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
@@ -184,19 +179,19 @@ nav.menuHamberger {
   position: absolute;
   top: 1.9em;
   right: 1.9em;
-  padding: 0.4em;      /* aumenta l’area cliccabile */
+  padding: 0.4em; 
   border: none;
   background: none;
   line-height: 0;
   cursor: pointer;
-  display: inline-flex; /* utile per centrare l'immagine */
+  display: inline-flex; 
   align-items: center;
   justify-content: center;
 }
 
 .exit img {
   display: block;
-  width: 1.2em;   /* grandezza visiva */
+  width: 1.2em;   
   height: auto;
 }
 
@@ -279,12 +274,9 @@ li.current-page {
 .barraCentrale2 a {
   color: white;
   font-size: 1.5em;
-  /* Aumento della dimensione del testo per tablet */
   padding: 10px 15px;
-  /* Più spazio per i touch */
 }
 
-/* Rimuove i punti dalle liste */
 .barraCentrale li,
 .barraCentrale2 li {
   list-style: none;
@@ -308,10 +300,8 @@ li.current-page {
 /* Contenitore principale */
 .container {
   padding-top: 70px;
-  /* Aggiunge spazio sopra il contenuto per evitare che venga sovrapposto dall'header */
 }
 
-/* Altri aggiustamenti */
 .nav-links {
   display: flex;
   justify-content: space-between;
@@ -380,7 +370,6 @@ div.login-box {
     border-bottom: none;
     background-color: whitesmoke;
     border-radius: 0.7em;
-    /*padding: 0.2em 2em 0.2em 2em;*/
 }
 
 #content{
@@ -412,52 +401,38 @@ div.login-box {
   margin: -1em;
 }
 
-/* Solo per eventi e notizie */
 .eventi-home,
 .notizie-home, .miniCalendario, .miniGiornale {
   width: 95%;
-  /* Imposta una larghezza massima */
   margin: 0 auto;
-  /* Centrato orizzontalmente con margini automatici */
   padding: 1em;
   margin-bottom: 1em;
   border-radius: 0.7em;
-  /* Manteniamo il bordo arrotondato */
 }
 
-/* Impostare larghezza uguale per gli item nelle liste delle notizie e degli eventi */
 .top-liste li, .eventi_gioco li, .articoli_gioco li{
   width: 100%;
-  /* Forza la larghezza del li al 100% */
   display: block;
-  /* Imposta gli elementi a blocchi, per impilarli */
   margin: 0;
-  /* Spazio verticale tra gli elementi */
   box-sizing: border-box;
 }
 
-/* Assicurati che i contenuti siano centrati senza spazi strani */
 .top-list, .eventi_gioco {
   display: block;
-  /* Impedisce l'influenza sul layout dei videogiochi */
 }
 
 .eventi-home,
 .notizie-home {
   cursor: pointer;
-  /* Manina cliccabile dentro il riquadro blu */
 }
 
-/* Rimuovere la manina fuori dai riquadri blu (stessa altezza) */
 .top-liste li {
   cursor: default;
-  /* Rimuove la manina fuori dai riquadri */
 }
 
 
 .top-liste li a {
   cursor: default;
-  /* Mantieni il cursore normale sui link fuori dai riquadri */
 }
 
 #evento_singolo
@@ -482,7 +457,6 @@ div.login-box {
 .container>div {
   width: 100%;
   max-width: 450px;
-  /* Larghezza più ampia rispetto alla versione mobile */
   margin-bottom: 20px;
 }
 
@@ -503,7 +477,7 @@ div.login-box {
 .team_info_box {
   background-color: white;
   width: 75%;              
-  margin: 1.5em auto;   /* auto a sinistra e destra => centrato */
+  margin: 1.5em auto;
   padding: 1.5em;
   border-radius: 1.2em;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
@@ -616,40 +590,28 @@ td[data-title]:before {
 /* ASSISTENZA */
 details {
   width: 90%;
-  /* Imposta una larghezza per il contenitore */
   max-width: 100%;
-  /* Limita la larghezza massima per evitare che si allunghi troppo su schermi grandi */
   padding: 16px;
-  /* Aggiungi padding interno per un po' di spazio */
   margin: 20px auto;
-  /* Centra il contenitore orizzontalmente (auto sui lati) */
   box-sizing: border-box;
-  /* Include il padding nel calcolo della larghezza */
 }
 
 details summary {
   font-size: 1.3em;
-  /* Aumenta la dimensione del testo */
   font-weight: bold;
-  /* Aggiungi un po' di enfasi al testo */
   text-align: center;
-  /* Allinea il testo al centro */
 }
 
 
 .contatti {
   display: flex;
-  /* Usa flexbox per il layout dei contenitori */
   flex-direction: column;
   align-items: center;
-  /* Centra i contenitori orizzontalmente */
   justify-content: center;
   gap: 1.25em;
-  /* Distanza tra i contenitori */
 }
 
 /*GIOCO SINGOLO */
-/* Contenitore principale che usa Flexbox */
 .scheda-gioco {
   background-color: var(--headerbgcolor);
   color: white;
@@ -660,33 +622,30 @@ details summary {
   
   /* LAYOUT FLEXBOX */
   display: flex;
-  align-items: center; /* MODIFICATO: Allinea gli elementi al centro verticalmente */
+  align-items: center;
   gap: 1em; 
 }
 
-/* Contenitore dell'immagine, ora un elemento flessibile */
 .img-wrapper {
   width: 16em;
   height: 24em;
   flex-shrink: 0; 
   border-radius: 0.5em;
-  overflow: hidden; /* Nasconde le parti dell'immagine che escono dai bordi smussati */
+  overflow: hidden; 
 }
 
-.img-gioco { /* Applica la classe corretta all'immagine */
+.img-gioco {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 'cover' è spesso meglio di 'contain' per riempire lo spazio */
+  object-fit: cover; 
   display: block;
 }
 
-/* Contenitore dei dati, si adatta allo spazio rimanente */
 .dati-gioco {
-  flex-grow: 1; /* Permette a questo elemento di occupare tutto lo spazio rimanente */
-  min-width: 0; /* Previene problemi di overflow con testi lunghi */
+  flex-grow: 1; 
+  min-width: 0; 
 }
 
-/* Mantieni gli stili dei dettagli che già avevi */
 .titolo-gioco {
     font-size: 2.5em;
     margin-top: 0;
@@ -696,7 +655,7 @@ details summary {
 }
 
 .game_detail {
-    margin: 0.25em 0; /* Leggera modifica per allineamento */
+    margin: 0.25em 0;
     border-radius: 0.25em;
     padding: 1em;
 }
@@ -758,7 +717,7 @@ ul.tutte_recensioni {
 }
 
 .single_review {
-  width: 90%; /* o una larghezza fissa tipo 20em */
+  width: 90%;
   max-width: 30em;
 }
 
