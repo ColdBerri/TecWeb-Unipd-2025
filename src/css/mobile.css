@@ -195,7 +195,7 @@ ul.top-list li:not(:first-child){
 }
 
 .notizie-home{
-  background-color: #091727;
+  background-color: var(--headerbgcolor);
 }
 
 .notizie-home>p:first-child, .titoloNotiziaIndex>span{
