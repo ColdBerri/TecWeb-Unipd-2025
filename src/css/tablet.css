@@ -1,3 +1,13 @@
+<<<<<<< Updated upstream
+=======
+/* --- INIZIO BLOCCO MENU ACCESSIBILE (FINALE) --- */
+
+
+html, body {
+  overflow-x: hidden;  /* blocca lo scroll orizzontale 
+}
+
+>>>>>>> Stashed changes
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -200,7 +210,7 @@ nav.menuHamberger {
 
 .navbar_link
 {
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .nascondi {
@@ -740,4 +750,20 @@ ul.tutte_recensioni {
 #registration-form
 {
   margin-top: 6em;
+}
+
+footer {
+  width: 100%;            /* occupa tutta la larghezza della finestra */
+  text-align: center;     /* centra orizzontalmente il contenuto */
+  padding: 1em 0;         /* spazio sopra e sotto */
+  box-sizing: border-box; /* include padding nel calcolo della larghezza */
+}
+
+footer p {
+  margin: 0.5em 0;        /* margini tra paragrafi */
+}
+
+
+footer img {
+  vertical-align: middle; /* allinea l'immagine con il testo */
 }

@@ -30,6 +30,15 @@
   border-radius: 3px;
 }
 
+<<<<<<< HEAD
+=======
+.burger{
+  margin: 0.8em;
+}
+
+
+/* Contenitore del menu a scomparsa con il tuo stile originale */
+>>>>>>> 0d586c8550ef0b2d83938c021dc9ab9685f792a9
 .nascondi {
   display: flex;
   flex-direction: column;
@@ -583,4 +592,9 @@ ul.tutte_recensioni {
   max-width: 20em; 
   margin-left: auto;
   margin-right: auto;
+}
+
+.navbar_link
+{
+  font-size: 1.1em;
 }
